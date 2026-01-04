@@ -284,16 +284,20 @@ Journals are not the main publication venue in most CS fields. However, we somet
 \item The paper should \emph{tell a story}. Humans are storytellers and story receivers.
   \item Be concise. Use the fewest words to communicate effectively.  For example, change ``In order to'' to just ``To'': that's 2/3rds cost savings for the same information.
    \item Avoid passive tense
-   \item Know the difference between /Such as/  and /like/
+   \item Know the difference between \emph{Such as} and \emph{like}
    \item Avoid long paragraphs
    \item Spell out numbers less than 10 (/three/ steps instead of /3/ steps).
-
-   \item Don't put /etc/ in e.g., or such as
    \item New paragraph for new thought/idea. Sentences in the same paragraph should be connected.
   %\item Use `~\cite{..}` and `~\ref{...}`: this ensures that the reference and figure numbers are not separated by a line break.
   %\item Use \code{\autoref} for figures, tables, sections, equations, etc.  This will automatically add the correct prefix (e.g., "Fig.", "Table", "Section", "Eq.") to the reference. E.g., `In~\autoref{fig:ex}, ...` gives `In Fig. 1, ...`
   % \item Use Eq. X instead of Equation X
 
+% ### Miscs
+% - Prefer high-level description than technical one
+%   - People will not be interested in reading the rest if they can't understand (or get excited about) Intro
+%   - Start technical sections with something high level, e.g., an overview picture or algorithm.  Don't go directly into formulae and theorems.  
+%   - Before (or after) presenting some technical things (e.g., a theorem), explain why it is needed or useful.
+% - Think of a presentation as an introduction to a paper (i.e., after seeing the slides, people will want to read the paper); and think of the paper as an introduction to the work/code (i.e.., after reading the paper, people will want to use your work/code).
 
 \end{itemize}
 
@@ -305,7 +309,6 @@ Journals are not the main publication venue in most CS fields. However, we somet
 % Do not use idioms (“on the other hand”) or cliches (“machine learning is not rocket science”)
 % In prose, you should almost never have two sig figs after the decimal. Save such things for our tables (if even necessary there). Most of the time, two sig figs is overkill.
 
-\section{Roar Lab Writing Style Guide}
 % My professional authorial name is Jon E. Froehlich. I should generally be last author on our papers together unless otherwise discussed.
 % Related work is, in itself, plural. You should not say “Related Works.” Similarly, do not say “prior works” but rather “prior work.”
 % Italicize all Latin abbreviations and words such as e.g., i.e., etc., et al., ad hoc, in situ
@@ -557,9 +560,9 @@ However, if we collaborate with others, we can adapt how we write and organize f
   \begin{itemize}
     \item Name the directory based on the venue and year, e.g., \code{icse2025} for a paper submitted to ICSE 2025.
   \end{itemize}
-\item Within the directory, I use \emph{very few} files (e.g., the entire paper in a single TeX file).   Typically, I have the following files:
+\item Within the paper directory, I use \emph{very few} files (e.g., the entire paper in a single TeX file).   Typically, I have the following:
   
-\begin{itemize}
+\begin{enumerate}
   \item \code{paper.tex}: a \emph{single} \code{TeX} file for the entire paper. 
   \begin{itemize}
     \item Others might prefer using multiple files / directories (e.g., \code{intro.tex}, \code{eval.tex}, \code{sections/related.tex}. But I find it easier to just use a single file because I can easily search and replace for things and I don't have to switch between files.
@@ -570,10 +573,9 @@ However, if we collaborate with others, we can adapt how we write and organize f
         \item I prefer a single bib file because it is easier to manage and search for references.  Others might prefer multiple bib files (e.g., \code{refs1.bib}, \code{refs2.bib} for different sections).
         \item My collaborators sometimes put in their own bib files.
       \end{itemize}
-  
-%     - `arch.(pdf|png)` (optional): a diagram describing the architecture of the framework or tool
+  \item \code{figures/}: A directory (folder) containing all figures for the paper.
 
-\end{itemize}
+\end{enumerate}
 
 
 \end{enumerate}
@@ -604,12 +606,6 @@ However, if we collaborate with others, we can adapt how we write and organize f
 % git commit -am "reviews and rebuttal"
 % ````
 
-% ### Miscs
-% - Prefer high-level description than technical one
-%   - People will not be interested in reading the rest if they can't understand (or get excited about) Intro
-%   - Start technical sections with something high level, e.g., an overview picture or algorithm.  Don't go directly into formulae and theorems.  
-%   - Before (or after) presenting some technical things (e.g., a theorem), explain why it is needed or useful.
-% - Think of a presentation as an introduction to a paper (i.e., after seeing the slides, people will want to read the paper); and think of the paper as an introduction to the work/code (i.e.., after reading the paper, people will want to use your work/code).
 
 
 
@@ -656,7 +652,18 @@ However, if we collaborate with others, we can adapt how we write and organize f
 
 \part{Reimbursement}
 
-\chapter{Conference Travel}
+\chapter{Conference Registration and Travel}
+
+
+\paragraph{General Process}
+\begin{itemize}
+\item I can pay for your conference registration and travel in advance using the lab's P-card.  Usually we do this together for efficiency.
+\item Everything else (e.g., hotel, food, local transport) you pay yourself (e.g., using your own credit card) and then submit reimbursement requests to the university. 
+\begin{itemize}
+    \item You need to save all receipts for reimbursement (except for meals, see below).
+    \item You need to do this after you return from the conference and within 60 days of the expense date (TODO: check?).
+\end{itemize}
+\end{itemize}
 
 
 \paragraph{Meals}
