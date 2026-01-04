@@ -102,6 +102,7 @@
   \end{marker}
 }
 
+\newcommand{\code}{\texttt}
 \renewcommand{\figurename}{Fig.}
 \renewcommand{\tablename}{Tab.}
 %\def\Section{\S}
@@ -286,9 +287,14 @@ Journals are not the main publication venue in most CS fields. However, we somet
    \item Know the difference between /Such as/  and /like/
    \item Avoid long paragraphs
    \item Spell out numbers less than 10 (/three/ steps instead of /3/ steps).
-   \item Use Eq. X instead of Equation X
+
    \item Don't put /etc/ in e.g., or such as
    \item New paragraph for new thought/idea. Sentences in the same paragraph should be connected.
+  %\item Use `~\cite{..}` and `~\ref{...}`: this ensures that the reference and figure numbers are not separated by a line break.
+  %\item Use \code{\autoref} for figures, tables, sections, equations, etc.  This will automatically add the correct prefix (e.g., "Fig.", "Table", "Section", "Eq.") to the reference. E.g., `In~\autoref{fig:ex}, ...` gives `In Fig. 1, ...`
+  % \item Use Eq. X instead of Equation X
+
+
 \end{itemize}
 
 
@@ -367,6 +373,10 @@ The intro has 5-6 paragraphs:
 % Join a writing group: https://twitter.com/ThrivePhD/status/1433459109630824448?s=20. Provides structure and social support.
 % Making Figure 1
 % Need info on how to make accessible PDFs, etc.
+
+
+
+
 \section{Authorship Inclusion and Ordering}
 CS is a collaborative discipline. Most papers have multiple authors. However deciding who should be an author and the order of authorship can be challenging and a source of conflict. Below are some guidelines in our lab. 
 
@@ -378,7 +388,7 @@ If you have contributed meaningfully to a project, you should be an author. This
 \begin{itemize}
   \item People who contribute to the underlying research (e.g., design, implementation, evaluation, analysis). Typically these are students (or postdocs) who do the technical work.
   \item People who contribute to writing the paper (e.g., drafting sections, editing, providing feedback). These can be students, or collaborators, or PIs/advisors.
-  \item People who are PI and fund the work, or direct advisor that allows the student to spend time on the project (this latter is more debatable but we are generous in our lab). Such people should also (or at least try to) contribute to writing or discussions about the paper/work.  In any case, we always discuss authorship people ahead of time and ask if they want to be authors (some will say no).
+  \item People who are PI and fund the work, or direct advisor that allows the student to spend time on the project (this latter is more debatable but we are generous in our lab). Such people should also (or at least try to, e.g., participate in meetings) contribute to writing or discussions about the paper/work.  In any case, we always discuss authorship people ahead of time and ask if they want to be authors (some will say no).
 \end{itemize}  
 
 
@@ -402,14 +412,6 @@ Anyone listed as Author on an ACM submission must meet all the following criteri
 \end{itemize}
 
 
-%\subsection{Determining authorship}
-
-
-
-
-% Similarly, the APA’s Publication Practices and Responsible Authorship guide states:
-% “Authorship credit should reflect the individual's contribution to the study. An author is considered anyone involved with initial research design, data collection and analysis, manuscript drafting, or final approval. However, the following do not necessarily qualify for authorship: providing funding or resources, mentorship, or contributing research but not helping with the publication itself. The primary author assumes responsibility for the publication, making sure that the data are accurate, that all deserving authors have been credited, that all authors have given their approval to the final draft; and handles responses to inquiries after the manuscript is published.”
-% CASRAI and the National Information Standards Organization (NISO) has produced a taxonomy of 14 roles—called CRediT—that describe the typical scientific roles in scholarly output, including conceptualization, data curation, analysis, validation, visualization, and writing. We can refer to these contribution types when determining authorship decisions, as necessary.
 
 \chapter{Rebuttal}
 
@@ -534,6 +536,69 @@ Anyone listed as Author on an ACM submission must meet all the following criteri
 % To Save the Science Poster, Researchers Want to Kill it And Start Over, NPR, 2019; Nell Greenfieldboyce
 % The Better Posters Gallery, which is part of the Better Posters blog by Zen Faulkes
 % Better Posters Blog, by Zen Faulkes
+
+\chapter{Writing Styles and File Organization}
+
+\section{File Organization}\label{sec:file-organization}
+
+Every one has their own way of organizing files for writing papers. Below is my approach that has worked well for me over the years. If you're my student and write papers with me, please follow this approach so that I can easily find things.
+
+\begin{enumerate}
+\item Create a separate Github Repo for each \emph{project}. 
+\begin{itemize}
+  \item The reason is that we will likely write multiple papers for the same project (e.g., conference paper, journal paper, workshop paper, etc). Having a single repo per project makes it easier to manage and find things.
+  \item Name the repo \code{paper\_projectname}, e.g., `\code{paper\_gentree}` where \code{gentree} is the name of the work.
+\end{itemize}
+\end{enumerate}
+  
+%   - 
+%   - I do not put conference name as part of the repo name because it might end up not being in that conference. Instead I use `filename` and (optionally)`git tag` ([shown below](#after-submission)) to identify submission to conference.
+
+% ### File structures
+
+% 1 directory per paper (which is a clone of a Github repo), e.g., `paper_gentree`
+%  - Within the directory, I use very few files (`paper.tex`) and no subdirectories (or at most one for figures).
+%     - `paper.tex`: I use a **single** `TeX` file for the entire paper.
+%       > Others might prefer using multiple files / directories (e.g., `intro.tex`, `eval.txt`, `sections/related.txt`). But I find it easier to just use a single file because I can easily search and replace for things and I don't have to switch between files.
+%     -  Even when sharing or collaborating with others, in which conflict edits can arise, a single file still works well because `Git` is pretty good at resolving conflict issues.  I have been using this approach for the last 10+ years and rarely have unresolved conflicts. Note that I do have conflicts with this approach, but they also happen with multiple files.
+%     - `paper.bib`: I use a single `bib` file for bibs. My collaborators sometimes put in their own bib files.
+%     - `arch.(pdf|png)` (optional): a diagram describing the architecture of the framework or tool
+
+% ## After submission
+
+% After submitting a paper, I save a copy of the submitted pdf file and create a tag for the latest commit to keep a history of that submission.
+% 1. Save the submitted pdf file as `VenueYearX.pdf`, where `X` is submit for the original submission version, `final` for final (camera-ready) version and `rI` for the `ith` revision for additional revisions between the original submission and final (e.g., for jounal).
+
+%     ````
+%     git add icse2021submit.pdf  
+%     ````
+
+% 2. Then create an annotated tag for the commit
+%     ````
+%     git tag -a icse2021submit -m "ICSE 2021 original submission" commit_hashid (optional)
+%     git push origin icse2021submit
+%     git show icse2020submit
+%     ````
+
+% ### After rebuttal
+
+% After submitting a rebuttal, save a copy of the reviews and rebuttal as a plain `text` file
+
+% ````
+% git add pldi2023-reviews.txt
+% git commit -am "reviews and rebuttal"
+% ````
+
+% ### Miscs
+% - Prefer high-level description than technical one
+%   - People will not be interested in reading the rest if they can't understand (or get excited about) Intro
+%   - Start technical sections with something high level, e.g., an overview picture or algorithm.  Don't go directly into formulae and theorems.  
+%   - Before (or after) presenting some technical things (e.g., a theorem), explain why it is needed or useful.
+% - Think of a presentation as an introduction to a paper (i.e., after seeing the slides, people will want to read the paper); and think of the paper as an introduction to the work/code (i.e.., after reading the paper, people will want to use your work/code).
+
+
+
+
 
 
 \chapter{Presentation}
@@ -871,67 +936,6 @@ To get an account on the server, send a request and your \textbf{SSH public key}
 
 
 
-
-# Writing Papers
-## LaTeX Writing 
-- Use `~\cite{..}` and `~\ref{...}`: this ensures that the reference and figure numbers are not separated by a line break.
-- Use `\autoref` for figures, tables, sections, equations, etc.  This will automatically add the correct prefix (e.g., "Fig.", "Table", "Section", "Eq.") to the reference. E.g., `In~\autoref{fig:ex}, ...` gives `In Fig. 1, ...`
-
-
-
-
-
-
-
-
-# Managing Git repo and File structures
-
-### Seperate Github Repo for Each Project 
-  
-  - Name the repo `paper_projectname`, e.g., `paper_gentree` where `gentree` is the name of the work.
-  - I do not put conference name as part of the repo name because it might end up not being in that conference. Instead I use `filename` and (optionally)`git tag` ([shown below](#after-submission)) to identify submission to conference.
-
-### File structures
-
-1 directory per paper (which is a clone of a Github repo), e.g., `paper_gentree`
- - Within the directory, I use very few files (`paper.tex`) and no subdirectories (or at most one for figures).
-    - `paper.tex`: I use a **single** `TeX` file for the entire paper.
-      > Others might prefer using multiple files / directories (e.g., `intro.tex`, `eval.txt`, `sections/related.txt`). But I find it easier to just use a single file because I can easily search and replace for things and I don't have to switch between files.
-    -  Even when sharing or collaborating with others, in which conflict edits can arise, a single file still works well because `Git` is pretty good at resolving conflict issues.  I have been using this approach for the last 10+ years and rarely have unresolved conflicts. Note that I do have conflicts with this approach, but they also happen with multiple files.
-    - `paper.bib`: I use a single `bib` file for bibs. My collaborators sometimes put in their own bib files.
-    - `arch.(pdf|png)` (optional): a diagram describing the architecture of the framework or tool
-
-## After submission
-
-After submitting a paper, I save a copy of the submitted pdf file and create a tag for the latest commit to keep a history of that submission.
-1. Save the submitted pdf file as `VenueYearX.pdf`, where `X` is submit for the original submission version, `final` for final (camera-ready) version and `rI` for the `ith` revision for additional revisions between the original submission and final (e.g., for jounal).
-
-    ````
-    git add icse2021submit.pdf  
-    ````
-
-2. Then create an annotated tag for the commit
-    ````
-    git tag -a icse2021submit -m "ICSE 2021 original submission" commit_hashid (optional)
-    git push origin icse2021submit
-    git show icse2020submit
-    ````
-
-### After rebuttal
-
-After submitting a rebuttal, save a copy of the reviews and rebuttal as a plain `text` file
-
-````
-git add pldi2023-reviews.txt
-git commit -am "reviews and rebuttal"
-````
-
-### Miscs
-- Prefer high-level description than technical one
-  - People will not be interested in reading the rest if they can't understand (or get excited about) Intro
-  - Start technical sections with something high level, e.g., an overview picture or algorithm.  Don't go directly into formulae and theorems.  
-  - Before (or after) presenting some technical things (e.g., a theorem), explain why it is needed or useful.
-- Think of a presentation as an introduction to a paper (i.e., after seeing the slides, people will want to read the paper); and think of the paper as an introduction to the work/code (i.e.., after reading the paper, people will want to use your work/code).
 
 
 
