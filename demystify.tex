@@ -1148,7 +1148,7 @@ not carry as much weight since their quality is often unknown. However, if you h
   \begin{questionbox}[Thanh:]
       Due to academic culture, professors in Vietnam usually aim for (international) journals instead of conferences. Could you give some tips on how to know whether a journal is good (CSrankings, unfortunately, only consider conferences)?
       \tcblower
-      \textbf{Vu}: One way is looking at where well-known researchers publish. For example, if you are interested in a field X, you can use CSRankings to look at active faculty in X, and then look at their websites to see what journals they publish at.
+      \textbf{Vu}: One way is looking at where well-known researchers publish. For example, if you are interested in a field X, you can use CSRankings (\autoref{sec:csrankings}) or CSPicks (\autoref{sec:cspicks}) to look at active faculty in X, and then look at their websites to see where they publish at.
   \end{questionbox}
 
 \section{Work Experience} Research experience at \emph{well-known laboratories}, such as Microsoft Research, can strengthen your application.  The emphasis here is \emph{research} work, not software development or non-research work. For example, working at a FAANG (Facebook, Amazon, Apple, Netflix, Google) company as a software engineer does not count as research experience. While it can be helpful for MS applications (\autoref{chap:ms}), software development, even at a top company, does not demonstrate your research ability and potential for a PhD program. 
@@ -1465,6 +1465,12 @@ Bart: ``Okay, how about now?''}
 
 After you submit your applications, the waiting game begins! For many students, this is a very stressful time. This section provides some information and tips to help you get through this time.
 
+
+\begin{center}
+  \includegraphics[scale=0.5]{files/bingo.png}
+\end{center}
+
+
 \section{Interviews}\label{sec:interviews} 
 
 After you apply, you \emph{might} get interviews. The most common case is that a specific prof. is interested in working with you and wants to chat, e.g., to offer RA (\autoref{sec:ra}). In some cases, the interview is done by several professors, e.g., to see if a student fits in their group or to recruit a very strong student to their program. 
@@ -1512,11 +1518,22 @@ However, no interviews mean that you will not likely get an RA (\autoref{sec:ra}
 
 %"Just reject me already!" is a common sentiment among applicants.  Indeed, school will first send out admission offers to the top candidates. They do not send out rejection letters because there is still a chance that some of the top candidates will decline the offer. If they do, then the school will go to the next set of candidates and send out offers to them.  This process continues until all spots are filled.  This is why you might not hear back until late in the admission cycle.
 
+
 \begin{figure}
   \centering
-    \includegraphics[scale=0.3]{files/waitlist.jpg}
-    \caption{Email from the University of Rochester about sending offers and waitlist.}\label{fig:waitlist}
+  \fbox{%
+    \includegraphics[scale=0.3]{files/waitlist.jpg}%
+  }
+  \caption{Email from the University of Rochester about sending offers and waitlist.}
+  \label{fig:waitlist}
 \end{figure}
+
+
+% \begin{figure}
+%   \centering
+%     \includegraphics[scale=0.3]{files/waitlist.jpg}
+%     \caption{Email from the University of Rochester about sending offers and waitlist.}\label{fig:waitlist}
+% \end{figure}
 
 
 Some schools send out admission letters in batches, some do \gls{rolling-admission}, and some do not send anything out, e.g., because you're on their waitlist. You should hear back from most schools by mid-March, though rejection can come out much later.
@@ -1624,9 +1641,12 @@ Ultimately, this choice is personal and involves a balance between personal bene
 \section{Offer Letters and Terms}\label{sec:offer-letters}
 \sectioninfo{The offer letter is essentially an employment contract.  Make sure to read and understand the terms of the offer.}
 
+
 \begin{figure}
   \centering
+  \fbox{
     \includegraphics[scale=0.5]{files/admission-letter-started-with-saying-i-am-not-happy.jpeg}
+    }
     \caption{When you get an admission letter that starts with \emph{``I am not happy to inform you...''} (\href{https://www.reddit.com/r/gradadmissions/comments/1bc7e2a/admission_letter_started_with_saying_i_am_not/}{Reddit}).}\label{fig:admission-letter-started-with-saying-i-am-not-happy}
 \end{figure}
 
@@ -2027,13 +2047,22 @@ While this can be confusing due to the large number of universities in the US, a
 Many students put universities into two bins: (i) top schools that they dream about, and (ii) everything else.  They often use rankings from US News, which is not transparent and questionable (\autoref{chap:rankings}).  Sometimes they evaluate based on the reputation of the school's undergrad program or the reputation of the school's non-CS programs such as medical, math, or physics.
 Many international students rank universities based on popular places they know in the US, e.g., California, Texas, and New York.
 
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.18]{files/cspicks3.png}
+  \caption{Using CSPicks to compare between CMU vs UIUC.}\label{fig:cspicks-compare}
+\end{figure}
+
+
 Instead of these superficial criteria, you should specifically consider the CS program and the research interests of faculty members (\autoref{chap:research-achievements}).
-You can learn about these using resources such as \href{https://csrankings.org}{CSRankings.org} (\autoref{chap:rankings}). You will be very surprised to learn that a school that you didn't know much about can have very strong research in your topic (and vice versa, a school you thought highly about might have no faculty working in the research field you're interested in). This is also a good way to learn about individual faculty, e.g., who works on what, and well-known CS conferences\footnote{In CS (and probably only in CS), conferences, not journals, are often the main venue to publish research findings (see \href{https://homes.cs.washington.edu/~mernst/advice/conferences-vs-journals.html}{why here}).}. %\autoref{chap:rankings} gives the top 50 CS programs in the US according to CSRankings.
+You can learn about these using resources such as~\href{https://roars.dev/cspicks}{CSPicks} and~\href{https://csrankings.org}{CSRankings.org} (\autoref{chap:rankings}).
+\autoref{fig:cspicks-compare} and~\autoref{fig:cspicks} show the research strengths of CS programs using CSPicks. 
+You will be very surprised to learn that a school that you didn't know much about can have very strong research in your topic (and vice versa, a school you thought highly about might have no faculty working in the research field you're interested in). This is also a good way to learn about individual faculty, e.g., who works on what, and well-known CS conferences\footnote{In CS (and probably only in CS), conferences, not journals, are often the main venue to publish research findings (see \href{https://homes.cs.washington.edu/~mernst/advice/conferences-vs-journals.html}{why here}).}. %\autoref{chap:rankings} gives the top 50 CS programs in the US according to CSRankings.
 
 \begin{commentbox}[Dat:] Most Vietnamese students, including those from top schools, \textbf{do not know} about CSRankings.  Maybe applicants who worked at top research places such as VinAI would know about it.
 \end{commentbox}
 
-\paragraph{What matters to you?} While many find CSRankings useful, it is still superficial as every other ranking (\autoref{chap:rankings}).  You should not just look at the number of papers or the number of faculty in your area.  You should also consider the quality of the faculty, e.g., how many of them are tenured,  well-known in their field, and have a good publication record.  You can find this information from their CVs or their homepages.  You can also check their \href{https://scholar.google.com}{Google Scholar} profiles to see their h-index and i10-index. See~\autoref{chap:choosing-adviser} and~\autoref{chap:research-achievements} for more details on how to find and evaluate faculty.
+\paragraph{What matters to you?} While many find CSRankings and CSPicks useful, it is still superficial as every other ranking (\autoref{chap:rankings}).  You should not just look at the number of papers or the number of faculty in your area.  You should also consider the quality of the faculty, e.g., how many of them are tenured,  well-known in their field, and have a good publication record.  You can find this information from their CVs or their homepages.  You can also check their \href{https://scholar.google.com}{Google Scholar} profiles to see their h-index and i10-index. See~\autoref{chap:choosing-adviser} and~\autoref{chap:research-achievements} for more details on how to find and evaluate faculty.
 
 You should also consider other factors that matter to you.  You might prefer schools that give stable funding (\autoref{chap:funding}) and good stipend (\autoref{sec:ra-cost}).  You might like  areas with a large community from your country---Northern Virginia, for example, is very diverse and has a large population of Vietnamese. You might want to be near high-tech industrial hubs like Seattle or Silicon Valley, or places with plenty of outdoor activities such as hiking and skiing.  Weather can also be important---\emph{``PhD can be depressing, so would you rather be depressed in California or New York?''}.  Finally, don't forget about things like cost of living---certain areas in California and New York are way more expensive than in Nebraska. Safety is another factor; however, while some universities might be in a high-crime city, the campus itself is very safe---like John Hopkins in Baltimore.
 
@@ -2110,7 +2139,7 @@ If in doubt, check with the CS dept. for their requirements.
 It is possible to transfer between departments (and universities). However, this can be complicated and often requires re-applying to the new department and taking additional coursework or exams required by the new place. Moreover, your advisor may not be able to supervise you in the new department (they can co-advise or server in the commit, but unlikely are allowed by the new department to be your main adviser).  Usually, transfers happen because the current advisor moves to a new department or university, and the student wants to stay with them.
 
 
-For this specific reason,  CSRankings includes only faculty who can advise CS PhD students. I also have compiled a \href{https://roars.dev/phd-cs-us/viet-cs-profs-us}{list} of Vietnamese faculty who can advise PhD students. \autoref{sec:faculty-types} talks more about who can serve as your PhD adviser.
+For this specific reason,  CSRankings and CSPicks focuses on faculty who can advise CS PhD students. I also have compiled a \href{https://roars.dev/phd-cs-us/viet-cs-profs-us}{list} of Vietnamese faculty who can advise PhD students. \autoref{sec:faculty-types} talks more about who can serve as your PhD adviser.
 
 %\section{Comparison Factors}
 
@@ -2251,7 +2280,7 @@ Fortunately, while some non-US programs require finding an adviser and research 
 
 \section{Finding an Adviser}\label{sec:finding-adviser}
 
-Assuming you're not familiar with any particular one, then first search for profs. that share similar research interests. For example, in CSRankings, if you want to work with PL, you can search for those published in PL conferences.  If you want to work with SE \emph{and} AI, you can search for faculty who work in both SE and AI.
+Assuming you're not familiar with any particular one, then first search for profs. that share similar research interests. For example, in CSRankings and CSPicks, if you want to work with PL, you can search for those published in PL conferences.  If you want to work with SE \emph{and} AI, you can search for faculty who work in both SE and AI.
 
 After that, you can research about that prof. by going to their website, looking at their research achievements and awards (\autoref{chap:research-achievements}), checking their research lab and group, seeing if they have recent publications, and reading their papers.  Sometimes they would explicitly say they are looking for students. If you find a prof. that you like, you can reach out to them (\autoref{sec:contact}).
 
@@ -3118,7 +3147,7 @@ Each CS field (\autoref{sec:fields-and-areas}) has its own ``top'' conferences--
 These conferences have rigorous review process, and only a small percentage of papers are accepted. 
 
 As mentioned in~\autoref{chap:research-experience}, having a paper accepted at a top-tier conference can be a big deal and makes you stand out from other prospective students. 
-CSrankings (\autoref{chap:rankings}) gives the top conferences in each area and rank departments based on their publications in these conferences.
+CSrankings and CSPicks (\autoref{chap:rankings}) gives the top conferences in each area and rank departments based on their publications in these conferences.
 
 
 \textbf{Journals.} While journals are not as popular in CS, they exist and serve a different purpose---to publish more mature and complete work.
@@ -3359,7 +3388,7 @@ Many people maintain lifelong relationships with their professors and colleagues
 \section{How to Call or Address a Professor?}\label{sec:address}
 \sectioninfo{What should you call your profs.? Many possibilities (e.g., Prof., Dr., and even their firstnames), but not Mr., Mrs., or their firstname in the first email.}
 
-\begin{center}
+\begin{center} 
   \includegraphics[scale=0.5]{files/c5.png}
 \end{center}
 
@@ -3433,8 +3462,8 @@ Sometimes foreigners are surprised by how Americans do not talk about their pers
 % \end{commentbox}
 
 
-\chapter{CSRankings: Rankings of CS PhD programs}\label{chap:rankings}
-\chapterinfo{CSRankings.org is a ranking system based on faculty publications at top CS conferences.}
+\chapter{Rankings of CS PhD programs}\label{chap:rankings}
+\chapterinfo{CSRankings.org is a ranking system based on faculty publications at top CS conferences. CSPicks is not a ranking system and instead focuses on exploring the research strengths of CS departments and faculty.}
 
 \myepigraphsimpsons{``The whole damn system is wrong!''}
 
@@ -3460,7 +3489,7 @@ CS research community has long questioned and discouraged the use of these ranki
 In short, rankings from sources like US News are mainly used high school and undergraduate students (or their parents) who are not familiar with CS research or PhD study. Those who know the field best---CS PhD students and faculty and researchers---largely discard them.
 
 % \begin{commentbox}[CRA:]
-%     Anyone with knowledge of CS research will see these rankings for what they are — nonsense — and ignore them. But others may be seriously misled. 
+%   Anyone with knowledge of CS research will see these rankings for what they are — nonsense — and ignore them. But others may be seriously misled. 
 % \end{commentbox}
 
 \section{CSRankings.org}\label{sec:csrankings}
@@ -3481,7 +3510,7 @@ More details and justfication for this metric can be found in the \href{https://
 
 \paragraph{Selecting Faculty} Another useful feature of CSRankings is that you can filter faculty by research areas to find who are active in your area of interest. For example, if you are interested in ML, you can select ML and see departments and faculty members active in ML. You can also see the number of papers published by each faculty in that area,  and their publication counts in recent years (e.g., 2020--2024). This is useful for finding faculty publish frequently in your area of interest and gauge their productivity (\autoref{chap:research-achievements}).
 
-\section{Top CS Programs in the US}
+\subsection{Top CS Programs in the US}
 \autoref{tab:ranking} lists the top 50 CS programs from CSRankings. For the most up-to-date rankings, visit the website directly.
 
 
@@ -3520,6 +3549,30 @@ More details and justfication for this metric can be found in the \href{https://
     \bottomrule
   \end{tabular}
 \end{table}
+
+
+\section{CSPicks}\label{sec:cspicks}
+
+\href{https://roars/dev/cspicks}{CSPicks} is a new website developed by our Roar lab that aims to help prospective students (and faculty candidate) explore the research strengths of CS departments and their faculty. It is \emph{not} a ranking system like CSRankings, but rather a tool to help students find faculty and departments that match their research interests. It allows you see trends and growths of CS departments and faculty, such as the number of publications in different areas over time.\autoref{fig:cspicks-gmu} shows an example of CSPicks showing research areas of the CS department at George Mason.
+
+
+\begin{figure}
+  \centering
+  \begin{minipage}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{files/cspicks1.png}
+  \end{minipage}\hfill
+  \begin{minipage}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{files/cspicks2.png}
+  \end{minipage}\hfill
+  \caption{CSPicks for George Mason.}
+  \label{fig:cspicks-gmu}
+\end{figure}
+
+
+
+
 % Virginia Tech\red{$^*$}  \\
 
 %\autoref{tab:ranking} lists .
