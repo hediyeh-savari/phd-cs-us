@@ -6,8 +6,10 @@
   </a>
 </p>
 
- This handbook offers an insider’s guide to navigating the PhD admission process in Computer Science at U.S. institutions. It explains how PhD admission works from an insider perspective.  It aims to motivate students—both from abroad and from less well-known institutions—to pursue PhD programs in CS at U.S. universities.
+This **Demystify** handbook offers an insider's guide to navigating the PhD admission process in Computer Science at U.S. institutions. It explains how PhD admissions work from an internal perspective and aims to motivate students—especially those from abroad or from less well-known institutions—to pursue PhD programs in CS at U.S. universities. The book is accompanied by a web app, **CSPicks**, which helps students explore and compare faculty, PhD programs, and research areas in Computer Science.
+
+
 - PDF: [https://github.com/dynaroars/phd-cs-us/blob/main/demystify.pdf](https://github.com/dynaroars/phd-cs-us/blob/main/demystify.pdf)
 - Amazon: [Kindle](https://www.amazon.com/dp/B0F41HP6Y2)
 - For discussion and questions, open a new Github issue [https://github.com/dynaroars/phd-cs-us/issues](https://github.com/dynaroars/phd-cs-us/issues)
-- [CSPicks](https://roars.dev/cspicks/compare.html): compare universities among different research areas in Computer Science; also check out the historical mode where we try to track faculty changing affiliation.
+- [CSPicks](https://roars.dev/cspicks): explores faculty, CS programs, and research areas.
