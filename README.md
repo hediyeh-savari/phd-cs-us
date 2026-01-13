@@ -11,5 +11,5 @@ This **Demystify** handbook offers an insider's guide to navigating the PhD admi
 
 - PDF: [https://github.com/dynaroars/phd-cs-us/blob/main/demystify.pdf](https://github.com/dynaroars/phd-cs-us/blob/main/demystify.pdf)
 - Amazon: [Kindle](https://www.amazon.com/dp/B0F41HP6Y2)
-- For discussion and questions, open a new Github issue [https://github.com/dynaroars/phd-cs-us/issues](https://github.com/dynaroars/phd-cs-us/issues)
 - [CSPicks](https://roars.dev/cspicks): explores faculty, CS programs, and research areas.
+- For discussion and questions, open a new Github issue [https://github.com/dynaroars/phd-cs-us/issues](https://github.com/dynaroars/phd-cs-us/issues)
