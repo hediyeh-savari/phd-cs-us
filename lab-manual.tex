@@ -8,8 +8,10 @@
 \usepackage{hyperref}
 \usepackage{enumitem}
 \usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{tcolorbox}
+\tcbuselibrary{documentation, skins}
 \usepackage{longtable}
-
 \setstretch{1.1}
 
 % --------------------
@@ -45,7 +47,14 @@
 This manual serves as a guide for prospective and current members of \href{https://roars.dev}{Roars Lab}. It outlines the lab's policies, procedures, and expectations to ensure a productive and collaborative research environment.
 
 \subsection{Updating the manual}
-This document is a living document in Roars Lab's Github repo (\url{https://code.roars.dev/phd-cs-us/lab-manual.tex}) and will be updated periodically. Lab members, who all have write access, are encouraged to provide feedback and suggest changes to improve its clarity and usefulness.
+This document is a living document in Roars Lab's Github repo at
+
+\begin{tcolorbox}[enhanced]
+    \centering
+\url{https://code.roars.dev/phd-cs-us/lab-manual.tex}.    
+\end{tcolorbox}
+
+Lab members, who all have write access, are encouraged to provide feedback and suggest changes to improve its clarity and usefulness.
 
 % \subsection{Abbreviations}
 % \begin{longtable}{ll}
@@ -72,6 +81,20 @@ Physical description of the lab.
 \subsection{Contact information}
 Address, email, website.
 
+
+\begin{itemize}
+    \item Lab website: \url{https://roars.dev}
+    \item Email: \href{mailto:info@roars.dev}{info@roars.dev}
+    \item Address
+    \begin{tcolorbox}
+        Roars Lab \\
+        Department of Computer Science \\
+        University Name \\
+        Street Address \\
+        City, State, ZIP \\
+        Country
+    \end{tcolorbox}
+\end{itemize}
 \subsection{Facilities}
 Testing spaces, equipment, shared resources.
 
