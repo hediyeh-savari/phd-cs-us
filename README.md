@@ -6,7 +6,7 @@
   </a>
 </p>
 
-This **Demystify**(https://github.com/dynaroars/phd-cs-us/blob/main/demystify.pdf) handbook offers an insider's guide to navigating the PhD admission process in Computer Science at U.S. institutions. It explains how PhD admissions work from an internal perspective and aims to motivate students—especially those from abroad or from less well-known institutions—to pursue PhD programs in CS at U.S. universities. The book is accompanied by a web app, **CSPicks** (https://roars.dev/cspicks), which helps students explore and compare faculty, PhD programs, and research areas in Computer Science.
+This [**Demystify**](https://github.com/dynaroars/phd-cs-us/blob/main/demystify.pdf) handbook offers an insider's guide to navigating the PhD admission process in Computer Science at U.S. institutions. It explains how PhD admissions work from an internal perspective and aims to motivate students—especially those from abroad or from less well-known institutions—to pursue PhD programs in CS at U.S. universities. The book is accompanied by a web app, [**CSPicks**](https://roars.dev/cspicks), which helps students explore and compare faculty, PhD programs, and research areas in Computer Science.
 
 
 - PDF: [https://github.com/dynaroars/phd-cs-us/blob/main/demystify.pdf](https://github.com/dynaroars/phd-cs-us/blob/main/demystify.pdf)
