@@ -697,125 +697,12 @@ The first day and the last day of travel, they will not pay the full per diem ra
 
 \part{Equipment and Resources}
 \chapter{Connecting to Wifi and VPN}
-\section{Connecting to Wifi \texttt{Eduroam}}
-\begin{itemize}
-\item \url{https://its.gmu.edu/knowledge-base/eduroam/}
-\end{itemize}
 
-\paragraph{Linux} \url{https://its.gmu.edu/knowledge-base/how-to-set-up-eduroam-on-linux/}
-\begin{itemize}
-  \item Select \texttt{eduroam} from the list of available wireless networks.
-  \item Configure the following settings:
-  \begin{itemize}
-    \item Wi-Fi security: WPA \& WPA2 Enterprise
-    \item Authentication: Protected EAP (PEAP)
-    \item Anonymous: leave this blank
-    \item Domain: \texttt{gmu.edu}
-    \item Check No CA certificate is required
-    \item PEAP version: Automatic
-    \item Inner Authentication: MSCHAPv2
-    \item Username: Your FULL George Mason email address (e.g., \texttt{netid@gmu.edu})
-    \item Password: Your Patriot Password
-  \end{itemize}
-\item Finally, click \texttt{Connect}. You should now be connected to \texttt{eduroam}.
-\end{itemize}
 \section{Connecting to VPN}
 TBD
 
 
 \chapter{Lab Servers}
-
-For all questions regarding lab servers, discuss in \textbf{Discord \#servers channel}.
-\section{Server Specs}
-
-
-
-We have \textbf{four} servers (\hyperref[pictures]{pictures}).
-
-\begin{enumerate}
-    \item \faMugHot{} \textbf{Boba}: ideal for AI-based projects, e.g., generative LLMs
-    \begin{itemize}
-        \item \href{https://www.nvidia.com/en-us/products/workstations/dgx-spark/}{NVIDIA DGX Spark}
-        \item CPU: NVidia GB10 Chip, 20 core Arm (10 Cortex-X925 + 10 Cortex-A725 Arm)
-        \item Unified Memory/Graphic: 128GB RAM
-        \item OS: NVIDIA DGX OS (based on Ubuntu LTS)
-    \end{itemize}
-
-    \item \faPizzaSlice{} \textbf{Pizza}: ideal for projects that can leverage many cores and specialized GPU.
-    \begin{itemize}
-        \item Custom built
-        \item CPU: 32 cores, 64 threads, 3.6GHz (AMD Ryzen Threadripper PRO 5975WX)
-        \item Graphic: 2x Nvidia RTX 4090 24GB RAM
-        \item Memory: 128GB RAM
-        \item OS: Debian Stable
-    \end{itemize}
-    \begin{quote}
-        This system is ideal for projects that can leverage many cores and specialized GPU.
-    \end{quote}
-
-    \item \faFish{} \textbf{Sushi}
-    \begin{itemize}
-        \item Lenovo ThinkStation P620
-        \item CPU: 64 cores, 128 threads, 4.3GHz (AMD Ryzen Threadripper PRO 3995WX)
-        \item Graphic: Nvidia RTX 5090 RTX 24GB RAM
-        \item Memory: 128GB RAM
-        \item OS: Debian Stable
-    \end{itemize}
-
-
-    \item \faUtensils{} \textbf{Taco}: ideal for experiments that need fast CPU (but not lots of core) and fast GPU.
-    \begin{itemize}
-        \item Alienware Aurora
-        \item CPU: 16 cores, 24 threads, 5.20GHz (Intel 12th Gen Core i9-12900KF)
-        \item Graphic: Nvidia RTX 3080 Ti 12GB RAM
-        \item Memory: 64GB RAM
-        \item OS: Debian Stable
-    \end{itemize}
-\end{enumerate}
-
-\begin{warningbox}
-    For Debian machines, \textbf{DO NOT} install anything other than Debian stable packages to these computers (e.g., \textbf{do not mix unstable or new repositories} to \texttt{apt} sources list). You can download and install anything in your home (local) directory. If in doubt, contact us.
-\end{warningbox}
-
-\section{Getting an Account}
-
-To get an account on the server, send a request and your \textbf{SSH public key} (for \emph{password-less} log in).
-
-\section{Miscs}
-
-\begin{enumerate}
-    \item You can use an IDE such as \texttt{VSCode} to do remote development on these servers (just connect to the server via the builtin remote login method in VSCode). You can also use other editors that support remote development (e.g., \texttt{Emac} + \texttt{TRAMP}).
-    \item Do take advantage of the multicores these machines have. Most programming languages support multiprocessing (e.g., \texttt{Python}) and can significantly reduce program runtime.
-    \item Periodically check \texttt{top} and \texttt{htop} to make sure \textbf{you} are not taking too much CPU or memory.
-    \item Periodically check \texttt{/var/tmp} or \texttt{/tmp/} to make sure \textbf{you} are not taking too much space there.
-\end{enumerate}
-
-\section{Pictures}
-\label{pictures}
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.8\textwidth]{files/sushi.jpg}
-    \caption{\faFish{} \textbf{Sushi}}
-\end{figure}
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.8\textwidth]{files/sushi-fan.jpg}
-    \caption{\faFish{} \textbf{Sushi Cooling System}}
-\end{figure}
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.8\textwidth]{files/pizzabox.jpg}
-    \caption{\faPizzaSlice{} \textbf{Pizza}}
-\end{figure}
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.8\textwidth]{files/boba.jpg}
-    \caption{\faUtensils{} \textbf{Boba}}
-\end{figure}
 
 
 % Makeability Lab Resources

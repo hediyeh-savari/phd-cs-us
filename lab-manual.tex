@@ -9,10 +9,89 @@
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage{hyperref}
+\usepackage{fontawesome5}
 \usepackage{tcolorbox}
 \tcbuselibrary{documentation, skins}
 \usepackage{longtable}
 \setstretch{1.1}
+\usepackage{tikz}
+\usetikzlibrary{positioning,calc,arrows.meta,shapes.geometric}
+
+\newtcolorbox{marker}[1][]{enhanced,
+  before skip balanced=2mm,after skip balanced=3mm,
+  boxrule=0.4pt,left=5mm,right=2mm,top=1mm,bottom=1mm,
+  colback=yellow!10,
+  sharp corners,rounded corners=southeast,arc is angular,arc=3mm,
+  underlay={%
+    \path[fill=tcbcolback!80!black] ([yshift=3mm]interior.south east)--++(-0.4,-0.1)--++(0.1,-0.2);
+    \path[draw=tcbcolframe,shorten <=-0.05mm,shorten >=-0.05mm] ([yshift=3mm]interior.south east)--++(-0.4,-0.1)--++(0.1,-0.2);
+    \path[fill=tcbcolback!80!black,draw=none] (interior.south west) rectangle node{\large\bfseries {#1}} ([xshift=4mm]interior.north west);
+    },
+  drop fuzzy shadow}
+
+\newenvironment{commentbox}[1][]{
+  \small
+  \begin{marker}[\faChessPawn{}]
+    {\textbf{#1}}
+  }{
+  \end{marker}
+}
+
+\newenvironment{surprisebox}[1][]{
+  \small
+  \begin{marker}[\faChessKnight{}]
+    {\textbf{#1}}
+  }{
+  \end{marker}
+}
+
+\newenvironment{examplebox}[1][]{
+  \small
+  \begin{marker}[\faChessBishop{}]
+    {\textbf{#1}}
+  }{
+  \end{marker}
+}
+
+\newenvironment{questionbox}[1][]{
+  \small
+  \begin{marker}[\faChessRook{}]
+    {\textbf{#1}}
+  }{
+  \end{marker}
+}
+
+\newenvironment{keybox}[1][]{
+\small
+  \begin{marker}[\faChessQueen{}]
+    {\textbf{#1}}
+  }{
+  \end{marker}
+}
+
+\newenvironment{warningbox}[1][]{
+  \small
+  \begin{marker}[\faChessKing{}]
+    {\textbf{#1}}
+  }{
+  \end{marker}
+}
+
+\newcommand{\code}{\texttt}
+\renewcommand{\figurename}{Fig.}
+\renewcommand{\tablename}{Tab.}
+%\def\Section{\S}
+\newcommand{\Section}{\textsection}
+
+\renewcommand{\figureautorefname}{Fig.}
+\renewcommand{\tableautorefname}{Tab.}
+\makeatletter
+\renewcommand{\chapterautorefname}{\textsection\@gobble}
+\renewcommand{\sectionautorefname}{\textsection\@gobble}
+\renewcommand{\subsectionautorefname}{\textsection\@gobble}
+\renewcommand{\appendixautorefname}{\textsection\@gobble}
+
+
 
 % --------------------
 % Formatting tweaks
@@ -124,8 +203,104 @@ Specific reading lists are project-dependent.
   \item Internal wikis and documentation
 \end{itemize}
 
+For all questions regarding lab servers, discuss in \textbf{Discord \#servers channel}.
+\section{Server Specs}
+
+
+
+We have \textbf{four} servers (\hyperref[pictures]{pictures}).
+
+\begin{enumerate}
+    \item \faMugHot{} \textbf{Boba}: ideal for AI-based projects, e.g., generative LLMs
+    \begin{itemize}
+        \item \href{https://www.nvidia.com/en-us/products/workstations/dgx-spark/}{NVIDIA DGX Spark}
+        \item CPU: NVidia GB10 Chip, 20 core Arm (10 Cortex-X925 + 10 Cortex-A725 Arm)
+        \item Unified Memory/Graphic: 128GB RAM
+        \item OS: NVIDIA DGX OS (based on Ubuntu LTS)
+    \end{itemize}
+
+    \item \faPizzaSlice{} \textbf{Pizza}: ideal for projects that can leverage many cores and specialized GPU.
+    \begin{itemize}
+        \item Custom built
+        \item CPU: 32 cores, 64 threads, 3.6GHz (AMD Ryzen Threadripper PRO 5975WX)
+        \item Graphic: 2x Nvidia RTX 4090 24GB RAM
+        \item Memory: 128GB RAM
+        \item OS: Debian Stable
+    \end{itemize}
+    \begin{quote}
+        This system is ideal for projects that can leverage many cores and specialized GPU.
+    \end{quote}
+
+    \item \faFish{} \textbf{Sushi}
+    \begin{itemize}
+        \item Lenovo ThinkStation P620
+        \item CPU: 64 cores, 128 threads, 4.3GHz (AMD Ryzen Threadripper PRO 3995WX)
+        \item Graphic: Nvidia RTX 5090 RTX 24GB RAM
+        \item Memory: 128GB RAM
+        \item OS: Debian Stable
+    \end{itemize}
+
+
+    \item \faUtensils{} \textbf{Taco}: ideal for experiments that need fast CPU (but not lots of core) and fast GPU.
+    \begin{itemize}
+        \item Alienware Aurora
+        \item CPU: 16 cores, 24 threads, 5.20GHz (Intel 12th Gen Core i9-12900KF)
+        \item Graphic: Nvidia RTX 3080 Ti 12GB RAM
+        \item Memory: 64GB RAM
+        \item OS: Debian Stable
+    \end{itemize}
+\end{enumerate}
+
+\begin{warningbox}
+    For Debian machines, \textbf{DO NOT} install anything other than Debian stable packages to these computers (e.g., \textbf{do not mix unstable or new repositories} to \texttt{apt} sources list). You can download and install anything in your home (local) directory. If in doubt, contact us.
+\end{warningbox}
+
+\section{Getting an Account}
+
+To get an account on the server, send a request and your \textbf{SSH public key} (for \emph{password-less} log in).
+
+\section{Miscs}
+
+\begin{enumerate}
+    \item You can use an IDE such as \texttt{VSCode} to do remote development on these servers (just connect to the server via the builtin remote login method in VSCode). You can also use other editors that support remote development (e.g., \texttt{Emac} + \texttt{TRAMP}).
+    \item Do take advantage of the multicores these machines have. Most programming languages support multiprocessing (e.g., \texttt{Python}) and can significantly reduce program runtime.
+    \item Periodically check \texttt{top} and \texttt{htop} to make sure \textbf{you} are not taking too much CPU or memory.
+    \item Periodically check \texttt{/var/tmp} or \texttt{/tmp/} to make sure \textbf{you} are not taking too much space there.
+\end{enumerate}
+
+\section{Pictures}
+\label{pictures}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{files/sushi.jpg}
+    \caption{\faFish{} \textbf{Sushi}}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{files/sushi-fan.jpg}
+    \caption{\faFish{} \textbf{Sushi Cooling System}}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{files/pizzabox.jpg}
+    \caption{\faPizzaSlice{} \textbf{Pizza}}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{files/boba.jpg}
+    \caption{\faUtensils{} \textbf{Boba}}
+\end{figure}
+
+
+
+
 \subsection{External resources}
-\paragraph{VPN} You will need VPN and Computing access to log into lab servers remotely. Send an email like below to \href{mailto:cechelp@gmu.edu}{cechelp@gmu.edu} and also CC the PI. 
+
+\subsection{VPN for Lab Servers} You will need VPN and Computing access to log into lab servers remotely. Send an email like below to \href{mailto:cechelp@gmu.edu}{cechelp@gmu.edu} and also CC the PI. 
 
 \begin{tcolorbox}[enhanced]
 \textbf{Subject}: VPN and Computing Access (Mesa AD Groups)
@@ -145,6 +320,28 @@ Thank you for your time and assistance with this.
 \end{tcolorbox}
 
 
+\subsection{Connecting to Wifi \texttt{Eduroam}}
+\begin{itemize}
+\item \url{https://its.gmu.edu/knowledge-base/eduroam/}
+\end{itemize}
+
+\paragraph{Linux} \url{https://its.gmu.edu/knowledge-base/how-to-set-up-eduroam-on-linux/}
+\begin{itemize}
+  \item Select \texttt{eduroam} from the list of available wireless networks.
+  \item Configure the following settings:
+  \begin{itemize}
+    \item Wi-Fi security: WPA \& WPA2 Enterprise
+    \item Authentication: Protected EAP (PEAP)
+    \item Anonymous: leave this blank
+    \item Domain: \texttt{gmu.edu}
+    \item Check No CA certificate is required
+    \item PEAP version: Automatic
+    \item Inner Authentication: MSCHAPv2
+    \item Username: Your FULL George Mason email address (e.g., \texttt{netid@gmu.edu})
+    \item Password: Your Patriot Password
+  \end{itemize}
+\item Finally, click \texttt{Connect}. You should now be connected to \texttt{eduroam}.
+\end{itemize}
 
 % ============================================================
 \section{Being a Lab Member}
