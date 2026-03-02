@@ -393,22 +393,7 @@ Questions that are not categorized into the above sections but can help you unde
 
 
 \begin{enumerate}[label=\arabic*.]
-    \item\label{q:scooping} \textbf{What do you think about safeguarding ideas and results so that they don't get scooped?}
-    
-    We have so many ideas, so if someone wants to steal some of them, it's not a big deal, and in fact, we should be be amused, flattered, and consider it a compliment! 
 
-    Ideas are meant to be executed. If we fail to execute the ideas, then we are the one to be blamed, not the ones who take the ideas and execute them.  If the ideas are ours then we want to quickly realize them, publish them, and get the credit for them. If we don't/can't get something to work, we might as well give them to others.  And they can acknowledge us if they want -- or not (doesn't matter to me).  
-
-    I encourage my students that if people---even our competitors in the same research area---are interested or curious about our work, tell them all; no need to hide the ``secrets'' sauce or whatever important. Give people details, point them to our code base, e.g., \href{https://code.roars.dev}{project repos}, which are always open-source and publicly available, to see all the cool things we're doing. And if they want some code or benchmarks etc, help them out and encourage them to use our work and even build on top of it.
-
-    Of course, this might clash with collaborators, funding sources, or projects that have restrictions on sharing. In those cases, we will follow the rules and restrictions, but I will not be happy about it, and so in general would avoid such collaborations or projects. So far our projects, even those with industry collaborators, are all open-source and publicly available.
-
-       
-    
-% LLMs: "How do you use LLMs in your own research workflow?"
-% Taking chances on students: "What's your tolerance for risk when admitting a student — how often do you expect it not to work out, and do you do it anyway?"
-% Co-authorship: "If someone contributes just 1% of a paper but it's the 1% you couldn't do yourself, do they deserve co-authorship?"
-% Co-authors using work independently: "If a co-author takes your shared work and runs with it in a completely new direction without involving you, how do you feel about that?"
 
     \item \textbf{What do you think about course work and grades when evaluating prospective PhD students? If these are not important then what do you look for instead?}
 
@@ -425,6 +410,24 @@ Questions that are not categorized into the above sections but can help you unde
     
             
     I would go further and say if even at the admission level GPA is not that important then during the PhD it is even less important.  I rarely ask about course work and grades from my PhD students.  In fact, if they are not doing well in research but doing very well in course work, then I would question that as that can be a sign of them struggling in research and using course work as a way of coping or just trying to get by.  In short, if you're my PhD student and you get 4.0 GPA in your classes, then I might question why you spend so much time on coursework instead of research. Just do enough to get by course work and focus on research.
+
+
+    \item\label{q:scooping} \textbf{What do you think about safeguarding ideas and results so that they don't get scooped?}
+    
+    We have so many ideas, so if someone wants to steal some of them, it's not a big deal, and in fact, we should be be amused, flattered, and consider it a compliment! 
+
+    Ideas are meant to be executed. If we fail to execute the ideas, then we are the one to be blamed, not the ones who take the ideas and execute them.  If the ideas are ours then we want to quickly realize them, publish them, and get the credit for them. If we don't/can't get something to work, we might as well give them to others.  And they can acknowledge us if they want -- or not (doesn't matter to me).  
+
+    I encourage my students that if people---even our competitors in the same research area---are interested or curious about our work, tell them all; no need to hide the ``secrets'' sauce or whatever important. Give people details, point them to our code base, e.g., \href{https://code.roars.dev}{project repos}, which are always open-source and publicly available, to see all the cool things we're doing. And if they want some code or benchmarks etc, help them out and encourage them to use our work and even build on top of it.
+
+    Of course, this might clash with collaborators, funding sources, or projects that have restrictions on sharing. In those cases, we will follow the rules and restrictions, but I will not be happy about it, and so in general would avoid such collaborations or projects. So far our projects, even those with industry collaborators, are all open-source and publicly available.
+
+       
+    
+% LLMs: "How do you use LLMs in your own research workflow?"
+% Taking chances on students: "What's your tolerance for risk when admitting a student — how often do you expect it not to work out, and do you do it anyway?"
+% Co-authorship: "If someone contributes just 1% of a paper but it's the 1% you couldn't do yourself, do they deserve co-authorship?"
+% Co-authors using work independently: "If a co-author takes your shared work and runs with it in a completely new direction without involving you, how do you feel about that?"
 
 
     %using LLM and stuff -- I do, but completely in the loop
@@ -472,11 +475,24 @@ So embrace the uncertainties of the review process; treat rebuttal as an opportu
         \includegraphics[width=0.8\textwidth]{files/cvpr-acceptance.png}
         \caption{CPVR'26 paper that got accepted even with largely negative reviews but a very positive rebuttal.}\label{fig:rebuttal}
 \end{figure}
+
+\item\textbf{What are your expectations about code release? How do you ensure experiments are reproducible?}
+
+As mentioned in~\autoref{q:scooping}, all our developments, even the ones that are not published yet, are open-source and publicly available in our \href{https://code.roars.dev/}{repos}. We try to have detailed instructions, etc but in most cases as code are changed  daily, we don't have the time to make them super polished and user-friendly. But we always stand by our code and try to help others who want to use it. For example, whenever people have questions or report bugs (typically submitted through our Github issue tracker), we will try to help them out and solve the issues quickly.  
+
+Many confs. require artifact evaluation (AE) fore reproducibility, and we will do as instructed.  However, I personally do not like the idea doing AE as it is a lot of work and we don't get much out of it. The AE reviewers usually do not have the resources to run our code and reproduce our results, e.g., our work on scaling DNN verification requires powerful machines that most AE reviewers don't have access to. In some cases, the reviewers do not even have fast internet to download our VM images!
+
+In short, while the intention of AE is good, the current practice of AE is not very effective and cause a lot of extra work and anxiety for the authors---typically the students responsible for the work. We spent years on the research, get multiple rejections, went through brutal rebuttals to get papers accepted, but still have to wait for AE reviewers---who are not even experts in our area and don't have the resources to run our code---to run our code and reproduce our results. AE might work well for typical research that intended just to be published once and then never touched again, but for our work that is continuously evolving and being improved and continuously tested (e.g., in competitions) and used by many people. But whatever, we will do the AE as required.
+
+
+
+
 \end{enumerate}
 
-    
 
-\section{Similar Resources}
+
+
+section{Similar Resources}
 
 \begin{itemize}
     \item \href{https://jbhuang0604.github.io/advisor_guide.html}{Jia-Bin Huang's answers}
