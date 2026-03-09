@@ -1,6 +1,6 @@
 
 //#set page(numbering: "1", number-align: center)
-#set heading(numbering: "I.")
+#set heading(numbering: "1.")
 #set text(lang: "en", size: 11pt)
 // #set link(style: text.with(fill: blue))
 #set list(indent: 1em)
@@ -427,14 +427,11 @@ Questions that are not categorized into the above sections but can help you unde
 
 + *Do we submit papers to see what the community thinks and get feedback*
     
-  *No*, we only submit papers that we think are good. We don't send out "feelers" to see if the community likes our work.   We  should not use the volunteering reviewers as guinea pigs to test our work (besides, the comments from a couple of reviewers do not represent the community). Moreover, we don't need to send out papers just to get feedback---I can give you feedback and you can also get them from your lab mates.
-    
-  If we do enough homework we should have a good idea of how the community would react to our work. In fact, if our work is so good, we can change the community's mind and get them to like it. So just do the work, get good results, then write a good paper about it.  
+  *No*, we only submit papers that we think are good. We don't send out "feelers" to see if the community likes our work.   We  should not use the volunteering reviewers as guinea pigs to test our work (besides, the comments from a couple of reviewers do not represent the community). Moreover, we don't need to send out papers just to get feedbacki, if we do enough homework we should have a good idea of how the community would react to our work. In fact, if our work is so good, we can change the community's mind and get them to like it. So just do the work, get good results, then write a good paper about it.  
 
   Note that this does not mean we always submit full papers to top conferences. Our lab submit to a variety of venues, e.g., journals as extensions of our conference papers, short papers to specialized workshops or to introduce early ideas (e.g., New Ideas and Emerging Results track at ICSE), invited papers, etc.  
   We also submit to places that are not our usual venues if we think they are a better fit for the work, e.g., for our work on verifying computer vision models, we submitted to CVPR instead of our usual SE/PL/FM venues.
-  So we are open to exploring different venues and formats, but we don't submit papers just to get feedback.
-
+  So we are open to exploring different venues and formats, but we don't submit papers because we don't know its worth or to get feedback. 
         
 + *How do you approach rebuttals? Strategy?* [Do you respond to every reviewer comment, even unreasonable ones? How do you handle clearly incorrect reviews?]
     
@@ -459,6 +456,23 @@ Questions that are not categorized into the above sections but can help you unde
         image("files/cvpr-acceptance.png", width: 80%),
         caption: [CVPR'26 paper that got accepted even with largely negative reviews but a very positive rebuttal.]
     ) <fig:rebuttal>
+
++ *How should a student get sufficient background for their project? Do you expect them to take courses, read papers, or something else?*
+
+
+  I don't want to students to take courses or read many papers before they start working on their project.  Just dig right into the code, changes something and see what happens, reimplement it from scratch if that helps, get frustrated with existing work and think of ways to improve it, etc. Reinventing the wheel is a great way to learn and understand something deeply---and understanding something deeply is the key to doing research on it.
+  
+  Reading papers won't reveal issues or limitations with the work, and in fact, can demotivate the students (too many good work already, how do I come up with something better?).  Every work has limitations, and if you understand the code very well (e.g., by reimplement it), you will find all the issues and think of ways to improve the work --- that's how we come up with ideas. Note that this not only applies to engineering or tool building work, but also to theoretical work---find the flaws in the proofs and the theorems, and come up with ways to fix them (or create new ones).
+
+  Once you understand something well, then you will be motivated to read papers in that area to see what others have done and how you can improve on them. You also will read papers in a different way---not with the "wow" or "impostor syndrome" feeling, but with the ability to understand the work deeply, appreciate the good stuff, and identify and improve the bad stuff---usually hidden in the polished writing.
+
+  
+  
+  
+  
+  
+  
+  
 
 
 
