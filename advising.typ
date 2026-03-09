@@ -182,7 +182,7 @@ Adapted from #link("https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-A
 
   I give them research topics or directions to explore. For new students, usually, I give them more specific projects to start with so they can get familiar with the research area and techniques. As they are more familiar, they will be able to come up with their own projects. For example, Linhan bounces around several ideas before settling on his work on DNN benchmarking, and Hai and Long work with several students (some not even in our lab) on various projects.
     
-  I also aim to determine what my students are good at, and then help them find projects that fit their interests and strengths. This is not just for research, but also for other things. E.g., in our Thanksgiving party, which I host at my house every year for my lab and their families, I delegate tasks to students based on their strengths and interests: I found out that Linhan is very good at cooking, so I appointed him as our turkey "czar" responsible for a 20+ lb turkey roasting for 30 people!
+  I also aim to determine what my students are good at, and help them find projects that fit them. This is not just for research, but also for other things. E.g., in our Thanksgiving party, which I host at my house every year for my lab and their families, I delegate tasks to students based on their strengths and interests: I found out that Linhan is very good at cooking, so I appointed him as our turkey "czar" responsible for a 20+ lb turkey roasting for 30 people!
 
  
 + *Do you have particular projects that you see me working on?* 
