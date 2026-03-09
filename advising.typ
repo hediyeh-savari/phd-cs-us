@@ -119,7 +119,7 @@ Adapted from #link("https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-A
 
   For the students' first papers, I ask for drafts and revise them iteratively with the students (e.g., through Overleaf). In some cases, I rewrite large portions of early drafts, especially the Intro and Evaluation sections, so students can see how papers are written.  This helps the students see how papers are written. Same thing with paper rebuttals, I will work with the students and revise the writing directly.  
   
-  As the students have more experience, I will let go more and more. By the time th students can write and successfully publish the paper by themselves without much revision and editing from me, then I know they are ready to graduate.
+  As the students have more experience, I will let go more and more. By the time the students can write and successfully publish the paper by themselves without much revision and editing from me, then I know they are ready to graduate.
 
 
 3. *Are there lab meetings? What are other meetings you will see your advisor in a group with other people?*
@@ -282,7 +282,7 @@ Adapted from #link("https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-A
     #figure(
         image("files/ascrapper.png", width: 70%),
         caption: [Recruiting the "A scrapper student".],
-        placement: top
+        placement: auto
     ) <fig:ascrapper>
 
 
@@ -446,10 +446,10 @@ Questions that are not categorized into the above sections but can help you unde
 
   + *Always acknowledge* the reviewers' time and feedback, even if you think they are unreasonable or won't care (most likely they don't), but we need to do it because it's the right thing to do--even if we really hate their questions and believe nothing will change their mind.
     
-  + *Don't do the rebuttal when we are emotionally upset* (e.g., after reading the reviews)}. Take a break, calm down, and then come back to it. The comments---no matter how bad they initially seem---typically have some truths in them (e.g., if they ask a really "dumb" basic question, this could be because we assume too much and don't explain things well enough; if they don't like the problem, then may be because we didn't motivate it well enough or we submitted to the wrong venue, etc).
+  + *Don't do the rebuttal when we are emotionally upset* (e.g., after reading the reviews). Take a break, calm down, and then come back to it. The comments---no matter how bad they initially seem---typically have some truths in them (e.g., if they ask a really "dumb" basic question, this could be because we assume too much and don't explain things well enough; if they don't like the problem, then may be because we didn't motivate it well enough or we submitted to the wrong venue, etc).
 
 
-  + *Don't try to find the champion and the defectors* This is a very common strategy---find the reviewers who clearly like the paper and provide them with the ammunition to fight against the defectors.  I personally don't find this useful because, as mentioned, even the most negative comments have some truths in them and therefore can help improve the paper. Moreover, while a reviewer might appear to be strongly for or against the paper, they might actually be the opposite (e.g., a champion might not actually do anything to help the paper while a defector who is open to changing their mind if we can address their concerns).  So just address the comments with the purpose to improve the paper, and don't worry about who is a champion or a defector.
+  + *Don't try to find the champion and the defectors*. This is a very common strategy---find the reviewers who clearly like the paper and provide them with the ammunition to fight against the defectors.  I personally don't find this useful because, as mentioned, even the most negative comments have some truths in them and therefore can help improve the paper. Moreover, while a reviewer might appear to be strongly for or against the paper, they might actually be the opposite (e.g., a champion might not actually do anything to help the paper while a defector who is open to changing their mind if we can address their concerns).  So just address the comments with the purpose to improve the paper, and don't worry about who is a champion or a defector.
 
 
   In most cases, especially at top confs., papers will get rejected; and in such cases we improve and resubmit and get best paper award, e.g., our compositional verification work was rejected at CAV'25 and get Research Spotlight Award at NeurIPS'25. In some rare cases, however, rebuttal can actually change reviewers' mind as shown in @fig:rebuttal. 
@@ -458,7 +458,7 @@ Questions that are not categorized into the above sections but can help you unde
 
     #figure(
         image("files/cvpr-acceptance.png", width: 80%),
-        caption: [CPVR'26 paper that got accepted even with largely negative reviews but a very positive rebuttal.]
+        caption: [CVPR'26 paper that got accepted even with largely negative reviews but a very positive rebuttal.]
     ) <fig:rebuttal>
 
 
