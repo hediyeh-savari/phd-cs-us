@@ -196,7 +196,7 @@ Adapted from #link("https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-A
   Not sure what "other students" means. But if the question is whether you have to compete with other students in the lab, then the answer is NO. As mentioned, in the beginning you will likely work on projects with other students, but eventually you will have your own projects. Moreover, ROARS members are very collaborative and they help each other with ideas and problems.
 
   Now if the question is if I'd spend time working equally with all my students, then the answer is also NO. 
-  I will spend more time with students that get me excited and involved in their work by showing me progress and results. In contrast, if you're not making any progress or showing me that you're motivated, then I will probably not spend much time with you. However, if I feel you're not making progress or not motivated, I will likely talk to you about it and try to help you get back on track.
+  I will spend more time with students that get me excited and involved in their work by showing me progress and results. I made this explicitly to my students: get my attention by showing me results and progress! Don't just talk about ideas (or change them frequently), but show me results!
 
   
 + *Would they have their own line of work or contribute to a bigger project/someone else's project?* 
