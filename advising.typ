@@ -1,6 +1,6 @@
 
-//#set page(numbering: "1", number-align: center)
-#set heading(numbering: "I.")
+#set page(numbering: "1", number-align: center)
+#set heading(numbering: "1.")
 #set text(lang: "en", size: 11pt)
 // #set link(style: text.with(fill: blue))
 #set list(indent: 1em)
@@ -10,44 +10,38 @@
   author: "ThanhVu Nguyen"
 )
 #set par(justify: true)
-#show ref: set text(fill:red)
+#show ref: set text(fill:blue)
 #show link: set text(fill:blue)
 #show link: underline
 
-#show quote: set pad(left: 1.5em)
+//#show quote: set pad(left: 1.5em)
 #show quote: set text(style: "italic")
 
 #show heading: set block(above: 1.4em, below: 1em)
 
-
+#show title:set text(size: 17pt)
+#show title: set align(center)
+#title[Advisor Guide: Answers to Common Questions]
 #align(center)[
   #v(1em)
-  #text(size: 20pt, weight: "bold")[Advisor Guide: Answers to Common Questions]
-  #v(0.6em)
-  #text(size: 13pt)[ThanhVu Nguyen]
-  #v(0.2em)
-  #text(size: 11pt, style: "italic")[
+  ThanhVu Nguyen\
     #link("https://roars.dev")[Roars Lab] · George Mason University
-  ]
   #line(length: 60%, stroke: 0.5pt + luma(150))
   #v(1em)
-]
+  ]
+
+
 #outline()
 
 #pagebreak()
 
 
 
-
-// #align(center)[
-//   
-//   ThanhVu Nguyen  
-//   #link("https://roars.dev")[Roars Lab]
-// ]
-
+#block(stroke:green, inset:1em)[
 Adapted from #link("https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-Advisor.pdf")[this] advising guide for my
-#link("https://roars.dev")[Roars Lab]. More general PhD admission advice can be found in my
+#link("https://roars.dev")[Roars Lab]. More general PhD admission advice can be found in the
 #link("https://code.roars.dev/phd-cs-us/")[PhD Admission Demystify] book.
+]
 
 = Advisor Style & Expectations
 
@@ -107,7 +101,7 @@ Adapted from #link("https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-A
   For new students, I can provide some help (e.g., directions and writing). As students become more senior/mature, I would gradually transition to a hands-off advisor. However, if I see new members capable of working independently from day one, I will let them do so from day one -- I don't get in the way of capable students. 
   Here's a real example from Discord. This was my response to a technical question from a new _undergrad_ who impressed me by building a solid prototype in their first few weeks
 
-  #quote(block:true)[
+  #quote(block:true,attribution:none)[
   "I am not sure what would be best. Do what you think is best and that would be best."
   ]
 
@@ -198,10 +192,12 @@ Adapted from #link("https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-A
 
   That said, I am open to new ideas *if* you can convince me you can make them work. The best way to do that is as follows: if you come up with an idea that is quite different than what you're working on, *DO NOT* tell me about it, especially if you don't have good things to back it up, because I will likely shoot it down. Instead, just pursue it (while still working on your main project), and build *a prototype* and achieve some *good results*. If you can show me your ideas work with concrete results, I will much more open to them. This happens multiple times in my lab, and probably some my students are currently working on secret ideas that I don't know about yet!
 
-+ *Are there other students you are interested in working with? If so, what would they be working on project-wise?* 
++ *Are there other students you are interested in working with? If so, what would they be working on project-wise?*
+
   Not sure what "other students" means.
 
 + *Would they have their own line of work or contribute to a bigger project/someone else's project?* 
+
   All of my students have their own line of work.  They also collaborate with other lab members and in the beginning, they likely work on projects with other students. But eventually, they will *own* their projects.
 
 = Expectations & Progress
