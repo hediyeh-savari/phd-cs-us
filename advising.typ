@@ -1,5 +1,6 @@
 
-#set page(numbering: "1", number-align: center)
+
+//#set page(numbering: "1", number-align: center)
 #set heading(numbering: "1.")
 #set text(lang: "en", size: 11pt)
 // #set link(style: text.with(fill: blue))
@@ -30,6 +31,14 @@
   #v(1em)
   ]
 
+#block(stroke:green, inset:1em)[
+
+This document, adapted from #link("https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-Advisor.pdf")[these questions], aims to help current and future students in my #link("https://roars.dev")[Roars Lab] 
+ understand my advising style, expectations, and practices. If you're interested in working with me, you can read this guide to see if my lab would be a good *fit*, which is crucial for a successful PhD advising. More general PhD admission advice can be found in the
+#link("https://code.roars.dev/phd-cs-us/")[PhD Admission Demystify] book.
+]
+
+
 
 #outline()
 
@@ -37,11 +46,7 @@
 
 
 
-#block(stroke:green, inset:1em)[
-Adapted from #link("https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-Advisor.pdf")[this] advising guide for my
-#link("https://roars.dev")[Roars Lab]. More general PhD admission advice can be found in the
-#link("https://code.roars.dev/phd-cs-us/")[PhD Admission Demystify] book.
-]
+
 
 = Advisor Style & Expectations
 
@@ -56,13 +61,15 @@ Adapted from #link("https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-A
   
   I did my undergraduate and Master's in CS at Penn State University. Then I did my Ph.D. in CS at the University of New Mexico-Albuquerque and then a postdoc at the University of Maryland (in the #link("https://plum-umd.github.io")[PLUM lab]). I started wanting to work on evolutionary computing, and then gradually changed to software engineering, programming languages, and formal methods. Outside of academia I have worked at the Naval Research Lab and Lockheed Martin.
 
+  Outside of work, I have a family with three young kids. With my wife and I run the Chess club at my kids' elementary school (and the club consistently ranks as the top team in the county!).
+
   You can see my #link("https://raw.githubusercontent.com/dynaroars/latex-cv/main/cv.pdf")[CV] and other details from #link("https://roars.dev")[Roars Lab] page and #link("https://tvn.roars.dev")[my homepage].
 
 + *What have previous lab members done after getting their PhD?* [Gone to industry?/Post-doc?/Professor?]  
 
   So far I have only graduated one Ph.D. student: Guolong Zheng (2022), who is now a faculty at Minjiang University in China. Didier plans to graduate in May'26 and is applying for faculty positions.
 
-  I also graduated an MS student, Alex, who now works at Oracle, and an undergrad, Alex, who works at Jump Trading.
+  I also graduated an MS student, Alex, who now works at Oracle, and an undergrad, KimHao, who works at Jump Trading.
 
 = Group Composition & Structure <group>
 
@@ -107,7 +114,7 @@ Adapted from #link("https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-A
 
   However, although I am hands-off most of the time, I do step in when it's really needed. If a student is truly stuck, facing an urgent problem, or approaching a deadline, I instantly switch into a very hands-on  (or protector) mode. This only happens a small fraction of the time, but in those moments I will work closely with the student to get through the challenge.
     
-  Also, as mentioned in @group, I highly encourage my students to talk to other lab members for help and guidance, e.g., more experienced students can help new students with ideas and research guidance.
+  Also, as mentioned in @group, I highly encourage my students to talk to other lab members for help and guidance. More experienced students can help new ones with ideas and research guidance.
 
 2. *How does the advisor give feedback on papers?*
 
@@ -190,12 +197,16 @@ Adapted from #link("https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-A
 
   However, if you want to work on some areas that I am not interested in, then I would rather you find another faculty because I can't guide a topic I don't know or care about.
 
-  That said, I am open to new ideas *if* you can convince me you can make them work. The best way to do that is as follows: if you come up with an idea that is quite different than what you're working on, *DO NOT* tell me about it, especially if you don't have good things to back it up, because I will likely shoot it down. Instead, just pursue it (while still working on your main project), and build *a prototype* and achieve some *good results*. If you can show me your ideas work with concrete results, I will much more open to them. This happens multiple times in my lab, and probably some my students are currently working on secret ideas that I don't know about yet!
+  That said, I am open to new ideas *if* you can convince me you can make them work. The best way to do that is as follows: if you come up with an idea that is quite different than what you're working on, *DO NOT* tell me about it, especially if you don't have good things to back it up, because I will likely shoot it down. Instead, just pursue it (while still working on your main project), and build *a prototype* and achieve some *good results*. If you can show me your ideas work with concrete results, I will much more open to them. This happens multiple times in my lab, and probably some of my students are currently working on secret ideas that I don't know about yet!
 
 + *Are there other students you are interested in working with? If so, what would they be working on project-wise?*
 
-  Not sure what "other students" means.
+  Not sure what "other students" means. But if the question is whether you have to compete with other students in the lab, then the answer is NO. As mentioned, in the beginning you will likely work on projects with other students, but eventually you will have your own projects. Moreover, ROARS members are very collaborative and they help each other with ideas and problems.
 
+  Now if the question is if I'd spend time working equally with all my students, then the answer is also NO. 
+  I will spend more time with students that get me excited and involved in their work by showing me progress and results. I made this explicitly to my students: get my attention by showing me results and progress! Don't just talk about ideas (or change them frequently), but show me results!
+
+  
 + *Would they have their own line of work or contribute to a bigger project/someone else's project?* 
 
   All of my students have their own line of work.  They also collaborate with other lab members and in the beginning, they likely work on projects with other students. But eventually, they will *own* their projects.
@@ -206,7 +217,7 @@ Adapted from #link("https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-A
     
     I expect the student to have enough results that they can *submit* a paper to one of the top conferences each year. It does not have to be accepted because the reviewing could be noisy, but it is crucial to complete the work and submit it. 
     
-    You can see how my students publish in the #link("https://roars.dev#publications")[Roars Publications section]. 
+    You can see how ROARs' students publish in the #link("https://roars.dev#publications")[ROARs' Publications section]. 
 
 + *What other expectations does the advisor have for their students: time, vacation, paper, project,experiment wise etc.?*
 
@@ -225,33 +236,38 @@ Adapted from #link("https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-A
   I haven't given a letter of concern yet, and I hope I never have to.  
   But I'd remind and warn the student if they need to be on track or do not meet the expectation. 
     
-  Here is the expected progress for my Ph.D. student. By the end of the second year, you should publish at least a second-author paper. You are doing well if you publish a first-author paper at that time. By the end of the third year, you are considered behind if you do not publish a first-author paper and are seriously behind if no good submissions were made. A typical student in SE/PL will have 4--5 publications, my students often have a lot more than that.
+  Here is the expected progress for my Ph.D. student. By the end of the second year, you should publish at least a second-author paper. You are doing well if you publish a first-author paper at that time. By the end of the third year, you are considered behind if you do not publish a first-author paper and are seriously behind if no good submissions were made. A typical student in SE/PL will have 4--5 publications, students in ROARS lab often have a lot more than that.
 
 = Funding & Obligations
 
 + *Where does their funding primarily come from?* [If military/industry-focused funding bothers you, figure this out]  
     
-    Most of my funding sources are from NSF and some are from the industry (e.g., gifts from Amazon and Facebook). All of my funded projects are on basic/fundamental scientific research.
+  Most of my funding sources are from NSF and some are from the industry (e.g., gifts from Amazon and Facebook). All of my funded projects are on basic/fundamental scientific research.
+
+  If the question is whether I would get funding from DoD, the answer is yes, I do not have any issue with DoD or military funding. However, while I also apply to DoD funding, I try to avoid putting my students---especially new ones---on "contract" projects as these often have less flexibility for students (e.g., require deliverables, reports, and publications are not the focus).
+
 
 + *What are their constraints from their funding source?* [Some restrict research topic and change final deliverables. Some add work — writing progress reports, traveling, preparing presentations for the funding source or engineering overhead for integration]  
     
-    Since my funding sources are mainly from NSF or unrestricted from industry, our work has few constraints. Occasionally, I may need your assistance on progress reports and presentations if you are funded through specific grants.
+  Since my funding sources are mainly from NSF or unrestricted from industry, our work has few constraints. Occasionally, I may need your assistance on progress reports and presentations if you are funded through specific grants.
 
 + *If your advisor made you work on a project in their area that you are least interested in (e.g., for a grant) would you still be excited doing work?* [Useful for choosing between advisors]  
     
-    It is unlikely that you have to work on something you're not interested in.
+  It is unlikely that you have to work on something you're not interested in.
 
 + *If you run out of your primary funding for a student how do you expect the student to handle that?* [advisor's responsibility / you'll have to write a grant with me / dept will cover the student / you have to find their own funding]  
     
   One of my responsibilities is finding funding to support my students, and I have been quite lucky to have sufficient funding to support my students (including summer). However, as a fallback, the department can also cover the student with TA-ship. #link("https://github.com/dynaroars/dynaroars.github.io/wiki/About-GMU")[CS\@GMU] is _very good_ at providing Ph.D. students TA-ships.
 
-  I also encourage my students to apply for fellowships. I will help them with the applications (e.g., give feedback on your statements and provide LORs). These fellowships are not necessary for funding, but they are prestigious and can help your career. I take pride in my students' achievements---sometimes more than in my own. When a student wins a fellowship or an award, it's also a win for me and the entire lab!
+  I also encourage students to apply for fellowships. I will help them with the applications (e.g., give feedback on your statements and provide LORs). These fellowships are not necessary for funding, but they are prestigious and can help your career. I take pride in my students' achievements---sometimes more than in my own. When a student wins a fellowship or an award, it's also a win for me and the entire lab!
 
 = Program Requirements
 
 + *What does the quals process look like?* 
 
-  The department has a very specific guideline and timeline that students need to follow for the comprehensive exam. It's quite straightforward and the student needs to write a paper describing the research area and problem they want to work on and present that paper. After the comps, they need to form a dissertation committee, and then do a proposal defense and finally a dissertation defense. The department provides clear guidelines on all these steps.
+  The department has a very specific guideline and timeline that students need to follow for the comprehensive exam. It's quite straightforward and the student needs to write a paper describing the research area and problem they want to work on and present that paper.
+
+  I typically won't let my students go for the quals without having a paper submitted. While the exam is mainly a formality, it is also a checkpoint to make sure the student is on track and has a clear research direction (in which a paper submission is a good indicator of that). 
 
 + *Is there a TA requirement? / How often would I be expected to TA?*
 
@@ -261,8 +277,7 @@ Adapted from #link("https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-A
 
 + *Are you taking a student? Do you have funding to take students in this year (or, for which projects)?* 
 
-  I am *not* actively recruiting (my lab already has quite a few students). This advising guide is actually not meant for recruiting, 
-  but to help my current and future students understand my advising style and expectations.
+  I am *not actively recruiting*. My lab already has quite a few students. In fact, this advising guide is actually not meant for recruiting, but to help my current and future students understand my advising style and expectations.
   
   That said, I am always looking out for *standout* students. Standing out is difficult to define and subjective---I can only know it when I see it (e.g., see the Reddit example below). So read this guide and if you think you would do well in my lab, then reach out to me.  
 
@@ -273,7 +288,7 @@ Adapted from #link("https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-A
     
     I didn't care much about the app itself, but the initiative and technical skill caught my attention: the student finds a problem, comes up with a solution using an unconventional way (from publicly available FOIA data that no one pays attention to), and implements an app that attracts many students (and upset professors!).
     
-    That same evening, I mentioned the app on our lab Discord server, and we determined the developer's identity by analyzing the code and deployment details. I emailed the individual right after, we talked the next day, he was very interested in our research, and so I hired him on the spot.
+    That same evening, I mentioned the app on our lab Discord server, and we determined the developer's identity by analyzing the code and deployment details. I emailed him right after, we talked the next day, he was interested in our research, and so I hired him on the spot.
 
     #figure(
         image("files/ascrapper.png", width: 70%),
@@ -281,18 +296,19 @@ Adapted from #link("https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-A
         placement: auto
     ) <fig:ascrapper>
 
-
 + *Do you think our research interests are a good match?*
     
   The question should be: are *my* research interests a good match for *you*? As mentioned, I will unlikely work on something that I am not interested in. So if you want to work with me, you need to be interested in #link("https://roars.dev")[my research areas]. 
 
 + *I'm interested in working with you. Do you think I'd have a good chance of working with you if I come to your university?*
 
-  If you come to GMU and want to work with me, let's chat. However, the *best* way for me to know you (and vice versa) is taking my classes, being stand out, and impressing me. I recruit several students (e.g., Linhan, Guolong, and Didier) from my classes that way.
-
+  The common way for me to know you (and vice versa) is taking my classes, being stand out, and impressing me. I recruit several students (e.g., Linhan, Guolong, and Didier) from my classes that way.
+  
+  
 = Co-Advising & External Collaborations
 
 + *Would the advisor be interested in co-advising?* 
+
   I was co-advised during my PhD and it worked out, but I *prefer to be your main or sole advisor*, and other faculty members can be collaborators (but not co-advisor). This way, you can get more attention from me while still being mentored by other experts. For example, Hai is advised by me but also collaborates (and therefore mentored) by Matt Dwyer at UVA through our NeuralSAT project. It's also easier for me because I do not want to deal with conflicts between co-advisors, e.g., if they want you to do something that I don't want you to do (and vice versa).
 
     
@@ -302,7 +318,7 @@ Adapted from #link("https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-A
 
 + *How do you handle it when a student outgrows your expertise — they know more than you?* 
 
-  I *expect* this to happen. At some point, my students will know more than me in their topic of interest. Depending on the projects, I may introduce my students to people who are experts in that area and together we can collaborate with them. For example, KimHao works with Quoc-Sang at Facebook on build systems, and Hai works with Matt Dwyer at UVA on DNN verification. In short, if you become better than me in your area, then I've done my job and you're ready to graduate.  
+  I *expect* this to happen. At some point, you will know more than me in their topic of interest. Depending on the projects, I may introduce you to people who are experts in that area and we can collaborate with them. For example, KimHao works with Quoc-Sang at Facebook on build systems, and Hai works with Matt Dwyer at UVA on DNN verification. In short, if you become better than me in your area, then I've done my job and you're ready to graduate.  
     
   Note that if you want to change or try another research direction that I don't have much expertise or interest in, then I can't help you much there then we may need to discuss switching advisors. This is common in academia (almost happened to me during my PhD) and I have no issue with you doing that (in fact, some of my students came to me after switching from other advisors).
 
@@ -338,14 +354,18 @@ Adapted from #link("https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-A
 
 + *How many conferences are students expected to target a year?* [remember pubs != submissions]  
     
-    On the second year, I expect my students to _submit_ _one_ first-author paper to a _major_ #link("https://roars.dev/csconfs")[conference] each year (e.g., ICSE, FSE, ASE, ISSTA, PLDI, OOPSLA, CAV). 
-    On the third year onwards, I expect you to _submit_ at least _two_ papers each year.
+  On the second year, I expect my students to _submit_ _one_ first-author paper to a _major_ #link("https://roars.dev/csconfs")[conference] each year (e.g., ICSE, FSE, ASE, ISSTA, PLDI, OOPSLA, CAV). 
+  On the third year onwards, I expect you to _submit_ at least _two_ papers each year.
 
-    Essentially, I expect you to get some results to present after a full year of research, and continue and improve that pace throughout your PhD.
+  Essentially, I expect you to get some results to present after a full year of research, and continue and improve that pace throughout your PhD.
 
-    My students often publish more than what was mentioned above, e.g., KimHao published 9 papers as an undergrad, Guolong published 8 papers during his PhD, and Hai already has 5 papers by his 3rd year, etc. 
-    
-    I strongly believe that students do not know what they are capable of until they push themselves, and they should not remain in their comfort zone (not the level of craziness of #link("https://davidgoggins.com/")[David Goggins]).
+  My students often publish more than what was mentioned above, e.g., KimHao published 9 papers as an undergrad, Guolong published 8 papers during his PhD, and Hai already has 7 papers by his 4th year, etc. 
+  
+  I strongly believe that students do not know what they are capable of until they push themselves, and they should not remain in their comfort zone (of course, not the level of craziness of #link("https://davidgoggins.com/")[David Goggins]).
+
+  //I mentioned I coached Chess at my kid's elementary school, about 25 students K--5. Initially most of them just want to have fun, but we encourage---and in many cases push---them to participate in tournaments---real ones at the county level. They were nervous, have doubts, lost games, and many cried! But they kept going, they practice on ChessKids.com with their friends until 10!, go to practice sessions Wegmans during the weekend, and get their parents/relatives to play with them (one connected with his cousin who's a GM and taught him some tricky opening that quickly checkmates). And one day they win their first game, and then their first tournament, and then there's no stopping them. Now when we go to tournaments, we often win first place in team categories and _haul_ individual trophies (and their parents went crazy! I have multiple videos to show that!).
+
+
 
 + *Is the professor in an 80/20 with a company? Are students' research projects tied to industry funding?* 
     
@@ -401,18 +421,18 @@ Questions that are not categorized into the above sections but can help you unde
     caption: [Stefania's LoR snippet.]
     ) <fig:stefania>
             
-    I would go further and say if even at the admission level GPA is not that important then during the PhD it is even less important.  I rarely ask about course work and grades from my PhD students.  In fact, if they are not doing well in research but doing very well in course work, then I would question that as that can be a sign of them struggling in research and using course work as a way of coping or just trying to get by.  In short, if you're my PhD student and you get 4.0 GPA in your classes, then I might question why you spend so much time on coursework instead of research. Just do enough to get by course work and focus on research.
+    I would go further and say if even at the admission level GPA is not that important then during the PhD it is even less important.  I rarely ask about course work and grades from my PhD students.  In fact, if they are not doing well in research but doing very well in course work, then I would question that as that can be a sign of them struggling in research and using course work as a way of coping or just trying to get by.  In short, *if you're my PhD student and you get 4.0 GPA in your classes, then I might question why you spend so much time on coursework instead of research*. Just do enough to get by course work and focus on research.
 
 
 + *What do you think about safeguarding ideas and results so that they don't get scooped?*
     
-    We have many ideas, so if someone wants to steal some of them, it's not a big deal, and in fact, we should be be amused, flattered, and consider it a compliment! 
+    We have many ideas, so if someone wants to steal some of them, it's not a big deal, and in fact, we should be be *amused, flattered, and consider it a compliment*! 
 
     Ideas are meant to be executed. If we fail to execute the ideas, then we are the one to be blamed, not the ones who take the ideas and execute them.  If the ideas are ours then we want to quickly realize them, publish them, and get the credit for them. If we don't/can't get something to work, we might as well give them to others.  And they can acknowledge us if they want -- or not (doesn't matter to me).  
 
-    I encourage my students that if people---even our competitors in the same research area---are interested or curious about our work, tell them all; no need to hide the  "secrets" sauce or anything important. Give people details, point them to our code base, e.g., #link("https://code.roars.dev")[project repos], which are always open-source and publicly available, to see all the cool things we're doing. And if they want some code or benchmarks etc, help them out and encourage them to use our work and even build on top of it.
+    If people---even our competitors in the same research area---are interested or curious about our work, then give it to them; no need to hide the "secrets" sauce or anything important. Give people details, point them to our code base, e.g., #link("https://code.roars.dev")[project repos], which are _always_ open-source and publicly available, to see all the cool things we're doing. And if they want some code or benchmarks etc, help them out and encourage them to use our work and even build on top of it.
 
-    Of course, this might clash with collaborators, funding sources, or projects that have restrictions on sharing. In those cases, we will follow the rules and restrictions, but I will not be happy about it, and so in general would avoid such collaborations or projects. So far our projects, even those with industry collaborators, are all open-source and publicly available.
+    Of course, this might clash with collaborators, funding sources, or projects that have restrictions on sharing. In those cases, we will re-examine, but I will not be happy about it, and so in general would avoid such collaborations or projects. So far our projects, even those with industry collaborators, are all open-source and publicly available.
 
 
 + *If someone contributes little to a paper, do they deserve co-authorship?*
@@ -423,14 +443,11 @@ Questions that are not categorized into the above sections but can help you unde
 
 + *Do we submit papers to see what the community thinks and get feedback*
     
-  *No*, we only submit papers that we think are good. We don't send out "feelers" to see if the community likes our work.   We  should not use the volunteering reviewers as guinea pigs to test our work (besides, the comments from a couple of reviewers do not represent the community). Moreover, we don't need to send out papers just to get feedback---I can give you feedback and you can also get them from your lab mates.
-    
-  If we do enough homework we should have a good idea of how the community would react to our work. In fact, if our work is so good, we can change the community's mind and get them to like it. So just do the work, get good results, then write a good paper about it.  
+  *No*, we only submit papers that we think are good. We don't send out "feelers" to see if the community likes our work.   We  should not use the volunteering reviewers as guinea pigs to test our work (besides, the comments from a couple of reviewers do not represent the community). Moreover, we don't need to send out papers just to get feedbacki, if we do enough homework we should have a good idea of how the community would react to our work. In fact, if our work is so good, we can change the community's mind and get them to like it. So just do the work, get good results, then write a good paper about it.  
 
   Note that this does not mean we always submit full papers to top conferences. Our lab submit to a variety of venues, e.g., journals as extensions of our conference papers, short papers to specialized workshops or to introduce early ideas (e.g., New Ideas and Emerging Results track at ICSE), invited papers, etc.  
   We also submit to places that are not our usual venues if we think they are a better fit for the work, e.g., for our work on verifying computer vision models, we submitted to CVPR instead of our usual SE/PL/FM venues.
-  So we are open to exploring different venues and formats, but we don't submit papers just to get feedback.
-
+  So we are open to exploring different venues and formats, but we don't submit papers because we don't know its worth or to get feedback. 
         
 + *How do you approach rebuttals? Strategy?* [Do you respond to every reviewer comment, even unreasonable ones? How do you handle clearly incorrect reviews?]
     
@@ -447,15 +464,33 @@ Questions that are not categorized into the above sections but can help you unde
 
   + *Don't try to find the champion and the defectors*. This is a very common strategy---find the reviewers who clearly like the paper and provide them with the ammunition to fight against the defectors.  I personally don't find this useful because, as mentioned, even the most negative comments have some truths in them and therefore can help improve the paper. Moreover, while a reviewer might appear to be strongly for or against the paper, they might actually be the opposite (e.g., a champion might not actually do anything to help the paper while a defector who is open to changing their mind if we can address their concerns).  So just address the comments with the purpose to improve the paper, and don't worry about who is a champion or a defector.
 
-
   In most cases, especially at top confs., papers will get rejected; and in such cases we improve and resubmit and get best paper award, e.g., our compositional verification work was rejected at CAV'25 and get Research Spotlight Award at NeurIPS'25. In some rare cases, however, rebuttal can actually change reviewers' mind as shown in @fig:rebuttal. 
   So embrace the uncertainties of the review process; treat rebuttal as an opportunity to improve our writing and work (think of them as _bug reports_ that make your code better), and don't worry about the rest.    
 
 
     #figure(
-        image("files/cvpr-acceptance.png", width: 80%),
+        image("files/cvpr-acceptance.png", width: 90%),
         caption: [CVPR'26 paper that got accepted even with largely negative reviews but a very positive rebuttal.]
     ) <fig:rebuttal>
+
++ *How should a student get sufficient background for their project? Do you expect them to take courses, read papers, or something else?*
+
+
+  I don't want to students to take courses or read many papers before they start working on their project. Just the same thing as I don't tell the kids in my Chess club to learn openings and strategies---just play tons of games and study those later.
+  
+  So, dig right into the code, make some changes, break something,  reimplement it from scratch if that helps, get frustrated with existing work and think of ways to improve it, etc. Reinventing the wheel is a great way to learn and understand something deeply---and understanding something deeply is the key to doing research on it.
+  
+  Reading papers won't reveal issues or limitations with the work, and in fact, can demotivate the students (too many good work already, how do I come up with something better?).  Every work has limitations, and if you understand the code very well (e.g., by reimplement it), you will find all the issues and think of ways to improve the work --- that's how we come up with ideas. Not only this applies to engineering or tool building projects, but also to theoretical work---find the flaws in the proofs and the theorems, and come up with ways to fix them (or create new ones).
+
+  Once you understand something well, then you will be motivated to read papers in that area to see what others have done and how you can improve on them. You also will read papers in a different way---not with the "wow" or "impostor syndrome" feeling, but with the ability to understand the work deeply, appreciate the good stuff, and identify and improve the bad stuff---usually hidden in the polished writing.
+
+  
+  
+  
+  
+  
+  
+  
 
 
 
