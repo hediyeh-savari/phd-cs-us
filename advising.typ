@@ -349,7 +349,7 @@ Adapted from #link("https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-A
 
     My students often publish more than what was mentioned above, e.g., KimHao published 9 papers as an undergrad, Guolong published 8 papers during his PhD, and Hai already has 5 papers by his 3rd year, etc. 
     
-    I strongly believe that students do not know what they are capable of until they push themselves, and they should not remain in their comfort zone (not the level of craziness of #link("https://davidgoggins.com/")[David Goggins]).
+    I strongly believe that students do not know what they are capable of until they push themselves, and they should not remain in their comfort zone (of course, not the level of craziness of #link("https://davidgoggins.com/")[David Goggins]).
 
 + *Is the professor in an 80/20 with a company? Are students' research projects tied to industry funding?* 
     
@@ -405,18 +405,18 @@ Questions that are not categorized into the above sections but can help you unde
     caption: [Stefania's LoR snippet.]
     ) <fig:stefania>
             
-    I would go further and say if even at the admission level GPA is not that important then during the PhD it is even less important.  I rarely ask about course work and grades from my PhD students.  In fact, if they are not doing well in research but doing very well in course work, then I would question that as that can be a sign of them struggling in research and using course work as a way of coping or just trying to get by.  In short, if you're my PhD student and you get 4.0 GPA in your classes, then I might question why you spend so much time on coursework instead of research. Just do enough to get by course work and focus on research.
+    I would go further and say if even at the admission level GPA is not that important then during the PhD it is even less important.  I rarely ask about course work and grades from my PhD students.  In fact, if they are not doing well in research but doing very well in course work, then I would question that as that can be a sign of them struggling in research and using course work as a way of coping or just trying to get by.  In short, *if you're my PhD student and you get 4.0 GPA in your classes, then I might question why you spend so much time on coursework instead of research*. Just do enough to get by course work and focus on research.
 
 
 + *What do you think about safeguarding ideas and results so that they don't get scooped?*
     
-    We have many ideas, so if someone wants to steal some of them, it's not a big deal, and in fact, we should be be amused, flattered, and consider it a compliment! 
+    We have many ideas, so if someone wants to steal some of them, it's not a big deal, and in fact, we should be be *amused, flattered, and consider it a compliment*! 
 
     Ideas are meant to be executed. If we fail to execute the ideas, then we are the one to be blamed, not the ones who take the ideas and execute them.  If the ideas are ours then we want to quickly realize them, publish them, and get the credit for them. If we don't/can't get something to work, we might as well give them to others.  And they can acknowledge us if they want -- or not (doesn't matter to me).  
 
-    I encourage my students that if people---even our competitors in the same research area---are interested or curious about our work, tell them all; no need to hide the  "secrets" sauce or anything important. Give people details, point them to our code base, e.g., #link("https://code.roars.dev")[project repos], which are always open-source and publicly available, to see all the cool things we're doing. And if they want some code or benchmarks etc, help them out and encourage them to use our work and even build on top of it.
+    If people---even our competitors in the same research area---are interested or curious about our work, then give it to them; no need to hide the "secrets" sauce or anything important. Give people details, point them to our code base, e.g., #link("https://code.roars.dev")[project repos], which are _always_ open-source and publicly available, to see all the cool things we're doing. And if they want some code or benchmarks etc, help them out and encourage them to use our work and even build on top of it.
 
-    Of course, this might clash with collaborators, funding sources, or projects that have restrictions on sharing. In those cases, we will follow the rules and restrictions, but I will not be happy about it, and so in general would avoid such collaborations or projects. So far our projects, even those with industry collaborators, are all open-source and publicly available.
+    Of course, this might clash with collaborators, funding sources, or projects that have restrictions on sharing. In those cases, we will re-examine, but I will not be happy about it, and so in general would avoid such collaborations or projects. So far our projects, even those with industry collaborators, are all open-source and publicly available.
 
 
 + *If someone contributes little to a paper, do they deserve co-authorship?*
@@ -453,16 +453,16 @@ Questions that are not categorized into the above sections but can help you unde
 
 
     #figure(
-        image("files/cvpr-acceptance.png", width: 80%),
+        image("files/cvpr-acceptance.png", width: 90%),
         caption: [CVPR'26 paper that got accepted even with largely negative reviews but a very positive rebuttal.]
     ) <fig:rebuttal>
 
 + *How should a student get sufficient background for their project? Do you expect them to take courses, read papers, or something else?*
 
 
-  I don't want to students to take courses or read many papers before they start working on their project.  Just dig right into the code, changes something and see what happens, reimplement it from scratch if that helps, get frustrated with existing work and think of ways to improve it, etc. Reinventing the wheel is a great way to learn and understand something deeply---and understanding something deeply is the key to doing research on it.
+  I don't want to students to take courses or read many papers before they start working on their project. Just dig right into the code, changes something and see what happens, reimplement it from scratch if that helps, get frustrated with existing work and think of ways to improve it, etc. Reinventing the wheel is a great way to learn and understand something deeply---and understanding something deeply is the key to doing research on it.
   
-  Reading papers won't reveal issues or limitations with the work, and in fact, can demotivate the students (too many good work already, how do I come up with something better?).  Every work has limitations, and if you understand the code very well (e.g., by reimplement it), you will find all the issues and think of ways to improve the work --- that's how we come up with ideas. Note that this not only applies to engineering or tool building work, but also to theoretical work---find the flaws in the proofs and the theorems, and come up with ways to fix them (or create new ones).
+  Reading papers won't reveal issues or limitations with the work, and in fact, can demotivate the students (too many good work already, how do I come up with something better?).  Every work has limitations, and if you understand the code very well (e.g., by reimplement it), you will find all the issues and think of ways to improve the work --- that's how we come up with ideas. Not only this applies to engineering or tool building projects, but also to theoretical work---find the flaws in the proofs and the theorems, and come up with ways to fix them (or create new ones).
 
   Once you understand something well, then you will be motivated to read papers in that area to see what others have done and how you can improve on them. You also will read papers in a different way---not with the "wow" or "impostor syndrome" feeling, but with the ability to understand the work deeply, appreciate the good stuff, and identify and improve the bad stuff---usually hidden in the polished writing.
 
