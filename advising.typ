@@ -476,7 +476,7 @@ Questions that are not categorized into the above sections but can help you unde
 + *How should a student get sufficient background for their project? Do you expect them to take courses, read papers, or something else?*
 
 
-  I don't want to students to take courses or read many papers before they start working on their project. Just the same thing as I don't tell the kids in my Chess club to learn openings and strategies---just play tons of games and study those later.
+  I don't want to students to take courses or read many papers before they start working on their project---the same thing kids in my Chess club don't learn openings and strategies when they start---just play tons of games and study openings later.
   
   So, dig right into the code, make some changes, break something,  reimplement it from scratch if that helps, get frustrated with existing work and think of ways to improve it, etc. Reinventing the wheel is a great way to learn and understand something deeply---and understanding something deeply is the key to doing research on it.
   
