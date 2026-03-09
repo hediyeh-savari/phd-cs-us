@@ -53,7 +53,7 @@ Adapted from #link("https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-A
   
   I did my undergraduate and Master's in CS at Penn State University. Then I did my Ph.D. in CS at the University of New Mexico-Albuquerque and then a postdoc at the University of Maryland (in the #link("https://plum-umd.github.io")[PLUM lab]). I started wanting to work on evolutionary computing, and then gradually changed to software engineering, programming languages, and formal methods. Outside of academia I have worked at the Naval Research Lab and Lockheed Martin.
 
-  Outside of work, I have a family with three young kids. With my wife and I run the Chess club at my kids' elementary school (and we are consistently the top team in the county!).
+  Outside of work, I have a family with three young kids. With my wife and I run the Chess club at my kids' elementary school (and the club consistently ranks as the top team in the county!).
 
   You can see my #link("https://raw.githubusercontent.com/dynaroars/latex-cv/main/cv.pdf")[CV] and other details from #link("https://roars.dev")[Roars Lab] page and #link("https://tvn.roars.dev")[my homepage].
 
@@ -106,7 +106,7 @@ Adapted from #link("https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-A
 
   However, although I am hands-off most of the time, I do step in when it's really needed. If a student is truly stuck, facing an urgent problem, or approaching a deadline, I instantly switch into a very hands-on  (or protector) mode. This only happens a small fraction of the time, but in those moments I will work closely with the student to get through the challenge.
     
-  Also, as mentioned in @group, I highly encourage my students to talk to other lab members for help and guidance, e.g., more experienced students can help new students with ideas and research guidance.
+  Also, as mentioned in @group, I highly encourage my students to talk to other lab members for help and guidance. More experienced students can help new ones with ideas and research guidance.
 
 2. *How does the advisor give feedback on papers?*
 
@@ -355,7 +355,7 @@ Adapted from #link("https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-A
   
   I strongly believe that students do not know what they are capable of until they push themselves, and they should not remain in their comfort zone (of course, not the level of craziness of #link("https://davidgoggins.com/")[David Goggins]).
 
-  I mentioned I coached Chess at my kid's elementary school, about 25 students K--5. Initially most of them just want to have fun, but we encourage---and in many cases push---them to participate in tournaments---real ones at the county level. They were nervous, have doubts, lost games, and many cried! But they kept going, they practice on ChessKids.com with their friends until 10!, go to practice sessions Wegmans during the weekend, and get their parents/relatives to play with them (one connected with his cousin who's a GM and taught him some tricky opening that quickly checkmates). And one day they win their first game, and then their first tournament, and then there's no stopping them. Now when we go to tournaments, we often win first place in team categories and _haul_ individual trophies (and their parents went crazy! I have multiple videos to show that!).
+  //I mentioned I coached Chess at my kid's elementary school, about 25 students K--5. Initially most of them just want to have fun, but we encourage---and in many cases push---them to participate in tournaments---real ones at the county level. They were nervous, have doubts, lost games, and many cried! But they kept going, they practice on ChessKids.com with their friends until 10!, go to practice sessions Wegmans during the weekend, and get their parents/relatives to play with them (one connected with his cousin who's a GM and taught him some tricky opening that quickly checkmates). And one day they win their first game, and then their first tournament, and then there's no stopping them. Now when we go to tournaments, we often win first place in team categories and _haul_ individual trophies (and their parents went crazy! I have multiple videos to show that!).
 
 
 
