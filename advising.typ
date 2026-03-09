@@ -288,7 +288,6 @@ Adapted from #link("https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-A
         placement: auto
     ) <fig:ascrapper>
 
-
 + *Do you think our research interests are a good match?*
     
   The question should be: are *my* research interests a good match for *you*? As mentioned, I will unlikely work on something that I am not interested in. So if you want to work with me, you need to be interested in #link("https://roars.dev")[my research areas]. 
@@ -347,14 +346,18 @@ Adapted from #link("https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-A
 
 + *How many conferences are students expected to target a year?* [remember pubs != submissions]  
     
-    On the second year, I expect my students to _submit_ _one_ first-author paper to a _major_ #link("https://roars.dev/csconfs")[conference] each year (e.g., ICSE, FSE, ASE, ISSTA, PLDI, OOPSLA, CAV). 
-    On the third year onwards, I expect you to _submit_ at least _two_ papers each year.
+  On the second year, I expect my students to _submit_ _one_ first-author paper to a _major_ #link("https://roars.dev/csconfs")[conference] each year (e.g., ICSE, FSE, ASE, ISSTA, PLDI, OOPSLA, CAV). 
+  On the third year onwards, I expect you to _submit_ at least _two_ papers each year.
 
-    Essentially, I expect you to get some results to present after a full year of research, and continue and improve that pace throughout your PhD.
+  Essentially, I expect you to get some results to present after a full year of research, and continue and improve that pace throughout your PhD.
 
-    My students often publish more than what was mentioned above, e.g., KimHao published 9 papers as an undergrad, Guolong published 8 papers during his PhD, and Hai already has 5 papers by his 3rd year, etc. 
-    
-    I strongly believe that students do not know what they are capable of until they push themselves, and they should not remain in their comfort zone (of course, not the level of craziness of #link("https://davidgoggins.com/")[David Goggins]).
+  My students often publish more than what was mentioned above, e.g., KimHao published 9 papers as an undergrad, Guolong published 8 papers during his PhD, and Hai already has 7 papers by his 4th year, etc. 
+  
+  I strongly believe that students do not know what they are capable of until they push themselves, and they should not remain in their comfort zone (of course, not the level of craziness of #link("https://davidgoggins.com/")[David Goggins]).
+
+  Not only PhD students but also little kids can do amazon things when they push themselves. I mentioned I coached Chess at my kid's elementary school, about 25 students K--5. In the beginning, most of them just want to have fun, but we encourage---and in many cases push---them and their parents to participate in tournaments---real ones at the county level. They were nervous, not confident, lost many games, and many cried! But they kept going, they practice at night on ChessKids.com with their lab mates until 10!, go to practice sessions with us at Wegmen during the weekend, and get their parents/relatives to play with them (I have one kid who said he connected with his cousin who's a GM and taught him some weird opening that checkmate people---including myself---quickly). And one day they win their first game, and then their first tournament, and then there's no stopping them. Now when we go to tournaments, we often win first place in team categories and _haul_ individual trophies (and their parents went crazy! I have multiple videos to show that!). So, if I don't mind pushing my kids in Chess, I sure don't mind pushing my PhD students in research.
+
+
 
 + *Is the professor in an 80/20 with a company? Are students' research projects tied to industry funding?* 
     
