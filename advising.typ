@@ -53,13 +53,15 @@ Adapted from #link("https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-A
   
   I did my undergraduate and Master's in CS at Penn State University. Then I did my Ph.D. in CS at the University of New Mexico-Albuquerque and then a postdoc at the University of Maryland (in the #link("https://plum-umd.github.io")[PLUM lab]). I started wanting to work on evolutionary computing, and then gradually changed to software engineering, programming languages, and formal methods. Outside of academia I have worked at the Naval Research Lab and Lockheed Martin.
 
+  Outside of work, I have a family with three young kids. With my wife and I run the Chess club at my kids' elementary school (and we are consistently the top team in the county!).
+
   You can see my #link("https://raw.githubusercontent.com/dynaroars/latex-cv/main/cv.pdf")[CV] and other details from #link("https://roars.dev")[Roars Lab] page and #link("https://tvn.roars.dev")[my homepage].
 
 + *What have previous lab members done after getting their PhD?* [Gone to industry?/Post-doc?/Professor?]  
 
   So far I have only graduated one Ph.D. student: Guolong Zheng (2022), who is now a faculty at Minjiang University in China. Didier plans to graduate in May'26 and is applying for faculty positions.
 
-  I also graduated an MS student, Alex, who now works at Oracle, and an undergrad, Alex, who works at Jump Trading.
+  I also graduated an MS student, Alex, who now works at Oracle, and an undergrad, KimHao, who works at Jump Trading.
 
 = Group Composition & Structure <group>
 
@@ -255,7 +257,9 @@ Adapted from #link("https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-A
 
 + *What does the quals process look like?* 
 
-  The department has a very specific guideline and timeline that students need to follow for the comprehensive exam. It's quite straightforward and the student needs to write a paper describing the research area and problem they want to work on and present that paper. After the comps, they need to form a dissertation committee, and then do a proposal defense and finally a dissertation defense. The department provides clear guidelines on all these steps.
+  The department has a very specific guideline and timeline that students need to follow for the comprehensive exam. It's quite straightforward and the student needs to write a paper describing the research area and problem they want to work on and present that paper.
+
+  I typically won't let my students go for the quals without having a paper submitted. While the exam is mainly a formality, it is also a checkpoint to make sure the student is on track and has a clear research direction (in which a paper submission is a good indicator of that). 
 
 + *Is there a TA requirement? / How often would I be expected to TA?*
 
@@ -265,8 +269,7 @@ Adapted from #link("https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-A
 
 + *Are you taking a student? Do you have funding to take students in this year (or, for which projects)?* 
 
-  I am *not* actively recruiting (my lab already has quite a few students). This advising guide is actually not meant for recruiting, 
-  but to help my current and future students understand my advising style and expectations.
+  I am *not actively recruiting*. My lab already has quite a few students. In fact, this advising guide is actually not meant for recruiting, but to help my current and future students understand my advising style and expectations.
   
   That said, I am always looking out for *standout* students. Standing out is difficult to define and subjective---I can only know it when I see it (e.g., see the Reddit example below). So read this guide and if you think you would do well in my lab, then reach out to me.  
 
@@ -292,11 +295,13 @@ Adapted from #link("https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-A
 
 + *I'm interested in working with you. Do you think I'd have a good chance of working with you if I come to your university?*
 
-  If you come to GMU and want to work with me, let's chat. However, the *best* way for me to know you (and vice versa) is taking my classes, being stand out, and impressing me. I recruit several students (e.g., Linhan, Guolong, and Didier) from my classes that way.
-
+  The common way for me to know you (and vice versa) is taking my classes, being stand out, and impressing me. I recruit several students (e.g., Linhan, Guolong, and Didier) from my classes that way.
+  
+  
 = Co-Advising & External Collaborations
 
 + *Would the advisor be interested in co-advising?* 
+
   I was co-advised during my PhD and it worked out, but I *prefer to be your main or sole advisor*, and other faculty members can be collaborators (but not co-advisor). This way, you can get more attention from me while still being mentored by other experts. For example, Hai is advised by me but also collaborates (and therefore mentored) by Matt Dwyer at UVA through our NeuralSAT project. It's also easier for me because I do not want to deal with conflicts between co-advisors, e.g., if they want you to do something that I don't want you to do (and vice versa).
 
     
