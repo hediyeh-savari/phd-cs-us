@@ -24,6 +24,7 @@
 
 #set page(margin: 1in)
 #let dark-green = rgb("#006400")
+#let light-green = rgb("#d4f1d4")
 
 #box(
   stroke: (paint: dark-green, thickness: 3pt),
@@ -48,7 +49,7 @@
 
 #pagebreak()
 
-#block(stroke:green, inset:1em)[
+#block(fill: light-green, stroke: dark-green, inset: 1em)[
 This manual serves as a guide for prospective and current members of #link("https://roars.dev")[Roars Lab]. It outlines the lab's policies, procedures, and expectations to ensure a productive and collaborative research environment.
 
 *Updating the manual*: This document is a living document in Roars Lab's Github repo at
@@ -569,7 +570,7 @@ We have _four_ servers (see #link(<pictures>)[pictures]):
   - Memory: 64GB RAM
   - OS: Debian Stable
 
-#block(fill: rgb("#fff3cd"), stroke: rgb("#ff9800"), inset: 1em)[
+#block(fill: light-green, stroke: dark-green, inset: 1em)[
   *Warning:* For Debian machines, **DO NOT** install anything other than Debian stable packages to these computers (e.g., **do not mix unstable or new repositories** to `apt` sources list). You can download and install anything in your home (local) directory. If in doubt, contact us.
 ]
 
@@ -634,7 +635,8 @@ To get an account on the server, send a request and your *SSH public key* (for _
 + Lab website: #link("https://roars.dev")
 + Email: #link("mailto:info@roars.dev")[info\@roars.dev]
 + Address (PI's office):
-  #block(stroke: 1pt + gray, inset: 8pt)[
+
+  #block(fill: light-green, stroke: dark-green, inset: 1em)[
     ```
   George Mason University
   Nguyen Engineering Building #4430
@@ -645,7 +647,7 @@ To get an account on the server, send a request and your *SSH public key* (for _
 
 + Address (package delivery, e.g., from Amazon)
 
-  #block(stroke: 1pt + gray, inset: 8pt)[
+  #block(fill: light-green, stroke: dark-green, inset: 1em)[
     ```
   4511 Patriot CIR
   Nguyen Engineering STE 4300
