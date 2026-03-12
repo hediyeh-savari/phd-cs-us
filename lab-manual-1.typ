@@ -636,7 +636,7 @@ To get an account on the server, send a request and your *SSH public key* (for _
 + Email: #link("mailto:info@roars.dev")[info\@roars.dev]
 + Address (PI's office):
 
-  #block(fill: light-green, stroke: dark-green, inset: 1em)[
+  #rect()[
     ```
   George Mason University
   Nguyen Engineering Building #4430
@@ -647,7 +647,7 @@ To get an account on the server, send a request and your *SSH public key* (for _
 
 + Address (package delivery, e.g., from Amazon)
 
-  #block(fill: light-green, stroke: dark-green, inset: 1em)[
+  #rect()[
     ```
   4511 Patriot CIR
   Nguyen Engineering STE 4300
