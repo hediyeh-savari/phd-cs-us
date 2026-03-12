@@ -3059,29 +3059,34 @@ Homer: I mean an award that's worth winning.]
 
 #simpsons[As intelligent as you are, you have to learn to appreciate other points of view.]
 
-// This section lists some general academic and cultural issues that students, especially international ones, might want to pay attention to.
+This section lists some general academic and cultural issues that students, especially international ones, might want to pay attention to.
 
-// % \paragraph{Diversity} US universities prioritize diversity and inclusion. Students need to respect and appreciate varied opinions, backgrounds, and cultures. Unlike some countries where certain voices are marginalized, in the US, all perspectives are valued equally (especially at universities). Racism or discrimination will have serious consequences, including academic and disciplinary actions.
+// *Diversity* US universities prioritize diversity and inclusion. Students need to respect and appreciate varied opinions, backgrounds, and cultures. Unlike some countries where certain voices are marginalized, in the US, all perspectives are valued equally (especially at universities). Racism or discrimination will have serious consequences, including academic and disciplinary actions.
 
 == Academic Integrity (Cheating and Plagiarism)
 
-// Plagiarism and cheating (e.g., exams and assignments) are a BIG no-no in the US.  If you're caught cheating, you will face serious consequences and likely be expelled from the university (e.g., after the second time at GMU).   This is quite different from many international countries where cheating is common and often tolerated.  Faculty is extremely good at detecting cheating (we have been dealing with these situations so many times over so many years), and \emph{will} report cheating cases.  In short, whatever you do, don't cheat---not worth it!
+Plagiarism and cheating (e.g., exams and assignments) are a BIG no-no in the US.  If you're caught cheating, you will face serious consequences and likely be expelled from the university (e.g., after the second time at GMU).   This is quite different from many international countries where cheating is common and often tolerated.  Faculty is extremely good at detecting cheating (we have been dealing with these situations so many times over so many years), and *will* report cheating cases.  In short, whatever you do, don't cheat---not worth it!
 
-// Here are the typical steps that will happen if you are caught cheating (e.g., on an exam or assignment): (i) a faculty suspecting a cheating case will report it to the Office of Academic Integrity (OAI) at the university---the report often has supporting evidence, e.g., a copy of the exam or assignment; (ii) OAI will investigate the case, e.g., by interviewing the student and faculty, and checking the evidence; (iii) OAI will make a decision, e.g., whether the student is guilty or not; and (iv) if guilty, OAI will decide on the punishment, e.g., a failing grade for the assignment or exam, a failing grade for the course, or even expulsion from the university, especially for repeat offenders.
+Here are the typical steps that will happen if you are caught cheating (e.g., on an exam or assignment): 
+  + A faculty suspecting a cheating case will report it to the Office of Academic Integrity (OAI) at the university---the report often has supporting evidence, e.g., a copy of the exam or assignment; 
+  + OAI will investigate the case, e.g., by interviewing the student and faculty, and checking the evidence; 
+  + OAI will make a decision, e.g., whether the student is guilty or not; and 
+  + If guilty, OAI will decide on the punishment, e.g., a failing grade for the assignment or exam, a failing grade for the course, or even expulsion from the university, especially for repeat offenders.
 
-// It is important to note that \emph{after} receiving the report from your prof., OAI \emph{completely} takes over and makes its decision.  
-// This means begging your professor will not help because they simply are no longer involved in the case and cannot do anything.
-// This is because OAI is an independent office above your prof and depatment that handles all academic integrity cases at the university, and they have their own procedures and policies.  If you are found guilty, you can appeal to OAI, but not to your prof. or department. 
+It is important to note that *after* receiving the report from your prof., OAI *completely* takes over and makes its decision.  
+This means begging your professor will not help because they simply are no longer involved in the case and cannot do anything.
+This is because OAI is an independent office above your prof and depatment that handles all academic integrity cases at the university, and they have their own procedures and policies.  If you are found guilty, you can appeal to OAI, but not to your prof. or department.
 
 == Illegal Software <sec:illegal-software>
-//  Using illegal/cracked software is very common in many countries (and even in the US). However, \emph{do not} install or use them on university computers, even those given to you by your adviser.  It is unlikely that the university will track you down, but it is the \emph{software company} that will.  They have very sophisticated tools to detect illegal software and will sue your university/department.  Imagine your department or adviser being sued for a large sum of money, and it is \emph{you} who caused it.  If you need to purchase software,  ask your adviser or the department (\autoref{sec:buying-equipment}).
+
+ Using illegal/cracked software is very common in many countries (and even in the US). However, _do not_ install or use them on university computers, even those given to you by your adviser.  It is unlikely that the university will track you down, but it is the _software company_ that will.  They have very sophisticated tools to detect illegal software and will sue your university/department.  Imagine your department or adviser being sued for a large sum of money, and it is _you_ who caused it.  If you need to purchase software,  ask your adviser or the department (@sec:buying-equipment).
 
 
 == Costly Gifts <sec:gifts>
 
-In many countries, it is customary to give professors costly gifts---such as fancy liquors, jewelry, or even an envelope stuff with cash during the holidays or special occastions.  It's meant to show respect and appreciation (or let's be honest, an attempt to get better grades or recommendations). Understandbly this is a cultural norm in many countries, and professors and students are used to it. However, in the US, this is can be considered \emph{widly inappropriate} and strongly discouraged. Given your profs. these gifts will make them feel very uncomfortable and in many cases they are required to report them to the university.  
+In many countries, it is customary to give professors costly gifts---such as fancy liquors, jewelry, or even an envelope stuff with cash during the holidays or special occastions.  It's meant to show respect and appreciation (or let's be honest, an attempt to get better grades or recommendations). Understandbly this is a cultural norm in many countries, and professors and students are used to it. That said, in the US, this is can be considered _widly inappropriate_ and strongly discouraged. Given your profs. these gifts will make them feel very uncomfortable and in many cases they are required to report them to the university.  
 
-// However, that doesn't mean you can't show your appreciation. In fact, small, personal tokens, like small souvenir from your country, a fridge magnet, keychain from your hometown, or even just simple thank-you hand-written card, are very welcomed.  Some professors proudly display their gifts, which can come from students and colleagues (e.g., when they travel to their home countries or conferences). In summary, small gifts are fine, but avoid anything that might make your professors uncomfortable.
+ However, that doesn't mean you can't show your appreciation. In fact, small, personal tokens, like small souvenir from your country, a fridge magnet, keychain from your hometown, or even just simple thank-you hand-written card, are very welcomed.  Some professors proudly display their gifts, which can come from students and colleagues (e.g., when they travel to their home countries or conferences). In summary, small gifts are fine, but avoid anything that might make your professors uncomfortable.
 
 == Maintaining Good Relationships with Your Profs. <sec:maintaining-relationships>
 
