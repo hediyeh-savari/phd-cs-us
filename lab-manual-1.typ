@@ -497,13 +497,13 @@ Lab members, who all have write access, are encouraged to provide feedback and s
 // - #link("https://jbhuang0604.github.io/advisor_guide.html")[Jia-Bin Huang's answers]
 // - #link("https://ideal.umd.edu/blog/Prospective-Students-FAQ")[IDEAL Lab's answers]
 = Discord Server
-  + `stats`: most active channel, where we discuss research ideas, projects, papers, and everything else related to research and the lab. This is the main channel for research discussions and announcements.
+  + `#stats`: our most active channel, where we discuss research ideas, projects, papers, and everything else related to research and the lab. This is the main channel for research discussions and announcements.
   + `#general`: when we say hello to new members
   + `#servers`: for all questions regarding lab servers, e.g., how to get an account, how to use the servers, etc. This is the main channel for server-related discussions and announcements.
   
 
 = Computer Server Specs
-We have _four_ servers (see #link("@pictures")[pictures]):
+We have _four_ servers (see #link(<pictures>)[pictures]):
 
 + *Boba*🧋: ideal for AI-based projects, e.g., generative LLMs
   + #link("https://www.nvidia.com/en-us/products/workstations/dgx-spark/")[NVIDIA DGX Spark]
