@@ -6,10 +6,7 @@
 // #set link(style: text.with(fill: blue))
 #set list(indent: 1em)
 #set enum(indent: 1em)
-#set document(
-  title: "Advisor Guide: Answers to Common Questions",
-  author: "ThanhVu Nguyen"
-)
+
 #set par(justify: true)
 #show ref: set text(fill:blue)
 #show link: set text(fill:blue)
@@ -22,10 +19,10 @@
 
 #show title:set text(size: 17pt)
 #show title: set align(center)
-#title[Advisor Guide: Answers to Common Questions]
+#title[ROARS Lab Manual]
 #align(center)[
   #v(1em)
-  ThanhVu Nguyen\
+  PI. ThanhVu Nguyen\
     #link("https://roars.dev")[Roars Lab] · George Mason University
   #line(length: 60%, stroke: 0.5pt + luma(150))
   #v(1em)
