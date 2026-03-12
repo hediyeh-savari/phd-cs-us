@@ -19,7 +19,12 @@
 #let mybookgithub = "https://code.roars.dev/phd-cs-us"
 
 
-
+#let simpsons(s) = {
+  quote(
+    attribution: "The Simpsons",
+    block:true
+  )["#emph(s)"]
+}
 
 
 // Title Page
@@ -78,13 +83,13 @@ Additional information about the book can be found in @chap:about.
 
 #pagebreak()
 // \mainmatter
-// \part{Introduction}\label{part:intro}
+// \part{Introduction <part:intro}
 
 = Should You Apply? <chap:should>
 
 //Definitely, yes. CS PhD study in the US is often *fully funded* and admission into good universities in the US is *not* any harder than in other countries.
 
-#quote(block:true, attribution: "Homer Simpson")[
+#simpsons[
   Don't make fun of graduate students. They just made a terrible life choice.
 ]
 
@@ -100,37 +105,34 @@ This book aims to address these concerns.
 ) <fig:imposter>
 
 *Not any harder than other countries* Applying to a good US university *should not* be any harder than at schools in other countries. It might even be more flexible since CS PhD in the US *do not* require having an MS or a research topic, proposal, or adviser in advance (@sec:non-us-differences compares CS PhD study in the US to other countries). It doesn't even require having a CS background (@sec:non-stem).
+
 If you believe you have a chance in other countries, e.g., Australia, Canada, Japan, Germany, UK, South Korea, and Singapore, then you will surely have a chance in the US as well.
 
-// \begin{commentbox}
-// The most selective US schools, e.g., top 10 in CS (\autoref{chap:rankings}), are extremely competitive for everyone, regardless of background. Don't be discouraged if you don't get into a ``household name'' university as there are many excellent CS programs (\autoref{sec:selecting-ranking-schools}) in the US that are not as well-known internationally but still offer great research opportunities and training. In fact, many top CS researchers and faculty members in the US did not graduate from Ivy League or top 10 schools.\\
+#rect[
+The most selective US schools, e.g., top 10 in CS (@chap:rankings), are extremely competitive for everyone, regardless of background. Don't be discouraged if you don't get into a "household name" university as there are many excellent CS programs (@sec:selecting-ranking-schools) in the US that are not as well-known internationally but still offer great research opportunities and training. In fact, many top CS researchers and faculty members in the US did not graduate from Ivy League or top 10 schools.
 
+Many students, especially those from smaller countries or schools, feel *imposter syndrome*---worrying they're "not good enough", or get discouraged when competing with others with "stronger" profiles (@sec:profile-not-strong). Remember (@chap:evalapps): adcom looks for potential and evidence you'll thrive in research environment and fit well at their institution---in other words, things that usually have nothing to do with your GPA or GRE scores.
+]
 
-// %Standing out is important (\autoref{sec:stand-out})! US programs value applicants from diverse and nontraditional backgrounds. If you're not from a top school, or your path has been unusual (e.g., you climb Mt. Everest, you may actually stand out---in a good way!\\
+*Funding Is Not An Issue*  In most cases CS PhD students \emph{do not} need to worry about funding, especially at good R1
+universities in the US. 
+If you are admitted, you will almost certainly
+receive \emph{full funding} (@chap:funding) to support your study. 
 
-// Many students, especially those from smaller countries or schools, feel \emph{imposter syndrome}---worrying they're ``not good enough'',  or get discouraged when competing with others with ``stronger'' profiles (\autoref{sec:profile-not-strong}) Remember (\autoref{chap:evalapps}): adcom looks for potential and evidence you'll thrive in research environment and fit well at their institution---in other words, things that usually have nothing to do with your GPA or GRE scores.
+// Your funding includes tuition, health insurance, and @glossary[stipend] (in STEM field you get paid for your study!).
+Moreover, you often receive additional benefits such as summer pay (@sec:summer-funding), laptops (@sec:buying-equipment), and traveling to conferences and workshops. 
 
-// \end{commentbox}
-// \paragraph{Funding Is Not An Issue} In most cases CS PhD students \emph{do not} need to worry about funding, especially at good R1
-// universities in the US. 
-// If you are admitted, you will almost certainly
-// receive \emph{full funding} (\autoref{chap:funding}) to support your study. 
+Full funding for CS PhD students is the norm in the US, and I'd go as far as to say that if you are not admitted with full funding, you might want to not accept the offer. The reason is that CS is in high demand and you're actively contributing to improving the reputation of the university and more generally advancing CS.
 
-// Your funding includes tuition, health insurance, and \gls{stipend} (in STEM field you get paid for your study!).
-// %For many students, the stipends provided are not only sufficient to cover your own living expenses but also enough to support your families (e.g., spouse and children).
-// Moreover, you often receive additional benefits such as summer pay (\autoref{sec:summer-funding}), laptops (\autoref{sec:buying-equipment}), and traveling to conferences and workshops. 
-
-// Full funding for CS PhD students is the norm in the US, and I'd go as far as to say that if you are not admitted with full funding, you might want to not accept the offer. The reason is that CS is in high demand and you're actively contributing to improving the reputation of the university and more generally advancing CS. 
-
-// \begin{warningbox}[Vu]
-// While full funding is standard for CS PhD as mentioned above, always double-check the details of your offer (\autoref{sec:offer-letters}) before accepting, especially for programs outside STEM or at smaller/private universities.
-// \end{warningbox}
+#rect[
+Vu: While full funding is standard for CS PhD as mentioned above, always double-check the details of your offer (@sec:offer-letters) before accepting, especially for programs outside STEM or at smaller/private universities.
+]
 
 // % \paragraph{Discrimination is not tolerated} Not only is discrimination illegal, diversity and inclusion are highly valued in US universities. Many universities take great pride in their diverse student body and faculty.
 
 // % In fact, many resources are available to encourage and support students from minority and diverse groups to pursue higher education and research, e.g., specific scholarships and fellowships. Faculty in CS are also familiar with and are encouraged to support such students in their group. There are also incentives, such as dedicated funding and awards, to motivate faculty to recruit and mentor minority students (\autoref{sec:urm}).
 
-// \section{What's a PhD in CS?}\label{sec:phd-in-cs}
+// \section{What's a PhD in CS? <sec:phd-in-cs>
 // \sectioninfo{A PhD in CS is a \textbf{research} degree that transforms you into a researcher in a specific area of CS.
 //  You will become an expert in a particular topic and know more about it than anyone else in the world (in many cases even your advisor).}
 
@@ -206,7 +208,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 // %here
 
-// \section{How long to complete the CS PhD program?}\label{sec:time}
+== How long to complete the CS PhD program? <sec:time>
 // \sectioninfo{About 5--7 years in the US.}
 
 // Typically it takes 5--7 years for CS PhD in the US.  This is usually longer compared to other countries (\autoref{sec:non-us-differences}), which might require having an MS (\autoref{sec:phd-vs-ms}).
@@ -257,7 +259,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 
 
-// \section{Is MS Required for CS PhD Admission?}\label{sec:msrequirement}
+== Is MS Required for CS PhD Admission? <sec:msrequirement>
 // \sectioninfo{You do not need an MS to do PhD in CS.}
 
 // No, while other countries often encourage or even require an MS for PhD student in CS (\autoref{sec:non-us-differences}), it is common in the US to directly apply for a PhD program after a 4-year undergrad program (e.g., after getting a B.S degree).  In addition, most CS PhD programs are designed so that students can get MS degree ``along the way'' to PhD, e.g., after finishing the 2-year course work. This is one of the reasons why CS PhD in the US takes longer (5--7 years, \autoref{sec:time}) than other countries.
@@ -273,7 +275,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 //   \end{commentbox}
 
 
-// \section{Can I apply for PhD in CS for the Spring or Summer?}\label{sec:apply-spring-summer}
+== Can I apply for PhD in CS for the Spring or Summer? <sec:apply-spring-summer>
 // \sectioninfo{Fall is the most common start time for PhD programs in the US and allows you to apply for funding opportunities.}
 
 // Most students apply to start their PhD study in the Fall. This means they send in their application around December and receive admission notification sometime in the Spring, and officially begin their PhD study in the Fall (August or September).
@@ -292,7 +294,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // \sectioninfo{Among several differences, CS PhD in the US does not require an MS degree but has a longer PhD study time.}
 
 // \begin{table}
-// \caption{Comparison of the CS PhD program in the US and other countries}\label{tab:us-vs-other}
+// \caption{Comparison of the CS PhD program in the US and other countries <tab:us-vs-other}
 // \center
 // \small
 // \begin{tabular}{c|c|c}
@@ -370,7 +372,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // % \section{Why the US and not other countries?}
 // % TODO
 
-// \chapter{How is Your Application Evaluated?}\label{chap:evalapps}
+= How is Your Application Evaluated? <chap:evalapps>
 
 // \chapterinfo{Applications are evaluated by the PhD Admission (\acrshort{adcom}) committee and each application is typically reviewed by three \glslink{adcom-members}{faculty members}.}
 
@@ -382,7 +384,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 //   At GMU, for full consideration, students should make sure to submit \emph{ALL} required documents by the application deadline, and should never assume that some required documents (such as official TOEFL scores or official diplomas/transcripts) will be waived by the admissions office. If something is listed and not marked as ``optional'', it is mandatory and they should plan for submitting all those.
 // \end{commentbox}
 
-// \section{Admission Committee}\label{sec:adcom}
+== Admission Committee <sec:adcom>
 // \sectioninfo{Adcom members are faculty who evaluate your application. They consider various factors, e.g., research experience, LoRs, SOP}
 
 // Your applications are reviewed by a PhD \acrfull{adcom} that consists of faculty members in CS. Adcom members have a wide range of expertise and background to ensure diverse perspectives in the evaluation process. For example, there would be faculty who specialize in various areas such as AI, systems, theory, HCI, and so on. In some cases the committee can involve affiliated faculty from different disciplines.
@@ -408,7 +410,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // % \didi{Is there more information on typical strengths and common weaknesses of applications. This is especially useful to sophomore and junior students as they still have time to work on those strengths.}
 // % tvn: the main thing is research experiences
 
-// \section{How Applications are Assigned to Adcom Members?}\label{sec:applications-assigned}
+== How Applications are Assigned to Adcom Members? <sec:applications-assigned>
 // \sectioninfo{Adcom members only review applications assigned to them (typically matching their expertise) and rarely get involved in other applications}
 
 
@@ -416,7 +418,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 // Note that the assigned reviewers are the main ones deciding your application, but at many schools other faculty in the department can also have access to your application and provide inputs and opinions on your profile. Thus, it helps to contact faculty (\autoref{sec:contact}) and mention faculty you're interested in in your SOP (\autoref{chap:sop}).
 
-// \section{How are Decisions Made?}\label{sec:how-decisions}
+== How are Decisions Made? <sec:how-decisions>
 // \sectioninfo{Even if all adcom reviewers recommend acceptance, the application can still be rejected. Vice versa, if all reviewers think the application is weak, the student might still be admitted.}
 
 // After reviewers have evaluated an application, \gls{adcom-chair} will review all evaluations, look at entered notes, and ask reviewers to discuss and resolve discrepancies to reach a consensus (e.g., a reviewer wants to accept but the other wants to reject).  Typically, the decision is made entirely by the reviewers. There is \emph{no involvement} from the adcom chair, department chair, or others. In most cases \gls{adcom-members}, even those reviewing the same application, make decisions independently and do not talk to each other (just a common practice to avoid biasing). In some rare cases we might (\autoref{sec:adcom-discuss}).
@@ -429,7 +431,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // If the student mentioned a faculty in their SOP, adcom might ask that faculty to look at their application and if they are interested in the student.  Even if the student has a weak profile (but still passes the minimum requirement from the university), they might be admitted if a faculty is willing to take them. Adcom members, especially in the US, are very reluctant to go against the faculty's decision (e.g., if a faculty wants to admit a student, we are not going to reject them).
 
 
-// \section{Do Adcom Members Talk to Each Other?}\label{sec:adcom-discuss}
+== Do Adcom Members Talk to Each Other? <sec:adcom-discuss>
 // \sectioninfo{Sometimes adcom members discuss applicants, but in most cases they make independent decisions.}
 
 // We typically review applications independently and do not talk to each other.  This is to avoid biasing, e.g., if one reviewer says they want to accept, the other might feel pressured to accept as well.  
@@ -451,10 +453,10 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 //   We also do roughly three rounds of selection: a first ``triage'' round to determine the top ~100 applications, a second round to determine about 25 people to interview, and then a third round to decide the actual offers. That also helps to speed things up a bit, since in the first round with all the applications you can move fairly quickly since you just need to sort into ``good'' and ``bad''. By the time we're getting into the details and reading everything more closely in rounds 2 and 3 most of the applications have been removed from consideration. So for this method I do maybe 5 minutes per app in round 1, but closer to 20 minutes per app in round 2, and usually round 3 is long discussions about specific people.   
 // \end{surprisebox}
-// \caption{An example of how a PhD admission committee in Physics evaluates applications. Note that this is not common in CS, where we typically do not have a grading rubric and do not discuss applications in a meeting.}\label{fig:adcom-discuss-physics}
+// \caption{An example of how a PhD admission committee in Physics evaluates applications. Note that this is not common in CS, where we typically do not have a grading rubric and do not discuss applications in a meeting. <fig:adcom-discuss-physics}
 // \end{figure}
 
-// \section{How Long To Evaluate An Application?}\label{sec:ievaluate}
+== How Long To Evaluate An Application? <sec:ievaluate>
 // \sectioninfo{It takes me about 10--15 minutes to review an application.}
 
 // In the schools I've been at, the application deadline is in Dec, and adcom meets when school starts in mid or end of Jan. Adcom chair sends out review assignments to adcom members, about 30ish per faculty (\autoref{sec:adcom}). We usually have about 2 weeks to review all applications. As mentioned in~\autoref{sec:adcom-discuss}, adcom members review applications individually and independently. We only discuss when there are disagreements (adcom chair will determine which applications to discuss).
@@ -480,7 +482,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // Unfortunately, even if all reviewers recommend a student, they might not be admitted (\autoref{sec:why-rejected}) if there are too many students or they are not a good fit for the program (e.g., no one is willing to advise them).
 
 
-// \section{Waiving Application Fee}\label{sec:fee-waive}
+== Waiving Application Fee <sec:fee-waive>
 
 // Some universities do waive---for example, Rice, TTIC do not have fee for PhD applications and many universities for domestic students (\autoref{chap:domestic-students}).
 // Some programs also waive if the applicants attend some of their opening sessions.  Some programs waive if the applicant provide proof of financial difficulties, e.g., a statement from a financial adviser or a bank statement.
@@ -495,21 +497,21 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 
 
-// \part{Application Materials}\label{part:application}
+// \part{Application Materials <part:application}
 
 // %\partinfo{.}
 
-// \myepigraphsimpsons{``Son, if you really want something in this life, you have to work for it. Now quiet! They're about to announce the lottery numbers.''}
+#simpsons[Son, if you really want something in this life, you have to work for it. Now quiet! They're about to announce the lottery numbers.]
 
 
 // The goal of \acrshort{adcom} is to evaluate your research experience, potential, and interest to see if you \emph{fit into its PhD program}! The emphasis here is \emph{fitting}, which varies from school to school, faculty to faculty, and even from year to year.  
 // The committee will look at various factors, but the most important ones are letters of recommendation (LORs),  statements of purpose (SOP), and research background and experience, e.g., publications.
 
-
-// \chapter{Letters of Recommendation (LoR)}\label{chap:lor}
+ 
+= Letters of Recommendation (LoR) <chap:lor>
 // \chapterinfo{LORs are very important, but only if they are \textbf{personalized} and \textbf{research focused}.}
 
-// \myepigraphsimpsons{``To whom it may concern… D'oh!''}
+#simpsons[To whom it may concern… D'oh!]
 
 // \begin{center}
 //   \includegraphics[width=0.6\linewidth]{files/c6.png}
@@ -522,7 +524,8 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // \end{commentbox}
 
 
-// \section{LoR Writers}\label{sec:lor-writers} \sectioninfo{LoR writers should be someone who (i) can talk in depth about your research experience and potential and (ii) have the credibility to evaluate your research ability.}
+== LoR Writers <sec:lor-writers>
+// \sectioninfo{LoR writers should be someone who (i) can talk in depth about your research experience and potential and (ii) have the credibility to evaluate your research ability.}
 
 
 // Choose your LoR writers carefully, as they can make or break your application. LoR writers are often your research advisers and professors who have mentored you in research. A \emph{strong} LoR is from people who meet the following two criteria:
@@ -536,7 +539,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 
 
-// \subsection{LoR from Well-Known People}\label{sec:famous-lor} 
+// \subsection{LoR from Well-Known People <sec:famous-lor} 
 
 
 // Having a strong letter from well-recognized researcher (\autoref{chap:research-achievements}) can \emph{significantly boost} your application. Such letters can outweigh other weaknesses such as limited publications or low GPA. Adcom members trust people they know or have heard about and respect.  A well-known researcher is unlikely to recommend someone who is not good because it would damage their reputation.
@@ -556,7 +559,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 
 
-//   \subsection{Generic Letters are Bad}\label{sec:generic-letters} 
+//   \subsection{Generic Letters are Bad <sec:generic-letters} 
 //   When the writers do not know much about the applicants (e.g., just taking some course with them or not making any impression to write about), they might write a \emph{generic} and short letter, which is not useful and also considered weak. 
   
 //   \emph{This does not mean the ref writer is not good or does not care about you}, but they just do not know you well enough to write a strong letter.
@@ -572,7 +575,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
   
 
-// \subsection{LoRs from Dept Chair, Dean, or Supervisor at Work}\label{sec:admin-letters}
+// \subsection{LoRs from Dept Chair, Dean, or Supervisor at Work <sec:admin-letters}
 
 // Many students, especially international applicants, try to get LoRs from high-ranking administrators in their universities such as department chair/head, dean, or director. The students never worked with these people (they might take a class or so with these profs), but mistakenly believe that these LoRs are valuable due to the writer's high position in the university.
 // However, as mentioned in~\autoref{sec:generic-letters} such a generic LoR has little value because the writer does not know you well and can talk in depth about your research ability. 
@@ -597,7 +600,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 
   
-// \subsection{Self-written Letters are Bad}\label{sec:self-letters}
+// \subsection{Self-written Letters are Bad <sec:self-letters}
 
 // Many letter writers ask students to write their own letters---a common practice in many countries. Unfortunately, such letters have \emph{little value} and are considered weak by reviewers---why can you not even find someone who cares or knows enough about you to write a candid personal reference letter?  Instead of the ref. writer talking about you, in it is you who write about yourself (and they just sign the letter). 
  
@@ -611,7 +614,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // \end{commentbox}
 
 
-// % \subsection{Not having LoRs from Research Advisors or Mentors}\label{sec:no-research-lor}
+// % \subsection{Not having LoRs from Research Advisors or Mentors <sec:no-research-lor}
 
 // % Sometimes students do not want to ask their research advisors or mentors for LoRs, e.g., they didn't have a good relationship with them, they think that the advisors might not write a strong letter, or they do not want to reveal their intention to go abroad.  So the question is would adcom raise a concern if the student does not have a LoR from their research advisors or mentors?
 
@@ -621,7 +624,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 
 
-// \section{Asking for LoRs}\label{sec:asking-lor}
+== Asking for LoRs <sec:asking-lor>
 // \sectioninfo{Ask for LoRs at least a month before the deadline.  Waive your right to see the letter. Help your writers by providing details about your research experience and potential.}
 
 
@@ -633,7 +636,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // \begin{figure}
 //     \centering
 //     \includegraphics[width=0.6\linewidth]{files/no-bandwidth.jpeg}
-//     \caption{\href{https://www.reddit.com/r/gradadmissions/comments/1oibrgy/i_feel_lost_my_prof_i_worked_with_for_a_year_and/}{Reddit}!}\label{fig:no-bandwidth}
+//     \caption{\href{https://www.reddit.com/r/gradadmissions/comments/1oibrgy/i_feel_lost_my_prof_i_worked_with_for_a_year_and/}{Reddit}! <fig:no-bandwidth}
 // \end{figure}
 
 
@@ -657,7 +660,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 
 
-// \subsection{Waiving Your Right}\label{sec:waive-right}
+// \subsection{Waiving Your Right <sec:waive-right}
 
 // When you ask someone to write a letter for you, \emph{you should always waive your right}.
 // Choosing not to look at a reference letter is pretty standard in school and job applications. When you waive your right to see the letter, it adds a layer of trust, showing you're confident in your choice of referees and that you're not trying to twist their words. It's also about keeping things open and honest between you and your letter writers and encourages them to be real about your strengths and qualifications. Plus, it keeps things private.
@@ -669,7 +672,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // \end{warningbox}
   
 
-// \subsection{Helping Your LOR Writer}\label{sec:help-your-LOR-writers}
+// \subsection{Helping Your LOR Writer <sec:help-your-LOR-writers}
 
 //  As mentioned in~\autoref{sec:generic-letters} and~\autoref{sec:self-letters}, you should not write your own letter and generic letters do not give much value. Thus, to help your writer to write a strong, customized LoR, you can provide them details or unique things about yourself. For example, let them know about your GPA, research and work experience, papers (if any), or anything you want them to mention.  If the GPA in your program is highly competitive (\autoref{sec:gpa}) and they know that, remind them to talk about it in the LOR. 
 // You can also provide them with a draft of your SOP so that they can see what you are saying about yourself and complement that with their own perspective.
@@ -681,7 +684,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // \end{commentbox}
   
   
-// \subsection{Reminding Your Writers}\label{sec:remind-writers}
+// \subsection{Reminding Your Writers <sec:remind-writers}
 
 // After entering your writers' information in the application system, you should tell your writers about that and let them know they will soon receive an email from the university to submit their letters.  You should also tell them when you submit your application and remind them to submit their letters on time if they haven't done so. 
 
@@ -745,7 +748,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
     
 //     Your letter of recommendation is due by \textbf{12 p.m. (Noon) EST on December 10, 20XX}. Thank you for taking the time to respond.
 // \end{examplebox}
-// \caption{Examples of LOR invitation emails}\label{fig:lor-invitations}
+// \caption{Examples of LOR invitation emails <fig:lor-invitations}
 // \end{figure}
 
 
@@ -753,7 +756,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 // Thus you do want to send reminders because professors can be quite busy (\autoref{sec:busy}) and might forget to submit their letters, especially when there is no explicit deadline. However, do not send too many reminders as that can be annoying to the writers.
 
-// \subsection{Thanking and Updating Your Writers}\label{sec:thank-writers}
+// \subsection{Thanking and Updating Your Writers <sec:thank-writers}
 // After your application is submitted and your writers have submitted their letters---i.e., the wait begins (\autoref{part:after-apply})---you should send quick thank you notes to your writers.  This  serves both as an acknowledgement that you know they have submitted the letters and as an appreciation for their help.
 
 // You should also update them with the outcome of your application, regardless of whether you are admitted or not.  In addition to being a common courtesy, this can also help maintain a good relationship with your writers (\autoref{sec:maintaining-relationships}), which can be useful in the future (e.g., if you need another letter for another round of applications or for a job reference).
@@ -761,12 +764,12 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // More generally, you should do the same for anyone who has helped you during the application process, such as profs. who provided advice, mentors who guided you, and friends and family who supported you. 
 
 
-// \section{My Perspective}\label{sec:my-lor-perspective}
+== My Perspective <sec:my-lor-perspective>
 // \begin{commentbox}
 // In this Reddit post \url{https://www.reddit.com/r/gradadmissions/comments/1p0lkim/perspective_on_lors_after_sending_a_big_batch/}, I provide my perspective about LoRs and what I expect from my students when they ask me to write for them.  You can share this with your writers if you think it is useful. 
 // \end{commentbox}
 
-// \subsection{How Do I Write a LoR?}\label{sec:lor-writing}
+// \subsection{How Do I Write a LoR? <sec:lor-writing}
 // \begin{commentbox}
   
 // If a student asks me to write letter for them, I will generally agree as I believe it is my responsibility. I will ask them to waive their right to see the letter (\autoref{sec:waive-right}), and will not write if they do not do so.\\
@@ -784,7 +787,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 // \end{commentbox}
 
-// \subsection{Will It Be Annoying If You Ask For Many Letters?}\label{sec:many-letters}
+// \subsection{Will It Be Annoying If You Ask For Many Letters? <sec:many-letters}
 // \begin{commentbox}
 // As mentioned in~\autoref{sec:my-lor-perspective} I personally do not mind writing many letters for my students \emph{once I have agreed to write for them} (\autoref{sec:lor-writing}). Profs. in general are used to writing many letters, especially during the application season. Moreover, once a letter is written, it can be reused for multiple applications, so it does not take much time to submit the letter to different universities (nore more than 5 minutes per submission).
 
@@ -799,22 +802,22 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 
 
-// \chapter{Research Experience}\label{chap:research-experience}
+= Research Experience <chap:research-experience>
 // \chapterinfo{Publications are not \textbf{required} but can \textbf{greatly help}. Papers in good venues are concrete evidence that you have successfully engaged in research.}
 
-// \myepigraphsimpsons{``I've got to study harder and publish faster!''}
+#simpsons[I've got to study harder and publish faster!]
 
 // Here we look at publications and other research experiences that can strengthen your application.
 // \autoref{chap:research-opportunities} provides more information on how to find research opportunities, e.g., during your undergrad study.
 
 
-// \section{Publications}\label{sec:publications} 
+== Publications <sec:publications> 
 
 // \begin{figure}
 //     \begin{center}
 //         \includegraphics[scale=0.3]{files/wu.jpeg}
 //     \end{center}
-//     \caption{Applicants to top CS programs have multiple first-authored papers at top places.}\label{fig:wu}
+//     \caption{Applicants to top CS programs have multiple first-authored papers at top places. <fig:wu}
 // \end{figure}  
 
 // The most concrete evidence of research ability is having \emph{papers in reputable international conferences or journals}.
@@ -854,23 +857,26 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 //       \textbf{Vu}: One way is looking at where well-known researchers publish. For example, if you are interested in a field X, you can use CSRankings (\autoref{sec:csrankings}) or CSPicks (\autoref{sec:cspicks}) to look at active faculty in X, and then look at their websites to see where they publish at.
 //   \end{questionbox}
 
-// \section{Work Experience} Research experience at \emph{well-known laboratories}, such as Microsoft Research, can strengthen your application.  The emphasis here is \emph{research} work, not software development or non-research work. For example, working at a FAANG (Facebook, Amazon, Apple, Netflix, Google) company as a software engineer does not count as research experience. While it can be helpful for MS applications (\autoref{chap:ms}), software development, even at a top company, does not demonstrate your research ability and potential for a PhD program. 
+== Work Experience
+
+Research experience at \emph{well-known laboratories}, such as Microsoft Research, can strengthen your application.  The emphasis here is \emph{research} work, not software development or non-research work. For example, working at a FAANG (Facebook, Amazon, Apple, Netflix, Google) company as a software engineer does not count as research experience. While it can be helpful for MS applications (\autoref{chap:ms}), software development, even at a top company, does not demonstrate your research ability and potential for a PhD program. 
 // Similarly, a LoR from your supervisor for non-research experience might not count much (\autoref{sec:admin-letters}). So do not spend much time talking about development job in your SOP.
 
 
 // Note that adcom reviewers might not be familiar with all research labs, especially those outside the US. For example, while VinAI is well-known in Vietnam and potentially in Asia, it might not be well-known in the US. So you or your LoR writers should explicitly say something about them in your statement or letter.  In general, if you did some good research work, then you should mention that in your SOP and ask your supervisor to write about it in their LOR (\autoref{chap:lor}).
 
-// \section{Competitions}\label{sec:competitions}
+
+== Competitions <sec:competitions>
 
 // Winning \emph{internationally recognized competitions} can demonstrate your research potential.
 // For example, participating in Math Olympiads if you want to do theory or winning ACM programming contests if you want to ``build'' systems (e.g., research prototypes).
 // So do talk about them in your SOP (\autoref{chap:sop}) and have your LoR writers mention them in their letters (\autoref{sec:help-your-LOR-writers}).
 
 
-// \chapter{Statement of Purpose (SOP)}\label{chap:sop}
+= Statement of Purpose (SOP) <chap:sop>
 // \chapterinfo{SOP is important. Write it in such a way that makes you \textbf{stand out}.}
 
-// \myepigraphsimpsons{``All my life I've had one dream: to achieve my many goals.''}
+#simpsons[All my life I've had one dream: to achieve my many goals.]
 
 // \begin{center}
 //   \includegraphics[scale=0.5]{files/c2.png}
@@ -919,13 +925,13 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // \end{commentbox}
 
 
-// \section{Kiss of Death in SOP} \label{sec:kiss-of-death-sop}
+== Kiss of Death in SOP} <sec:kiss-of-death-sop>
 
 
 // \begin{figure}
 //   \centering
 //     \includegraphics[scale=0.25]{files/is-this-sop-enough.jpeg}
-//     \caption{Is this SOP enough (\href{https://www.reddit.com/r/gradadmissions/comments/1p2ggxu/is_this_sop_enough/}{Reddit})? No, a broken heart emoji looks desperate. You need to stand out \faUserSecret{}!}\label{fig:is-this-sop-enough}
+//     \caption{Is this SOP enough (\href{https://www.reddit.com/r/gradadmissions/comments/1p2ggxu/is_this_sop_enough/}{Reddit})? No, a broken heart emoji looks desperate. You need to stand out \faUserSecret{}! <fig:is-this-sop-enough}
 // \end{figure}
 
 
@@ -946,7 +952,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // CS academics like using \LaTeX{} (common way to write our papers and other documents), so write your SOP using \LaTeX{} (with Times or default font, 11pt, and 1-inch margin as described in~\autoref{chap:writing-latex}).
 // \end{itemize}
 
-// \section{Using AI}\label{sec:using-ai}
+== Using AI <sec:using-ai>
 
 // As AI and LLMs become more popular, many students wonder if they could use AI tools such as ChatGPT to help with their statements and if the university or adcom reviewers would check and penalize them for doing so.
 
@@ -962,10 +968,10 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // %   \item \href{http://www.pl-enthusiast.net/2022/10/03/how-to-write-a-grad-school-personal-statement/}{How to Write a Grad School Personal Statement} by Mike Hicks
 // %   \item     \href{https://cs-sop.notion.site/cs-sop/CS-PhD-Statements-of-Purpose-df39955313834889b7ac5411c37b958d?p=f5d5980a71524ebaa4e6ae57266b847c&pm=s}{CS PhD SOP database} by cs-sop.org
 // % \end{itemize}
-// % \subsection{Outline of a LOR}\label{sec:lor-outline}
+// % \subsection{Outline of a LOR <sec:lor-outline}
 
 
-// \section{Diversity Statement}\label{sec:diversity-statement}
+== Diversity Statement <sec:diversity-statement>
 
 // Some universities require a \gls{diversity-statement}---a statement about 
 // Diversity, Equity, and Inclusion (DEI)---as part of the application.  While the topic on DEI  has become politically contested in the U.S., you should be prepared to address it when asked. Many students, especially international ones, find this statement confusing because they are unsure what it is about (truth is, even people in the U.S. struggle with this topic).
@@ -997,12 +1003,14 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 
 
-// \chapter{Your School and Grades}\label{chap:your-school}
+= Your School and Grades <chap:your-school>
 // \chapterinfo{Your schools might not as well-known as you think.  High grades probably won't help much, but bad ones likely will raise concerns.}
 
-// \myepigraphsimpsons{``Woohoo! I'm a college man! I won't need my high school diploma anymore''}
+#simpsons[Woohoo! I'm a college man! I won't need my high school diploma anymore]
 
-// \section{School} Graduating from top universities \emph{that adcom members recognize}  helps quite a bit. 
+== School
+
+Graduating from top universities \emph{that adcom members recognize}  helps quite a bit. 
 // The emphasis here is \emph{``that adcom members recognize''}.  The reason is similar to LoRs from well-known researchers (\autoref{sec:famous-lor}). If we know your school has a good reputation, then we can trust its education and grades. Otherwise, we are uncertain about the quality of the school and the grades you received.
 // For example, if you are an international student and your school is well-known, then it is \emph{``top foreign''}, which is a plus.
 // However, if we do not know much about schools in your country, then we are uncertain about the quality of your school and likely treat your school as \emph{``unknown foreign''}, which can be a minus point.
@@ -1018,7 +1026,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // \begin{commentbox}[Deepak:]
 //   If an applicant is anxious about their school not being known outside their country, they can provide information about their school and department, with independent sources where such information can be verified.
 // \end{commentbox}
-// \section{Grades}\label{sec:gpa}
+== Grades <sec:gpa>
 
 // Compared to other factors such as LoRs (\autoref{chap:lor}) and research experiences (\autoref{chap:research-experience}), grades generally do not matter much for CS PhD admission.  
 // In fact, many CS faculty members themselves have bad grades in undergrad courses (and some were proud of that!).
@@ -1028,7 +1036,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // \end{commentbox}
 
 
-// \subsection{Good Grades Won't Help Much}\label{sec:good-grades}
+// \subsection{Good Grades Won't Help Much <sec:good-grades}
 
 // PhD in CS is a research degree and doing well in courses does not necessarily mean you can do research---other factors such as research experiences, pubs, LoRs are more important. Thus, do not assume that having a high GPA (e.g., 3.8/4.0 or 9.0/10) will help much in your application. 
 
@@ -1060,14 +1068,14 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // GMU College of Engineering and Computing requires a minimum GPA of 3.0/4.0 for PhD applications, and autorejects applications below this threshold.
 // \end{commentbox}
 
-// \chapter{Standard Tests (GRE and IELTS)}\label{chap:standard-tests}
+= Standard Tests (GRE and IELTS) <chap:standard-tests>
 // \chapterinfo{Standard tests are \textbf{not} important. \acrshort{GRE} typically \emph{is not} required. For standard English tests (not required for domestic students), just do enough to pass the minimum requirements.}
 
 
-// \myepigraphsimpsons{``I've got to study harder. Everyone knows standardized tests are biased against the poor, the lazy, and the stupid.''}
+#simpsons[I've got to study harder. Everyone knows standardized tests are biased against the poor, the lazy, and the stupid.]
 
 
-// \section{GREs Are Optional and Do Not Matter for PhD Admissions}\label{sec:gre}
+== GREs Are Optional and Do Not Matter for PhD Admissions <sec:gre>
 
 // While a few schools still require taking the \acrfull{GRE} exam (e.g., UCF), most good CS PhD programs in the US \textbf{no longer} require it. The reason is that GRE scores do not correlate well with research ability, which is the most important factor for PhD admission. Note that many faculty members themselves did not take the GRE or had bad scores.
 
@@ -1083,7 +1091,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 // Note that while GRE is not important for CS PhD admission, it might be required or important for MS admission (\autoref{chap:ms}). This is because MS programs are more course-based and thus care more about grades and standardized tests.
 
-// \section{English Tests (IELTS, TOEFL)}\label{sec:english-tests} 
+== English Tests (IELTS, TOEFL) <sec:english-tests> 
 
 // Unless your degrees are from the US (e.g., you did your undergrad or MS in the US), or certain countries such as \href{https://www.gmu.edu/international/english-language-requirements}{these}, you will likely need to take standardized English tests. On one hand you will need to show some level of English proficiency; but on the other hand, you do not need to have very good scores in these tests (many adcom members themselves were once international students and struggled with English).
 
@@ -1119,11 +1127,11 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 
 
-// \chapter{Other Materials}\label{chap:other-materials}
+= Other Materials <chap:other-materials>
 
-// \myepigraphsimpsons{``I'm not a college graduate. I'm not even a high school graduate. But I'm a pretty good judge of character.''}
+#simpsons[I'm not a college graduate. I'm not even a high school graduate. But I'm a pretty good judge of character.]
 
-// \section{CV}\label{sec:cv}
+== CV <sec:cv>
 // \sectioninfo{Highlight and summarize major achievements such as major publications and competitive programming awards.}
 
 // Most schools allow you to upload your CV with your application. The main difference between a CV and a resume is that the former is more comprehensive and longer, while the latter is shorter and focuses on job-related experiences. So you don't need to adhere to the 1-page rule of resume in job searching, CV has no such requirement and is often longer.  
@@ -1135,17 +1143,17 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 //     Most applicants do not have much to put in their CVs. Thus adcom members usually do not pay much attention to CV's (and definitely do not screen applicants based on them). So do not spend too much time on your CV, just make sure it is easy to skim through (\autoref{sec:ievaluate}) and well-organized around research activities and achievements.
 // \end{commentbox}
 
-// \section{Writing Sample}\label{sec:writing-sample}
+== Writing Sample <sec:writing-sample>
 // It is a \emph{good idea} to upload a writing sample, e.g., a paper you wrote, a report, or a thesis.  Whether the paper is published, not published, on Arxiv, or even rejected (but you think it's good), you should upload it. Because samples are part of the application package, adcom members can quickly skim through it to see your research and writing abilities.  
 
 // A quick read through a writing sample can reveal a lot about your research work and writing skills, which sometimes are not well presented in your SOP or LORs. But of course if your writing sample is not good, then it can hurt your application. So make sure you upload something serious and well-written.
 
-// \section{Online Courses and Certificates}
+== Online Courses and Certificates
 
 // These do not carry much weight as they do not show research ability. We do not care much if you have taken an online Coursera AI course or have a professional certificate from Microsoft.
 // However, as mentioned in \autoref{sec:non-stem}, if you do not have a CS background, you might be able to use these to show you have sufficient CS knowledge.
 
-// \section{Personal Website and (Github) Projects}\label{sec:personal-website}
+== Personal Website and (Github) Projects <sec:personal-website>
 // These are \emph{not} required but are increasingly common.  In CS, academic websites are \emph{very} common and used to showcase research, publications, and projects.  You don't need fancy websites with tons of javascript and animations. A simple website with your name (and sometimes photo), research interests, publications, and projects is enough. You can use free services such as \href{https://github.io}{GitHub Pages} to create your website. Many CS students also use Github to host their projects and demonstrate their involvement in open-source projects.  
 
 // You can mention your website and projects in your CV (\autoref{sec:cv}) and SOP (\autoref{chap:sop}).
@@ -1157,9 +1165,9 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // \end{commentbox}
 
 
-// \part{After You Apply}\label{part:after-apply}
+// \part{After You Apply <part:after-apply}
 
-// \chapter{Interview and The Waiting Game}\label{chap:interview}
+= Interview and The Waiting Game <chap:interview>
 // \chapterinfo{Getting an interview is typically a good sign; but no interview does not mean rejection.}
 
 // \myepigraphsimpsons{Bart: ``Are we there yet? Are we there yet? Are we there yet?''\\
@@ -1174,7 +1182,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // \end{center}
 
 
-// \section{Interviews}\label{sec:interviews} 
+== Interviews <sec:interviews> 
 
 // After you apply, you \emph{might} get interviews. The most common case is that a specific prof. is interested in working with you and wants to chat, e.g., to offer RA (\autoref{sec:ra}). In some cases, the interview is done by several professors, e.g., to see if a student fits in their group or to recruit a very strong student to their program. 
 
@@ -1209,14 +1217,14 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 // \paragraph{Updating your profile} If you have important  achievements after you submitted your application, e.g., new top publications or big fellowship awards, you can mention to your interviewer. If you did not have interviews, you can try to ask the CS dept to update your application (though no guarantee that they will consider them). However, in general, you should not send emails to update your profile unless you really have important updates.
 
-// \section{Not Getting Interviews}\label{sec:no-interview}
+== Not Getting Interviews <sec:no-interview>
 // While it is generally good to get an interview, not getting one \emph{does not} mean you're out.  Many programs do not have the tradition of interviewing applicants. For example, at GMU, most admitted students with TA (\autoref{sec:ta}) do not go through interviews.
 
 // However, no interviews mean that you will not likely get an RA (\autoref{sec:ra}), which is offered by an individual faculty (if they want you to do research for them, then they likely will interview you first).  If you have no interviews, your application (and TA/fellowship funding) is decided by the adcom.
 
 
 
-// \section{Notification Timeline: Why rejection letters are sent so late?}\label{sec:late-rejection}
+== Notification Timeline: Why rejection letters are sent so late? <sec:late-rejection>
 // \sectioninfo{Grad programs often wait for accepted students to make their decisions, typically by \Gls{April15}, before sending out rejection letters.}
 
 // %"Just reject me already!" is a common sentiment among applicants.  Indeed, school will first send out admission offers to the top candidates. They do not send out rejection letters because there is still a chance that some of the top candidates will decline the offer. If they do, then the school will go to the next set of candidates and send out offers to them.  This process continues until all spots are filled.  This is why you might not hear back until late in the admission cycle.
@@ -1235,7 +1243,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // % \begin{figure}
 // %   \centering
 // %     \includegraphics[scale=0.3]{files/waitlist.jpg}
-// %     \caption{Email from the University of Rochester about sending offers and waitlist.}\label{fig:waitlist}
+// %     \caption{Email from the University of Rochester about sending offers and waitlist. <fig:waitlist}
 // % \end{figure}
 
 
@@ -1286,11 +1294,11 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // %
 
 
-// \chapter{Getting Admitted}\label{chap:accepted}
+= Getting Admitted <chap:accepted>
 // \chapterinfo{Congrats! Now it is your turn to evaluate the school!
 // Attend \emph{Open House} to learn more about the place and \emph{interview} profs---they would be much more willing to talk to you now.}
 
-// \myepigraphsimpsons{``Oh... and how is education supposed to make me feel smarter? Besides, every time I learn something new, it pushes some old stuff out of my brain. Remember when I took that home wine-making course and I forgot how to drive?''}
+#simpsons[Oh... and how is education supposed to make me feel smarter? Besides, every time I learn something new, it pushes some old stuff out of my brain. Remember when I took that home wine-making course and I forgot how to drive?]
 
 // By around mid-March you should hear back from most PhD programs that want to admit you. 
 // But you likely won't hear back from schools that do not want to admit you (\autoref{sec:late-rejection}), e.g., you're on their wait list.
@@ -1312,13 +1320,13 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 
 
-// \section{Checking Status, Accepting, Postponing, and Decline Offers}\label{sec:accept-postpone-decline}
+== Checking Status, Accepting, Postponing, and Decline Offers <sec:accept-postpone-decline>
 
 // Students often ask about what to do after they get an interview or an offer from a professor, e.g., if they can followup to find out about their status, or is it OK to postpone or accept/reject offers?, and most importantly, how to do so without offending anyone. 
 
 // \paragraph{Checking your application status and following up emails} If you have interviewed and not heard back from a professor after a few weeks or especially around the time when universities send out their admission decisions (around late Feb-- mid-Mar), you can email to check.  You can follow up the interview invitation and say: \emph{``Thanks for chatting with me. I am very excited about the opportunity to work with you.  Could you please let me know if you have made a decision or if you need more information from me?''}.  If you have new updates, e.g., new publications or new fellowship awards, or even new offers from other professors or schools, you can also mention that.
 
-// Profs. are often very busy (\autoref{sec:busy}), especially during admission time when they have to many reviews and interviews.  They might not have time to respond to every email.  If you do not hear back after a week, you can send another email to check again.  If you still do not hear back, you can assume that you are not selected.
+// Profs. are often very busy (\autsecoref{sec:busy}), especially during admission time when they have to many reviews and interviews.  They might not have time to respond to every email.  If you do not hear back after a week, you can send another email to check again.  If you still do not hear back, you can assume that you are not selected.
 
 // \paragraph{Accepting an offer} If you decide to accept an offer, you can say: \emph{``Thank you for the offer.  I would like to accept it and look forward to working with you.  Could you please send me more details about the offer and what to do next?''}. The prof. will likely send you more details about the offer and what to do next.  If you decide to accept an offer, do so quickly.
 
@@ -1341,7 +1349,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // Ultimately, this choice is personal and involves a balance between personal benefit and ethical considerations.
 // \end{commentbox}
 
-// \section{Offer Letters and Terms}\label{sec:offer-letters}
+== Offer Letters and Terms <sec:offer-letters>
 // \sectioninfo{The offer letter is essentially an employment contract.  Make sure to read and understand the terms of the offer.}
 
 
@@ -1350,7 +1358,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 //   \fbox{
 //     \includegraphics[scale=0.5]{files/admission-letter-started-with-saying-i-am-not-happy.jpeg}
 //     }
-//     \caption{When you get an admission letter that starts with \emph{``I am not happy to inform you...''} (\href{https://www.reddit.com/r/gradadmissions/comments/1bc7e2a/admission_letter_started_with_saying_i_am_not/}{Reddit}).}\label{fig:admission-letter-started-with-saying-i-am-not-happy}
+//     \caption{When you get an admission letter that starts with \emph{``I am not happy to inform you...''} (\href{https://www.reddit.com/r/gradadmissions/comments/1bc7e2a/admission_letter_started_with_saying_i_am_not/}{Reddit}). <fig:admission-letter-started-with-saying-i-am-not-happy}
 // \end{figure}
 
 
@@ -1374,20 +1382,20 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // \begin{figure}
 //     \centering
 //     \includegraphics[page=1,width=.80\textwidth]{files/gra_offer.pdf} 
-//     \caption{An example of a GRA offer letter.}\label{fig:gra-offer}
+//     \caption{An example of a GRA offer letter. <fig:gra-offer}
 // \end{figure}
 
 
 // \begin{figure}
 //     \centering
 //     \includegraphics[page=1,width=.80\textwidth]{files/gta_offer.pdf} 
-//     \caption{An example of a GTA offer letter.}\label{fig:gta-offer}
+//     \caption{An example of a GTA offer letter. <fig:gta-offer}
 // \end{figure}
 
 
 // %\includepdf[pages=1]{files/gra_offer.pdf}
 
-// \section{Negotiating PhD offer (e.g., having multiple offers)?}\label{sec:negotiate}
+== Negotiating PhD offer (e.g., having multiple offers)? <sec:negotiate>
 // \sectioninfo{You will not be able to negotiate stipend, but you can ask for specific start date, TA assignment, and conference travel budget.}
 
 
@@ -1398,7 +1406,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 
 
-// \section{Buying Computer Equipment}\label{sec:buying-equipment}
+== Buying Computer Equipment <sec:buying-equipment>
 // \sectioninfo{Ask your prof. if they can buy computer equipment and such for your research.}
 
 // Students understandably get excited about their upcoming PhD journey and want to buy new computer equipment and electronics to prepare. However, you should first check with your professor.  They might have funding to buy you computers and other equipment (e.g., software, books, keyboards, headphones, tablets, etc). Many CS programs also provide budget or computer equipment---such as a laptop---to incoming PhD students.
@@ -1408,14 +1416,14 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 // Finally, keep in mind that these computers and equipment would be university property, which might be monitored and have certain restrictions, e.g., do not install illegal software on them (\autoref{sec:illegal-software}).  You will likely need to return them when you graduate. 
 
-// \chapter{Dealing with Rejection}\label{chap:not-accepted}
+= Dealing with Rejection <chap:not-accepted>
 // \chapterinfo{Rejection is part of academia.  Common reasons for rejection include aiming too high, not a good fit, and bad luck.  Do not take rejection personally. Learn from it and try again.} 
 
-// \myepigraphsimpsons{``You tried your best and you failed miserably. The lesson is: never try.''}
+#simpsons[You tried your best and you failed miserably. The lesson is: never try.]
 
 // Rejection is a common part of the PhD application process.  In fact, rejection is part of academia (e.g., you will get rejected for papers, grants, jobs, etc).  Don't take rejection personally and to learn from it.
 
-// \section{Try Again!}\label{sec:try-again}
+== Try Again! <sec:try-again>
 
 // If you do not get admitted to any schools or don't want to go to the ones that admit you, try again next year!  Grad. admission can involve randomness and noise. In the meantime, you can work on improving your profile, e.g., get more research experiences, publish more papers, improve your connections for stronger LoRs, etc. See rejection reasons (\autoref{sec:why-rejected}) and additional advice to improve your chance (\autoref{sec:stand-out}).
 
@@ -1433,12 +1441,12 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // No, don't bother.  You will likely not get any useful feedback.  We are not willing (sometimes not allowed) to reveal your evaluation results or give you feedback on how to improve your profile. \emph{So just move on}.  If you really want advice, ask your professors, collaborators, ref writers, or those who have previously applied.
 
 
-// \section{Why did you get rejected?}\label{sec:why-rejected}
+== Why did you get rejected? <sec:why-rejected>
 // \subsectioninfo{You aim too high, are overqualified, or even because you applied to AI/ML, a super competitive field in recent years with many applicants.}
 
 // Many students lament that they get no interviews or are rejected and that the admission process seems random.  However, while it is true that the process can involve some luck and randomness, it is not completely random.  There are many reasons why you might get rejected, e.g., your profile is not as strong as you \emph{think} it is (\autoref{sec:profile-not-strong}).  Even if your profile is strong, you still can get rejected, e.g., aim too high (\autoref{sec:chance-me}), not a good fit, overqualified, having red flags, etc. 
 
-// \subsection{Your profile is \emph{not} as strong as you think}\label{sec:profile-not-strong}  
+=== Your profile is \emph{not} as strong as you think <sec:profile-not-strong>
 // I have seen multiple cases where students think they have a strong profile, but they do not. Here are some common examples.
 
 // Your \emph{LoRs} (\autoref{sec:lor-writers}) might not be as strong as you think. Your ref. writers---who might be very well-known within your institution---might not be very well-known internationally, or they might not be very active in research, or even know how to write a good letter. 
@@ -1451,7 +1459,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 //     \begin{examplebox}
 //       \emph{``The applicant has done some interesting work, but a lot of what they haves done so far has been only on the side of dataset creation, almost nothing on actual modeling or tackling some tasks. This of course has merits on its own, but it's more of an engineering feat rather than a research feat.''}\\
 //     \end{examplebox}
-//     \caption{Comment from an NLP researcher on an applicant with multiple NeurIPS papers.}\label{fig:comment-neurips}
+//     \caption{Comment from an NLP researcher on an applicant with multiple NeurIPS papers. <fig:comment-neurips}
 //   \end{figure}
 
 
@@ -1489,7 +1497,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // In general, these things are rare, but they do happen and cause concern to the adcom.
 
 
-// \subsection{``Chance me'' on Getting into T10 Programs}\label{sec:chance-me}
+// \subsection{``Chance me'' on Getting into T10 Programs <sec:chance-me}
 
 // Many international students aim for very top schools such as Stanford and MIT, and \Gls{ivy}. Every year Reddit and other forums have numerous students asking for evaluation of their chances of getting into these schools (the so called \emph{``chance me''} or \emph{``roast my CV/profile''} posts) and then later posts on being \emph{``ghosted and rejected everywhere''}. Here's my take on this (adapted from my post on \href{https://www.reddit.com/r/gradadmissions/comments/1fogyg5/reality_check_for_aspiring_phd_applicants_youre/}{Reddit}).:
 
@@ -1511,7 +1519,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 
 
-// \section{Standing Out: Increasing your admission chance}\label{sec:stand-out}
+== Standing Out: Increasing your admission chance <sec:stand-out>
 // \subsectioninfo{You can improve your profile by being unique and standing out.}
 
 // \begin{center}
@@ -1535,13 +1543,13 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // In \href{https://matt.might.net/articles/how-to-apply-and-get-in-to-graduate-school-in-science-mathematics-engineering-or-computer-science/}{his post}, Matt Might was initially unsure about an application. However, upon learning that the applicant had led a 100km hike in the Himalayas, he decided to accept the applicant.  This is a good example of being \emph{stand out}, and I would also advocate for that student as this shows they have the persistence and determination required for research.
 // \end{commentbox}
 
-// \part{Funding, Schools, and Profs.}\label{part:funding-schools-profs}
+// \part{Funding, Schools, and Profs. <part:funding-schools-profs}
 
-// \chapter{Funding}\label{chap:funding}
+= Funding <chap:funding>
 
 // \chapterinfo{TAs, RAs, and fellowships are main funding sources for PhDs.  TAs are provided by the department to help with classes. RAs are given by profs. to help with their research.  Fellowships, provided by the university, department, or external sources such as government or industry, give move flexibility but can be very competitive.}
 
-// \myepigraphsimpsons{``Bart, with \$10,000, we'd be millionaires! We could buy all kinds of useful things like ... love!''}
+#simpsons[Bart, with \$10,000, we'd be millionaires! We could buy all kinds of useful things like ... love!]
 
 // If you're admitted to a \emph{good} CS PhD program, you should not have to worry about funding!
 // In the US, the common types of funding for PhDs are \emph{graduate teaching assistant} (GTA or TA), \emph{graduate research assistant} (GRA or RA), and \emph{Fellowship}.
@@ -1553,7 +1561,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // \begin{table}
 //   \centering
 //   \small
-//   \caption{Different types of PhD funding. All cover tuition, insurance, and stipend.}\label{tab:funding}
+//   \caption{Different types of PhD funding. All cover tuition, insurance, and stipend. <tab:funding}
 //   \begin{tabular}{c|c|c|c}
 //     \toprule
 //     &\textbf{TA}&\textbf{RA}&\textbf{Fellowship}\\
@@ -1569,7 +1577,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 //   \end{tabular}
 // \end{table}
 
-// \section{Graduate Assistantship (TA/RA)}\label{sec:ta-ra}
+== Graduate Assistantship (TA/RA) <sec:ta-ra>
 // The most common type of funding is \textbf{graduate assistantship}, which is either TA or RA. Both TA and RA come with tuition waiving (you don't have to pay tuition), health insurance (this takes care of your insurance, which is a must-have in the US), and most importantly, your stipend (i.e., your salary). Some universities also give significant discounts or pay insurance for spouses/children.
 
 // Several things about stipends.  First, the amount of stipend \emph{varies} and depends on factors such as location (e.g., a stipend in the DC area is likely higher than in Lincoln, Nebraska due to higher living costs). Second, an \acrfull{AY}  is typically \emph{9-month} in the US, so the stipend is for 9 months. Third, you might get paid over the summer (\autoref{sec:summer-funding}) through funding from your professor or fellowship (typically no TA over the summer). Fourth, like most sources of income in the US, you will have to \emph{pay tax} on your stipend.  Finally, private universities might pay more for stipends, but they could have extra activity fees or some other hidden ones (e.g., you may need to pay some fees for each credit hour).
@@ -1585,7 +1593,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // \end{commentbox}
 
 
-// \subsection{Teaching Assistant (TA)}\label{sec:ta}
+// \subsection{Teaching Assistant (TA) <sec:ta}
 
 // TA is common in the beginning when you haven't found an adviser who would pay you RA. It is also common to sandwich between TA and RA (e.g., when your prof. does not have sufficient funding or you want to try the TA experience).
 
@@ -1607,7 +1615,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 // \paragraph{Where do TA funding come from?}  Typically, the department, depends on their enrollment and budget, gets TA funding from the college, which then distributes it to the departments.  The department then assigns TAs to courses based on their needs and the students' qualifications. For example, a department such as CS typically have many TAs due to high enrollment and many courses.  In contrast, a department such as Math might have fewer TAs due to lower enrollment and fewer courses. 
 
-// \subsection{Research Assistant (RA)}\label{sec:ra}
+// \subsection{Research Assistant (RA) <sec:ra}
 // RA is provided through a professor through their funding so you can work on their project.
 // You do not need to teach as an RA, so you can focus on your research. Depending on the professor, RA may be available during the summer. \autoref{sec:ra-cost} gives more details on RA budget.
 
@@ -1625,7 +1633,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 // Typically, each grant can support one or at most two students each year and each student costs up to about \$70,000 per year (\autoref{sec:ra-cost}), so professors need to apply for multiple grants to support multiple students.  This is the reason why professors often do not have the time to directly involve in research, e.g., doing experiments or writing papers, but instead mentor their students to do that. If a professor no longer has funding---a quite common situation, they might not be able to support you as an RA, in which case you would become TA (but still work with the same prof).  
 
-// \section{Fellowships/Scholarships}\label{sec:fellowships}
+== Fellowships/Scholarships <sec:fellowships>
 
 // Fellowship is another type of funding that students can get from the university, industries, or government.
 // Fellowships are typically competitive and generous, giving pretty much all benefits tuition/insurance that a TA/RA has.  They might even give higher stipends (including summer) and open doors for job opportunities such as internships.
@@ -1643,9 +1651,9 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 // In general, external fellowships are highly competitive and prestigious---you will stand out if you get one.  Every PhD student has pubs, but only a few would have the NSF GRFP\footnote{\url{https://www.alexhunterlang.com/nsf-fellowship} is a good starting place for the GRFP with lots of proposal examples.} or Microsoft fellowships. In fact, these are so prestigious that even if you didn't get it but make it to the final round or even \emph{``honorable mentioning''} you should put it on your CV.~\autoref{chap:fellowships} discusses the evaluation processes of the NSF GRFP and DoD NDSEG.
 
-// \section{Funding Miscs}
+== Funding Miscs
 
-// \subsection{Low Stipend?}\label{sec:low stipend}
+// \subsection{Low Stipend? <sec:low stipend}
 
 // Students often think their stipend is too low and not enough to live on.  For example, if you look at the stipend at GMU, which is around \$30K for 9-month, and then compare it to the cost of living in Fairfax, VA, which says you need \$70K to live in a 1-bed apartment, then you might be in a panic.
 
@@ -1656,7 +1664,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // For a full breakdown of how much a graduate student costs, see \autoref{sec:ra-cost}.
 
 
-// \subsection{Funding in the Summer}\label{sec:summer-funding}
+=== Funding in the Summer <sec:summer-funding>
 
 // Students often get confused about summer funding, e.g., if they will get paid during the summer.  This is a good question because PhD students have no classes over the summer and so are often more productive and produce good research. However, summer salary is largely depending on your funding source.
 
@@ -1674,7 +1682,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 // Finally, for fellowships (\autoref{sec:fellowships}) you might get paid over the summer depending on your fellowship (\autoref{sec:fellowships}). Good ones, e.g., from NSF, Google, and Microsoft, will pay you the whole year.
 
-// \subsection{How much do \textbf{YOU} cost?}\label{sec:ra-cost}
+// \subsection{How much do \textbf{YOU} cost? <sec:ra-cost}
 // \subsectioninfo{Your entire PhD program costs about \$400K in total, but you \emph{do not} pay for it.}
 
 // PhD students often ask why their salary is low compared to the large grants their advisers get. They also wonder why their offer letters sometimes show that their benefits are higher than what they receive (i.e., stipend).
@@ -1687,7 +1695,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 //   \centering
 //   \small
 //   \caption{GRA cost breakdown. F \& A is Facilities \& Administrative Cost Base and
-//     MTDC is Modified Total Direct Cost. These are things that the university can charge overhead to.}\label{tab:cost}
+//     MTDC is Modified Total Direct Cost. These are things that the university can charge overhead to. <tab:cost}
 //   \begin{tabular}{rcl}
 //     \textbf{Budget} & \textbf{Cost \$} & \textbf{Notes} \\
 //     \midrule
@@ -1720,20 +1728,20 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 
 
-// \chapter{Choosing Schools}\label{chap:choosing-school}
+= Choosing Schools <chap:choosing-school>
 // \chapterinfo{Not every university has a CS PhD program. Not every professor, even those in CS, can advise or graduate CS PhD students.}
 
-// \myepigraphsimpsons{``It's not the school you go to, it's what you do while you're there!''}
+#simpsons[It's not the school you go to, it's what you do while you're there!]
 // %\myepigraphsimpsons{``The answer to life's problems aren't at the bottom of a bottle. Heh heh! They're on TV!''}
 
 // Choosing a school and an adviser (\autoref{chap:choosing-adviser}) is clearly among the most important and difficult tasks when you apply and especially when you get admitted.  This is further complicated due to cultural differences (\autoref{chap:cultural}) and the unfamiliarity of international students with the US higher education system.  This section aims to mitigate some confusion and help you make informed decisions.
 
-// % \section{Choosing a University}\label{sec:choosing-university}
+// % \section{Choosing a University <sec:choosing-university}
 // % \sectioninfo{Select schools based on their CS program and faculty research interests.}
 
 // We will first discuss universities in the US that offer PhD in CS. Then we will talk about how to select them.
 
-// \section{Schools offering PhD in CS}\label{sec:schools-offering-phd}
+== Schools offering PhD in CS <sec:schools-offering-phd>
 
 // Most US universities have CS programs, but many of them do not have a CS \emph{PhD} program. These universities might offer just Bachelor's degrees (e.g., BS) and no graduate studies (i.e., no MS or PhD degrees), or they just offer MS programs (but no PhD). For example, Penn State in University Park has PhD in CS,  but Penn State in Harrisburg only has BS and MS in CS, and Penn State in York only has BS in CS.  On the other hand, multiple locations of the University of Texas, e.g., Austin, Dallas, and Arlington, have PhDs in CS.
 
@@ -1742,7 +1750,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 // % \subsection{R1, R2, ...}
 
-// \section{Selecting and Ranking Schools}\label{sec:selecting-ranking-schools}
+== Selecting and Ranking Schools <sec:selecting-ranking-schools>
 // \begin{center}
 //   \includegraphics[scale=0.5]{files/c1.png}
 // \end{center}
@@ -1753,7 +1761,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // \begin{figure}
 //   \centering
 //   \includegraphics[scale=0.18]{files/cspicks3.png}
-//   \caption{Using CSPicks to compare between CMU vs UIUC.}\label{fig:cspicks-compare}
+//   \caption{Using CSPicks to compare between CMU vs UIUC. <fig:cspicks-compare}
 // \end{figure}
 
 
@@ -1795,7 +1803,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // \end{commentbox}  
 
 
-// \section{Large/Well-known vs. Small/Unknown Programs}
+== Large/Well-known vs. Small/Unknown Programs
 
 // The ``feel-good'' advice is to go where it fits you and a good adviser is the most important. But, how do you know what would or would not fit you if you have never been there?   Also, how do you know if a prof. is good and compatible with you or not if you have never worked with them?  So while this advice sounds good, it is vague and not actionable because you do not have enough information to decide.
 
@@ -1831,7 +1839,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // % The general advice is to prioritize a strong faculty member over a high-ranked school because your success in research depends more on your adviser than the school's name. Still, a good school can provide better resources, networking opportunities, and and more competitive environment---and there's always that ``household name'' that makes you feel good. So ranking does matter!
 
 
-// \section{PhD in other Related Fields: CE, IST, Cybersecurity}\label{sec:related-fields}
+== PhD in other Related Fields: CE, IST, Cybersecurity <sec:related-fields>
 
 // You \emph{do not} need to do a PhD in CS to work in CS areas. For example, in addition to a traditional CS department, GMU has IST and Cybersecurity departments, both of which have faculty with PhD in CS and work on CS topics (e.g., AI, Security, Robotics).  So you still can do CS research and publish in CS-focused venues even if you're not in a traditional CS program.  It is common to see faculty with PhD in CS in a non-CS department as well as faculty with non-CS PhD in a CS department.
 
@@ -1853,7 +1861,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 // % \begin{table}
 // % \centering
-// % \caption{Comparison between Large/Well-known vs. Small/Unknown CS Programs}\label{tab:large-vs-small}
+// % \caption{Comparison between Large/Well-known vs. Small/Unknown CS Programs <tab:large-vs-small}
 // % \begin{tabular}
 // % {r|c|c}
 // %   \toprule
@@ -1869,11 +1877,11 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // % \end{table}
 // % \subsection{Prestige vs. Opportunities}
 
-// \section{University Hierarchy}
+== University Hierarchy
 
 // \begin{figure}
 //   \centering
-//   \caption{University Hierarchy and Influence on CS PhD Admissions}\label{fig:university-hierarchy}
+//   \caption{University Hierarchy and Influence on CS PhD Admissions <fig:university-hierarchy}
 // \begin{tikzpicture}[
 //   scale=0.8, transform shape, % <-- adjust scale factor here
 //   node distance=1.2cm and 2cm,
@@ -1941,7 +1949,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // \end{commentbox}
 
 
-// \section{College/School}
+== College/School
 
 // Under the top administration are the various colleges or schools that house different academic departments. Common examples include the College of Engineering, College of Arts and Sciences, and increasingly, a separate College of Computing (e.g., like at Georgia Tech).  Schools are typically under a college, e.g., the School of Computing within the College of Engineering at UNL. But in some universities, the School is a standalone unit, e.g., the School of Computer Science at CMU.
 
@@ -1958,13 +1966,13 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 
 
-// \section{Department}
+== Department
 // Inside the department, the \textbf{Chair} (or Head) manages financial and personnel matters, including faculty hiring, promotions, resource allocation, and enrollment and admissions processes. Supporting them are \emph{associate chairs} of graduate and undergraduate studies and \emph{directors} of various programs. In addition, the Chair forms various committees to handle specific tasks, e.g., admissions, curriculum, and faculty hiring (search).  
 // The Chair reports to the Dean and is responsible for implementing college policies at the department level. 
 
 // While department chairs do not usually get involved in PhD admissions decisions (see how decisions are made in~\autoref{sec:how-decisions}), they set the overall direction and priorities that shape how many students are admitted and what resources are available to them.
 
-// \section{Faculty and Staff}
+== Faculty and Staff
 // In many cases adcom consults with faculty members who are potential advisers to get their input on applicants (\autoref{sec:applications-assigned}). Thus general faculty can influence admissions by recommending students they want to advise. 
 
 // In addition, a CS department has various \textbf{administrative staff} who handle day-to-day operations, e.g., contacting applicants, processing applications, and managing student records. While staff do not make admissions decisions, they ensure the process runs smoothly and efficiently---a critical behind-the-scenes role.
@@ -1972,16 +1980,16 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 
 
-// \chapter{Choosing an Adviser}\label{chap:choosing-adviser}
+= Choosing an Adviser <chap:choosing-adviser>
 // \chapterinfo{The best adviser is the one that \textbf{fits}, e.g., you can work well with, and has the ability to help you succeed. But you do not know that until you start working with them.}
 
-// \myepigraphsimpsons{``It's not easy being a mentor. But it sure is funny to watch other people screw up.''}
+#simpsons[It's not easy being a mentor. But it sure is funny to watch other people screw up.]
 
 // There is no one-size-fits-all answer to finding an adviser. The best adviser is the one that fits you, e.g., you can work well with, and has the ability to help you succeed. But how do you find such a person?
 
 // Fortunately, while some non-US programs require finding an adviser and research topic before starting the PhD (\autoref{sec:non-us-differences}), CS PhD programs in the US will typically give you a couple of years to ``shop'' for advisers and research topics.  This is especially true if you're admitted with TA (\autoref{sec:ta}), which gives you time to explore and find an adviser.
 
-// \section{Finding an Adviser}\label{sec:finding-adviser}
+== Finding an Adviser <sec:finding-adviser>
 
 // Assuming you're not familiar with any particular one, then first search for profs. that share similar research interests. For example, in CSRankings and CSPicks, if you want to work with PL, you can search for those published in PL conferences.  If you want to work with SE \emph{and} AI, you can search for faculty who work in both SE and AI.
 
@@ -2017,7 +2025,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // %   \item \href{https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-Advisor.pdf}{The Definitive ``what do I ask/look for'' in a PhD Adviser Guide}
 // % \end{itemize}
 
-// \section{Types of Faculty: Who can serve as a PhD adviser?}\label{sec:faculty-types}
+== Types of Faculty: Who can serve as a PhD adviser? <sec:faculty-types>
 
 // \emph{Not} every faculty can serve as your official PhD adviser. Understanding the different types of faculty roles will help you avoid common mistakes—like contacting the wrong person (\autoref{sec:contact}) for research opportunities or listing in your SOP (\autoref{chap:sop}) someone who can't actually supervise PhD students.
 
@@ -2102,7 +2110,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 // Professors with these titles are often tenure-line faculty, and therefore can advise PhD students. However, they may not be as available, especially if they are in high demand or have administrative responsibilities. For example, most department chairs are endowed chairs or distinguished professors, and they might not be too active in research or advising students. 
 
-// \section{Tenured or tenure-track faculty?}\label{sec:tenure-vs-tenure-track}
+== Tenured or tenure-track faculty? <sec:tenure-vs-tenure-track>
 
 // \begin{center}
 //   \includegraphics[scale=0.4]{files/c8.png}
@@ -2121,7 +2129,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // \begin{commentbox}[Hung:]
 //   I always encourage the students I admit to talk with my students and the students of other faculty in other schools who admitted them. You will unlikely hear straight-out complaints from current students in a prof's group. But sometimes what is important are things that they (current students) don't tell you. Pay attention to their ``level of excitement'' being in the group.
 // \end{commentbox}
-// \section{Faculty from Your Country}\label{sec:prioritizing-faculty}
+== Faculty from Your Country <sec:prioritizing-faculty>
 
 // Understandably many students prefer to work with faculty who came from their own country.
 // You feel more comfortable as they share the same language and culture, understanding your schools and background, and that they ``get'' you.
@@ -2140,7 +2148,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
   
 //   Thus, don't worry about this too much and just apply to the profs. you think are a good fit for you (\autoref{sec:finding-adviser}).  In fact, this might be an advantage because profs. who have many students from their own country might want to diversify their group and take students with different background.
 
-// \section{Should I Contact a Prof. Before Applying? How to Get a Positive Reply?}\label{sec:contact}
+== Should I Contact a Prof. Before Applying? How to Get a Positive Reply? <sec:contact>
 
 // \sectioninfo{Individually faculty member \emph{cannot directly admit} a student---so do not email and ask if you have a chance. However, faculty can \emph{advocate} for a student and therefore increase their admission chance---so contact and introduce yourself.}
 
@@ -2223,7 +2231,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // %   \item \autoref{sec:accept-postpone-decline} How to accept/postpone/decline PhD offers (and do it gracefully)
 // % \end{itemize}
 
-// \subsection{Kiss of Death in Emails}\label{sec:kiss-of-death-emails}
+// \subsection{Kiss of Death in Emails <sec:kiss-of-death-emails}
 
 // \begin{itemize}
 //     \item \textbf{Send emails to the wrong prof.}. Many students do not pay attention or know about this, but a very common reason why you don't get a reply is that you send email to profs. who do not / cannot advise CS PhD students (e.g., adjunct, emeritus, teaching, non-CS). See \autoref{sec:faculty-types} for details. While these profs. might be able to co-advise, they typically do not have the bandwidth, funding, and the desire to mentor students for research (they are already overloaded with teaching and other service duties). 
@@ -2248,7 +2256,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 //     \item \textbf{Fancy format}.  Do not use colors, fancy fonts or formats, e.g., bold. While not really a kiss of death, it is very annoying, especially for people in CS (and probably many other fields) who often prefer plain email messages.    
 // \end{itemize}
 
-// \subsection{Interpreting Response}\label{sec:interpreting-response}
+// \subsection{Interpreting Response <sec:interpreting-response}
 // Even if you avoid the kiss of death emails (\autoref{sec:kiss-of-death-emails}), you might still not get a reply.  There are many reasons why you might not get a reply, e.g., the prof. is not interested, they are too busy (\autoref{sec:busy}), they are not taking students, they are on vacation, etc.  Here are some common responses and what they mean:
 
 // Some generic responses are:
@@ -2271,7 +2279,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // In short, all of these replies mean the prof. is not interested.  The best positive response is that they want more information from you, e.g., your CV, transcript, paper, or a chat, which is like an interview (\autoref{sec:interviews}). 
 
 
-// \subsection{Are Profs. So Busy That They Completely Ignore Emails?}\label{sec:busy}
+// \subsection{Are Profs. So Busy That They Completely Ignore Emails? <sec:busy}
 
 
 // Profs. are busy. We have many deadlines, meetings, and emails, many of which are from prospective students looking for research opportunities or asking for application results. 
@@ -2281,7 +2289,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // \begin{figure}
 // \centering
 //     \includegraphics[scale=0.3]{files/profs-time.jpeg}
-//     \caption{Prof. time allocation.}\label{fig:profs-time}
+//     \caption{Prof. time allocation. <fig:profs-time}
 // \end{figure}
 
 
@@ -2294,14 +2302,14 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 //     I skim through \emph{every email} sent by students for admission and research opportunities (many of which are from undergrads and highschool students). So that means I do read your emails, and they rarely go to my spam or trash folder. However, I rarely reply to them because most of them are generic and do not show any interest in my work (\autoref{sec:kiss-of-death-emails}).
 //     \end{commentbox}
     
-// %\part{Miscs and FAQs}\label{part:faqs}
-// %\chapter{Miscs and FAQs}\label{chap:faqs}
+// %\part{Miscs and FAQs <part:faqs}
+// %= Miscs and FAQs <chap:faqs}
 
 // %\myepigraphsimpsons{``I want to share something with you – the three little sentences that will get you through life; number 1: Cover for me, number 2: Oh, good idea, Boss, and number 3: It was like that when I got here.''}
 
 
 
-// % \section{Member of an underrepresented or LGBTQ+ groups}\label{sec:urm}
+// % \section{Member of an underrepresented or LGBTQ+ groups <sec:urm}
 // % \sectioninfo{Being a minority can make you stand out and help your application.}
 
 // % A common question is whether you should mention, e.g., in your SOP, that you are a member of an underrepresented and minority (URM) group\footnote{URM in CS in the US include African Americans, Hispanic Americans, American Indians/Native Alaskans, Native Hawaiians/Pacific Islanders (excluding Asian Americans), and multiracial students identifying with at least one of the previously listed URM categories.} or LGBTQ+ group.
@@ -2345,13 +2353,12 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 
 
-// % \section{Will I be miserable during my a PhD?}\label{sec:happy}
+// % \section{Will I be miserable during my a PhD? <sec:happy}
 // % There are many stories of how students are mistreated, stressed, and miserable. Issues including bad relationships with professors, conflicts with co-authors and lab mates, feeling discriminated against (e.g., because you're an international student), \emph{do} exist, and it is good to be aware of those.  However, in reality, there are many good mentors, supportive lab mates and departments, and so on.  So don't let social media make you feel pessimistic and deter your quest to advance knowledge.
 
-// \part{Appendices}\label{part:appendices}
+// \part{Appendices <part:appendices}
 // \appendix
-// \chapter{Glossary and Acronyms}\label{chap:glossary}
-
+= Glossary and Acronyms <chap:glossary>
 // \printglossary
 
 // \printglossary[type=\acronymtype]
@@ -2368,7 +2375,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 // %T10,T20,T50,TX
 
-// % \chapter{Visa for International Students}\label{chap:visa}
+// % = Visa for International Students <chap:visa}
 
 // % \myepigraphsimpsons{``I didn't do it. Nobody saw me do it. You can't prove anything!''}
 
@@ -2408,40 +2415,40 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // % F-2 visa holders must leave the US if the primary F-1 student visa holder loses status or completes their program.
 
 = Domestic Students <chap:domestic-students>
-// \chapterinfo{Specific benefits and opportunities for domestic students applying to CS PhD programs.}
+\chapterinfo{Specific benefits and opportunities for domestic students applying to CS PhD programs.}
 
-// \myepigraphsimpsons{``I'm not a bad guy! I work hard, and I love my kids. So why should I spend half my Sunday hearing about how I'm going to Hell?''}
+\simpsons[I'm not a bad guy! I work hard, and I love my kids. So why should I spend half my Sunday hearing about how I'm going to Hell?]
 
-// Most of what is written in this handbook applies to both \glslink{international-domestic}{domestic}\footnote{As mentioned in \autoref{chap:glossary}, domestic means you do not require a visa to study in the US.} and international students.  However, there are some differences and benefits that domestic students should be aware of and can leverage to improve their chances of admission.
-// \paragraph{Standing out \autoref{sec:stand-out}} There are \emph{few} domestic applications compared to international ones (one reason is that many domestic students go to the workforce after their undergraduate degree). 
-// Many US universities thus want to increase the number of domestic students in their programs. So if you're a domestic student, you already \emph{stand out} from the crowd.
+Most of what is written in this handbook applies to both \glslink{international-domestic}{domestic}\footnote{As mentioned in \autoref{chap:glossary}, domestic means you do not require a visa to study in the US.} and international students.  However, there are some differences and benefits that domestic students should be aware of and can leverage to improve their chances of admission.
+\paragraph{Standing out \autoref{sec:stand-out}} There are \emph{few} domestic applications compared to international ones (one reason is that many domestic students go to the workforce after their undergraduate degree). 
+Many US universities thus want to increase the number of domestic students in their programs. So if you're a domestic student, you already \emph{stand out} from the crowd.
 
-// \paragraph{Fee Waiving~\autoref{sec:fee-waive}} Some schools might offer application fee waivers for domestic students.  You should check with the school you're applying to.
+\paragraph{Fee Waiving~\autoref{sec:fee-waive}} Some schools might offer application fee waivers for domestic students.  You should check with the school you're applying to.
 
-// \paragraph{School \autoref{chap:your-school}} Adcom already knows about your school, which is a plus. You are also more familiar with the US education system and academic culture (\autoref{chap:cultural}).
+\paragraph{School \autoref{chap:your-school}} Adcom already knows about your school, which is a plus. You are also more familiar with the US education system and academic culture (\autoref{chap:cultural}).
 
-// \paragraph{Standard Tests \autoref{chap:standard-tests}} You do not need to take TOEFL or IELTS (\autoref{sec:english-tests}) because you already did your undergrad (or MS) at a US university.  You might also be more comfortable communicating in English, e.g., contacting professors (\autoref{sec:contact}).
+\paragraph{Standard Tests \autoref{chap:standard-tests}} You do not need to take TOEFL or IELTS (\autoref{sec:english-tests}) because you already did your undergrad (or MS) at a US university.  You might also be more comfortable communicating in English, e.g., contacting professors (\autoref{sec:contact}).
 
-// \paragraph{Transcripts} You do not need to get your transcripts evaluated/translated (which can be a hassle and inaccurate).  You can just send your official transcripts directly to the school you're applying to.
+\paragraph{Transcripts} You do not need to get your transcripts evaluated/translated (which can be a hassle and inaccurate).  You can just send your official transcripts directly to the school you're applying to.
 
-// \paragraph{Funding \autoref{chap:funding}} You have more opportunities for funding, e.g., through government scholarships for US citizens and permanent residents.  You can also apply to specific programs \emph{before} you start your PhD, e.g., NSF Graduate Research Fellowship Program (GRFP) and Hertz Foundation Fellowship.  These fellowships are very competitive (\autoref{chap:fellowships}) and can significantly improve your admission chances.
+\paragraph{Funding \autoref{chap:funding}} You have more opportunities for funding, e.g., through government scholarships for US citizens and permanent residents.  You can also apply to specific programs \emph{before} you start your PhD, e.g., NSF Graduate Research Fellowship Program (GRFP) and Hertz Foundation Fellowship.  These fellowships are very competitive (\autoref{chap:fellowships}) and can significantly improve your admission chances.
 
-// \paragraph{Research Experience \autoref{chap:research-opportunities}} You might have many opportunities to do research as an undergraduate, e.g., through \acrshort{REU} programs and internships at your undergrad university.  Highlight such experience in your application.
+\paragraph{Research Experience \autoref{chap:research-opportunities}} You might have many opportunities to do research as an undergraduate, e.g., through \acrshort{REU} programs and internships at your undergrad university.  Highlight such experience in your application.
 
-// \paragraph{Open House \autoref{chap:accepted}} It is easier for you to attend open house events in person.  This can help you make a better decision on which school to attend.
+\paragraph{Open House \autoref{chap:accepted}} It is easier for you to attend open house events in person.  This can help you make a better decision on which school to attend.
 
 // % \begin{domesticbox}[Domestic students:] If you're a domestic student, you have several advantages in your application.   You also have more opportunities for funding, e.g., through government scholarships for US citizens and residents. Finally,
 // % \end{domesticbox}
 
-// \chapter{MS Admission}\label{chap:ms}
+= MS Admission <chap:ms>
 // \chapterinfo{MS focuses on coursework and prepares you for \emph{industry}, while PhD focuses on research and prepares you for academia or research. So admission requirements are different.}
 
 // While both MS and PhD programs are graduate degrees, they are \emph{very different} in terms of objective, admission requirements, course requirements, duration, and funding. This section discusses the differences and provides guidance on applying to MS programs.
 
-// \section{Differences between PhD and MS}\label{sec:phd-vs-ms}
+== Differences between PhD and MS <sec:phd-vs-ms>
 
 // \begin{table}
-//     \caption{MS vs. PhD}\label{tab:phd-vs-ms}
+//     \caption{MS vs. PhD <tab:phd-vs-ms}
 //     \centering
 //     \small
 //     \begin{tabular}{c|c|c}
@@ -2475,13 +2482,13 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
   
 // \end{itemize}
 
-// \section{MS Admission}\label{sec:ms-admission}
+== MS Admission <sec:ms-admission>
 
 // In most cases MS CS programs are much less competitive than PhD programs, i.e., you're likely to get in if you can afford it. Many think of MS programs as a \emph{cash cow} because students are often not funded and have to pay tuition. 
 
 // While admission requirements are similar to PhD programs (e.g., GPA, SOP, LORs), research is not a focus in MS programs. Often, the main requirements are just that you have sufficient background in CS, e.g., through your undergrad degree. This does not mean MS programs are easy to get admitted, but the requirements are much lower compared to PhD programs.
 
-// \subsection{Admission Committee}\label{sec:ms-adcom}
+// \subsection{Admission Committee <sec:ms-adcom}
 // MS admission also involves an adcom that reviews applications and makes admission decisions. However, MS admission is typically \glslink{rolling-admission}{rolling}, i.e., applications are reviewed as they come in and decisions are made throughout the admission cycle.  
 
 // Moreover, unlike PhD that has multiple reviewers for each application, an MS application typically involves only one reviewer and does require much time to review compared to a PhD application (\autoref{sec:ievaluate}). 
@@ -2496,7 +2503,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 //     Each committee has its own chair and members. For example, I often serve in the MS SWE adcom, which has about 4 adcom members (including the chair who also does the review). 
 // \end{commentbox}
 
-// \subsection{Application Materials}\label{sec:ms-application}
+// \subsection{Application Materials <sec:ms-application}
 
 // You will submit similar materials as in a PhD application, e.g., transcripts, LoRs, SOP, and test scores.  However, research experience is not required, and LoRs can be from anyone who can speak about your academic or working abilities. Moreover, your SOP should focus on your academic and work background, why you want to get an MS, and how the program fits your goals. As with PhDs, GREs are often not required. Some MS programs do not even require LoRs or SOPs.  
 
@@ -2511,7 +2518,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // As with PhD, English proficiency tests (TOEFL/IELTS) are required for international students (but just passing the minimum requirement is often enough \autoref{sec:english-tests}). Note that just as with PhD, English tests are are waived if you did your undergrad at a US university.
 
 
-// \subsection{Funding (Why MS Students Are Typically Not Funded?)}\label{sec:ms-funding}
+// \subsection{Funding (Why MS Students Are Typically Not Funded?) <sec:ms-funding}
 
 // Unlike PhD programs, which often have funding (\autoref{chap:funding}), MS students are typically \emph{not} funded. This is because MS students do not focus on research and thus are not funded through RA and PhD students have priority for TA positions. 
 
@@ -2527,7 +2534,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // Moreover, some schools have TAs for MS students, and you can apply for these positions. For example, GMU CS has quite a few TAs for MS students, and my courses in the past two years have MS TAs.
 // Finally, if you have a strong background and can demonstrate that you can be productive in research, then a prof. might be willing to take you as their RA.  Some of these students convert to PhD students after having this research experience.
 
-// \section{Selecting and Ranking Schools}\label{sec:selecting-ranking-schools-ms}
+== Selecting and Ranking Schools <sec:selecting-ranking-schools-ms>
 // \sectioninfo{How to select and rank MS programs in CS.}
 
 // Because of the differences between MS and PhD programs (\autoref{sec:phd-vs-ms}), you should consider different factors when selecting and ranking MS programs (see~\autoref{chap:choosing-school} for selecting PhD programs). For example, you might want to consider factors such as location, industry connections, and job placement instead of research areas and advisers (\autoref{chap:choosing-adviser}).
@@ -2544,10 +2551,10 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 // \end{itemize}
 
-// \chapter{Research Opportunities}\label{chap:research-opportunities}
+= Research Opportunities <chap:research-opportunities>
 // \chapterinfo{How to get research experience as an undergrad.}
 
-// \myepigraphsimpsons{``Kids, you tried your best and you failed miserably. The lesson is: never try.''}
+#simpsons[Kids, you tried your best and you failed miserably. The lesson is: never try.]
 
 // \begin{center}
 //     \includegraphics[scale=0.5]{files/phd100404s.png}
@@ -2555,7 +2562,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 // As discussed in \autoref{chap:research-experience}, having a successful research experience can greatly strengthen a PhD application. Research experience gives you opportunities to try out research, determine what research area you're interested in, publish papers (\autoref{chap:research-experience}), connect with researchers, and get strong LoRs (\autoref{chap:lor}). This section provides some guidance on how to gain research experience as an undergraduate (or MS) student or student at a smaller college where research opportunities might be limited.
 
-// \section{Locally} 
+== Locally 
 
 // Start looking for research opportunities at your institution.
 // If you did well or liked a class, you can check with the professor of that class for research opportunities.
@@ -2575,19 +2582,19 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 //     I also have written LoRs for them and have helped them get into good PhD programs.
 // \end{commentbox}
 
-// \section{Open Source Contributions}\label{sec:open-source-contribs}
+== Open Source Contributions <sec:open-source-contribs>
 
 // Open development platforms such as GitHub offer many research opportunities.
 // In CS and many other fields, research labs put their projects on GitHub to encourage collaboration and contributions from the community. For example, my research group, \href{https://roars.dev/}{Roars}, has many open-source projects that undergrads can contribute to (and in fact my of my undergrad researchers have contributed to them).
 
 // By contributing code, fixing bugs, implementing new features, or providing documentation, students can gain practical research experience and interact with experienced developers and researchers in the field. Not only you gain research experience, but you might be able to get a LoR from the project maintainer, and you should write about this experience in your SOP (\autoref{chap:sop}.)
 
-// \section{Virtual Research Opportunities} 
+== Virtual Research Opportunities 
 // This is less common but several places offer virtual internships and research programs aimed at providing hands-on research experience. These programs often involve working remotely under the guidance of experienced mentors and collaborating with a team of fellow researchers. For instance, \href{https://docs.google.com/forms/d/1btIwt4HwjyKMOUk-EMy3rbkfWzFxv2lNrMm_zkd0pA4/viewform?edit_requested=true}{UIUC+ Summer Undergraduate Research in Software Engineering}  offers an unpaid remote internship for software engineering students all over the world to collaborate with mentors from University of Illinois at Urbana Champaign.
 
 // % \paragraph{Online Conferences and Workshops}: Attending online conferences and workshops is another way to gain exposure to cutting-edge research and establish connections with experts in the field. Many conferences now provide virtual participation options, enabling students to access research talks, poster sessions, and panel discussions and sometimes access designated chat rooms or networking events where participants can engage with researchers, ask questions, and seek potential research collaborations. By creating profiles, joining relevant research groups, and participating in discussions, students can connect with established researchers, contribute to ongoing projects, and potentially collaborate on publications or research proposals as they provide access
 
-// % \chapter{Publication Authorship}\label{chap:authorship}
+// % = Publication Authorship <chap:authorship}
 // % \chapterinfo{How authorship is determined in research papers.}
 
 // % Having a publication shows your research potential and can significantly improve your admission chances (\autoref{sec:publications}). Moreover, LOR writers often refer to your publications to support their claims about your research abilities (\autoref{chap:lor}). Likewise, you should also describe your work that has been published in your SOP (\autoref{chap:sop}).  Of course all of these are only true if you are a significant contributor to the work.
@@ -2688,10 +2695,10 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 
 
-// \chapter{Fellowship Applications}\label{chap:fellowships}
+= Fellowship Applications <chap:fellowships>
 // \chapterinfo{How fellowships such as NSF GRFP and DOD DSEG are evaluated.}
 
-// \myepigraphsimpsons{``You mean those leagues where parents push their kids into vicious competition to compensate for their own failed dreams of glory?''}
+#simpsons[You mean those leagues where parents push their kids into vicious competition to compensate for their own failed dreams of glory?]
 
 // Having an external and major fellowship can significantly relieve the financial burden of your PhD and improve your chances of getting into a good PhD program (\autoref{sec:fellowships}). 
 // Among the most wel-known and prestigious fellowships for CS PhD students who are US citizens or permanent residents (\autoref{chap:domestic-students}) are the National Science Foundation Graduate Research Fellowship Program (NSF GRFP) and the Department of Defense National Defense Science and Engineering Graduate Fellowship (DoD NDSEG). These fellowships provide multiple years of full financial support, including tuition, stipend, and health insurance.
@@ -2721,7 +2728,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // \end{itemize}
 
 
-// \subsection{Intellectual Merit and Broader Impacts}\label{sec:grfp-im-bi}
+// \subsection{Intellectual Merit and Broader Impacts <sec:grfp-im-bi}
 
 // Your application will be evaluated based on two criteria: Intellectual Merit (IM) and Broader Impacts (BI). 
 
@@ -2733,7 +2740,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 // Writing BM is often difficult, not only for students but also new faculty.  You should ask someone who has experience writing NSF proposals to review your BM.
 
-// \subsection{Common Pitfalls and Tips}\label{sec:grfp-pitfalls}
+// \subsection{Common Pitfalls and Tips <sec:grfp-pitfalls}
 
 // These are common pitfalls that many applicants make in their GRFP applications and tips on how to avoid them. Many of these can be avoided and fixed by asking someone who has experience writing NSF proposals to review your application.  You should also ask your LoR writers to review your research plan and SOP.  
 
@@ -2778,7 +2785,7 @@ Reviewers mainly get to know you and evaluate your application by reading your r
 // In the beginning I find it surprising that I don't get to see the LoRs, but I understand the reasoning behind it and gradually think it is a good idea. As mentioned above, LoR writers for NSF GRFP (\autoref{sec:grfp-pitfalls}), especially those from top schools, often overrate their students and thus can bias the evaluation. So I don't find I am missing much by not seeing the LoRs.
 // \end{commentbox}
 
-// \subsection{Common Pitfalls and Tips}\label{sec:ndseg-pitfalls}
+// \subsection{Common Pitfalls and Tips <sec:ndseg-pitfalls}
 
 // These are some common pitfalls I see in NDSEG applications and tips to avoid them.  Some of these are similar to NSF GRFP (\autoref{sec:grfp-pitfalls}) while some are specific to NDSEG.
 
@@ -2805,7 +2812,7 @@ Reviewers mainly get to know you and evaluate your application by reading your r
 // \end{itemize}
 
 
-// \section{Common Tips for Both Fellowships}
+== Common Tips for Both Fellowships}
 
 // \begin{itemize}
 //   \item \textbf{Use \LaTeX{} to write your research plan and essays} (\autoref{chap:writing-latex}).  This is the standard in CS and engineering and will make your application look  professional.  Moreover, do not use the default Word settings, e.g., left justification, as it is not standard in CS and engineering and difficult to read.  
@@ -2816,7 +2823,7 @@ Reviewers mainly get to know you and evaluate your application by reading your r
 // \end{itemize}
 
 
-// \section{My experience as a reviewer}
+== My experience as a reviewer}
 
 // \begin{commentbox}
 // I find the GRFP more familiar compared to NDSEG, which redacts most applicant information as mentioned above. I also spent more time reviewing GRFP applications---mainly because NDSEG doesn't provide much info to work with.
@@ -2830,10 +2837,10 @@ Reviewers mainly get to know you and evaluate your application by reading your r
 
 
 
-// \chapter{Faculty Research Activities and Achievements}\label{chap:research-achievements}
-// \myepigraphsimpsons{``Homer: Oh, why won’t anyone give me an award?\\
-// Lisa Simpson: You won a Grammy.\\
-// Homer: I mean an award that's worth winning.''}
+= Faculty Research Activities and Achievements <chap:research-achievements>
+#simpsons[Homer: Oh, why won't anyone give me an award?\
+Lisa Simpson: You won a Grammy.\
+Homer: I mean an award that's worth winning.]
 
 // When exploring potential advisors, students often look at faculty websites to learn about their research and achievements. Common indiciators of research productivity include publications and involvement in research community. However, beyond these, CS has several prestigious and meaningful achievements that researchers aim for, but that are not as well-known to prospective students. 
 
@@ -2841,11 +2848,11 @@ Reviewers mainly get to know you and evaluate your application by reading your r
 
 
 
-// \section{Common Research Activities}\label{sec:common-research-indicators}
+== Common Research Activities <sec:common-research-indicators>
 
 // Publications and involvement in the research community are common indicators of research productivity. These are the \emph{``bread and butter''} of research and lacking in these areas can mean that the faculty is not active in research.
 
-// \subsection{Publications in Top-Tier Venues}\label{sec:pubs-top-tier}
+// \subsection{Publications in Top-Tier Venues <sec:pubs-top-tier}
 
 // Publications in \emph{top-tier} venues are the most reliable factor to measure the productivity of a faculty. They give visibility to the faculty's work and help establish their reputation in the area. For tenure-track faculty (\autoref{sec:faculty-types}), especially at top CS programs, publications at top-tier conferences and journals are often the most important factor for tenure.
 
@@ -2897,7 +2904,8 @@ Reviewers mainly get to know you and evaluate your application by reading your r
 // \item {Proposal Panelist} Another service
 // is reviewing proposals for funding agencies such as the Nationsal Science Foundation or NSF. In addition to shaping the landscape of research directions (e.g., by deciding which proposals to fund), being on an \emph{NSF review panel} provides insights into good proposal writing and opportunities to connect with program officers and peers. However, being an NSF panelist is not as common as being a PC member (many faculty never got invited), and it is often seen as a ``bonus'' rather than a requirement for tenure. 
 // \end{itemize}
-// \section{Research Achievements and Awards}
+
+== Research Achievements and Awards
 
 // Activities listed in~\autoref{sec:common-research-indicators}---publishing papers and involving in research community---are common and \emph{expected} for all research faculty, especially those at top institutions. 
 // They are the \emph{``bread and butter''} of research, but they are not \emph{exceptional} achievements that make a faculty stand out.
@@ -2940,7 +2948,7 @@ Reviewers mainly get to know you and evaluate your application by reading your r
 // %  These industrial awards are very flexible (unrestricted) and thus prof. often save them for emergencies (e.g., when they cannot get NSF funding).
 
 
-// \subsection{Research Awards}\label{sec:research-awards}
+// \subsection{Research Awards <sec:research-awards}
 
 // These refer to awards given to more senior researchers for their outstanding contributions to their field.
 // These can be (i) lifetime achievements in the field---such as ACM or IEEE Fellows, and (ii) specific work that were published 10+ years ago and that have made significant impact. 
@@ -2972,7 +2980,7 @@ Reviewers mainly get to know you and evaluate your application by reading your r
 //       has earned two of these awards already, less than ten years after completing \censor{his} PhD ...''}\\
 
 //     \end{examplebox}
-//     \caption{LoR written by an ACM and IEEE Fellow for a junior faculty (some texts endacted for anonymity).}\label{fig:lor4junior}
+//     \caption{LoR written by an ACM and IEEE Fellow for a junior faculty (some texts endacted for anonymity). <fig:lor4junior}
 //   \end{figure}
 
 //   Note that while typically given to senior researchers, some junior faculty have received these highly prestigious awards for their work as shown in~\autoref{fig:lor4junior}. 
@@ -3023,10 +3031,10 @@ Reviewers mainly get to know you and evaluate your application by reading your r
 // % \end{itemize}
 // % If an adviser has continuously secured funding over time, it suggests a stable research environment and long-term support for students.
 
-// \chapter{Writing in \LaTeX{}}\label{chap:writing-latex}
+= Writing in LaTeX <chap:writing-latex>
 // \chapterinfo{You should write your academic documents in \LaTeX{}.}
 
-// \myepigraphsimpsons{``Coming to the book fair sure was a great idea. 'Cause you can't write if you don't know what the competition is up to.''}
+#simpsons[Coming to the book fair sure was a great idea. 'Cause you can't write if you don't know what the competition is up to.]
 
 
 
@@ -3049,13 +3057,13 @@ Reviewers mainly get to know you and evaluate your application by reading your r
 
 = Academic and Cultural Differences <chap:cultural>
 
-// \myepigraphsimpsons{``As intelligent as you are, you have to learn to appreciate other points of view.''}
+#simpsons[As intelligent as you are, you have to learn to appreciate other points of view.]
 
 // This section lists some general academic and cultural issues that students, especially international ones, might want to pay attention to.
 
 // % \paragraph{Diversity} US universities prioritize diversity and inclusion. Students need to respect and appreciate varied opinions, backgrounds, and cultures. Unlike some countries where certain voices are marginalized, in the US, all perspectives are valued equally (especially at universities). Racism or discrimination will have serious consequences, including academic and disciplinary actions.
 
-// \section{Academic Integrity (Cheating and Plagiarism)}
+== Academic Integrity (Cheating and Plagiarism)
 
 // Plagiarism and cheating (e.g., exams and assignments) are a BIG no-no in the US.  If you're caught cheating, you will face serious consequences and likely be expelled from the university (e.g., after the second time at GMU).   This is quite different from many international countries where cheating is common and often tolerated.  Faculty is extremely good at detecting cheating (we have been dealing with these situations so many times over so many years), and \emph{will} report cheating cases.  In short, whatever you do, don't cheat---not worth it!
 
@@ -3065,15 +3073,18 @@ Reviewers mainly get to know you and evaluate your application by reading your r
 // This means begging your professor will not help because they simply are no longer involved in the case and cannot do anything.
 // This is because OAI is an independent office above your prof and depatment that handles all academic integrity cases at the university, and they have their own procedures and policies.  If you are found guilty, you can appeal to OAI, but not to your prof. or department. 
 
-// \section{Illegal Software}\label{sec:illegal-software}
+== Illegal Software <sec:illegal-software>
 //  Using illegal/cracked software is very common in many countries (and even in the US). However, \emph{do not} install or use them on university computers, even those given to you by your adviser.  It is unlikely that the university will track you down, but it is the \emph{software company} that will.  They have very sophisticated tools to detect illegal software and will sue your university/department.  Imagine your department or adviser being sued for a large sum of money, and it is \emph{you} who caused it.  If you need to purchase software,  ask your adviser or the department (\autoref{sec:buying-equipment}).
 
 
-// \section{Costly Gifts}\label{sec:gifts} In many countries, it is customary to give professors costly gifts---such as fancy liquors, jewelry, or even an envelope stuff with cash during the holidays or special occastions.  It's meant to show respect and appreciation (or let's be honest, an attempt to get better grades or recommendations). Understandbly this is a cultural norm in many countries, and professors and students are used to it. However, in the US, this is can be considered \emph{widly inappropriate} and strongly discouraged. Given your profs. these gifts will make them feel very uncomfortable and in many cases they are required to report them to the university.  
+== Costly Gifts <sec:gifts>
+
+In many countries, it is customary to give professors costly gifts---such as fancy liquors, jewelry, or even an envelope stuff with cash during the holidays or special occastions.  It's meant to show respect and appreciation (or let's be honest, an attempt to get better grades or recommendations). Understandbly this is a cultural norm in many countries, and professors and students are used to it. However, in the US, this is can be considered \emph{widly inappropriate} and strongly discouraged. Given your profs. these gifts will make them feel very uncomfortable and in many cases they are required to report them to the university.  
 
 // However, that doesn't mean you can't show your appreciation. In fact, small, personal tokens, like small souvenir from your country, a fridge magnet, keychain from your hometown, or even just simple thank-you hand-written card, are very welcomed.  Some professors proudly display their gifts, which can come from students and colleagues (e.g., when they travel to their home countries or conferences). In summary, small gifts are fine, but avoid anything that might make your professors uncomfortable.
 
-// \section{Maintaining Good Relationships with Your Profs.}\label{sec:maintaining-relationships}
+== Maintaining Good Relationships with Your Profs. <sec:maintaining-relationships>
+
 // There's a misconception that in the US it's all business, with professors as bosses who pay students for their work and that lab mates are just work colleagues; and that doing nice things means expecting something in return.
 
 // However, the reality is quite the opposite. While people can be straightforward and appear ``cold'', they are also informal, friendly, and very caring (in ways that might surprise you).
@@ -3093,7 +3104,8 @@ Reviewers mainly get to know you and evaluate your application by reading your r
         
 //   \end{commentbox}
 
-// \section{How to Call or Address a Professor?}\label{sec:address}
+== How to Call or Address a Professor? <sec:address>
+
 // \sectioninfo{What should you call your profs.? Many possibilities (e.g., Prof., Dr., and even their firstnames), but not Mr., Mrs., or their firstname in the first email.}
 
 // \begin{center} 
@@ -3121,7 +3133,7 @@ Reviewers mainly get to know you and evaluate your application by reading your r
 
 // This is \emph{not necessary} and makes it look like you're trying to show off your connections. These nuances represent some cultural and academic differences in the US that you may encounter but will gradually adapt to. 
 
-// \section{Miscs}\label{chap:cultural-misc}
+== Miscs <chap:cultural-misc>
   
 // Here are some other common surprises for international students in the US. Note that I skip topics involving politics, religion, tax, and racism as these happen in many countries and are not unique to the US.
 
@@ -3170,10 +3182,10 @@ Reviewers mainly get to know you and evaluate your application by reading your r
 // % \end{commentbox}
 
 
-// \chapter{Rankings of CS PhD programs}\label{chap:rankings}
+= Rankings of CS PhD programs <chap:rankings>
 // \chapterinfo{CSRankings.org is a ranking system based on faculty publications at top CS conferences. CSPicks is not a ranking system and instead focuses on exploring the research strengths of CS departments and faculty.}
 
-// \myepigraphsimpsons{``The whole damn system is wrong!''}
+#simpsons[The whole damn system is wrong!]
 
 // When researching where to do a CS PhD, many students use rankings like the U.S. News \& World Report. However, these widely publicized rankings are often criticized by CS researchers (e.g.,\autoref{fig:csrankings-quote}) for their lack of transparency and relevance. In contrast, data-driven open source ones such as CSRankings.org are increasingly used by faculty and PhD students to assess the true research strengths of CS depts. 
 // \begin{figure}[h]
@@ -3183,13 +3195,13 @@ Reviewers mainly get to know you and evaluate your application by reading your r
 //       \emph{``'No ranking is perfect, but this [CSrankings] is defensible and open.”'}
 //     \end{examplebox}
 //     \caption{\url{https://www.theexclusive.org/2017/11/cs-rankings.html
-// }, Charles Sutton (Google Deepmind).}\label{fig:csrankings-quote}
+// }, Charles Sutton (Google Deepmind). <fig:csrankings-quote}
 // \end{figure}
 
 
 
 
-// \section{What's Wrong with Popular CS Rankings}\label{sec:rankings-cra}
+== What's Wrong with Popular CS Rankings <sec:rankings-cra>
 
 // Popular college rankings such as the \href{https://www.usnews.com/best-colleges}{U.S. News \& World Report} or \href{https://www.topuniversities.com/university-rankings}{QS World University Rankings} are often based on subjective criteria---such as reputation, faculty credentials, and student satisfaction---and are not transparent---how scores are calculated is often not disclosed.
 // CS research community has long questioned and discouraged the use of these rankings. For example, the Computing Research Association (CRA)---a highly respected organization in CS---issued a sharp critique of the U.S. News \& World Report's global rankings for CS depts, calling the methodology \emph{``deeply flawed and misleading''}\footnote{\url{https://cra.org/cra-statement-us-news-world-report-rankings-computer-science-universities/}}. Among many issues, the CRA highlighted that the rankings rely heavily on journal publications indexed by the Web of Science, ignoring conference publications—despite conferences being the primary venue for publishing top-tier CS research (\autoref{sec:pubs-top-tier}).   
@@ -3200,7 +3212,7 @@ Reviewers mainly get to know you and evaluate your application by reading your r
 // %   Anyone with knowledge of CS research will see these rankings for what they are — nonsense — and ignore them. But others may be seriously misled. 
 // % \end{commentbox}
 
-// \section{CSRankings.org}\label{sec:csrankings}
+== CSRankings.org <sec:csrankings>
 // Instead of traditional school rankings, many PhD students and faculty use \href{https://www.csrankings.org}{CSRankings.org}, which is a ranking system based on faculty publications at top CS conferences.  The metrics and ranking calculation are transparent and ranking results are updated automatically (after the conference proceedings are indexed in DBLP).  Because the approach is entirely data-driven, it is not influenced by any subjective opinions or biases, and very difficult to manipulate. The number of Github pull requests by CS faculty (in fact, even non-CS faculty) to be included in the rankings is a good indicator of the impact of the rankings.  
 
 // \paragraph{Geometric Mean} CSRankings uses the \emph{geometric mean} to summarize the performance of a department across multiple disciplines. The score for each department is calculated as follows:
@@ -3225,7 +3237,7 @@ Reviewers mainly get to know you and evaluate your application by reading your r
 // \begin{table}
 //   \centering
 //   \small
-//   \caption{The top 50 CS programs in the US (\href{https://www.csrankings.org}{CSRankings.org}, Jan. 2025). \red{$^*$} indicates that the university has \href{https://roars.dev/phd-cs-us/viet-cs-profs-us}{Vietnamese prof.} that can advise CS PhD students.}\label{tab:ranking}
+//   \caption{The top 50 CS programs in the US (\href{https://www.csrankings.org}{CSRankings.org}, Jan. 2025). \red{$^*$} indicates that the university has \href{https://roars.dev/phd-cs-us/viet-cs-profs-us}{Vietnamese prof.} that can advise CS PhD students. <tab:ranking}
 //   \begin{tabular}{rl|rl}
 //     \toprule
 //     1 & Carnegie Mellon & 26 & Northwestern University\\
@@ -3259,7 +3271,7 @@ Reviewers mainly get to know you and evaluate your application by reading your r
 // \end{table}
 
 
-// \section{CSPicks}\label{sec:cspicks}
+== CSPicks <sec:cspicks>
 
 // \href{https://roars/dev/cspicks}{CSPicks} is a new website developed by our Roar lab that aims to help prospective students (and faculty candidate) explore the research strengths of CS departments and their faculty. It is \emph{not} a ranking system like CSRankings, but rather a tool to help students find faculty and departments that match their research interests. It allows you see trends and growths of CS departments and faculty, such as the number of publications in different areas over time.\autoref{fig:cspicks-gmu} shows an example of CSPicks showing research areas of the CS department at George Mason.
 
@@ -3285,12 +3297,12 @@ Reviewers mainly get to know you and evaluate your application by reading your r
 
 // %\autoref{tab:ranking} lists .
 
-// % \chapter{Advisor Guide: Answers to Common Questions}\label{chap:advising-guide}
+// % = Advisor Guide: Answers to Common Questions <chap:advising-guide}
 // % Specific answers to questions about my advising guide in \href{https://roars.dev}{Roars Lab}. Adapted from \href{https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-Advisor.pdf}{this guide}.
 
 = About <chap:about>
 
-// \section{About This Book}\label{sec:about-this-book}
+== About This Book <sec:about-this-book>
 // \sectioninfo{This book aims to provide in depth information about the CS PhD admission process in the US. It is particularly useful for international students from smaller countries and less well-known universities as they often lack access to such information.}
 
 // \paragraph{History} This book was conceived during a lunch with a faculty at GMU.  We talked about why GMU was not able to attract good Vietnamese and other international students, despite having a much stronger CS program than many schools that these students want to go to (part of the reason is described in \autoref{sec:selecting-ranking-schools}). We wish there were a way for international students to understand more about PhD programs in the US.
@@ -3340,7 +3352,7 @@ Reviewers mainly get to know you and evaluate your application by reading your r
 // \paragraph{Notation} \autoref{tab:chess-icons} summarizes the notation and icons, inspired by chess pieces, used throughout the book.
 
 // \begin{table}
-//     \caption{Chess-based icon system for annotation types}\label{tab:chess-icons}
+//     \caption{Chess-based icon system for annotation types <tab:chess-icons}
 //     \centering    
 //     \small    
 //     \begin{tabular}{cll}
