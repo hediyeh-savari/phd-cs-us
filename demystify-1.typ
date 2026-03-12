@@ -10,6 +10,7 @@
 #show ref: set text(fill:blue)
 #show link: set text(fill:blue)
 #show link: underline
+#show figure.caption: set text(size: 10pt)
 
 #let mytitle = "Demystifying PhD Admissions in Computer Science"
 #let mysubtitle = "A Handbook for Navigating CS PhD Admissions in the U.S."
@@ -62,20 +63,20 @@
 
 = Preface
 
-// Having been involved in PhD admission committees for many years, I've observed that students---especially those in smaller countries, less well-known universities, or 1st generation college students---often lack a clear understanding of the Computer Science (CS) PhD admission process at US universities. This confusion not only discourages them from applying but also creates the perception that getting admitted to a CS PhD program in the US is unrealistically difficult.
+Having been involved in PhD admission committees for many years, I've observed that students---especially those in smaller countries, less well-known universities, or 1st generation college students---often lack a clear understanding of the Computer Science (CS) PhD admission process at US universities. This confusion not only discourages them from applying but also creates the perception that getting admitted to a CS PhD program in the US is unrealistically difficult.
 
 // % though \emph{very} top schools could be very selective, e.g., see the \href{https://da-data.blogspot.com/2015/03/reflecting-on-cs-graduate-admissions.html}{admission process} at CMU
-// So I want to share some details about the admission process and advice for those who are interested in applying for a \emph{PhD in CS in the US}.
-// Originally, this book was written for international students, but has been expanded to generalize and include specific tips for \emph{US domestic students} (\autoref{chap:domestic-students}), e.g., applying for the NSF GRFP (\autoref{sec:nsf-grfp}) and DoD NDSEG (\autoref{sec:dod-ndseg}) fellowships.
-// Moreover, while this book aims at students interested in CS, it might be relevant to students from various \acrshort{STEM} disciplines (\autoref{sec:fields-and-areas}).
-// Furthermore, although many examples are specifics for schools that I and other contributors of this book know about, the information should be generalizable to other good \Gls{r1} institutions in the US.
+So I want to share some details about the admission process and advice for those who are interested in applying for a *PhD in CS in the US*.
+Originally, this book was written for international students, but has been expanded to generalize and include specific tips for *US domestic students* (@chap:domestic-students), e.g., applying for the NSF GRFP (@sec:nsf-grfp) and DoD NDSEG (@sec:dod-ndseg) fellowships.
+Moreover, while this book aims at students interested in CS, it might be relevant to students from various STEM disciplines (@sec:fields-and-areas).
+Furthermore, although many examples are specifics for schools that I and other contributors of this book know about, the information should be generalizable to other good R1 institutions in the US.
 
-// This book can help \emph{US faculty and admission committee} gain a better understanding of international students and their cultural differences (\autoref{chap:cultural}).  By recognizing and leveraging these differences, CS programs in the US can attract larger and more competitive application pools from international students.
+This book can help *US faculty and admission committee* gain a better understanding of international students and their cultural differences (@chap:cultural).  By recognizing and leveraging these differences, CS programs in the US can attract larger and more competitive application pools from international students.
 
-// I hope this book will help you understand the CS PhD admission process in the US and make informed decisions. 
-// Additional information about the book can be found in \autoref{chap:about}.
+I hope this book will help you understand the CS PhD admission process in the US and make informed decisions. 
+Additional information about the book can be found in @chap:about.
 
-
+#pagebreak()
 // \mainmatter
 // \part{Introduction}\label{part:intro}
 
@@ -145,7 +146,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 //   A PhD is not just a degree, it is a \textbf{journey} that transforms you into a researcher. You will learn how to think critically, solve problems, deal with adversity, and work independently. You will also learn how to write and ``sell'' your work, collaborate with others, and effectively communicate your ideas. In the end, you will have a deep understanding of your chosen field and become an expert in your area of research. In fact, you will know about your research topic more than \emph{anyone} else in the world, including, in many cases, your adviser! This is a scary thought, but it is also exciting and rewarding.
 // \end{commentbox}
 
-// \section{CS Fields and Areas}\label{sec:fields-and-areas}
+== CS Fields and Areas <sec:fields-and-areas>
 
 // CS is a broad academic discipline with many specialized areas of research. Understanding the structure of CS can help you communicate your research interests and goals more effectively, e.g., in your SOP (\autoref{chap:sop}), and also assist you in finding suitable advisers and research topics (\autoref{sec:finding-adviser}).
 
@@ -2406,7 +2407,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // % \end{itemize}
 // % F-2 visa holders must leave the US if the primary F-1 student visa holder loses status or completes their program.
 
-// \chapter{Domestic Students}\label{chap:domestic-students}
+= Domestic Students <chap:domestic-students>
 // \chapterinfo{Specific benefits and opportunities for domestic students applying to CS PhD programs.}
 
 // \myepigraphsimpsons{``I'm not a bad guy! I work hard, and I love my kids. So why should I spend half my Sunday hearing about how I'm going to Hell?''}
@@ -2701,7 +2702,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // This chapter focuses on how your application is evaluated, what reviewers look for, and tips on improving your application. Note that while these are specific GRFP and NDSEG, the given advice should be applicable to other major fellowships---including those for international students.
 
 
-// \section{NSF GRFP}\label{sec:nsf-grfp}
+== NSF GRFP <sec:nsf-grfp>
 
 // The NSF GRFP is a prestigious fellowship for US citizens, nationals, and permanent residents who are in the \emph{early stages} of their graduate study in STEM fields, including both MS and PhD students. The GRFP is highly competitive, with many applicants from top schools, with strong LoRs and research experience. In many cases, even an \emph{``honorable mention''}---meaning you did not get the fellowship but were considered a strong candidate---can help you get into a good PhD program (so make sure to mention it in your CV and application).
 
@@ -2757,16 +2758,17 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // \end{itemize}
 
 
-// \section{DoD NDSEG}\label{sec:dod-ndseg}
+== DoD NDSEG <sec:dod-ndseg>
 
-// The NDSEG is another prestigious fellowship supporting \emph{U.S. citizens} pursuing advanced degrees in STEM fields \emph{critical to national defense} (such as CS). NDSEG has several differences from NSF GRFP, e.g., it  focuses more on application to DoD and redacts more information about you and your application materials. 
-// \subsection{Evaluation}
+The NDSEG is another prestigious fellowship supporting *U.S. citizens* pursuing advanced degrees in STEM fields *critical to national defense* (such as CS). NDSEG has several differences from NSF GRFP, e.g., it focuses more on application to DoD and redacts more information about you and your application materials.
 
-// \paragraph{Redacted info.} Unlike the NSF GRFP, reviewers only see \emph{redacted versions} of your submitted materials (applicants are asked to provide full and redacted versions of your research plan, CV, and other materials). Thus, we do not know what schools your went to, where you did your internships, your publications or research experience. We also \emph{do not} see your LoRs, i.e., we do not know who wrote them or what they wrote! 
+=== Evaluation
 
-// Reviewers mainly get to know you and evaluate your application by reading your research plan and personal essays. This is for \emph{fairness and avoiding bias} based on the school you went to, places you published at, your LoR writers, etc.  Nonethless, I felt I am missing too much information. However, it could be that external reviewers like myself help with the first cut based on the redacted materials, and then there are internal reviewers who makes the final decision based on the full materials. 
+*Redacted info.* Unlike the NSF GRFP, reviewers only see *redacted versions* of your submitted materials (applicants are asked to provide full and redacted versions of your research plan, CV, and other materials). Thus, we do not know what schools you went to, where you did your internships, your publications or research experience. We also *do not* see your LoRs, i.e., we do not know who wrote them or what they wrote!
 
-// \paragraph{Non-expert} NDSEG reviewers hold advanced degrees in STEM fields. However, NDSEG reviewers are more general and might not be in your specific field. For example, in GRFP I mostly review applications in PL, while in NDSEG it seems that I review applications in all fields of CS and even non-CS.  Thus, you should make your research plan \emph{more accessible to a general audience}.
+Reviewers mainly get to know you and evaluate your application by reading your research plan and personal essays. This is for *fairness and avoiding bias* based on the school you went to, places you published at, your LoR writers, etc. Nonetheless, I felt I am missing too much information. However, it could be that external reviewers like myself help with the first cut based on the redacted materials, and then there are internal reviewers who make the final decision based on the full materials.
+
+*Non-expert* NDSEG reviewers hold advanced degrees in STEM fields. However, NDSEG reviewers are more general and might not be in your specific field. For example, in GRFP I mostly review applications in PL, while in NDSEG it seems that I review applications in all fields of CS and even non-CS. Thus, you should make your research plan *more accessible to a general audience*.
 
 // \begin{commentbox}
 // I find it a bit difficult to evaluate NDSEG applications because I do not have the full picture.  For example, a student mentioned that they have published in the topic they proposed but redacted all information about the publication, so I have no idea where they published, what the paper is about, etc.  
@@ -3045,7 +3047,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 //     \end{document}
 // \end{lstlisting}
 
-// \chapter{Academic and Cultural Differences}\label{chap:cultural}
+= Academic and Cultural Differences <chap:cultural>
 
 // \myepigraphsimpsons{``As intelligent as you are, you have to learn to appreciate other points of view.''}
 
@@ -3286,7 +3288,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 // % \chapter{Advisor Guide: Answers to Common Questions}\label{chap:advising-guide}
 // % Specific answers to questions about my advising guide in \href{https://roars.dev}{Roars Lab}. Adapted from \href{https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-Advisor.pdf}{this guide}.
 
-// \chapter{About}\label{chap:about}
+= About <chap:about>
 
 // \section{About This Book}\label{sec:about-this-book}
 // \sectioninfo{This book aims to provide in depth information about the CS PhD admission process in the US. It is particularly useful for international students from smaller countries and less well-known universities as they often lack access to such information.}
