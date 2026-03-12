@@ -19,14 +19,34 @@
 
 #show title:set text(size: 17pt)
 #show title: set align(center)
-#title[ROARS Lab Manual]
-#align(center)[
-  #v(1em)
-  PI. ThanhVu Nguyen\
-    #link("https://roars.dev")[Roars Lab] · George Mason University
-  #line(length: 60%, stroke: 0.5pt + luma(150))
-  #v(1em)
+#let title = [ROARS' Lab Manual]
+#let author = [#link("https://roars.dev")[ROARS' members]]
+
+#set page(margin: 1in)
+#let dark-green = rgb("#006400")
+
+#box(
+  stroke: (paint: dark-green, thickness: 3pt),
+  inset: 2em,
+  width: 100%,
+  height: 100%
+)[
+  #align(center + horizon)[
+    #text(size: 32pt, weight: "bold")[#title]
+    
+    #v(1fr)
+    
+    #image("files/dino.png", width: 80%)
+    
+    #v(1fr)
+    
+    #text(size: 18pt, weight: "bold")[#author]
+    
+    #text(size: 14pt)[George Mason University]
   ]
+]
+
+#pagebreak()
 
 #block(stroke:green, inset:1em)[
 This manual serves as a guide for prospective and current members of #link("https://roars.dev")[Roars Lab]. It outlines the lab's policies, procedures, and expectations to ensure a productive and collaborative research environment.
