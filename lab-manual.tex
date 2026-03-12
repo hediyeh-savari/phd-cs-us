@@ -119,23 +119,6 @@
 \tableofcontents
 \newpage
 
-% ============================================================
-\section{About this Manual}
-
-\subsection{Purpose of this manual}
-This manual serves as a guide for prospective and current members of \href{https://roars.dev}{Roars Lab}. It outlines the lab's policies, procedures, and expectations to ensure a productive and collaborative research environment.
-
-\subsection{Updating the manual}
-This document is a living document in Roars Lab's Github repo at
-
-\begin{tcolorbox}[enhanced]
-    \centering
-\url{https://code.roars.dev/phd-cs-us/lab-manual.tex}.    
-\end{tcolorbox}
-
-Lab members, who all have write access, are encouraged to provide feedback and suggest changes to improve its clarity and usefulness.
-
-
 
 % ============================================================
 \section{About the Lab}
@@ -152,21 +135,6 @@ Founding, major changes, milestones.
 \subsection{Lab space}
 Physical description of the lab.
 
-\subsection{Contact information}
-Address, email, website.
-
-
-\begin{itemize}
-    \item Lab website: \url{https://roars.dev}
-    \item Email: \href{mailto:info@roars.dev}{info@roars.dev}
-    \item Address
-    \begin{tcolorbox}
-George Mason University\\
-Nguyen Engineering Building  \#4430\\
-4400 University Drive\\
-Fairfax, VA 22030
-    \end{tcolorbox}
-\end{itemize}
 
 
 \subsection{Facilities}
@@ -202,98 +170,6 @@ Specific reading lists are project-dependent.
   \item Shared repositories
   \item Internal wikis and documentation
 \end{itemize}
-
-For all questions regarding lab servers, discuss in \textbf{Discord \#servers channel}.
-\subsubsection{Server Specs}
-
-
-
-We have \textbf{four} servers (\hyperref[pictures]{pictures}).
-
-\begin{enumerate}
-    \item \faMugHot{} \textbf{Boba}: ideal for AI-based projects, e.g., generative LLMs
-    \begin{itemize}
-        \item \href{https://www.nvidia.com/en-us/products/workstations/dgx-spark/}{NVIDIA DGX Spark}
-        \item CPU: NVidia GB10 Chip, 20 core Arm (10 Cortex-X925 + 10 Cortex-A725 Arm)
-        \item Unified Memory/Graphic: 128GB RAM
-        \item OS: NVIDIA DGX OS (based on Ubuntu LTS)
-    \end{itemize}
-
-    \item \faPizzaSlice{} \textbf{Pizza}: ideal for projects that can leverage many cores and specialized GPU.
-    \begin{itemize}
-        \item Custom built
-        \item CPU: 32 cores, 64 threads, 3.6GHz (AMD Ryzen Threadripper PRO 5975WX)
-        \item Graphic: 2x Nvidia RTX 4090 24GB RAM
-        \item Memory: 128GB RAM
-        \item OS: Debian Stable
-    \end{itemize}
-    \begin{quote}
-        This system is ideal for projects that can leverage many cores and specialized GPU.
-    \end{quote}
-
-    \item \faFish{} \textbf{Sushi}
-    \begin{itemize}
-        \item Lenovo ThinkStation P620
-        \item CPU: 64 cores, 128 threads, 4.3GHz (AMD Ryzen Threadripper PRO 3995WX)
-        \item Graphic: Nvidia RTX 5090 RTX 24GB RAM
-        \item Memory: 128GB RAM
-        \item OS: Debian Stable
-    \end{itemize}
-
-
-    \item \faUtensils{} \textbf{Taco}: ideal for experiments that need fast CPU (but not lots of core) and fast GPU.
-    \begin{itemize}
-        \item Alienware Aurora
-        \item CPU: 16 cores, 24 threads, 5.20GHz (Intel 12th Gen Core i9-12900KF)
-        \item Graphic: Nvidia RTX 3080 Ti 12GB RAM
-        \item Memory: 64GB RAM
-        \item OS: Debian Stable
-    \end{itemize}
-\end{enumerate}
-
-\begin{warningbox}
-    For Debian machines, \textbf{DO NOT} install anything other than Debian stable packages to these computers (e.g., \textbf{do not mix unstable or new repositories} to \texttt{apt} sources list). You can download and install anything in your home (local) directory. If in doubt, contact us.
-\end{warningbox}
-
-\subsubsection{Getting an Account}
-
-To get an account on the server, send a request and your \textbf{SSH public key} (for \emph{password-less} log in).
-
-\subsubsection{Miscs}
-
-\begin{enumerate}
-    \item You can use an IDE such as \texttt{VSCode} to do remote development on these servers (just connect to the server via the builtin remote login method in VSCode). You can also use other editors that support remote development (e.g., \texttt{Emac} + \texttt{TRAMP}).
-    \item Do take advantage of the multicores these machines have. Most programming languages support multiprocessing (e.g., \texttt{Python}) and can significantly reduce program runtime.
-    \item Periodically check \texttt{top} and \texttt{htop} to make sure \textbf{you} are not taking too much CPU or memory.
-    \item Periodically check \texttt{/var/tmp} or \texttt{/tmp/} to make sure \textbf{you} are not taking too much space there.
-\end{enumerate}
-
-\subsubsection{Pictures}\label{pictures}
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.8\textwidth]{files/sushi.jpg}
-    \caption{\faFish{} \textbf{Sushi}}
-\end{figure}
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.8\textwidth]{files/sushi-fan.jpg}
-    \caption{\faFish{} \textbf{Sushi Cooling System}}
-\end{figure}
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.8\textwidth]{files/pizzabox.jpg}
-    \caption{\faPizzaSlice{} \textbf{Pizza}}
-\end{figure}
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.8\textwidth]{files/boba.jpg}
-    \caption{\faUtensils{} \textbf{Boba}}
-\end{figure}
-
 
 
 

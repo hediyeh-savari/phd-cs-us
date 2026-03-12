@@ -467,14 +467,12 @@ Questions that are not categorized into the above sections but can help you unde
   In most cases, especially at top confs., papers will get rejected; and in such cases we improve and resubmit and get best paper award, e.g., our compositional verification work was rejected at CAV'25 and get Research Spotlight Award at NeurIPS'25. In some rare cases, however, rebuttal can actually change reviewers' mind as shown in @fig:rebuttal. 
   So embrace the uncertainties of the review process; treat rebuttal as an opportunity to improve our writing and work (think of them as _bug reports_ that make your code better), and don't worry about the rest.    
 
-
     #figure(
         image("files/cvpr-acceptance.png", width: 90%),
         caption: [CVPR'26 paper that got accepted even with largely negative reviews but a very positive rebuttal.]
     ) <fig:rebuttal>
 
 + *How should a student get sufficient background for their project? Do you expect them to take courses, read papers, or something else?*
-
 
   I don't want to students to take courses or read many papers before they start working on their project---the same thing kids in my Chess club don't learn openings and strategies when they start---just play tons of games and study openings later.
   
@@ -484,13 +482,6 @@ Questions that are not categorized into the above sections but can help you unde
 
   Once you understand something well, then you will be motivated to read papers in that area to see what others have done and how you can improve on them. You also will read papers in a different way---not with the "wow" or "impostor syndrome" feeling, but with the ability to understand the work deeply, appreciate the good stuff, and identify and improve the bad stuff---usually hidden in the polished writing.
 
-  
-  
-  
-  
-  
-  
-  
 
 
 
