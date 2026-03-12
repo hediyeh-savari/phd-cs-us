@@ -1,6 +1,6 @@
 
 
-//#set page(numbering: "1", number-align: center)
+#set page(numbering: "1", number-align: center)
 #set heading(numbering: "1.")
 #set text(lang: "en", size: 11pt)
 // #set link(style: text.with(fill: blue))
