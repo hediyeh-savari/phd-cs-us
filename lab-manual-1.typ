@@ -484,8 +484,6 @@ Lab members, who all have write access, are encouraged to provide feedback and s
 //   Once you understand something well, then you will be motivated to read papers in that area to see what others have done and how you can improve on them. You also will read papers in a different way---not with the "wow" or "impostor syndrome" feeling, but with the ability to understand the work deeply, appreciate the good stuff, and identify and improve the bad stuff---usually hidden in the polished writing.
 
 
-
-
 // // \item\textbf{What are your expectations about code release? How do you ensure experiments are reproducible?}
 
 // // As mentioned in~\autoref{q:scooping}, all our developments, even the ones that are not published yet, are open-source and publicly available in our \href{https://code.roars.dev/}{repos}. As code are changed  daily, so we don't have the time to make our instructions/README up-to-date all the time. But we always stand by our code and try to help others who want to use it (e.g., through bug report through our Github issue tracker) to ensure they can get whatever we get.
@@ -496,13 +494,31 @@ Lab members, who all have write access, are encouraged to provide feedback and s
 
 // - #link("https://jbhuang0604.github.io/advisor_guide.html")[Jia-Bin Huang's answers]
 // - #link("https://ideal.umd.edu/blog/Prospective-Students-FAQ")[IDEAL Lab's answers]
-= Discord Server
+// 
+= Presentation
+
++ *Title slide* with paper title, authors (highlight or underline the presenter's name), affiliations, conference or event name, date.
++ *Number your slides*. This is useful when people want to ask questions (or give feedback) on specific slides (e.g., _"on slide 10, you said ..."_).
++ *Every slide takes approximately 1 minute*. Using this rule of thumb, you can estimate how many slides you need for your presentation.
++ *Avoid Technical Stuff*. 
+  - Avoid slides that are too technical (e.g., formulae, code snippets, algorithms, etc) unless absolutely necessary.
+  - _Focus on motivation and high-level ideas_. The goal of the presentation is to get people interested into your work and talk to you and read your paper, which has more technical details. 
+
+
+= Lab Resources
+  
+== Web Links
+  - *Website*: #link("https://roars.dev/")[roars.dev]. This is the main place for lab news, announcements, etc.
+  - *Zoom* for meetings #link("https://meet.roars.dev/")[meet.roars.dev]: general lab meetings.
+
+
+== Discord Server
   + `#stats`: our most active channel, where we discuss research ideas, projects, papers, and everything else related to research and the lab. This is the main channel for research discussions and announcements.
   + `#general`: when we say hello to new members
   + `#servers`: for all questions regarding lab servers, e.g., how to get an account, how to use the servers, etc. This is the main channel for server-related discussions and announcements.
   
 
-= Computer Server Specs
+== Computer Server Specs
 We have _four_ servers (see #link(<pictures>)[pictures]):
 
 + *Boba*🧋: ideal for AI-based projects, e.g., generative LLMs
@@ -537,11 +553,11 @@ We have _four_ servers (see #link(<pictures>)[pictures]):
   *Warning:* For Debian machines, **DO NOT** install anything other than Debian stable packages to these computers (e.g., **do not mix unstable or new repositories** to `apt` sources list). You can download and install anything in your home (local) directory. If in doubt, contact us.
 ]
 
-== Getting an Account
+=== Getting an Account
 
 To get an account on the server, send a request and your *SSH public key* (for _password-less_ log in).
 
-== Miscellaneous
+=== Miscellaneous
 
 + You can use an IDE such as `VSCode` to do remote development on these servers (just connect to the server via the builtin remote login method in VSCode). You can also use other editors that support remote development (e.g., `Emacs` + `TRAMP`).
 
@@ -551,7 +567,7 @@ To get an account on the server, send a request and your *SSH public key* (for _
 
 + Periodically check `/var/tmp` or `/tmp/` to make sure *you* are not taking too much space there.
 
-== Pictures <pictures>
+=== Pictures <pictures>
 
 #figure(
   image("files/sushi.jpg", width: 80%),
@@ -577,14 +593,14 @@ To get an account on the server, send a request and your *SSH public key* (for _
 == Conference Registration and Travel
 
 
-== General Process
+=== General Process
 
-- *PI Pay*: I can pay for your conference registration and travel in advance using the lab's P-card. Usually we do this together for efficiency.
+- *PI Pay*: I can can pay for your *conference registration* and *airline* in advance using the lab's P-card. Usually we do this together for efficiency.
 - *You Pay (and get reimbursed)*: Everything else (e.g., hotel, food, local transport) you pay yourself (e.g., using your own credit card) and then submit reimbursement requests to the university.
-  - You need to save all receipts for reimbursement (except for meals, see below).
-  - You need to do this after you return from the conference and within 60 days of the expense date (TODO: check?).
+  - You need to save all receipts for reimbursement (except for meals, which is per diem see below @meals).
+  - You need to do this after you return from the conference and within 60 (?) days of the expense date.
 
-== Meals
+=== Meals <meals>
 
 + *Per Diem*: We are paid per diem for meals when we travel for conferences. This means you don't need to save or submit receipts for meals. If you don't eat anything (do not do this)!, you will still get the per diem amount.
 
