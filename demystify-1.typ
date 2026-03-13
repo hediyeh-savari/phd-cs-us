@@ -19,19 +19,24 @@
 #let mybookgithub = "https://code.roars.dev/phd-cs-us"
 
 
+
 #let simpsons(s) = quote(
     attribution: "The Simpsons",
     block:true
   )["#emph(s)"
   ]
 
-#let commentbox(who, msg) = box(
-    stroke: (x: 0.5pt + black, y: 0.5pt + black),
-    inset: 10pt,
-    fill: rgb("f0f0f0"),
-  )[*#who*: #msg
+#let commentbox(who: none, msg) = box(
+  stroke: (x: 0.5pt + black, y: 0.5pt + black),
+  inset: 10pt,
+  fill: rgb("f0f0f0"),
+)[
+  #if who != none [
+    *#who*: 
   ]
-#let mycomment(msg) = commentbox("Vu", msg)
+  #msg
+]
+#let mycomment(msg) = commentbox(msg)
 
 
 // Title Page
@@ -46,7 +51,7 @@
     #v(1em)
     #text(size: 16pt, weight: "bold")[#mysubtitle]
     #v(1fr)
-    #image("files/usamap.png", width: 80%)
+    #image("files/usamap.png", width: 100%)
     #v(1fr)
     #text(size: 18pt, weight: "bold")[#me]
     #v(0.2fr)
@@ -120,10 +125,8 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 Many students, especially those from smaller countries or schools, feel *imposter syndrome*---worrying they're "not good enough", or get discouraged when competing with others with "stronger" profiles (@sec:profile-not-strong). Remember (@chap:evalapps): adcom looks for potential and evidence you'll thrive in research environment and fit well at their institution---in other words, things that usually have nothing to do with your GPA or GRE scores.
 ])
 
-*Funding Is Not An Issue*  In most cases CS PhD students _do not_ need to worry about funding, especially at good R1
-universities in the US. 
-If you are admitted, you will almost certainly
-receive _full funding_ (@chap:funding) to support your study. 
+*Funding Is Not An Issue*  In most cases CS PhD students _do not_ need to worry about funding, especially at good R1 universities in the US. 
+If you are admitted, you will almost certainly receive _full funding_ (@chap:funding) to support your study. 
 
 Your funding includes tuition, health insurance, and stipend /*TODO @glossary[stipend]*/ (in STEM field in CS you get paid for your study!).
 Moreover, you often receive additional benefits such as summer pay (@sec:summer-funding), laptops (@sec:buying-equipment), and traveling to conferences and workshops. 
@@ -143,120 +146,109 @@ Full funding for CS PhD students is the norm in the US, and I'd go as far as to 
 
 A PhD in CS is a _research_ degree. Unlike undergraduate or even Master's programs (\autoref{chap:ms}), which focus on breadth of knowledge through coursework, a PhD is about depth and pushing the boundary of a specific area within a CS \glslink{fields}{field} (e.g., software verification within the field of programming languages or formal methods). You will become an expert in your area of research and contribute something new to the field that has never been done before. 
 
-// \begin{commentbox}
-//     This \href{https://matt.might.net/articles/phd-school-in-pictures/}{series of pictures} from \href{https://matt.might.net}{Matt Might} illustrates what a PhD means.
-// \end{commentbox}
 
-// Career-wise, a CS PhD prepares you for jobs that require deep technical expertise and the ability to do independent research. Many graduates become professors or academic researchers while others pursue positions in industry research labs, advanced engineering teams, or technical leadership positions. The degree also opens doors to national labs, government agencies, and startups, where the ability to solve unknown and complex problems is necessary.
+#mycomment([This #link("https://matt.might.net/articles/phd-school-in-pictures/")[series of pictures] from #link("https://matt.might.net")[Matt Might] illustrates what a PhD means.])
+
+Career-wise, a CS PhD prepares you for jobs that require deep technical expertise and the ability to do independent research. Many graduates become professors or academic researchers while others pursue positions in industry research labs, advanced engineering teams, or technical leadership positions. The degree also opens doors to national labs, government agencies, and startups, where the ability to solve unknown and complex problems is necessary.
 
 #mycomment([A PhD is not just a degree, it is a *journey* that transforms you into a researcher. You will learn how to think critically, solve problems, deal with adversity, and work independently. You will also learn how to write and ``sell'' your work, collaborate with others, and effectively communicate your ideas. In the end, you will have a deep understanding of your chosen field and become an expert in your area of research. In fact, you will know about your research topic more than *anyone* else in the world, including, in many cases, your adviser! This is a scary thought, but it is also exciting and rewarding.]
 )
 
 == CS Fields and Areas <sec:fields-and-areas>
 
-// CS is a broad academic discipline with many specialized areas of research. Understanding the structure of CS can help you communicate your research interests and goals more effectively, e.g., in your SOP (\autoref{chap:sop}), and also assist you in finding suitable advisers and research topics (\autoref{sec:finding-adviser}).
+CS is a broad academic discipline with many specialized areas of research. Understanding the structure of CS can help you communicate your research interests and goals more effectively, e.g., in your SOP (@chap:sop), and also assist you in finding suitable advisers and research topics (@sec:finding-adviser).
 
-// \paragraph{Disciplines} At the highest level, academic \emph{disciplines} are broad domains of scholarly study, such as CS, Mathematics, Physics, Biology, Economics, Law, Social Sciences, and the Humanities. Universities typically have entire departments and degree programs centered on these disciplines (e.g., a Dept. of Computer Science or of Economics).
+*Disciplines* At the highest level, academic _disciplines_ are broad domains of scholarly study, such as CS, Mathematics, Physics, Biology, Economics, Law, Social Sciences, and the Humanities. Universities typically have entire departments and degree programs centered on these disciplines (e.g., a Dept. of Computer Science or of Economics).
 
-// \begin{commentbox}
+#mycomment([_STEM fields_ collectively refer to the disciplines in the domains of:
+- *Science:* Physics, Chemistry, Biology, Geology
+- *Technology:* Computer Science, Cybersecurity, Data Science, Information Technology
+- *Engineering:* Electrical, Mechanical, Civil, Chemical, and Bioengineering
+- *Mathematics:* Pure and Applied Math, Statistics, Operations Research
+])
 
-// \emph{STEM fields} collectively refer to the disciplines in the domains of:
-// \begin{itemize}
-//     \item \textbf{Science:} Physics, Chemistry, Biology, Geology
-//     \item \textbf{Technology:} Computer Science, Cybersecurity, Data Science, Information Technology
-//     \item \textbf{Engineering:} Electrical, Mechanical, Civil, Chemical, and Bioengineering
-//     \item \textbf{Mathematics:} Pure and Applied Math, Statistics, Operations Research
-// \end{itemize}
-// \end{commentbox}
+*Fields*: Within a discipline such as CS, we have _fields_---major branches that often correspond to faculty groups, conference communities, and sometimes even degree tracks. Common fields in CS include:
+Artificial Intelligence (AI),
+Machine Learning (ML),
+Software Engineering (SE),
+Programming Languages (PL),
+Theory of Computation (TCS),
+Systems,
+Computer Architecture,
+Security and Privacy,
+Computer Vision (CV),
+Natural Language Processing (NLP),
+Human-Computer Interaction (HCI),
+Databases,
+Networking,
+Graphics and Visualization,
+and Computational Biology
 
-// \paragraph{Fields} Within a discipline such as CS, we have \emph{fields}---major branches that often correspond to faculty groups, conference communities, and sometimes even degree tracks. Common fields in CS include:
-// Artificial Intelligence (AI),
-// Machine Learning (ML),
-// Software Engineering (SE),
-// Programming Languages (PL),
-// Theory of Computation (TCS),
-// Systems,
-// Computer Architecture,
-// Security and Privacy,
-// Computer Vision (CV),
-// Natural Language Processing (NLP),
-// Human-Computer Interaction (HCI),
-// Databases,
-// Networking,
-// Graphics and Visualization,
-// and Computational Biology
+Most faculty have a ``home'' field with which they are primarily associated, but may also publish in related fields. For example, SE researchers often work in PL and Formal Methods; Security researchers may also work in Systems and Theory.
 
-// Most faculty have a ``home'' field with which they are primarily associated, but may also publish in related fields. For example, SE researchers often work in PL and Formal Methods; Security researchers may also work in Systems and Theory.
+*Areas*: Within a field, we have _areas_---narrower subfields where people specialize. For example, PL includes Type Systems, Formal Verification, Program Synthesis; SE includes Testing, Program Repair, Empirical SE, and AI4SE (a new and fast-growing area); and
+ML includes Supervised/Unsupervised Learning, Reinforcement Learning, and ML Theory, and
+AI traditionally includes Planning, Reasoning, and Robotics (though many of these are now distinct fields).
+Some areas are growing so large that they are becoming fields in their own right. ML, for instance, originated within AI but is now widely regarded as a standalone field.
 
-// \paragraph{Areas} Within a field, we have \emph{areas}---narrower subfields where people specialize. For example,  PL includes Type Systems, Formal Verification, Program Synthesis, SE includes Testing, Program Repair, Empirical SE, and AI4SE (a new and fast-growing area), and
-// ML includes Supervised/Unsupervised Learning, Reinforcement Learning, and ML Theory, and
-// AI traditionally includes Planning, Reasoning, and Robotics (though many of these are now distinct fields).
-// Some areas are growing so large that they are becoming fields in their own right. ML, for instance, originated within AI but is now widely regarded as a standalone field.
-
-// \paragraph{Topics and Projects}  Finally, we have \emph{research topics}, which refer to concrete problems or techniques within an area. For instance, 
-//  Model Checking, Theorem Proving in Formal Verification, and Mutation Testing, Test Prioritization, and Symbolic Execution in Software Testing.
+*Topics and Projects*: Finally, we have _research topics_, which refer to concrete problems or techniques within an area. For instance,
+ Model Checking, Theorem Proving in Formal Verification, and Mutation Testing, Test Prioritization, and Symbolic Execution in Software Testing.
 
 
-// At the finest granularity, a research \emph{project} or dissertation focuses on a specific question within a topic (or cross-topics and even cross-areas).  For example: ``How can symbolic execution be applied to generate high-coverage test cases for deep neural networks?''
+At the finest granularity, a research _project_ or dissertation focuses on a specific question within a topic (or cross-topics and even cross-areas). For example: ``How can symbolic execution be applied to generate high-coverage test cases for deep neural networks?''
 
-// \begin{commentbox}
-//     For example, my own \href{https://roars.dev}{research profile} can be structured as:
-//     \begin{itemize}
-//         \item \textbf{Discipline:} Computer Science
-//         \item \textbf{Fields:} Software Engineering and Formal Methods
-//         \item \textbf{Areas:} Software Verification, Testing, and Analysis
-//         \item \textbf{Topics:} Theorem Proving, Symbolic Execution, Test Generation
-//         \item \textbf{Project:} Applying automated theorem proving to verify the correctness of deep learning systems, and generating benchmarks to evaluate formal verifiers
-//     \end{itemize}
-// \end{commentbox}
+#mycomment([
+For example, my own #link("https://roars.dev")[research profile] can be structured as:
+- *Discipline:* Computer Science
+- *Fields:* Software Engineering and Formal Methods
+- *Areas:* Software Verification, Testing, and Analysis
+- *Topics:* Theorem Proving, Symbolic Execution, Test Generation
+- *Project:* Applying automated theorem proving to verify the correctness of deep learning systems, and generating benchmarks to evaluate formal verifiers
+])
 
-// %here
+
 
 == How long to complete the CS PhD program? <sec:time>
 // \sectioninfo{About 5--7 years in the US.}
 
-// Typically it takes 5--7 years for CS PhD in the US.  This is usually longer compared to other countries (\autoref{sec:non-us-differences}), which might require having an MS (\autoref{sec:phd-vs-ms}).
+Typically it takes 5--7 years for a CS PhD in the US. This is usually longer compared to other countries (@sec:non-us-differences), which might require having an MS (@sec:phd-vs-ms).
 
+#figure(
+  image("files/c4a.png", width: 50%),
+  caption: [The "ambition" level of a PhD student over their years of study (they miss the 6--7th year when the ambition is _"Just let me graduate"_).],
+)
 
-// \begin{figure}
-// \centering
-//   \includegraphics[scale=0.5]{files/c4a.png}
-//   \caption{The ``ambition'' level of a PhD student over their years of study (they miss the 6--7th year when the ambition is \emph{``Just let me graduate''}).}
-// \end{figure}
+The first two years are typically spent taking coursework (somewhat equivalent to MS study), finding an adviser, and learning how to do research. The next 2--3 years focus on research, forming a dissertation topic, and getting results published. The last 1--2 years are usually spent continuing to publish, writing and defending the dissertation, and looking for a job.
 
-// The first two years you typically take coursework (somewhat equivalent to an MS study), find an adviser, and learn how to do research.  The next 2--3 years you focus on your research, form a dissertation topic, and get results published. The last 1--2 years you continue to publish, write and defend your dissertation, and look for a job.
-// Within these 5--7 years, CS PhD students often take a ``leave of absence'' for 1--2 semesters or summer to do internships at companies and research labs.
+Within these 5--7 years, CS PhD students often take a "leave of absence" for 1--2 semesters or for a summer to do internships at companies and research labs.
 
-
-// \begin{commentbox}
-//     I start my PhD with an MS, and it took me 7 years (Fall'07--Fall'14). I spent half a year doing an internship at the \href{https://www.nrl.navy.mil}{Naval Research Lab}. My PhD did take a bit longer than usual, but allows me to explore new research areas and topics.
-// \end{commentbox}
+#mycomment[
+  I started my PhD with an MS, and it took me 7 years (Fall '07--Fall '14). I spent half a year doing an internship at the #link("https://www.nrl.navy.mil")[Naval Research Lab]. My PhD did take a bit longer than usual, but it allowed me to explore new research areas and topics.
+]
 
 
 
 == Undergrad Not in CS or Related Disciplines} <sec:non-stem>
 // \sectioninfo{You can successfully apply to CS PhD even if you have non-CS background.}
 
-// You still can apply to PhD in CS \emph{as long as} you can demonstrate you are ready for it through your background, research experience, LoRs, statements, etc. You might be even able to leverage this to make your profile stand out as mentioned in \autoref{sec:stand-out}.
+You still can apply to a PhD in CS _as long as_ you can demonstrate that you are ready for it through your background, research experience, LoRs, statements, etc. You might even be able to leverage this to make your profile stand out, as mentioned in @sec:stand-out.
 
-// A main concern \acrshort{adcom} (\autoref{sec:adcom}) has for a non-CS or non-STEM student is if you have the sufficient technical background obtained through core CS courses.  So you need to show that you have such knowledge through your coursework, projects, or research.
-// For example, if you have taken a class on Algorithms, even from online course from Coursera, you can talk about it in your SOP.  If you have done a project that requires knowledge of OS or have a professional certification (e.g., A+) through work, you can talk about it.  If you have done research that requires knowledge of Discrete Maths, you can talk about it.  You can also ask your LoR writers to talk about your technical background.
+A main concern the admissions committee (@sec:adcom) has for a non-CS or non-STEM student is whether you have sufficient technical background from core CS courses. So you need to show that you have this knowledge through your coursework, projects, or research.
 
-// \paragraph*{Core CS topics} Common CS knowledge that you should know are:
+For example, if you have taken a class on algorithms, even an online course from Coursera, you can talk about it in your SOP. If you have done a project that requires knowledge of operating systems or have a professional certification (e.g., A+) through work, you can talk about it. If you have done research that requires knowledge of discrete math, you can talk about it. You can also ask your LoR writers to discuss your technical background.
 
-// \begin{itemize}
-//   \item \textbf{Programming Foundation}: programming concepts in modern languages such as C++ or Java.
-//   \item \textbf{Discrete Math}: logic, set theory, proof techniques
-//   \item \textbf{Data Structures and Algorithms}: linked lists, trees, sorting, searching
-//   \item \textbf{Computer OS or Systems}: memory management, file systems, processes
-// \end{itemize}
+*Core CS topics.* Common CS knowledge that you should know includes:
 
-// In short, you \emph{do not need} to formally take CS courses, you just need to show that you have this essential knowledge, e.g., through the mentioned ways. Many universities are well aware that incoming graduate students might not have all the technical background, so they often have a \emph{``bridge''} courses to help students catch up.  For example, GMU has four bridge courses corresponding to the four core areas above that incoming students can take to catch up on their CS knowledge.
+- *Programming foundation:* programming concepts in modern languages such as C++ or Java.
+- *Discrete math:* logic, set theory, proof techniques.
+- *Data structures and algorithms:* linked lists, trees, sorting, searching.
+- *Computer OS or systems:* memory management, file systems, processes.
 
+In short, you _do not need_ to formally take CS courses; you just need to show that you have this essential knowledge, for example through the ways mentioned above. Many universities are well aware that incoming graduate students might not have all the technical background, so they often have “bridge” courses to help students catch up. For example, GMU has four bridge courses corresponding to the four core areas above that incoming students can take to catch up on their CS knowledge.
 
-// \begin{commentbox}
-//   I would advocate for a non-STEM student who shows that they have a strong drive for CS by studying core CS knowledge through various channels (e.g., self-study through online courses, projects, etc.).  I have seen many students with non-CS backgrounds who are very successful in CS PhD.  I also have seen many students with CS background who are not successful in CS PhD.  So it is not about your background, it is about your drive and passion for CS research.
-// \end{commentbox}
+#mycomment[
+  I would advocate for a non-STEM student who shows that they have a strong drive for CS by studying core CS knowledge through various channels (e.g., self-study through online courses, projects, etc.). I have seen many students with non-CS backgrounds who are very successful in CS PhD. I have also seen many students with CS backgrounds who are not successful in a CS PhD. So it is not about your background; it is about your drive and passion for CS research.
+]
 
 
 
@@ -266,35 +258,32 @@ A PhD in CS is a _research_ degree. Unlike undergraduate or even Master's progra
 == Is MS Required for CS PhD Admission? <sec:msrequirement>
 // \sectioninfo{You do not need an MS to do PhD in CS.}
 
-// No, while other countries often encourage or even require an MS for PhD student in CS (\autoref{sec:non-us-differences}), it is common in the US to directly apply for a PhD program after a 4-year undergrad program (e.g., after getting a B.S degree).  In addition, most CS PhD programs are designed so that students can get MS degree ``along the way'' to PhD, e.g., after finishing the 2-year course work. This is one of the reasons why CS PhD in the US takes longer (5--7 years, \autoref{sec:time}) than other countries.
+No, while other countries often encourage or even require an MS for PhD students in CS (@sec:non-us-differences), it is common in the US to directly apply for a PhD program after a 4-year undergraduate program (e.g., after getting a BS degree). In addition, most CS PhD programs are designed so that students can get an MS degree "along the way" to the PhD, for example after finishing the 2-year coursework. This is one of the reasons why a CS PhD in the US takes longer (5--7 years, @sec:time) than in other countries.
 
-// However, MS \emph{can help} admission if it gives research experience or is from a more well-known school than your undergrad institution (\autoref{chap:your-school}).
-// Some profs. also prefer students with an MS since they have more experience and are more mature.  But this is not a requirement, and many profs. are happy to take students without an MS.
-// Moreover, if you have an MS then some course work \emph{might be} transferred for course credits, which \emph{might} save some time. But in general don't count finishing earlier just because you have an MS.
+However, an MS _can help_ admission if it gives research experience or is from a more well-known school than your undergraduate institution (@chap:your-school).
+Some professors also prefer students with an MS since they have more experience and are more mature. But this is not a requirement, and many professors are happy to take students without an MS.
+Moreover, if you have an MS, then some coursework _might_ be transferred for course credit, which _might_ save some time. But in general, don't count on finishing earlier just because you have an MS.
 
-// \begin{commentbox}
-//     I start my PhD with an MS in CS from a US university.  MS helped me in gaining research experience, but I still had to retake courses because I did my MS at a different university.  So in the end, I did not save any time because of the MS.\\
-    
-//     In general, don't worry if you don't have an MS. But also don't feel that you wasted your time if you have an MS, as it can help you in research.
-//   \end{commentbox}
+#mycomment[
+  I started my PhD with an MS in CS from a US university. The MS helped me gain research experience, but I still had to retake courses because I did my MS at a different university. So in the end, I did not save any time because of the MS.
+
+  In general, don't worry if you don't have an MS. But also don't feel that you wasted your time if you have an MS, as it can help you in research.
+]
 
 
 == Can I apply for PhD in CS for the Spring or Summer? <sec:apply-spring-summer>
-// \sectioninfo{Fall is the most common start time for PhD programs in the US and allows you to apply for funding opportunities.}
+Most students apply to start their PhD in the Fall. This means they submit their application around December, receive admission decisions sometime in the Spring, and officially begin their PhD in the Fall (August or September).
 
-// Most students apply to start their PhD study in the Fall. This means they send in their application around December and receive admission notification sometime in the Spring, and officially begin their PhD study in the Fall (August or September).
+Fall---the start of the academic year---is the most common start time for PhD programs in the US, and many universities only accept new PhD students in the Fall. Importantly, applying for the Fall also gives you access to funding opportunities (@chap:funding) that are available only for Fall admits, such as TAships (@sec:ta) and some fellowships.
 
-// Fall---the start of an \gls{AY}---is the most common start time for PhD programs in the US, and many universities only accept new PhD students in the Fall. Importantly, applying for the Fall allows you to apply for funding opportunities (\autoref{chap:funding}) that are available only for Fall admits, such as TAships (\autoref{sec:ta}) and fellowships (\autoref{sec:ra}).
+However, many universities also accept PhD students in the Spring or Summer, especially when you have a specific adviser who can fund you through an RAship (@sec:ra). This is less common, and you may lose funding opportunities that are available only for Fall admits.
 
-// However, many universities also accept PhD students in the Spring or Summer, especially when you have a specific adviser who would fund you through an RAship (\autoref{sec:ra}). This is less common, and you would loose funding opportunities that are available only for Fall admits.
-
-
-// \begin{commentbox}
-//   GMU allow PhD students to start in the Spring, but not recommended. Two of my PhD students started in the Spring, but that was because I have funding to support them right away. In general, we can get student in the Spring or even Summer (I never tried), but we would need to have RA for them and they are no longer eligible for various benefits for Fall admits (e.g., GMU gives Fall admits stipend for their first summer in the PhD program). So in short, it's possible, but we do not recommend it.
-// \end{commentbox}
+#mycomment[
+  GMU allows PhD students to start in the Spring, but it is usually not recommended. Two of my PhD students started in the Spring because I had funding to support them right away. In general, a student can start in the Spring or even Summer only if an adviser already has RA funding for them. Students who do not start in the Fall may also lose benefits reserved for Fall admits, such as a first-summer stipend. So in short, it is possible, but I do not recommend it in general.
+]
 
 
-== PhD in the US vs. Other Countries} <sec:non-us-differences>
+== PhD in the US vs. Other Countries <sec:non-us-differences>
 // \sectioninfo{Among several differences, CS PhD in the US does not require an MS degree but has a longer PhD study time.}
 
 // \begin{table}
@@ -500,7 +489,7 @@ A PhD in CS is a _research_ degree. Unlike undergraduate or even Master's progra
 // \end{commentbox}
 
 
-
+#pagebreak()
 // \part{Application Materials <part:application}
 
 // %\partinfo{.}
@@ -1597,17 +1586,16 @@ Graduating from top universities \emph{that adcom members recognize}  helps quit
 // \end{commentbox}
 
 
-// \subsection{Teaching Assistant (TA) <sec:ta}
+== Teaching Assistant (TA) <sec:ta>
 
-// TA is common in the beginning when you haven't found an adviser who would pay you RA. It is also common to sandwich between TA and RA (e.g., when your prof. does not have sufficient funding or you want to try the TA experience).
+TA is common at the beginning of a PhD, when you have not yet found an adviser who can support you as an RA. It is also common to alternate between TA and RA, for example when your professor does not have enough funding or when you want to gain teaching experience.
 
-// Your TA is paid through the school or department, i.e., they hire you to help teach.
-// As a TA, you spend up to 20 hrs/week and help with classes (e.g., grading or teaching labs/recitation).
-// During a semester, a TA might work with several courses and professors (not necessarily their adviser).  TA funding is \emph{not} typically available during the summer (\autoref{sec:summer-funding}), which has few courses. 
+As a TA, you are paid through the school or department to help with teaching. You typically work up to 20 hours per week and assist with classes, for example by grading, running labs, or leading recitations.
+During a semester, a TA might work with several courses and professors, not necessarily their adviser. TA funding is *not* typically available during the summer (@sec:summer-funding), when there are fewer courses.
 
-// \paragraph{How to get TA?}  Unless you have other funding such as RA or fellowships, TA is typically the default for CS PhD programs. In your application, just simply indicate that you need financial assistance. Typically, adcom will either admit you and give you TA, or reject you. We do not admit a student without supporting them (\autoref{sec:ievaluate}).
+*How to get TA?* Unless you have other funding such as RA or fellowships, TA is typically the default funding source for CS PhD programs. In your application, simply indicate that you need financial assistance. Typically, adcom will either admit you with TA support or reject you. We do not admit students without supporting them (@sec:ievaluate).
 
-// TA is decided by the department, so you do not need to worry about it.  However, if you have a strong preference for a specific course or professor, you can mention that after being offered an TA. This would allow you to work with a professor you like or in an area that interests you.  In many cases, professors can request specific TAs for their courses (e.g., students who have taken their courses and done well).  
+TA assignments are decided by the department, so you usually do not need to worry about them. However, if you have a strong preference for a specific course or professor, you can mention that after being offered a TA. This can let you work with a professor you like or in an area that interests you. In many cases, professors can request specific TAs for their courses, for example students who have previously taken the course and done well.
 
 
 
@@ -1615,17 +1603,17 @@ Graduating from top universities \emph{that adcom members recognize}  helps quit
 //   At GMU CS, admitted PhD students have 4 years of GTA guaranteed, and also receive a stipend for the first summer (\autoref{sec:summer-funding}).
 // \end{commentbox}
 
-// Even if you have other funding and do not need a TA, you still should do TA at least once.  This allows you to see what teaching is like, which is especially helpful for a research career where you often give talks and tell people about your work. GMU sometimes has classes that a more senior student can teach.  In that case, you will be paid as GTA or even sometimes as a lecturer.  This is a good opportunity for students to get teaching experience and you might even get paid a bit more.
+Even if you have other funding and do not need a TA, you should still try TA at least once. This lets you see what teaching is like, which is especially helpful for a research career where you often give talks and explain your work to others. GMU sometimes has courses that more senior students can teach. In that case, you may be paid as a GTA or sometimes even as a lecturer. This is a good opportunity to gain teaching experience, and you might even get paid a bit more.
 
-// \paragraph{Where do TA funding come from?}  Typically, the department, depends on their enrollment and budget, gets TA funding from the college, which then distributes it to the departments.  The department then assigns TAs to courses based on their needs and the students' qualifications. For example, a department such as CS typically have many TAs due to high enrollment and many courses.  In contrast, a department such as Math might have fewer TAs due to lower enrollment and fewer courses. 
+*Where does TA funding come from?* Typically, the department receives TA funding from the college based on enrollment and budget, and then assigns TAs to courses based on instructional needs and student qualifications. For example, a CS department often has many TAs because it has high enrollment and many courses. In contrast, a department such as Math might have fewer TAs because it has lower enrollment and fewer courses.
 
-// \subsection{Research Assistant (RA) <sec:ra}
-// RA is provided through a professor through their funding so you can work on their project.
-// You do not need to teach as an RA, so you can focus on your research. Depending on the professor, RA may be available during the summer. \autoref{sec:ra-cost} gives more details on RA budget.
+== Research Assistant (RA) <sec:ra>
+RA support is provided by a professor through their funding so that you can work on their research project.
+As an RA, you generally do not need to teach, so you can focus on research. Depending on the professor, RA support may also be available during the summer. See @sec:ra-cost for more details on RA budgeting.
 
-// \textbf{How to get RA?} When a professor recruits you, they might offer you an RA right away (so you start with an RA).  However, a more common scenario is that you first get admitted with TA, and then after a year or two find an adviser to support you with RA.
+*How to get RA?* When a professor recruits you, they might offer you an RA immediately, so you start the program with RA support. However, a more common scenario is that you first get admitted with TA support, then after a year or two you find an adviser who can support you as an RA.
 
-// It is important to note that RA is \emph{never guaranteed} as it depends on the funding situation of the prof. So you should also pay attention to TA, which is a good backup plan (remember, typically TA and RA have quite similar benefits). This means you should also check if TA is readily available for PhD students in the program.
+It is important to note that RA support is *never guaranteed* because it depends on the professor's funding situation. So you should also pay attention to TA availability, since TA is a good backup plan and usually comes with benefits similar to RA. In other words, you should check whether TA support is readily available for PhD students in the program.
 
 
 // \begin{commentbox}
@@ -1633,9 +1621,9 @@ Graduating from top universities \emph{that adcom members recognize}  helps quit
 // \end{commentbox}
 
 
-// \paragraph{Where do RA funding come from?} Professors apply for funding to support students from various sources, such as government grants (e.g., NSF, NIH, DoD), industry grants (e.g., Google, Microsoft), or internal university funds.  The most common funding source for CS profs. is from NSF grants, which are designed to support graduate students as RAs.  Recently hired professors---such as new assistant professors---often have start-up funds, which are provided by the university to help them establish their research lab.  
+*Where does RA funding come from?* Professors apply for funding to support students from various sources, such as government grants (for example NSF, NIH, or DoD), industry grants (for example Google or Microsoft), or internal university funds. For many CS professors, the most common source is NSF grants, which are often designed to support graduate students as RAs. Recently hired professors, such as new assistant professors, often also have start-up funds from the university to help them establish their research lab.
 
-// Typically, each grant can support one or at most two students each year and each student costs up to about \$70,000 per year (\autoref{sec:ra-cost}), so professors need to apply for multiple grants to support multiple students.  This is the reason why professors often do not have the time to directly involve in research, e.g., doing experiments or writing papers, but instead mentor their students to do that. If a professor no longer has funding---a quite common situation, they might not be able to support you as an RA, in which case you would become TA (but still work with the same prof).  
+Typically, each grant can support one or at most two students per year, and each student can cost up to about \$70,000 per year (@sec:ra-cost). This is why professors often need multiple grants to support multiple students. It is also one reason professors may not have time to do experiments or write papers directly, and instead mentor their students to do that work. If a professor no longer has funding—which is quite common—they might not be able to support you as an RA, in which case you would become a TA while still working with the same professor.
 
 == Fellowships/Scholarships <sec:fellowships>
 
@@ -1686,7 +1674,7 @@ Graduating from top universities \emph{that adcom members recognize}  helps quit
 
 // Finally, for fellowships (\autoref{sec:fellowships}) you might get paid over the summer depending on your fellowship (\autoref{sec:fellowships}). Good ones, e.g., from NSF, Google, and Microsoft, will pay you the whole year.
 
-// \subsection{How much do \textbf{YOU} cost? <sec:ra-cost}
+== How much do *YOU* cost? <sec:ra-cost>
 // \subsectioninfo{Your entire PhD program costs about \$400K in total, but you \emph{do not} pay for it.}
 
 // PhD students often ask why their salary is low compared to the large grants their advisers get. They also wonder why their offer letters sometimes show that their benefits are higher than what they receive (i.e., stipend).
@@ -2362,6 +2350,20 @@ Graduating from top universities \emph{that adcom members recognize}  helps quit
 
 // \part{Appendices <part:appendices}
 // \appendix
+// 
+
+#pagebreak()
+
+
+#counter(heading).update(0)
+
+#set heading(
+  numbering: "A.1",
+  supplement: "Appendix",
+)
+
+
+
 = Glossary and Acronyms <chap:glossary>
 // \printglossary
 
@@ -2419,27 +2421,27 @@ Graduating from top universities \emph{that adcom members recognize}  helps quit
 // % F-2 visa holders must leave the US if the primary F-1 student visa holder loses status or completes their program.
 
 = Domestic Students <chap:domestic-students>
-\chapterinfo{Specific benefits and opportunities for domestic students applying to CS PhD programs.}
+// \chapterinfo{Specific benefits and opportunities for domestic students applying to CS PhD programs.}
 
-\simpsons[I'm not a bad guy! I work hard, and I love my kids. So why should I spend half my Sunday hearing about how I'm going to Hell?]
+#simpsons[I'm not a bad guy! I work hard, and I love my kids. So why should I spend half my Sunday hearing about how I'm going to Hell?]
 
-Most of what is written in this handbook applies to both \glslink{international-domestic}{domestic}\footnote{As mentioned in \autoref{chap:glossary}, domestic means you do not require a visa to study in the US.} and international students.  However, there are some differences and benefits that domestic students should be aware of and can leverage to improve their chances of admission.
-\paragraph{Standing out \autoref{sec:stand-out}} There are \emph{few} domestic applications compared to international ones (one reason is that many domestic students go to the workforce after their undergraduate degree). 
-Many US universities thus want to increase the number of domestic students in their programs. So if you're a domestic student, you already \emph{stand out} from the crowd.
+Most of what is written in this handbook applies to both domestic#footnote[As mentioned in @chap:glossary, domestic means you do not require a visa to study in the US.] and international students. However, there are some differences and benefits that domestic students should be aware of and can leverage to improve their chances of admission.
 
-\paragraph{Fee Waiving~\autoref{sec:fee-waive}} Some schools might offer application fee waivers for domestic students.  You should check with the school you're applying to.
+#strong[Standing out @sec:stand-out.] There are #emph[few] domestic applications compared to international ones (one reason is that many domestic students go to the workforce after their undergraduate degree). Many US universities thus want to increase the number of domestic students in their programs. So if you're a domestic student, you already #emph[stand out] from the crowd.
 
-\paragraph{School \autoref{chap:your-school}} Adcom already knows about your school, which is a plus. You are also more familiar with the US education system and academic culture (\autoref{chap:cultural}).
+#strong[Fee Waiving @sec:fee-waive.] Some schools might offer application fee waivers for domestic students. You should check with the school you're applying to.
 
-\paragraph{Standard Tests \autoref{chap:standard-tests}} You do not need to take TOEFL or IELTS (\autoref{sec:english-tests}) because you already did your undergrad (or MS) at a US university.  You might also be more comfortable communicating in English, e.g., contacting professors (\autoref{sec:contact}).
+#strong[School @chap:your-school.] Adcom already knows about your school, which is a plus. You are also more familiar with the US education system and academic culture (@chap:cultural).
 
-\paragraph{Transcripts} You do not need to get your transcripts evaluated/translated (which can be a hassle and inaccurate).  You can just send your official transcripts directly to the school you're applying to.
+#strong[Standard Tests @chap:standard-tests.] You do not need to take TOEFL or IELTS (@sec:english-tests) because you already did your undergrad (or MS) at a US university. You might also be more comfortable communicating in English, e.g., contacting professors (@sec:contact).
 
-\paragraph{Funding \autoref{chap:funding}} You have more opportunities for funding, e.g., through government scholarships for US citizens and permanent residents.  You can also apply to specific programs \emph{before} you start your PhD, e.g., NSF Graduate Research Fellowship Program (GRFP) and Hertz Foundation Fellowship.  These fellowships are very competitive (\autoref{chap:fellowships}) and can significantly improve your admission chances.
+#strong[Transcripts.] You do not need to get your transcripts evaluated or translated (which can be a hassle and inaccurate). You can just send your official transcripts directly to the school you're applying to.
 
-\paragraph{Research Experience \autoref{chap:research-opportunities}} You might have many opportunities to do research as an undergraduate, e.g., through \acrshort{REU} programs and internships at your undergrad university.  Highlight such experience in your application.
+#strong[Funding @chap:funding.] You have more opportunities for funding, e.g., through government scholarships for US citizens and permanent residents. You can also apply to specific programs #emph[before] you start your PhD, e.g., NSF Graduate Research Fellowship Program (GRFP) and Hertz Foundation Fellowship. These fellowships are very competitive (@chap:fellowships) and can significantly improve your admission chances.
 
-\paragraph{Open House \autoref{chap:accepted}} It is easier for you to attend open house events in person.  This can help you make a better decision on which school to attend.
+#strong[Research Experience @chap:research-opportunities.] You might have many opportunities to do research as an undergraduate, e.g., through REU programs and internships at your undergrad university. Highlight such experience in your application.
+
+#strong[Open House @chap:accepted.] It is easier for you to attend open house events in person. This can help you make a better decision on which school to attend.
 
 // % \begin{domesticbox}[Domestic students:] If you're a domestic student, you have several advantages in your application.   You also have more opportunities for funding, e.g., through government scholarships for US citizens and residents. Finally,
 // % \end{domesticbox}
@@ -3422,7 +3424,6 @@ This book is inherently _subjective_ and _opinionated_ based on my experience in
 
 Moreover, since PhD admission varies significantly across institutions, there's rarely a universal "correct" way, and too many choices often lead to confusion. Clear and direct guidance---even if opinionated---can provide practical pathways to help students like yourself to navigate the PhD admissions process better.
 
-
 = Acknowledgement 
 
 Many people have contributed to this work.
@@ -3434,7 +3435,7 @@ Also thanks to NSF for encouraging faculty to be creative in research and educat
 Finally, thanks to my wife and kids for always supporting me and putting up with my long hours of work and writing.
 
 #align(center)[
-  #datetime.today().display("[year]-[month]-[day]")
+  *Last Updated: #datetime.today().display("[year]-[month]-[day]")*
 ]
 
 
