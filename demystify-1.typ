@@ -1169,7 +1169,7 @@ Graduating from top universities \emph{that adcom members recognize}  helps quit
 // \end{center}
 
 
-== Interviews <sec:interviews> 
+=== Interviews <sec:interviews> 
 
 // After you apply, you \emph{might} get interviews. The most common case is that a specific prof. is interested in working with you and wants to chat, e.g., to offer RA (\autoref{sec:ra}). In some cases, the interview is done by several professors, e.g., to see if a student fits in their group or to recruit a very strong student to their program. 
 
@@ -1204,14 +1204,14 @@ Graduating from top universities \emph{that adcom members recognize}  helps quit
 
 // \paragraph{Updating your profile} If you have important  achievements after you submitted your application, e.g., new top publications or big fellowship awards, you can mention to your interviewer. If you did not have interviews, you can try to ask the CS dept to update your application (though no guarantee that they will consider them). However, in general, you should not send emails to update your profile unless you really have important updates.
 
-== Not Getting Interviews <sec:no-interview>
+=== Not Getting Interviews <sec:no-interview>
 // While it is generally good to get an interview, not getting one \emph{does not} mean you're out.  Many programs do not have the tradition of interviewing applicants. For example, at GMU, most admitted students with TA (\autoref{sec:ta}) do not go through interviews.
 
 // However, no interviews mean that you will not likely get an RA (\autoref{sec:ra}), which is offered by an individual faculty (if they want you to do research for them, then they likely will interview you first).  If you have no interviews, your application (and TA/fellowship funding) is decided by the adcom.
 
 
 
-== Notification Timeline: Why rejection letters are sent so late? <sec:late-rejection>
+=== Notification Timeline: Why rejection letters are sent so late? <sec:late-rejection>
 // \sectioninfo{Grad programs often wait for accepted students to make their decisions, typically by \Gls{April15}, before sending out rejection letters.}
 
 // %"Just reject me already!" is a common sentiment among applicants.  Indeed, school will first send out admission offers to the top candidates. They do not send out rejection letters because there is still a chance that some of the top candidates will decline the offer. If they do, then the school will go to the next set of candidates and send out offers to them.  This process continues until all spots are filled.  This is why you might not hear back until late in the admission cycle.
@@ -1281,7 +1281,7 @@ Graduating from top universities \emph{that adcom members recognize}  helps quit
 // %
 
 
-= Getting Admitted <chap:accepted>
+== Getting Admitted <chap:accepted>
 // \chapterinfo{Congrats! Now it is your turn to evaluate the school!
 // Attend \emph{Open House} to learn more about the place and \emph{interview} profs---they would be much more willing to talk to you now.}
 
@@ -1307,7 +1307,7 @@ Graduating from top universities \emph{that adcom members recognize}  helps quit
 
 
 
-== Checking Status, Accepting, Postponing, and Decline Offers <sec:accept-postpone-decline>
+=== Checking Status, Accepting, Postponing, and Decline Offers <sec:accept-postpone-decline>
 
 // Students often ask about what to do after they get an interview or an offer from a professor, e.g., if they can followup to find out about their status, or is it OK to postpone or accept/reject offers?, and most importantly, how to do so without offending anyone. 
 
@@ -1336,7 +1336,7 @@ Graduating from top universities \emph{that adcom members recognize}  helps quit
 // Ultimately, this choice is personal and involves a balance between personal benefit and ethical considerations.
 // \end{commentbox}
 
-== Offer Letters and Terms <sec:offer-letters>
+=== Offer Letters and Terms <sec:offer-letters>
 // \sectioninfo{The offer letter is essentially an employment contract.  Make sure to read and understand the terms of the offer.}
 
 
@@ -1382,7 +1382,7 @@ Graduating from top universities \emph{that adcom members recognize}  helps quit
 
 // %\includepdf[pages=1]{files/gra_offer.pdf}
 
-== Negotiating PhD offer (e.g., having multiple offers)? <sec:negotiate>
+=== Negotiating PhD offer (e.g., having multiple offers)? <sec:negotiate>
 // \sectioninfo{You will not be able to negotiate stipend, but you can ask for specific start date, TA assignment, and conference travel budget.}
 
 
@@ -1393,7 +1393,7 @@ Graduating from top universities \emph{that adcom members recognize}  helps quit
 
 
 
-== Buying Computer Equipment <sec:buying-equipment>
+=== Buying Computer Equipment <sec:buying-equipment>
 // \sectioninfo{Ask your prof. if they can buy computer equipment and such for your research.}
 
 // Students understandably get excited about their upcoming PhD journey and want to buy new computer equipment and electronics to prepare. However, you should first check with your professor.  They might have funding to buy you computers and other equipment (e.g., software, books, keyboards, headphones, tablets, etc). Many CS programs also provide budget or computer equipment---such as a laptop---to incoming PhD students.
@@ -1403,14 +1403,14 @@ Graduating from top universities \emph{that adcom members recognize}  helps quit
 
 // Finally, keep in mind that these computers and equipment would be university property, which might be monitored and have certain restrictions, e.g., do not install illegal software on them (\autoref{sec:illegal-software}).  You will likely need to return them when you graduate. 
 
-= Dealing with Rejection <chap:not-accepted>
+== Dealing with Rejection <chap:not-accepted>
 // \chapterinfo{Rejection is part of academia.  Common reasons for rejection include aiming too high, not a good fit, and bad luck.  Do not take rejection personally. Learn from it and try again.} 
 
 #simpsons[You tried your best and you failed miserably. The lesson is: never try.]
 
 // Rejection is a common part of the PhD application process.  In fact, rejection is part of academia (e.g., you will get rejected for papers, grants, jobs, etc).  Don't take rejection personally and to learn from it.
 
-== Try Again! <sec:try-again>
+=== Try Again! <sec:try-again>
 
 // If you do not get admitted to any schools or don't want to go to the ones that admit you, try again next year!  Grad. admission can involve randomness and noise. In the meantime, you can work on improving your profile, e.g., get more research experiences, publish more papers, improve your connections for stronger LoRs, etc. See rejection reasons (\autoref{sec:why-rejected}) and additional advice to improve your chance (\autoref{sec:stand-out}).
 
@@ -1428,12 +1428,12 @@ Graduating from top universities \emph{that adcom members recognize}  helps quit
 // No, don't bother.  You will likely not get any useful feedback.  We are not willing (sometimes not allowed) to reveal your evaluation results or give you feedback on how to improve your profile. \emph{So just move on}.  If you really want advice, ask your professors, collaborators, ref writers, or those who have previously applied.
 
 
-== Why did you get rejected? <sec:why-rejected>
+=== Why did you get rejected? <sec:why-rejected>
 // \subsectioninfo{You aim too high, are overqualified, or even because you applied to AI/ML, a super competitive field in recent years with many applicants.}
 
 // Many students lament that they get no interviews or are rejected and that the admission process seems random.  However, while it is true that the process can involve some luck and randomness, it is not completely random.  There are many reasons why you might get rejected, e.g., your profile is not as strong as you \emph{think} it is (\autoref{sec:profile-not-strong}).  Even if your profile is strong, you still can get rejected, e.g., aim too high (\autoref{sec:chance-me}), not a good fit, overqualified, having red flags, etc. 
 
-=== Your profile is \emph{not} as strong as you think <sec:profile-not-strong>
+==== Your profile is *not* as strong as you think <sec:profile-not-strong>
 // I have seen multiple cases where students think they have a strong profile, but they do not. Here are some common examples.
 
 // Your \emph{LoRs} (\autoref{sec:lor-writers}) might not be as strong as you think. Your ref. writers---who might be very well-known within your institution---might not be very well-known internationally, or they might not be very active in research, or even know how to write a good letter. 
@@ -1450,7 +1450,7 @@ Graduating from top universities \emph{that adcom members recognize}  helps quit
 //   \end{figure}
 
 
-// \subsection{Other Common Reasons for Rejection}
+==== Other Common Reasons for Rejection
 // Even with strong profile (e.g., research potential, GPA, LoRs, SOP, interviews), you can still get rejected for various other reasons as follows. 
 
 // \paragraph{You aim too high} 
@@ -1484,7 +1484,7 @@ Graduating from top universities \emph{that adcom members recognize}  helps quit
 // In general, these things are rare, but they do happen and cause concern to the adcom.
 
 
-// \subsection{``Chance me'' on Getting into T10 Programs <sec:chance-me}
+==== "Chance me" on Getting into T10 Programs <sec:chance-me>
 
 // Many international students aim for very top schools such as Stanford and MIT, and \Gls{ivy}. Every year Reddit and other forums have numerous students asking for evaluation of their chances of getting into these schools (the so called \emph{``chance me''} or \emph{``roast my CV/profile''} posts) and then later posts on being \emph{``ghosted and rejected everywhere''}. Here's my take on this (adapted from my post on \href{https://www.reddit.com/r/gradadmissions/comments/1fogyg5/reality_check_for_aspiring_phd_applicants_youre/}{Reddit}).:
 
@@ -1506,7 +1506,7 @@ Graduating from top universities \emph{that adcom members recognize}  helps quit
 
 
 
-== Standing Out: Increasing your admission chance <sec:stand-out>
+=== Standing Out: Increasing your admission chance <sec:stand-out>
 // \subsectioninfo{You can improve your profile by being unique and standing out.}
 
 // \begin{center}
@@ -1530,9 +1530,9 @@ Graduating from top universities \emph{that adcom members recognize}  helps quit
 // In \href{https://matt.might.net/articles/how-to-apply-and-get-in-to-graduate-school-in-science-mathematics-engineering-or-computer-science/}{his post}, Matt Might was initially unsure about an application. However, upon learning that the applicant had led a 100km hike in the Himalayas, he decided to accept the applicant.  This is a good example of being \emph{stand out}, and I would also advocate for that student as this shows they have the persistence and determination required for research.
 // \end{commentbox}
 
-// \part{Funding, Schools, and Profs. <part:funding-schools-profs}
+= Funding, Schools, and Profs. <part:funding-schools-profs>
 
-= Funding <chap:funding>
+== Funding <chap:funding>
 
 // \chapterinfo{TAs, RAs, and fellowships are main funding sources for PhDs.  TAs are provided by the department to help with classes. RAs are given by profs. to help with their research.  Fellowships, provided by the university, department, or external sources such as government or industry, give move flexibility but can be very competitive.}
 
@@ -1564,23 +1564,25 @@ Graduating from top universities \emph{that adcom members recognize}  helps quit
 //   \end{tabular}
 // \end{table}
 
-== Graduate Assistantship (TA/RA) <sec:ta-ra>
-// The most common type of funding is \textbf{graduate assistantship}, which is either TA or RA. Both TA and RA come with tuition waiving (you don't have to pay tuition), health insurance (this takes care of your insurance, which is a must-have in the US), and most importantly, your stipend (i.e., your salary). Some universities also give significant discounts or pay insurance for spouses/children.
+=== Graduate Assistantship (TA/RA) <sec:ta-ra>
+The most common type of funding is *graduate assistantship*, which comes in two main forms: TA (Teaching Assistant) and RA (Research Assistant). Both TA and RA positions typically include a tuition waiver (so you don't pay tuition), health insurance (which is required in the US), and a stipend (your salary). Some universities also offer discounts or insurance coverage for spouses and children.
 
-// Several things about stipends.  First, the amount of stipend \emph{varies} and depends on factors such as location (e.g., a stipend in the DC area is likely higher than in Lincoln, Nebraska due to higher living costs). Second, an \acrfull{AY}  is typically \emph{9-month} in the US, so the stipend is for 9 months. Third, you might get paid over the summer (\autoref{sec:summer-funding}) through funding from your professor or fellowship (typically no TA over the summer). Fourth, like most sources of income in the US, you will have to \emph{pay tax} on your stipend.  Finally, private universities might pay more for stipends, but they could have extra activity fees or some other hidden ones (e.g., you may need to pay some fees for each credit hour).
+A few notes about stipends:
+- The stipend amount *varies* by location (e.g., higher in expensive areas like DC than in Lincoln, Nebraska), university, and sometimes by department.
+- An *academic year* (AY) is usually *9 months* in the US, so the standard stipend covers 9 months. Summer funding (@sec:summer-funding) may be available from your professor or a fellowship, but TA positions are rarely available in summer.
+- Like most income in the US, you *must pay tax* on your stipend.
+- Private universities may offer higher stipends, but sometimes have extra or hidden fees (such as per-credit fees or activity fees).
 
-
-// \begin{commentbox}
-//   TA and RA at GMU have similar benefits in tuition waiving and insurance.  The college and department will set the rate for a 9-month graduate assistant stipend.  TA, which is paid by the department, will likely be that amount but RA might be higher depending on  the prof and the stage of the student (1st year vs \acrshort{ABD}\footnote{\acrlong{ABD}: close to graduate.}).\\
-
-//   At GMU, CS TA/RA is paid the highest.  First, CS is under the College of Engineering and Computing (CEC), which already has a higher TA stipend than other colleges.  Second, CS is the largest department in the college, and has the higher TA stipend than what CEC suggests.  Finally, it is a tradition that CS faculty pay their RAs more than the department's TA rate.  So a winning combination for CS PhD students.
+#commentbox[
+  At GMU, both TA and RA positions provide similar benefits: tuition waiver and health insurance. The college and department set the standard 9-month stipend for graduate assistants. TA positions (paid by the department) usually pay this standard rate, while RA positions (paid by professors) may pay more, especially for advanced students (e.g., those close to graduation, or ABD#footnote[ABD: all but dissertation.]).
   
-//   \tcblower
-//   Having health insurance is required at many US universities.  Do not assume that you're young and healthy and ignore insurance (\autoref{chap:cultural-misc}).  At GMU, and most CS PhD programs, your GTA or GRA comes with full insurance. In fact, at GMU your spouse/children will get a significant discount rate for health insurance.  So you will never have to worry much about health issues for you or your family here.
-// \end{commentbox}
+  In GMU's CS department, TA/RA stipends are among the highest: CS is part of the College of Engineering and Computing (CEC), which already pays more than other colleges, and CS itself pays above the CEC baseline. It's also common for CS faculty to pay their RAs more than the standard TA rate.
+  
+  Health insurance is required at most US universities. Don't assume you can skip it because you're young and healthy (@chap:cultural-misc). At GMU and most CS PhD programs, your TA or RA position includes full insurance. At GMU, your spouse and children can also get insurance at a significant discount. So you don't have to worry about health coverage for yourself or your family.
+]
 
 
-== Teaching Assistant (TA) <sec:ta>
+=== Teaching Assistant (TA) <sec:ta>
 
 TA is common at the beginning of a PhD, when you have not yet found an adviser who can support you as an RA. It is also common to alternate between TA and RA, for example when your professor does not have enough funding or when you want to gain teaching experience.
 
@@ -1601,7 +1603,7 @@ Even if you have other funding and do not need a TA, you should still try TA at 
 
 *Where does TA funding come from?* Typically, the department receives TA funding from the college based on enrollment and budget, and then assigns TAs to courses based on instructional needs and student qualifications. For example, a CS department often has many TAs because it has high enrollment and many courses. In contrast, a department such as Math might have fewer TAs because it has lower enrollment and fewer courses.
 
-== Research Assistant (RA) <sec:ra>
+=== Research Assistant (RA) <sec:ra>
 RA support is provided by a professor through their funding so that you can work on their research project.
 As an RA, you generally do not need to teach, so you can focus on research. Depending on the professor, RA support may also be available during the summer. See @sec:ra-cost for more details on RA budgeting.
 
@@ -1621,33 +1623,33 @@ Typically, each grant can support one or at most two students per year, and each
 
 == Fellowships/Scholarships <sec:fellowships>
 
-// Fellowship is another type of funding that students can get from the university, industries, or government.
-// Fellowships are typically competitive and generous, giving pretty much all benefits tuition/insurance that a TA/RA has.  They might even give higher stipends (including summer) and open doors for job opportunities such as internships.
+Fellowship is another type of funding that students can get from the university, industries, or government.
+Fellowships are typically competitive and generous, giving pretty much all benefits tuition/insurance that a TA/RA has.  They might even give higher stipends (including summer) and open doors for job opportunities such as internships.
 
-// \paragraph{How to get Fellowship?}   Many schools provide fellowships to attract students. You likely will not need to do anything and adcom will recommend such fellowships to strong students. Some schools automatically offer a fellowship to all accepted students, while others only award it to a limited number of admitted students, such as the top percentile.
+*How to get Fellowship?*   Many schools provide fellowships to attract students. You likely will not need to do anything and adcom will recommend such fellowships to strong students. Some schools automatically offer a fellowship to all accepted students, while others only award it to a limited number of admitted students, such as the top percentile.
 
-// If you're aiming for external fellowships---whether from the U.S. government (like NSF GRFP or DoD NDSEG, see \autoref{chap:fellowships}) or from major tech companies like Google, Microsoft, and Facebook---you’ll need to apply on your own.
-// Such major fellowships typically require a clear and good research plan (the GRFP also requires broader impacts discussion). So it might be a good idea to wait until your second year to have research experience and even publication before applying. Remember, you're competing with the top PhD students at top universities worldwide.
+If you're aiming for external fellowships---whether from the U.S. government (like NSF GRFP or DoD NDSEG, see @chap:fellowships) or from major tech companies like Google, Microsoft, and Facebook---you’ll need to apply on your own.
+Such major fellowships typically require a clear and good research plan (the GRFP also requires broader impacts discussion). So it might be a good idea to wait until your second year to have research experience and even publication before applying. Remember, you're competing with the top PhD students at top universities worldwide.
 
-// \begin{commentbox}
-//   PhD applicants at GMU are automatically eligible for a \emph{Presidential Fellowship}.  It is at least as good as GTA but the most important thing is that as a fellowship it is truly free money (i.e., you do not depend on any prof. or TA).  Adcom members nominate applicants for this fellowship and the whole committee will decide.
-// \end{commentbox}
+#mycomment[
+  PhD applicants at GMU are automatically eligible for a *Presidential Fellowship*.  It is at least as good as GTA but the most important thing is that as a fellowship it is truly free money (i.e., you do not depend on any prof. or TA).  Adcom members nominate applicants for this fellowship and the whole committee will decide.
+]
 
-// %In addition to general fellowships that are available to all students, there are also specific fellowships, e.g., for US citizens and permanent residents (\autoref{chap:domestic-students}), for underrepresented minority (URM) students (\autoref{sec:urm}), and students from specific countries. There are many fellowships available, so you should look for them and apply.
+//%In addition to general fellowships that are available to all students, there are also specific fellowships, e.g., for US citizens and permanent residents (@chap:domestic-students), for underrepresented minority (URM) students (@sec:urm), and students from specific countries. There are many fellowships available, so you should look for them and apply.
 
-// In general, external fellowships are highly competitive and prestigious---you will stand out if you get one.  Every PhD student has pubs, but only a few would have the NSF GRFP\footnote{\url{https://www.alexhunterlang.com/nsf-fellowship} is a good starting place for the GRFP with lots of proposal examples.} or Microsoft fellowships. In fact, these are so prestigious that even if you didn't get it but make it to the final round or even \emph{``honorable mentioning''} you should put it on your CV.~\autoref{chap:fellowships} discusses the evaluation processes of the NSF GRFP and DoD NDSEG.
+In general, external fellowships are highly competitive and prestigious---you will stand out if you get one.  Every PhD student has pubs, but only a few would have the NSF GRFP#footnote[#link("https://www.alexhunterlang.com/nsf-fellowship")[is a good starting place for the GRFP with lots of proposal examples.]] or Microsoft fellowships. In fact, these are so prestigious that even if you didn't get it but make it to the final round or even *"honorable mentioning"* you should put it on your CV. @chap:fellowships discusses the evaluation processes of the NSF GRFP and DoD NDSEG.
 
 == Funding Miscs
 
-// \subsection{Low Stipend? <sec:low stipend}
+=== Low Stipend? <sec:low stipend>
 
-// Students often think their stipend is too low and not enough to live on.  For example, if you look at the stipend at GMU, which is around \$30K for 9-month, and then compare it to the cost of living in Fairfax, VA, which says you need \$70K to live in a 1-bed apartment, then you might be in a panic.
+Students often think their stipend is too low and not enough to live on.  For example, if you look at the stipend at GMU, which is around \$30K for 9-month, and then compare it to the cost of living in Fairfax, VA, which says you need \$70K to live in a 1-bed apartment, then you might be in a panic.
 
-// However,  in almost all cases, the stipend is enough to live on.  You might not be able to live in a 1-bed apartment by yourself, but you can live in a shared apartment or house with other students (most grad students shared apt).  You might not be able to buy a new car, but you get a good, used one (most students do this) or use public transportation.  In short, while the stipend is not high, it is not bad, and you can live comfortably with it.  
+However,  in almost all cases, the stipend is enough to live on.  You might not be able to live in a 1-bed apartment by yourself, but you can live in a shared apartment or house with other students (most grad students shared apt).  You might not be able to buy a new car, but you get a good, used one (most students do this) or use public transportation.  In short, while the stipend is not high, it is not bad, and you can live comfortably with it.  
 
-// In fact, it might be enough to support your spouse and kids.  Many CS PhD students have their families with them (a student of mine lives with his wife and 1 kid in a 1-bed apartment and they are doing fine with just his stipend). So don't worry too much about the stipend.  A good school would know that it has to be competitive to attract students.  For example, at GMU, every year we try to improve the benefits, and especially stipend, for our graduate students.
+In fact, it might be enough to support your spouse and kids.  Many CS PhD students have their families with them (a student of mine lives with his wife and 1 kid in a 1-bed apartment and they are doing fine with just his stipend). So don't worry too much about the stipend.  A good school would know that it has to be competitive to attract students.  For example, at GMU, every year we try to improve the benefits, and especially stipend, for our graduate students.
 
-// For a full breakdown of how much a graduate student costs, see \autoref{sec:ra-cost}.
+For a full breakdown of how much a graduate student costs, see @sec:ra-cost.
 
 
 === Funding in the Summer <sec:summer-funding>
