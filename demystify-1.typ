@@ -19,6 +19,10 @@
 #let mybookgithub = "https://code.roars.dev/phd-cs-us"
 
 
+#let part(title) = [
+  #pagebreak()
+  #heading(level: 1)[#title]
+]
 
 #let simpsons(s) = quote(
     attribution: "The Simpsons",
@@ -106,9 +110,10 @@ Additional information about the book can be found in @chap:about.
 
 #pagebreak()
 // \mainmatter
-// \part{Introduction <part:intro}
 
-= Should You Apply? <chap:should>
+= Introduction <part:intro>
+
+== Should You Apply? <chap:should>
 
 //Definitely, yes. CS PhD study in the US is often *fully funded* and admission into good universities in the US is *not* any harder than in other countries.
 
@@ -165,7 +170,7 @@ Career-wise, a CS PhD prepares you for jobs that require deep technical expertis
 #mycomment([A PhD is not just a degree, it is a *journey* that transforms you into a researcher. You will learn how to think critically, solve problems, deal with adversity, and work independently. You will also learn how to write and ``sell'' your work, collaborate with others, and effectively communicate your ideas. In the end, you will have a deep understanding of your chosen field and become an expert in your area of research. In fact, you will know about your research topic more than *anyone* else in the world, including, in many cases, your adviser! This is a scary thought, but it is also exciting and rewarding.]
 )
 
-== CS Fields and Areas <sec:fields-and-areas>
+=== CS Fields and Areas <sec:fields-and-areas>
 
 CS is a broad academic discipline with many specialized areas of research. Understanding the structure of CS can help you communicate your research interests and goals more effectively, e.g., in your SOP (@chap:sop), and also assist you in finding suitable advisers and research topics (@sec:finding-adviser).
 
@@ -219,7 +224,7 @@ For example, my own #link("https://roars.dev")[research profile] can be structur
 
 
 
-== How long to complete the CS PhD program? <sec:time>
+=== How long to complete the CS PhD program? <sec:time>
 // \sectioninfo{About 5--7 years in the US.}
 
 Typically it takes 5--7 years for a CS PhD in the US. This is usually longer compared to other countries (@sec:non-us-differences), which might require having an MS (@sec:phd-vs-ms).
@@ -239,7 +244,7 @@ Within these 5--7 years, CS PhD students often take a "leave of absence" for 1--
 
 
 
-== Undergrad Not in CS or Related Disciplines} <sec:non-stem>
+=== Undergrad Not in CS or Related Disciplines} <sec:non-stem>
 // \sectioninfo{You can successfully apply to CS PhD even if you have non-CS background.}
 
 You still can apply to a PhD in CS _as long as_ you can demonstrate that you are ready for it through your background, research experience, LoRs, statements, etc. You might even be able to leverage this to make your profile stand out, as mentioned in @sec:stand-out.
@@ -266,7 +271,7 @@ In short, you _do not need_ to formally take CS courses; you just need to show t
 
 
 
-== Is MS Required for CS PhD Admission? <sec:msrequirement>
+=== Is MS Required for CS PhD Admission? <sec:msrequirement>
 // \sectioninfo{You do not need an MS to do PhD in CS.}
 
 No, while other countries often encourage or even require an MS for PhD students in CS (@sec:non-us-differences), it is common in the US to directly apply for a PhD program after a 4-year undergraduate program (e.g., after getting a BS degree). In addition, most CS PhD programs are designed so that students can get an MS degree "along the way" to the PhD, for example after finishing the 2-year coursework. This is one of the reasons why a CS PhD in the US takes longer (5--7 years, @sec:time) than in other countries.
@@ -282,7 +287,7 @@ Moreover, if you have an MS, then some coursework _might_ be transferred for cou
 ]
 
 
-== Can I apply for PhD in CS for the Spring or Summer? <sec:apply-spring-summer>
+=== Can I apply for PhD in CS for the Spring or Summer? <sec:apply-spring-summer>
 Most students apply to start their PhD in the Fall. This means they submit their application around December, receive admission decisions sometime in the Spring, and officially begin their PhD in the Fall (August or September).
 
 Fall---the start of the academic year---is the most common start time for PhD programs in the US, and many universities only accept new PhD students in the Fall. Importantly, applying for the Fall also gives you access to funding opportunities (@chap:funding) that are available only for Fall admits, such as TAships (@sec:ta) and some fellowships.
@@ -294,7 +299,7 @@ However, many universities also accept PhD students in the Spring or Summer, esp
 ]
 
 
-== PhD in the US vs. Other Countries <sec:non-us-differences>
+=== PhD in the US vs. Other Countries <sec:non-us-differences>
 // \sectioninfo{Among several differences, CS PhD in the US does not require an MS degree but has a longer PhD study time.}
 
 
@@ -367,7 +372,7 @@ However, many universities also accept PhD students in the Spring or Summer, esp
 // % \section{Why the US and not other countries?}
 // % TODO
 
-= How is Your Application Evaluated? <chap:evalapps>
+== How is Your Application Evaluated? <chap:evalapps>
 
 // \chapterinfo{Applications are evaluated by the PhD Admission (\acrshort{adcom}) committee and each application is typically reviewed by three \glslink{adcom-members}{faculty members}.}
 
@@ -376,36 +381,25 @@ After you submit your PhD application, it will be checked for general requiremen
 After screening, your application is complete and forwarded to the CS department for further evaluation. If you don't pass screening,  the system will tell you what is missing and what you need to do. So pay attention to your email and check your application status regularly.
 
 
-#commentbox(who:"Hakan", [At GMU, for full consideration, students should make sure to submit _ALL_ required documents by the application deadline, and should never assume that some required documents (such as official TOEFL scores or official diplomas/transcripts) will be waived by the admissions office. If something is listed and not marked as optional, it is mandatory and they should plan for submitting all those.]
-  )
+#commentbox(who:"Hakan", [At GMU, for full consideration, students should make sure to submit _ALL_ required documents by the application deadline, and should never assume that some required documents (such as official TOEFL scores or official diplomas/transcripts) will be waived by the admissions office. If something is listed and not marked as optional, it is mandatory and they should plan for submitting all those.])
 
-== Admission Committee <sec:adcom>
+=== Admission Committee <sec:adcom>
 // \sectioninfo{Adcom members are faculty who evaluate your application. They consider various factors, e.g., research experience, LoRs, SOP}
 
-// Your applications are reviewed by a PhD \acrfull{adcom} that consists of faculty members in CS. Adcom members have a wide range of expertise and background to ensure diverse perspectives in the evaluation process. For example, there would be faculty who specialize in various areas such as AI, systems, theory, HCI, and so on. In some cases the committee can involve affiliated faculty from different disciplines.
+Your applications are reviewed by a PhD adcom /*\acrfull{adcom}*/ consisting of CS faculty with diverse expertise (e.g., AI, systems, theory, HCI). Some committees may include affiliated faculty from other disciplines.
 
-// The size and the review load of the adcom depend on the department size. At GMU, the PhD adcom typically has 15--20 faculty, and each committee member is assigned to review about 30 applications. Note that most large schools, including GMU, have separate adcoms for MS programs (\autoref{chap:ms}).
+The size and workload of the adcom depend on the department. At GMU, the PhD adcom has about 15–20 faculty, each reviewing ~30 applications. Large schools often have separate adcoms for MS programs (@chap:ms).
 
-// The PhD adcom typically involves assistant professors in the department (see \autoref{sec:faculty-types} for various types of faculty). This provides junior faculty the opportunities to recruit students. The \gls{adcom-chair} will likely be a senior faculty, but they will not review individual applications and instead assign them to committee members. The chair will look at various factors such as research interests or mentioning faculty names to assign the applications to appropriate faculty, e.g., I am often assigned to review applicants interested in software engineering.
+PhD adcoms typically include assistant professors (@sec:faculty-types), giving junior faculty opportunities to recruit students. The adcom chair /*\gls{adcom-chair}*/ is usually a senior faculty who assigns applications to reviewers based on research interests or faculty mentioned by applicants (e.g., I review SE applicants).
+
+Each application is assigned to about three adcom members, who independently evaluate your profile and then reach a consensus. They consider factors such as LoRs, SOP, research experience, GPA, test scores, and interviews. (see @part:application).
+
+#mycomment([
+  At GMU, we usually admit full-time PhD candidates with funding (@chap:funding) or reject them. In rare cases, we admit without funding if you have external support (e.g., government or fellowship). We justify our decision (@sec:ievaluate) with a summary of your application, listing strengths (e.g., well-known school) and weaknesses (e.g., generic LoRs).
+])
 
 
-
-// Each application is assigned to about three adcom members, who will evaluate your profile and reach a consensus.  They will consider various factors including LoRs, SOP, research experience, GPA, test scores, and interviews. More details about these factors are discussed in \autoref{part:application}.
-
-
-
-// \begin{commentbox}{Vu:}
-// At GMU, we usually decide that a full-time PhD candidate is either (i) admitted with funding (\autoref{chap:funding}) or (ii) rejected. In other words, in most cases, we either
-// admit you with full funding or reject your application. In some rare cases, we admit
-// without funding because you have funding on your own, e.g.,
-// supported by your government or having external fellowships. We justify
-// our decision (\autoref{sec:ievaluate}) with a summary of your application, where we list strengths, e.g., came from a well-known school, and weaknesses, e.g., weak and generic LoRs.
-// \end{commentbox}
-
-// % \didi{Is there more information on typical strengths and common weaknesses of applications. This is especially useful to sophomore and junior students as they still have time to work on those strengths.}
-// % tvn: the main thing is research experiences
-
-== How Applications are Assigned to Adcom Members? <sec:applications-assigned>
+=== How Applications are Assigned to Adcom Members? <sec:applications-assigned>
 // \sectioninfo{Adcom members only review applications assigned to them (typically matching their expertise) and rarely get involved in other applications}
 
 
@@ -413,7 +407,7 @@ After screening, your application is complete and forwarded to the CS department
 
 // Note that the assigned reviewers are the main ones deciding your application, but at many schools other faculty in the department can also have access to your application and provide inputs and opinions on your profile. Thus, it helps to contact faculty (\autoref{sec:contact}) and mention faculty you're interested in in your SOP (\autoref{chap:sop}).
 
-== How are Decisions Made? <sec:how-decisions>
+=== How are Decisions Made? <sec:how-decisions>
 // \sectioninfo{Even if all adcom reviewers recommend acceptance, the application can still be rejected. Vice versa, if all reviewers think the application is weak, the student might still be admitted.}
 
 // After reviewers have evaluated an application, \gls{adcom-chair} will review all evaluations, look at entered notes, and ask reviewers to discuss and resolve discrepancies to reach a consensus (e.g., a reviewer wants to accept but the other wants to reject).  Typically, the decision is made entirely by the reviewers. There is \emph{no involvement} from the adcom chair, department chair, or others. In most cases \gls{adcom-members}, even those reviewing the same application, make decisions independently and do not talk to each other (just a common practice to avoid biasing). In some rare cases we might (\autoref{sec:adcom-discuss}).
@@ -426,7 +420,7 @@ After screening, your application is complete and forwarded to the CS department
 // If the student mentioned a faculty in their SOP, adcom might ask that faculty to look at their application and if they are interested in the student.  Even if the student has a weak profile (but still passes the minimum requirement from the university), they might be admitted if a faculty is willing to take them. Adcom members, especially in the US, are very reluctant to go against the faculty's decision (e.g., if a faculty wants to admit a student, we are not going to reject them).
 
 
-== Do Adcom Members Talk to Each Other? <sec:adcom-discuss>
+=== Do Adcom Members Talk to Each Other? <sec:adcom-discuss>
 // \sectioninfo{Sometimes adcom members discuss applicants, but in most cases they make independent decisions.}
 
 // We typically review applications independently and do not talk to each other.  This is to avoid biasing, e.g., if one reviewer says they want to accept, the other might feel pressured to accept as well.  
@@ -451,7 +445,7 @@ After screening, your application is complete and forwarded to the CS department
 // \caption{An example of how a PhD admission committee in Physics evaluates applications. Note that this is not common in CS, where we typically do not have a grading rubric and do not discuss applications in a meeting. <fig:adcom-discuss-physics}
 // \end{figure}
 
-== How Long To Evaluate An Application? <sec:ievaluate>
+=== How Long To Evaluate An Application? <sec:ievaluate>
 // \sectioninfo{It takes me about 10--15 minutes to review an application.}
 
 // In the schools I've been at, the application deadline is in Dec, and adcom meets when school starts in mid or end of Jan. Adcom chair sends out review assignments to adcom members, about 30ish per faculty (\autoref{sec:adcom}). We usually have about 2 weeks to review all applications. As mentioned in~\autoref{sec:adcom-discuss}, adcom members review applications individually and independently. We only discuss when there are disagreements (adcom chair will determine which applications to discuss).
@@ -477,7 +471,7 @@ After screening, your application is complete and forwarded to the CS department
 // Unfortunately, even if all reviewers recommend a student, they might not be admitted (\autoref{sec:why-rejected}) if there are too many students or they are not a good fit for the program (e.g., no one is willing to advise them).
 
 
-== Waiving Application Fee <sec:fee-waive>
+=== Waiving Application Fee <sec:fee-waive>
 
 // Some universities do waive---for example, Rice, TTIC do not have fee for PhD applications and many universities for domestic students (\autoref{chap:domestic-students}).
 // Some programs also waive if the applicants attend some of their opening sessions.  Some programs waive if the applicant provide proof of financial difficulties, e.g., a statement from a financial adviser or a bank statement.
@@ -490,9 +484,8 @@ After screening, your application is complete and forwarded to the CS department
 // Note that if you have financial difficulties, you can ask the department for a waiver, but this is typically only granted in exceptional cases.
 // \end{commentbox}
 
-
 #pagebreak()
-// \part{Application Materials <part:application}
+= Application Materials <part:application>
 
 // %\partinfo{.}
 
@@ -503,7 +496,7 @@ After screening, your application is complete and forwarded to the CS department
 // The committee will look at various factors, but the most important ones are letters of recommendation (LORs),  statements of purpose (SOP), and research background and experience, e.g., publications.
 
  
-= Letters of Recommendation (LoR) <chap:lor>
+== Letters of Recommendation (LoR) <chap:lor>
 // \chapterinfo{LORs are very important, but only if they are \textbf{personalized} and \textbf{research focused}.}
 
 #simpsons[To whom it may concern… D'oh!]
@@ -519,7 +512,7 @@ After screening, your application is complete and forwarded to the CS department
 // \end{commentbox}
 
 
-== LoR Writers <sec:lor-writers>
+=== LoR Writers <sec:lor-writers>
 // \sectioninfo{LoR writers should be someone who (i) can talk in depth about your research experience and potential and (ii) have the credibility to evaluate your research ability.}
 
 
@@ -619,7 +612,7 @@ After screening, your application is complete and forwarded to the CS department
 
 
 
-== Asking for LoRs <sec:asking-lor>
+=== Asking for LoRs <sec:asking-lor>
 // \sectioninfo{Ask for LoRs at least a month before the deadline.  Waive your right to see the letter. Help your writers by providing details about your research experience and potential.}
 
 
@@ -759,7 +752,7 @@ After screening, your application is complete and forwarded to the CS department
 // More generally, you should do the same for anyone who has helped you during the application process, such as profs. who provided advice, mentors who guided you, and friends and family who supported you. 
 
 
-== My Perspective <sec:my-lor-perspective>
+=== My Perspective <sec:my-lor-perspective>
 // \begin{commentbox}
 // In this Reddit post \url{https://www.reddit.com/r/gradadmissions/comments/1p0lkim/perspective_on_lors_after_sending_a_big_batch/}, I provide my perspective about LoRs and what I expect from my students when they ask me to write for them.  You can share this with your writers if you think it is useful. 
 // \end{commentbox}
@@ -797,7 +790,7 @@ After screening, your application is complete and forwarded to the CS department
 
 
 
-= Research Experience <chap:research-experience>
+== Research Experience <chap:research-experience>
 // \chapterinfo{Publications are not \textbf{required} but can \textbf{greatly help}. Papers in good venues are concrete evidence that you have successfully engaged in research.}
 
 #simpsons[I've got to study harder and publish faster!]
@@ -806,7 +799,7 @@ After screening, your application is complete and forwarded to the CS department
 // \autoref{chap:research-opportunities} provides more information on how to find research opportunities, e.g., during your undergrad study.
 
 
-== Publications <sec:publications> 
+=== Publications <sec:publications> 
 
 // \begin{figure}
 //     \begin{center}
@@ -852,7 +845,7 @@ After screening, your application is complete and forwarded to the CS department
 //       \textbf{Vu}: One way is looking at where well-known researchers publish. For example, if you are interested in a field X, you can use CSRankings (\autoref{sec:csrankings}) or CSPicks (\autoref{sec:cspicks}) to look at active faculty in X, and then look at their websites to see where they publish at.
 //   \end{questionbox}
 
-== Work Experience
+=== Work Experience
 
 Research experience at \emph{well-known laboratories}, such as Microsoft Research, can strengthen your application.  The emphasis here is \emph{research} work, not software development or non-research work. For example, working at a FAANG (Facebook, Amazon, Apple, Netflix, Google) company as a software engineer does not count as research experience. While it can be helpful for MS applications (\autoref{chap:ms}), software development, even at a top company, does not demonstrate your research ability and potential for a PhD program. 
 // Similarly, a LoR from your supervisor for non-research experience might not count much (\autoref{sec:admin-letters}). So do not spend much time talking about development job in your SOP.
@@ -861,14 +854,13 @@ Research experience at \emph{well-known laboratories}, such as Microsoft Researc
 // Note that adcom reviewers might not be familiar with all research labs, especially those outside the US. For example, while VinAI is well-known in Vietnam and potentially in Asia, it might not be well-known in the US. So you or your LoR writers should explicitly say something about them in your statement or letter.  In general, if you did some good research work, then you should mention that in your SOP and ask your supervisor to write about it in their LOR (\autoref{chap:lor}).
 
 
-== Competitions <sec:competitions>
+=== Competitions <sec:competitions>
 
 // Winning \emph{internationally recognized competitions} can demonstrate your research potential.
 // For example, participating in Math Olympiads if you want to do theory or winning ACM programming contests if you want to ``build'' systems (e.g., research prototypes).
 // So do talk about them in your SOP (\autoref{chap:sop}) and have your LoR writers mention them in their letters (\autoref{sec:help-your-LOR-writers}).
 
-
-= Statement of Purpose (SOP) <chap:sop>
+== Statement of Purpose (SOP) <chap:sop>
 // \chapterinfo{SOP is important. Write it in such a way that makes you \textbf{stand out}.}
 
 #simpsons[All my life I've had one dream: to achieve my many goals.]
@@ -920,7 +912,7 @@ Research experience at \emph{well-known laboratories}, such as Microsoft Researc
 // \end{commentbox}
 
 
-== Kiss of Death in SOP} <sec:kiss-of-death-sop>
+=== Kiss of Death in SOP <sec:kiss-of-death-sop>
 
 
 // \begin{figure}
@@ -947,7 +939,7 @@ Research experience at \emph{well-known laboratories}, such as Microsoft Researc
 // CS academics like using \LaTeX{} (common way to write our papers and other documents), so write your SOP using \LaTeX{} (with Times or default font, 11pt, and 1-inch margin as described in~\autoref{chap:writing-latex}).
 // \end{itemize}
 
-== Using AI <sec:using-ai>
+=== Using AI <sec:using-ai>
 
 // As AI and LLMs become more popular, many students wonder if they could use AI tools such as ChatGPT to help with their statements and if the university or adcom reviewers would check and penalize them for doing so.
 
@@ -966,7 +958,7 @@ Research experience at \emph{well-known laboratories}, such as Microsoft Researc
 // % \subsection{Outline of a LOR <sec:lor-outline}
 
 
-== Diversity Statement <sec:diversity-statement>
+=== Diversity Statement <sec:diversity-statement>
 
 // Some universities require a \gls{diversity-statement}---a statement about 
 // Diversity, Equity, and Inclusion (DEI)---as part of the application.  While the topic on DEI  has become politically contested in the U.S., you should be prepared to address it when asked. Many students, especially international ones, find this statement confusing because they are unsure what it is about (truth is, even people in the U.S. struggle with this topic).
@@ -998,12 +990,12 @@ Research experience at \emph{well-known laboratories}, such as Microsoft Researc
 
 
 
-= Your School and Grades <chap:your-school>
+== Your School and Grades <chap:your-school>
 // \chapterinfo{Your schools might not as well-known as you think.  High grades probably won't help much, but bad ones likely will raise concerns.}
 
 #simpsons[Woohoo! I'm a college man! I won't need my high school diploma anymore]
 
-== School
+=== School
 
 Graduating from top universities \emph{that adcom members recognize}  helps quite a bit. 
 // The emphasis here is \emph{``that adcom members recognize''}.  The reason is similar to LoRs from well-known researchers (\autoref{sec:famous-lor}). If we know your school has a good reputation, then we can trust its education and grades. Otherwise, we are uncertain about the quality of the school and the grades you received.
@@ -1021,7 +1013,7 @@ Graduating from top universities \emph{that adcom members recognize}  helps quit
 // \begin{commentbox}[Deepak:]
 //   If an applicant is anxious about their school not being known outside their country, they can provide information about their school and department, with independent sources where such information can be verified.
 // \end{commentbox}
-== Grades <sec:gpa>
+=== Grades <sec:gpa>
 
 // Compared to other factors such as LoRs (\autoref{chap:lor}) and research experiences (\autoref{chap:research-experience}), grades generally do not matter much for CS PhD admission.  
 // In fact, many CS faculty members themselves have bad grades in undergrad courses (and some were proud of that!).
@@ -1063,14 +1055,14 @@ Graduating from top universities \emph{that adcom members recognize}  helps quit
 // GMU College of Engineering and Computing requires a minimum GPA of 3.0/4.0 for PhD applications, and autorejects applications below this threshold.
 // \end{commentbox}
 
-= Standard Tests (GRE and IELTS) <chap:standard-tests>
+== Standard Tests (GRE and IELTS) <chap:standard-tests>
 // \chapterinfo{Standard tests are \textbf{not} important. \acrshort{GRE} typically \emph{is not} required. For standard English tests (not required for domestic students), just do enough to pass the minimum requirements.}
 
 
 #simpsons[I've got to study harder. Everyone knows standardized tests are biased against the poor, the lazy, and the stupid.]
 
 
-== GREs Are Optional and Do Not Matter for PhD Admissions <sec:gre>
+=== GREs Are Optional and Do Not Matter for PhD Admissions <sec:gre>
 
 // While a few schools still require taking the \acrfull{GRE} exam (e.g., UCF), most good CS PhD programs in the US \textbf{no longer} require it. The reason is that GRE scores do not correlate well with research ability, which is the most important factor for PhD admission. Note that many faculty members themselves did not take the GRE or had bad scores.
 
@@ -1086,7 +1078,7 @@ Graduating from top universities \emph{that adcom members recognize}  helps quit
 
 // Note that while GRE is not important for CS PhD admission, it might be required or important for MS admission (\autoref{chap:ms}). This is because MS programs are more course-based and thus care more about grades and standardized tests.
 
-== English Tests (IELTS, TOEFL) <sec:english-tests> 
+=== English Tests (IELTS, TOEFL) <sec:english-tests> 
 
 // Unless your degrees are from the US (e.g., you did your undergrad or MS in the US), or certain countries such as \href{https://www.gmu.edu/international/english-language-requirements}{these}, you will likely need to take standardized English tests. On one hand you will need to show some level of English proficiency; but on the other hand, you do not need to have very good scores in these tests (many adcom members themselves were once international students and struggled with English).
 
@@ -1122,11 +1114,11 @@ Graduating from top universities \emph{that adcom members recognize}  helps quit
 
 
 
-= Other Materials <chap:other-materials>
+== Other Materials <chap:other-materials>
 
 #simpsons[I'm not a college graduate. I'm not even a high school graduate. But I'm a pretty good judge of character.]
 
-== CV <sec:cv>
+=== CV <sec:cv>
 // \sectioninfo{Highlight and summarize major achievements such as major publications and competitive programming awards.}
 
 // Most schools allow you to upload your CV with your application. The main difference between a CV and a resume is that the former is more comprehensive and longer, while the latter is shorter and focuses on job-related experiences. So you don't need to adhere to the 1-page rule of resume in job searching, CV has no such requirement and is often longer.  
@@ -1138,17 +1130,17 @@ Graduating from top universities \emph{that adcom members recognize}  helps quit
 //     Most applicants do not have much to put in their CVs. Thus adcom members usually do not pay much attention to CV's (and definitely do not screen applicants based on them). So do not spend too much time on your CV, just make sure it is easy to skim through (\autoref{sec:ievaluate}) and well-organized around research activities and achievements.
 // \end{commentbox}
 
-== Writing Sample <sec:writing-sample>
+=== Writing Sample <sec:writing-sample>
 // It is a \emph{good idea} to upload a writing sample, e.g., a paper you wrote, a report, or a thesis.  Whether the paper is published, not published, on Arxiv, or even rejected (but you think it's good), you should upload it. Because samples are part of the application package, adcom members can quickly skim through it to see your research and writing abilities.  
 
 // A quick read through a writing sample can reveal a lot about your research work and writing skills, which sometimes are not well presented in your SOP or LORs. But of course if your writing sample is not good, then it can hurt your application. So make sure you upload something serious and well-written.
 
-== Online Courses and Certificates
+=== Online Courses and Certificates
 
 // These do not carry much weight as they do not show research ability. We do not care much if you have taken an online Coursera AI course or have a professional certificate from Microsoft.
 // However, as mentioned in \autoref{sec:non-stem}, if you do not have a CS background, you might be able to use these to show you have sufficient CS knowledge.
 
-== Personal Website and (Github) Projects <sec:personal-website>
+=== Personal Website and (Github) Projects <sec:personal-website>
 // These are \emph{not} required but are increasingly common.  In CS, academic websites are \emph{very} common and used to showcase research, publications, and projects.  You don't need fancy websites with tons of javascript and animations. A simple website with your name (and sometimes photo), research interests, publications, and projects is enough. You can use free services such as \href{https://github.io}{GitHub Pages} to create your website. Many CS students also use Github to host their projects and demonstrate their involvement in open-source projects.  
 
 // You can mention your website and projects in your CV (\autoref{sec:cv}) and SOP (\autoref{chap:sop}).
@@ -1160,9 +1152,9 @@ Graduating from top universities \emph{that adcom members recognize}  helps quit
 // \end{commentbox}
 
 
-// \part{After You Apply <part:after-apply}
+= After You Apply <part:after-apply>
 
-= Interview and The Waiting Game <chap:interview>
+== Interview and The Waiting Game <chap:interview>
 // \chapterinfo{Getting an interview is typically a good sign; but no interview does not mean rejection.}
 
 // \myepigraphsimpsons{Bart: ``Are we there yet? Are we there yet? Are we there yet?''\\
