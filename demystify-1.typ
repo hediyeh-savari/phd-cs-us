@@ -26,6 +26,17 @@
   )["#emph(s)"
   ]
 
+// #let commentbox(who: none, msg) = box(
+//   stroke: (x: 0.5pt + black, y: 0.5pt + black),
+//   inset: 10pt,
+//   fill: rgb("f0f0f0"),
+// )[
+//   #if who != none [
+//     *#who*: 
+//   ]
+//   #msg
+// ]
+
 #let commentbox(who: none, msg) = box(
   stroke: (x: 0.5pt + black, y: 0.5pt + black),
   inset: 10pt,
@@ -36,6 +47,7 @@
   ]
   #msg
 ]
+
 #let mycomment(msg) = commentbox(msg)
 
 // Title Page
@@ -359,13 +371,13 @@ However, many universities also accept PhD students in the Spring or Summer, esp
 
 // \chapterinfo{Applications are evaluated by the PhD Admission (\acrshort{adcom}) committee and each application is typically reviewed by three \glslink{adcom-members}{faculty members}.}
 
-// After you submit your PhD application, it will be checked for general requirements---whether you submit your transcripts and standard scores? Usually, this screening process is done through a central university system, i.e., not by CS faculty.
+After you submit your PhD application, it will be checked for general requirements---whether you submit your transcripts and standard scores? Usually, this screening process is done through a central university system, i.e., not by CS faculty.
 
-// After screening, your application is complete and forwarded to the CS department for further evaluation. If you don't pass screening,  the system will tell you what is missing and what you need to do. So pay attention to your email and check your application status regularly.
+After screening, your application is complete and forwarded to the CS department for further evaluation. If you don't pass screening,  the system will tell you what is missing and what you need to do. So pay attention to your email and check your application status regularly.
 
-// \begin{commentbox}[Hakan:]
-//   At GMU, for full consideration, students should make sure to submit \emph{ALL} required documents by the application deadline, and should never assume that some required documents (such as official TOEFL scores or official diplomas/transcripts) will be waived by the admissions office. If something is listed and not marked as ``optional'', it is mandatory and they should plan for submitting all those.
-// \end{commentbox}
+
+#commentbox(who:"Hakan", [At GMU, for full consideration, students should make sure to submit _ALL_ required documents by the application deadline, and should never assume that some required documents (such as official TOEFL scores or official diplomas/transcripts) will be waived by the admissions office. If something is listed and not marked as optional, it is mandatory and they should plan for submitting all those.]
+  )
 
 == Admission Committee <sec:adcom>
 // \sectioninfo{Adcom members are faculty who evaluate your application. They consider various factors, e.g., research experience, LoRs, SOP}
