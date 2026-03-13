@@ -38,7 +38,6 @@
 ]
 #let mycomment(msg) = commentbox(msg)
 
-
 // Title Page
 #align(center)[
   #box(
@@ -286,55 +285,46 @@ However, many universities also accept PhD students in the Spring or Summer, esp
 == PhD in the US vs. Other Countries <sec:non-us-differences>
 // \sectioninfo{Among several differences, CS PhD in the US does not require an MS degree but has a longer PhD study time.}
 
-// \begin{table}
-// \caption{Comparison of the CS PhD program in the US and other countries <tab:us-vs-other}
-// \center
-// \small
-// \begin{tabular}{c|c|c}
-// \toprule
-// \textbf{Aspect} & \textbf{US PhD Programs} & \textbf{Other Countries} \\
-// \midrule
-// Duration & 5-7 years & 3-5 years \\
-// MS Required & Not required & Often required \\
-// Coursework Required & Yes (first 2 years) & No \\
-// Research Proposal Required & No & Yes (in some countries) \\
-// Academic (Faculty) Job & Direct & Postdoc \\
-// Work Life Balance & Less & More \\
-// \bottomrule
-// \end{tabular}
-// \end{table}
 
 
-// \autoref{tab:us-vs-other} summarizes the main differences between CS PhD in the US and other countries. Note that these differences can vary by institution and country.  Some countries might have a PhD program that is similar to the US.  The following are some common differences:
-// \begin{itemize}
+#figure(caption: [Comparison of the CS PhD program in the US and other countries],
+  text(size:10pt)[
+    #table(
+      columns: 3, align: left, stroke: none,
+      table.header(
+        [*Aspect*], [*US PhD Programs*], [*Other Countries*],
+      ),
+      table.hline(),
 
-// \item \textbf{MS requirement and PhD duration}  CS PhD programs in the US do not require an MS degree (as mentioned in \autoref{sec:time} and \autoref{sec:msrequirement}).  In contrast, many other countries require having an MS degree before joining a PhD program.  This means that US PhD programs are longer (5--7 years, 2 of which are coursework) than other countries (3--4 years, no coursework).
+      [Duration], [5--7 years], [3--5 years],
+      [MS Required], [Not required], [Often required],
+      [Coursework Required], [Yes (first 2 years)], [No],
+      [Research Proposal Required], [No], [Yes (in some countries)],
+      [Academic (Faculty) Job], [Direct], [Postdoc],
+      [Work-Life Balance], [Less], [More],
+    )
+  ]
+)<tab:us-vs-other>
 
-// \item \textbf{Project proposal} in many countries, you have to choose a project and \glslink{adviser}{adviser} \emph{during} the application process (e.g., you write a proposal to a potential adviser). But this allows you to start your research right from the beginning. 
-
-// In the US, you often start your PhD without an adviser or project and find them later. Usually you have two initial years to take classes, explore and find an adviser and research topic. 
-
-// \item \textbf{Course work} In the US ou will spend the first couple of years taking classes and exploring potential adviser and research topics. 
-// After that, you have to pass a series of exams during your PhD---qualifying exam, comprehensive exam, thesis proposal defense\footnote{ABD (all but dissertation) refers to a PhD candidate who has finished all course work and exams and only needs to write and defend their dissertation.}.
-
-// In other countries, you often start your research right away and work on the research project you proposed with the adviser you chose. Moreover, you might not have exams like those in the US or only have to do a few of them.
-
-// \item \textbf{Funding}  In many countries, funding comes from the university or the gov't. This funding often has a fixed duration, e.g., 3 or 4 years.  In the US (\autoref{chap:funding}), funding (e.g., RA) comes directly from your adviser (no fixed duration).  There are also fewer TA opportunities in European universities compared to the US.
-
-// \item \textbf{Academic Position after PhD} In other countries, PhD graduates interested in academia typically apply for additional research appointments, i.e., postdocs in the US, and then consider faculty positions.
-
-// In the US, PhD graduates often apply directly for faculty positions. Postdoc for US graduates is no longer a popular option as it was before. The reason is that US PhD programs are longer, so you already have enough research experience (e.g., papers) to apply for faculty positions. In contrast, in other countries, PhD students often finish their PhD earlier and need more time to gain research experience before applying for faculty positions.
-
-//   \item \textbf{Work-life Balance} PhD students in the US are often said to be overworked compared to other countries, e.g., in Europe.  This is partly due to the longer PhD program and that US PhD students are often paid through TA, which requires them to do TA in addition to their own research. In contrast, PhD students in other countries are often paid through fellowships, which might not require doing TA.
-
-// \begin{commentbox}
-//   Work-life balance is more of a personal and cultural issue than a regulatory one. US academia is known for its intense work culture, because students themselves are fiercely competitive (after reading this book you would see how competitive it is to get into a good PhD program in the US), and faculty are expected to publish frequently.
-//   The system strongly favors those that work hard and produce results, which can create a culture of long hours and high stress.
-// \end{commentbox}
-// \end{itemize}
+@tab:us-vs-other summarizes the main differences between CS PhD in the US and other countries. Note that these differences can vary by institution and country. Some countries might have a PhD program that is similar to the US. The following are some common differences:
 
 
-// %\begin{commentbox}
+- *MS requirement and PhD duration*: CS PhD programs in the US do not require an MS degree (@sec:time, @sec:msrequirement). In contrast, many other countries require having an MS degree before joining a PhD program. This means that US PhD programs are longer (5--7 years, 2 of which are coursework) than other countries (3--4 years, no coursework).
+
+- *Project proposal*: In many countries, you have to choose a project and adviser *during* the application process (e.g., you write a proposal to a potential adviser). But this allows you to start your research right from the beginning. In the US, you often start your PhD without an adviser or project and find them later. Usually you have two initial years to take classes, explore and find an adviser and research topic.
+    
+- *Coursework*: In the US you will spend the first couple of years taking classes and exploring potential adviser and research topics. After that, you have to pass a series of exams during your PhD---qualifying exam, comprehensive exam, thesis proposal defense#footnote[ABD (all but dissertation) refers to a PhD candidate who has finished all course work and exams and only needs to write and defend their dissertation.]. In other countries, you often start your research right away and work on the research project you proposed with the adviser you chose. Moreover, you might not have exams like those in the US or only have to do a few of them.
+    
+- *Funding*: In many countries, funding comes from the university or the government. This funding often has a fixed duration, e.g., 3 or 4 years. In the US (@chap:funding), funding such as RA comes directly from your adviser (no fixed duration). There are also fewer TA opportunities in European universities compared to the US.
+    
+- *Academic Position after PhD*: In other countries, PhD graduates interested in academia typically apply for additional research appointments, i.e., postdocs in the US, and then consider faculty positions. In the US, PhD graduates often apply directly for faculty positions. Postdoc for US graduates is no longer a popular option as it was before. The reason is that US PhD programs are longer, so you already have enough research experience (e.g., papers) to apply for faculty positions. In contrast, in other countries, PhD students often finish their PhD earlier and need more time to gain research experience before applying for faculty positions.
+    
+- *Work-life Balance*: PhD students in the US are often said to be overworked compared to other countries, e.g., in Europe. This is partly due to the longer PhD program and that US PhD students are often paid through TA, which requires them to do TA in addition to their own research. In contrast, PhD students in other countries are often paid through fellowships, which might not require doing TA.
+    #commentbox[
+      Work-life balance is more of a personal and cultural issue than a regulatory one. US academia is known for its intense work culture, because students themselves are fiercely competitive (after reading this book you would see how competitive it is to get into a good PhD program in the US), and faculty are expected to publish frequently.
+      The system strongly favors those that work hard and produce results, which can create a culture of long hours and high stress.
+    ]
+
 // %    One of the reasons I created this document is that my colleagues at GMU are interested in recruiting Vietnamese students and are surprised when seeing very few applications in Vietnam (see \autoref{chap:ack}). Each year our CS PhD program receives 500+ PhD applications, most of which are international but only 5--6 are from Vietnam.
 // %  \end{commentbox}
   
