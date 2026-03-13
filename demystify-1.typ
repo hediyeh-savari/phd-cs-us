@@ -19,12 +19,19 @@
 #let mybookgithub = "https://code.roars.dev/phd-cs-us"
 
 
-#let simpsons(s) = {
-  quote(
+#let simpsons(s) = quote(
     attribution: "The Simpsons",
     block:true
-  )["#emph(s)"]
-}
+  )["#emph(s)"
+  ]
+
+#let commentbox(who, msg) = box(
+    stroke: (x: 0.5pt + black, y: 0.5pt + black),
+    inset: 10pt,
+    fill: rgb("f0f0f0"),
+  )[*#who*: #msg
+  ]
+#let mycomment(msg) = commentbox("Vu", msg)
 
 
 // Title Page
@@ -100,7 +107,7 @@ Much of these uncertainties stem from the lack of information and guidance on th
 This book aims to address these concerns.
 
 #figure(
-  image("files/imposter.jpeg", width: 30%),
+  image("files/imposter.jpeg", width: 50%),
   caption: [Stress caused by imposter syndrome is real. Don't let it stop you from applying to CS PhD programs in the US!]
 ) <fig:imposter>
 
@@ -108,35 +115,33 @@ This book aims to address these concerns.
 
 If you believe you have a chance in other countries, e.g., Australia, Canada, Japan, Germany, UK, South Korea, and Singapore, then you will surely have a chance in the US as well.
 
-#rect[
-The most selective US schools, e.g., top 10 in CS (@chap:rankings), are extremely competitive for everyone, regardless of background. Don't be discouraged if you don't get into a "household name" university as there are many excellent CS programs (@sec:selecting-ranking-schools) in the US that are not as well-known internationally but still offer great research opportunities and training. In fact, many top CS researchers and faculty members in the US did not graduate from Ivy League or top 10 schools.
+#mycomment([The most selective US schools, e.g., top 10 in CS (@chap:rankings), are extremely competitive for everyone, regardless of background. Don't be discouraged if you don't get into a "household name" university as there are many excellent CS programs (@sec:selecting-ranking-schools) in the US that are not as well-known internationally but still offer great research opportunities and training. In fact, many top CS researchers and faculty members in the US did not graduate from Ivy League or top 10 schools.
 
 Many students, especially those from smaller countries or schools, feel *imposter syndrome*---worrying they're "not good enough", or get discouraged when competing with others with "stronger" profiles (@sec:profile-not-strong). Remember (@chap:evalapps): adcom looks for potential and evidence you'll thrive in research environment and fit well at their institution---in other words, things that usually have nothing to do with your GPA or GRE scores.
-]
+])
 
-*Funding Is Not An Issue*  In most cases CS PhD students \emph{do not} need to worry about funding, especially at good R1
+*Funding Is Not An Issue*  In most cases CS PhD students _do not_ need to worry about funding, especially at good R1
 universities in the US. 
 If you are admitted, you will almost certainly
-receive \emph{full funding} (@chap:funding) to support your study. 
+receive _full funding_ (@chap:funding) to support your study. 
 
-// Your funding includes tuition, health insurance, and @glossary[stipend] (in STEM field you get paid for your study!).
+Your funding includes tuition, health insurance, and stipend /*TODO @glossary[stipend]*/ (in STEM field in CS you get paid for your study!).
 Moreover, you often receive additional benefits such as summer pay (@sec:summer-funding), laptops (@sec:buying-equipment), and traveling to conferences and workshops. 
 
 Full funding for CS PhD students is the norm in the US, and I'd go as far as to say that if you are not admitted with full funding, you might want to not accept the offer. The reason is that CS is in high demand and you're actively contributing to improving the reputation of the university and more generally advancing CS.
 
-#rect[
-Vu: While full funding is standard for CS PhD as mentioned above, always double-check the details of your offer (@sec:offer-letters) before accepting, especially for programs outside STEM or at smaller/private universities.
-]
+#mycomment([While full funding is standard for CS PhD as mentioned above, always double-check the details of your offer (@sec:offer-letters) before accepting, especially for programs outside STEM or at smaller/private universities.]
+)
 
 // % \paragraph{Discrimination is not tolerated} Not only is discrimination illegal, diversity and inclusion are highly valued in US universities. Many universities take great pride in their diverse student body and faculty.
 
 // % In fact, many resources are available to encourage and support students from minority and diverse groups to pursue higher education and research, e.g., specific scholarships and fellowships. Faculty in CS are also familiar with and are encouraged to support such students in their group. There are also incentives, such as dedicated funding and awards, to motivate faculty to recruit and mentor minority students (\autoref{sec:urm}).
 
-// \section{What's a PhD in CS? <sec:phd-in-cs>
-// \sectioninfo{A PhD in CS is a \textbf{research} degree that transforms you into a researcher in a specific area of CS.
-//  You will become an expert in a particular topic and know more about it than anyone else in the world (in many cases even your advisor).}
+\section{What's a PhD in CS? <sec:phd-in-cs>
+\sectioninfo{A PhD in CS is a \textbf{research} degree that transforms you into a researcher in a specific area of CS.
+ You will become an expert in a particular topic and know more about it than anyone else in the world (in many cases even your advisor).}
 
-// A PhD in CS is a \emph{research} degree. Unlike undergraduate or even Master's programs (\autoref{chap:ms}), which focus on breadth of knowledge through coursework, a PhD is about depth and pushing the boundary of a specific area within a CS \glslink{fields}{field} (e.g., software verification within the field of programming languages or formal methods). You will become an expert in your area of research and contribute something new to the field that has never been done before. 
+A PhD in CS is a _research_ degree. Unlike undergraduate or even Master's programs (\autoref{chap:ms}), which focus on breadth of knowledge through coursework, a PhD is about depth and pushing the boundary of a specific area within a CS \glslink{fields}{field} (e.g., software verification within the field of programming languages or formal methods). You will become an expert in your area of research and contribute something new to the field that has never been done before. 
 
 // \begin{commentbox}
 //     This \href{https://matt.might.net/articles/phd-school-in-pictures/}{series of pictures} from \href{https://matt.might.net}{Matt Might} illustrates what a PhD means.
@@ -144,9 +149,8 @@ Vu: While full funding is standard for CS PhD as mentioned above, always double-
 
 // Career-wise, a CS PhD prepares you for jobs that require deep technical expertise and the ability to do independent research. Many graduates become professors or academic researchers while others pursue positions in industry research labs, advanced engineering teams, or technical leadership positions. The degree also opens doors to national labs, government agencies, and startups, where the ability to solve unknown and complex problems is necessary.
 
-// \begin{commentbox}
-//   A PhD is not just a degree, it is a \textbf{journey} that transforms you into a researcher. You will learn how to think critically, solve problems, deal with adversity, and work independently. You will also learn how to write and ``sell'' your work, collaborate with others, and effectively communicate your ideas. In the end, you will have a deep understanding of your chosen field and become an expert in your area of research. In fact, you will know about your research topic more than \emph{anyone} else in the world, including, in many cases, your adviser! This is a scary thought, but it is also exciting and rewarding.
-// \end{commentbox}
+#mycomment([A PhD is not just a degree, it is a *journey* that transforms you into a researcher. You will learn how to think critically, solve problems, deal with adversity, and work independently. You will also learn how to write and ``sell'' your work, collaborate with others, and effectively communicate your ideas. In the end, you will have a deep understanding of your chosen field and become an expert in your area of research. In fact, you will know about your research topic more than *anyone* else in the world, including, in many cases, your adviser! This is a scary thought, but it is also exciting and rewarding.]
+)
 
 == CS Fields and Areas <sec:fields-and-areas>
 
