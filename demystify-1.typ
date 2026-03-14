@@ -3,7 +3,12 @@
 #set par(justify: true)
 #set page(numbering: "1", number-align: center)
 #set heading(numbering: "1.")
-#set text(lang: "en", size: 12pt)
+
+#set text(
+  font: "Noto Serif",
+  size: 10pt
+)
+
 #set list(indent: 1em)
 #set enum(indent: 1em)
 #show heading: set block(below: 1.5em, above: 1.5em)
@@ -433,19 +438,20 @@ Each application is assigned to about three adcom members, who independently eva
 // Note that other disciplines might have different practices. For example, adcom might select a top list of applicants and then discuss them in a meeting to determine who to interview. \autoref{fig:adcom-discuss-physics} shows an example of how a PhD admission committee in Physics evaluates applications.
 // In CS, both the reviews and interviews are often done independently (\autoref{sec:interviews}).
 
-// \begin{figure}
-// \begin{surprisebox}[From a prof. in Physics at an \gls{r1} university:]
-//   We have a pretty well fleshed out grading rubric for applications that has categories like grades, research, writing ability, etc. I would say our rubric is weighted about 1/2 on academics (research, LORs, grades) and 1/2 on the idea of ``grit'' or ``resilience'' (engagement, leadership, working through obstacles).\\
-
+#figure(
+commentbox(who:[From a prof. in Physics at an R1 university],[
+  We have a pretty well fleshed out grading rubric for applications that has categories like grades, research, writing ability, etc. I would say our rubric is weighted about 1/2 on academics (research, LORs, grades) and 1/2 on the idea of ``grit'' or ``resilience'' (engagement, leadership, working through obstacles).
   
-//   The rubric helps a lot to standardize how committee members grade, and speeds things up a bit because you know what to look for. We spent what seemed like forever on the details of the grading system (e.g., what does a a score of `3' vs a `2' in writing look like?) but now it's very helpful.\\
-  
+  The rubric helps a lot to standardize how committee members grade, and speeds things up a bit because you know what to look for. We spent what seemed like forever on the details of the grading system (e.g., what does a a score of `3' vs a `2' in writing look like?) but now it's very helpful.
 
-//   We also do roughly three rounds of selection: a first ``triage'' round to determine the top ~100 applications, a second round to determine about 25 people to interview, and then a third round to decide the actual offers. That also helps to speed things up a bit, since in the first round with all the applications you can move fairly quickly since you just need to sort into ``good'' and ``bad''. By the time we're getting into the details and reading everything more closely in rounds 2 and 3 most of the applications have been removed from consideration. So for this method I do maybe 5 minutes per app in round 1, but closer to 20 minutes per app in round 2, and usually round 3 is long discussions about specific people.   
-// \end{surprisebox}
-// \caption{An example of how a PhD admission committee in Physics evaluates applications. Note that this is not common in CS, where we typically do not have a grading rubric and do not discuss applications in a meeting. <fig:adcom-discuss-physics}
-// \end{figure}
+  We also do roughly three rounds of selection: a first ``triage'' round to determine the top ~100 applications, a second round to determine about 25 people to interview, and then a third round to decide the actual offers. That also helps to speed things up a bit, since in the first round with all the applications you can move fairly quickly since you just need to sort into ``good'' and ``bad''. By the time we're getting into the details and reading everything more closely in rounds 2 and 3 most of the applications have been removed from consideration. So for this method I do maybe 5 minutes per app in round 1, but closer to 20 minutes per app in round 2, and usually round 3 is long discussions about specific people.   
+,]),
+caption:[An example of how a PhD admission committee in Physics evaluates applications. Note that this is not common in CS, where we typically do not have a grading rubric and do not discuss applications in a meeting.] 
+) <fig:adcom-discuss-physics>
 
+// 
+//\end{figure}
+// 
 === How Long To Evaluate An Application? <sec:ievaluate>
 // \sectioninfo{It takes me about 10--15 minutes to review an application.}
 
@@ -564,7 +570,7 @@ Each application is assigned to about three adcom members, who independently eva
 
   
 
-// \subsection{LoRs from Dept Chair, Dean, or Supervisor at Work <sec:admin-letters}
+==== LoRs from Dept Chair, Dean, or Supervisor at Work <sec:admin-letters>
 
 // Many students, especially international applicants, try to get LoRs from high-ranking administrators in their universities such as department chair/head, dean, or director. The students never worked with these people (they might take a class or so with these profs), but mistakenly believe that these LoRs are valuable due to the writer's high position in the university.
 // However, as mentioned in~\autoref{sec:generic-letters} such a generic LoR has little value because the writer does not know you well and can talk in depth about your research ability. 
@@ -589,7 +595,7 @@ Each application is assigned to about three adcom members, who independently eva
 
 
   
-// \subsection{Self-written Letters are Bad <sec:self-letters}
+==== Self-written Letters are Bad <sec:self-letters>
 
 // Many letter writers ask students to write their own letters---a common practice in many countries. Unfortunately, such letters have \emph{little value} and are considered weak by reviewers---why can you not even find someone who cares or knows enough about you to write a candid personal reference letter?  Instead of the ref. writer talking about you, in it is you who write about yourself (and they just sign the letter). 
  
@@ -848,11 +854,11 @@ Each application is assigned to about three adcom members, who independently eva
 
 === Work Experience
 
-Research experience at \emph{well-known laboratories}, such as Microsoft Research, can strengthen your application.  The emphasis here is \emph{research} work, not software development or non-research work. For example, working at a FAANG (Facebook, Amazon, Apple, Netflix, Google) company as a software engineer does not count as research experience. While it can be helpful for MS applications (\autoref{chap:ms}), software development, even at a top company, does not demonstrate your research ability and potential for a PhD program. 
-// Similarly, a LoR from your supervisor for non-research experience might not count much (\autoref{sec:admin-letters}). So do not spend much time talking about development job in your SOP.
+Research experience at _well-known research laboratories_, such as Microsoft Research, can strengthen your application. The emphasis here is _research_ work, not software development or non-research work. For example, working at a FAANG (Facebook, Amazon, Apple, Netflix, Google) company as a software engineer does not count as research experience. While it can be helpful for MS applications (@chap:ms), software development, even at a top company, does not demonstrate your research ability and potential for a PhD program.
+ Similarly, a LoR from your supervisor for non-research experience might not count much (@sec:admin-letters). So do not spend much time talking about development job in your SOP.
 
 
-// Note that adcom reviewers might not be familiar with all research labs, especially those outside the US. For example, while VinAI is well-known in Vietnam and potentially in Asia, it might not be well-known in the US. So you or your LoR writers should explicitly say something about them in your statement or letter.  In general, if you did some good research work, then you should mention that in your SOP and ask your supervisor to write about it in their LOR (\autoref{chap:lor}).
+Note that adcom reviewers might not be familiar with all research labs, especially those outside the US. For example, while VinAI is well-known in Vietnam and potentially in Asia, it might not be well-known in the US. So you or your LoR writers should explicitly say something about them in your statement or letter.  In general, if you did some good research work, then you should mention that in your SOP and ask your supervisor to write about it in their LOR (@chap:lor).
 
 
 === Competitions <sec:competitions>
@@ -1138,8 +1144,8 @@ Graduating from top universities \emph{that adcom members recognize}  helps quit
 
 === Online Courses and Certificates
 
-// These do not carry much weight as they do not show research ability. We do not care much if you have taken an online Coursera AI course or have a professional certificate from Microsoft.
-// However, as mentioned in \autoref{sec:non-stem}, if you do not have a CS background, you might be able to use these to show you have sufficient CS knowledge.
+These do not carry much weight as they do not show research ability. We do not care much if you have taken an online Coursera AI course or have a professional certificate from Microsoft.
+However, as mentioned in @sec:non-stem, if you do not have a CS background, you might be able to use these to show you have sufficient CS knowledge.
 
 === Personal Website and (Github) Projects <sec:personal-website>
 // These are \emph{not} required but are increasingly common.  In CS, academic websites are \emph{very} common and used to showcase research, publications, and projects.  You don't need fancy websites with tons of javascript and animations. A simple website with your name (and sometimes photo), research interests, publications, and projects is enough. You can use free services such as \href{https://github.io}{GitHub Pages} to create your website. Many CS students also use Github to host their projects and demonstrate their involvement in open-source projects.  
@@ -1169,13 +1175,11 @@ Graduating from top universities \emph{that adcom members recognize}  helps quit
 //   \includegraphics[scale=0.5]{files/bingo.png}
 // \end{center}
 
-
 === Interviews <sec:interviews> 
 
-// After you apply, you \emph{might} get interviews. The most common case is that a specific prof. is interested in working with you and wants to chat, e.g., to offer RA (\autoref{sec:ra}). In some cases, the interview is done by several professors, e.g., to see if a student fits in their group or to recruit a very strong student to their program. 
+After you apply, you \emph{might} get interviews. The most common case is that a specific prof. is interested in working with you and wants to chat, e.g., to offer RA (@sec:ra). In some cases, the interview is done by several professors, e.g., to see if a student fits in their group or to recruit a very strong student to their program.
 
-// Note that unlike other fields (e.g., Physics~\autoref{fig:adcom-discuss-physics}) that has formal interview where adcom members interview selected applicants to accept them in the program, CS interviews are from a prof. (or a few prof.)---who might not adcom members---that have interests in recruiting specific applicants to work directly with them or their research group.  CS adcom members rarely do interview to get students for the program as a whole.  
-
+Note that unlike other fields (e.g., Physics @fig:adcom-discuss-physics) that has formal interview where adcom members interview selected applicants to accept them in the program, CS interviews are from a prof. (or a few prof.)---who might not adcom members---that have interests in recruiting specific applicants to work directly with them or their research group. CS adcom members rarely do interview to get students for the program as a whole.
 
 // \subsection{When do interviews happen?}
 
@@ -1227,7 +1231,7 @@ However, no interview usually means you are less likely to get an RA (@sec:ra), 
 
 
 #figure(
-  image("files/waitlist.jpg", width: 50%),
+  image("files/waitlist.jpg", width: 80%),
   caption: [Email from the University of Rochester about sending offers and waitlist.]
 ) <fig:waitlist>
 
@@ -1237,9 +1241,9 @@ Not much you can do other than to be patient and wait. Do not send emails asking
 
 #strong[Acceptance Letters] Universities prioritize sending out acceptance letters first. This allows the admitted students to make decisions and plan for their studies. Read carefully on the acceptance letter for terms and conditions, e.g., funding and other benefits (@sec:offer-letters).
 
-Some universities have #gls[rolling-admission]. Others have a specific date when they send out the first round of acceptance letters.   
+Some universities have rolling-admission. Others have a specific date when they send out the first round of acceptance letters.   
 
-#strong[Response Deadlines] Accepted students are usually given a deadline to make decisions on their offers, often around #emph[#Gls[April15]] in the US. After this date, CS programs can gauge how many slots remain unfilled.
+#strong[Response Deadlines] Accepted students are usually given a deadline to make decisions on their offers, often around _April15_ in the US. After this date, CS programs can gauge how many slots remain unfilled.
 
 #strong[Waitlist] Most CS programs have a limited number of slots for PhD students, and thus put many good students on a waitlist.  If accepted students decline the offer, then offers are sent to students on the waitlist. So if you see people getting accepted, that does not mean you are out yet. 
 
