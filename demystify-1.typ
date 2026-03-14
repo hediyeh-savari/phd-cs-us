@@ -6,11 +6,13 @@
 #set text(lang: "en", size: 12pt)
 #set list(indent: 1em)
 #set enum(indent: 1em)
+#show heading: set block(below: 1.5em, above: 1.5em)
 
 #show ref: set text(fill:blue)
 #show link: set text(fill:blue)
 #show link: underline
 #show figure.caption: set text(size: 10pt)
+
 
 #let mytitle = "Demystifying PhD Admissions in Computer Science"
 #let mysubtitle = "A Handbook for Navigating CS PhD Admissions in the U.S."
@@ -91,7 +93,6 @@
 #pagebreak()
 #outline(title: "Contents and Summary")
 #pagebreak()
-
 
 = Preface
 
@@ -1205,26 +1206,17 @@ Graduating from top universities \emph{that adcom members recognize}  helps quit
 // \paragraph{Updating your profile} If you have important  achievements after you submitted your application, e.g., new top publications or big fellowship awards, you can mention to your interviewer. If you did not have interviews, you can try to ask the CS dept to update your application (though no guarantee that they will consider them). However, in general, you should not send emails to update your profile unless you really have important updates.
 
 === Not Getting Interviews <sec:no-interview>
-// While it is generally good to get an interview, not getting one \emph{does not} mean you're out.  Many programs do not have the tradition of interviewing applicants. For example, at GMU, most admitted students with TA (\autoref{sec:ta}) do not go through interviews.
+While it is generally good to get an interview, not getting one *does not* mean you're out. Many programs do not have the tradition of interviewing applicants. For example, at GMU, most admitted students with TA (@sec:ta) do not go through interviews.
 
-// However, no interviews mean that you will not likely get an RA (\autoref{sec:ra}), which is offered by an individual faculty (if they want you to do research for them, then they likely will interview you first).  If you have no interviews, your application (and TA/fellowship funding) is decided by the adcom.
+However, no interview usually means you are less likely to get an RA (@sec:ra), which is typically offered by an individual faculty member. If they want you to do research with them, they will likely interview you first. If you have no interviews, your application (and TA/fellowship funding) is decided by the adcom.
 
 
 
 === Notification Timeline: Why rejection letters are sent so late? <sec:late-rejection>
 // \sectioninfo{Grad programs often wait for accepted students to make their decisions, typically by \Gls{April15}, before sending out rejection letters.}
 
-// %"Just reject me already!" is a common sentiment among applicants.  Indeed, school will first send out admission offers to the top candidates. They do not send out rejection letters because there is still a chance that some of the top candidates will decline the offer. If they do, then the school will go to the next set of candidates and send out offers to them.  This process continues until all spots are filled.  This is why you might not hear back until late in the admission cycle.
+//%"Just reject me already!" is a common sentiment among applicants.  Indeed, school will first send out admission offers to the top candidates. They do not send out rejection letters because there is still a chance that some of the top candidates will decline the offer. If they do, then the school will go to the next set of candidates and send out offers to them.  This process continues until all spots are filled.  This is why you might not hear back until late in the admission cycle.
 
-
-// \begin{figure}
-//   \centering
-//   \fbox{%
-//     \includegraphics[scale=0.3]{files/waitlist.jpg}%
-//   }
-//   \caption{Email from the University of Rochester about sending offers and waitlist.}
-//   \label{fig:waitlist}
-// \end{figure}
 
 
 // % \begin{figure}
@@ -1234,26 +1226,28 @@ Graduating from top universities \emph{that adcom members recognize}  helps quit
 // % \end{figure}
 
 
-// Some schools send out admission letters in batches, some do \gls{rolling-admission}, and some do not send anything out, e.g., because you're on their waitlist. You should hear back from most schools by mid-March, though rejection can come out much later.
+#figure(
+  image("files/waitlist.jpg", width: 50%),
+  caption: [Email from the University of Rochester about sending offers and waitlist.]
+) <fig:waitlist>
 
-// Not much you can do other than to be patient and wait. Do not send emails asking about interviews or status; unless you have interviewed specifically with someone then you can ask that person for status updates and other questions (\autoref{sec:accept-postpone-decline}).  You can, though not recommended, send an email to the CS dept to ask about your status, but likely they will not reply (in addition to being busy, they do not want to give you false hope or inaccurate information), or they can send a generic reply such as \emph{``we are still reviewing applications''} or \emph{``you will hear in two weeks''}. \autoref{fig:waitlist} shows an email from the University of Rochester about their admission process.
+Some schools send out admission letters in batches, some do _rolling admission_/*#gls[rolling-admission]*/, and some do not send anything out, e.g., because you're on their waitlist. You should hear back from most schools by mid-March, though rejection can come out much later.
 
+Not much you can do other than to be patient and wait. Do not send emails asking about interviews or status; unless you have interviewed specifically with someone then you can ask that person for status updates and other questions (@sec:accept-postpone-decline).  You can, though not recommended, send an email to the CS dept to ask about your status, but likely they will not reply (in addition to being busy, they do not want to give you false hope or inaccurate information), or they can send a generic reply such as "we are still reviewing applications" or "you will hear in two weeks". @fig:waitlist shows an email from the University of Rochester about their admission process.
 
-// \paragraph{Acceptance Letters} Universities prioritize sending out acceptance letters first. This allows the admitted students to make decisions and plan for their studies. Read carefully on the acceptance letter for terms and conditions, e.g., funding and other benefits (\autoref{sec:offer-letters}).
+#strong[Acceptance Letters] Universities prioritize sending out acceptance letters first. This allows the admitted students to make decisions and plan for their studies. Read carefully on the acceptance letter for terms and conditions, e.g., funding and other benefits (@sec:offer-letters).
 
-// Some universities have \gls{rolling-admission}. Others have a specific date when they send out the first round of acceptance letters.   
+Some universities have #gls[rolling-admission]. Others have a specific date when they send out the first round of acceptance letters.   
 
-// \paragraph{Response Deadlines} Accepted students are usually given a deadline to make decisions on their offers, often around \textbf{\Gls{April15}} in the US. After this date, CS programs can gauge how many slots remain unfilled.
+#strong[Response Deadlines] Accepted students are usually given a deadline to make decisions on their offers, often around #emph[#Gls[April15]] in the US. After this date, CS programs can gauge how many slots remain unfilled.
 
-// \paragraph{Waitlist} Most CS programs have a limited number of slots for PhD students, and thus put many good students on a waitlist.  If accepted students decline the offer, then offers are sent to students on the waitlist. So if you see people getting accepted, that does not mean you are out yet. 
+#strong[Waitlist] Most CS programs have a limited number of slots for PhD students, and thus put many good students on a waitlist.  If accepted students decline the offer, then offers are sent to students on the waitlist. So if you see people getting accepted, that does not mean you are out yet. 
 
+Also, do not feel embarrassed or discouraged if you are on the waitlist. Many students are on the waitlist, and there is a good chance that you will get an offer later.
 
+#strong[Rejection Letters] Schools typically start sending out rejection letters to remaining applicants *after they have finalized their admissions decisions*. Thus, rejection letters are often sent out late (e.g., after April 15th or even much later). 
 
-// Also, do not feel embarrassed or discouraged if you are on the waitlist. Many students are on the waitlist, and there is a good chance that you will get an offer later.
-
-// \paragraph{Rejection Letters} Schools typically start sending out rejection letters to remaining applicants \emph{after they have finalized their admissions decisions}. Thus, rejection letters are often sent out late (e.g., after April 15th or even much later). 
-
-// Not much you can do here. You can try to contact the school to ask about your status, but they might not reply, they might say they are still reviewing applications, or give you inaccurate information (e.g., you will hear in two weeks). In short, you just have to be patient and wait, and also beware that some schools do not send out rejection letters at all.
+Not much you can do here. You can try to contact the school to ask about your status, but they might not reply, they might say they are still reviewing applications, or give you inaccurate information (e.g., you will hear in two weeks). In short, you just have to be patient and wait, and also beware that some schools do not send out rejection letters at all.
 
 // % \section{Preparing and Tracking Applications}
 
@@ -1641,7 +1635,7 @@ In general, external fellowships are highly competitive and prestigious---you wi
 
 == Funding Miscs
 
-=== Low Stipend? <sec:low stipend>
+=== Low Stipend? <sec:low-stipend>
 
 Students often think their stipend is too low and not enough to live on.  For example, if you look at the stipend at GMU, which is around \$30K for 9-month, and then compare it to the cost of living in Fairfax, VA, which says you need \$70K to live in a 1-bed apartment, then you might be in a panic.
 
