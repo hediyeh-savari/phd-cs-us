@@ -67,9 +67,8 @@
     stroke: (x: 3pt + olive, y: 3pt + olive),
     inset: 1in
   )[
-    #v(1fr)
+    #v(0.5fr)
     #text(size: 22pt, weight: "bold")[#mytitle]
-    #v(1em)
     #v(1em)
     #text(size: 16pt, weight: "bold")[#mysubtitle]
     #v(1fr)
@@ -91,7 +90,7 @@
   fill: rgb("f0f0f0")
 )[
   #text(size: 10pt)[
-    This #link(mybookgithub)[work] © 2025 by #me is licensed under CC BY-NC-ND 4.0. To view a copy of this license, visit #link("https://creativecommons.org/licenses/by-nc-nd/4.0/")[creativecommons.org]
+    This #link(mybookgithub)[work] © 2025 by #me is licensed under CC BY-NC-ND 4.0. To view a copy of this license, visit #link("https://creativecommons.org/licenses/by-nc-nd/4.0/")[creativecommons.org].
   ]
 ]
 
