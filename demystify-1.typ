@@ -3368,39 +3368,34 @@ In many countries, it is customary to give professors costly gifts---such as fan
 
 == Contributing and Supporting This Book <sec:contribute>
 
-// This book will \emph{always be free} and \emph{open source} at 
-// \begin{tcolorbox}[boxrule=0.1pt,enhanced]
-// \centering
-// \small
-// \mybookaddress{}  
-// \end{tcolorbox}
-// If you spot an error, have a different experience, or want to suggest something, open an issue on the \href{\mybookgithub}{GitHub repo}. Community input helps keep this resource current and useful.
+This book will _always be free_ and _open source_ at
+#align(center)[
+  #box(inset: 5pt, stroke: 0.2pt + black, fill: rgb("f0f0f0"))[#mybookgithub]
+]
 
-// \paragraph{Supporting this book}
-// You can support this book in many ways.  The best way is to \emph{share it with others} who might find it useful, e.g., your friends, colleagues, or students.
-// You can also \emph{link to it} from your website or social media accounts.  I was very happy to hear that it has helped many students, especially those from smaller countries---which is the main reason I wrote it.
+If you spot an error, have a different experience, or want to suggest something, open an issue on the #link(mybookgithub)[GitHub repo]. Community input helps keep this resource current and useful.
 
-// You can also: (i) leave a review on \href{https://www.amazon.com/dp/B0F41HP6Y2}{Amazon} and \href{mailto:tvn@roars.dev}{send me} a \emph{“Thank you”} note  and let me know how it helped you (those messages make my day!),
-// (ii) give it a star on its \href{\mybookgithub}{GitHub repo},
-// (iii) share it with friends, or
-// (iv) buy the Kindle book on \href{https://www.amazon.com/dp/B0F41HP6Y2}{Amazon}---so that I can brag about having a book on Amazon (priced at \$7.77---Unix 777 permission and the open nature of the book).
+*Supporting This Book:* 
+You can support this book in many ways. The best way is to #emph[share it with others] who might find it useful, e.g., your friends, colleagues, or students.
+You can also _link to it_ from your website or social media accounts. I was very happy to hear that it has helped many students, especially those from smaller countries---which is the main reason I wrote it.
+
+You can also: (i) leave a review on #link("https://www.amazon.com/dp/B0F41HP6Y2")[Amazon] and #link("mailto:tvn@roars.dev")[send me] a _"Thank you"_ note and let me know how it helped you (those messages make my day!),
+(ii) give it a star on its #link(mybookgithub)[GitHub repo],
+(iii) share it with friends, or
+(iv) buy the Kindle book on #link("https://www.amazon.com/dp/B0F41HP6Y2")[Amazon]---so that I can brag about having a book on Amazon (priced at \$7.77---Unix 777 permission and the open nature of the book).
 
 
 
 
 = About Me  <sec:about-me>
 
-// I am an associate professor in the CS dept at George Mason University (GMU). 
-// Before GMU, I was at the University of Nebraska-Lincoln (UNL). Both UNL and GMU are \gls{r1} research universities in the US and have many international students in their CS graduate programs. I work in Software Engineering and Formal Methods.  My research lab website is at \href{https://roars.dev}{roars.dev}. 
+I am an associate professor in the CS department at George Mason University (GMU). 
+Before GMU, I was at the University of Nebraska-Lincoln (UNL). Both UNL and GMU are R1 research universities in the US and have many international students in their CS graduate programs. I work in Software Engineering and Formal Methods. My research lab website is at #link("https://roars.dev")[roars.dev]. 
 
-// I have been involved the PhD admission process at GMU and UNL for many years. This allows me to have a good understanding of the process, the challenges students face, and what faculty are looking for. Currently I am the program director of the MS program in Software Engineering at GMU (thus also have experience with MS admission, which is quite different than PhD as discussed in~\autoref{chap:ms}). I also have served in the panels of PhD fellowships including NSF GRFP and DoD NDSEG, which allows me to provide some insights on external fellowhip applications (\autoref{chap:fellowships}).
+I have been involved in the PhD admission process at GMU and UNL for many years. This allows me to have a good understanding of the process, the challenges students face, and what faculty are looking for. Currently I am the program director of the MS program in Software Engineering at GMU (thus also have experience with MS admission, which is quite different than PhD as discussed in @chap:ms). I have also served on panels for PhD fellowships including NSF GRFP and DoD NDSEG, which allows me to provide some insights on external fellowship applications (@chap:fellowships).
 
-
-// Though I was not an international student, many of my students and collaborators are/were. I also mentor students from Vietnam and have close colleagues and friends who were once international students. I hope to capture the diverse challenges and experiences they've faced in this book so that it can be a valuable resource for prospective international students.
-// Finally, my upbringing in the US provides a perspective aligned with American culture, allowing me to shed light on various issues, particularly those related to cultural differences (\autoref{chap:cultural}).
-
-
-
+Though I was not an international student, many of my students and collaborators are or were. I also mentor students from Vietnam and have close colleagues and friends who were once international students. I hope to capture the diverse challenges and experiences they've faced in this book so that it can be a valuable resource for prospective international students.
+Finally, my upbringing in the US provides a perspective aligned with American culture, allowing me to shed light on various issues, particularly those related to cultural differences (@chap:cultural).
 
 = Disclaimer <sec:disclaimer>
 
