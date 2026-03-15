@@ -408,7 +408,7 @@ Each application is assigned to about three adcom members, who independently eva
 // \sectioninfo{Adcom members only review applications assigned to them (typically matching their expertise) and rarely get involved in other applications}
 
 
-// \Gls{adcom-members} typically can view any submitted applications. However, we only review those that are assigned to us, which are already too many. \Gls{adcom-chair} will assign applications to reviewers based on their expertise (e.g., if a student says they want to do SE or interested in working with me), and reviewers will only evaluate those applications. Occasionally we might look at other applications, (e.g., if the student contacted me, I know that student, or they are from a school in Vietnam that I am familiar with, etc). However, even if we look at them, we usually do not get involved in their evaluation directly.
+// \Gls{adcom-members} typically can view any submitted applications. However, we only review those that are assigned to us, which are already too many. \Gls{adcom-chair} will assign applications to reviewers based on their expertise (e.g., if a student says they want to do SE or interested in working with me), and reviewers will only evaluate those applications. Occasionally we might look at other applications, (e.g., if the student contacted me, I know that student, or they are from a school in Vietnam I am familiar with, etc). However, even if we look at them, we usually do not get involved in their evaluation directly.
 
 // Note that the assigned reviewers are the main ones deciding your application, but at many schools other faculty in the department can also have access to your application and provide inputs and opinions on your profile. Thus, it helps to contact faculty (\autoref{sec:contact}) and mention faculty you're interested in in your SOP (\autoref{chap:sop}).
 
@@ -653,18 +653,15 @@ caption:[An example of how a PhD admission committee in Physics evaluates applic
 // After your writers have submitted all of their letters, \emph{thank them} (\autoref{sec:thank-writers}).  Let them know the outcome of your applications and stay in touch with them.  This will help you build a relationship with them and you might need them to write for you again in the future.
 // \end{itemize}
 
+=== Waiving Your Right <sec:waive-right>
 
+When you ask someone to write a letter for you, *you should always waive your right*, which is a standard practice in both school and job applications. Waiving your right shows trust in your referees and that you're not trying to influence their words. It encourages honest feedback and keeps things confidential.
 
-// \subsection{Waiving Your Right <sec:waive-right}
+If you do not waive your right, the letter writer may refuse or write a generic letter. Reviewers may question a letter that is not waived—if you don't trust your writers, find someone else. In short, waiving your right is standard and respectful.
 
-// When you ask someone to write a letter for you, \emph{you should always waive your right}.
-// Choosing not to look at a reference letter is pretty standard in school and job applications. When you waive your right to see the letter, it adds a layer of trust, showing you're confident in your choice of referees and that you're not trying to twist their words. It's also about keeping things open and honest between you and your letter writers and encourages them to be real about your strengths and qualifications. Plus, it keeps things private.
-
-// If you do not waive your right,  the letter writer might refuse to write for you or write a generic letter that does not help your case.  Reviewers also might raise concerns about a letter that is not waived, e.g., if you do not trust your letter writers, then you should find someone else to write for you. In short, it's a standard practice and a way of keeping things straightforward and respectful in the whole recommendation game.
-
-// \begin{warningbox}
-// If you ask me to write a letter for you and do not waive your right, I will refuse to write for you. Of course I will first explain to you why you should waive your right and what it means (many students actually do not understand this practice), but if you still insist on not waiving your right or you want to see the letter before it is submitted, then I will not write for you. 
-// \end{warningbox}
+#mycomment([
+If you ask me to write a letter and do not waive your right, I will refuse. I will explain why you should waive your right, but if you insist, I *will not* write for you.
+])
   
 
 === Helping Your LOR Writer <sec:help-your-LOR-writers>
