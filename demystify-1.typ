@@ -451,7 +451,7 @@ caption:[An example of how a PhD admission committee in Physics evaluates applic
 
 // 
 //\end{figure}
-// 
+
 === How Long To Evaluate An Application? <sec:ievaluate>
 // \sectioninfo{It takes me about 10--15 minutes to review an application.}
 
@@ -534,7 +534,7 @@ caption:[An example of how a PhD admission committee in Physics evaluates applic
 
 
 
-// \subsection{LoR from Well-Known People <sec:famous-lor} 
+=== LoR from Well-Known People <sec:famous-lor> 
 
 
 // Having a strong letter from well-recognized researcher (\autoref{chap:research-achievements}) can \emph{significantly boost} your application. Such letters can outweigh other weaknesses such as limited publications or low GPA. Adcom members trust people they know or have heard about and respect.  A well-known researcher is unlikely to recommend someone who is not good because it would damage their reputation.
@@ -667,7 +667,7 @@ caption:[An example of how a PhD admission committee in Physics evaluates applic
 // \end{warningbox}
   
 
-// \subsection{Helping Your LOR Writer <sec:help-your-LOR-writers}
+=== Helping Your LOR Writer <sec:help-your-LOR-writers>
 
 //  As mentioned in~\autoref{sec:generic-letters} and~\autoref{sec:self-letters}, you should not write your own letter and generic letters do not give much value. Thus, to help your writer to write a strong, customized LoR, you can provide them details or unique things about yourself. For example, let them know about your GPA, research and work experience, papers (if any), or anything you want them to mention.  If the GPA in your program is highly competitive (\autoref{sec:gpa}) and they know that, remind them to talk about it in the LOR. 
 // You can also provide them with a draft of your SOP so that they can see what you are saying about yourself and complement that with their own perspective.
@@ -967,34 +967,24 @@ Note that adcom reviewers might not be familiar with all research labs, especial
 
 === Diversity Statement <sec:diversity-statement>
 
-// Some universities require a \gls{diversity-statement}---a statement about 
-// Diversity, Equity, and Inclusion (DEI)---as part of the application.  While the topic on DEI  has become politically contested in the U.S., you should be prepared to address it when asked. Many students, especially international ones, find this statement confusing because they are unsure what it is about (truth is, even people in the U.S. struggle with this topic).
+Some universities require a *diversity-statement*---a statement about  Diversity, Equity, and Inclusion (DEI)---as part of the application. While the topic of DEI has become politically contested in the U.S., you should be prepared to address it when asked. 
+Many students, especially international ones, find this statement confusing because they are unsure what it is about (truth is, even people in the U.S. struggle with this topic).
 
+At a high level, a diversity statement is not an ideological endorsement, but rather a way to assess your _awareness_ of DEI issues, _understanding_ of challenges faced by minority groups, and potential _contributions_ you can make.
 
-// At a high level, a diversity statement is not an ideological endorsement, but rather to assess your \emph{awareness} of DEI issues, \emph{understanding} of challenges faced by minority groups, and potential \emph{contributions} you can make.
-// \begin{itemize}
+- *You don't have to be from a specific DEI/minority group.* You just need to understand what DEI is, e.g., be aware of challenges faced by minority groups in studying CS, STEM fields, academia, and the workplace. Show that you are aware of DEI issues and how they impact your chosen field and society.
 
-// \item \textbf{You don't have to be from a specific DEI/minority group.} You just need to understand what DEI is, e.g., be aware of challenges faced by minority groups in studying CS, STEM fields, academia, and workplace. Show that you are aware of DEI issues and how they impact your chosen field and society.
+- *Show your awareness, customized to your own experiences.* If you come from a different culture or country, talk about DEI (or lack thereof) there. You have a unique perspective that adcom might not know about and would be interested in hearing.
 
+- *Highlight your contributions.* You do not need to be in any group or organization specific to DEI. You can talk about your contributions to your community, e.g., mentoring students, organizing events, or even just helping people in need. If you don't believe you have done anything much, then talk about what you plan to do.
 
-// \item \textbf{Show your awareness, customized to your own experiences}. If you come from a different culture or country, talk about DEI (or lack thereof) there.  You would have a unique perspective on this topic that adcom might not know about and would be interested in hearing.
+- *Customize it to your application.* Think about your research or teaching: could it indirectly support or create collaboration across under-represented groups? Could you mentor students from underrepresented groups? Could you help improve access to technology or education in underserved communities? These are all valid and meaningful contributions.
 
+#commentbox[
+  One common pitfall is to write about how you are from a poor family, a small town, or a developing country. These are not related to DEI and show that you do not understand the topic. I have seen people consider themselves as minority because they are Asian or international students studying in the US (have you seen how many Asian or international students are in CS programs?).
 
-// \item \textbf{Highlight your contributions}.  You do not need to be in any group or organization specific to DEI.  You can talk about your contributions to your community, e.g., mentoring students, organizing events, or even just helping people in needs. If you don't believe you have done anything much, then talk about what you plan to do.
-
-
-// \item \textbf{Customized it to your application} 
-// Think about your research or teaching: could it indirectly support or create collaboration across under-represented groups? Could you mentor students from underrepresented groups? Could you help improve access to technology or education in underserved communities? These are all valid and meaningful contributions.
-
-// \end{itemize}
-
-
-// \begin{commentbox}
-// One common pitfall is to write about how you are from a poor family, a small town, or a developing country.  These are not related to DEI and show that you do not understand the topic.  I have seen people consider themselves as minority because they are Asian or international students studying in the US (have you seen how many Asian or international students are in CS programs?).\\
-
-// Moreover, do not make up stories or exaggerate your experiences.  Just show your awareness and understanding of the topic and what you did or how you plan to contribute to.  A good diversity statement I've read starts by the acknowledgement that the applicant is not a minority, but a white male in a STEM field (i.e., they are the majority), and that they do not have much experience in DEI, but show that they are aware of the challenges faced by minority groups and how they can contribute.
-// \end{commentbox}
-
+  Moreover, _do not_ make up stories or exaggerate your experiences. Just show your awareness and understanding of the topic and what you did or how you plan to contribute. A good diversity statement I've read starts by the acknowledgement that the applicant is not a minority, but a white male in a STEM field (i.e., they are the majority), and that they do not have much experience in DEI, but show that they are aware of the challenges faced by minority groups and how they can contribute.
+]
 
 
 == Your School and Grades <chap:your-school>
@@ -1003,23 +993,23 @@ Note that adcom reviewers might not be familiar with all research labs, especial
 #simpsons[Woohoo! I'm a college man! I won't need my high school diploma anymore]
 
 === School
+Graduating from top universities _that adcom members recognize_ helps quite a bit.
+The emphasis here is _"that adcom members recognize"_. The reason is similar to LoRs from well-known researchers (@sec:famous-lor): if we know your school has a good reputation, we can trust its education and grades. Otherwise, we are uncertain about the quality of the school and the grades you received.
 
-Graduating from top universities \emph{that adcom members recognize}  helps quite a bit. 
-// The emphasis here is \emph{``that adcom members recognize''}.  The reason is similar to LoRs from well-known researchers (\autoref{sec:famous-lor}). If we know your school has a good reputation, then we can trust its education and grades. Otherwise, we are uncertain about the quality of the school and the grades you received.
-// For example, if you are an international student and your school is well-known, then it is \emph{``top foreign''}, which is a plus.
-// However, if we do not know much about schools in your country, then we are uncertain about the quality of your school and likely treat your school as \emph{``unknown foreign''}, which can be a minus point.
+For example, if you are an international student and your school is well-known, then it is considered \emph{``top foreign''}, which is a plus. However, if we do not know much about schools in your country, then we are uncertain about the quality of your school and likely treat your school as _"unknown foreign"_, which can be a minus point.
 
-// Many international students mistakenly assume that their school is well-known, but in fact, it is not (\autoref{sec:why-rejected}). For example, although ``Bach Khoa'' is one of the best universities in Vietnam, it is not commonly recognized in the US---their confusing acronyms HUST and HCMUT only make it worse.  
+Many international students mistakenly assume that their school is well-known, but in fact, it is not (@sec:why-rejected). For example, although ``Bach Khoa'' is one of the best universities in Vietnam, it is not commonly recognized in the US---their confusing acronyms HUST and HCMUT only make it worse.
 
-// If you think your school has strong reputation, mention it in your SOP with concrete evidence like rankings or awards.  You can also ask your LOR writers to talk about your school (\autoref{sec:help-your-LOR-writers}).
-// Of course, if you're interested in working with Vietnamese, consider  \href{https://roars.dev/phd-cs-us/viet-cs-profs-us}{CS programs in the US that have Vietnamese professors}. %It might also be helpful to have your CS dept to put itself on CSRankings so that others know about the dept, its faculty, and research.
+If you think your school has a strong reputation, mention it in your SOP with concrete evidence like rankings or awards. You can also ask your LOR writers to talk about your school (@sec:help-your-LOR-writers).
 
-// \begin{commentbox}
-//   Sometimes PhD adcom in the US will share a document such as \href{https://github.com/dynaroars/dynaroars.github.io/wiki/Foreign-Top-Schools}{this one}, which lists the top schools in several countries. We also ask other faculty and students if we think they know about the place.  For example, when I was a postdoc at UMD, members of their CS PhD adcom asked me to evaluate applicants from Vietnam.  During my time at UNL and now here at GMU, I have looked at Vietnamese applications (whether they are assigned to me or not) and provided input to their reviewers, e.g., X is the top tech school in Vietnam and so it should be \emph{top} instead of \emph{unknown} foreign, which makes a huge difference.
-// \end{commentbox}
-// \begin{commentbox}[Deepak:]
-//   If an applicant is anxious about their school not being known outside their country, they can provide information about their school and department, with independent sources where such information can be verified.
-// \end{commentbox}
+Of course, if you're interested in working with Vietnamese, consider #link("https://roars.dev/phd-cs-us/viet-cs-profs-us")[CS programs in the US that have Vietnamese professors].
+
+#commentbox[
+  Sometimes PhD adcom in the US will share a document such as #link("https://github.com/dynaroars/dynaroars.github.io/wiki/Foreign-Top-Schools")[this one], which lists the top schools in several countries. We also ask other faculty and students if we think they know about the place. For example, when I was a postdoc at UMD, members of their CS PhD adcom asked me to evaluate applicants from Vietnam. During my time at UNL and now here at GMU, I have looked at Vietnamese applications (whether they are assigned to me or not) and provided input to their reviewers, e.g., X is the top tech school in Vietnam and so it should be \emph{top} instead of \emph{unknown} foreign, which makes a huge difference.
+]
+#commentbox(who: "Deepak", [
+  If an applicant is anxious about their school not being known outside their country, they can provide information about their school and department, with independent sources where such information can be verified.
+])
 === Grades <sec:gpa>
 
 // Compared to other factors such as LoRs (\autoref{chap:lor}) and research experiences (\autoref{chap:research-experience}), grades generally do not matter much for CS PhD admission.  
