@@ -34,7 +34,8 @@
 #let simpsons(s) = quote(
     attribution: "The Simpsons",
     block:true
-  )["#emph(s)"
+  )[
+    "#emph(s)"
   ]
 
 // #let commentbox(who: none, msg) = box(
@@ -523,14 +524,10 @@ However, most universities do not waive the application fee, as it is typically 
 // \sectioninfo{LoR writers should be someone who (i) can talk in depth about your research experience and potential and (ii) have the credibility to evaluate your research ability.}
 
 
-// Choose your LoR writers carefully, as they can make or break your application. LoR writers are often your research advisers and professors who have mentored you in research. A \emph{strong} LoR is from people who meet the following two criteria:
+Choose your LoR writers carefully, as they can make or break your application. LoR writers are often your research advisers and professors who have mentored you in research. A *strong* LoR is from people who meet the following two criteria:
 
-// \begin{enumerate}
-//   \item \textbf{Personal knowledge}: They should know you well enough and have worked closely with you through research projects (much preferred) or coursework. This allows them to write a letter that is \emph{personalized} and \emph{specific} to you.
-//   \item \textbf{Credibility}: They should have sufficient expertise and reputation  to effectively assess and vouch for your research capabilities and potential.  Ideally, your recommender should be an active researcher with a PhD or extensive research experience.
-// \end{enumerate}
-
-
+- *Personal knowledge:* They should know you well and have worked closely with you through research projects (much preferred) or coursework. This allows them to write a letter that is *personalized* and *specific* to you.
+- *Credibility:* They should have sufficient expertise and reputation to effectively assess and vouch for your research capabilities and potential. Ideally, your recommender should be an active researcher with a PhD or extensive research experience.
 
 
 
