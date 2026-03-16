@@ -5,7 +5,7 @@
 #set heading(numbering: "1.")
 
 #set text(
-  font: "Noto Serif",
+  //font: "Noto Serif",
   size: 10pt
 )
 
@@ -419,24 +419,24 @@ After reviewers have evaluated an application, _adcom-chair_ will review all eva
 (@sec:adcom-discuss).
 
 
-Even if \emph{all} reviewers recommend acceptance, the application is not automatically accepted, especially if no faculty is willing to advise the student. For example, if the student is interested in a research area that no faculty is working on, or an area where no faculty is taking new students (e.g., AI/ML where faculty likely already has many students) then the student will not be admitted (see more rejection reasons in \autoref{sec:why-rejected}).  This is increasingly common as the number of applicants grows much faster than the number of available faculty. Note that not every CS faculty can formally advise and graduate CS PhD students (\autoref{sec:faculty-types}).
+Even if all reviewers recommend acceptance, the application is not automatically accepted—especially if no faculty is willing to advise the student. For example, if the applicant is interested in a research area with no available faculty (e.g., AI/ML where faculty may already have many students), then the student will not be admitted (see more rejection reasons in @sec:why-rejected). This is increasingly common as the number of applicants grows faster than available faculty. Note that not every CS faculty can formally advise and graduate CS PhD students (@sec:faculty-types).
 
-However, if the student has contacted a faculty member and that faculty is interested in the student and has made this known to the adcom, then the student is likely to be admitted, even if the faculty does not have funding.  This thus shows the benefit of contacting faculty (\autoref{sec:contact}).
+However, if a faculty member is interested in the student and makes this known to the adcom, the student is likely to be admitted—even if the faculty does not have funding. This shows the benefit of contacting faculty (@sec:contact).
 
-If the student mentioned a faculty in their SOP, adcom might ask that faculty to look at their application and if they are interested in the student.  Even if the student has a weak profile (but still passes the minimum requirement from the university), they might be admitted if a faculty is willing to take them. Adcom members, especially in the US, are very reluctant to go against the faculty's decision (e.g., if a faculty wants to admit a student, we are not going to reject them).
+If the student mentions a faculty in their SOP, adcom may ask that faculty to review the application. Even if the student has a weak profile (but still passes the university's minimum requirements), they might be admitted if a faculty is willing to advise them. Adcom members, especially in the US, are very reluctant to go against a faculty's decision to admit a student.
 
 
 === Do Adcom Members Talk to Each Other? <sec:adcom-discuss>
 // \sectioninfo{Sometimes adcom members discuss applicants, but in most cases they make independent decisions.}
 
-// We typically review applications independently and do not talk to each other.  This is to avoid biasing, e.g., if one reviewer says they want to accept, the other might feel pressured to accept as well.  
+We typically review applications independently and do not talk to each other.  This is to avoid biasing, e.g., if one reviewer says they want to accept, the other might feel pressured to accept as well.  
 
-// However, when there are discrepancies in evaluations, the \gls{adcom-chair} will ask reviewers to discuss the application to reach a consensus.  We might also talk to each other for interesting or strong applications, e.g., how to recruit this student or who should be the adviser. 
-// If the student mentioned a faculty member in their SOP, we might ask that faculty if they are interested in the student. 
+However, when there are discrepancies in evaluations, the adcom-chair will ask reviewers to discuss the application to reach a consensus.  We might also talk to each other for interesting or strong applications, e.g., how to recruit this student or who should be the adviser. 
+If the student mentioned a faculty member in their SOP, we might ask that faculty if they are interested in the student. 
 
 
-// Note that other disciplines might have different practices. For example, adcom might select a top list of applicants and then discuss them in a meeting to determine who to interview. \autoref{fig:adcom-discuss-physics} shows an example of how a PhD admission committee in Physics evaluates applications.
-// In CS, both the reviews and interviews are often done independently (\autoref{sec:interviews}).
+Note that other disciplines might have different practices. For example, adcom might select a top list of applicants and then discuss them in a meeting to determine who to interview. @fig:adcom-discuss-physics shows an example of how a PhD admission committee in Physics evaluates applications.
+In CS, both the reviews and interviews are often done independently (@sec:interviews).
 
 #figure(
 commentbox(who:[From a prof. in Physics at an R1 university],[
@@ -446,7 +446,7 @@ commentbox(who:[From a prof. in Physics at an R1 university],[
 
   We also do roughly three rounds of selection: a first ``triage'' round to determine the top ~100 applications, a second round to determine about 25 people to interview, and then a third round to decide the actual offers. That also helps to speed things up a bit, since in the first round with all the applications you can move fairly quickly since you just need to sort into ``good'' and ``bad''. By the time we're getting into the details and reading everything more closely in rounds 2 and 3 most of the applications have been removed from consideration. So for this method I do maybe 5 minutes per app in round 1, but closer to 20 minutes per app in round 2, and usually round 3 is long discussions about specific people.   
 ,]),
-caption:[An example of how a PhD admission committee in Physics evaluates applications. Note that this is not common in CS, where we typically do not have a grading rubric and do not discuss applications in a meeting.] 
+caption:[An example of how a PhD admission committee in Physics evaluates applications. Note that this is not common in CS, where we typically do not have a grading rubric and do not discuss applications in a meeting.]
 ) <fig:adcom-discuss-physics>
 
 // 
@@ -480,16 +480,16 @@ caption:[An example of how a PhD admission committee in Physics evaluates applic
 
 === Waiving Application Fee <sec:fee-waive>
 
-// Some universities do waive---for example, Rice, TTIC do not have fee for PhD applications and many universities for domestic students (\autoref{chap:domestic-students}).
-// Some programs also waive if the applicants attend some of their opening sessions.  Some programs waive if the applicant provide proof of financial difficulties, e.g., a statement from a financial adviser or a bank statement.
+Some universities do waive application fees---for example, Rice and TTIC do not charge a fee for PhD applications, and many universities waive fees for domestic students (@chap:domestic-students).
+Some programs also waive the fee if applicants attend their open house or information sessions. Others may waive the fee if the applicant provides proof of financial hardship, such as a statement from a financial adviser or a bank statement.
 
-// However most do not waive the application fee, which is typically a requirement of the university. Individual departments and programs do not have the flexibility to waive the application fee, even if they want to.
+However, most universities do not waive the application fee, as it is typically set by the university and not the department. Individual departments and programs usually do not have the authority to waive the application fee, even if they want to.
 
-// \begin{commentbox}{Vu:}
-// In my opinion, requiring applicants to pay the fee helps ensure their seriousness, as it filters out non-serious candidates. Most CS programs already receive way too many applications and would be overwhelmed if the application process were free---\emph{``hey it's free, so I can just apply to as many schools as I want to increase my chance of getting in''}. Even with application fee the competition is already very tough, imagine if the application is free and the number of applications triples or quadruples.\\
+#mycomment([
+  Requiring an application fee helps ensure that applicants are serious, as it discourages non-serious candidates. Most CS programs already receive too many applications and would be overwhelmed if the process were free—"hey, it's free, so I can just apply to as many schools as I want to increase my chances." Even with an application fee, competition is already very tough; imagine if the application were free and the number of applications tripled or quadrupled.
 
-// Note that if you have financial difficulties, you can ask the department for a waiver, but this is typically only granted in exceptional cases.
-// \end{commentbox}
+  If you have financial difficulties, you can ask the department for a waiver, but this is typically only granted in exceptional cases.
+])
 
 #pagebreak()
 = Application Materials <part:application>
