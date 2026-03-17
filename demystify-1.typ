@@ -3311,19 +3311,19 @@ In many countries, it is customary to give professors costly gifts---such as fan
 //     Fun fact: I was the first PhD student in my family and my extended family.  My parents were war refugee and did not finish their high school (though my dad eventually got his GED).  I was the first one to go to college (Penn State), and then grad schools. I think this inspires my cousins and in total our family have 15+ Nittany Lions, several MS, 2 PhDs (me in CS and the other in Finance), and 1 MD. So, be the first and create a path for others to follow!
 // \end{commentbox}
 
-// \subsection{Why This Book (Instead Of Others)?}
+== Why This Book (Instead Of Others)? <sec:why-this-book>
 
-// This book aims to be a comprehensive guide to the CS PhD admission process in the US.  It is based on my and other contributors' experiences. I also try to explain \emph{the reasons behind the admission process}.
-// While there are numerous \href{https://code.roars.dev/phd-cs-us}{resources online} that tell you \emph{"what"} to do, few explain the \emph{"why"}---why LoRs matter so much, why you should not draft your own LoR, why you should contact professors, etc. Moreover, it aims to help \emph{international students} who have very different backgrounds and experiences than domestic students (e.g., asking for LoRs, research experience, cultural differences, etc.)\footnote{Though of course, domestic students often face similar challenges as international students, especially those from smaller schools or underrepresented groups.}.  Understanding the reason and mindset of the adcom and profs. can help you prepare better. 
+This book aims to be a comprehensive guide to the CS PhD admission process in the US.  It is based on my and other contributors' experiences. I also try to explain _the reasons behind the admission process_.
+While there are numerous #link("https://code.roars.dev/phd-cs-us")[resources online] that tell you _"what"_ to do, few explain the _"why"_---why LoRs matter so much, why you should not draft your own LoR, why you should contact professors, etc. Moreover, it aims to help _international students_ who have very different backgrounds and experiences than domestic students (e.g., asking for LoRs, research experience, cultural differences, etc.)#footnote([Though of course, domestic students often face similar challenges as international students, especially those from smaller schools or underrepresented groups.]).  Understanding the reason and mindset of the adcom and profs. can help you prepare better. 
 
-// This book is a also \emph{personal project} that I continuously update and refine, especially during the admission season. I also work on it when I procrastinate from research or other tasks---it's my way of telling myself that I am still productive!
-// Writing is a relaxing process for me, and I enjoy experimenting with new things in \LaTeX{} (\autoref{chap:writing-latex}). Because of these reasons, this book is thus an ever-evolving project!
+This book is a also _personal project_ that I continuously update and refine, especially during the admission season. I also work on it when I procrastinate from research or other tasks---it's my way of telling myself that I am still productive!
+Writing is a relaxing process for me, and I enjoy experimenting with new things in LaTeX and more recently Typst (@chap:writing-latex). Because of these reasons, this book is thus an ever-evolving project!
 
-// Finally, this book is highly \emph{opinionated} and \emph{subjective}, which is both a strength and a weakness (see \autoref{sec:disclaimer}).
+Finally, this book is highly _opinionated_ and _subjective_, which is both a strength and a weakness (see @sec:disclaimer).
 
 
-// \subsection{How to Read This Book?}
-// This book is designed to be read in any order. So you can start with any chapter that fit your current needs and stage in the application process.  For example, if you are still in undergrad, then you might be interested in getting research experience (\autoref{chap:research-opportunities}). If you are ready to apply, you can read on how your application is evaluated (\autoref{chap:evalapps}) or funding opportunities (\autoref{chap:funding}). If you are a domestic student, you can look at advice (\autoref{chap:domestic-students}) and fellowships (\autoref{chap:fellowships}) specifically for you.
+=== How to Read This Book?
+This book is designed to be read in any order. So you can start with any chapter that fit your current needs and stage in the application process.  For example, if you are still in undergrad, then you might be interested in getting research experience (@chap:research-opportunities). If you are ready to apply, you can read on how your application is evaluated (@chap:evalapps) or funding opportunities (@chap:funding). If you are a domestic student, you can look at advice (@chap:domestic-students) and fellowships (@chap:fellowships) specifically for you.
 
 // % \begin{commentbox}
 // % The angelfish on the cover, wearing a PhD cap, symbolizes the spirit of this book and its message. In an aquarium, the angelfish fish is considered the centerpiece of the tank and stands out from the rest---an important factor for a successful CS PhD applicant in a crowded and competitive pool of prospective students.\\
