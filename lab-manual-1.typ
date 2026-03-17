@@ -6,6 +6,7 @@
 // #set link(style: text.with(fill: blue))
 #set list(indent: 1em)
 #set enum(indent: 1em)
+#set page(margin: 1in)
 
 #set par(justify: true)
 #show ref: set text(fill:blue)
@@ -22,7 +23,6 @@
 #let title = [ROARS' Lab Manual]
 #let author = [#link("https://roars.dev")[ROARS' members]]
 
-#set page(margin: 1in)
 #let dark-green = rgb("#006400")
 #let light-green = rgb("#d4f1d4")
 
