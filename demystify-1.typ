@@ -1,8 +1,6 @@
-#set page(numbering: "1.")
-#set heading(numbering: "1.")
-#set par(justify: true)
 #set page(numbering: "1", number-align: center)
 #set heading(numbering: "1.")
+#set par(justify: true)
 
 #set text(
   //font: "Noto Serif",
@@ -82,7 +80,7 @@
 ]
 
 #pagebreak()
-#set page(numbering: none)
+
 
 #v(1fr)
 #box(
@@ -271,9 +269,6 @@ In short, you _do not need_ to formally take CS courses; you just need to show t
 #mycomment[
   I would advocate for a non-STEM student who shows that they have a strong drive for CS by studying core CS knowledge through various channels (e.g., self-study through online courses, projects, etc.). I have seen many students with non-CS backgrounds who are very successful in CS PhD. I have also seen many students with CS backgrounds who are not successful in a CS PhD. So it is not about your background; it is about your drive and passion for CS research.
 ]
-
-
-
 
 
 
@@ -479,30 +474,6 @@ Of course, my recommendation is just one of the three or four faculty reviews of
 If there are disagreements, the adcom chair asks the reviewers to discuss the application.
 Unfortunately, even if all reviewers recommend a student, they might not be admitted (@sec:why-rejected) if there are too many students or they are not a good fit for the program (e.g., no one is willing to advise them).
 
-
-// In the schools I've been at, the application deadline is in Dec, and adcom meets when school starts in mid or end of Jan. Adcom chair sends out review assignments to adcom members, about 30ish per faculty (\autoref{sec:adcom}). We usually have about 2 weeks to review all applications. As mentioned in~\autoref{sec:adcom-discuss}, adcom members review applications individually and independently. We only discuss when there are disagreements (adcom chair will determine which applications to discuss).
-
-// I typically reserve a whole day (or two days) to review all applications.
-// On average, I spend about 10--15 minutes reviewing each application (less for clear rejections and more for potential acceptances). While this seems short, it is not that difficult to tell if an application is good or bad.  In fact, this
-// is twice what other faculty spend on average, e.g., Philip Guo spent \href{https://pg.ucsd.edu/PhD-application-tips.htm}{3--5 minutes} per application.  
-
-// For each application, our system compiles a single PDF file, which consists of a summary (degrees, GPAs, etc), transcripts, test scores, LoRs, a CV, SOP, and writing samples (\autoref{sec:writing-sample}). I usually read in this order. I start with the \emph{summary}, checking for low GPAs or test scores below the university minimum (\autoref{chap:standard-tests}). I then skim the \emph{transcripts} for low grades in relevant courses, noting issues like "many low grades in main courses or unknown international school with good GPA".  These are not as important as LORs or SOP but I read them first because the review system has questions about them (e.g., "is GPA good? is IELTS sufficient?")
-
-// I read carefully \emph{strong LoRs} and skim weaker ones, noting either strong letters from well-known professors/researchers and talk about research experiences or weak letters with generic content (e.g., "student was in my class"). I skim over \emph{CV} and look for publications, research experiences, and notable achievements. I take notes of things like "published papers in top venues" or "gold medal in an international competition".
-
-// I skim weak \emph{SOPs} but read strong ones carefully. I note whether the SOP is exciting, research-oriented, standing out, and tailored to our program (e.g., if they are familiar with the work of some faculty or have talked to them). These notes are entered into the evaluation system.
-
-// Finally, I enter my decision, which is usually either a rejection or an offer of admission with full funding (e.g., from TA). I also recommend very strong candidates for the University Presidential fellowship., which is a fellowship from GMU that provides funding similar to an RA (\autoref{chap:funding}).
-// Note that while the system has other decision options, eg., admit without funding, provisional admission (e.g., if they need to take some courses), I do not use them, simply because we either reject or admit with funding.
-
-// Note that I \emph{do not} need to interview a student to make a decision.  I can tell from the application if they are strong or not. However, if I want to recruit a student, I will ask them to chat with me. 
-// This is quite different than in other discipline where reviews, interviews, and selection are done in multiple rounds (see~\autoref{sec:adcom-discuss} for an example in Physics).
-
-// Of course my recommendation is just one of the three or four faculty who review the application.  The adcom chair will compile all recommendations and make a decision based on them (\autoref{sec:adcom-discuss}).
-// If there are disagreements, adcom chair will ask the reviewers to discuss the application. 
-// Unfortunately, even if all reviewers recommend a student, they might not be admitted (\autoref{sec:why-rejected}) if there are too many students or they are not a good fit for the program (e.g., no one is willing to advise them).
-
-
 === Waiving Application Fee <sec:fee-waive>
 
 Some universities do waive application fees---for example, Rice and TTIC do not charge a fee for PhD applications, and many universities waive fees for domestic students (@chap:domestic-students).
@@ -524,8 +495,8 @@ However, most universities do not waive the application fee, as it is typically 
 #simpsons[Son, if you really want something in this life, you have to work for it. Now quiet! They're about to announce the lottery numbers.]
 
 
-// The goal of \acrshort{adcom} is to evaluate your research experience, potential, and interest to see if you \emph{fit into its PhD program}! The emphasis here is \emph{fitting}, which varies from school to school, faculty to faculty, and even from year to year.  
-// The committee will look at various factors, but the most important ones are letters of recommendation (LORs),  statements of purpose (SOP), and research background and experience, e.g., publications.
+The goal of adcom is to evaluate your research experience, potential, and interest to see if you _fit into their PhD program_! The emphasis here is _fitting_, which varies from school to school, faculty to faculty, and even from year to year.  
+The committee will look at various factors, but the most important ones are letters of recommendation (LORs),  statements of purpose (SOP), and research background and experience, e.g., publications.
 
  
 == Letters of Recommendation (LoR) <chap:lor>
