@@ -3296,20 +3296,27 @@ In many countries, it is customary to give professors costly gifts---such as fan
 // I started writing this book in May 2023 and have been updating it since then (mostly around deadline time when I procrastinate, i.e., \emph{productive procrastination}!). The book was initially intended for international students but has been expanded to include advice for domestic students (e.g., \autoref{chap:domestic-students} and \autoref{chap:fellowships}).
 
 
+*History:* This book was conceived during a lunch with a faculty member at GMU. We talked about why GMU was not able to attract good Vietnamese and other international students, despite having a much stronger CS program than many schools these students target (part of the reason is discussed in @sec:selecting-ranking-schools). We wished there were a way for international students to better understand PhD programs in the US.
+
+I am also a member of the VietPhD group on Facebook and often browse forums like #link("https://www.reddit.com/r/gradadmissions/")[Reddit/gradadmissions] and #link("https://forum.thegradcafe.com/")[GradCafe]. I saw many questions from students about PhD programs, but most participants are students (often outside CS or outside the US), and answers are frequently inaccurate and confusing. So I thought a handbook focused on US CS PhD admissions from an insider perspective would be useful.
+
+I started writing this book in May 2023 and have updated it since then (mostly around deadline season when I procrastinate—#emph[productive procrastination]). The book was initially intended for international students but has expanded to include advice for domestic students (e.g., @chap:domestic-students and @chap:fellowships).
 
 
-// \subsection{Who Is This Book For?}
-// While this book can be useful for all students, it would most benefit \emph{international students} from \emph{smaller countries and less well-known universities}.  It is also useful for \emph{domestic students} from small US universities with no PhD programs or limited research opportunities (\autoref{chap:research-opportunities}). 
+=== Who Is This Book For?
 
-// Students from top schools with strong research programs and experience might already know some of the information in this book.  They likely have received guidance from their professors or grad students who have gone through the process. Students from smaller schools or countries, however, might not have access to such resources and know where to start. 
-// My goal is thus to level the playing field by providing info that is not readily available to less privileged students. 
-// \emph{I hope to encourage more students with such backgrounds to apply and succeed}.
+While this book can be useful for all students, it would most benefit *international students* from *smaller countries and less well-known universities*. It is also useful for *domestic students* from small US universities with no PhD programs or limited research opportunities (@chap:research-opportunities).
 
-// \begin{commentbox}
-//     I was a first-generation PhD student and was very much on my own navigating the admission process---there was no one to ask for help, no Reddit or Facebook. This book is my way of helping students who are in the same situation.\\
+Students from top schools with strong research programs and experience might already know some of the information in this book. They likely have received guidance from their professors or grad students who have gone through the process. Students from smaller schools or countries, however, might not have access to such resources and know where to start.
+My goal is thus to level the playing field by providing info that is not readily available to less privileged students.
+#emph[I hope to encourage more students with such backgrounds to apply and succeed.]
 
-//     Fun fact: I was the first PhD student in my family and my extended family.  My parents were war refugee and did not finish their high school (though my dad eventually got his GED).  I was the first one to go to college (Penn State), and then grad schools. I think this inspires my cousins and in total our family have 15+ Nittany Lions, several MS, 2 PhDs (me in CS and the other in Finance), and 1 MD. So, be the first and create a path for others to follow!
-// \end{commentbox}
+#mycomment[
+  I was a first-generation PhD student and was very much on my own navigating the admission process---there was no one to ask for help, no Reddit or Facebook.
+
+  Fun fact: I was the first PhD student in my family and my extended family. My parents were war refugees and did not finish high school (though my dad eventually got his GED). I was the first one to go to college (Penn State), and then grad school. I think this inspired my cousins, and in total our family has 15+ Nittany Lions, several MS degrees, 2 PhDs (me in CS and the other in Finance), and 1 MD. So, be the first and create a path for others to follow!
+]
+
 
 == Why This Book (Instead Of Others)? <sec:why-this-book>
 
