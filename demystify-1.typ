@@ -3312,11 +3312,11 @@ My goal is thus to level the playing field by providing info that is not readily
 #emph[I hope to encourage more students with such backgrounds to apply and succeed.]
 
 #mycomment[
-  I was a first-generation PhD student and was very much on my own navigating the admission process---there was no one to ask for help, no Reddit or Facebook.
+  I was a first-generation PhD student and was very much on my own navigating the admission process---there was no one to ask for help, no Reddit, Facebook, or resources like this book.
 
-  Fun fact: I was the first PhD student in my family and my extended family. My parents were war refugees and did not finish high school (though my dad eventually got his GED). I was the first one to go to college (Penn State), and then grad school. I think this inspired my cousins, and in total our family has 15+ Nittany Lions, several MS degrees, 2 PhDs (me in CS and the other in Finance), and 1 MD. So, be the first and create a path for others to follow!
+  Fun fact: I was the first PhD student in my family and my extended family. My parents were war refugees and did not finish high school (though my dad eventually got his GED). I was the first one to go to college (Penn State), and then grad school. This helps inspire my cousins, and in total our family has 15+ Nittany Lions, several MS, 2 PhDs (me in CS and the other in Finance), and 1 MD. So, be the first and create a path for others to follow!
 ]
-
+  
 
 == Why This Book (Instead Of Others)? <sec:why-this-book>
 
@@ -3409,8 +3409,8 @@ Also thanks to NSF for encouraging faculty to be creative in research and educat
 
 Finally, thanks to my wife and kids for always supporting me and putting up with my long hours of work and writing.
 
-#align(center)[
-  *Last Updated: #datetime.today().display("[year]-[month]-[day]")*
+#align(right)[
+  #box(inset: 5pt, stroke: 0.2pt + black, fill: rgb("f0f0f0"))[_Last Updated: *#datetime.today().display("[year]-[month]-[day]")*_]
 ]
 
 
