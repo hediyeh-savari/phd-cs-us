@@ -504,15 +504,15 @@ The committee will look at various factors, but the most important ones are lett
 
 #simpsons[To whom it may concern… D'oh!]
 
-// \begin{center}
-//   \includegraphics[width=0.6\linewidth]{files/c6.png}
-// \end{center}
+#align(center)[
+  #image("files/c6.png", width: 60%)
+]
 
-// Letters of Recommendation (LoRs) are crucial for PhD because (i) they paint a picture of your research ability and potential from someone who has worked closely with you, and (ii) adcom trust the opinions of your LoR writers, who are usually faculty members or researchers who have the expertise and reputation to evaluate your research ability (\autoref{sec:lor-writers}). Most PhD programs require at least \emph{two} LORs. 
+Letters of Recommendation (LoRs) are crucial for PhD because (i) they paint a picture of your research ability and potential from someone who has worked closely with you, and (ii) adcom trust the opinions of your LoR writers, who are usually faculty members or researchers who have the expertise and reputation to evaluate your research ability (@sec:lor-writers). Most PhD programs require at least _two_ LORs. 
 
-// \begin{commentbox}
-//   When reviewing applications, I usually read LoRs first, then the SOP (\autoref{chap:sop}). If these make a strong impression, I skim through the rest of the materials; if not, I pay closer attention to other aspects before making a decision (\autoref{sec:ievaluate}).
-// \end{commentbox}
+#mycomment[
+  When reviewing applications (@sec:ievaluate), I usually read LoRs first, then the SOP (@chap:sop). If these make a strong impression, I skim through the rest of the materials; if not, I pay closer attention to other aspects before making a decision.
+]
 
 
 === LoR Writers <sec:lor-writers>
@@ -529,36 +529,32 @@ Choose your LoR writers carefully, as they can make or break your application. L
 === LoR from Well-Known People <sec:famous-lor> 
 
 
-// Having a strong letter from well-recognized researcher (\autoref{chap:research-achievements}) can \emph{significantly boost} your application. Such letters can outweigh other weaknesses such as limited publications or low GPA. Adcom members trust people they know or have heard about and respect.  A well-known researcher is unlikely to recommend someone who is not good because it would damage their reputation.
+Having a strong letter from well-recognized researcher (@chap:research-achievements) can _significantly boost_ your application. Such letters can outweigh other weaknesses such as limited publications or low GPA. Adcom members trust people they know or have heard about and respect.  A well-known researcher is unlikely to recommend someone who is not good because it would damage their reputation.
 
-// However, don't worry if you haven't worked directly with well-known researchers. A strong, personalized recommendation from someone who knows you well, even if less famous, is far more valuable than a generic letter from a prominent figure who barely knows you. So again, the emphasis is on \emph{personalized} and \emph{research-focused} letters--the fame is a bonus, not a requirement. 
+However, don't worry if you haven't worked directly with well-known researchers. A strong, personalized recommendation from someone who knows you well, even if less famous, is far more valuable than a generic letter from a prominent figure who barely knows you. So again, the emphasis is on _personalized_ and _research-focused_ letters--the fame is a bonus, not a requirement. 
 
-// \begin{surprisebox}
-//   It is fine to get letters from a postdoc or even a senior PhD student who has worked closely with you and can write a strong letter. An enthusiast letter from a postdoc who has mentored you in research for the past six months is much better than a generic letter (\autoref{sec:generic-letters}) from a well-known person.
-// \end{surprisebox}
+#mycomment[
+  It is fine to get letters from a postdoc or even a senior PhD student who has worked closely with you and can write a strong letter. An enthusiast letter from a postdoc who has mentored you in research for the past six months is much better than a generic letter (@sec:generic-letters) from a well-known person.
+]
 
+#commentbox(who: "Didier", [
+  _Should letter writers have PhDs?_  In Rwanda, a lot of students interact more with teaching faculty who might not have PhD.
 
-// \begin{questionbox}[Didier]
-//     \emph{Should letter writers have PhDs?}  In Rwanda, a lot of students interact more with teaching faculty who might not have PhD.
-//     \tcblower
-//     \textbf{Vu}: This is an interesting detail that US faculty might not be aware of. Students should mention this in their SOPs (\autoref{chap:sop}). In general, someone with a PhD has been through the research process and therefore can better evaluate your research ability.  But if you do not have such writer, then someone who can properly evaluate your research ability is OK (and still better than someone who has a PhD but does not know you well).
-//   \end{questionbox}
+  *Vu:* This is an interesting detail that US faculty might not be aware of. Students should mention this in their SOPs (@chap:sop). In general, someone with a PhD has been through the research process and therefore can better evaluate your research ability.  But if you do not have such writer, then someone who can properly evaluate your research ability is OK (and still better than someone who has a PhD but does not know you well).
+])
 
+==== Generic Letters are Bad <sec:generic-letters>
+// When the writers do not know much about the applicants (e.g., just taking some course with them or not making any impression to write about), they might write a _generic_ and short letter, which is not useful and also considered weak. 
 
+// _This does not mean the ref writer is not good or does not care about you_, but they just do not know you well enough to write a strong letter.
+// So it might be a good idea to directly ask if the prof. is willing to write a _strong_ letter for you. If not, then you should ask someone else.  For example, if a student I don't know well asks me to write a letter for them, I will explicitly tell them I don't know them that well to write much about them, and such a short, generic, and weak letter will not help their case (@sec:lor-writing).
 
-//   \subsection{Generic Letters are Bad <sec:generic-letters} 
-//   When the writers do not know much about the applicants (e.g., just taking some course with them or not making any impression to write about), they might write a \emph{generic} and short letter, which is not useful and also considered weak. 
-  
-//   \emph{This does not mean the ref writer is not good or does not care about you}, but they just do not know you well enough to write a strong letter.
-//   So it might be a good idea to directly ask if the prof. is willing to write a \emph{strong} letter for you. If not, then you should ask someone else.  For example, if a student I don't know well asks me to write a letter for them, I will explicitly tell them I don't know them that well to write much about them, and such a short, generic, and weak letter will not help their case (\autoref{sec:lor-writing}).
-  
-  
-//   \begin{warningbox}
+// #box(
+//   title: "Warning",
 //   Several international students mentioned that some professors are unwilling to write letters or write weak ones because they do not want (good) students to go abroad or only go to places where they want the students to go to. If you are in this situation, you should find someone else to write for you.
-//   \tcblower
-  
-//   Sometimes students would go to great lengths just to get letters from "top" professors in their school---like department head or dean (\autoref{sec:admin-letters}). But as mentioned, if these professors do not know you, their letters would likely be generic and carry little value (sometimes \red{red flags}). Moreover, a top professor at your university might not be well-known to US faculty (see more details in \autoref{sec:admin-letters} and \autoref{chap:your-school}). So save the trouble and get letters from \emph{any} professors/supervisors who know you well and can write a good letter about \emph{your} research ability (\autoref{sec:famous-lor}). It's better to have a good personalized letter about your own research ability from someone who is less well-known than a generic/weak letter from a well-known person.
-//   \end{warningbox}
+
+//   Sometimes students would go to great lengths just to get letters from "top" professors in their school---like department head or dean (@sec:admin-letters). But as mentioned, if these professors do not know you, their letters would likely be generic and carry little value (sometimes #text(fill: red)[red flags]). Moreover, a top professor at your university might not be well-known to US faculty (see more details in @sec:admin-letters and @chap:your-school). So save the trouble and get letters from _any_ professors/supervisors who know you well and can write a good letter about _your_ research ability (@sec:famous-lor). It's better to have a good personalized letter about your own research ability from someone who is less well-known than a generic/weak letter from a well-known person.
+// )
 
   
 
