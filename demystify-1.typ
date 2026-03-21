@@ -1511,31 +1511,32 @@ Not much you can do here. You can try to contact the school to ask about your st
 
 #simpsons[Bart, with \$10,000, we'd be millionaires! We could buy all kinds of useful things like ... love!]
 
-// If you're admitted to a \emph{good} CS PhD program, you should not have to worry about funding!
-// In the US, the common types of funding for PhDs are \emph{graduate teaching assistant} (GTA or TA), \emph{graduate research assistant} (GRA or RA), and \emph{Fellowship}.
-// RA is paid by a prof. for you to do their research. TA is paid by the dept. for you to help with teaching. Finally, fellowship is independent funding that can come from a school, a company, or an organization. 
+If you're admitted to a #emph[good] CS PhD program, you should not have to worry about funding!
+In the US, the common types of funding for PhDs are #emph[graduate teaching assistant] (GTA or TA), #emph[graduate research assistant] (GRA or RA), and #emph[Fellowship].
+RA is paid by a prof. for you to do their research. TA is paid by the dept. for you to help with teaching. Finally, fellowship is independent funding that can come from a school, a company, or an organization. 
 
-// \autoref{tab:funding} summarizes the differences.
-// Note that funding is typically more available for PhD students than MS (\autoref{sec:ms-funding}).
+@tab:funding summarizes the differences.
+Note that funding is typically more available for PhD students than MS (@sec:ms-funding).
 
-// \begin{table}
-//   \centering
-//   \small
-//   \caption{Different types of PhD funding. All cover tuition, insurance, and stipend. <tab:funding}
-//   \begin{tabular}{c|c|c|c}
-//     \toprule
-//     &\textbf{TA}&\textbf{RA}&\textbf{Fellowship}\\
-//     \midrule
-//     \textbf{From} & School & Profs. & School/External\\
-//     \textbf{For}                  & Teaching Assist.       & Research                        & Research                              \\
-//     \textbf{Cover All?} & Yes                      & Yes                             & Yes                                   \\
-//     \textbf{Summer?}              & No                       & Maybe                           & Likely                                   \\
-//     \midrule
-//     \textbf{Pros}                 & Research Freedom         & Get to do research              & Research Freedom                      \\
-//     \textbf{Cons}                 & Teaching Duties           & Research Restriction & Competitive, Limited             \\
-//     \bottomrule
-//   \end{tabular}
-// \end{table}
+#figure(
+  caption: [Different types of PhD funding. All cover tuition, insurance, and stipend.],
+  table(
+    columns: 4,
+    align: left,
+    stroke: none,
+    table.header(
+      [], [*TA*], [*RA*], [*Fellowship*],
+    ),
+    table.hline(),
+    [*From*], [School], [Profs.], [School/External],
+    [*For*], [Teaching Assist.], [Research], [Research],
+    [*Cover All?*], [Yes], [Yes], [Yes],
+    [*Summer?*], [No], [Maybe], [Likely],
+    table.hline(),
+    [*Pros*], [Research Freedom], [Get to do research], [Research Freedom],
+    [*Cons*], [Teaching Duties], [Research Restriction], [Competitive, Limited],
+  ),
+) <tab:funding>
 
 === Graduate Assistantship (TA/RA) <sec:ta-ra>
 The most common type of funding is *graduate assistantship*, which comes in two main forms: TA (Teaching Assistant) and RA (Research Assistant). Both TA and RA positions typically include a tuition waiver (so you don't pay tuition), health insurance (which is required in the US), and a stipend (your salary). Some universities also offer discounts or insurance coverage for spouses and children.
@@ -2491,7 +2492,7 @@ Most of what is written in this handbook applies to both domestic#footnote[As me
 // As with PhD, English proficiency tests (TOEFL/IELTS) are required for international students (but just passing the minimum requirement is often enough \autoref{sec:english-tests}). Note that just as with PhD, English tests are are waived if you did your undergrad at a US university.
 
 
-// \subsection{Funding (Why MS Students Are Typically Not Funded?) <sec:ms-funding}
+== Funding (Why MS Students Are Typically Not Funded?) <sec:ms-funding>
 
 // Unlike PhD programs, which often have funding (\autoref{chap:funding}), MS students are typically \emph{not} funded. This is because MS students do not focus on research and thus are not funded through RA and PhD students have priority for TA positions. 
 
