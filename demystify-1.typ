@@ -1585,9 +1585,9 @@ As an RA, you generally do not need to teach, so you can focus on research. Depe
 It is important to note that RA support is *never guaranteed* because it depends on the professor's funding situation. So you should also pay attention to TA availability, since TA is a good backup plan and usually comes with benefits similar to RA. In other words, you should check whether TA support is readily available for PhD students in the program.
 
 
-// \begin{commentbox}
-//   If you got recruited and offered an RA by a prof., you will likely get admitted.  For example, if a prof., even if not in PhD adcom, wants to fund you, adcom will likely respect that decision and admit you.
-// \end{commentbox}
+#commentbox[
+  If you got recruited and offered an RA by a prof., you will likely get admitted. For example, if a prof., even if not in PhD adcom, wants to fund you, adcom will likely respect that decision and admit you.
+]
 
 
 *Where does RA funding come from?* Professors apply for funding to support students from various sources, such as government grants (for example NSF, NIH, or DoD), industry grants (for example Google or Microsoft), or internal university funds. For many CS professors, the most common source is NSF grants, which are often designed to support graduate students as RAs. Recently hired professors, such as new assistant professors, often also have start-up funds from the university to help them establish their research lab.
@@ -1604,11 +1604,11 @@ Fellowships are typically competitive and generous, giving pretty much all benef
 If you're aiming for external fellowships---whether from the U.S. government (like NSF GRFP or DoD NDSEG, see @chap:fellowships) or from major tech companies like Google, Microsoft, and Facebook---you’ll need to apply on your own.
 Such major fellowships typically require a clear and good research plan (the GRFP also requires broader impacts discussion). So it might be a good idea to wait until your second year to have research experience and even publication before applying. Remember, you're competing with the top PhD students at top universities worldwide.
 
-#mycomment[
+#commentbox[
   PhD applicants at GMU are automatically eligible for a *Presidential Fellowship*.  It is at least as good as GTA but the most important thing is that as a fellowship it is truly free money (i.e., you do not depend on any prof. or TA).  Adcom members nominate applicants for this fellowship and the whole committee will decide.
 ]
 
-//%In addition to general fellowships that are available to all students, there are also specific fellowships, e.g., for US citizens and permanent residents (@chap:domestic-students), for underrepresented minority (URM) students (@sec:urm), and students from specific countries. There are many fellowships available, so you should look for them and apply.
+// In addition to general fellowships that are available to all students, there are also specific fellowships, e.g., for US citizens and permanent residents (@chap:domestic-students), for underrepresented minority (URM) students (@sec:urm), and students from specific countries. There are many fellowships available, so you should look for them and apply.
 
 In general, external fellowships are highly competitive and prestigious---you will stand out if you get one.  Every PhD student has pubs, but only a few would have the NSF GRFP#footnote[#link("https://www.alexhunterlang.com/nsf-fellowship")[is a good starting place for the GRFP with lots of proposal examples.]] or Microsoft fellowships. In fact, these are so prestigious that even if you didn't get it but make it to the final round or even *"honorable mentioning"* you should put it on your CV. @chap:fellowships discusses the evaluation processes of the NSF GRFP and DoD NDSEG.
 
@@ -1627,67 +1627,65 @@ For a full breakdown of how much a graduate student costs, see @sec:ra-cost.
 
 === Funding in the Summer <sec:summer-funding>
 
-// Students often get confused about summer funding, e.g., if they will get paid during the summer.  This is a good question because PhD students have no classes over the summer and so are often more productive and produce good research. However, summer salary is largely depending on your funding source.
+Students often get confused about summer funding, e.g., if they will get paid during the summer.  This is a good question because PhD students have no classes over the summer and so are often more productive and produce good research. However, summer salary is largely depending on your funding source.
 
-// First, recall that an \acrfull{AY}---consisting of Fall and Spring semesters---is typically 9 months, thus your stipend is for 9 months and do not cover the three summer month (and many places allow you to \emph{spread} it over 12 months, so you get paid monthly over 12 months, but the total amount is still the same).
+First, recall that an *AY* (academic year)---consisting of Fall and Spring semesters---is typically 9 months, thus your stipend is for 9 months and do not cover the three summer months (and many places allow you to #emph[spread] it over 12 months, so you get paid monthly over 12 months, but the total amount is still the same).
 
-// If your funding source is TA (\autoref{sec:ta}), you typically do not get paid over the summer because there are no classes to teach.  Some CS departments offer summer funding, but it is not guaranteed and might not be a lot. For example, at GMU, we offer summer funding for 1st-year PhD TA students. The amount over the 3-month summer is similar to their monthly stipend (i.e., their 9-month stipend divided by 3 for the 3 summer months).
+If your funding source is TA (@sec:ta), you typically do not get paid over the summer because there are no classes to teach.  Some CS departments offer summer funding, but it is not guaranteed and might not be a lot. For example, at GMU, we offer summer funding for 1st-year PhD TA students. The amount over the 3-month summer is similar to their monthly stipend (i.e., their 9-month stipend divided by 3 for the 3 summer months).
 
-// For RA (\autoref{sec:ta}), your summer funding depends on your prof. and their funding.
-// When writing grant proposals, profs. typically include summer funding for their students (\autoref{sec:ra-cost}). However, funding is never guaranteed, e.g., the prof might not get the grant.
+For RA (@sec:ra), your summer funding depends on your prof. and their funding.
+When writing grant proposals, profs. typically include summer funding for their students (@sec:ra-cost). However, funding is never guaranteed, e.g., the prof might not get the grant.
 
+#mycomment[
+For my students, I have been fortunate to have funding to support them over the summer. Over the 3-summer months, I typically pay them 1/3 of their 9-month stipend. I prioritize summer funding for my students because GMU has good TA resources so they never have to worry about funding during the AY.
+]
 
-// \begin{commentbox}
-// For my students, I have been fortunate to have funding to support them over the summer. Over the 3-summer months, I typically pay them 1/3 of their 9-month stipend. I prioritize summer funding for my students because GMU has very good TA resources so they never have to worry about funding during the \gls{AY}.
-// \end{commentbox}
-
-// Finally, for fellowships (\autoref{sec:fellowships}) you might get paid over the summer depending on your fellowship (\autoref{sec:fellowships}). Good ones, e.g., from NSF, Google, and Microsoft, will pay you the whole year.
+Finally, for fellowships (@sec:fellowships) you might get paid over the summer depending on your fellowship (@sec:fellowships). Good ones, e.g., from NSF, Google, and Microsoft, will pay you the whole year.
 
 == How much do *YOU* cost? <sec:ra-cost>
 // \subsectioninfo{Your entire PhD program costs about \$400K in total, but you \emph{do not} pay for it.}
 
-// PhD students often ask why their salary is low compared to the large grants their advisers get. They also wonder why their offer letters sometimes show that their benefits are higher than what they receive (i.e., stipend).
+PhD students often ask why their salary is low compared to the large grants their advisers get. They also wonder why their offer letters sometimes show that their benefits are higher than what they receive as stipend (e.g., your financial assistance says you get a package of \$60K, but your stipend is only \$30K).  The reason is that the cost of supporting a PhD student is much higher than just their stipend.  In fact, the total cost of supporting a PhD student can be around \$70K per year, which includes not only the stipend but also tuition, health insurance, and other expenses. Over the course of a 5-6 year PhD program, this can add up to around \$400K.
 
-// \begin{center}
-//   \includegraphics[scale=0.5]{files/c6.png}
-// \end{center}
+#align(center)[
+  #image("files/c6.png", width: 50%)
+]
 
-// \begin{table}
-//   \centering
-//   \small
-//   \caption{GRA cost breakdown. F \& A is Facilities \& Administrative Cost Base and
-//     MTDC is Modified Total Direct Cost. These are things that the university can charge overhead to. <tab:cost}
-//   \begin{tabular}{rcl}
-//     \textbf{Budget} & \textbf{Cost \$} & \textbf{Notes} \\
-//     \midrule
-//     GRA (9-month) & 30K & \\
-//     GRA (summer)  &10	& 3-month, 20hrs/week\\
-//     \textbf{Total Salary} &\red{40K}	&\\
-//     \midrule
-//     Health Insurance	&3K	& full year\\
-//     Tuition (In-State) &	15K	& (\$680/ Credit + \$150/Student Fee/ Credit)* 9 credits = \\
-//                     &&\$7470 (\$6120 + \$1350) per semester\\
-//     \textbf{Total Tuition \& Insurance}	&\red{18K}	&Full year tuition + insurance\\
-//     \midrule
-//     Conference Registration	& 500 & \\
-//     International Travel &	1800& \\
-//     Domestic Travel	& 700	& \\
-//     \textbf{Total Travel}&	\red{3K}	\\
-//     \midrule
-//     Total Direct Cost	& \red{61K}	&Salary + Travel + Health + Tuition \\
-//     F \& A (MTDC)	& 21K	& Direct Cost - GRA Salary\\
-//     Total Indirect Cost	& \red{12K}	&58.9\% of MTDC\\
-//     \textbf{Total (Direct + Indirect)} &	\red{73K}	& Budget for a GRA\\
-//     \bottomrule
-//   \end{tabular}
-// \end{table}
+#figure(
+  caption: [GRA cost breakdown. F & A is Facilities & Administrative Cost Base and MTDC is Modified Total Direct Cost. These are things that the university can charge overhead to.],
+  table(
+    columns: 3,
+    align: left,
+    stroke: none,
+    table.header(
+      [*Budget*], [*Cost \$*], [*Notes*],
+    ),
+    table.hline(),
+    [GRA (9-month)], [30K], [],
+    [GRA (summer)], [10K], [3-month, 20hrs/week],
+    table.hline(),
+    [*Total Salary*], [*40K*], [],
+    table.hline(),
+    [Health Insurance], [3K], [full year],
+    [Tuition (In-State)], [15K], [(\$680/ Credit + \$150/Student Fee/ Credit)\* 9 credits = \$7470 (\$6120 + \$1350) per semester],
+    [*Total Tuition & Insurance*], [*18K*], [Full year tuition + insurance],
+    table.hline(),
+    [Conference Registration], [500], [],
+    [International Travel], [1800], [],
+    [Domestic Travel], [700], [],
+    [*Total Travel*], [*3K*], [],
+    table.hline(),
+    [Total Direct Cost], [*61K*], [Salary + Travel + Health + Tuition],
+    [F & A (MTDC)], [21K], [Direct Cost - GRA Salary],
+    [Total Indirect Cost], [*12K*], [58.9% of MTDC],
+    [*Total (Direct + Indirect)*], [*73K*], [Budget for a GRA],
+  ),
+) <tab:cost>
 
-// \autoref{tab:cost} shows the budget breakdown for a GRA per year.
-// These numbers are based on my experience at public universities in the US. Private universities may have different numbers.  For simplicity, I will assume the department has a 9-month stipend of \$30K and a 3-month summer of \$10K (a third of the 9-month stipend). I will also use GMU tuition rate of about \$15K/year for full-time study (which is quite cheap compared to private universities, e.g., Univ. of Chicago is a whooping \$70K) and a 58.9\% rate on \emph{indirect cost}, which is a typical rate charged for overhead or administrative costs (yes, after all, universities are businesses!).  Finally, I assume the students take two conference trips per year, one domestic and one international (conf. registration, airline tickets, taxi, meals, etc are all included).
+@tab:cost shows the budget breakdown for a GRA per year.
+These numbers are based on my experience at public universities in the US. Private universities may have different numbers.  For simplicity, I will assume the department has a 9-month stipend of \$30K and a 3-month summer of \$10K (a third of the 9-month stipend). I will also use GMU tuition rate of about \$15K/year for full-time study (which is quite cheap compared to private universities, e.g., Univ. of Chicago is a whooping \$70K) and a 58.9% rate on *indirect cost*, which is a typical rate charged for overhead or administrative costs (yes, after all, universities are businesses!).  Finally, I assume the students take two conference trips per year, one domestic and one international (conf. registration, airline tickets, taxi, meals, etc are all included).
 
-// In the end, the total budget comes out to be \$73K/year to support a PhD student. \emph{The summary is that over your 5--6 years of your PhD, you cost about \$400K, and while your stipend is X, your adviser probably pays 2X for you}. But of course, the nicest thing is that you do not have to pay for any of this! You get to gain the knowledge, do research, travel, and also get paid!
-
-
+In the end, the total budget comes out to be \$73K/year to support a PhD student. *The summary is that over your 5–6 years of your PhD, you cost about \$400K, and while your stipend is X, your adviser probably pays 2X for you*. But of course, the nicest thing is that you do not have to pay for any of this! You get to gain the knowledge, do research, travel, and also get paid!
 
 = Choosing Schools <chap:choosing-school>
 // \chapterinfo{Not every university has a CS PhD program. Not every professor, even those in CS, can advise or graduate CS PhD students.}
