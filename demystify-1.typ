@@ -1698,29 +1698,26 @@ If you get admission to several places, you should consider attending Open House
 
 === Large/Well-known vs. Small/Unknown Programs
 
-// The "feel-good" advice is to go where it fits you and a good adviser is the most important. But, how do you know what would or would not fit you if you have never been there?   Also, how do you know if a prof. is good and compatible with you or not if you have never worked with them?  So while this advice sounds good, it is vague and not actionable because you do not have enough information to decide.
+The "feel-good" advice is to go where it fits you and a good adviser is the most important. But, how do you know what would or would not fit you if you have never been there? Also, how do you know if a prof. is good and compatible with you or not if you have never worked with them? So while this advice sounds good, it is vague and not actionable because you do not have enough information to decide.
 
-// In addition, while~\autoref{sec:selecting-ranking-schools} talks about various factors (e.g., faculty interests, locations, funding), most students, especially international ones, simply do not have enough information to evaluate these factors properly.  Even if you \emph{think} you know, you might be wrong.  For example, many students think they want to be in California because of the weather, but they might do just fine in colder places like Wisconsin or Michigan or hotter places like Texas and Arizona.
+In addition, while @sec:selecting-ranking-schools talks about various factors (e.g., faculty interests, locations, funding), most students, especially international ones, simply do not have the information or experience to evaluate these factors properly. Even if you _think_ you know, you might be wrong. For example, many students think they want to be in California because of the weather, but they might do just fine in colder places like Wisconsin or Michigan or hotter places like Texas and Arizona.
 
-// So I will be direct and say that \emph{if you don't have any strong preference} (i.e., you don't know much about the schools or profs), then \emph{if you get into a large/well-known program, you should strongly consider going there}.  These programs typically have more resources, more faculty, better students (to work with), and more opportunities (e.g., internships, jobs). Note here that "large/well-known" is subjective and relative. For simplicity, I refer to the top 50 CS programs from CSRankings (\autoref{sec:selecting-ranking-schools}) in the US as large/well-known.
+So I will be direct and say that _if you don't have any strong preference_ (i.e., you don't know much about the schools or profs), then _if you get into a large/well-known program, you should strongly consider going there_. These programs typically have more resources, more faculty, better students (to work with), and more opportunities (e.g., internships, jobs). Note here that "large/well-known" is subjective and relative. For simplicity, I refer to the top 50 CS programs from CSRankings (@sec:csrankings) in the US as large/well-known.
 
-// \begin{commentbox}
-//   Many PhD candidates face this similar dilemma when they apply for faculty jobs. In most cases, when everything else is equal, they would choose the top school for similar reasons: more resources (e.g., funding and support from the university) and better students (which are critical for research).
-//   \\
+#commentbox[
+  Many PhD candidates face this similar dilemma when they apply for faculty jobs. In most cases, when everything else is equal, they would choose the top school for similar reasons: more resources (e.g., funding and support from the university) and better students (which are critical for research).
 
-//   The main difference is that these PhD candidates have more information (e.g., they spent 6--7 years in grad school in the US). For example, they know and prefer West Coast over East Coast because of the culture and lifestyle. They might want a location closer to their family and friends. 
-//   For these folks (who are about to enter the work force and sometimes already have families), these things matter, and they are willing to sacrifice some prestige and opportunities just to be in a place that fit them (and their family) better. 
-// \end{commentbox}
+  The main difference is that these PhD candidates have more information (e.g., they spent 6--7 years in grad school in the US). For example, they know and prefer West Coast over East Coast because of the culture and lifestyle. They might want a location closer to their family and friends.
+  For these folks (who are about to enter the work force and sometimes already have families), these things matter, and they are willing to sacrifice some prestige and opportunities just to be in a place that fit them (and their family) better.
+]
 
+One important thing is that large programs have many faculty in diverse research areas. That means if you don't get along with one prof., you can switch to another one. In contrast, in a small program, if you don't get along with your prof., you might be stuck or have to transfer to another school (which is very troublesome).
 
+That said, an advantage of being at a small program is that you can easily stand out. With just a NeurIPS or PLDI paper, you can be the star in your research group and even the entire CS program and can graduate quickly. In contrast, in a large program, those same papers might not get you much attention and you are under more pressure to publish more.
 
-// One important thing is that  large programs have many faculty in diverse research areas. That means if you don't get along with one prof., you can switch to another one.  In contrast, in a small program, if you don't get along with your prof., you might be stuck or have to transfer to another school (which is very troublesome). 
-
-// That said, an advantage of being at a small program is that you can easily stand out. With just a NeurIPS or PLDI paper, you can be the star in your research group and even the entire CS program and can graduate quickly. In contrast, in a large program, those same papers might not get you much attention and you are under more pressure to publish more.  
-
-// \begin{commentbox}
-//   There are always trade-offs, but I've found that young students---without the burdens of family or other major responsibilities---benefit most from being pushed and exposed to opportunities. As Steve Jobs said, \emph{"Stay hungry, stay foolish."} You should go where you'll be challenged to grow the most, and large, well-known CS programs typically provide that.
-// \end{commentbox}
+#commentbox[
+  There are always trade-offs, but I've found that young students---without the burdens of family or other major responsibilities---benefit most from being pushed and exposed to opportunities. As Steve Jobs said, _"Stay hungry, stay foolish."_ You should go where you'll be challenged to grow the most, and large, well-known CS programs typically provide that.
+]
 
 
 
@@ -1734,16 +1731,15 @@ If you get admission to several places, you should consider attending Open House
 
 === PhD in other Related Fields: CE, IST, Cybersecurity <sec:related-fields>
 
-// You \emph{do not} need to do a PhD in CS to work in CS areas. For example, in addition to a traditional CS department, GMU has IST and Cybersecurity departments, both of which have faculty with PhD in CS and work on CS topics (e.g., AI, Security, Robotics).  So you still can do CS research and publish in CS-focused venues even if you're not in a traditional CS program.  It is common to see faculty with PhD in CS in a non-CS department as well as faculty with non-CS PhD in a CS department.
+You *do not* need to do a PhD in CS to do research in CS. For example, in addition to a traditional CS department, GMU has IST and Cybersecurity departments, both of which have faculty with PhD in CS and work on CS topics (e.g., AI, Security, Robotics). So you still can do CS research and publish in CS-focused venues even if you're not in a traditional CS program. It is common to see faculty with PhD in CS in a non-CS department as well as faculty with non-CS PhD in a CS department.
 
-// However, if your goal is a PhD in CS, then you need to be in the CS dept. \emph{and} advised by a CS faculty. A non-CS faculty can serve in the PhD dissertation committee (common) or \emph{co-advise} (less common, but possible), but your main PhD adviser will likely be a tenure-line faculty in CS (\autoref{sec:faculty-types}).
-// For example, a prof. in Stats or Math might be able to serve as a co-adviser, but not as a sole adviser of a student in a CS PhD program.
-// If in doubt, check with the CS dept. for their requirements.
+However, if your goal is a PhD in CS, then you need to be in the CS dept. *and* advised by a CS faculty. A non-CS faculty can serve in the PhD dissertation committee (common) or *co-advise* (less common, but possible), but your main PhD adviser will likely be a tenure-line faculty in CS (@sec:faculty-types).
+For example, a prof. in Stats or Math might be able to serve as a co-adviser, but not as a sole adviser of a student in a CS PhD program.
+If in doubt, check with the CS dept. for their requirements.
 
-// It is possible to transfer between departments (and universities). However, this can be complicated and often requires re-applying to the new department and taking additional coursework or exams required by the new place. Moreover, your advisor may not be able to supervise you in the new department (they can co-advise or server in the commit, but unlikely are allowed by the new department to be your main adviser).  Usually, transfers happen because the current advisor moves to a new department or university, and the student wants to stay with them.
+It is possible to transfer between departments (and universities). However, this can be complicated and often requires re-applying to the new department and taking additional coursework or exams required by the new place. Moreover, your advisor may not be able to supervise you in the new department (they can co-advise or serve on the committee, but unlikely are allowed by the new department to be your main adviser). Usually, transfers happen because the current advisor moves to a new department or university, and the student wants to stay with them.
 
-
-// For this specific reason,  CSRankings and CSPicks focuses on faculty who can advise CS PhD students. I also have compiled a \href{https://roars.dev/phd-cs-us/viet-cs-profs-us}{list} of Vietnamese faculty who can advise PhD students. \autoref{sec:faculty-types} talks more about who can serve as your PhD adviser.
+For this specific reason, CSRankings and CSPicks focus on faculty who can advise CS PhD students. I also have compiled a #link("https://roars.dev/phd-cs-us/viet-cs-profs-us")[list] of Vietnamese faculty who can advise PhD students. @sec:faculty-types discusses more about who can serve as your PhD adviser.
 
 // %\section{Comparison Factors}
 
@@ -1822,54 +1818,91 @@ If you get admission to several places, you should consider attending Open House
 // \end{tikzpicture}
 // \end{figure}
 
-// Adcom has direct influence over admissions decisions (\autoref{sec:adcom}), but they operate within a larger university hierarchy that can impact those decisions.  For example, enrollment and funding levels may lead to changes in admissions criteria or the number of students accepted (e.g., TA reduction). \autoref{fig:university-hierarchy} illustrates the typical hierarchy in a US university and how different entities influence CS PhD admissions.  
-
-// \subsection{Top Governance and Executive Administration}
-// At the very top is the \textbf{Board of Visitors} in public schools or Board of Trustees in private schools. This body is appointed (or self-perpetuating) and has the ultimate authority over the university, approving budgets, tuition levels, new colleges and schools, and presidential hires and firings.
-
-// They will not decide how many PhD students a CS department admits, but their decisions---such as approving the creation of a new College of Computing or cutting budgets---can significantly change the environment you enter.
-
-// The \textbf{President} (or \textbf{Chancellor}) is the "CEO" of the university and reports directly to the Board. Below them is the \textbf{Provost}, the Chief Academic Officer who oversees all colleges and deans. The Provost's office approves tenure policies, new faculty lines, and graduate school rules; all these decisions shape the direction and operations of the CS department.
-
-// \subsection{Shared Governance}
-// Alongside the administration is the \textbf{Faculty Senate}, an elected body of professors that represents the faculty's collective voice. Depending on the university, the Senate may be mostly advisory (do not make decisions) or have real power to approve or block changes in curriculum, tenure standards, and academic freedom policies. 
-// Thus, Senate decisions can indirectly affect CS students by changing graduate requirements or faculty hiring standards.
-
-// The Senate acts as an independent check on the administration. They can question decisions (e.g., of the Board and the President), propose resolutions, and advocate for faculty interests. Even though they are not part of the executive chain, they are the \emph{voice} of the faculty, and thus the Board and President will typically listen to them.
-
-// \begin{commentbox}
-// I am one of the faculty senators at GMU. Here, the Faculty Senate serves as an advisory body to administration. It  does not have administrative power, but can propose resolutions and advocate for faculty interests. The Senate has various committees that touch on all aspects of university life, including research, teaching, student affairs, and even its athletic aspects. %The Senate has representatives from each college, and I am one of the senators from CEC.
-// \end{commentbox}
 
 
-==== College/School
+#import "@preview/fletcher:0.5.8": diagram, node, edge
 
-// Under the top administration are the various colleges or schools that house different academic departments. Common examples include the College of Engineering, College of Arts and Sciences, and increasingly, a separate College of Computing (e.g., like at Georgia Tech).  Schools are typically under a college, e.g., the School of Computing within the College of Engineering at UNL. But in some universities, the School is a standalone unit, e.g., the School of Computer Science at CMU.
+#figure(
+  scale(80%, diagram(
+    node-stroke: 1pt,
+    node-corner-radius: 2pt,
 
-// \begin{commentbox}
-//   At GMU, CS is under School of Computing (SoC), which is under College of Engineering and Computing (CEC).   The Scool of Computing (SoC) has its own Dean, who reports to the Dean of CEC, who then reports to the Provost.\\
+    // Nodes (column, row)
+    node((0,0), [Board of Trustees / Visitors], name: <board>),    
+    node((0,1), [President / Chancellor], name: <president>),
+    node((0,2), [Provost], name: <provost>),
+    node((0,3), [Graduate School Dean], name: <grad>),
+    node((0,4), [Dean (Engineering / A&S / Computing)], name: <dean>),
+    node((0,5), [CS Department Chair], name: <chair>, fill: yellow.lighten(50%)),
+    node((-0.8,6), [Adcom / Potential Advisors], name: <adcom>, fill: yellow.lighten(50%)),
+    node((0.8,6), [Faculty / Admin Staff], name: <staff>, fill: yellow.lighten(50%)),
+    node((0,7), [PhD Admission], name: <students>, fill: yellow.lighten(50%)),
+    node((1.5,2), [Faculty Senate], name: <senate>),
 
-//   GMU SoC consists of CS, IST, Stats.  CEC consists of SoC and other engineering departments such as Electrical and Computing Engineering (ECE), Biomedical Engineering (BME), and Mechanical Engineering (ME).  CEC is one of the largest colleges at GMU, and CS is the largest department in CEC.
-// \end{commentbox}
+    // Main chain
+    edge(<board>, <president>, "->"),
+    edge(<president>, <provost>, "->"),
+    edge(<provost>, <grad>, "->"),
+    edge(<grad>, <dean>, "->"),
+    edge(<dean>, <chair>, "->"),
+
+    // Chair branches
+    edge(<chair>, <adcom>, "-->"),
+    edge(<chair>, <staff>, "->"),
+    edge(<adcom>, <students>, "->"),
+    edge(<staff>, <students>, "-->"),
+
+    // Senate influence
+    edge(<senate>, <provost>, "-->"),
+    edge(<senate>, <grad>, "-->"),
+    edge(<senate>, <dean>, "-->"),
+  )),
+  caption: [University Hierarchy and Influence on CS PhD Admissions],
+) <fig:university-hierarchy>
 
 
-// Each college and school is led by a \textbf{Dean}, who reports to the Provost. The Dean, together with their \emph{associate} deans, who are responsible for specific areas such as research, teaching, or student affairs, oversees all departments within the college, managing budgets, faculty hiring, and strategic planning. The deans also advocate for their college's needs to the Provost and President.  
+Adcom has direct influence over admissions decisions (@sec:adcom), but they operate within a larger university hierarchy that can impact those decisions. For example, enrollment and funding levels may lead to changes in admissions criteria or the number of students accepted (e.g., TA reduction). @fig:university-hierarchy illustrates the typical hierarchy in a US university and how different entities influence CS PhD admissions.
 
-// Due to their roles, the deans have influence over CS admissions by setting college-wide policies on funding, enrollment targets, and interdisciplinary initiatives. For example, if the Dean prioritizes growth in computing, they may push for more CS faculty hiring and PhD admissions (e.g., through increased TA funding or new program initiatives).
+==== Top Governance and Executive Administration
+At the very top is the *Board of Visitors* in public schools or Board of Trustees in private schools. This body is appointed (or self-perpetuating) and has the ultimate authority over the university, approving budgets, tuition levels, new colleges and schools, and presidential hires and firings.
 
+They will not decide how many PhD students a CS department admits, but their decisions---such as approving the creation of a new College of Computing or cutting budgets---can significantly change the environment you enter.
 
+The *President* (or *Chancellor*) is the "CEO" of the university and reports directly to the Board. Below them is the *Provost*, the Chief Academic Officer who oversees all colleges and deans. The Provost's office approves tenure policies, new faculty lines, and graduate school rules; all these decisions shape the direction and operations of the CS department.
 
-==== Department
-// Inside the department, the \textbf{Chair} (or Head) manages financial and personnel matters, including faculty hiring, promotions, resource allocation, and enrollment and admissions processes. Supporting them are \emph{associate chairs} of graduate and undergraduate studies and \emph{directors} of various programs. In addition, the Chair forms various committees to handle specific tasks, e.g., admissions, curriculum, and faculty hiring (search).  
-// The Chair reports to the Dean and is responsible for implementing college policies at the department level. 
+==== Shared Governance
 
-// While department chairs do not usually get involved in PhD admissions decisions (see how decisions are made in~\autoref{sec:how-decisions}), they set the overall direction and priorities that shape how many students are admitted and what resources are available to them.
+Alongside the administration is the *Faculty Senate*, an elected body of professors that represents the faculty's collective voice. Depending on the university, the Senate may be mostly advisory (do not make decisions) or have real power to approve or block changes in curriculum, tenure standards, and academic freedom policies. 
+Thus, Senate decisions can indirectly affect CS students by changing graduate requirements or faculty hiring standards.
 
-==== Faculty and Staff
-// In many cases adcom consults with faculty members who are potential advisers to get their input on applicants (\autoref{sec:applications-assigned}). Thus general faculty can influence admissions by recommending students they want to advise. 
+The Senate acts as an independent check on the administration. They can question decisions (e.g., of the Board and the President), propose resolutions, and advocate for faculty interests. Even though they are not part of the executive chain, they are the #emph[voice] of the faculty, and thus the Board and President will typically listen to them.
 
-// In addition, a CS department has various \textbf{administrative staff} who handle day-to-day operations, e.g., contacting applicants, processing applications, and managing student records. While staff do not make admissions decisions, they ensure the process runs smoothly and efficiently---a critical behind-the-scenes role.
+#commentbox[
+  I am one of the faculty senators at GMU. Here, the Faculty Senate serves as an advisory body to administration. It does not have administrative power, but can propose resolutions and advocate for faculty interests. The Senate has various committees that touch on all aspects of university life, including research, teaching, student affairs, and even its athletic aspects.
+]
 
+==== Local Units (College/School/Dept)
+
+Under the top administration are the various colleges or schools that house different academic departments. Common examples include the College of Engineering, College of Arts and Sciences, and increasingly, a separate College of Computing (e.g., like at Georgia Tech).  Schools are typically under a college, e.g., the School of Computing within the College of Engineering at UNL. But in some universities, the School is a standalone unit, e.g., the School of Computer Science at CMU.
+
+#commentbox[
+  At GMU, CS is under School of Computing (SoC), which is under College of Engineering and Computing (CEC).   The School of Computing (SoC) has its own Dean, who reports to the Dean of CEC, who then reports to the Provost.
+
+  GMU SoC consists of CS, IST, Stats.  CEC consists of SoC and other engineering departments such as Electrical and Computing Engineering (ECE), Biomedical Engineering (BME), and Mechanical Engineering (ME).  CEC is one of the largest colleges at GMU, and CS is the largest department in CEC.
+]
+
+Each college and school is led by a *Dean*, who reports to the Provost. The Dean, together with their *associate* deans, who are responsible for specific areas such as research, teaching, or student affairs, oversees all departments within the college, managing budgets, faculty hiring, and strategic planning. The deans also advocate for their college's needs to the Provost and President.  
+
+Due to their roles, the deans have influence over CS admissions by setting college-wide policies on funding, enrollment targets, and interdisciplinary initiatives. For example, if the Dean prioritizes growth in computing, they may push for more CS faculty hiring and PhD admissions (e.g., through increased TA funding or new program initiatives).
+
+*Department*: Inside the department, the *Chair* (or Head) manages financial and personnel matters, including faculty hiring, promotions, resource allocation, and enrollment and admissions processes. Supporting them are *associate chairs* of graduate and undergraduate studies and *directors* of various programs. In addition, the Chair forms various committees to handle specific tasks, e.g., admissions, curriculum, and faculty hiring (search).  
+The Chair reports to the Dean and is responsible for implementing college policies at the department level. 
+
+While department chairs do not usually get involved in PhD admissions decisions (see how decisions are made in @sec:how-decisions), they set the overall direction and priorities that shape how many students are admitted and what resources are available to them.
+
+*Faculty and Staff*: In many cases adcom consults with faculty members who are potential advisers to get their input on applicants (@sec:applications-assigned). Thus general faculty can influence admissions by recommending students they want to advise. 
+
+In addition, a CS department has various *administrative staff* who handle day-to-day operations, e.g., contacting applicants, processing applications, and managing student records. While staff do not make admissions decisions, they ensure the process runs smoothly and efficiently---a critical behind-the-scenes role.
 
 
 
@@ -1878,40 +1911,40 @@ If you get admission to several places, you should consider attending Open House
 
 #simpsons[It's not easy being a mentor. But it sure is funny to watch other people screw up.]
 
-// There is no one-size-fits-all answer to finding an adviser. The best adviser is the one that fits you, e.g., you can work well with, and has the ability to help you succeed. But how do you find such a person?
+There is no one-size-fits-all answer to finding an adviser. The best adviser is the one that fits you, e.g., you can work well with, and has the ability to help you succeed. But how do you find such a person?
 
-// Fortunately, while some non-US programs require finding an adviser and research topic before starting the PhD (\autoref{sec:non-us-differences}), CS PhD programs in the US will typically give you a couple of years to "shop" for advisers and research topics.  This is especially true if you're admitted with TA (\autoref{sec:ta}), which gives you time to explore and find an adviser.
+Fortunately, while some non-US programs require finding an adviser and research topic before starting the PhD (@sec:non-us-differences), CS PhD programs in the US will typically give you a couple of years to "shop" for advisers and research topics. This is especially true if you're admitted with TA (@sec:ta), which gives you time to explore and find an adviser.
 
 === Finding an Adviser <sec:finding-adviser>
 
-// Assuming you're not familiar with any particular one, then first search for profs. that share similar research interests. For example, in CSRankings and CSPicks, if you want to work with PL, you can search for those published in PL conferences.  If you want to work with SE \emph{and} AI, you can search for faculty who work in both SE and AI.
+Assuming you're not familiar with any particular profs., then _first_ search for those that share similar research interests. For example, in CSRankings and CSPicks, if you want to work with PL, you can search for those published in PL conferences. If you want to work with SE _and_ AI, you can search for faculty who work in both SE and AI.
 
-// After that, you can research about that prof. by going to their website, looking at their research achievements and awards (\autoref{chap:research-achievements}), checking their research lab and group, seeing if they have recent publications, and reading their papers.  Sometimes they would explicitly say they are looking for students and state their expectations. In some rare cases they even have an advising guideline like \href{https://roars.dev/phd-cs-us/advising.pdf}{this} to help students understand more about their personality and advising style.
-// If you find a prof. that you like, you can reach out to them (\autoref{sec:contact}).
+_After that_, you can research about that prof. by going to their website, looking at their research achievements and awards (@chap:research-achievements), checking their research lab and group, seeing if they have recent publications, and reading their papers. Sometimes they would explicitly say they are looking for students and state their expectations. In some rare cases they even have an advising guideline like #link("https://roars.dev/phd-cs-us/advising.pdf")[this] to help students understand more about their personality and advising style.
+If you find a prof. that you like, you can reach out to them (@sec:contact).
 
-// \begin{commentbox}[Xiaokuan:]
-//   Whether the student's research interest matches that of the adviser is very important;
-//   if there is a mismatch,
-//   either the student or the adviser has to make compromises,
-//   which often leads to disagreements or conflicts.
-//   IMO, the adviser should be the one who \emph{guides}  students to do research while allowing students to pursue their own interests,
-//   instead of \emph{dictating} their research.
-// \end{commentbox}
+#commentbox(who: [Xiaokuan], [
+  Whether the student's research interest matches that of the adviser is very important;
+  if there is a mismatch,
+  either the student or the adviser has to make compromises,
+  which often leads to disagreements or conflicts.
+  IMO, the adviser should be the one who _guides_ students to do research while allowing students to pursue their own interests,
+  instead of _dictating_ their research.
+])
 
 
-// Another way is taking graduate-level courses in the topics you are interested in.  Many profs teach \emph{special topics courses} and \emph{research seminars}, and they might be recruiting students. Do well in the class, answer questions, talk to the prof. after classes, etc---being stand out.  Many profs, including myself, prefer taking in new students this way.  It gives both the prof and student more time, e.g., a whole semester, to work and evaluate the relationship before making any commitment (sounds like a marriage!).
+Another way is taking graduate-level courses in the topics you are interested in. Many profs teach _special topics courses_ and _research seminars_, and they might be recruiting students. Do well in the class, answer questions, talk to the prof. after classes, etc---being stand out. Many profs, including myself, prefer taking in new students this way. It gives both the prof and student more time, e.g., a whole semester, to work and evaluate the relationship before making any commitment (sounds like a marriage!).
 
-// You can also ask to do an independent study or research with a prof. This can be informal (no credits) and takes place during the summer or winter break.  For example, I do this with several students, some of whom are undergrads. Many will drop out because they find they don't like my research, but some find that they like the work.
+You can also ask to do an independent study or research with a prof. This can be informal (no credits) and takes place during the summer or winter break. For example, I do this with several students, some of whom are undergrads. Many will drop out because they find they don't like my research, but some find that they like the work.
 
-// Ultimately, choose a prof. that fits you by communicating with them, taking their courses, meeting and asking them questions, and talking to their current students. It will take time and effort, but since you will be working with this person for 5+ years, it is important to try to find the right one.
+Ultimately, choose a prof. that fits you by communicating with them, taking their courses, meeting and asking them questions, and talking to their current students. It will take time and effort, but since you will be working with this person for 5+ years, it is important to try to find the right one.
 
-// \begin{commentbox}[Thanh:]
-//   In my opinion, having a well-suited adviser is crucial for a successful PhD and research career. One effective approach to finding a suitable professor is by working with a professor during your undergraduate studies. An exemplary instance is VinAI's residency program, where residents collaborate with professors from the US for two years before applying to PhD programs. Many VinAI residents have achieved remarkable results and gained admission to prestigious US universities. Unfortunately, VinAI's resident program is limited to AI research.
+#commentbox(who: [Thanh], [
+  In my opinion, having a well-suited adviser is crucial for a successful PhD and research career. One effective approach to finding a suitable professor is by working with a professor during your undergraduate studies. An exemplary instance is VinAI's residency program, where residents collaborate with professors from the US for two years before applying to PhD programs. Many VinAI residents have achieved remarkable results and gained admission to prestigious US universities. Unfortunately, VinAI's resident program is limited to AI research.
 
-//   In other fields, e.g. Software Engineering, Vietnamese students face challenges in reaching US professors. Do you have any tips for Vietnamese students who want to connect with US professors and work as research assistants?
-//   \tcblower
-//   \textbf{Vu}: \autoref{sec:contact} shows how to contact a professor for research opportunities. Many will say no (or do not reply) as they do not have the bandwidth to take on random students, but some may say yes if they see a potential fit.
-// \end{commentbox}
+  In other fields, e.g. Software Engineering, Vietnamese students face challenges in reaching US professors. Do you have any tips for Vietnamese students who want to connect with US professors and work as research assistants?
+
+  *Vu:* @sec:contact shows how to contact a professor for research opportunities. Many will say no (or do not reply) as they do not have the bandwidth to take on random students, but some may say yes if they see a potential fit.
+])
 
 // % \subsection*{Additional Resources}
 // % \begin{itemize}
