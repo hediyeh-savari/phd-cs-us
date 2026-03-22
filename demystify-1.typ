@@ -31,6 +31,8 @@
 #let institute = "George Mason University"
 #let mybookgithub = "https://code.roars.dev/phd-cs-us"
 
+#let red(txt) = [text(fill: red)[txt]]
+
 
 #let part(title) = [
   #pagebreak()
@@ -1033,7 +1035,7 @@ Should you explain bad grades in relevant courses in your SOP? If you have just 
 While a few schools still require taking the #link("https://www.ets.org/gre")[GRE] exam (e.g., UCF), most good CS PhD programs in the US *no longer require it*. The reason is that GRE scores do not correlate well with research ability, which is the most important factor for PhD admission. Note that many faculty members themselves did not take the GRE or had bad scores.
 
 Thus, if you have bad GRE scores or haven't taken the GRE, then don't waste time (re)taking it. Being optional really means optional, and not taking it will not hurt your application.
-However, if you took it and have really good scores then it might be worth it to include (and perhaps talk about) them in your application, but don't expect them to make much difference. But if your scores are bad, then you should not include them in your application, which can be a #text(fill: red)[red flag].
+However, if you took it and have really good scores then it might be worth it to include (and perhaps talk about) them in your application, but don't expect them to make much difference. But if your scores are bad, then you should not include them in your application, which can be a #red[red flag].
 
 #warningbox[
   I often see students asking about GRE requirements on internet forums or Facebook groups, only to get completely incorrect answers. Some people insist that you "need" to take the GRE or be in specific high range to get a chance.
@@ -1046,39 +1048,28 @@ Note that while GRE is not important for CS PhD admission, it might be required 
 
 === English Tests (IELTS, TOEFL) <sec:english-tests> 
 
-// Unless your degrees are from the US (e.g., you did your undergrad or MS in the US), or certain countries such as \href{https://www.gmu.edu/international/english-language-requirements}{these}, you will likely need to take standardized English tests. On one hand you will need to show some level of English proficiency; but on the other hand, you do not need to have very good scores in these tests (many adcom members themselves were once international students and struggled with English).
+Unless your degrees are from the US (e.g., you did your undergrad or MS in the US), or certain countries such as #link("https://www.gmu.edu/international/english-language-requirements")[these], you will likely need to take standardized English tests. On one hand you will need to show some level of English proficiency; but on the other hand, you do not need to have very good scores in these tests (many adcom members themselves were once international students and struggled with English).
 
-
-// \begin{commentbox}
-//   You might wonder why you need to know English well when you focus on CS topics that are mainly math and programming.  
-//   As you will see in your PhD study, you will need to read and write a lot, and the papers you read and write will be in English.  You will also need to communicate with your advisor, collaborators, students, and other people.
+#commentbox[
+  You might wonder why you need to know English well when you focus on CS topics that are mainly math and programming.  
+  As you will see in your PhD study, you will need to read and write a lot, and the papers you read and write will be in English.  You will also need to communicate with your adviser, collaborators, students, and other people.
   
-//   Also, the university often requires a certain level of English proficiency for TA (\autoref{sec:ta}), as you will need to communicate with students. 
-// \end{commentbox}
+  Also, the university often requires a certain level of English proficiency for TA (@sec:ta), as you will need to communicate with students. 
+]
 
-// % (sometimes used for TA (\autoref{chap:funding}).
+Just as with grades (@chap:your-school) and GRE (@sec:gre), having high scores in English tests might not help, but having too low scores can be a #red[red flag] and can result in an automatic rejection (@sec:why-rejected), e.g., below the minimum requirement.
 
-// Just as with grades (\autoref{chap:your-school}) and GRE (\autoref{sec:gre}), having high scores in English tests might not help, but having too low scores can be a \red{red flag} and can result in an automatic rejection (\autoref{sec:why-rejected}), e.g., below the minimum requirement.
-
-
-// \begin{commentbox}
-//   Here is the minimum requirements at GMU. 
-//   Being above this might not mean much, but below is a \red{red flag}.
-//   \begin{itemize}
-//     \item GPA: $\ge 3.0$ in your undergrad (but we also consider the rank/prestige of your school)
-//     \item GRE: not required 
-//     % \item but if you want to use it, then we expect a total (V+Q) of $\ge 311$ (with a $\ge 157$ Q) and A $\ge 3.0-3.5$.
-//     \item \href{https://www.gmu.edu/international/english-language-requirements}{English proficiency requirements} (one of the below)
-//           \begin{itemize}
-//             \item TOEFL: 80 OR
-//             \item IELTS: $\ge 6.5$ OR
-//             \item DuoLingo Graduate English: $\ge 120$ OR
-//             \item Pearson Test of Academic English: $\ge 67$
-//           \end{itemize}
-//   \end{itemize}
-// \end{commentbox}
-
-
+#commentbox[
+  Here is the minimum requirements at GMU. 
+  Being above this might not mean much, but below is a #red[red flag].
+  - *GPA:* $>= 3.0$ in your undergrad (but we also consider the rank/prestige of your school)
+  - *GRE:* not required 
+  - #link("https://www.gmu.edu/international/english-language-requirements")[English proficiency requirements] (one of the below)
+    - TOEFL: 80 OR
+    - IELTS: $>= 6.5$ OR
+    - DuoLingo Graduate English: $>= 120$ OR
+    - Pearson Test of Academic English: $>= 67$
+]
 
 == Other Materials <chap:other-materials>
 
@@ -1087,19 +1078,19 @@ Note that while GRE is not important for CS PhD admission, it might be required 
 === CV <sec:cv>
 // \sectioninfo{Highlight and summarize major achievements such as major publications and competitive programming awards.}
 
-// Most schools allow you to upload your CV with your application. The main difference between a CV and a resume is that the former is more comprehensive and longer, while the latter is shorter and focuses on job-related experiences. So you don't need to adhere to the 1-page rule of resume in job searching, CV has no such requirement and is often longer.  
+Most schools allow you to upload your CV with your application. The main difference between a CV and a resume is that the former is more comprehensive and longer, while the latter is shorter and focuses on job-related experiences. So you don't need to adhere to the 1-page rule of resume in job searching; CV has no such requirement and is often longer.
 
-// Use your CV to summarize your achievements, e.g., publications, awards, and teaching experiences. You can also list your personal website, projects, or contributions to open-source projects (\autoref{sec:personal-website}) 
-// Prepare your CV in such a way that allows reviewers to quickly scan to identify major achievement.  
+Use your CV to summarize your achievements, e.g., publications, awards, and teaching experiences. You can also list your personal website, projects, or contributions to open-source projects (@sec:personal-website).
+Prepare your CV in such a way that allows reviewers to quickly scan to identify major achievements.
 
-// \begin{commentbox}
-//     Most applicants do not have much to put in their CVs. Thus adcom members usually do not pay much attention to CV's (and definitely do not screen applicants based on them). So do not spend too much time on your CV, just make sure it is easy to skim through (\autoref{sec:ievaluate}) and well-organized around research activities and achievements.
-// \end{commentbox}
+#commentbox[
+  Most students do not have much to put in their CVs. Thus adcom members usually do not pay much attention to CVs (and definitely do not screen applicants based on them). So do not spend too much time on your CV, just make sure it is easy to skim through (@sec:ievaluate) and well-organized around research activities and achievements.
+]
 
 === Writing Sample <sec:writing-sample>
-// It is a \emph{good idea} to upload a writing sample, e.g., a paper you wrote, a report, or a thesis.  Whether the paper is published, not published, on Arxiv, or even rejected (but you think it's good), you should upload it. Because samples are part of the application package, adcom members can quickly skim through it to see your research and writing abilities.  
+It is a *good idea* to upload a writing sample, e.g., a paper you wrote, a report, or a thesis. Whether the paper is published, not published, on Arxiv, or even rejected (but you think it's good), you should upload it. Because samples are part of the application package, adcom members can quickly skim through it to see your research and writing abilities.
 
-// A quick read through a writing sample can reveal a lot about your research work and writing skills, which sometimes are not well presented in your SOP or LORs. But of course if your writing sample is not good, then it can hurt your application. So make sure you upload something serious and well-written.
+A quick read through a writing sample can reveal a lot about your research work and writing skills, which sometimes are not well presented in your SOP or LORs. But of course if your writing sample is not good, then it can hurt your application. So make sure you upload something serious and well-written.
 
 === Online Courses and Certificates
 
@@ -1138,7 +1129,7 @@ However, as mentioned in @sec:non-stem, if you do not have a CS background, you 
 
 After you apply, you \emph{might} get interviews. The most common case is that a specific prof. is interested in working with you and wants to chat, e.g., to offer RA (@sec:ra). In some cases, the interview is done by several professors, e.g., to see if a student fits in their group or to recruit a very strong student to their program.
 
-Note that unlike other fields (e.g., Physics @fig:adcom-discuss-physics) that has formal interview where adcom members interview selected applicants to accept them in the program, CS interviews are from a prof. (or a few prof.)---who might not adcom members---that have interests in recruiting specific applicants to work directly with them or their research group. CS adcom members rarely do interview to get students for the program as a whole.
+Note that unlike other fields (e.g., Physics @fig:adcom-discuss-physics) that has formal interview where adcom members interview selected applicants to accept them in the program, CS interviews are usually with just one prof. or a few profs.---who might not adcom members---that have interests in recruiting specific applicants to work directly with them or their research group. In CS, adcom members rarely do interview to get students for the program as a whole.
 
 // \subsection{When do interviews happen?}
 
