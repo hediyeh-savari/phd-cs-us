@@ -2309,79 +2309,77 @@ Most of what is written in this handbook applies to both domestic#footnote[As me
 = MS Admission <chap:ms>
 // \chapterinfo{MS focuses on coursework and prepares you for \emph{industry}, while PhD focuses on research and prepares you for academia or research. So admission requirements are different.}
 
-// While both MS and PhD programs are graduate degrees, they are \emph{very different} in terms of objective, admission requirements, course requirements, duration, and funding. This section discusses the differences and provides guidance on applying to MS programs.
+While both MS and PhD programs are graduate degrees, they are _very different_ in terms of objective, admission requirements, course requirements, duration, and funding. This section discusses the differences and provides guidance on applying to MS programs.
 
 == Differences between PhD and MS <sec:phd-vs-ms>
 
-// \begin{table}
-//     \caption{MS vs. PhD <tab:phd-vs-ms}
-//     \centering
-//     \small
-//     \begin{tabular}{c|c|c}
-//     \toprule
-//     \textbf{} & \textbf{MS} & \textbf{PhD} \\
-//     \midrule
-//     Objective & Industry & Research \\
-//     Admission Req & No research experience & Research experience \\
-//     Coursework Req & Yes & Yes (but research is much more important)  \\
-//     Duration & 2 years & 5--7 years \\
-//     Adviser Req & No & Yes \\
-//     Funding & No & Yes \\
-//     \bottomrule
-//     \end{tabular}
-//   \end{table}
+#figure(
+  caption: [MS vs. PhD],
+  table(
+    columns: 3,
+    align: left,
+    stroke: none,
+    table.header(
+      [], [*MS*], [*PhD*],
+    ),
+    table.hline(),
+    [Objective], [Industry], [Research],
+    [Admission Req], [No research experience], [Research experience],
+    [Coursework Req], [Yes], [Yes (but research is much more important)],
+    [Duration], [2 years], [5--7 years],
+    [Adviser Req], [No], [Yes],
+    [Funding], [No], [Yes],
+    table.hline()
+  ),
+) <tab:phd-vs-ms>
 
-// \autoref{tab:phd-vs-ms} summarizes the main differences between MS and PhD programs:
-// \begin{itemize}
+@tab:phd-vs-ms summarizes the main differences between MS and PhD programs:
 
-//   \item Objective: an MS is typically to prepare you for \emph{industry}, while a PhD is to prepare you for research and academia. Some MS has thesis option but in general research is not a focus in MS programs.
+- *Objective:* an MS is typically to prepare you for #emph[industry], while a PhD is to prepare you for research and academia. Some MS has thesis option but in general research is not a focus in MS programs.
 
-//   \item Admission requirements (\autoref{sec:ms-admission}): MS also requires a good GPA, LoRs, SOP, and test scores, but research experience is not required.  PhD requires all of these, but research experience is a must.
-  
-//   \item Course requirements: MS has a specific number of courses that typically can be done in 2 years. You graduate with an MS when you're done with the courses. PhD also has coursework requirements, which are typically taken in your first 2 years  (\autoref{sec:time}). However, after (and also during) coursework, you focus mainly on research.  You graduate with a PhD when you have done enough research and written a dissertation, which usually takes much longer time than coursework.
-  
-//   \item Duration: an MS typically takes 2 years while a PhD takes 5--7 years (or even longer).  Many students get an MS along the way to a PhD, e.g., after finishing the 2-year course work.
-  
-//   \item Adviser: MS students typically do not have an adviser (if you do thesis option then you will have one), while PhD students need an adviser who guides them in their research.
-  
-//   \item Funding: MS is typically \emph{not funded}, while PhD is (\autoref{chap:funding}). See \autoref{sec:ms-funding} for more details on MS funding.
-  
-// \end{itemize}
+- *Admission requirements* (@sec:ms-admission): MS also requires a good GPA, LoRs, SOP, and test scores, but research experience is not required. PhD requires all of these, but research experience is a must.
+
+- *Course requirements:* MS has a specific number of courses that typically can be done in 2 years. You graduate with an MS when you're done with the courses. PhD also has coursework requirements, which are typically taken in your first 2 years (@sec:time). However, after (and also during) coursework, you focus mainly on research. You graduate with a PhD when you have done enough research and written a dissertation, which usually takes much longer time than coursework.
+
+- *Duration:* an MS typically takes 2 years while a PhD takes 5--7 years (or even longer). Many students get an MS along the way to a PhD, e.g., after finishing the 2-year course work.
+
+- *Adviser:* MS students typically do not have an adviser (if you do thesis option then you will have one), while PhD students need an adviser who guides them in their research.
+
+- *Funding:* MS is typically #emph[not funded], while PhD is (@chap:funding). See @sec:ms-funding for more details on MS funding.
 
 == MS Admission <sec:ms-admission>
 
-// In most cases MS CS programs are much less competitive than PhD programs, i.e., you're likely to get in if you can afford it. Many think of MS programs as a \emph{cash cow} because students are often not funded and have to pay tuition. 
+In most cases MS CS programs are much less competitive than PhD programs, i.e., you're likely to get in if you can afford it. Many think of MS programs as a _cash cow_ because students are often not funded and have to pay tuition. 
 
-// While admission requirements are similar to PhD programs (e.g., GPA, SOP, LORs), research is not a focus in MS programs. Often, the main requirements are just that you have sufficient background in CS, e.g., through your undergrad degree. This does not mean MS programs are easy to get admitted, but the requirements are much lower compared to PhD programs.
+While admission requirements are similar to PhD programs (e.g., GPA, SOP, LORs), research is not a focus in MS programs. Often, the main requirements are just that you have sufficient background in CS, e.g., through your undergrad degree. This does not mean MS programs are easy to get admitted, but the requirements are much lower compared to PhD programs.
 
-// \subsection{Admission Committee <sec:ms-adcom}
-// MS admission also involves an adcom that reviews applications and makes admission decisions. However, MS admission is typically \glslink{rolling-admission}{rolling}, i.e., applications are reviewed as they come in and decisions are made throughout the admission cycle.  
+=== MS Admission Committee <sec:ms-adcom>
 
-// Moreover, unlike PhD that has multiple reviewers for each application, an MS application typically involves only one reviewer and does require much time to review compared to a PhD application (\autoref{sec:ievaluate}). 
+MS admission also involves an adcom that reviews applications and makes admission decisions. However, MS admission is typically rolling---applications are reviewed as they come in---and decisions are made throughout the admission cycle.  
 
-// Finally, MS adcom can involve teaching faculty (\autoref{sec:faculty-types}), who are not necessarily doing research.  This is because MS programs are often geared towards working professionals and do not focus on research.
+Moreover, unlike PhD that has multiple reviewers for each application, an MS application typically involves only one reviewer and does not require much time to review compared to a PhD application (@sec:ievaluate). 
 
-// \begin{commentbox}
-//     GMU has a large the number of MS students in CS (800 MS vs 200 PhDs). In contrast, other similar size universities often have much smaller MS CS programs (or none). Location plays an important role as GMU is close to DC with many developer professionals who want to get an MS, which are often covered by their employers.  Our MS program is geared towards working professionals, e.g., all of our MS courses are offered in the evening and online.
-//     \\
-    
-//     GMU CS has three separate committees for MS admission: MS in CS (the traditional one, which is the largest), MS in Software Engineering (SWE), and MS in Information System. 
-//     Each committee has its own chair and members. For example, I often serve in the MS SWE adcom, which has about 4 adcom members (including the chair who also does the review). 
-// \end{commentbox}
+Finally, MS adcom can involve teaching faculty (@sec:faculty-types), who are not necessarily doing research. This is because MS programs are often geared towards working professionals and do not focus on research.
 
-// \subsection{Application Materials <sec:ms-application}
+#commentbox[
+  GMU has a large number of MS students in CS (800 MS vs 200 PhDs). In contrast, other similar size universities often have much smaller MS CS programs (or none). Location plays an important role as GMU is close to DC with many developer professionals who want to get an MS, which are often covered by their employers. Our MS program is geared towards working professionals, e.g., all of our MS courses are offered in the evening and online.
+  
+  GMU CS has three separate committees for MS admission: MS in CS (the traditional one, which is the largest), MS in Software Engineering (SWE), and MS in Information System. Each committee has its own chair and members. For example, I often serve in the MS SWE adcom, which has about 4 adcom members (including the chair who also does the review).
+]
 
-// You will submit similar materials as in a PhD application, e.g., transcripts, LoRs, SOP, and test scores.  However, research experience is not required, and LoRs can be from anyone who can speak about your academic or working abilities. Moreover, your SOP should focus on your academic and work background, why you want to get an MS, and how the program fits your goals. As with PhDs, GREs are often not required. Some MS programs do not even require LoRs or SOPs.  
+=== MS Application Materials <sec:ms-application>
 
-// \paragraph{Undergrad Background and GPA} Since research is not required, your undergrad background is more important in an MS application.  You should have a strong background in CS, e.g., through your undergrad degree.  GPA is also important, as it is often used as a filter for MS applications.
+You will submit similar materials as in a PhD application, e.g., transcripts, LoRs, SOP, and test scores. However, research experience is not required, and LoRs can be from anyone who can speak about your academic or working abilities. Moreover, your SOP should focus on your academic and work background, why you want to get an MS, and how the program fits your goals. As with PhDs, GREs are often not required. Some MS programs do not even require LoRs or SOPs.  
 
-// \paragraph{SOP} Your SOP should explain why you want to get an MS, how the program fits your goals, and why you're a good fit for the program.  You don't need to mention about working with specific professors unless you want to do a thesis option. You still need to customize it for each school (e.g., you picked GMU due to its strong SWE program or the DC area has many job opportunities).
+*Undergrad Background and GPA:* Since research is not required, your undergrad background is more important in an MS application. You should have a strong background in CS, e.g., through your undergrad degree. GPA is also important, as it is often used as a filter for MS applications.
 
-// \paragraph{LoRs} Unlike PhDs, your LoRs do not need to be from professors or talk about research experience. Many MS programs do not even require LoRs.
+*SOP:* Your SOP should explain why you want to get an MS, how the program fits your goals, and why you're a good fit for the program. You don't need to mention working with specific professors unless you want to do a thesis option. You still need to customize it for each school (e.g., you picked GMU due to its strong SWE program or the DC area has many job opportunities).
 
-// \paragraph{Test Scores} Unlike PhDs, which often do not require GREs, MS programs often require GREs.  However, some schools do make them optional, and you should check with the school you're applying to.  If you have a low GPA, a high GRE score can help offset that. 
+*LoRs:* Unlike PhDs, your LoRs do not need to be from professors or talk about research experience. Many MS programs do not even require LoRs.
 
-// As with PhD, English proficiency tests (TOEFL/IELTS) are required for international students (but just passing the minimum requirement is often enough \autoref{sec:english-tests}). Note that just as with PhD, English tests are are waived if you did your undergrad at a US university.
+*Test Scores:* Unlike PhDs, which often do not require GREs, MS programs often require GREs. However, some schools do make them optional, and you should check with the school you're applying to. If you have a low GPA, a high GRE score can help offset that. 
+
+As with PhD, English proficiency tests (TOEFL/IELTS) are required for international students (but just passing the minimum requirement is often enough @sec:english-tests). Note that just as with PhD, English tests are waived if you did your undergrad at a US university.
 
 
 == Funding (Why MS Students Are Typically Not Funded?) <sec:ms-funding>
