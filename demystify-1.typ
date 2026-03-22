@@ -1634,73 +1634,66 @@ In the end, the total budget comes out to be \$73K/year to support a PhD student
 #simpsons[It's not the school you go to, it's what you do while you're there!]
 // %\myepigraphsimpsons{"The answer to life's problems aren't at the bottom of a bottle. Heh heh! They're on TV!"}
 
-// Choosing a school and an adviser (\autoref{chap:choosing-adviser}) is clearly among the most important and difficult tasks when you apply and especially when you get admitted.  This is further complicated due to cultural differences (\autoref{chap:cultural}) and the unfamiliarity of international students with the US higher education system.  This section aims to mitigate some confusion and help you make informed decisions.
+Choosing a school and an adviser (@chap:choosing-adviser) is clearly among the most important and difficult tasks when you apply and especially when you get admitted. This is further complicated due to cultural differences (@chap:cultural) and the unfamiliarity of international students with the US higher education system. This section aims to mitigate some confusion and help you make informed decisions.
 
 // % \section{Choosing a University <sec:choosing-university}
 // % \sectioninfo{Select schools based on their CS program and faculty research interests.}
 
-// We will first discuss universities in the US that offer PhD in CS. Then we will talk about how to select them.
+We will first discuss universities in the US that offer PhD in CS. Then we will talk about how to select them.
 
 === Schools offering PhD in CS <sec:schools-offering-phd>
 
-// Most US universities have CS programs, but many of them do not have a CS \emph{PhD} program. These universities might offer just Bachelor's degrees (e.g., BS) and no graduate studies (i.e., no MS or PhD degrees), or they just offer MS programs (but no PhD). For example, Penn State in University Park has PhD in CS,  but Penn State in Harrisburg only has BS and MS in CS, and Penn State in York only has BS in CS.  On the other hand, multiple locations of the University of Texas, e.g., Austin, Dallas, and Arlington, have PhDs in CS.
+Most US universities have CS programs, but many do not offer a CS *PhD* program. These universities might offer just Bachelor's degrees (e.g., BS) with no graduate studies (no MS or PhD), or only MS programs (but no PhD). For example, Penn State University Park has a PhD in CS, but Penn State Harrisburg offers only BS and MS in CS, and Penn State York offers only BS in CS. Conversely, multiple University of Texas locations—Austin, Dallas, and Arlington—all have PhDs in CS.
 
-// Thus, if your goal is PhD in CS, you have to aim only for schools offering such a degree.  %This might sound obvious but many students (even those in the US) get confused due to the large number of universities.
-// While this can be confusing due to the large number of universities in the US, a little research, e.g., searching for PhD in CS from the school website, will help you find out. Schools listed in \autoref{chap:rankings} have PhD programs in CS, so you can start there.
+Thus, if your goal is a PhD in CS, you must target only schools offering such a degree. While the large number of US universities can be confusing, a little research on each school's website will clarify what degrees are available. Schools listed in @chap:rankings all have PhD programs in CS, so you can start there.
 
 // % \subsection{R1, R2, ...}
 
 === Selecting and Ranking Schools <sec:selecting-ranking-schools>
-// \begin{center}
-//   \includegraphics[scale=0.5]{files/c1.png}
-// \end{center}
+#align(center)[
+  #image("files/c1.png", width: 50%)
+]
 
-// Many students put universities into two bins: (i) top schools that they dream about, and (ii) everything else.  They often use rankings from US News, which is not transparent and questionable (\autoref{chap:rankings}).  Sometimes they evaluate based on the reputation of the school's undergrad program or the reputation of the school's non-CS programs such as medical, math, or physics.
-// Many international students rank universities based on popular places they know in the US, e.g., California, Texas, and New York.
+Many students put universities into two bins: (i) top schools that they dream about, and (ii) everything else. They often use rankings from US News, which is not transparent and questionable (@chap:rankings). Sometimes they evaluate based on the reputation of the school's undergrad program or the reputation of the school's non-CS programs such as medical, math, or physics.
+Many international students rank universities based on popular places they know in the US, e.g., California, Texas, and New York.
 
-// \begin{figure}
-//   \centering
-//   \includegraphics[scale=0.18]{files/cspicks3.png}
-//   \caption{Using CSPicks to compare between CMU vs UIUC. <fig:cspicks-compare}
-// \end{figure}
+#figure(
+  image("files/cspicks3.png", width: 70%),
+  caption: [Using CSPicks to compare between CMU vs UIUC.],
+) <fig:cspicks-compare>
 
+Instead of these superficial criteria, you should specifically consider the CS program and the research interests of faculty members (@chap:research-achievements).
+You can learn about these using resources such as #link("https://roars.dev/cspicks")[CSPicks] and #link("https://csrankings.org")[CSRankings.org] (@chap:rankings).
+@fig:cspicks-compare and @fig:cspicks-gmu show the research strengths of CS programs using CSPicks. 
+You will be very surprised to learn that a school that you didn't know much about can have very strong research in your topic (and vice versa, a school you thought highly about might have no faculty working in the research field you're interested in). This is also a good way to learn about individual faculty, e.g., who works on what, and well-known CS conferences#footnote[In CS (and probably only in CS), conferences, not journals, are often the main venue to publish research findings (see #link("https://homes.cs.washington.edu/~mernst/advice/conferences-vs-journals.html")[why here]).]. 
 
-// Instead of these superficial criteria, you should specifically consider the CS program and the research interests of faculty members (\autoref{chap:research-achievements}).
-// You can learn about these using resources such as~\href{https://roars.dev/cspicks}{CSPicks} and~\href{https://csrankings.org}{CSRankings.org} (\autoref{chap:rankings}).
-// \autoref{fig:cspicks-compare} and~\autoref{fig:cspicks-gmu} show the research strengths of CS programs using CSPicks. 
-// You will be very surprised to learn that a school that you didn't know much about can have very strong research in your topic (and vice versa, a school you thought highly about might have no faculty working in the research field you're interested in). This is also a good way to learn about individual faculty, e.g., who works on what, and well-known CS conferences\footnote{In CS (and probably only in CS), conferences, not journals, are often the main venue to publish research findings (see \href{https://homes.cs.washington.edu/~mernst/advice/conferences-vs-journals.html}{why here}).}. %\autoref{chap:rankings} gives the top 50 CS programs in the US according to CSRankings.
+#commentbox([Most Vietnamese students, including those from top schools, *do not know* about CSRankings. Maybe applicants who worked at top research places such as VinAI would know about it.], who: "Dat")
 
-// \begin{commentbox}[Dat:] Most Vietnamese students, including those from top schools, \textbf{do not know} about CSRankings.  Maybe applicants who worked at top research places such as VinAI would know about it.
-// \end{commentbox}
+*What matters to you?* While many find CSRankings and CSPicks useful, it is still superficial as every other ranking (@chap:rankings). You should not just look at the number of papers or the number of faculty in your area. You should also consider the quality of the faculty, e.g., how many of them are tenured, well-known in their field, and have a good publication record. You can find this information from their CVs or their homepages. You can also check their #link("https://scholar.google.com")[Google Scholar] profiles to see their h-index and i10-index. See @chap:choosing-adviser and @chap:research-achievements for more details on how to find and evaluate faculty.
 
-// \paragraph{What matters to you?} While many find CSRankings and CSPicks useful, it is still superficial as every other ranking (\autoref{chap:rankings}).  You should not just look at the number of papers or the number of faculty in your area.  You should also consider the quality of the faculty, e.g., how many of them are tenured,  well-known in their field, and have a good publication record.  You can find this information from their CVs or their homepages.  You can also check their \href{https://scholar.google.com}{Google Scholar} profiles to see their h-index and i10-index. See~\autoref{chap:choosing-adviser} and~\autoref{chap:research-achievements} for more details on how to find and evaluate faculty.
+You should also consider other factors that matter to you. You might prefer schools that give stable funding (@chap:funding) and good stipend (@sec:ra-cost). You might like areas with a large community from your country---Northern Virginia, for example, is very diverse and has a large population of Vietnamese. You might want to be near high-tech industrial hubs like Seattle or Silicon Valley, or places with plenty of outdoor activities such as hiking and skiing. Weather can also be important---*"PhD can be depressing, so would you rather be depressed in California or New York?"*. Finally, don't forget about things like cost of living---certain areas in California and New York are way more expensive than in Nebraska. Safety is another factor; however, while some universities might be in a high-crime city, the campus itself is very safe---like John Hopkins in Baltimore.
 
-// You should also consider other factors that matter to you.  You might prefer schools that give stable funding (\autoref{chap:funding}) and good stipend (\autoref{sec:ra-cost}).  You might like  areas with a large community from your country---Northern Virginia, for example, is very diverse and has a large population of Vietnamese. You might want to be near high-tech industrial hubs like Seattle or Silicon Valley, or places with plenty of outdoor activities such as hiking and skiing.  Weather can also be important---\emph{"PhD can be depressing, so would you rather be depressed in California or New York?"}.  Finally, don't forget about things like cost of living---certain areas in California and New York are way more expensive than in Nebraska. Safety is another factor; however, while some universities might be in a high-crime city, the campus itself is very safe---like John Hopkins in Baltimore.
+If you get admission to several places, you should consider attending Open Houses (@chap:accepted) and contact profs. that you're interested in at those places and talk to them. They would be more willing to chat with you now that you have been admitted. Ask questions about #link("https://roars.dev/phd-cs-us/advising.pdf")[their advising style], how they manage their lab, and their expectations. You can even ask to contact their students.
 
-// If you get admission to several places, you should consider attending Open Houses (\autoref{chap:accepted}) and contact profs. that you're interested in at those places and talk to them.  They would be more willing to chat with you now that you have been admitted.  Ask questions about \href{https://roars.dev/phd-cs-us/advising.pdf}{their advising style}, how they manage their lab, and their expectations. You can even ask to contact their students.
+#commentbox(who: "Xiaokuan", [
+  Chinese students often only look at US News rankings when selecting their PhD universities (I did that, too, when I was applying for PhD positions).
+  Now that I am a professor, I find it to be the least promising way.
+  
+  The reason is that US News does not provide a good metric for evaluating the quality of the PhD program.
+  
+  If you want to do great research, CSRankings is the best way to find good and active professors (which did not exist when I was applying),
+  since it solely focuses on publications at top-tier CS conferences.
+  
+  Also,
+  I think PhD is not only about research;
+  you need to also consider your daily life there since you will (probably) stay for at least five years.
+  
+  You might regret it if you did not consider this seriously before applying.
+])
 
-
-
-// \begin{commentbox}[Xiaokuan:]
-//   Chinese students often only look at US News rankings when selecting their PhD universities (I did that, too, when I was applying for PhD positions).
-//   Now that I am a professor, I find it to be the least promising way.
-//   %
-//   The reason is that US News does not provide a good metric for evaluating the quality of the PhD program.
-//   %
-//   If you want to do great research, CSRankings is the best way to find good and active professors (which did not exist when I was applying),
-//   since it solely focuses on publications at \glslink{toptier}{top-tier} CS conferences.
-//   %
-//   Also,
-//   I think PhD is not only about research;
-//   you need to also consider your daily life there since you will (probably) stay for at least five years.
-//   %
-//   You might regret it if you did not consider this seriously before applying.
-//   %
-// \end{commentbox}
-
-// \begin{commentbox}
-// When selecting schools, keep in mind that there are many good schools in the US and that the differences among them might not be that significant.  For example,  schools in the top 10 (\autoref{sec:csrankings}) are likely in the same equivalent class, top 20 are in the same equivalent class, and so on. In addition, the lower ranked universities can have subfields that are very strong (NCState is top 40, but in Software Engineering it is easily top 5).  This is in contrast with universities in other countries such as Vietnam, where there are large gaps among the top 5, 10, and so on.
-// \end{commentbox}  
+#commentbox[
+  When selecting schools, keep in mind that there are many good schools in the US and that the differences among them might not be that significant. For example, schools in the top 10 (@sec:csrankings) are likely in the same equivalent class, top 20 are in the same equivalent class, and so on. In addition, the lower ranked universities can have subfields that are very strong (NCState is top 40, but in Software Engineering it is easily top 5). This is in contrast with universities in other countries such as Vietnam, where there are large gaps among the top 5, 10, and so on.
+]
 
 
 === Large/Well-known vs. Small/Unknown Programs
@@ -3192,8 +3185,19 @@ In many countries, it is customary to give professors costly gifts---such as fan
 
 == CSPicks <sec:cspicks>
 
-// \href{https://roars/dev/cspicks}{CSPicks} is a new website developed by our Roar lab that aims to help prospective students (and faculty candidate) explore the research strengths of CS departments and their faculty. It is \emph{not} a ranking system like CSRankings, but rather a tool to help students find faculty and departments that match their research interests. It allows you see trends and growths of CS departments and faculty, such as the number of publications in different areas over time.\autoref{fig:cspicks-gmu} shows an example of CSPicks showing research areas of the CS department at George Mason.
+\href{https://roars/dev/cspicks}{CSPicks} is a new website developed by our Roar lab that aims to help prospective students (and faculty candidate) explore the research strengths of CS departments and their faculty. It is \emph{not} a ranking system like CSRankings, but rather a tool to help students find faculty and departments that match their research interests. It allows you see trends and growths of CS departments and faculty, such as the number of publications in different areas over time.\autoref{fig:cspicks-gmu} shows an example of CSPicks showing research areas of the CS department at George Mason.
 
+
+
+#figure(
+  grid(
+    columns: (1fr, 1fr),
+    gutter: 0.2em,
+    image("files/cspicks1.png", width: 100%),
+    image("files/cspicks2.png", width: 100%),
+  ),
+  caption: [CSPicks for George Mason.],
+) <fig:cspicks-gmu>
 
 // \begin{figure}
 //   \centering
@@ -3223,12 +3227,6 @@ In many countries, it is customary to give professors costly gifts---such as fan
 
 == About This Book <sec:about-this-book>
 // \sectioninfo{This book aims to provide in depth information about the CS PhD admission process in the US. It is particularly useful for international students from smaller countries and less well-known universities as they often lack access to such information.}
-
-// \paragraph{History} This book was conceived during a lunch with a faculty at GMU.  We talked about why GMU was not able to attract good Vietnamese and other international students, despite having a much stronger CS program than many schools that these students want to go to (part of the reason is described in \autoref{sec:selecting-ranking-schools}). We wish there were a way for international students to understand more about PhD programs in the US.
-
-// I am also a member of the VietPhD group on Facebook and often browse Internet forums (e.g., \href{https://www.reddit.com/r/gradadmissions/}{Reddit/gradadmission} and \href{https://forum.thegradcafe.com/}{GradCafe}). There I saw many questions from students about PhD programs.  However, most participants are students, many of whom in non-CS fields or not in the US, and their answers are typically not accurate and often lead to more confusion. So I thought it would be useful to have a handbook that is specific to CS PhD programs in the US from an insider perspective.
-
-// I started writing this book in May 2023 and have been updating it since then (mostly around deadline time when I procrastinate, i.e., \emph{productive procrastination}!). The book was initially intended for international students but has been expanded to include advice for domestic students (e.g., \autoref{chap:domestic-students} and \autoref{chap:fellowships}).
 
 
 *History:* This book was conceived during a lunch with a faculty member at GMU. We talked about why GMU was not able to attract good Vietnamese and other international students, despite having a much stronger CS program than many schools these students target (part of the reason is discussed in @sec:selecting-ranking-schools). We wished there were a way for international students to better understand PhD programs in the US.
