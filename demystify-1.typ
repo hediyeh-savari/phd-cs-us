@@ -689,6 +689,8 @@ Note that most places only have deadlines for the applicant, but are very flexib
     fill: gray
     )[
     #align(left)[
+
+      #text(size:9pt)[
 *Sample 1 (No deadline):*
 
 .. is applying for admission into the Computer Science (Ph.D.) program in the Graduate School at the University of Massachusetts Amherst and has listed you as a reference.
@@ -742,7 +744,7 @@ Applicant: ..
 Click Here if your mail system provides html content or use the URL below to enter your letter of recommendation in PDF form only.
 
 Your letter of recommendation is due by *12 p.m. (Noon) EST on December 10, 20XX*. Thank you for taking the time to respond.
-  ]]
+  ]]]
    ) <fig:lor-invitations>
 
 Also, many places do not begin the admission review process right after the deadline and work on application reviews in the next semester (mid-January).
@@ -759,34 +761,34 @@ More generally, you should do the same for anyone who has helped you during the 
 
 
 === My Perspective <sec:my-lor-perspective>
-// \begin{commentbox}
-// In this Reddit post \url{https://www.reddit.com/r/gradadmissions/comments/1p0lkim/perspective_on_lors_after_sending_a_big_batch/}, I provide my perspective about LoRs and what I expect from my students when they ask me to write for them.  You can share this with your writers if you think it is useful. 
-// \end{commentbox}
+#commentbox[
+In this #link("https://www.reddit.com/r/gradadmissions/comments/1p0lkim/perspective_on_lors_after_sending_a_big_batch/")[Reddit post], I provide my perspective about LoRs and what I expect from my students when they ask me to write for them.  You can share this with your writers if you think it is useful. 
+]
 
-// \subsection{How Do I Write a LoR? <sec:lor-writing}
-// \begin{commentbox}
-  
-// If a student asks me to write letter for them, I will generally agree as I believe it is my responsibility. I will ask them to waive their right to see the letter (\autoref{sec:waive-right}), and will not write if they do not do so.\\
+==== How Do I Write a LoR? <sec:lor-writing>
 
-// I will also let the student know if I cannot write a strong letter for them (e.g., I don't know them that well), and suggest they find someone else.  If they insist, then I will write for them. While I try to say something positive, e.g., the student is hardworking and receive good grades, the letter will still be short and weak (\autoref{sec:generic-letters}). Usually it takes me about \emph{5--10} minutes to write such a "weak" letter.\\
+#commentbox[
+If a student asks me to write letter for them, I will generally agree as I believe it is my responsibility. I will ask them to waive their right to see the letter (@sec:waive-right), and will not write if they do not do so.
 
-// Strong letters will require a lot more time and effort as it will be personalized.  While I have a general template for LoR, it still can take me \emph{half an hour or more} to write it.  I often ask the students to provide information (\autoref{sec:help-your-LOR-writers}) and what they think I should highlight in the letter. They can also provide me their SOP (if they already have written one) so I can complement what they say with my own perspective.  I often do not share what I write with the students, just to keep it more genuine and honest.\\
+I will also let the student know if I cannot write a strong letter for them (e.g., I don't know them that well), and suggest they find someone else.  If they insist, then I will write for them. While I try to say something positive, e.g., the student is hardworking and receive good grades, the letter will still be short and weak (@sec:generic-letters). Usually it takes me about *5–10* minutes to write such a "weak" letter.
 
-// My letter always has the university letterhead and my signature.  While having a letterhead or signing the letter is \emph{not required} (I never paid much attention to these when reading LoRs), it makes the letter more official and professional.  
-// This website has the template of the letter with letterhead and signature: \url{https://www.overleaf.com/read/xzyrxkdjfxsp#2a1f9e}.\\
+Strong letters will require a lot more time and effort as it will be personalized.  While I have a general template for LoR, it still can take me *half an hour or more* to write it.  I often ask the students to provide information (@sec:help-your-LOR-writers) and what they think I should highlight in the letter. They can also provide me their SOP (if they already have written one) so I can complement what they say with my own perspective.  I often do not share what I write with the students, just to keep it more genuine and honest.
 
-// I (and most profs.) often do not write a new letter or customize the letter for each application/school. Instead, I write you a LoR, which is customized for you, but can be used to apply for multiple schools (e.g., "Dear Admissions Committee", instead of "Dear MIT Admissions Committee").
+My letter always has the university letterhead and my signature.  While having a letterhead or signing the letter is *not required* (I never paid much attention to these when reading LoRs), it makes the letter more official and professional.  
+This website has the template of the letter with letterhead and signature: #link("https://www.overleaf.com/read/xzyrxkdjfxsp#2a1f9e")[Overleaf template].
 
-// Fninally, I usually submit a letter for a student in \emph{batch}---submit to all universities that student is applying to at the same time). Typically, each submission takes about 1--5 mins, depending on the application system.  I will also let the student know when I have submitted the letter, and ask if I miss any.\\
+I (and most profs.) often do not write a new letter or customize the letter for each application or school. Instead, I write you a LoR, which is customized for _you_, but can be used to apply for multiple schools (e.g., "Dear Admissions Committee", instead of "Dear _MIT_ Admissions Committee").
 
-// \end{commentbox}
+Finally, I usually submit a letter for a student in *batch*—submit to all universities that student is applying to at the same time). Typically, each submission takes about 1–5 mins, depending on the application system.  I will also let the student know when I have submitted the letter, and ask if I miss any.
+]
 
-// \subsection{Will It Be Annoying If You Ask For Many Letters? <sec:many-letters}
-// \begin{commentbox}
-// As mentioned in~\autoref{sec:my-lor-perspective} I personally do not mind writing many letters for my students \emph{once I have agreed to write for them} (\autoref{sec:lor-writing}). Profs. in general are used to writing many letters, especially during the application season. Moreover, once a letter is written, it can be reused for multiple applications, so it does not take much time to submit the letter to different universities (nore more than 5 minutes per submission).
+==== Will It Be Annoying If You Ask For Many Letters? <sec:many-letters>
 
-// However, some cases might raise some eyebrows, e.g., if you only aim at very top schools that the writers believe are not a good fit for you, or if you apply to too many schools (30+?) then the writers might question your seriousness or your ability to get into these schools. In short, don't overdo it, but applying to 10--15 schools is perfectly fine and common.
-// \end{commentbox}
+#commentbox[
+As mentioned in @sec:my-lor-perspective I personally do not mind writing many letters for my students *once I have agreed to write for them* (@sec:lor-writing). Profs. in general are used to writing many letters, especially during the application season. Moreover, once a letter is written, it can be reused for multiple applications, so it does not take much time to submit the letter to different universities (no more than 5 minutes per submission).
+
+However, some cases might raise some eyebrows, e.g., if you only aim at very top schools that the writers believe are not a good fit for you, or if you apply to too many schools (30+?) then the writers might question your seriousness or your ability to get into these schools. In short, don't overdo it, but applying to 10–15 schools is perfectly fine and common.
+]
 
 
 // % \begin{commentbox}
@@ -807,49 +809,40 @@ More generally, you should do the same for anyone who has helped you during the 
 
 === Publications <sec:publications> 
 
-// \begin{figure}
-//     \begin{center}
-//         \includegraphics[scale=0.3]{files/wu.jpeg}
-//     \end{center}
-//     \caption{Applicants to top CS programs have multiple first-authored papers at top places. <fig:wu}
-// \end{figure}  
+#figure(
+  image("files/wu.jpeg", width: 50%),
+  caption: [Applicants to top CS programs have multiple first-authored papers at top places.]
+) <fig:wu>
 
-// The most concrete evidence of research ability is having \emph{papers in reputable international conferences or journals}.
-// Having published papers, especially at top venues, is a sign that you have been successfully involved in research. 
+The most concrete evidence of research ability is having *papers in reputable international conferences or journals*.
+Having published papers, especially at top venues, is a sign that you have been successfully involved in research.
 
-// Publications are \emph{never required} for PhD application. However, given the competitiveness of CS admission, they can significantly strengthen your application and \emph{are becoming the norm}. Applicants admitted to top schools, especially in popular \gls{fields} such as ML and NLP, often have multiple first-authored papers at top places. Fig.~\ref{fig:wu} shows examples of applicants to Stanford CS PhD.
+Publications are *never required* for PhD application. However, given the competitiveness of CS admission, they can significantly strengthen your application and *are becoming the norm*. Applicants admitted to top schools, especially in popular fields such as ML and NLP, often have multiple first-authored papers at top places. @fig:wu shows examples of applicants to Stanford CS PhD.
 
-// \paragraph{Not the First Author} Being the first author typically means own the work and therefore knows the research well. However, it's \emph{perfectly OK to be second or third or even last}.  Adcom members know it is difficult to publish a good paper, and so being a co-author is still a good sign about your research experience. In any case, especially in the case when you're not the first author, you should explain the work and your contribution.  Better yet, have your LoR writers (\autoref{sec:help-your-LOR-writers}) talk about your work and contribution in their letters.
+#strong[Not the First Author] Being the first author typically means you own the work and therefore know the research well. However, it's *perfectly OK to be second or third or even last*. Adcom members know it is difficult to publish a good paper, and so being a co-author is still a good sign about your research experience. In any case, especially when you're not the first author, you should explain the work and your contribution. Better yet, have your LoR writers (@sec:help-your-LOR-writers) talk about your work and contribution in their letters.
 
-// \paragraph{Publications Not Relevant To CS or Your Research Interest}
-// If you have published papers in other fields, e.g., physics, math, or even CS but not in your research interest, you should still talk about them in your SOP (\autoref{chap:sop}) and upload them as writing samples (\autoref{sec:writing-sample}). Also, have your LoR writers (\autoref{sec:help-your-LOR-writers}) talk about them in their letters.
-// While not as strong as CS publications, they still show your research ability and experience, which is what adcom members care about.
+#strong[Publications Not Relevant To CS or Your Research Interest]
+If you have published papers in other fields, e.g., physics, math, or even CS but not in your research interest, you should still talk about them in your SOP (@chap:sop) and upload them as writing samples (@sec:writing-sample). Also, have your LoR writers (@sec:help-your-LOR-writers) talk about them in their letters.
+While not as strong as CS publications, they still show your research ability and experience, which is what adcom members care about.
 
-// \subsection{What If You Don't Have Any Publications?} 
+=== What If You Don't Have Any Publications?
 
-// Many students do not have the opportunity to publish papers. Thus, other writings, even those under submissions or even rejected, would still help. 
-// Be sure to upload your these with your application (\autoref{sec:writing-sample}) and mention them in your SOP (\autoref{chap:sop}). Adcom members can quickly skim over the paper and determine its quality (\autoref{sec:ievaluate}).
+Many students do not have the opportunity to publish papers. Thus, other writings, even those under submission or even rejected, would still help. 
+Be sure to upload these with your application (@sec:writing-sample) and mention them in your SOP (@chap:sop). Adcom members can quickly skim over the paper and determine its quality (@sec:ievaluate).
 
-// Note that local conferences and non-English journals or conferences do
-// not carry as much weight since their quality is often unknown. However, if you have published in such places, you should still upload them, mention them in your statement, and explain why they are good.
+Note that local conferences and non-English journals or conferences do not carry as much weight since their quality is often unknown. However, if you have published in such places, you should still upload them, mention them in your statement, and explain why they are good.
 
-// \begin{commentbox}[Craig:]
-//     GMU and many other universities allow you to upload your published papers and other writing samples (\autoref{sec:writing-sample}). In many cases, even if the papers were not published at top places, we can still determine their quality by simply skimming over the paper.
-//   \end{commentbox}
-  
+#commentbox(who: "Craig", [
+  GMU and many other universities allow you to upload your published papers and other writing samples (@sec:writing-sample). In many cases, even if the papers were not published at top places, we can still determine their quality by simply skimming over the paper.
+])
 
-// % In CS, conferences are important and top conferences are prestigious. You can find top CS conferences at places such as \href{https://csrankings.org}{CSRankings}, which ranks CS programs based on how their faculty publish at top \emph{conferences} (see more in \autoref{chap:rankings}).
+#commentbox[
+  Many international students mention Scopus Q1, which consists of various journals from IEEE, Elsevier, and many other publishers. I don't know/recognize many of the journals listed in Scopus Q1. This might be something to be mindful of, as *CS* faculty might not be too familiar with Scopus or journals listed there, so devote some part in your statement to discuss the significance of your papers.
+]
 
-
-// \begin{commentbox}
-//     Many international students mention Scopus \acrshort{Q1}, which consists of various journals from IEEE, Elsevier, and many other publishers.  I don't know/recognize many of the journals listed in Scopus Q1. This might be something to be mindful of, as \textbf{CS} faculty might not be too familiar with Scopus or journals listed there, so devote some part in your statement to discuss the significance of your papers.
-//   \end{commentbox}
-  
-//   \begin{questionbox}[Thanh:]
-//       Due to academic culture, professors in Vietnam usually aim for (international) journals instead of conferences. Could you give some tips on how to know whether a journal is good (CSrankings, unfortunately, only consider conferences)?
-//       \tcblower
-//       \textbf{Vu}: One way is looking at where well-known researchers publish. For example, if you are interested in a field X, you can use CSRankings (\autoref{sec:csrankings}) or CSPicks (\autoref{sec:cspicks}) to look at active faculty in X, and then look at their websites to see where they publish at.
-//   \end{questionbox}
+#commentbox(who: "Thanh", [
+  Due to academic culture, professors in Vietnam usually aim for (international) journals instead of conferences. Could you give some tips on how to know whether a journal is good (CSRankings, unfortunately, only considers conferences)?
+])
 
 === Work Experience
 
@@ -862,9 +855,9 @@ Note that adcom reviewers might not be familiar with all research labs, especial
 
 === Competitions <sec:competitions>
 
-// Winning \emph{internationally recognized competitions} can demonstrate your research potential.
-// For example, participating in Math Olympiads if you want to do theory or winning ACM programming contests if you want to "build" systems (e.g., research prototypes).
-// So do talk about them in your SOP (\autoref{chap:sop}) and have your LoR writers mention them in their letters (\autoref{sec:help-your-LOR-writers}).
+Winning _internationally recognized competitions_ can demonstrate your research potential.
+For example, participating in Math Olympiads if you want to do theory or winning ACM programming contests if you want to "build" systems (e.g., research prototypes).
+So do talk about them in your SOP (@chap:sop) and have your writers mention them in their LoRs (@sec:help-your-LOR-writers).
 
 == Statement of Purpose (SOP) <chap:sop>
 // \chapterinfo{SOP is important. Write it in such a way that makes you \textbf{stand out}.}
