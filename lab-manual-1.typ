@@ -47,6 +47,15 @@
   ]
 ]
 
+// Inline code
+#show raw.where(block: false): it => box(fill: rgb("#f0f0f0"), inset: (x: 2pt), radius: 2pt, it)
+
+// Code blocks
+#show raw.where(block: true): it => block(fill: rgb("#f0f0f0"), inset: 10pt, radius: 4pt, width: 100%, it)
+
+
+
+
 #pagebreak()
 
 #block(fill: light-green, stroke: dark-green, inset: 1em)[
@@ -534,44 +543,42 @@ Lab members, who all have write access, are encouraged to provide feedback and s
 
 
 == Discord Server
-  + `#stats`: our most active channel, where we discuss research ideas, projects, papers, and everything else related to research and the lab. This is the main channel for research discussions and announcements.
-  + `#general`: when we say hello to new members
+  + `#stats`: our most active channel, where we discuss research ideas, projects, papers, and everything else related to research and the lab. This is the main channel for research discussions and announcements.  
   + `#servers`: for all questions regarding lab servers, e.g., how to get an account, how to use the servers, etc. This is the main channel for server-related discussions and announcements.
-  
+  + `#general`: where we say hello to new members
 
 == Computer Server Specs
 We have _four_ servers (see #link(<pictures>)[pictures]):
 
 + *Boba*🧋: ideal for AI-based projects, e.g., generative LLMs
-  + #link("https://www.nvidia.com/en-us/products/workstations/dgx-spark/")[NVIDIA DGX Spark]
+  - #link("https://www.nvidia.com/en-us/products/workstations/dgx-spark/")[NVIDIA DGX Spark]
   - CPU: NVidia GB10 Chip, 20 core Arm (10 Cortex-X925 + 10 Cortex-A725 Arm)
   - Unified Memory/Graphic: 128GB RAM
   - OS: NVIDIA DGX OS (based on Ubuntu LTS)
 
-
 + *Pizza* 🍕: ideal for projects that can leverage many cores and specialized GPU
-  + Custom built
+  - Custom built
   - CPU: 32 cores, 64 threads, 3.6GHz (AMD Ryzen Threadripper PRO 5975WX)
   - GPU: 2x Nvidia RTX 4090 24GB RAM
   - Memory: 128GB RAM
   - OS: Debian Stable
 
 + *Sushi* 🐟: high-performance workstation
-  + Lenovo ThinkStation P620
+  - Lenovo ThinkStation P620
   - CPU: 64 cores, 128 threads, 4.3GHz (AMD Ryzen Threadripper PRO 3995WX)
   - GPU: Nvidia RTX 5090 24GB RAM
   - Memory: 128GB RAM
   - OS: Debian Stable
 
 + *Taco* 🌮: ideal for experiments that need fast CPU (but not lots of cores) and fast GPU
-  + Alienware Aurora
+  - Alienware Aurora
   - CPU: 16 cores, 24 threads, 5.20GHz (Intel 12th Gen Core i9-12900KF)
   - GPU: Nvidia RTX 3080 Ti 12GB RAM
   - Memory: 64GB RAM
   - OS: Debian Stable
 
 #block(fill: light-green, stroke: dark-green, inset: 1em)[
-  *Warning:* For Debian machines, **DO NOT** install anything other than Debian stable packages to these computers (e.g., **do not mix unstable or new repositories** to `apt` sources list). You can download and install anything in your home (local) directory. If in doubt, contact us.
+  *Warning:* For Debian machines, *DO NOT* install anything other than Debian stable packages to these computers (e.g., *do not mix unstable or new repositories* to `apt` sources list). You can download and install anything in your home (local) directory. If in doubt, contact us.
 ]
 
 === Getting an Account
@@ -610,13 +617,57 @@ To get an account on the server, send a request and your *SSH public key* (for _
   caption: [🧋 *Boba*]
 )
 
-= Reimbursement
-== Conference Registration and Travel
+#pagebreak()
+
+== External Resources
+
+=== VPN for Lab Servers
+You will need VPN and Computing access to log into lab servers remotely. Send an email to #link("mailto:cechelp@gmu.edu")[cechelp\@gmu.edu] and also CC the PI.
+
+#block(fill: rgb("#fff3cd"), stroke: rgb("#ffc107"), inset: 1em)[
+  *Subject*: VPN and Computing Access (Mesa AD Groups)
+  
+  Dear CECHelp,
+  
+  I am writing to request that my NetID (*your_user_name*) be added to the Active Directory groups listed below.
+  
+  Groups requested for addition:
+  - `CN=VS-GRA,OU=HelpDeskManagement,OU=VolgenauSchool...`
+  - `CN=VS-SR-VPN,OU=HelpDeskManagement,OU=VolgenauSchool...`
+  
+  I have copied my advisor/supervisor, Professor Thanhvu Nguyen, on this email should you require confirmation that this access is necessary.
+  
+  Thank you for your time and assistance with this.
+]
+
+=== Connecting to Wifi `eduroam`
+
+#link("https://its.gmu.edu/knowledge-base/eduroam/")[ITS Eduroam Documentation]
+
+*Linux Setup:*
+
++ Select `eduroam` from the list of available wireless networks
++ Configure the following settings:
+  - Wi-Fi security: WPA & WPA2 Enterprise
+  - Authentication: Protected EAP (PEAP)
+  - Anonymous identity: leave blank
+  - Domain: `gmu.edu`
+  - Check "No CA certificate is required"
+  - PEAP version: Automatic
+  - Inner Authentication: MSCHAPv2
+  - Username: Your full George Mason email (e.g., `netid@gmu.edu`)
+  - Password: Your Patriot Password
++ Click "Connect" to establish connection
 
 
+
+
+= Conference Registration and Travel
+
+== Reimbursement Process
 === General Process
 
-- *PI Pay*: I can can pay for your *conference registration* and *airline* in advance using the lab's P-card. Usually we do this together for efficiency.
+- *PI Pay*: I can pay for your *conference registration* and *airline* in advance using the lab's *P-card*. Usually we do this together for efficiency.
 - *You Pay (and get reimbursed)*: Everything else (e.g., hotel, food, local transport) you pay yourself (e.g., using your own credit card) and then submit reimbursement requests to the university.
   - You need to save all receipts for reimbursement (except for meals, which is per diem see below @meals).
   - You need to do this after you return from the conference and within 60 (?) days of the expense date.
