@@ -293,7 +293,7 @@ For example, if you have taken a class on algorithms, even an online course from
 In short, you _do not need_ to formally take CS courses; you just need to show that you have this essential knowledge, for example through the ways mentioned above. Many universities are well aware that incoming graduate students might not have all the technical background, so they often have “bridge” courses to help students catch up. For example, GMU has four bridge courses corresponding to the four core areas above that incoming students can take to catch up on their CS knowledge.
 
 #commentbox[
-  I would advocate for a non-STEM student who shows that they have a strong drive for CS by studying core CS knowledge through various channels (e.g., self-study through online courses, projects, etc.). I have seen many students with non-CS backgrounds who are very successful in CS PhD. I have also seen many students with CS backgrounds who are not successful in a CS PhD. So it is not about your background; it is about your drive and passion for CS research.
+  I would advocate for a non-STEM student who shows they have a strong drive for CS by studying core CS knowledge through various channels (e.g., self-study through online courses, projects, etc.). I have seen many students with non-CS backgrounds who are very successful in CS PhD. I have also seen many students with CS backgrounds who are not successful in a CS PhD. So it is not about your background; it is about your drive and passion for CS research.
 ]
 
 
@@ -894,7 +894,7 @@ This is a simple but often overlooked task: *tailor your SOP to the institution 
 
 Finally, have your SOP reviewed by your LoR writers (@sec:help-your-LOR-writers) and professors, especially those who have served in adcom, or even postdocs or PhD students as they have been through this process.
 
-#commentbox(who: "Jeff Erickson (UIUC)", [
+#commentbox(who: [Jeff Erickson (UIUC) through a #link("https://www.reddit.com/r/gradadmissions/comments/1owtfgl/comment/nosxvdm/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1")[Reddit post]], [
   The main thing that I (and other CS faculty) look for in application statements is concrete evidence of research potential. I don't want you to *tell* me that you're excited/motivated/passionate about computer science research. I want you to *show* me your specific interests and your investment/commitment. I want your statement to *demonstrate* your technical background, self-awareness, clarity of thought, intellectual (and ideally emotional) maturity, independence, creativity, discipline, attention to detail, willingness to take risks, and understanding of what research actually is. (Hint: Not just more homework.) I want you to show enough investment in your specific research interests to describe them in credible technical detail.
 
   In particular, I do not want to read about how many programming languages you know, or stories about how you've been coding since the womb, or starry-eyed platitudes about how artificial intelligence is the best thing since sliced bread, or about your goal to be the next Geoffrey Hinton or Terry Tao. Nothing about your first trembling steps.
@@ -912,7 +912,7 @@ Finally, have your SOP reviewed by your LoR writers (@sec:help-your-LOR-writers)
 
 
 #figure(
-  image("files/is-this-sop-enough.jpeg", width: 25%),
+  image("files/is-this-sop-enough.jpeg", width: 70%),
   caption: [Is this SOP enough (#link("https://www.reddit.com/r/gradadmissions/comments/1p2ggxu/is_this_sop_enough/")[Reddit])? No, a broken heart emoji looks desperate. You need to stand out!],
 ) <fig:is-this-sop-enough>
 
@@ -1325,141 +1325,123 @@ For a specific start date or TA assignment (e.g., TA'ing a particular course), y
 
 
 === Buying Computer Equipment <sec:buying-equipment>
-// \sectioninfo{Ask your prof. if they can buy computer equipment and such for your research.}
-
-// Students understandably get excited about their upcoming PhD journey and want to buy new computer equipment and electronics to prepare. However, you should first check with your professor.  They might have funding to buy you computers and other equipment (e.g., software, books, keyboards, headphones, tablets, etc). Many CS programs also provide budget or computer equipment---such as a laptop---to incoming PhD students.
+//\sectioninfo{Ask your prof. if they can buy computer equipment and such for your research.}
 
 
-// However, do not assume that your prof. will automatically provide you a new laptop and other equipments. Check with them first. Some professors have grants or discretionary funds to do this, but it's not a guarantee. Some prefer that you have been with them for a while before they buy some powerful hardware. 
+Students understandably get excited about their upcoming PhD journey and want to buy new computer equipment and electronics to prepare. However, you should first check with your professor. They might have funding to buy you computers and other equipment (e.g., software, books, keyboards, headphones, tablets, etc). Many CS programs also provide budget or computer equipment—such as a laptop—to incoming PhD students.
 
-// Finally, keep in mind that these computers and equipment would be university property, which might be monitored and have certain restrictions, e.g., do not install illegal software on them (\autoref{sec:illegal-software}).  You will likely need to return them when you graduate. 
+However, do not assume that your prof. will automatically provide you a new laptop and other equipment. Check with them first. Some professors have grants or discretionary funds to do this, but it's not a guarantee. Some prefer that you have been with them for a while before they buy some powerful hardware.
+
+Finally, keep in mind that these computers and equipment would be university property, which might be monitored and have certain restrictions, e.g., do not install illegal software on them (@sec:illegal-software). You will likely need to return them when you graduate.
 
 == Dealing with Rejection <chap:not-accepted>
 // \chapterinfo{Rejection is part of academia.  Common reasons for rejection include aiming too high, not a good fit, and bad luck.  Do not take rejection personally. Learn from it and try again.} 
 
 #simpsons[You tried your best and you failed miserably. The lesson is: never try.]
 
-// Rejection is a common part of the PhD application process.  In fact, rejection is part of academia (e.g., you will get rejected for papers, grants, jobs, etc).  Don't take rejection personally and to learn from it.
+Rejection is a common part of the PhD application process. In fact, rejection is part of academia (e.g., you will get rejected for papers, grants, jobs, etc). Don't take rejection personally and learn from it.
 
 === Try Again! <sec:try-again>
 
-// If you do not get admitted to any schools or don't want to go to the ones that admit you, try again next year!  Grad. admission can involve randomness and noise. In the meantime, you can work on improving your profile, e.g., get more research experiences, publish more papers, improve your connections for stronger LoRs, etc. See rejection reasons (\autoref{sec:why-rejected}) and additional advice to improve your chance (\autoref{sec:stand-out}).
+If you do not get admitted to any schools or don't want to go to the ones that admit you, try again next year! Grad admission can involve randomness and noise. In the meantime, you can work on improving your profile, e.g., get more research experiences, publish more papers, improve your connections for stronger LoRs, etc. See rejection reasons (@sec:why-rejected) and additional advice to improve your chance (@sec:stand-out).
 
+#commentbox[
+  I got rejected from 12/13 CS PhD programs in 2007. While I believe I have strong research profile with multiple publications, I did not know much about the admission process and made many mistakes. But in any case, I did get into one school: the University of New Mexico (UNM). I decided to just take UNM instead of waiting for another year. I felt that was the best decision at that time (and in retrospect, it made me who I am today).
+  
+  If you didn't get into your top choices but into some other schools, you can do what I did and just take it---and do really well there. You can also try again next year or go to a different school.
+]
 
-// \begin{commentbox}
-//     I got rejected from 12/13 CS PhD programs in 2007. While I believe I have strong research profile---multiple publications---I did not know much about the admission process and made many mistakes.  But in any case, I did get into one school, which is UNM.  I decided to just take it instead of waiting for another year.  I felt that was the best decision at that time (and in restropect, it made me who I am today).\\ 
-    
-//     So it is not the end of the world if you get rejected.  If you didn't get into your top choices but into some other schools, you can do like me and just take it -- and do really well there, which is better than being a mediocre student at a top school.  You can also try again next year or go to a different school. 
-// \end{commentbox}
+You can consider applying to MS programs, which are typically easier to get in; but you likely need to pay (@sec:ms-admission). A university that rejected you for PhD might accept you for MS. If you get into an MS program at a school of your choice, you can contact professors to work with them. If you do well, you can ask the professor to support you to convert to PhD. You will likely need to apply again, but you will have a much better chance because you have the direct support of a professor there.
 
-// You can consider applying to MS programs, which are typically easier to get in; but you likely need to pay (\autoref{sec:ms-admission}).  A university that rejected you for PhD might accept you for MS.
-// If you get into an MS program at a school of your choice, you can contact professors to work with them. If you do well, you can ask the professor to support you to convert to PhD. You will likely need to apply again, but you will have a much better chance because you have the direct support of a professor there.
-
-// \paragraph{Should I ask for feedback?}
-// No, don't bother.  You will likely not get any useful feedback.  We are not willing (sometimes not allowed) to reveal your evaluation results or give you feedback on how to improve your profile. \emph{So just move on}.  If you really want advice, ask your professors, collaborators, ref writers, or those who have previously applied.
+#strong[Should I ask for feedback?]
+No, don't bother. You will likely not get any useful feedback. We are not willing (sometimes not allowed) to reveal your evaluation results or give you feedback on how to improve your profile. So just move on. If you really want advice, ask your professors, collaborators, ref writers, or those who have previously applied.
 
 
 === Why did you get rejected? <sec:why-rejected>
 // \subsectioninfo{You aim too high, are overqualified, or even because you applied to AI/ML, a super competitive field in recent years with many applicants.}
 
-// Many students lament that they get no interviews or are rejected and that the admission process seems random.  However, while it is true that the process can involve some luck and randomness, it is not completely random.  There are many reasons why you might get rejected, e.g., your profile is not as strong as you \emph{think} it is (\autoref{sec:profile-not-strong}).  Even if your profile is strong, you still can get rejected, e.g., aim too high (\autoref{sec:chance-me}), not a good fit, overqualified, having red flags, etc. 
+Many students lament that they get no interviews or are rejected and that the admission process seems random. However, while it is true that the process can involve some luck and randomness, it is not completely random. There are many reasons why you might get rejected, e.g., your profile is *not* as strong as you *think* it is (@sec:profile-not-strong). Even if your profile is strong, you still can get rejected, e.g., aiming too high (@sec:chance-me), not a good fit, overqualified, having red flags, etc.
 
 ==== Your profile is *not* as strong as you think <sec:profile-not-strong>
-// I have seen multiple cases where students think they have a strong profile, but they do not. Here are some common examples.
+I have seen many cases where students think they have a strong profile, but they do not. Here are some common examples:
 
-// Your \emph{LoRs} (\autoref{sec:lor-writers}) might not be as strong as you think. Your ref. writers---who might be very well-known within your institution---might not be very well-known internationally, or they might not be very active in research, or even know how to write a good letter. 
+#strong[LoRs] (@chap:lor) might not be as strong as you think. Your reference writers—who might be very well-known within your institution—might not be well-known internationally, or they might not be very active in research, or may not know how to write a strong letter.
 
-// Your \emph{school} (\autoref{chap:your-school}) might not be as good as you think.  It might be the "top" in your country (or in your own definition), but we do not know about it, e.g., most wel-known schools in Vietnam are not well-known outside of Vietnam.
+#strong[School] (@chap:your-school) might not be as good as you think. It might be the "top" in your country (or in your own definition), but we do not know about it. For example, most well-known schools in Vietnam are not well-known outside of Vietnam.
 
-// Your \emph{research} (\autoref{chap:research-experience}) might not be as strong as you think.  Participating in a research project does not mean much (or anything) if there is no results, e.g,. publications (\autoref{sec:publications}). Moreover, publications might not have much value if they were published locally or through unknown places.  Even papers at top venues might not be as good as you think, e.g., many AI/ML/NLP faculty are not too interested in "dataset" work, even if they appear at top venues like NeurIPS as shown in~\autoref{fig:comment-neurips}.  However, while you might not have papers, you might be able to get good LoRs from professors or PhD students you worked with closely on research projects. But just saying you do research is not enough.
+#strong[Research] (@chap:research-experience) might not be as strong as you think. Participating in a research project does not mean much (or anything) without results, e.g., publications (@sec:publications). Moreover, publications might not have much value if they were published locally or in unknown venues. Even papers at top venues might not be as impressive as you think. For example, many AI/ML/NLP faculty are not interested in "dataset" work, even if papers appear at top venues like NeurIPS (@fig:comment-neurips). However, while you might not have papers, you might get strong LoRs from professors or PhD students you worked with closely on research projects. But just saying you do research is not enough.
 
-// \begin{figure}
-//     \begin{examplebox}
-//       \emph{"The applicant has done some interesting work, but a lot of what they haves done so far has been only on the side of dataset creation, almost nothing on actual modeling or tackling some tasks. This of course has merits on its own, but it's more of an engineering feat rather than a research feat."}\\
-//     \end{examplebox}
-//     \caption{Comment from an NLP researcher on an applicant with multiple NeurIPS papers. <fig:comment-neurips}
-//   \end{figure}
+#figure(
+  caption: [Comment from an NLP researcher on an applicant with multiple NeurIPS papers],
+  box(
+    inset: 10pt,
+    fill: rgb("#b8ebc1"),
+  )[
+    #text(size: 10pt)[
+      #emph["The applicant has done some interesting work, but much of what they have done has been only on dataset creation, with almost nothing on actual modeling or tackling tasks. This has merits, but it's more of an engineering feat than a research feat."]
+    ]
+  ]
+) <fig:comment-neurips>
 
 
 ==== Other Common Reasons for Rejection
-// Even with strong profile (e.g., research potential, GPA, LoRs, SOP, interviews), you can still get rejected for various other reasons as follows. 
+Even with a strong profile (e.g., research potential, GPA, LoRs, SOP, interviews), you can still get rejected for various reasons:
 
-// \paragraph{You aim too high} 
-// You have applied to schools that are \emph{way too high} for your profile (\autoref{sec:profile-not-strong} and~\autoref{sec:selecting-ranking-schools}). Many students simply just go for very top schools---for example top 10 CS programs (see \autoref{sec:chance-me})---and are surprised when they are rejected to all of them, in multiple years. An analogy is a person who has never hike but wants to climb Mt. Everest (which btw if you could, you might have a better admission chance as mentioned in \autoref{sec:stand-out}).
+#strong[You aim too high.]
+You have applied to schools that are way too high for your profile (@sec:profile-not-strong and @sec:selecting-ranking-schools). Many students apply only to top 10 CS programs and are surprised when rejected from all of them, sometimes multiple years in a row. While ambition is valuable, understand how PhD admission works (e.g., good GPA or GRE scores matter less at top programs), recognize that the US has many excellent schools (@sec:chance-me), and be realistic about your targets.
 
-// While being ambitious and aiming high is good, you should understand how PhD admission works (e.g., by reading \emph{this} handbook and realizing things such as having a good GPA (\autoref{sec:gpa}) or GRE (\autoref{sec:gre}) doesn't mean much to top programs), that in the US there are many good schools (\autoref{sec:chance-me}), and just be realistic. 
+#strong[Not a good fit and bad luck.]
+You could have an excellent profile, but if your research interests don't align with the program's strengths, you won't be admitted. Similarly, if no faculty can advise you—due to sabbatical, insufficient funding, or already having many students—you'll be rejected. This is actually good; you don't want to be somewhere without proper guidance.
 
-// \paragraph{Not a Good Fit and Bad luck}  You could have an excellent profile (e.g., strong research and LoRs), but if you are interested in a research area that the program does not have, you will not be admitted.
-// Similarly, if no faculty is willing to advise you (e.g., they are on sabbatical or personal leave, do not have sufficient funding, or already have too many students), you will not be admitted.  This is actually good for you, as you don't want to be in a program where no one can advise you.
+Bad timing also plays a role. For instance, since 2024, there's been a surge in AI/NLP applicants (thanks, ChatGPT!). Overwhelmed AI/NLP faculty may reject strong candidates simply due to capacity.
 
-// Related to this is that you just have bad luck and apply at the wrong time.  For example, since 2024 there has been a huge surge in students interested in AI and NLP (thanks, ChatGPT!). Consequently, AI/NLP faculty might be overwhelmed and cannot consider many candidates, even those with excellent profiles.
+Before applying, ask your professors for honest feedback on where you should target. Apply to a range of schools, including "safety" options.
 
+#strong[Lack of interest or overqualification.]
+You can be rejected for insufficient interest in the program. Beyond a generic SOP (@sec:kiss-of-death-sop), this includes ignoring professors' interview invitations or showing little knowledge or enthusiasm during interviews.
 
+Paradoxically, overqualification is also a reason. If adcom believes you'll get into a better program, they may reject you to save the spot for someone else.
 
-// Before applying, you should talk to your professors and ask them to give you an honest opinion on where you should apply. To increase their chances, many students apply to a range of schools, including "safety" ones. 
+#strong[Low GPA or exam scores.]
+While faculty may not emphasize these, universities often set minimums you must pass. For example, minimum English proficiency is often required for TA funding—low scores raise concerns about your ability to communicate with students. Faculty may be reluctant to argue against institutional requirements.
 
-
-// \paragraph{Lack Interest or Overqualified} 
-
-// You can also get rejected if you did not show enough interest in the program. Of course, not customizing your SOP is an indication of lack of interest (\autoref{sec:kiss-of-death-sop}. But there are other ways as well. For example, you did not respond to professors interested in interviewing you (which might be considered unprofessional and burn bridges), or during the interview you showed little knowledge, interest, or enthusiasm in the profs or program (because it is your safety). 
-
-// Overqualification is another related reason.  This sounds paradoxical and is the opposite of aiming too high. However if adcom believes that you are likely to get admitted and go to a better program, they might not be so enthusiastic to admit you and want to save the spot for someone else.
-
-
-// \paragraph{Low GPA or exam scores (e.g., IELTS or TOEFL)}  Profs. might not care much about these, but the college or the university often sets a minimum that you need to pass to be considered.  E.g., minimum English proficiency scores are often required for TA funding (a low English score causes concern that you might not be able to communicate well with students as a TA).  Thus, while profs. are willing to argue for your case, they might be reluctant to go against the requirement of the university.
-
-
-// \paragraph{Red flags} Various types of red flags can cause concern to the adcom. Common examples include many STEM courses with low or withdrawn grades, plagiarism, cheating, or other academic dishonesty. Another one is that you have a history of jumping from one program to another. Adcom members might have contacts in other programs and heard about your stories, or your LoRs might mention them.
-
-// If you think you have these issues, you should address them in your SOP or ask your letter writers to do so.
-// In general, these things are rare, but they do happen and cause concern to the adcom.
-
+#strong[Red flags.]
+Various issues can raise concerns: many STEM courses with low grades or withdrawals, plagiarism, cheating, or other academic dishonesty. A history of jumping between programs is another flag—adcom members may have contacts elsewhere. If these apply to you, address them in your SOP or ask your letter writers to do so.
 
 ==== "Chance me" on Getting into T10 Programs <sec:chance-me>
 
-// Many international students aim for very top schools such as Stanford and MIT, and \Gls{ivy}. Every year Reddit and other forums have numerous students asking for evaluation of their chances of getting into these schools (the so called \emph{"chance me"} or \emph{"roast my CV/profile"} posts) and then later posts on being \emph{"ghosted and rejected everywhere"}. Here's my take on this (adapted from my post on \href{https://www.reddit.com/r/gradadmissions/comments/1fogyg5/reality_check_for_aspiring_phd_applicants_youre/}{Reddit}).:
+Many international students aim for very top schools such as Stanford and MIT, and #link("https://en.wikipedia.org/wiki/Ivy_League")[Ivy League schools]. Every year Reddit and other forums have numerous students asking for evaluation of their chances of getting into these schools (the so-called #emph["chance me"] or #emph["roast my CV/profile"] posts) and then later posts on being #emph["ghosted and rejected everywhere"]. Here's my take on this (adapted from my #link("https://www.reddit.com/r/gradadmissions/comments/1fogyg5/reality_check_for_aspiring_phd_applicants_youre/")[post on Reddit]):
 
-// \paragraph{You are unlikely to get in these schools}  While being ambitious is good, you also need to be realistic, and the harsh reality is that it is very unlikely that you will get in MIT or Harvard unless you are very exceptional (in which case you would not be asking about your chances on Reddit). 
+#strong[You are unlikely to get in these schools.] While being ambitious is good, you also need to be realistic, and the harsh reality is that it is very unlikely that you will get into MIT or Harvard unless you are very exceptional (in which case you would not be asking about your chances on Reddit). 
 
-// People who do get in these schools often were explicitly encouraged by their mentors and LoR writers, who themselves might be alumni of these schools or are academic celebrities who've sent many of their students there. If you are not in this category (doubt you are, because you're asking random people on the internet instead of your trusted LoR writers), then you're likely not going to get in, and MIT and Stanford would glady take your application money.
+People who do get into these schools often were explicitly encouraged by their mentors and LoR writers, who themselves might be alumni of these schools or are academic celebrities who've sent many of their students there. If you are not in this category (doubt you are, because you're asking random people on the internet instead of your trusted LoR writers), then you're likely not going to get in, and MIT and Stanford would gladly take your application money.
 
-// \paragraph{"Your" top might not really top in CS} Harvard and the Ivies? yes good for many things but usually not coding marathon and typically MIA at top CS confs (ok, they are still good, but a school somewhere in Maryland, Wisconsin, or Urbana Champaign cornfield would likely beat them by far in CS). MIT and Stanford? yes, they are top, but many are equivalent, and there could be CS areas (\autoref{sec:csrankings}) where they are not as strong as other schools.  Caltech and John Hopkins? Are you confused CS with Physics and Medicine?
+#strong["Your" top might not really be top in CS.] Harvard and the Ivies? Yes, good for many things but usually not coding marathons and typically absent from top CS conferences. (Okay, they are still good, but a school somewhere in Maryland, Wisconsin, or the Urbana-Champaign cornfield would likely beat them by far in CS). MIT and Stanford? Yes, they are top, but many others are equivalent, and there could be CS areas (@sec:csrankings) where they are not as strong as other schools. Caltech and Johns Hopkins? Are you confusing CS with Physics and Medicine?
 
-// You're missing out some serious CS PhD programs: UCSD, UW, UMD, Michigan, Purdue, Stony brook. These all have super strong CS programs but rarely get mentioned compared to the usual suspects. Utah, Rutgers, Buffalo, Penn State, UVA, Ohio, UC Riverside, GMU ... any of them rings a bell? These might not ranked very high on QS or US News and are not household names to you, your friends, mom and dad, but they are excellent CS schools where graduating students from your dream schools often apply for faculty positions (e.g., see \href{https://github.com/dynaroars/dynaroars.github.io/wiki/About-GMU}{GMU stats}). You can go to these places and be superstar there---be the big fish in a small pond, instead of a small fish in a big pond.
+You're missing out on some serious CS PhD programs: UCSD, UW, UMD, Michigan, Purdue, Stony Brook. These all have strong CS programs but rarely get mentioned compared to the usual suspects. Utah, Rutgers, Buffalo, Penn State, UVA, Ohio, UC Riverside, GMU—any of them ring a bell? These might not rank very high on QS or US News and are not household names to you, your friends, or your parents, but they are excellent CS schools where graduating students from your dream schools often apply for faculty positions (e.g., see #link("https://github.com/dynaroars/dynaroars.github.io/wiki/About-GMU")[GMU stats]). You can go to these places and be a superstar there—be the big fish in a small pond, instead of a small fish in a big pond.
 
-// \paragraph{You don't need to be top}  Top schools will open doors to more opportunities. In countries like Vietnam, there are few top schools, and if you don't get into them, you are doomed  (or so you think). But that is not the case in the US. There are many good schools, and it is not a binary choice between top X or nothing.  In fact, "equity" is emphasized in the US and "smaller" schools are often given more resources and attention to help students succeed.  
+#strong[You don't need to be top.] Top schools will open doors to more opportunities. In countries like Vietnam, there are few top schools, and if you don't get into them, you are doomed (or so you think). But that is not the case in the US. There are many good schools, and it is not a binary choice between top X or nothing. In fact, equity is emphasized in the US and "smaller" schools are often given more resources and attention to help students succeed.  
 
-// \begin{keybox}
-// Don't aim for just the moon and the stars, also try the sky, clouds, or even just the trees.  You might find much happiness and success there, which then can catapult you places beyond the moon and the stars.  This is the American dream, which is strongly embodied in the its higher education system.
-// \end{keybox}
+#examplebox[
+  Don't aim for just the moon and the stars; also try the sky, clouds, or even just the trees. You might find much happiness and success there, which can then catapult you places beyond the moon and the stars. This is the American dream, which is strongly embodied in its higher education system.
+]
 
-// Note that what said above might not apply to BS or even MS degrees, which often do not involve research and thus are more about the school name and your grades. For PhD, it is all about the research.  
-
-
+Note that what I said above might not apply to BS or even MS degrees, which often do not involve research and thus are more about the school name and your grades. For PhD, it is all about the research.
 
 === Standing Out: Increasing your admission chance <sec:stand-out>
 // \subsectioninfo{You can improve your profile by being unique and standing out.}
 
-// \begin{center}
-//   \includegraphics[scale=0.2]{files/alpinist-climbing-peak-mountain-comic-hand-drawn-vector-illustration.jpg}
-// \end{center}
+#align(center)[
+  #image("files/alpinist-climbing-peak-mountain-comic-hand-drawn-vector-illustration.jpg", width: 20%)
+]
 
+Given the high number of quality applicants and a limited number of spots, in addition to having a good application profile, you want to show something that makes you *stand out*. For example, even if you do not have research experience, you can talk about your personal projects, as long as they show you can do research. If you have an open-source project (@sec:open-source-contribs) that has lots of stars on GitHub, mention it. If you often write technical, research-like blogs with many viewers, talk about them too.
 
-// Given the high number of quality applicants and a limited number of spots, in addition to having a good application profile, you want to show something that makes you \emph{stand out}.  For example, even if you do not have research experience, you can talk about your personal projects, as long as they show you can do research. If you have an open-source project (\autoref{sec:open-source-contribs}) that has lots of stars in Github, mention it. If you often write technical, research-like blogs with many viewers, talk about them too.
+There are other things you might not think are important but can make you stand out. For example, if you have a strong background in a non-CS field that can be integrated with CS, e.g., you have a degree or background in *dance* or *music* and want to integrate them with CS, do talk about it. If you have reported numerous bugs in Knuth's The Art of Computer Programming and received several reward checks from Knuth himself, mention them---this shows exceptional attention to detail and a good understanding of algorithms.
 
-
-
-// % It is worth noting that in many cases,  an application could be rejected by most reviewers, however have a "champion", who doesn't even have to be in the Admission comittee, that strongly advocate for your profile.
-
-// There are other things you might not think are important but can make you stand out. For example, if you have a strong background in a non-CS field that can be integrated with CS, e.g., you have a degree or background in \emph{dance} or \emph{music} and want to integrate them with CS, do talk about it. If you have reported numerous bugs in Knuth's The Art of Computer Programming and received several reward checks from Knuth himself, mention them---this shows exceptional attention to detail and a good understanding of algorithms.
-
-// %Are you a female or a minority in CS? Do you participate in outreach activities that help increase diversity and inclusion in CS? Diversity is valued in CS programs in the US, and experiences in these areas can make you stand out and get noticed from reviewers.
-
-
-
-// \begin{commentbox}
-// In \href{https://matt.might.net/articles/how-to-apply-and-get-in-to-graduate-school-in-science-mathematics-engineering-or-computer-science/}{his post}, Matt Might was initially unsure about an application. However, upon learning that the applicant had led a 100km hike in the Himalayas, he decided to accept the applicant.  This is a good example of being \emph{stand out}, and I would also advocate for that student as this shows they have the persistence and determination required for research.
-// \end{commentbox}
+#commentbox[
+  In #link("https://matt.might.net/articles/how-to-apply-and-get-in-to-graduate-school-in-science-mathematics-engineering-or-computer-science/")[his post], Matt Might was initially unsure about an application. However, upon learning that the applicant had led a *100km hike in the Himalayas*, he decided to accept the applicant. This is a good example of *standing out*, and I would also advocate for that student as this shows they have the persistence and determination required for research.
+]
 
 #pagebreak()
 = Funding, Schools, and Profs. <part:funding-schools-profs>
@@ -1528,9 +1510,9 @@ TA assignments are decided by the department, so you usually do not need to worr
 
 
 
-// \begin{commentbox}
-//   At GMU CS, admitted PhD students have 4 years of GTA guaranteed, and also receive a stipend for the first summer (\autoref{sec:summer-funding}).
-// \end{commentbox}
+#commentbox[
+  At GMU CS, admitted PhD students have 4 years of GTA guaranteed, and also receive a stipend for the first summer (@sec:summer-funding).
+]
 
 Even if you have other funding and do not need a TA, you should still try TA at least once. This lets you see what teaching is like, which is especially helpful for a research career where you often give talks and explain your work to others. GMU sometimes has courses that more senior students can teach. In that case, you may be paid as a GTA or sometimes even as a lecturer. This is a good opportunity to gain teaching experience, and you might even get paid a bit more.
 
