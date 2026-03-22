@@ -1478,6 +1478,7 @@ Not much you can do here. You can try to contact the school to ask about your st
 // In \href{https://matt.might.net/articles/how-to-apply-and-get-in-to-graduate-school-in-science-mathematics-engineering-or-computer-science/}{his post}, Matt Might was initially unsure about an application. However, upon learning that the applicant had led a 100km hike in the Himalayas, he decided to accept the applicant.  This is a good example of being \emph{stand out}, and I would also advocate for that student as this shows they have the persistence and determination required for research.
 // \end{commentbox}
 
+#pagebreak()
 = Funding, Schools, and Profs. <part:funding-schools-profs>
 
 == Funding <chap:funding>
@@ -1588,9 +1589,9 @@ Such major fellowships typically require a clear and good research plan (the GRF
 
 In general, external fellowships are highly competitive and prestigious---you will stand out if you get one.  Every PhD student has pubs, but only a few would have the NSF GRFP#footnote[#link("https://www.alexhunterlang.com/nsf-fellowship")[is a good starting place for the GRFP with lots of proposal examples.]] or Microsoft fellowships. In fact, these are so prestigious that even if you didn't get it but make it to the final round or even *"honorable mentioning"* you should put it on your CV. @chap:fellowships discusses the evaluation processes of the NSF GRFP and DoD NDSEG.
 
-== Funding Miscs
+=== Funding Miscs
 
-=== Low Stipend? <sec:low-stipend>
+==== Low Stipend? <sec:low-stipend>
 
 Students often think their stipend is too low and not enough to live on.  For example, if you look at the stipend at GMU, which is around \$30K for 9-month, and then compare it to the cost of living in Fairfax, VA, which says you need \$70K to live in a 1-bed apartment, then you might be in a panic.
 
@@ -1601,7 +1602,7 @@ In fact, it might be enough to support your spouse and kids.  Many CS PhD studen
 For a full breakdown of how much a graduate student costs, see @sec:ra-cost.
 
 
-=== Funding in the Summer <sec:summer-funding>
+==== Funding in the Summer <sec:summer-funding>
 
 Students often get confused about summer funding, e.g., if they will get paid during the summer.  This is a good question because PhD students have no classes over the summer and so are often more productive and produce good research. However, summer salary is largely depending on your funding source.
 
@@ -1618,7 +1619,7 @@ For my students, I have been fortunate to have funding to support them over the 
 
 Finally, for fellowships (@sec:fellowships) you might get paid over the summer depending on your fellowship (@sec:fellowships). Good ones, e.g., from NSF, Google, and Microsoft, will pay you the whole year.
 
-== How much do *YOU* cost? <sec:ra-cost>
+==== How much do *YOU* cost? <sec:ra-cost>
 // \subsectioninfo{Your entire PhD program costs about \$400K in total, but you \emph{do not} pay for it.}
 
 PhD students often ask why their salary is low compared to the large grants their advisers get. They also wonder why their offer letters sometimes show that their benefits are higher than what they receive as stipend (e.g., your financial assistance says you get a package of \$60K, but your stipend is only \$30K).  The reason is that the cost of supporting a PhD student is much higher than just their stipend.  In fact, the total cost of supporting a PhD student can be around \$70K per year, which includes not only the stipend but also tuition, health insurance, and other expenses. Over the course of a 5-6 year PhD program, this can add up to around \$400K.
@@ -1663,7 +1664,7 @@ These numbers are based on my experience at public universities in the US. Priva
 
 In the end, the total budget comes out to be \$73K/year to support a PhD student. *The summary is that over your 5–6 years of your PhD, you cost about \$400K, and while your stipend is X, your adviser probably pays 2X for you*. But of course, the nicest thing is that you do not have to pay for any of this! You get to gain the knowledge, do research, travel, and also get paid!
 
-= Choosing Schools <chap:choosing-school>
+== Choosing Schools <chap:choosing-school>
 // \chapterinfo{Not every university has a CS PhD program. Not every professor, even those in CS, can advise or graduate CS PhD students.}
 
 #simpsons[It's not the school you go to, it's what you do while you're there!]
@@ -1676,7 +1677,7 @@ In the end, the total budget comes out to be \$73K/year to support a PhD student
 
 // We will first discuss universities in the US that offer PhD in CS. Then we will talk about how to select them.
 
-== Schools offering PhD in CS <sec:schools-offering-phd>
+=== Schools offering PhD in CS <sec:schools-offering-phd>
 
 // Most US universities have CS programs, but many of them do not have a CS \emph{PhD} program. These universities might offer just Bachelor's degrees (e.g., BS) and no graduate studies (i.e., no MS or PhD degrees), or they just offer MS programs (but no PhD). For example, Penn State in University Park has PhD in CS,  but Penn State in Harrisburg only has BS and MS in CS, and Penn State in York only has BS in CS.  On the other hand, multiple locations of the University of Texas, e.g., Austin, Dallas, and Arlington, have PhDs in CS.
 
@@ -1685,7 +1686,7 @@ In the end, the total budget comes out to be \$73K/year to support a PhD student
 
 // % \subsection{R1, R2, ...}
 
-== Selecting and Ranking Schools <sec:selecting-ranking-schools>
+=== Selecting and Ranking Schools <sec:selecting-ranking-schools>
 // \begin{center}
 //   \includegraphics[scale=0.5]{files/c1.png}
 // \end{center}
@@ -1738,7 +1739,7 @@ In the end, the total budget comes out to be \$73K/year to support a PhD student
 // \end{commentbox}  
 
 
-== Large/Well-known vs. Small/Unknown Programs
+=== Large/Well-known vs. Small/Unknown Programs
 
 // The "feel-good" advice is to go where it fits you and a good adviser is the most important. But, how do you know what would or would not fit you if you have never been there?   Also, how do you know if a prof. is good and compatible with you or not if you have never worked with them?  So while this advice sounds good, it is vague and not actionable because you do not have enough information to decide.
 
@@ -1774,7 +1775,7 @@ In the end, the total budget comes out to be \$73K/year to support a PhD student
 // % The general advice is to prioritize a strong faculty member over a high-ranked school because your success in research depends more on your adviser than the school's name. Still, a good school can provide better resources, networking opportunities, and and more competitive environment---and there's always that "household name" that makes you feel good. So ranking does matter!
 
 
-== PhD in other Related Fields: CE, IST, Cybersecurity <sec:related-fields>
+=== PhD in other Related Fields: CE, IST, Cybersecurity <sec:related-fields>
 
 // You \emph{do not} need to do a PhD in CS to work in CS areas. For example, in addition to a traditional CS department, GMU has IST and Cybersecurity departments, both of which have faculty with PhD in CS and work on CS topics (e.g., AI, Security, Robotics).  So you still can do CS research and publish in CS-focused venues even if you're not in a traditional CS program.  It is common to see faculty with PhD in CS in a non-CS department as well as faculty with non-CS PhD in a CS department.
 
@@ -1812,7 +1813,7 @@ In the end, the total budget comes out to be \$73K/year to support a PhD student
 // % \end{table}
 // % \subsection{Prestige vs. Opportunities}
 
-== University Hierarchy
+=== University Hierarchy
 
 // \begin{figure}
 //   \centering
@@ -1884,7 +1885,7 @@ In the end, the total budget comes out to be \$73K/year to support a PhD student
 // \end{commentbox}
 
 
-== College/School
+==== College/School
 
 // Under the top administration are the various colleges or schools that house different academic departments. Common examples include the College of Engineering, College of Arts and Sciences, and increasingly, a separate College of Computing (e.g., like at Georgia Tech).  Schools are typically under a college, e.g., the School of Computing within the College of Engineering at UNL. But in some universities, the School is a standalone unit, e.g., the School of Computer Science at CMU.
 
@@ -1901,13 +1902,13 @@ In the end, the total budget comes out to be \$73K/year to support a PhD student
 
 
 
-== Department
+==== Department
 // Inside the department, the \textbf{Chair} (or Head) manages financial and personnel matters, including faculty hiring, promotions, resource allocation, and enrollment and admissions processes. Supporting them are \emph{associate chairs} of graduate and undergraduate studies and \emph{directors} of various programs. In addition, the Chair forms various committees to handle specific tasks, e.g., admissions, curriculum, and faculty hiring (search).  
 // The Chair reports to the Dean and is responsible for implementing college policies at the department level. 
 
 // While department chairs do not usually get involved in PhD admissions decisions (see how decisions are made in~\autoref{sec:how-decisions}), they set the overall direction and priorities that shape how many students are admitted and what resources are available to them.
 
-== Faculty and Staff
+==== Faculty and Staff
 // In many cases adcom consults with faculty members who are potential advisers to get their input on applicants (\autoref{sec:applications-assigned}). Thus general faculty can influence admissions by recommending students they want to advise. 
 
 // In addition, a CS department has various \textbf{administrative staff} who handle day-to-day operations, e.g., contacting applicants, processing applications, and managing student records. While staff do not make admissions decisions, they ensure the process runs smoothly and efficiently---a critical behind-the-scenes role.
@@ -1915,7 +1916,7 @@ In the end, the total budget comes out to be \$73K/year to support a PhD student
 
 
 
-= Choosing an Adviser <chap:choosing-adviser>
+== Choosing an Adviser <chap:choosing-adviser>
 // \chapterinfo{The best adviser is the one that \textbf{fits}, e.g., you can work well with, and has the ability to help you succeed. But you do not know that until you start working with them.}
 
 #simpsons[It's not easy being a mentor. But it sure is funny to watch other people screw up.]
@@ -1924,7 +1925,7 @@ In the end, the total budget comes out to be \$73K/year to support a PhD student
 
 // Fortunately, while some non-US programs require finding an adviser and research topic before starting the PhD (\autoref{sec:non-us-differences}), CS PhD programs in the US will typically give you a couple of years to "shop" for advisers and research topics.  This is especially true if you're admitted with TA (\autoref{sec:ta}), which gives you time to explore and find an adviser.
 
-== Finding an Adviser <sec:finding-adviser>
+=== Finding an Adviser <sec:finding-adviser>
 
 // Assuming you're not familiar with any particular one, then first search for profs. that share similar research interests. For example, in CSRankings and CSPicks, if you want to work with PL, you can search for those published in PL conferences.  If you want to work with SE \emph{and} AI, you can search for faculty who work in both SE and AI.
 
@@ -1960,7 +1961,7 @@ In the end, the total budget comes out to be \$73K/year to support a PhD student
 // %   \item \href{https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-Advisor.pdf}{The Definitive "what do I ask/look for" in a PhD Adviser Guide}
 // % \end{itemize}
 
-== Types of Faculty: Who can serve as a PhD adviser? <sec:faculty-types>
+=== Types of Faculty: Who can serve as a PhD adviser? <sec:faculty-types>
 
 // \emph{Not} every faculty can serve as your official PhD adviser. Understanding the different types of faculty roles will help you avoid common mistakes—like contacting the wrong person (\autoref{sec:contact}) for research opportunities or listing in your SOP (\autoref{chap:sop}) someone who can't actually supervise PhD students.
 
@@ -2045,7 +2046,7 @@ In the end, the total budget comes out to be \$73K/year to support a PhD student
 
 // Professors with these titles are often tenure-line faculty, and therefore can advise PhD students. However, they may not be as available, especially if they are in high demand or have administrative responsibilities. For example, most department chairs are endowed chairs or distinguished professors, and they might not be too active in research or advising students. 
 
-== Tenured or tenure-track faculty? <sec:tenure-vs-tenure-track>
+=== Tenured or tenure-track faculty? <sec:tenure-vs-tenure-track>
 
 // \begin{center}
 //   \includegraphics[scale=0.4]{files/c8.png}
@@ -2064,7 +2065,7 @@ In the end, the total budget comes out to be \$73K/year to support a PhD student
 // \begin{commentbox}[Hung:]
 //   I always encourage the students I admit to talk with my students and the students of other faculty in other schools who admitted them. You will unlikely hear straight-out complaints from current students in a prof's group. But sometimes what is important are things that they (current students) don't tell you. Pay attention to their "level of excitement" being in the group.
 // \end{commentbox}
-== Faculty from Your Country <sec:prioritizing-faculty>
+=== Faculty from Your Country <sec:prioritizing-faculty>
 
 // Understandably many students prefer to work with faculty who came from their own country.
 // You feel more comfortable as they share the same language and culture, understanding your schools and background, and that they "get" you.
@@ -2083,7 +2084,7 @@ In the end, the total budget comes out to be \$73K/year to support a PhD student
   
 //   Thus, don't worry about this too much and just apply to the profs. you think are a good fit for you (\autoref{sec:finding-adviser}).  In fact, this might be an advantage because profs. who have many students from their own country might want to diversify their group and take students with different background.
 
-== Should I Contact a Prof. Before Applying? How to Get a Positive Reply? <sec:contact>
+=== Should I Contact a Prof. Before Applying? How to Get a Positive Reply? <sec:contact>
 
 // \sectioninfo{Individually faculty member \emph{cannot directly admit} a student---so do not email and ask if you have a chance. However, faculty can \emph{advocate} for a student and therefore increase their admission chance---so contact and introduce yourself.}
 
@@ -2214,7 +2215,7 @@ In the end, the total budget comes out to be \$73K/year to support a PhD student
 // In short, all of these replies mean the prof. is not interested.  The best positive response is that they want more information from you, e.g., your CV, transcript, paper, or a chat, which is like an interview (\autoref{sec:interviews}). 
 
 
-== Are Profs. So Busy That They Completely Ignore Emails? <sec:busy>
+=== Are Profs. So Busy That They Completely Ignore Emails? <sec:busy>
 
 
 // Profs. are busy. We have many deadlines, meetings, and emails, many of which are from prospective students looking for research opportunities or asking for application results. 
