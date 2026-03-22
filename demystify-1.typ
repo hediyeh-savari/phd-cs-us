@@ -1,3 +1,5 @@
+
+
 #set page(numbering: "1", number-align: center)
 #set heading(numbering: "1.")
 #set par(justify: true)
@@ -15,6 +17,12 @@
 #show link: set text(fill:blue)
 #show link: underline
 #show figure.caption: set text(size: 10pt)
+
+// Inline code
+#show raw.where(block: false): it => box(fill: rgb("#f0f0f0"), inset: (x: 2pt), radius: 2pt, it)
+
+// Code blocks
+#show raw.where(block: true): it => block(fill: rgb("#f0f0f0"), inset: 10pt, radius: 4pt, width: 100%, it)
 
 
 #let mytitle = "Demystifying PhD Admissions in Computer Science"
@@ -58,17 +66,23 @@
   #msg
 ]
 
-#let exampletbox(msg) = box(
+#let examplebox(msg) = box(
   stroke: (x: 0.5pt + gray, y: 0.5pt + gray),
   inset: 10pt,
-  fill: rgb("f0f0f0"),
+  fill: rgb("#b8ebc1"),
 )[
     #text(size: 10pt)[
       #msg
     ]
-  #msg
 ]
 
+#let warningbox(msg) = box(
+  stroke: (x: 0.5pt + gray, y: 0.5pt + gray),
+  inset: 10pt,
+  fill: rgb("#ffe6e6"),
+)[
+  #msg
+]
 
 // Title Page
 #align(center)[
@@ -170,8 +184,8 @@ Full funding for CS PhD students is the norm in the US, and I'd go as far as to 
 
 // % In fact, many resources are available to encourage and support students from minority and diverse groups to pursue higher education and research, e.g., specific scholarships and fellowships. Faculty in CS are also familiar with and are encouraged to support such students in their group. There are also incentives, such as dedicated funding and awards, to motivate faculty to recruit and mentor minority students (\autoref{sec:urm}).
 
-\section{What's a PhD in CS? <sec:phd-in-cs>
-\sectioninfo{A PhD in CS is a \textbf{research} degree that transforms you into a researcher in a specific area of CS.
+== What's a PhD in CS? <sec:phd-in-cs>
+//\sectioninfo{A PhD in CS is a \textbf{research} degree that transforms you into a researcher in a specific area of CS.
  You will become an expert in a particular topic and know more about it than anyone else in the world (in many cases even your advisor).}
 
 A PhD in CS is a _research_ degree. Unlike undergraduate or even Master's programs (\autoref{chap:ms}), which focus on breadth of knowledge through coursework, a PhD is about depth and pushing the boundary of a specific area within a CS \glslink{fields}{field} (e.g., software verification within the field of programming languages or formal methods). You will become an expert in your area of research and contribute something new to the field that has never been done before. 
@@ -864,97 +878,66 @@ So do talk about them in your SOP (@chap:sop) and have your writers mention them
 
 #simpsons[All my life I've had one dream: to achieve my many goals.]
 
-// \begin{center}
-//   \includegraphics[scale=0.5]{files/c2.png}
-// \end{center}
+#align(center)[
+  #image("files/c2.png", width: 70%)
+]
 
-// While you might not have control over LORs (\autoref{chap:lor}) or where your go to school (\autoref{chap:your-school}), you do over your
-// statement of purpose (SOP) or personal statement\footnote{Few schools separate these documents and ask you to write both: SOP, which focuses on research experiences, and personal statement, which is everything more personal, e.g., why PhD, challenges, etc}! A well-written SOP also shows that you can communicate, which is very important in research, and that you can effectively teach and communicate with students, which is important for TA funding (see \autoref{chap:funding}).  Many SOP samples for CS are \href{https://cs-sop.org/}{available here}.  
+While you might not have control over LoRs (@chap:lor) or where you go to school (@chap:your-school), you do have control over your statement of purpose (SOP) or personal statement#footnote[Few schools separate these documents and ask you to write both: SOP, which focuses on research experiences, and personal statement, which covers more personal aspects, e.g., why PhD, challenges, etc.]. A well-written SOP also demonstrates that you can communicate effectively, which is crucial in research and important for TA funding (@chap:funding). Many SOP samples for CS are #link("https://cs-sop.org/")[available here].
 
+In your SOP, focus on research potential (@chap:research-experience) and convince reviewers through your experience, e.g., published papers (@sec:publications). Back up your claims with *concrete evidence*. For example, if you say you have teaching experience, show what you did, e.g., undergraduate TA or mentoring someone. If you say you worked on a research project, show some results, e.g., paper submitted (or even rejected), achieved certain performance improvement over the state of the art.
 
-// In your SOP, focus on research potential (\autoref{chap:research-experience}) and convince us through your experience, e.g., published papers (\autoref{sec:publications}). Back up your claims with \emph{concrete evidence}. For example, if you say you have experience with teaching, then show what you did, e.g., undergrad TA or mentoring someone.  If you say you work on a research project, then show some results, e.g., paper submitted (or even rejected), achieved certain performance improvement over the state of the art. 
+You should talk about things that adcom members might not know about and that can help make you *stand out* in the application pool of thousands of applicants, e.g., your personal GitHub project with hundreds or thousands of stars or your regular contributions to well-known open-source projects (see @sec:stand-out for increasing your admission chance).
 
-// %you are member of a minority or LGBTQ+ group (\autoref{sec:urm}), 
+This is a simple but often overlooked task: *tailor your SOP to the institution you're applying for*, e.g., why apply *here*? Who do you want to work with? Provide names of professors you're interested in (if they are not already in the adcom, your application might get forwarded to them for evaluation; and they might be interested in interviewing and recruiting you). This shows that you're serious and have done homework on places you're applying to. Adcom will look for this part (@sec:why-rejected).
 
-// You should talk about things that adcom members might not know about and can help make you \textbf{stand out} in the application pool of thousands of applicants, e.g., your personal Github project with hundreds or thousands of stars or your regular contributions to well-known open-source projects (see \autoref{sec:stand-out} for increasing your admission chance).
+Finally, have your SOP reviewed by your LoR writers (@sec:help-your-LOR-writers) and professors, especially those who have served in adcom, or even postdocs or PhD students as they have been through this process.
 
+#commentbox(who: "Jeff Erickson (UIUC)", [
+  The main thing that I (and other CS faculty) look for in application statements is concrete evidence of research potential. I don't want you to *tell* me that you're excited/motivated/passionate about computer science research. I want you to *show* me your specific interests and your investment/commitment. I want your statement to *demonstrate* your technical background, self-awareness, clarity of thought, intellectual (and ideally emotional) maturity, independence, creativity, discipline, attention to detail, willingness to take risks, and understanding of what research actually is. (Hint: Not just more homework.) I want you to show enough investment in your specific research interests to describe them in credible technical detail.
 
-// This is a simple task often overlooked by many applicants: \textbf{tailor your SOP} to the institution you're applying for,
-// e.g., why do you apply \emph{here}? who do you want to work with?
-// Provide names of professors who you're interested in (if they are not already in the adcom, your application might get forwarded to them for evaluation; and they might be interested in interviewing and recruiting you).
-// This shows that you're serious and have done homework on places you're applying to.
-// Adcom will look for this part (\autoref{sec:why-rejected}).
+  In particular, I do not want to read about how many programming languages you know, or stories about how you've been coding since the womb, or starry-eyed platitudes about how artificial intelligence is the best thing since sliced bread, or about your goal to be the next Geoffrey Hinton or Terry Tao. Nothing about your first trembling steps.
 
-// Finally, have your SOP reviewed by your LoR writers (\autoref{sec:help-your-LOR-writers}) and professors, especially those who have served in adcom, or even postdocs or PhD students as they have been through this process.
-// \begin{commentbox}{\textbf{Jeff Erickson} (UIUC) through \href{https://www.reddit.com/r/gradadmissions/comments/1owtfgl/comment/nosxvdm/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button}{Reddit}}:
-//  The main thing that I (and other CS faculty in departments like mine) look for in application statements is concrete evidence of research potential. I don't want you to \textbf{tell} me that you're excited/motivated/passionate about computer science research, and I certainly don't want you to tell me \textbf{why}. I want you to \textbf{show} me your specific interests and your investment/commitment. I want your statement to \textbf{demonstrate} your technical background, self-awareness, clarity of thought, intellectual (and ideally emotional) maturity, independence, creativity, discipline, attention to detail, willingness to take risks, and understanding of what research actually is. (Hint: Not just more homework.) I want you to show enough investment in your specific research interests to describe them in credible technical detail. (Yes, that means I want you to have specific research interests.)
-// \\
+  You are applying for a job. I want evidence that you are likely to do that job well. I don't want to be entertained. I want to be *informed*.
+])
 
-// In particular, I do not want to read about how many programming languages you know, or stories about how you've been coding since you were in the womb, or starry-eyed platitudes about how artificial intelligence is the best thing since sliced bread and jarred mayo, or about your goal to be the next Geoff Hinton or Terry Tao or (shudder) Elon Musk. Nothing about your first trembling steps.
-// \\
+#commentbox[
+  I often read LoRs and SOP first (@sec:ievaluate). If I am persuaded by them, I would skim over other factors and advocate for admission (unless I see red flags elsewhere). However, if I am not convinced, then I will likely recommend rejection (unless I see something stand out in other parts).
 
-// You are applying for a job. I want evidence that you are likely to do that job well.
-
-// I don't want to be entertained. I want to be \emph{informed}. 
-// \end{commentbox}
-// \begin{commentbox}
-//   I often read LORs and SOP first (\autoref{sec:ievaluate}). If I am
-//   persuaded by then, I would skim over other factors and advocate for
-//   admission (unless I see red flags in other parts). However, if I am not
-//   convinced, then I will likely recommend rejection (unless I see
-//   something stand out in other parts).\\
-
-  
-//   Do careful research on professors, don't mention \emph{emeritus} or adjunct faculty (\autoref{sec:faculty-types}).
-//   Also, be careful not to send statements to the wrong schools or provide wrong information (e.g., talking about school X but mentioning working with
-//   profs. at school Y; and do not talk about George Washington when applying to George Mason). I have seen such statements more times than I should.
-// \end{commentbox}
-
+  Do careful research on professors; don't mention *emeritus* or adjunct faculty (@sec:faculty-types). Also, be careful not to send statements to the wrong schools or provide wrong information (e.g., talking about school X but mentioning working with professors at school Y; and do not talk about George Washington when applying to George Mason). I have seen such statements more times than I should.
+]
 
 === Kiss of Death in SOP <sec:kiss-of-death-sop>
 
 
-// \begin{figure}
-//   \centering
-//     \includegraphics[scale=0.25]{files/is-this-sop-enough.jpeg}
-//     \caption{Is this SOP enough (\href{https://www.reddit.com/r/gradadmissions/comments/1p2ggxu/is_this_sop_enough/}{Reddit})? No, a broken heart emoji looks desperate. You need to stand out \faUserSecret{}! <fig:is-this-sop-enough}
-// \end{figure}
+#figure(
+  image("files/is-this-sop-enough.jpeg", width: 25%),
+  caption: [Is this SOP enough (#link("https://www.reddit.com/r/gradadmissions/comments/1p2ggxu/is_this_sop_enough/")[Reddit])? No, a broken heart emoji looks desperate. You need to stand out!],
+) <fig:is-this-sop-enough>
 
+- *Too personal:* Don't talk about your personal issues, e.g., family, health, relationship, etc. This can raise concerns about your ability to handle the PhD. Also, don't talk about religious or political beliefs (@chap:cultural).
 
-// \begin{itemize}
-// \item \textbf{Too personal} Don't talk about your personal issues, e.g., family, health, relationship, etc. This can raise concerns about your ability to handle the PhD. Also, don't talk about religious or political beliefs (\autoref{chap:cultural}).
-// \item \textbf{Criticizing} your current or previous institution or professors. Just like in a job interview, don't badmouth your current or previous employer because it raises concerns about your ability to work with others.
+- *Criticizing* your current or previous institution or professors. Just like in a job interview, don't badmouth your current or previous employer because it raises concerns about your ability to work with others.
 
-// \item \textbf{No concrete evidence to back up claims}: For example, saying you are passionate about a research topic without showing any experience. This is where specific names (work submitted at conf. X), numbers (outperformed SOTA by Y \%), and examples (worked on project Z) can help. 
-// These names, numbers, and stats are harder to fake and concretely show your experience and potential.
+- *No concrete evidence to back up claims:* For example, saying you are passionate about a research topic without showing any experience. This is where specific names (work submitted at conf. X), numbers (outperformed SOTA by Y %), and examples (worked on project Z) can help. These names, numbers, and stats are harder to fake and concretely show your experience and potential.
 
-// \item \textbf{Use flowery and AI-like language}. Don't use AI to write your SOP (\autoref{sec:using-ai}). Not that hard to raise suspicion. Though you can ask AI to check your grammar and spelling.
-// \item \textbf{Not customized to the program}: If your SOP can be sent to multiple programs with few changes, it is too generic. Do some research and mention why you want to spend the next 5--7 years there.
+- *Use flowery and AI-like language.* Don't use AI to write your SOP (@sec:using-ai). Not that hard to raise suspicion. Though you can ask AI to check your grammar and spelling.
 
-// \item \textbf{Mentioning wrong professors}: Do not mention emeritus professors or those who have left.  Teaching and adjunct faculty are often not active in mentoring PhD students (\autoref{sec:faculty-types}). Do your homework and mention profs who are till active in research. 
+- *Not customized to the program:* If your SOP can be sent to multiple programs with few changes, it is too generic. Do some research and mention why you want to spend the next 5–7 years there.
 
-// \item \textbf{Too Long and Fancy Format}: Keep it under 2 pages\footnote{May vary but this is my personal preference.}. Don't use too much coloring or fancy fonts (like those in Words). Don't use left alignment (seems to be default in Words) as it is hard to read.
+- *Mentioning wrong professors:* Do not mention emeritus professors or those who have left. Teaching and adjunct faculty are often not active in mentoring PhD students (@sec:faculty-types). Do your homework and mention profs who are still active in research.
 
-// CS academics like using \LaTeX{} (common way to write our papers and other documents), so write your SOP using \LaTeX{} (with Times or default font, 11pt, and 1-inch margin as described in~\autoref{chap:writing-latex}).
-// \end{itemize}
+- *Too Long and Fancy Format:* Keep it under 2 pages#footnote[May vary but this is my personal preference.]. Don't use too much coloring or fancy fonts (like those in Word). Don't use left alignment (seems to be default in Word) as it is hard to read.
+
+CS academics like using LaTeX (common way to write our papers and other documents), so write your SOP using LaTeX (with Times or default font, 11pt, and 1-inch margin as described in @chap:writing-latex).
 
 === Using AI <sec:using-ai>
 
-// As AI and LLMs become more popular, many students wonder if they could use AI tools such as ChatGPT to help with their statements and if the university or adcom reviewers would check and penalize them for doing so.
+As AI and LLMs become more popular, many students wonder if they could use AI chatbots such as ChatGPT and Claude to help with their statements and if the university or adcom reviewers would check and penalize them for doing so.
 
-// Personally I \emph{do not} check your statements for AI contents. First, I do not have the time to do that.  It is much easier for me to just read the statement and see if it makes sense and stands out (\autoref{sec:ievaluate}). Hint: AI-generated content reads very strangely and faculty is just too experienced in reading essays and SOPs from students to not notice it.
-// Second, AI-checking technology is very unreliable and inconsistent. For example, a checker might claim that 80\% of an essay is AI-generated while another says it is 0\%.  
+Personally I #emph[do not] check your statements for AI contents. First, I do not have the time to do that. It is much easier for me to just read the statement and see if it makes sense and stands out (@sec:ievaluate). Hint: AI-generated content reads very strangely and faculty is just too experienced in reading essays and SOPs from students to not notice it.
+Second, AI-checking technology is very unreliable and inconsistent. For example, a checker might claim that 80% of an essay is AI-generated while another says it is 0%.  
 
-// Finally, I think it is fine to use AI to help you polish your writing, e.g., the "proofread" feature in Apple's \texttt{Writing Tools} is quite useful for fixing writing issues or finding better terminologies or phrases. This can help international students who might struggle with writing English and are not familiar with the academic writing style (you see how many "thus" used in this book?). 
-
-
-// % \subsection*{Additional Resources}
-// % \begin{itemize}
-// %     \item \href{https://chrisblattman.com/blog/2022/01/11/}{Writing your statement of purpose} by Chris Blattman
-// %   \item \href{http://www.pl-enthusiast.net/2022/10/03/how-to-write-a-grad-school-personal-statement/}{How to Write a Grad School Personal Statement} by Mike Hicks
-// %   \item     \href{https://cs-sop.notion.site/cs-sop/CS-PhD-Statements-of-Purpose-df39955313834889b7ac5411c37b958d?p=f5d5980a71524ebaa4e6ae57266b847c&pm=s}{CS PhD SOP database} by cs-sop.org
-// % \end{itemize}
-// % \subsection{Outline of a LOR <sec:lor-outline}
+Finally, I think it is fine to use AI to help you polish your writing, e.g., the _"proofread"_ feature in Apple's `Writing Tools` is quite useful for fixing writing issues or finding better terminologies or phrases. This can help international students who might struggle with writing English and are not familiar with the academic writing style (you see how many "thus" used in this book?).
 
 
 === Diversity Statement <sec:diversity-statement>
@@ -1004,45 +987,39 @@ Of course, if you're interested in working with Vietnamese, consider #link("http
 ])
 === Grades <sec:gpa>
 
-// Compared to other factors such as LoRs (\autoref{chap:lor}) and research experiences (\autoref{chap:research-experience}), grades generally do not matter much for CS PhD admission.  
-// In fact, many CS faculty members themselves have bad grades in undergrad courses (and some were proud of that!).
+Compared to other factors such as LoRs (@chap:lor) and research experiences (@chap:research-experience), grades generally do not matter much for CS PhD admission. In fact, many CS faculty members themselves have bad grades in undergrad courses (and some were proud of that!).
 
-// \begin{commentbox}
-// \href{https://jeffe.cs.illinois.edu/}{Jeff Erickson} (UIUC) has an undergraduate GPA (2.4/4.0) and wrote a \href{https://jeffgerickson.substack.com/p/re-phd-with-low-gpa}{blog} about it.
-// \end{commentbox}
+#commentbox[
+  #link("https://jeffe.cs.illinois.edu/")[Jeff Erickson] (UIUC) has an undergraduate GPA (2.4/4.0) and wrote a #link("https://jeffgerickson.substack.com/p/re-phd-with-low-gpa")[blog] about it.
+]
 
+=== Good Grades Won't Help Much <sec:good-grades>
 
-// \subsection{Good Grades Won't Help Much <sec:good-grades}
+PhD in CS is a research degree and doing well in courses does not necessarily mean you can do research---other factors such as research experiences, pubs, LoRs are more important. Thus, do not assume that having a high GPA (e.g., 3.8/4.0 or 9.0/10) will help much in your application.
 
-// PhD in CS is a research degree and doing well in courses does not necessarily mean you can do research---other factors such as research experiences, pubs, LoRs are more important. Thus, do not assume that having a high GPA (e.g., 3.8/4.0 or 9.0/10) will help much in your application. 
+That said, if you are from a well-known school (@chap:your-school), having good grades _might_ help a bit, e.g., adcom members often note details such as "good GPA from well-known school (@sec:ievaluate)". However if your school is not well-known, having top grades or rankings usually will not help because we cannot evaluate them (e.g., we don't know how hard it is to get a 4.0 or A's at your school). This can be an issue for students in many top international universities where the competition is so high that very good students can still have low rankings from these schools (and be overlooked by adcom).
 
-// That said, if you are from a well-known school (\autoref{chap:your-school}), having good grades \emph{might} help a bit, e.g., adcom members often note details such as "good GPA from well-known school (\autoref{sec:ievaluate})". However if your school is not well-known, having top grades or rankings usually will not help because we cannot evaluate them (e.g., we don't know how hard it is to get a 4.0 or A's at your school). This can be an issue for students in many top international universities where the competition is so high that very good students can still have low rankings from these schools (and be overlooked by adcom).
+As with school reputation, you and your LoR writers can mention the grading system of your university if you think that is helpful for adcom to evaluate (@sec:help-your-LOR-writers).
 
-// As with school reputation, you and your LoR writers can mention the grading system of your university if you think that is helpful for adcom to evaluate (\autoref{sec:help-your-LOR-writers}).
+#commentbox(who: "Thanh", [
+  Vietnamese universities typically offer specialized programs, such as the talented engineer program at HUST, that have highly competitive entrance exams and a limited number of available slots (e.g., 30 per year). However, these programs often set higher requirements for students, including more demanding tests and assignments, resulting in lower GPAs and overall rankings. For example, 3.5 GPA students from such talented programs are typically much better than 4.0 GPA students not in those programs. Similarly, variations in GPA standards exist among different universities, with technical universities generally having lower GPAs than economic universities. These make gaining admission in the US difficult as US faculty are not familiar with these issues.
+])
 
+=== Bad Grades Likely Will Hurt
 
-// \begin{commentbox}[Thanh:]
-//     Vietnamese universities typically offer specialized programs, such as the talented engineer program at HUST, that have highly competitive entrance exams and a limited number of available slots (e.g., 30 per year). However, these programs often set higher requirements for students, including more demanding tests and assignments, resulting in lower GPAs and overall rankings. For example, 3.5 GPA students from such talented programs are typically much better than 4.0 GPA students not in those programs.  Similarly, variations in GPA standards exist among different universities, with technical universities generally having lower GPAs than economic universities. These make gaining admission in the US difficult as US faculty are not familiar with these issues.
-//     \tcblower
-//     \textbf{Vu}: Vietnamese students and even faculty often lament how this grading system hurts Vietnamese students applying abroad. One way to mitigate this is to make these issues known in your SOP.  \href{https://roars.dev/phd-cs-us/viet-cs-profs-us}{Universities with Vietnamese profs} are probably aware of them, but in general your letter writers \emph{and} you can explicitly mention these in their letters and your statement.
-//   \end{commentbox}
+While having good GPA might not help much (@sec:good-grades), _having bad GPA will likely hurt your application_. If you have bad grades, you should explain them in your SOP, or better yet, have your LOR writers explain them in their letters if they know the reasons.
 
-  
-// \subsection{Bad Grades Likely Will Hurt} 
-// While having good GPA might not help much (\autoref{sec:good-grades}), \emph{having bad GPA will likely hurt your application}. 
-// If you have bad grades, you should explain them in your SOP, or better yet, have your LOR writers explain them in their letters if they know the reasons.
+Moreover, having bad grades in relevant courses, e.g., Math and CS, can be a red flag.
+Adcom members often scan through transcripts (@sec:ievaluate) looking for C and lower grades in Math and CS courses and raise concerns if they see several of them.
+Note that bad grades in non-relevant courses, e.g., politics or history, are not as concerning.
 
-// Moreover, having bad grades in relevant courses, e.g., Math and CS, can be a \red{red flag}.
-// Adcom members often scan through transcripts (\autoref{sec:ievaluate}) looking for C and lower grades in Math and CS courses and raise concerns if they see several of them.
-// Note that bad grades in non-relevant courses, e.g., politics or history, are not as concerning.
+Should you explain bad grades in relevant courses in your SOP? If you have just a few, they do not matter much, so don't spend much time explaining them (many adcom reviewers themselves have bad grades in relevant courses!). But if you have many bad grades for an entire semester or year due to some specific reasons, then try to explain them in your SOP.
 
-// Should you explain bad grades in relevant courses in your SOP?  If you have just a few,  they do not matter much, so don't spend much time explaining them (many adcom reviewers themselves have bad grades in relevant courses!). But if you have many bad grades for an entire semester or year due to some specific reasons, then try to explain them in your SOP.
+#strong[Below Minimum Requirement] Many universities have a minimum GPA requirement (e.g., $> 3.0$) and will automatically reject applications with GPAs below the requirement (@sec:why-rejected). This means adcom members might not even see your application if your GPA is below the minimum requirement.
 
-// \paragraph{Below Minimum Requirement}  Many universities have a minimum GPA requirement (e.g., $> 3.0$) and will automatically reject applications with GPAs below the requirement ((\autoref{sec:why-rejected}). This means adcom members might not even see your application if your GPA is below the minimum requirement.
-
-// \begin{commentbox}
-// GMU College of Engineering and Computing requires a minimum GPA of 3.0/4.0 for PhD applications, and autorejects applications below this threshold.
-// \end{commentbox}
+#warningbox[
+  GMU College of Engineering and Computing requires a minimum GPA of 3.0/4.0 for PhD applications, and will _autoreject_ applications below this threshold.
+]
 
 == Standard Tests (GRE and IELTS) <chap:standard-tests>
 // \chapterinfo{Standard tests are \textbf{not} important. \acrshort{GRE} typically \emph{is not} required. For standard English tests (not required for domestic students), just do enough to pass the minimum requirements.}
@@ -1053,19 +1030,19 @@ Of course, if you're interested in working with Vietnamese, consider #link("http
 
 === GREs Are Optional and Do Not Matter for PhD Admissions <sec:gre>
 
-// While a few schools still require taking the \acrfull{GRE} exam (e.g., UCF), most good CS PhD programs in the US \textbf{no longer} require it. The reason is that GRE scores do not correlate well with research ability, which is the most important factor for PhD admission. Note that many faculty members themselves did not take the GRE or had bad scores.
+While a few schools still require taking the #link("https://www.ets.org/gre")[GRE] exam (e.g., UCF), most good CS PhD programs in the US *no longer require it*. The reason is that GRE scores do not correlate well with research ability, which is the most important factor for PhD admission. Note that many faculty members themselves did not take the GRE or had bad scores.
 
-// Thus, if you have bad GRE scores or haven't taken the GRE, then don't waste time (re)taking it. Being optional really means optional, and not taking it will not hurt your application.
-// However, if you took it and have really good scores then it might be worth it to include (and perhaps talk about) them in your application, but don't expect them to make much difference. But if your scores are bad, then you should not include them in your application, which can be a \red{red flag}.
+Thus, if you have bad GRE scores or haven't taken the GRE, then don't waste time (re)taking it. Being optional really means optional, and not taking it will not hurt your application.
+However, if you took it and have really good scores then it might be worth it to include (and perhaps talk about) them in your application, but don't expect them to make much difference. But if your scores are bad, then you should not include them in your application, which can be a #text(fill: red)[red flag].
 
-// \begin{warningbox}
-//   I often see students asking about GRE requirements on internet forums or Facebook groups, only to get completely incorrect answers. Some people insist that you "need" to take the GRE or be in specific high range to get a chance.
-//   Some of these people are from other disciplines that do require GREs, not CS (but still want to show off their knowledge of CS). Ignore these! GREs are neither required nor valuable for CS PhD admissions today. Maybe 20 years ago (e.g., when I applied in 2007), but not today---the GRE requirement has been obsolete for a long time now, e.g., many CS faculty---especially younger ones---have never taken the GRE themselves.\\
+#warningbox[
+  I often see students asking about GRE requirements on internet forums or Facebook groups, only to get completely incorrect answers. Some people insist that you "need" to take the GRE or be in specific high range to get a chance.
+  Some of these people are from other disciplines that do require GREs, not CS (but still want to show off their knowledge of CS). Ignore these! GREs are neither required nor valuable for CS PhD admissions today. Maybe 20 years ago (e.g., when I applied in 2007), but not today---the GRE requirement has been obsolete for a long time now, e.g., many CS faculty---especially younger ones---have never taken the GRE themselves.
 
-//   Also be careful that some people are trying to \cancel{scam}{talk} youinto paying for (their) GRE prep or "consulting" services. Don't fall for these and waste your time. There are far more important things than the GRE that you should focus on for CS PhD admission such as your LoRs (\autoref{chap:lor}) and research experiences (\autoref{chap:research-experience}). 
-// \end{warningbox}
+  Also be careful that some people are trying to talk you into paying for (their) GRE prep or "consulting" services. Don't fall for these and waste your time. There are far more important things than the GRE that you should focus on for CS PhD admission such as your LoRs (@chap:lor) and research experiences (@chap:research-experience).
+]
 
-// Note that while GRE is not important for CS PhD admission, it might be required or important for MS admission (\autoref{chap:ms}). This is because MS programs are more course-based and thus care more about grades and standardized tests.
+Note that while GRE is not important for CS PhD admission, it might be required or important for MS admission (@chap:ms). This is because MS programs are more course-based and thus care more about grades and standardized tests.
 
 === English Tests (IELTS, TOEFL) <sec:english-tests> 
 
