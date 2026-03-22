@@ -936,18 +936,17 @@ CS academics like using LaTeX (common way to write our papers and other document
 
 As AI and LLMs become more popular, many students wonder if they could use AI chatbots such as ChatGPT and Claude to help with their statements and if the university or adcom reviewers would check and penalize them for doing so.
 
-Personally I #emph[do not] check your statements for AI contents. First, I do not have the time to do that. It is much easier for me to just read the statement and see if it makes sense and stands out (@sec:ievaluate). Hint: AI-generated content reads very strangely and faculty is just too experienced in reading essays and SOPs from students to not notice it.
+Personally I _do not_ check your statements for AI contents. First, I do not have the time to do that. It is much easier for me to just read the statement and see if it makes sense and stands out (@sec:ievaluate). Hint: AI-generated content reads very strangely and faculty is just too experienced in reading essays and SOPs from students to not notice it.
 Second, AI-checking technology is very unreliable and inconsistent. For example, a checker might claim that 80% of an essay is AI-generated while another says it is 0%.  
 
-Finally, I think it is fine to use AI to help you polish your writing, e.g., the _"proofread"_ feature in Apple's `Writing Tools` is quite useful for fixing writing issues or finding better terminologies or phrases. This can help international students who might struggle with writing English and are not familiar with the academic writing style (you see how many "thus" used in this book?).
-
+Finally, I think it is fine to use AI to help you polish your writing, e.g., the _"proofread"_ feature in Apple's `Writing Tools` is quite useful for fixing writing issues or finding better terminologies or phrases. This can help international students who might struggle with writing English and are not familiar with the academic writing style (you see how many "thus" used in this book?).  
 
 === Diversity Statement <sec:diversity-statement>
 
-Some universities require a *diversity-statement*---a statement about  Diversity, Equity, and Inclusion (DEI)---as part of the application. While the topic of DEI has become politically contested in the U.S., you should be prepared to address it when asked. 
+Some universities require a *diversity statement*---an essay about  Diversity, Equity, and Inclusion (DEI)---as part of the application. While the topic of DEI has become politically contested in the U.S., you should be prepared to address it when asked. 
 Many students, especially international ones, find this statement confusing because they are unsure what it is about (truth is, even people in the U.S. struggle with this topic).
 
-At a high level, a diversity statement is not an ideological endorsement, but rather a way to assess your _awareness_ of DEI issues, _understanding_ of challenges faced by minority groups, and potential _contributions_ you can make.
+At a high level, a diversity statement is _not_ an ideological endorsement, but rather a way to assess your _awareness_ of DEI issues, _understanding_ of challenges faced by minority groups, and potential _contributions_ you can make.
 
 - *You don't have to be from a specific DEI/minority group.* You just need to understand what DEI is, e.g., be aware of challenges faced by minority groups in studying CS, STEM fields, academia, and the workplace. Show that you are aware of DEI issues and how they impact your chosen field and society.
 
