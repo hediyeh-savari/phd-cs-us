@@ -46,21 +46,10 @@
     "#emph(s)"
   ]
 
-// #let commentbox(who: none, msg) = box(
-//   stroke: (x: 0.5pt + black, y: 0.5pt + black),
-//   inset: 10pt,
-//   fill: rgb("f0f0f0"),
-// )[
-//   #if who != none [
-//     *#who*: 
-//   ]
-//   #msg
-// ]
-
-#let commentbox(who: none, msg) = box(
-  stroke: (x: 0.5pt + black, y: 0.5pt + black),
+#let cb(who: none, fill: rgb("f0f0f0"), msg) = box(
+  stroke: (x: 0.5pt + gray, y: 0.5pt + gray),
   inset: 10pt,
-  fill: rgb("f0f0f0"),
+  fill: fill
 )[
   #if who != none [
     *#who*: 
@@ -68,23 +57,11 @@
   #msg
 ]
 
-#let examplebox(msg) = box(
-  stroke: (x: 0.5pt + gray, y: 0.5pt + gray),
-  inset: 10pt,
-  fill: rgb("#b8ebc1"),
-)[
-    #text(size: 10pt)[
-      #msg
-    ]
-]
 
-#let warningbox(msg) = box(
-  stroke: (x: 0.5pt + gray, y: 0.5pt + gray),
-  inset: 10pt,
-  fill: rgb("#ffe6e6"),
-)[
-  #msg
-]
+#let commentbox(who: none, msg) = cb(who: who, fill: rgb("f0f0f0"), msg)
+#let keybox(msg) = cb(fill: rgb("#b8ebc1"), msg)
+#let examplebox(msg) = cb(fill: yellow.lighten(95%), msg)
+#let warningbox(msg) = cb(fill: rgb("#ffe6e6"), msg)
 
 // Title Page
 #align(center)[
@@ -1421,7 +1398,7 @@ You're missing out on some serious CS PhD programs: UCSD, UW, UMD, Michigan, Pur
 
 #strong[You don't need to be top.] Top schools will open doors to more opportunities. In countries like Vietnam, there are few top schools, and if you don't get into them, you are doomed (or so you think). But that is not the case in the US. There are many good schools, and it is not a binary choice between top X or nothing. In fact, equity is emphasized in the US and "smaller" schools are often given more resources and attention to help students succeed.  
 
-#examplebox[
+#keybox[
   Don't aim for just the moon and the stars; also try the sky, clouds, or even just the trees. You might find much happiness and success there, which can then catapult you places beyond the moon and the stars. This is the American dream, which is strongly embodied in its higher education system.
 ]
 
@@ -1953,280 +1930,229 @@ Ultimately, choose a prof. that fits you by communicating with them, taking thei
 
 === Types of Faculty: Who can serve as a PhD adviser? <sec:faculty-types>
 
-// \emph{Not} every faculty can serve as your official PhD adviser. Understanding the different types of faculty roles will help you avoid common mistakes—like contacting the wrong person (\autoref{sec:contact}) for research opportunities or listing in your SOP (\autoref{chap:sop}) someone who can't actually supervise PhD students.
+*Not every faculty* can serve as your official PhD adviser. Understanding the different types of faculty roles such as  tenured, tenure-track, teaching, research, adjunct, and emeritus professors will help you avoid common mistakes, e.g.,  contacting the wrong person (@sec:contact) for research opportunities or listing in your SOP (@chap:sop) someone who can't actually supervise PhD students.
 
-// You'll encounter terms like tenured, tenure-track, teaching, research, adjunct, and emeritus professors. Here's a quick guide to what these roles mean, and which faculty you should focus on when applying to PhD programs.
+=== Faculty Types
 
+At most research-intensive (R1) universities, faculty generally fall into two categories:
+- Tenure-line faculty (tenured or tenure-track)
+- Non-tenure-line faculty (e.g., teaching, adjunct, or research faculty)
 
-// \subsection{Faculty Types}
+The key distinction is in their responsibilities—whether they are expected to do research, get funding, and supervise PhD students.
 
-// At most research-intensive (\gls{r1}) universities, faculty generally fall into two categories:
-// \begin{itemize}
-//     \item Tenure-line faculty (tenured or tenure-track)
-//     \item Non-tenure-line faculty (e.g., teaching, adjunct, or research faculty)
-// \end{itemize}
+==== Tenure-Line Faculty
 
-// The key distinction is in their responsibilities---whether they are expected to do research, get funding, and supervise PhD students.
+These faculty members are expected to perform research, publish in top venues, get funding (@sec:ra), and mentor PhD students. They typically teach fewer courses—often just one per semester—and are the *main group eligible to serve as primary PhD advisers*. Tenure-line faculty consist of two subcategories:
 
+- *Tenure-track faculty* are on the path to tenure and are often actively recruiting students.
+- *Tenured faculty* have already earned permanent status and might be less active in building their research group.
 
-// \paragraph{Tenure-Line Faculty} 
-// These faculty members are expected to perform research, publish in top venues, get funding (\autoref{sec:ra}), and mentor PhD students. They typically teach fewer courses-often just one per semester—and are the \emph{main group eligible to serve as primary PhD advisers}. Tenure-line faculty consist of two subcategories:
+#keybox[
+  *If you're reaching out to professors about potential advising, focus on tenure-line faculty*. These are the faculty most likely to have funding, institutional authority, and the capacity to take on new PhD students. See @sec:tenure-vs-tenure-track for more on choosing between tenured and tenure-track faculty as advisers.
+]
 
-// \begin{itemize}
-// 	\item Tenure-track faculty are on the path to tenure and are often actively recruiting students. 
-// 	\item Tenured faculty have already earned permanent status and might be less active in building their research group.
-// \end{itemize}    
+==== Teaching Faculty
 
-// \begin{keybox}
-// \textbf{If you're reaching out to professors about potential advising, focus on tenure-line faculty}. These are the faculty that most likely to have funding, institutional authority, and the capacity to take on new PhD students. See \autoref{sec:tenure-vs-tenure-track} for more on choosing between tenured and tenure-track faculty as advisers.
-// \end{keybox}
-// \paragraph{Teaching Faculty}
-// Teaching faculty (also called instructional faculty, professors of practice, or lecturers) primarily focus on teaching. They often teach three to four courses per semester and are not typically expected to conduct research, publish papers, or apply for funding.
+Teaching faculty (also called instructional faculty, professors of practice, or lecturers) primarily focus on teaching. They often teach three to four courses per semester and are not typically expected to conduct research, publish papers, or apply for funding.
 
-// Thus they usually do not have the resources or institutional role to advise PhD students, especially as the main adviser. In some universities, they may co-advise a PhD student alongside a tenure-line faculty member, but this is rare and varies by institution.
+Thus they usually do not have the resources or institutional role to advise PhD students, especially as the main adviser. In some universities, they may co-advise a PhD student alongside a tenure-line faculty member, but this is rare and varies by institution.
 
-// \textbf{Do not contact teaching faculty to ask about PhD or research positions in their lab}. They're usually not involved in PhD admissions, and such emails can be annoying to them.
+*Do not contact teaching faculty to ask about PhD or research positions in their lab*. They're usually not involved in PhD admissions, and such emails can be annoying to them.
 
-// \begin{commentbox}
-//     Although teaching faculty are not typically involved in PhD admissions or research, some actively mentor undergrad students in research---especially during the summer.  So if you're an undergrad (\autoref{chap:research-opportunities}) and want to try research, you can contact them (usually after taking their class and doing well).
-//  \end{commentbox}
+#commentbox[
+  Although teaching faculty are not typically involved in PhD admissions or research, some actively mentor undergrad students in research—especially during the summer. So if you're an undergrad (@chap:research-opportunities) and want to try research, you can contact them (usually after taking their class and doing well).
+]
 
+==== Research Faculty and Scientists
 
-// \paragraph{Research Faculty and Scientists}
+Some universities have research faculty or research scientists (e.g., postdocs are sometimes called research faculty), who focus almost entirely on research and often have little or no teaching duties. These faculty members can apply for grants, publish regularly, and, in some rare cases, are allowed to serve as advisers for PhD students. In many cases, they are required to co-advise with a tenure-line faculty member.
 
-// Some universities have research faculty or research scientists (e.g., postdocs are sometimes called research faculty), who focus almost entirely on research and often have little or no teaching duties. These faculty members can apply for grants, publish regularly, and, in some rare cases, are allowed to serve as advisers for PhD students. In many cases, they are required to co-advise with a tenure-line faculty member.
+==== Adjunct and Emeritus Faculty
 
-// \paragraph{Adjunct and Emeritus Faculty} These faculty members are typically not involved in research or PhD advising. Adjunct faculty are usually part-time instructors who may have full time job outside academia. Emeritus faculty are retired professors and are usually no longer active in research or advising.
-// Because of their limited roles, adjunct and emeritus faculty do not serve as PhD advisers. So, do not contact them to ask about research openings.
+These faculty members are typically not involved in research or PhD advising. Adjunct faculty are usually part-time instructors who may have a full-time job outside academia. Emeritus faculty are retired professors and are usually no longer active in research or advising.
 
-// \begin{warningbox}
-// This Reddit \href{https://www.reddit.com/r/gradadmissions/comments/1iyt2k8/_/}{thread} shares an example of a student being rejected after listing emeritus professors in their SOP. This was a sign that the applicant did not do their homework and thus was not a good fit for the program.  This is a common mistake, especially for international students who are not familiar with the US system.
-// \end{warningbox}
+Because of their limited roles, adjunct and emeritus faculty do not serve as PhD advisers. So, do not contact them to ask about research openings.
 
-// \paragraph{Faculty from Other Departments}
+#warningbox[
+  This #link("https://www.reddit.com/r/gradadmissions/comments/1iyt2k8/_/")[Reddit thread] shares an example of a student being rejected after listing emeritus professors in their SOP. This was a sign that the applicant did not do their homework and thus was not a good fit for the program. This is a common mistake, especially for international students who are not familiar with the US system.
+]
 
-// Most universities restrict who can advise PhD students based on departmental affiliation. For example, even a tenured faculty member in another department (e.g., Electrical Engineering or Math) may not be allowed to serve as the primary adviser for a CS PhD student unless they have a formal joint appointment (\autoref{sec:related-fields}). 
-// So check these carefully as this is different from one university to another.
+==== Faculty from Other Departments
 
-// \begin{warningbox}
-// University websites might not be up to date, and they might list faculty who are no longer active or have moved to another institution. In some rare and extreme cases, they might even list deceased faculty.  In fact, even the faculty themselves might not update their websites. So do multiple checks, e.g., Google, recent pubs, etc.
-// \end{warningbox}
+Most universities restrict who can advise PhD students based on departmental affiliation. For example, even a tenured faculty member in another department (e.g., Electrical Engineering or Math) may not be allowed to serve as the primary adviser for a CS PhD student unless they have a formal joint appointment (@sec:related-fields).
 
+So check these carefully as this is different from one university to another.
 
-// \subsection{Ranks (Assistant, Associate, Full, and More)} 
+#warningbox[
+  University websites might not be up to date, and they might list faculty who are no longer active or have moved to another institution. In some rare and extreme cases, they might even list deceased faculty. In fact, even the faculty themselves might not update their websites. So do multiple checks, e.g., Google, recent publications, etc.
+]
 
-// Regardless of type (tenure-line or teaching), faculty are generally assigned one of three academic ranks:
-// \begin{enumerate}
-//     \item Assistant: typically an early-career faculty member
-//     \item Associate: mid-career, often after tenure
-//     \item Full: senior, often tenured with a strong record of achievement
-// \end{enumerate}
+=== Ranks (Assistant, Associate, Full, and More)
 
-// Tenure-line faculty generally start as assistant prof. (unless they have strong research record, e.g., from the industrial research lab), undergo a rigorous review around year six, and if successful are promoted to associate prof. with tenure. Note that getting tenure is a huge deal, and it might change the way they work with students (\autoref{sec:tenure-vs-tenure-track}).
+Regardless of type (tenure-line or teaching), faculty are generally assigned one of three academic ranks:
++ *Assistant*: typically an early-career faculty member
++ *Associate*: mid-career, often after tenure
++ *Full*: senior, often tenured with a strong record of achievement
 
-// The timeline for becoming a full prof. varies widely; some do it within a few years after tenure, others take a decade or more, and some become emeritus faculty without ever reaching full prof. status.  Teaching and research faculty may also progress through these ranks, though the promotion criteria and timelines differ.
+Tenure-line faculty generally start as assistant professor (unless they have a strong research record, e.g., from an industrial research lab), undergo a rigorous review around year six, and if successful are promoted to associate professor with tenure. Note that getting tenure is a huge deal, and it might change the way they work with students (@sec:tenure-vs-tenure-track).
 
+The timeline for becoming a full professor varies widely; some do it within a few years after tenure, others take a decade or more, and some become emeritus faculty without ever reaching full professor status. Teaching and research faculty may also progress through these ranks, though the promotion criteria and timelines differ.
 
-// In addition to these ranks, some faculty hold special titles such as 
-// \begin{itemize}
-// \item Endowed Chair and Named Prof.: funded by a private donor; typically awarded to highly accomplished faculty or to attract junior faculty.
-// \item Distinguished Prof.: recognized by the university for exceptional achievement
-// \item University Prof.: a title reserved for a small number of faculty with extraordinary impact 
-// \end{itemize}
+In addition to these ranks, some faculty hold special titles such as
 
-// Professors with these titles are often tenure-line faculty, and therefore can advise PhD students. However, they may not be as available, especially if they are in high demand or have administrative responsibilities. For example, most department chairs are endowed chairs or distinguished professors, and they might not be too active in research or advising students. 
+- *Endowed Chair* and *Named Professor*: funded by a private donor; typically awarded to highly accomplished faculty or to attract junior faculty.
+- *Distinguished Professor*: recognized by the university for exceptional achievement
+- *University Professor*: a title reserved for a small number of faculty with extraordinary impact
+
+Professors with these titles are often tenure-line faculty, and therefore can advise PhD students. However, they may not be as available, especially if they are in high demand or have administrative responsibilities. For example, most department chairs are endowed chairs or distinguished professors, and they might not be too active in research or advising students.
 
 === Tenured or tenure-track faculty? <sec:tenure-vs-tenure-track>
 
-// \begin{center}
-//   \includegraphics[scale=0.4]{files/c8.png}
-// \end{center}
+#align(center)[
+  #image("files/c8.png", width: 40%)
+]
 
-// Now that you know a bit about tenured and tenure-track faculty (\autoref{sec:faculty-types}).  Which one should you choose as your adviser? How do you know if one would fit you better than the other?
+Now that you know a bit about tenured and tenure-track faculty (@sec:faculty-types), which one should you choose as your adviser? How do you know if one would fit you better than the other?
 
-// Either can be a good adviser, but they have different strengths and weaknesses. The below gives some ideas, however the best indicator of their research productivity and impact is their publication and recognition record (\autoref{chap:research-achievements}). Some profs. publicly share their advising style and expectations, like~\href{https://roars.dev/phd-cs-us/advising.pdf}{this} and~\href{https://jbhuang0604.github.io/advisor_guide.html}{that}, to help prospective students decide.
+Either can be a good adviser, but they have different strengths and weaknesses. The below gives some ideas; however, the best indicator of their research productivity and impact is their publication and recognition record (@chap:research-achievements). Some profs. publicly share their advising style and expectations, like #link("https://roars.dev/phd-cs-us/advising.pdf")[this] and #link("https://jbhuang0604.github.io/advisor_guide.html")[that], to help prospective students decide.
 
-// Tenure-track faculty---like assistant professors--are typically young and active in research (they have to, to get tenure). Thus, they will devote more time to work with you and push you to do research and publish. However, you might not be too independent because they have been too hands-on with you. For example, you might not know how fully form research ideas, design experiments, and write papers on your own.
-// Also, they may not have as much experience in managing students or have as much funding (yet).
+*Tenure-track faculty*—like assistant professors—are typically young and active in research (they have to be, to get tenure). Thus, they will devote more time to work with you and push you to do research and publish. However, you might not become too independent because they may be too hands-on with you. For example, you might not learn how to fully form research ideas, design experiments, and write papers on your own. Also, they may not have as much experience in managing students or may not yet have substantial funding.
 
-// Tenured faculty---associate and full profs---are likely older, more well-known, and have more experience in managing students.  However, they might not push you as hard and expect you to figure things out yourself, i.e., you need to be independent.  Some tenured faculty are also no longer active in research and are more involved with administrative responsibilities or with their startup companies (this means they will likely not take new students).
+*Tenured faculty*—associate and full professors—are likely older, more well-known, and have more experience in managing students. However, they might not push you as hard and will expect you to figure things out yourself, i.e., you need to be independent. Some tenured faculty are also no longer active in research and are more involved with administrative responsibilities or their startup companies (which means they will likely not take new students).
 
+#commentbox(who: "Hung", [
+  I always encourage the students I admit to talk with my students and the students of other faculty in other schools who admitted them. You will unlikely hear straight-out complaints from current students in a prof's group. But sometimes what is important are things that they (current students) don't tell you. Pay attention to their "level of excitement" being in the group.
+])
 
-// \begin{commentbox}[Hung:]
-//   I always encourage the students I admit to talk with my students and the students of other faculty in other schools who admitted them. You will unlikely hear straight-out complaints from current students in a prof's group. But sometimes what is important are things that they (current students) don't tell you. Pay attention to their "level of excitement" being in the group.
-// \end{commentbox}
 === Faculty from Your Country <sec:prioritizing-faculty>
 
-// Understandably many students prefer to work with faculty who came from their own country.
-// You feel more comfortable as they share the same language and culture, understanding your schools and background, and that they "get" you.
-// So it is perfectly fine to start with faculty from your country (e.g., a list of \href{https://roars.dev/phd-cs-us/viet-cs-profs-us}{Vietnamese CS faculty} in the US.)
+Understandably, many students prefer to work with faculty from their own country. You feel more comfortable as they share the same language and culture, understanding your schools and background, and that they "get" you. So it is perfectly fine to start with faculty from your country (e.g., a #link("https://roars.dev/phd-cs-us/viet-cs-profs-us")[list of Vietnamese CS faculty] in the US).
 
-// However, this should not the main reason for choosing a faculty, and you should expand your search to include faculty from other countries. Research and higher education in general encourage exploration, e.g., students often go to different grad schools than their undergrad schools, and switching fields (and even advisors) is more common than you think.  It also won't be fun to be in a lab with students with similar background and all speak the same language all the time, you will not learn much from each other.
+However, this should not be the main reason for choosing a faculty, and you should expand your search to include faculty from other countries. Research and higher education in general encourage exploration, e.g., students often go to different grad schools than their undergrad schools, and switching fields (and even advisors) is more common than you might think. It also won't be fun to be in a lab with students with similar background all speaking the same language all the time; you will not learn as much from each other.
 
-// \begin{commentbox}
-//  My \href{https://roars.dev}{research group} has many Vietnamese, but I also have many non-Vietnamese students, e.g., from China, Romania, Rwanda, and most of my undergrads are domestic US students (\autoref{chap:domestic-students}). It is more fun this way---they get to learn from each other and share different perspectives, and of course get to try exotic food and their history from different countries (it amazes me on how knowledgeable and enthusiam students have on food!).
-// \end{commentbox}
+#commentbox[
+  My #link("https://roars.dev")[research group] has many Vietnamese, but I also have many non-Vietnamese students, e.g., from China, Romania, Rwanda, Pakistan, and most of my undergrads are domestic US students (@chap:domestic-students). It is more fun this way—they get to learn from each other and share different perspectives, and of course get to try exotic food and learn about their history from different countries (it amazes me how knowledgeable and enthusiastic students are about food!).
+]
 
+Some students might hesitate to apply to a lab where they see the faculty has many students from their country already, i.e., thinking that it's a red flag. They might think they won't fit in or the prof. is biased toward students from their country.
 
-// Some students might hesitate to apply to a lab where they see the faculty has many students from their country already, i.e., thinking that it's a \red{red flag}. They might think they won't fit in or the prof. is biased toward students from their country.
-  
-//   However, the main reason a prof. has many students from a particular country can simply because that students from that country apply more to that prof. Vietnamese students tend to apply to Vietnamese profs. more, Chinese students tend to apply to Chinese profs. more, etc. Most profs., in my experience, \emph{do not} have preference for students from any specific country and simply take students who are a good fit for their research group. 
-  
-//   Thus, don't worry about this too much and just apply to the profs. you think are a good fit for you (\autoref{sec:finding-adviser}).  In fact, this might be an advantage because profs. who have many students from their own country might want to diversify their group and take students with different background.
+However, the main reason a prof. has many students from a particular country can simply be because students from that country apply more to that prof. Vietnamese students tend to apply to Vietnamese profs. more, Chinese students tend to apply to Chinese profs. more, etc. Most profs., in my experience, _do not_ have preference for students from any specific country and simply take students who are a good fit for their research group.
+
+Thus, don't worry about this too much and just apply to the profs. you think are a good fit for you (@sec:finding-adviser). In fact, this might be an advantage because profs. who have many students from their own country might want to diversify their group and take students with different backgrounds.
 
 === Should I Contact a Prof. Before Applying? How to Get a Positive Reply? <sec:contact>
 
-// \sectioninfo{Individually faculty member \emph{cannot directly admit} a student---so do not email and ask if you have a chance. However, faculty can \emph{advocate} for a student and therefore increase their admission chance---so contact and introduce yourself.}
+*Caveat:* Faculty members _cannot directly admit_ a student—so do not email and ask if you have a chance. However, faculty can _advocate_ for a student and therefore increase their admission chance—so contact and introduce yourself.
 
-// \begin{center}
-//   \includegraphics[scale=0.5]{files/emails.png}
-// \end{center}
+Faculty often receive "cold" emails from prospective students. Most of the time, we ignore these emails (@sec:busy), but on some rare occasions, we do answer them. So how to write an email that gets our attention?
 
-// Faculty often receive "cold" e-mails from prospective students. Most of the time, we ignore these emails (\autoref{sec:busy}), but on some rare occasions, we do answer them. So how to write an email that gets our attention?
+First, if you want to contact a prof. to _ask about your admission chance_, please *don't*. We don't know and can't answer because, as explained in @chap:evalapps, we don't make individual decisions and might not even be assigned to evaluate your application. It is the same as sending a paper draft to a journal editor or program chair and asking them if your paper has a chance.
 
-// First, if you want to contact a prof. to \emph{ask about your admission chance}, please \textbf{don't}. We don't know and can't answer because as explained in \autoref{chap:evalapps}, we don't make individual decisions and might not even be assigned to evaluate your application.  It is the same as sending a paper draft to a journal editor or progarm chair and asking them if your paper has a chance.
+So how to get someone to look at your profile and give input? You could ask your professors, LoR writers, collaborators, or those who have previously applied. For this kind of feedback, ask someone you have a personal connection with.
 
-// So how to get someone to look at your profile and give input? You could ask your professors, LoR writers, collaborators, or those who have previously applied. For this kind of feedback, ask someone you have a personal connection with.
+On the other hand, if you want to contact a prof. to ask about _research opportunities_, or _GTA/GRA_ support (@sec:ta-ra), then _yes_, I believe you should try. It is still a long shot (you likely won't get any reply), but it is _worth trying_ (and I say this even though I do not reply to most of these emails; see @sec:kiss-of-death-emails for why). Thus, you really need to put effort into it and do it the _right way_ to get a positive reply.
 
-// On the other hand, if you want to contact a prof. to ask about \emph{research opportunities}, or \emph{GTA/GRA} support (\autoref{sec:ta-ra}), then \emph{yes}, I believe you should try.
-// It is still a long shot (you likely won't get any reply), but it is \emph{worth trying} (and I say this even though I do not reply to most of these emails, see \autoref{sec:kiss-of-death-emails} for why). 
-// Thus, you really need to put effort into it and do it the \emph{right way} to get a positive reply.
+The best way to catch the prof.'s attention is to _customize your email_ for them and _make yourself stand out_ from the crowd. First, the usual advice is to read papers of the profs. you're interested in, know what they work on, and see if you are interested in their research. Many profs. explicitly state on their website how prospective students should (or should not) contact them, e.g., using specific email subjects and additional information (e.g., read specific papers).
 
-// The best way to catch the prof.'s attention is to \emph{customize your email} for them and \emph{make yourself standout} from the crowd.
-// First, the usual advice is read papers of the profs. you're interested in, know what they work on, and see if you are interested in their research.  Many profs. explicitly state on their website how prospective students should (or should not) contact them, e.g., using specific email subjects and additional information (e.g., read specific papers). 
+#commentbox[
+  On my lab #link("https://roars.dev")[website], I have a section on _Prospective Students_ that lists how to contact me and what information to include or exclude in the email. I also have an #link("https://roars.dev/phd-cs-us/advising.pdf")[advising guide] to help students understand more about my advising style and lab culture.
 
-// \begin{commentbox}
-//     On my lab \href{https://roars.dev}{website}, I have a section on \emph{Prospective Students} that lists how to contact me and what information to include or exclude in the email. I also have an \href{https://roars.dev/phd-cs-us/advising.pdf}{advising guide} to help students understand more about my advising style and lab culture.\\
-    
-//     For example, recently, I ask that they contribute a bit to one of my projects, e.g., create a pull request to fix a bug or add a feature. This shows that they have done their homework and are genuinely interested in my work. This effectively filters out those who are not serious or not interested. I do this for both graduate and undergraduate students.
-// \end{commentbox}
+  For example, recently, I ask that they contribute a bit to one of my projects, e.g., create a pull request to fix a bug or add a feature. This shows that they have done their homework and are genuinely interested in my work. This effectively filters out those who are not serious or not interested. I do this for both graduate and undergraduate students.
+]
 
-// In general your email should talk about how/why their work would match yours, how you have follow their work and did what they ask from their website (if they have any).
-// In contrast, if you write a generic email that can be sent to multiple professors (e.g., if you just change some names and keywords in the email or copy and paste paper titles), you will not get a response.
+In general, your email should talk about how/why their work would match yours, how you have followed their work and did what they ask from their website (if they have any). In contrast, if you write a generic email that can be sent to multiple professors (e.g., if you just change some names and keywords in the email or copy and paste paper titles), you will not get a response.
 
-// Below is a good example:
+Below is a good example:
 
-// \begin{examplebox}
+#examplebox[
+  Dear Prof. Nguyen,
 
-// Dear Prof. Nguyen,\\
+  I am writing to inquire about potential research opportunities as a GRA in your group at GMU. Currently, I am an undergraduate student in Computer Science at UNIV and plan to graduate in May 2023.
 
-//   I am writing to inquire about potential research opportunities as a GRA in your group at GMU. Currently I am an undergraduate student in Computer Science at UNIV and plan to graduate in May 2023.
-//     \\
+  [a very strong version and customized specifically for me] I have followed your instructions on your website and created a PR to fix the Github issue X in your project Y. I also notice that the project might be beneficial with some additional features, e.g., Z, and I am working on a PR for it.
 
-//   [a versy strong version and customized specifically for me] I have followed your instructions on your website and created a PR to fix the Github issue X in your project Y. I also notice that the project might be beneficial with some additional features, e.g., Z, and I am working on a PR for it.\\
+  [also strong, but more conventional and a bit boring] I have read your TSE'21 paper on numerical invariant generation, and I am interested in this line of dynamic invariant research. I have worked (optional: with prof. Y at Z) on static program analysis and I think it could be used to tackle the spurious issues mentioned in your paper. I have a short paper at conference/workshop C and a project on symbolic execution (Github repo G).
 
-//   [also strong, but more conventional and a bit boring] I have read your TSE'21 paper on numerical invariant generation, and I am interested in this line of dynamic invariant research. I have worked (optional: with prof. Y at Z) on static program analysis and I think it could be used to tackle the spurious issues mentioned in your paper. I have a short paper at conference/workshop C and a project on symbolic execution (Github repo G).\\
+  [something more personal and will catch my attention] I also have read your advising guide emphasizing independence and result-oriented research, and I think this is a good fit because ...
 
+  ---
 
-//   [something more personal and will catch my attention] I also have read your advising guide emphasizing independence and result-oriented research, and I think this is a good fit because ...\\
+  This is a good example because it is written just for me. It shows that the student has done their homework, followed my instructions, and knows my work well.
+]
 
-//  \tcblower
-//   This is a good example because it is written just for me.  It shows that the student has done their homework, follow my instructions or know my work well.
-// \end{examplebox}
+Second, and probably more importantly, is to make yourself stand out. It is not difficult to do the first part (customize the email), thus the very few students that do this will get our attention. Standing out varies from person to person and can range from the classic ways of having good publications in top conferences and having strong recommendations from well-known profs (e.g., people I know) to having strong technical skills (e.g., winning well-known competitions such as IMO and developing significant start-ups or popular open-source projects). In fact, most CS research groups develop open-source software and having contributions (e.g., finding and fixing bugs, creating pull requests, etc) to these projects is a great way to stand out.
 
-// Second, and probably more importantly, is to make yourself stand out. It is not difficult to do the first part (customize the email), thus the very few students that do this will get our attention.   Standing out varies from person to person and can range from the classic ways of having good publications in top conferences and having strong recommendations from well-known profs (e.g., people I know) to having strong technical skills (e.g., winning well-known competitions such as IMO (International Math Olympiad) and developing significant start-ups or popular open-source projects. In fact, most CS research groups develop open-source software and having contributions (e.g., finding and fixing bugs, create pull requests etc) to these projects is a great way to stand out, e.g., you should contribute to this book which is open source at \url{https://code.roars.dev/phd-cs-us}! 
+Finally, profs. are busy (@sec:busy), so don't take it personally if you don't get anything from them (though I would be surprised if you did all the above correctly and still don't get a reply). See @sec:kiss-of-death-emails for common mistakes in emails and @sec:interpreting-response for interpreting replies.
 
+#commentbox(who: "Xiaokuan", [
+  Applying for PhD and contacting a potential PhD adviser is a classic _"why me, why you"_ problem, similar to looking for a job in a company. On a high level, you need to show that you have done your _homework_ regarding the professor and the university, and clearly explain:
+  1) why do you think you are a good fit in professor A's group?
+  2) why do you want to be advised by professor A, not B?
+  3) why do you want to apply for university X, not Y?
+  
+  If you don't want to spend time doing your homework, the chance of getting a reply is close to zero.
+])
 
-// Finally, profs. are busy (\autoref{sec:busy}) so don't take it personally if you don't get anything from them (though I would be surprised if you did all the above correctly and still don't get a reply).
-// See~\autoref{sec:kiss-of-death-emails} for common mistakes in emails and~\autoref{sec:interpreting-response} for interpreting replies.
+#commentbox(who: "Deepak", [
+  In my view, cold emails are not welcome by most faculty members and should be avoided. However, if one is already admitted to a program in some department, by all means, email the faculty you may be interested in working with, but do mention right at the beginning that you are already admitted to the program as well as several other universities. State specific areas (preferably specific topics—ML, robotics instead of AI).
+])
 
-// \begin{commentbox}[Xiaokuan]
-//   Applying for PhD and contacting a potential PhD adviser is a classic \textbf{`why me, why you'} problem,
-//   similar to looking for a job in a company.
-//   On a high level,
-//   you need to show that you have done your \emph{homework}
-//   regarding the professor and the university,
-//   and clearly explain:
-//   1) why do you think you are a good fit in professor A's group?
-//   2) why do you want to be advised by professor A, not B?
-//   3) why do you want to apply for university X, not Y?
-//   If you don't want to spend time doing your homework,
-//   the chance of getting a reply is close to zero.
-// \end{commentbox}
+==== Kiss of Death in Emails <sec:kiss-of-death-emails>
 
+- *Send emails to the wrong prof.* Many students do not pay attention or know about this, but a very common reason why you don't get a reply is that you send emails to profs. who do not / cannot advise CS PhD students (e.g., adjunct, emeritus, teaching, non-CS). See @sec:faculty-types for details. While these profs. might be able to co-advise, they typically do not have the bandwidth, funding, and the desire to mentor students for research (they are already overloaded with teaching and other service duties).
 
-// \begin{commentbox}
-//   [Deepak:]
-//   In my view, cold emails are not welcome by most faculty members and should be avoided. However, if one is already admitted to a program in some department, by all means, email the faculty you may be interested in working with, but do mention right at the beginning that you are already admitted to the program as well as several other universities. State specific areas (preferably specific topics-ML, robotics instead of AI).
-// \end{commentbox}
+  So do some homework before sending emails, e.g., most CS profs. who are active in research will have a website with their work (publications) and students; some also have lab websites dedicated to their group. Most teaching and adjunct profs. do not have a research group or students listed on their website.
 
+- *Generic.* You should already know this! A copy-and-paste kind of email or those that can be sent to multiple people with very little modifications show the lack of interest and will be treated as spam. Most likely, we will not reply to these emails.
 
-// % \subsection*{Additional Resources}
-// % \begin{itemize}
-// %   \item \href{https://yonatanbisk.com/emailing_professors.html}{A Note about Emailing Professors} by Yonatan Bisk
-// %   \item \autoref{sec:accept-postpone-decline} How to accept/postpone/decline PhD offers (and do it gracefully)
-// % \end{itemize}
+- *Self-focus.* Focusing too much about you and your achievements but not why you are interested in the prof.'s work (@sec:contact). Mention why you're interested in their work and how your background can contribute.
 
-// \subsection{Kiss of Death in Emails <sec:kiss-of-death-emails}
+- *Too long.* Keep it to about 3–4 short paragraphs. Less is more and too-long emails are often not read and discarded. Don't attach course transcripts or test scores in the first email. If they are interested, they will ask for them. Attaching your CV is OK. Sample papers (@sec:writing-sample) and links to your Arxiv papers or GitHub projects are also OK if they are relevant.
 
-// \begin{itemize}
-//     \item \textbf{Send emails to the wrong prof.}. Many students do not pay attention or know about this, but a very common reason why you don't get a reply is that you send email to profs. who do not / cannot advise CS PhD students (e.g., adjunct, emeritus, teaching, non-CS). See \autoref{sec:faculty-types} for details. While these profs. might be able to co-advise, they typically do not have the bandwidth, funding, and the desire to mentor students for research (they are already overloaded with teaching and other service duties). 
-    
-//     So do some homework before sending emails, e.g., most CS profs. who are active in research will have a website with their work (publications) and students; some also have lab website dedicated to their group. Most teaching and adjunct profs. do not have a research group or students listed on their website.  
-        
-//     \item \textbf{Generic}. You should already know this! A copy and paste kind of email or those that can be sent to multiple people with very little modifications show the lack of interest and will be treated as spam. Most likely we will not reply to these emails. 
+- *Flowery greetings and language.* Don't use "Dear esteemed professor". Do not call the prof. by their first name in the first email (some don't care but you don't want to take the risk—you don't know them that well yet). Do not use Mr., Mrs., etc. To be safe, use Prof. Lastname or Dr. Lastname (@sec:address).
 
-//     \item \textbf{Self-focus}. Focusing too much about you and your achievements but not why you are interested in the prof.'s work (\autoref{sec:contact}). Mention why you're interested in their work and how your background can contribute. 
+- *Ignoring the Prof's guideline* and asking questions that are already answered on their website. Many profs. put very specific information on how to contact them on their website (e.g., email subject, what to include). Following this helps you stand out and increase your chance of getting a reply.
 
-//     \item \textbf{Too long}. Keep it to about 3--4 short paragraphs. Less is more and too long emails are often not read and discarded. Don't attach course transcript or test scores in the first email. If they are  interested they will ask for them.  Attaching CV is OK. Sample papers (\autoref{sec:writing-sample}) and links to your Arxiv papers or GitHub projects are also OK if they are relevant.
-    
-//     \item \textbf{Flowery greetings and language}. Don't use "Dear esteemed professor".  Do not call the prof. by their first name in the first email (some don't care but you don't want to take the risk -- you don't know them that well yet).  Do not use Mr., Mrs., etc. To be safe, use Prof. Lastname or Dr. Lastname (\autoref{sec:address}).
-    
-//     \item \textbf{Ignoring the Prof's guideline} and asking questions that are already answered on their website.  Many profs. put very specific information on how to contact them on their website (e.g., email subject, what to include).  Following this helps you stand out and increase your chance of getting a reply.
-    
-   
-//     \item \textbf{Mass emails}. I've seen it many times when a student mass emails all profs in a department, e.g., through CC or even BCC.  This will result in no reply or a very harsh one on how unprofessional you are.
-    
-//     \item \textbf{Do Not Call}. Not related to email but sometimes students get desperate and call the prof.  This is a big no-no, especially for CS ppl who often prefer email over phone calls. 
-    
-//     \item \textbf{Fancy format}.  Do not use colors, fancy fonts or formats, e.g., bold. While not really a kiss of death, it is very annoying, especially for people in CS (and probably many other fields) who often prefer plain email messages.    
-// \end{itemize}
+- *Mass emails.* I've seen it many times when a student mass emails all profs in a department, e.g., through CC or even BCC. This will result in no reply or a very harsh one on how unprofessional you are.
 
-// \subsection{Interpreting Response <sec:interpreting-response}
-// Even if you avoid the kiss of death emails (\autoref{sec:kiss-of-death-emails}), you might still not get a reply.  There are many reasons why you might not get a reply, e.g., the prof. is not interested, they are too busy (\autoref{sec:busy}), they are not taking students, they are on vacation, etc.  Here are some common responses and what they mean:
+- *Do Not Call.* Not related to email but sometimes students get desperate and call the prof. This is a big no-no, especially for CS people who often prefer email over phone calls.
 
-// Some generic responses are:
-// \begin{itemize}
-// \item \textbf{No reply}. This is by far the most common response (see why in \autoref{sec:busy}).  It means they are not interested.
-// You might try again in a few weeks or months, but don't expect a reply. And after a couple of tries, you should move on.  It simply means they are not interested.
-// \item \textbf{Not taking students but encourage you to apply}. Polite way of saying not interested and referring you to the admission process. Note that this does not in any way mean that they think you have a good chance of getting admitted.
+- *Fancy format.* Do not use colors, fancy fonts, or formats, e.g., bold. While not really a kiss of death, it is very annoying, especially for people in CS (and probably many other fields) who often prefer plain email messages.
 
-// \item \textbf{Not taken student this year (but encourage you to apply next year)}. Polite but generic response.  And like the previous one, encouragement to apply does not mean they think you have a good chance of getting admitted.
+==== Interpreting Response <sec:interpreting-response>
 
-// \item \textbf{Come talk to me after you're admitted}. Generic. Refer you to the admission process. But if you get admitted then you can reply to them and say you're admitted and would like to talk.
+Even if you avoid the kiss of death emails (@sec:kiss-of-death-emails), you might still not get a reply. There are many reasons why you might not get a reply, e.g., the prof. is not interested, they are too busy (@sec:busy), they are not taking students, they are on vacation, etc. Here are some common responses and what they mean:
 
-// \item \textbf{Cannot admit you directly. Need to go through admission process}. Generic. They are not interested and refer you to the admission process.
+Some generic responses are:
+- *No reply.* This is by far the most common response (see why in @sec:busy). It means they are not interested. You might try again in a few weeks or months, but don't expect a reply. And after a couple of tries, you should move on. It simply means they are not interested.
 
-// \item \textbf{I am not taking students but I co-advise/can serve on your committee.} While this might sound good, it's still generic because it says \emph{once you're admitted and have an adviser}, then contact me again. 
+- *Not taking students but encourage you to apply.* Polite way of saying not interested and referring you to the admission process. Note that this does not in any way mean that they think you have a good chance of getting admitted.
 
-// \item \textbf{I am not taking student but Prof. X might be}. Not common as most profs. do not refer you to their colleagues. However, this is better than the previous responses. While they cannot take you, they think you are a good fit for X. So follow up with a thank you and say you'll contact X.  And then contact X and say that Y referred you to them.
-// \end{itemize}
+- *Not taking students this year (but encourage you to apply next year).* Polite but generic response. And like the previous one, encouragement to apply does not mean they think you have a good chance of getting admitted.
 
-// In short, all of these replies mean the prof. is not interested.  The best positive response is that they want more information from you, e.g., your CV, transcript, paper, or a chat, which is like an interview (\autoref{sec:interviews}). 
+- *Come talk to me after you're admitted.* Generic. Refer you to the admission process. But if you get admitted then you can reply to them and say you're admitted and would like to talk.
 
+- *Cannot admit you directly. Need to go through admission process.* Generic. They are not interested and refer you to the admission process.
 
-=== Are Profs. So Busy That They Completely Ignore Emails? <sec:busy>
+- *I am not taking students but I co-advise/can serve on your committee.* While this might sound good, it's still generic because it says _once you're admitted and have an adviser_, then contact me again.
 
+- *I am not taking student but Prof. X might be.* Not common as most profs. do not refer you to their colleagues. However, this is better than the previous responses. While they cannot take you, they think you are a good fit for X. So follow up with a thank you and say you'll contact X. And then contact X and say that Y referred you to them.
 
-// Profs. are busy. We have many deadlines, meetings, and emails, many of which are from prospective students looking for research opportunities or asking for application results. 
-// We also often underestimate how busy we are, thus making us even busier (\autoref{fig:profs-time}).
-// We also have a life outside of work, e.g., family, hobbies, etc. 
+In short, all of these replies mean the prof. is not interested. The best positive response is that they want more information from you, e.g., your CV, transcript, paper, or a chat, which is like an interview (@sec:interviews).
 
-// \begin{figure}
-// \centering
-//     \includegraphics[scale=0.3]{files/profs-time.jpeg}
-//     \caption{Prof. time allocation. <fig:profs-time}
-// \end{figure}
+==== Are Profs. So Busy That They Completely Ignore Emails? <sec:busy>
 
+Profs. are busy. We have many deadlines, meetings, and emails, many of which are from prospective students looking for research opportunities or asking for application results. We also often underestimate how busy we are, thus making us even busier.
+We also have a life outside of work, e.g., family, hobbies, etc.
 
-// However, this is \emph{not} why we "ghost" you and provide no response.  One main reason is because we want to avoid misunderstandings.  A response, no matter how clear we think it is, might be misinterpreted by the student (see some common responses in~\autoref{sec:interpreting-response}).  For example, if we say we are not taking students but still (strongly) encourage to apply, then the student might take it as a positive sign of admission. If we say we are not interested, the student might take it as a personal rejection and not apply at all.  So it is not because we are too busy to reply, but because we do not want misunderstandings and have to deal with them later. 
+However, this is _not_ why we "ghost" you and provide no response. One main reason is because we want to avoid misunderstandings. A response---no matter how clear we think it is---might be misinterpreted by the student (see some common responses in @sec:interpreting-response). For example, if we say we are not taking students but still encourage to apply, then the student might take it as a positive sign of admission. If we say we are not interested, the student might take it as a personal rejection and not apply at all. So it is not because we are too busy to reply, but because we do not want misunderstandings and have to deal with them later.
 
-// But there's a good chance that we would respond to well-written emails (\autoref{sec:contact}) that show the student has done their homework and is genuinely interested in our work.  So it is worth trying, but don't take it personally if you don't get a reply.
+But there's a good chance that we would respond to well-written emails (@sec:contact) that show the student has done their homework and is genuinely interested in our work. So it is worth trying, but don't take it personally if you don't get a reply.
 
+#commentbox[
+  I skim through _every email_ sent by students for admission and research opportunities (many of which are from undergrads and high school students). So that means I do read your emails, and they rarely go to my spam or trash folder. However, I rarely reply to them because most of them are generic and do not show any interest in my work (@sec:kiss-of-death-emails).
+]
 
-// \begin{commentbox}
-//     I skim through \emph{every email} sent by students for admission and research opportunities (many of which are from undergrads and highschool students). So that means I do read your emails, and they rarely go to my spam or trash folder. However, I rarely reply to them because most of them are generic and do not show any interest in my work (\autoref{sec:kiss-of-death-emails}).
-//     \end{commentbox}
     
 // %\part{Miscs and FAQs <part:faqs}
 // %= Miscs and FAQs <chap:faqs}
@@ -2914,12 +2840,12 @@ Homer: I mean an award that's worth winning.]
 // Note that these paper awards are different than Distinguished or Best Paper awards, which are given at the conference and therefore might not be as well-known or influential.   
 
 // \begin{figure}
-//     \begin{examplebox}
+//     \begin{keybox}
 //       \emph{"It is highly noteworthy that \censor{Vu} has earned two 10-year test-of-time awards for \censor{his} papers \censor{, including a prestigious ICSE Most Influential Paper Award}. Senior computer scientists count themselves fortunate to
 //       earn even one such award at some point in their careers, but it is highly unusual and commendable that \censor{Vu}
 //       has earned two of these awards already, less than ten years after completing \censor{his} PhD ..."}\\
 
-//     \end{examplebox}
+//     \end{keybox}
 //     \caption{LoR written by an ACM and IEEE Fellow for a junior faculty (some texts endacted for anonymity). <fig:lor4junior}
 //   \end{figure}
 
@@ -3134,11 +3060,11 @@ In many countries, it is customary to give professors costly gifts---such as fan
 
 // When researching where to do a CS PhD, many students use rankings like the U.S. News \& World Report. However, these widely publicized rankings are often criticized by CS researchers (e.g.,\autoref{fig:csrankings-quote}) for their lack of transparency and relevance. In contrast, data-driven open source ones such as CSRankings.org are increasingly used by faculty and PhD students to assess the true research strengths of CS depts. 
 // \begin{figure}[h]
-//     \begin{examplebox}
+//     \begin{keybox}
 //       \emph{"The ranking methodology [of US News] is flawed, for a simple reason that any computer science researcher could tell them immediately. And we did. Influential researchers in computer science pointed out the flaws directly to editors at US News; they were ignored."}\\
 
 //       \emph{"'No ranking is perfect, but this [CSrankings] is defensible and open.”'}
-//     \end{examplebox}
+//     \end{keybox}
 //     \caption{\url{https://www.theexclusive.org/2017/11/cs-rankings.html
 // }, Charles Sutton (Google Deepmind). <fig:csrankings-quote}
 // \end{figure}
