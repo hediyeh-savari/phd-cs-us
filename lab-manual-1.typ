@@ -20,8 +20,8 @@
 
 #show title:set text(size: 17pt)
 #show title: set align(center)
-#let title = [ROARS' Lab Manual]
-#let author = [#link("https://roars.dev")[ROARS' members]]
+#let title = [Lab Manual]
+#let author = [#link("https://roars.dev")[ROARS]]
 
 #let dark-green = rgb("#006400")
 #let light-green = rgb("#d4f1d4")
@@ -33,9 +33,10 @@
   height: 100%
 )[
   #align(center + horizon)[
+    #v(0.5fr)
     #text(size: 32pt, weight: "bold")[#title]
     
-    #v(1fr)
+    #v(0.5fr)
     
     #image("files/dino.png", width: 80%)
     
