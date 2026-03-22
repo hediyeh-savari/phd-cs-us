@@ -1235,98 +1235,82 @@ Not much you can do here. You can try to contact the school to ask about your st
 
 #simpsons[Oh... and how is education supposed to make me feel smarter? Besides, every time I learn something new, it pushes some old stuff out of my brain. Remember when I took that home wine-making course and I forgot how to drive?]
 
-// By around mid-March you should hear back from most PhD programs that want to admit you. 
-// But you likely won't hear back from schools that do not want to admit you (\autoref{sec:late-rejection}), e.g., you're on their wait list.
+By around mid-March you should hear back from most PhD programs that want to admit you. 
+But you likely won't hear back from schools that do not want to admit you (@sec:late-rejection), e.g., you're on their wait list.
 
-// If you receive offers, congratulations!  Now you're at a different game because the schools that have admitted you will try to get you to accept them!  Look carefully at the offer letters (\autoref{sec:offer-letters}) for the terms and conditions of the offers.  Other important factors to consider include the reputation of schools (\autoref{chap:choosing-school}) and professors (\autoref{chap:choosing-adviser}), and funding availability (\autoref{chap:funding}). You will have to make your decision (\autoref{sec:accept-postpone-decline}) by a certain deadline, e.g., \gls{April15}.
+If you receive offers, congratulations!  Now you're at a different game because the schools that have admitted you will try to get you to accept them!  Look carefully at the offer letters (@sec:offer-letters) for the terms and conditions of the offers.  Other important factors to consider include the reputation of schools (@chap:choosing-school) and professors (@chap:choosing-adviser), and funding availability (@chap:funding). You will have to make your decision (@sec:accept-postpone-decline) by a certain deadline, e.g., April 15.
 
-// \paragraph{Open House} Most schools have \emph{Open House} or \emph{Visit Day} events, which are a great resource to learn about the school, department, faculty, research, living, etc.
+#strong[Open House] Most schools have _Open House_ or _Visit Day_ events, which are a great resource to learn about the school, department, faculty, research, living, etc.
 
-// Even if you can't come in person, you should attend virtually and meet with individual faculty. During the event, you get a chance to learn more about the program, and talk to individual faculty and current students.  Take notes of faculty who make you excited, and count those taking in new students (if they meet you, likely they are considering new students!).  Talk to students about their advisers, the dept, the area, and the funding situation.  Ask about anything you want to determine that they deserve \emph{you}.
+Even if you can't come in person, you should attend virtually and meet with individual faculty. During the event, you get a chance to learn more about the program, and talk to individual faculty and current students.  Take notes of faculty who make you excited, and count those taking in new students (if they meet you, likely they are considering new students!).  Talk to students about their advisers, the dept, the area, and the funding situation.  Ask about anything you want to determine that they deserve _you_.
 
-// \begin{commentbox}
-//   GMU has \emph{Virtual} Open House (VOH), e.g., \url{https://cs-GMU.github.io/cs-phd-voh-s23/}. We invite all admitted PhD students to the VOH through Zoom to learn about the CS program, the department, GMU, and the DC area in general. Students also get opportunities to chat with professors and current students.
-// \end{commentbox}
+#commentbox[
+  GMU has _Virtual Open House (VOH)_, e.g., #link("https://cs-GMU.github.io/cs-phd-voh-s23/")[here]. We invite all admitted PhD students to the VOH through Zoom to learn about the CS program, the department, GMU, and the DC area in general. Students also get opportunities to chat with professors and current students.
+]
 
-// \paragraph{What's next?} Make a decision, accept, reject, or defer the offers  (\autoref{sec:accept-postpone-decline}). Ask to meet with potential advisers (e.g., through Open House or separately) and even their students. Ask about computer equipment and software, office space, and other resources; in many cases these will be provided for free by your adviser or department (\autoref{sec:buying-equipment}).
+#strong[What's next?] Make a decision, accept, reject, or defer the offers (@sec:accept-postpone-decline). Ask to meet with potential advisers (e.g., through Open House or separately) and even their students. Ask about computer equipment and software, office space, and other resources; in many cases these will be provided for free by your adviser or department (@sec:buying-equipment).
 
-// Also, do not forget to update and thank LoR writers and others who have supported you through this process (\autoref{sec:thank-writers}).
-
+Also, do not forget to update and thank LoR writers and others who have supported you through this process (@sec:thank-writers).
 
 
 
 === Checking Status, Accepting, Postponing, and Decline Offers <sec:accept-postpone-decline>
 
-// Students often ask about what to do after they get an interview or an offer from a professor, e.g., if they can followup to find out about their status, or is it OK to postpone or accept/reject offers?, and most importantly, how to do so without offending anyone. 
+Students often ask about what to do after they get an interview or an offer from a professor, e.g., if they can follow up to find out about their status, or is it OK to postpone or accept/reject offers?, and most importantly, how to do so without offending anyone. 
 
-// \paragraph{Checking your application status and following up emails} If you have interviewed and not heard back from a professor after a few weeks or especially around the time when universities send out their admission decisions (around late Feb-- mid-Mar), you can email to check.  You can follow up the interview invitation and say: \emph{"Thanks for chatting with me. I am very excited about the opportunity to work with you.  Could you please let me know if you have made a decision or if you need more information from me?"}.  If you have new updates, e.g., new publications or new fellowship awards, or even new offers from other professors or schools, you can also mention that.
+#strong[Checking your application status and following up emails] If you have interviewed and not heard back from a professor after a few weeks or especially around the time when universities send out their admission decisions (around late Feb--mid-Mar), you can email to check.  You can follow up the interview invitation and say: #emph["Thanks for chatting with me. I am very excited about the opportunity to work with you.  Could you please let me know if you have made a decision or if you need more information from me?"]. If you have new updates, e.g., new publications or new fellowship awards, or even new offers from other professors or schools, you can also mention that.
 
-// Profs. are often very busy (\autsecoref{sec:busy}), especially during admission time when they have to many reviews and interviews.  They might not have time to respond to every email.  If you do not hear back after a week, you can send another email to check again.  If you still do not hear back, you can assume that you are not selected.
+Profs. are often very busy (@sec:busy), especially during admission time when they have many reviews and interviews.  They might not have time to respond to every email.  If you do not hear back after a week, you can send another email to check again.  If you still do not hear back, you can assume that you are not selected.
 
-// \paragraph{Accepting an offer} If you decide to accept an offer, you can say: \emph{"Thank you for the offer.  I would like to accept it and look forward to working with you.  Could you please send me more details about the offer and what to do next?"}. The prof. will likely send you more details about the offer and what to do next.  If you decide to accept an offer, do so quickly.
+#strong[Accepting an offer] If you decide to accept an offer, you can say: #emph["Thank you for the offer.  I would like to accept it and look forward to working with you.  Could you please send me more details about the offer and what to do next?"]. The prof. will likely send you more details about the offer and what to do next.  If you decide to accept an offer, do so quickly.
 
+#strong[Postponing an offer] If you need more time to decide, you can ask for more time: #emph["Thank you for the offer.  I am very excited about it.  However, I am still waiting for other offers and need more time to decide.  Would it be possible to postpone the decision for a few weeks?"]. This is perfectly fine and professors will understand and might even appreciate your honesty.  They will likely give you a few weeks to decide.  If you need more time, you can ask for more time.  But do not ask for too much time, e.g., more than a month.  You also should not postpone the offer multiple times, which will annoy people.
 
+#strong[Declining an offer] If you decide to decline or reject an offer, you can say: #emph["Thank you for the offer. However, I have decided to accept another offer.  I appreciate your time and consideration.  I hope we can work together in the future."] Professors will understand and wish you luck.  If you decide to reject an offer, do so quickly.
 
-// \paragraph{Postponing an offer} If you need more time to decide, you can ask for more time: \emph{"Thank you for the offer.  I am very excited about it.  However, I am still waiting for other offers and need more time to decide.  Would it be possible to postpone the decision for a few weeks?"}.  This is perfectly fine and professors will understand and might even appreciate your honesty.  They will likely give you a few weeks to decide.  If you need more time, you can ask for more time.  But do not ask for too much time, e.g., more than a month.  You also should not postpone the offer multiple times, which will annoy people.
+#commentbox[
+  *Accepting an offer and later rejecting it*
 
+  I've seen many students, especially international, face a dilemma when they #emph[commit] to a graduate offer but then receive another—potentially better—one. Advice given in online forums is often along the line that it's okay to switch, using reasons like you haven't yet had a strong relationship with the prof. or you should prioritize your personal benefit.
 
+  In my opinion, these reasons are not strong enough to justify retracting an acceptance. A more valid reason is using the #link("https://cgsnet.org/wp-content/uploads/2024/01/CGS_April15_Resolution_Jan312024.pdf")[April 15 resolution], in which many universities participate. Among various things, this resolution states that students are free to accept a new offer from a different institution until 4/15, even if they have already accepted an offer elsewhere.
 
-// \paragraph{Declining an offer} If you decide to decline or reject an offer, you can say: \emph{"Thank you for the offer. However, I have decided to accept another offer.  I appreciate your time and consideration.  I hope we can work together in the future."}  Professors will understand and wish you luck.  If you decide to reject an offer, do so quickly.
-
-// \begin{commentbox}
-// \textbf{Accepting an offer and later rejecting it}
-
-// I've seen many students, especially international, face a dilemma when they \emph{commit} to a graduate offer but then receive another---potentiall better---one. Advice given in online forums is often along the line that it's okay to switch, using reasons like you haven't yet had a strong relationship with the prof. or you should prioritize your personal benefit.\\
-
-// In my opinion, these reasons are not strong enough to justify retracting an acceptance. A more valid reason is using the \href{https://cgsnet.org/wp-content/uploads/2024/01/CGS_April15_Resolution_Jan312024.pdf}{April 15 resolution}, in which many universities participate. Among various things, this resolution states that students are free to accept a new offer from a different institution until 4/15, even if they have already accepted an offer elsewhere.\\
-
-// However, in general, retracting an acceptance can have ethical implications. When you accept an offer, you are committing to work with that prof, who then might stop looking for other students. So by retracting your offer, you are breaking your commitment and also causing a great deal of inconvenience to the prof and also taking away the opportunity from other students. 
-// Ultimately, this choice is personal and involves a balance between personal benefit and ethical considerations.
-// \end{commentbox}
+  However, in general, retracting an acceptance can have ethical implications. When you accept an offer, you are committing to work with that prof, who then might stop looking for other students. So by retracting your offer, you are breaking your commitment and also causing a great deal of inconvenience to the prof and also taking away the opportunity from other students. 
+  Ultimately, this choice is personal and involves a balance between personal benefit and ethical considerations.
+]
 
 === Offer Letters and Terms <sec:offer-letters>
 // \sectioninfo{The offer letter is essentially an employment contract.  Make sure to read and understand the terms of the offer.}
 
 
-// \begin{figure}
-//   \centering
-//   \fbox{
-//     \includegraphics[scale=0.5]{files/admission-letter-started-with-saying-i-am-not-happy.jpeg}
-//     }
-//     \caption{When you get an admission letter that starts with \emph{"I am not happy to inform you..."} (\href{https://www.reddit.com/r/gradadmissions/comments/1bc7e2a/admission_letter_started_with_saying_i_am_not/}{Reddit}). <fig:admission-letter-started-with-saying-i-am-not-happy}
-// \end{figure}
+#figure(
+  image("files/admission-letter-started-with-saying-i-am-not-happy.jpeg", width: 70%),
+  caption: [When you get an admission letter that starts with #emph["I am not happy to inform you..."] (#link("https://www.reddit.com/r/gradadmissions/comments/1bc7e2a/admission_letter_started_with_saying_i_am_not/")[Reddit]).],
+) <fig:admission-letter-started-with-saying-i-am-not-happy>
 
+Your admission notification will likely come with an offer letter (in some cases it might come separately).
+This letter is essentially a contract between you and the school, and lists the terms of the offer, including stipend, tuition waiver, health insurance, and other benefits. The letter might also have some conditions, e.g., maintaining a certain GPA, etc. 
+You will likely need to sign and return the letter to accept the offer, e.g., by April 15--the deadline for many schools.
 
+@fig:gra-offer shows an example of a GRA offer letter from GMU. It shows the 9-month stipend#footnote[Note RAs can get additional summer funding from their prof. (@sec:summer-funding), but this will not be shown in the offer letter as it is not guaranteed.], the funding source (i.e., the prof. who provided the RA), tuition waivers (9-credit, which is full time for grad student), and health insurance.
 
-// Your admission notification will likely come with an offer letter (in some cases it might come separately).
-// This letter is essentially a contract between you and the school, and lists the terms of the offer, including stipend, tuition waiver, health insurance, and other benefits.  The letter might also have some conditions, e.g., maintaining a certain GPA, etc. 
-// You will likely need to sign and return the letter to accept the offer, e.g., by \gls{April15}--the deadline for many schools.
+In contrast, @fig:gta-offer shows an example of a GTA offer letter from GMU. Unlike GRA offer, the GTA assignment does not specify the prof. who will supervise you, as TAs are typically assigned by the department. However, other benefits such as stipend, tuition waiver, and health insurance are similar to GRA offers.
 
-// \autoref{fig:gra-offer} shows an example of a GRA offer letter from GMU. It shows the 9-month stipend\footnote{Note RAs often get additional summer funding from their prof. (\autoref{sec:summer-funding}), but this is not shown in the offer letter.}, the funding source (i.e., the prof. who provided the RA), tuition waivers (9-credit, which is full time for grad student), and health insurance.
+It is #emph[unlikely] that you can negotiate things like stipend, as it is standard across all students. However, you might ask your prof. for computer equipments and others (@sec:negotiate).
 
-// In contrast,~\autoref{fig:gta-offer} shows an example of a GTA offer letter from GMU. Unlike GRA offer, the GTA assignment does not specify the prof. who will supervise you, as TAs are typically assigned by the department. However, other benefits such as stipend, tuition waiver, and health insurance are similar to GRA offers.
+#commentbox[
+  You might receive "informal" offer from the prof., e.g., through email or verbally. This is typically as the profs. are excited to have you and want to give you important details such as stipend. You can "informally" accept the offer, but you will still need to sign the official offer letter to make it official.
+]
 
-// It is \emph{unlikely} that you can negotiate things like stipend, as it is standard across all students.  However, you might ask your prof. for computer equipments and others (\autoref{sec:negotiate}).
+#figure(
+  image("files/gra_offer.pdf", width: 80%),
+  caption: [An example of a GRA offer letter.],
+) <fig:gra-offer>
 
-
-// \begin{commentbox}
-//     You might receive "informal" offer from the prof., e.g., through email or verbally. This is typically as the profs. are excited to have you and want to give you important details such as stipend. You can "informally" accept the offer, but you will still need to sign the official offer letter to make it official. 
-// \end{commentbox}    
-
-
-// \begin{figure}
-//     \centering
-//     \includegraphics[page=1,width=.80\textwidth]{files/gra_offer.pdf} 
-//     \caption{An example of a GRA offer letter. <fig:gra-offer}
-// \end{figure}
-
-
-// \begin{figure}
-//     \centering
-//     \includegraphics[page=1,width=.80\textwidth]{files/gta_offer.pdf} 
-//     \caption{An example of a GTA offer letter. <fig:gta-offer}
-// \end{figure}
-
+#figure(
+  image("files/gta_offer.pdf", width: 80%),
+  caption: [An example of a GTA offer letter.],
+) <fig:gta-offer>
 
 // %\includepdf[pages=1]{files/gra_offer.pdf}
 
