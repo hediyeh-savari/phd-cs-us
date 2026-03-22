@@ -1317,12 +1317,11 @@ It is #emph[unlikely] that you can negotiate things like stipend, as it is stand
 === Negotiating PhD offer (e.g., having multiple offers)? <sec:negotiate>
 // \sectioninfo{You will not be able to negotiate stipend, but you can ask for specific start date, TA assignment, and conference travel budget.}
 
+In CS, negotiating a TA stipend is unlikely, as it is determined by the university (@sec:ta). For RA (@sec:ra), advisers have more leeway as it is funded by their grants. However, they will likely not negotiate RA stipend as they have to be fair to other students and also have to follow departmental standards. Note that the university typically automatically increases these stipends each year by a small amount.
 
-// Negotiating a TA stipend is unlikely, as it is determined by the university (\autoref{sec:ta}). For RA (\autoref{sec:ra}), advisers have more leeway as it is funded by their grants. However, they will likely do not negotiate RA stipend as they have to be fair to other students and also have to follow departmental standards.  Note that the university typically automatically increases these stipends each year by a small amount.
-// Typically, the most wiggle room is funding in the summer (\autoref{sec:summer-funding}) where the prof. might be able to pay you more from their grants. However, they typically only do this after you have been with them for a year or so and they see your potential.
+Typically, the most wiggle room is funding in the summer (@sec:summer-funding) where the prof. might be able to pay you more from their grants. However, they typically only do this after you have been with them for a year or so and they see your potential.
 
-// For a specific start date or TA assignment (e.g., TA'ing a particular course), you can ask for it. Also, there is typically no moving allowance for PhD students. In short, standard things set by the university or department are unlikely negotiable.  However, you can ask for things such as books and computer equipment (\autoref{sec:buying-equipment}).
-
+For a specific start date or TA assignment (e.g., TA'ing a particular course), you can ask for it. Also, there is typically no moving allowance for PhD students. In short, standard things set by the university or department are unlikely negotiable. However, you can ask for things such as books and computer equipment (@sec:buying-equipment).
 
 
 === Buying Computer Equipment <sec:buying-equipment>
