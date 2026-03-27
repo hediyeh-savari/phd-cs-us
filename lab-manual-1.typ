@@ -239,6 +239,20 @@ You will need VPN and Computing access to log into lab servers remotely. Send an
 
 + The first day and the last day of travel, they will not pay the full per diem rate because you are not there for the full day.
 
+= Comprehensive Exam and Defense
+
+== Defense
+
+Chair: 
+- In the beginning 
+  - Once all the committee members are present, chair will ask the student to step out of the room (virtually) at the beginning of the meeting.
+  - Chair then give a brief summary of the student's progress in the PhD program, talk about their published and under-review papers,  and answer any questions the committee may have. - Chair then call the student back and give the presentation. 
+ 
+- End of the meeting
+  - the student briefly step out so that the committee can discuss the decision
+  - Then the student can be invited and informed about the decision.
+
+
 
 = Contact information
 
