@@ -31,7 +31,7 @@
 #let institute = "George Mason University"
 #let mybookgithub = "https://code.roars.dev/phd-cs-us"
 
-#let red(txt) = [text(fill: red)[txt]]
+#let myred(txt) = text(fill:red)[#txt]
 
 
 #let part(title) = [
@@ -547,57 +547,53 @@ However, don't worry if you haven't worked directly with well-known researchers.
 ])
 
 ==== Generic Letters are Bad <sec:generic-letters>
-// When the writers do not know much about the applicants (e.g., just taking some course with them or not making any impression to write about), they might write a _generic_ and short letter, which is not useful and also considered weak. 
+When the writers do not know much about the applicants (e.g., just taking some course with them or not making any impression to write about), they might write a _generic_ and short letter, which is not useful and also considered weak. 
 
-// _This does not mean the ref writer is not good or does not care about you_, but they just do not know you well enough to write a strong letter.
-// So it might be a good idea to directly ask if the prof. is willing to write a _strong_ letter for you. If not, then you should ask someone else.  For example, if a student I don't know well asks me to write a letter for them, I will explicitly tell them I don't know them that well to write much about them, and such a short, generic, and weak letter will not help their case (@sec:lor-writing).
+_This does not mean the ref writer is not good or does not care about you_, but they just do not know you well enough to write a strong letter.
+So it might be a good idea to directly ask if the prof. is willing to write a _strong_ letter for you. If not, then you should ask someone else.  For example, if a student I don't know well asks me to write a letter for them, I will explicitly tell them I don't know them that well to write much about them, and such a short, generic, and weak letter will not help their case (@sec:lor-writing).
 
-// #box(
-//   title: "Warning",
-//   Several international students mentioned that some professors are unwilling to write letters or write weak ones because they do not want (good) students to go abroad or only go to places where they want the students to go to. If you are in this situation, you should find someone else to write for you.
+#warningbox([
+  Several international students mentioned that some professors are unwilling to write letters or write weak ones because they do not want (good) students to go abroad or only go to places where they want the students to go to. If you are in this situation, you should find someone else to write for you.
 
-//   Sometimes students would go to great lengths just to get letters from "top" professors in their school---like department head or dean (@sec:admin-letters). But as mentioned, if these professors do not know you, their letters would likely be generic and carry little value (sometimes #text(fill: red)[red flags]). Moreover, a top professor at your university might not be well-known to US faculty (see more details in @sec:admin-letters and @chap:your-school). So save the trouble and get letters from _any_ professors/supervisors who know you well and can write a good letter about _your_ research ability (@sec:famous-lor). It's better to have a good personalized letter about your own research ability from someone who is less well-known than a generic/weak letter from a well-known person.
-// )
+  Sometimes students would go to great lengths just to get letters from "top" professors in their school---like department head or dean (@sec:admin-letters). But as mentioned, if these professors do not know you, their letters would likely be generic and carry little value (sometimes #myred[red flag]). Moreover, a top professor at your university might not be well-known to US faculty (see more details in @sec:admin-letters and @chap:your-school). So save the trouble and get letters from _any_ professors/supervisors who know you well and can write a good letter about _your_ research ability (@sec:famous-lor). It's better to have a good personalized letter about your own research ability from someone who is less well-known than a generic/weak letter from a well-known person.
+])
 
-  
 
 ==== LoRs from Dept Chair, Dean, or Supervisor at Work <sec:admin-letters>
 
-// Many students, especially international applicants, try to get LoRs from high-ranking administrators in their universities such as department chair/head, dean, or director. The students never worked with these people (they might take a class or so with these profs), but mistakenly believe that these LoRs are valuable due to the writer's high position in the university.
-// However, as mentioned in~\autoref{sec:generic-letters} such a generic LoR has little value because the writer does not know you well and can talk in depth about your research ability. 
+Many students, especially international applicants, try to get LoRs from high-ranking administrators in their universities such as department chair/head, dean, or director. The students never worked with these people (they might take a class or so with these profs), but mistakenly believe that these LoRs are valuable due to the writer's high position in the university.
+However, as mentioned in @sec:generic-letters such a generic LoR has little value because the writer does not know you well and can talk in depth about your research ability. 
   
-//   Moreover, while being well-known and respected in your local university, these writers might not be very active in research, e.g., haven't published in recent years (\autoref{chap:research-achievements}). Thus they might not be well-known and recognized by adcom members.  
+Moreover, while being well-known and respected in your local university, these writers might not be very active in research, e.g., haven't published in recent years (@chap:research-achievements). Thus they might not be well-known and recognized by adcom members.  
 
-
-//   \begin{surprisebox}
-//     In my experience in reviewing applications from international students, letters from admin people are often generic and do not provide much value. 
-//     In many case, the letter reads like it was written by a student (\autoref{sec:self-letters}), and thus is a red flag.  So if you are in this situation, you should find someone else to write for you as mentioned in this section.
-//   \end{surprisebox}
+#warningbox[
+  In my experience in reviewing applications from international students, letters from admin people are often generic and do not provide much value. 
+  In many case, the letter reads like it was written by a student (@sec:self-letters), and thus is a red flag.  So if you are in this situation, you should find someone else to write for you as mentioned in this section.
+]
   
-//   Many students get letters from supervisors from companies where they did internships or are working.  It is OK as long as it is a research-based personalized letter. Again, the emphasis here is \emph{research}, i.e., the letters should describe your research experiences and potential. Letters focusing on non-research projects at a company won't carry much weight.
+Many students get letters from supervisors from companies where they did internships or are working.  It is OK as long as it is a research-based personalized letter. Again, the emphasis here is _research_, i.e., the letters should describe your research experiences and potential. Letters focusing on non-research projects at a company won't carry much weight.
 
-// Finally, despite best intentions, the writers might not have the experience to write a strong LoR or lack the ability to evaluate your research ability.
-// This is unfortunate but common, and if you are in this situation, you should find someone else to write for you (see~\autoref{sec:lor-writers} and~\autoref{sec:famous-lor}).
+Finally, despite best intentions, the writers might not have the experience to write a strong LoR or lack the ability to evaluate your research ability.
+This is unfortunate but common, and if you are in this situation, you should find someone else to write for you (see @sec:lor-writers and @sec:famous-lor).
 
-
-// \begin{commentbox}[Hung:]
-//     A sad reality is that most professors in Vietnam \textbf{DO NOT} know how to write a good letter, or are lazy in writing letters hence delegate the writing to the students. Unfortunately, there is no easy solution to this problem.
-// \end{commentbox}
+#commentbox(who: "Hung", [
+  A sad reality is that most professors in Vietnam *DO NOT* know how to write a good letter, or are lazy in writing letters hence delegate the writing to the students. Unfortunately, there is no easy solution to this problem.
+])
 
 
   
 ==== Self-written Letters are Bad <sec:self-letters>
 
-// Many letter writers ask students to write their own letters---a common practice in many countries. Unfortunately, such letters have \emph{little value} and are considered weak by reviewers---why can you not even find someone who cares or knows enough about you to write a candid personal reference letter?  Instead of the ref. writer talking about you, in it is you who write about yourself (and they just sign the letter). 
+Many letter writers ask students to write their own letters---a common practice in many countries. Unfortunately, such letters have _little value_ and are considered weak by reviewers---why can you not even find someone who cares or knows enough about you to write a candid personal reference letter?  Instead of the ref. writer talking about you, in it is you who write about yourself (and they just sign the letter). 
  
 
-// Self-written letters are \emph{easy to spot} because an experienced professor would write differently compared to an undergraduate student.
-// For example, they can provide convincing and concrete examples based on their experience and compare you to their own students, and of course the writing style is different---imagine the difference between a letter written by a professors who has been writing letters for decades and a letter written by an undergraduate student who has never written a letter before, even if the student has subscribed to ChatGPT+ (\autoref{sec:using-ai}). Worse yet, if we suspect that the student wrote the letter, it is a \red{red flag} as we will question both the student's integrity and the letter writer's credibility (because they allow this to happen).
+Self-written letters are _easy to spot_ because an experienced professor would write differently compared to an undergraduate student.
+For example, they can provide convincing and concrete examples based on their experience and compare you to their own students, and of course the writing style is different---imagine the difference between a letter written by a professors who has been writing letters for decades and a letter written by an undergraduate student who has never written a letter before, even if the student has subscribed to ChatGPT+ (@sec:using-ai). Worse yet, if we suspect that the student wrote the letter, it is a #myred[red flag] as we will question both the student's integrity and the letter writer's credibility (because they allow this to happen).
 
 
-// \begin{commentbox}
-//  Well-known and well-respected profs would \emph{not} ask you to write your own letter (in fact, even not well-known ones wouldn't do this to students they care about). This might be a common practice at specific universities and the students do not have a choice as they need the letter.  However, think about this: if a prof. does this often, then they either don't know how to write a LOR (more common than you would think) or simply do not know or care enough about you.  In any case, such LoRs are not useful and might even hurt your application.  So if you are in this situation, you should find someone else to write for you.
-// \end{commentbox}
+#commentbox[
+ Well-known and well-respected profs would _not_ ask you to write your own letter (in fact, even not well-known ones wouldn't do this to students they care about). This might be a common practice at specific universities and the students do not have a choice as they need the letter.  However, think about this: if a prof. does this often, then they either don't know how to write a LOR (more common than you would think) or simply do not know or care enough about you.  In any case, such LoRs are not useful and might even hurt your application.  So if you are in this situation, you should find someone else to write for you.
+]
 
 
 // % \subsection{Not having LoRs from Research Advisors or Mentors <sec:no-research-lor}
@@ -615,34 +611,26 @@ However, don't worry if you haven't worked directly with well-known researchers.
 
 
 
+As mentioned in @sec:lor-writers, LoR writers should be someone who knows you well and has the credibility to evaluate your research ability. In the US, it's common for students to explicitly ask if the writer would be willing to provide a strong letter, and the writer are also very direct in their response. If they are not willing, then you should ask someone else (you should also be thankful that they are honest with you).
 
-// As mentioned in~\autoref{sec:lor-writers}, LoR writers should be someone who knows you well and has the credibility to evaluate your research ability.  In the US, it's common for students to explicitly ask if the writer would be willing to provide a strong letter, and the writer are also very direct in their response.  If they are not willing, then you should ask someone else (you should also be thankful that they are honest with you).
+#figure(
+  image("files/no-bandwidth.jpeg", width: 60%),
+  caption: [#link("https://www.reddit.com/r/gradadmissions/comments/1oibrgy/i_feel_lost_my_prof_i_worked_with_for_a_year_and/")[Reddit]!],
+) <fig:no-bandwidth>
 
+Many students get stress asking for LoRs because they worry that the writers might refuse to write for them (@fig:no-bandwidth is meant to be a joke but reflects a common concern). However, in my experience, most writers are willing to write for students who have worked with them and done well. Below are some tips to approach your LoR writers:
 
-// \begin{figure}
-//     \centering
-//     \includegraphics[width=0.6\linewidth]{files/no-bandwidth.jpeg}
-//     \caption{\href{https://www.reddit.com/r/gradadmissions/comments/1oibrgy/i_feel_lost_my_prof_i_worked_with_for_a_year_and/}{Reddit}! <fig:no-bandwidth}
-// \end{figure}
+- *Ask in advance*: You should ask for LoRs _at least a month_ before the deadline. People have commitments and writing a strong LoR takes time (@sec:lor-writing), so give them enough time to write a strong letter for you.
 
+- *Waive your right* (@sec:waive-right): You should always waive your right to see the letter. This shows that you trust your writers and that you are not trying to twist their words.
 
-// Many students get stress asking for LoRs because they worry that the writers might refuse to write for them (\autoref{fig:no-bandwidth}  is meant to be a joke but reflects a common concern).  However, in my experience, most writers are willing to write for students who have worked with them and done well. Below are some tips to approach your LoR writers:
-// \begin{itemize}
-// \item \textbf{Ask in advance} You should ask for LoRs \emph{at least a month} before the deadline. People have commitments and writing a strong LoR takes time (\autoref{sec:lor-writing}), so give them enough time to write a strong letter for you.
+- *Help your writers* (@sec:help-your-LOR-writers): You should tell your writers the programs you are applying to, their deadlines, etc. You can also share your SOP with them and other details about your research experience and potential.
 
-// \item \textbf{Waive your right (\autoref{sec:waive-right})} You should always waive your right to see the letter. This shows that you trust your writers and that you are not trying to twist their words.
+- *Ask for feedback*: If the writer is very close to you and willing to, you can ask them for feedback on your SOP (@chap:sop) and other application materials. If the writer is a professor, they might have served in adcom committees, seen many SOPs, and can provide valuable feedback.
 
-// \item \textbf{Help your writers (\autoref{sec:help-your-LOR-writers})}You should tell your writers the programs you are applying to, their deadlines, etc.  You can also share your SOP with them and other details about your research experience and potential. 
+- *Follow up and Stay in touch*: Follow up with your writers to make sure they have submitted the letters on time. Note that their letters might have a different due date than your application (@sec:remind-writers).
 
-
-
-
-// \item \textbf{Ask for feedback} If the writer is very close to you and willing to, you can ask them for feedback on your SOP (\autoref{chap:sop}) and other application materials. If the writer is a professor, they might have served in adcom committees, seen many SOPs, and can provide valuable feedback.
-
-// \item \textbf{Follow up and Stay in touch} Follow up with your writers to make sure they have submitted the letters on time. Note that their letters might have a different due date than your application (\autoref{sec:remind-writers}). 
-
-// After your writers have submitted all of their letters, \emph{thank them} (\autoref{sec:thank-writers}).  Let them know the outcome of your applications and stay in touch with them.  This will help you build a relationship with them and you might need them to write for you again in the future.
-// \end{itemize}
+After your writers have submitted all of their letters, _thank them_ (@sec:thank-writers). Let them know the outcome of your applications and stay in touch with them. This will help you build a relationship with them and you might need them to write for you again in the future.
 
 === Waiving Your Right <sec:waive-right>
 
@@ -796,8 +784,8 @@ However, some cases might raise some eyebrows, e.g., if you only aim at very top
 
 #simpsons[I've got to study harder and publish faster!]
 
-// Here we look at publications and other research experiences that can strengthen your application.
-// \autoref{chap:research-opportunities} provides more information on how to find research opportunities, e.g., during your undergrad study.
+Here we look at publications and other research experiences that can strengthen your application.
+@chap:research-opportunities provides more information on how to find research opportunities, e.g., during your undergrad study.
 
 
 === Publications <sec:publications> 
@@ -1011,7 +999,7 @@ Should you explain bad grades in relevant courses in your SOP? If you have just 
 While a few schools still require taking the #link("https://www.ets.org/gre")[GRE] exam (e.g., UCF), most good CS PhD programs in the US *no longer require it*. The reason is that GRE scores do not correlate well with research ability, which is the most important factor for PhD admission. Note that many faculty members themselves did not take the GRE or had bad scores.
 
 Thus, if you have bad GRE scores or haven't taken the GRE, then don't waste time (re)taking it. Being optional really means optional, and not taking it will not hurt your application.
-However, if you took it and have really good scores then it might be worth it to include (and perhaps talk about) them in your application, but don't expect them to make much difference. But if your scores are bad, then you should not include them in your application, which can be a #red[red flag].
+However, if you took it and have really good scores then it might be worth it to include (and perhaps talk about) them in your application, but don't expect them to make much difference. But if your scores are bad, then you should not include them in your application, which can be a #myred[red flag].
 
 #warningbox[
   I often see students asking about GRE requirements on internet forums or Facebook groups, only to get completely incorrect answers. Some people insist that you "need" to take the GRE or be in specific high range to get a chance.
@@ -1033,11 +1021,11 @@ Unless your degrees are from the US (e.g., you did your undergrad or MS in the U
   Also, the university often requires a certain level of English proficiency for TA (@sec:ta), as you will need to communicate with students. 
 ]
 
-Just as with grades (@chap:your-school) and GRE (@sec:gre), having high scores in English tests might not help, but having too low scores can be a #red[red flag] and can result in an automatic rejection (@sec:why-rejected), e.g., below the minimum requirement.
+Just as with grades (@chap:your-school) and GRE (@sec:gre), having high scores in English tests might not help, but having too low scores can be a #myred[red flag] and can result in an automatic rejection (@sec:why-rejected), e.g., below the minimum requirement.
 
 #commentbox[
   Here is the minimum requirements at GMU. 
-  Being above this might not mean much, but below is a #red[red flag].
+  Being above this might not mean much, but below is a #myred[red flag].
   - *GPA:* $>= 3.0$ in your undergrad (but we also consider the rank/prestige of your school)
   - *GRE:* not required 
   - #link("https://www.gmu.edu/international/english-language-requirements")[English proficiency requirements] (one of the below)
@@ -1074,15 +1062,14 @@ These do not carry much weight as they do not show research ability. We do not c
 However, as mentioned in @sec:non-stem, if you do not have a CS background, you might be able to use these to show you have sufficient CS knowledge.
 
 === Personal Website and (Github) Projects <sec:personal-website>
-// These are \emph{not} required but are increasingly common.  In CS, academic websites are \emph{very} common and used to showcase research, publications, and projects.  You don't need fancy websites with tons of javascript and animations. A simple website with your name (and sometimes photo), research interests, publications, and projects is enough. You can use free services such as \href{https://github.io}{GitHub Pages} to create your website. Many CS students also use Github to host their projects and demonstrate their involvement in open-source projects.  
+These are _not_ required but are increasingly common. In CS, academic websites are _very_ common and used to showcase research, publications, and projects. You don't need fancy websites with tons of javascript and animations. A simple website with your name (and sometimes photo), research interests, publications, and projects is enough. You can use free services such as #link("https://github.io")[GitHub Pages] to create your website. Many CS students also use Github to host their projects and demonstrate their involvement in open-source projects.
 
-// You can mention your website and projects in your CV (\autoref{sec:cv}) and SOP (\autoref{chap:sop}).
-// Having popular projects or active contributions can help you stand out (\autoref{sec:stand-out}), especially if you do not have much research experience.
+You can mention your website and projects in your CV (@sec:cv) and SOP (@chap:sop).
+Having popular projects or active contributions can help you stand out (@sec:stand-out), especially if you do not have much research experience.
 
-
-// \begin{commentbox}
-//     Many students include LinkedIn (or Facebook) profiles in their applications. While these are popular when applying for jobs, they are not very useful for PhD application evaluation.  Many adcom members are not familiar with LinkedIn (and might not want to go to a page that requires us to have an account and login), so it is better to have a something like personal and project websites, which are far more common and easier to access. 
-// \end{commentbox}
+#commentbox[
+  Many students include LinkedIn (or Facebook) profiles in their applications. While these are popular when applying for jobs, they are not very useful for PhD application evaluation. Many adcom members are not familiar with LinkedIn (and might not want to go to a page that requires us to have an account and login), so it is better to have a something like personal and project websites, which are far more common and easier to access.
+]
 
 
 = After You Apply <part:after-apply>
@@ -1090,16 +1077,18 @@ However, as mentioned in @sec:non-stem, if you do not have a CS background, you 
 == Interview and The Waiting Game <chap:interview>
 // \chapterinfo{Getting an interview is typically a good sign; but no interview does not mean rejection.}
 
-// \myepigraphsimpsons{Bart: "Are we there yet? Are we there yet? Are we there yet?"\\
-// Homer: "No!"\\
-// Bart: "Okay, how about now?"}
+#simpsons[Bart: "Are we there yet? Are we there yet? Are we there yet?"
 
-// After you submit your applications, the waiting game begins! For many students, this is a very stressful time. This section provides some information and tips to help you get through this time.
+Homer: "No!"
+
+Bart: "Okay, how about now?"]
+
+After you submit your applications, the waiting game begins! For many students, this is a very stressful time. This section provides some information and tips to help you get through this time.
 
 
-// \begin{center}
-//   \includegraphics[scale=0.5]{files/bingo.png}
-// \end{center}
+#align(center)[
+  #image("files/bingo.png", width: 50%)
+]
 
 === Interviews <sec:interviews> 
 
@@ -1107,39 +1096,40 @@ After you apply, you \emph{might} get interviews. The most common case is that a
 
 Note that unlike other fields (e.g., Physics @fig:adcom-discuss-physics) that has formal interview where adcom members interview selected applicants to accept them in the program, CS interviews are usually with just one prof. or a few profs.---who might not adcom members---that have interests in recruiting specific applicants to work directly with them or their research group. In CS, adcom members rarely do interview to get students for the program as a whole.
 
-// \subsection{When do interviews happen?}
+==== When do interviews happen?
 
-// The timeline for interviews varies.  Faculty set up interviews based on their busy (\autoref{sec:busy}) and erratic schedule. Some try to get interviews done before the winter holidays, while others do them after the holidays.
-// Do not be surprised if you get an interview invitation at the last minute. Some profs. are informal and may just email you to chat (e.g., \emph{"could you chat in an hr?"}), while others might give you several options (e.g., \emph{"can you chat at 2 pm on Friday or 10 am on Monday?"}).
+The timeline for interviews varies.  Faculty set up interviews based on their busy (@sec:busy) and erratic schedule. Some try to get interviews done before the winter holidays, while others do them after the holidays.
+Do not be surprised if you get an interview invitation at the last minute. Some profs. are informal and may just email you to chat (e.g., _"could you chat in an hr?"_), while others might give you several options (e.g., _"can you chat at 2 pm on Friday or 10 am on Monday?"_).
 
 
-// Some programs \emph{do not do interviews} at all (\autoref{sec:no-interview}). They review applications and make decisions based on them.  If you do not get an interview, it does not mean you're out.
+Some programs _do not do interviews_ at all (@sec:no-interview). They review applications and make decisions based on them.  If you do not get an interview, it does not mean you're out.
 
-// \begin{commentbox}
-//     At GMU, faculty are encouraged to interview candidates. While we can interview as many as we want, we typically interview those we are interested in working with. In some cases, several faculty members interview a candidate together to evaluate if they fit well in their research group. For very strong candidates, the interview is actually to recruit them.  
-//     In some rare cases, the adcom chair might ask specific adcom member or faculty to interview certain candidates to get more information about them for admission.
+#commentbox[
+    At GMU, faculty are encouraged to interview candidates. While we can interview as many as we want, we typically interview those we are interested in working with. In some cases, several faculty members interview a candidate together to evaluate if they fit well in their research group. For very strong candidates, the interview is actually to recruit them.  
+    In some rare cases, the adcom chair might ask specific adcom member or faculty to interview certain candidates to get more information about them for admission.
         
-//     In short, getting an interview is a good sign; it means that someone is considering you. If we are not interested in your application, we will not waste our (and your) time interviewing you.
-// \end{commentbox}
+    In short, getting an interview is a good sign; it means that someone is considering you. If we are not interested in your application, we will not waste our (and your) time interviewing you.
+  ]
 
-// \subsection{Preparing for interviews} Typically, an interview takes about 15--30 minutes, and one important aspect of evaluation is your ability to effectively communicate, including speaking and understanding English. 
-// You might be asked to talk about your research experience and interests and to read a paper and discuss it. In some rare cases you might also be asked to solve a problem (one of my colleagues at GMU likes coding interview).
+==== Preparing for interviews
 
-
-// You should treat the interview as an informal chat. Prepare an \emph{"elevator pitch"} about your research experience and interests. You might also want to have a 5-minute presentation about your research. If a prof. asks you to read a paper, do it and be prepared to discuss it. You should also ask if you need to prepare for coding. Finally, the interview gives you an opportunity to ask questions, e.g., about the program and the professor's research.  You should definitely ask as it shows that you're interested.  See \href{https://roars.dev/phd-cs-us/advising.pdf}{some questions} you can ask about the advisor and their advising style.
-
-// \subsection{After the Interview}
-
-// \paragraph{Follow-Up Emails} If you had an interview and have not heard back, you can email to ask about the status of your application. See \autoref{sec:accept-postpone-decline} for how to check status and follow-up emails. 
+Typically, an interview takes about 15--30 minutes, and one important aspect of evaluation is your ability to effectively communicate, including speaking and understanding English. 
+You might be asked to talk about your research experience and interests and to read a paper and discuss it. In some rare cases you might also be asked to solve a problem (one of my colleagues at GMU likes coding interview).
 
 
-// \paragraph{Updating your profile} If you have important  achievements after you submitted your application, e.g., new top publications or big fellowship awards, you can mention to your interviewer. If you did not have interviews, you can try to ask the CS dept to update your application (though no guarantee that they will consider them). However, in general, you should not send emails to update your profile unless you really have important updates.
+You should treat the interview as an informal chat. Prepare an _"elevator pitch"_ about your research experience and interests. You might also want to have a 5-minute presentation about your research. If a prof. asks you to read a paper, do it and be prepared to discuss it. You should also ask if you need to prepare for coding. Finally, the interview gives you an opportunity to ask questions, e.g., about the program and the professor's research.  You should definitely ask as it shows that you're interested.  See #link("https://roars.dev/phd-cs-us/advising.pdf")[some questions] you can ask about the advisor and their advising style.
+
+==== After the Interview
+
+*Follow-Up Emails* If you had an interview and have not heard back, you can email to ask about the status of your application. See @sec:accept-postpone-decline for how to check status and follow-up emails. 
+
+
+*Updating your profile* If you have important  achievements after you submitted your application, e.g., new top publications or big fellowship awards, you can mention to your interviewer. If you did not have interviews, you can try to ask the CS dept to update your application (though no guarantee that they will consider them). However, in general, you should not send emails to update your profile unless you really have important updates.
 
 === Not Getting Interviews <sec:no-interview>
 While it is generally good to get an interview, not getting one *does not* mean you're out. Many programs do not have the tradition of interviewing applicants. For example, at GMU, most admitted students with TA (@sec:ta) do not go through interviews.
 
 However, no interview usually means you are less likely to get an RA (@sec:ra), which is typically offered by an individual faculty member. If they want you to do research with them, they will likely interview you first. If you have no interviews, your application (and TA/fellowship funding) is decided by the adcom.
-
 
 
 === Notification Timeline: Why rejection letters are sent so late? <sec:late-rejection>
