@@ -1,12 +1,10 @@
-
-
 #set page(numbering: "1", number-align: center)
 #set heading(numbering: "1.")
 #set par(justify: true)
 
 #set text(
   //font: "Noto Serif",
-  size: 11pt
+  size: 12pt
 )
 
 #set list(indent: 1em)
@@ -54,7 +52,7 @@
   #if who != none [
     *#who*: 
   ]
-  #msg
+  #text(size:10pt)[#msg]
 ]
 
 
@@ -167,7 +165,7 @@ Full funding for CS PhD students is the norm in the US, and I'd go as far as to 
 //\sectioninfo{A PhD in CS is a \textbf{research} degree that transforms you into a researcher in a specific area of CS.
  You will become an expert in a particular topic and know more about it than anyone else in the world (in many cases even your advisor).}
 
-A PhD in CS is a _research_ degree. Unlike undergraduate or even Master's programs (\autoref{chap:ms}), which focus on breadth of knowledge through coursework, a PhD is about depth and pushing the boundary of a specific area within a CS \glslink{fields}{field} (e.g., software verification within the field of programming languages or formal methods). You will become an expert in your area of research and contribute something new to the field that has never been done before. 
+A PhD in CS is a _research_ degree. Unlike undergraduate or even Master's programs (@chap:ms), which focus on breadth of knowledge through coursework, a PhD is about depth and pushing the boundary of a specific area within a CS fields (e.g., software verification within the field of programming languages or formal methods). You will become an expert in your area of research and contribute something new to the field that has never been done before. 
 
 
 #commentbox([This #link("https://matt.might.net/articles/phd-school-in-pictures/")[series of pictures] from #link("https://matt.might.net")[Matt Might] illustrates what a PhD means.])
@@ -309,7 +307,7 @@ However, many universities also accept PhD students in the Spring or Summer, esp
 
 
 #figure(caption: [Comparison of the CS PhD program in the US and other countries],
-  text(size:10pt)[
+  text(size:11pt)[
     #table(
       columns: 3, align: left, stroke: none,
       table.header(
@@ -1269,12 +1267,12 @@ It is #emph[unlikely] that you can negotiate things like stipend, as it is stand
 ]
 
 #figure(
-  image("files/gra_offer.pdf", width: 80%),
+  image("files/gra_offer.pdf", width: 90%),
   caption: [An example of a GRA offer letter.],
 ) <fig:gra-offer>
 
 #figure(
-  image("files/gta_offer.pdf", width: 80%),
+  image("files/gta_offer.pdf", width: 90%),
   caption: [An example of a GTA offer letter.],
 ) <fig:gta-offer>
 
@@ -1337,17 +1335,15 @@ I have seen many cases where students think they have a strong profile, but they
 
 #strong[Research] (@chap:research-experience) might not be as strong as you think. Participating in a research project does not mean much (or anything) without results, e.g., publications (@sec:publications). Moreover, publications might not have much value if they were published locally or in unknown venues. Even papers at top venues might not be as impressive as you think. For example, many AI/ML/NLP faculty are not interested in "dataset" work, even if papers appear at top venues like NeurIPS (@fig:comment-neurips). However, while you might not have papers, you might get strong LoRs from professors or PhD students you worked with closely on research projects. But just saying you do research is not enough.
 
+
+
 #figure(
   caption: [Comment from an NLP researcher on an applicant with multiple NeurIPS papers],
-  box(
-    inset: 10pt,
-    fill: rgb("#b8ebc1"),
-  )[
-    #text(size: 10pt)[
+  commentbox[
       #emph["The applicant has done some interesting work, but much of what they have done has been only on dataset creation, with almost nothing on actual modeling or tackling tasks. This has merits, but it's more of an engineering feat than a research feat."]
-    ]
-  ]
+    ]  
 ) <fig:comment-neurips>
+
 
 
 ==== Other Common Reasons for Rejection
@@ -1426,7 +1422,7 @@ RA is paid by a prof. for you to do their research. TA is paid by the dept. for 
 Note that funding is typically more available for PhD students than MS (@sec:ms-funding).
 
 #figure(
-  caption: [Different types of PhD funding. All cover tuition, insurance, and stipend.],
+  caption: [Different types of PhD funding. All cover tuition, insurance, and stipend.],  
   table(
     columns: 4,
     align: left,
@@ -1561,6 +1557,7 @@ PhD students often ask why their salary is low compared to the large grants thei
 
 #figure(
   caption: [GRA cost breakdown. F & A is Facilities & Administrative Cost Base and MTDC is Modified Total Direct Cost. These are things that the university can charge overhead to.],
+  text(size: 10pt,
   table(
     columns: 3,
     align: left,
@@ -1587,7 +1584,7 @@ PhD students often ask why their salary is low compared to the large grants thei
     [F & A (MTDC)], [21K], [Direct Cost - GRA Salary],
     [Total Indirect Cost], [*12K*], [58.9% of MTDC],
     [*Total (Direct + Indirect)*], [*73K*], [Budget for a GRA],
-  ),
+  )),
 ) <tab:cost>
 
 @tab:cost shows the budget breakdown for a GRA per year.
@@ -1610,7 +1607,7 @@ We will first discuss universities in the US that offer PhD in CS. Then we will 
 
 === Schools offering PhD in CS <sec:schools-offering-phd>
 
-Most US universities have CS programs, but many do not offer a CS *PhD* program. These universities might offer just Bachelor's degrees (e.g., BS) with no graduate studies (no MS or PhD), or only MS programs (but no PhD). For example, Penn State University Park has a PhD in CS, but Penn State Harrisburg offers only BS and MS in CS, and Penn State York offers only BS in CS. Conversely, multiple University of Texas locations—Austin, Dallas, and Arlington—all have PhDs in CS.
+Most US universities have CS programs, but many do not offer a *CS PhD* program. These universities might offer just Bachelor's degrees (e.g., BS) with no graduate studies (no MS or PhD), or only MS programs (but no PhD). For example, Penn State University Park has a PhD in CS, but Penn State Harrisburg offers only BS and MS in CS, and Penn State York offers only BS in CS. Conversely, multiple University of Texas locations—Austin, Dallas, and Arlington—all have PhDs in CS.
 
 Thus, if your goal is a PhD in CS, you must target only schools offering such a degree. While the large number of US universities can be confusing, a little research on each school's website will clarify what degrees are available. Schools listed in @chap:rankings all have PhD programs in CS, so you can start there.
 
@@ -2270,6 +2267,7 @@ But there's a good chance that we would respond to well-written emails (@sec:con
 // % \end{itemize}
 // % F-2 visa holders must leave the US if the primary F-1 student visa holder loses status or completes their program.
 
+#pagebreak()
 = Domestic Students <chap:domestic-students>
 // \chapterinfo{Specific benefits and opportunities for domestic students applying to CS PhD programs.}
 
@@ -2361,90 +2359,83 @@ Finally, MS adcom can involve teaching faculty (@sec:faculty-types), who are not
 
 You will submit similar materials as in a PhD application, e.g., transcripts, LoRs, SOP, and test scores. However, research experience is not required, and LoRs can be from anyone who can speak about your academic or working abilities. Moreover, your SOP should focus on your academic and work background, why you want to get an MS, and how the program fits your goals. As with PhDs, GREs are often not required. Some MS programs do not even require LoRs or SOPs.  
 
-*Undergrad Background and GPA:* Since research is not required, your undergrad background is more important in an MS application. You should have a strong background in CS, e.g., through your undergrad degree. GPA is also important, as it is often used as a filter for MS applications.
+- *Undergrad Background and GPA:* Since research is not required, your undergrad background is more important in an MS application. You should have a strong background in CS, e.g., through your undergrad degree. GPA is also important, as it is often used as a filter for MS applications.
 
-*SOP:* Your SOP should explain why you want to get an MS, how the program fits your goals, and why you're a good fit for the program. You don't need to mention working with specific professors unless you want to do a thesis option. You still need to customize it for each school (e.g., you picked GMU due to its strong SWE program or the DC area has many job opportunities).
+- *SOP:* Your SOP should explain why you want to get an MS, how the program fits your goals, and why you're a good fit for the program. You don't need to mention working with specific professors unless you want to do a thesis option. You still need to customize it for each school (e.g., you picked GMU due to its strong SWE program or the DC area has many job opportunities).
 
-*LoRs:* Unlike PhDs, your LoRs do not need to be from professors or talk about research experience. Many MS programs do not even require LoRs.
+- *LoRs:* Unlike PhDs, your LoRs do not need to be from professors or talk about research experience. Many MS programs do not even require LoRs.
 
-*Test Scores:* Unlike PhDs, which often do not require GREs, MS programs often require GREs. However, some schools do make them optional, and you should check with the school you're applying to. If you have a low GPA, a high GRE score can help offset that. 
+- *Test Scores:* Unlike PhDs, which often do not require GREs, MS programs often require GREs. However, some schools do make them optional, and you should check with the school you're applying to. If you have a low GPA, a high GRE score can help offset that. 
 
 As with PhD, English proficiency tests (TOEFL/IELTS) are required for international students (but just passing the minimum requirement is often enough @sec:english-tests). Note that just as with PhD, English tests are waived if you did your undergrad at a US university.
 
 
 == Funding (Why MS Students Are Typically Not Funded?) <sec:ms-funding>
 
-// Unlike PhD programs, which often have funding (\autoref{chap:funding}), MS students are typically \emph{not} funded. This is because MS students do not focus on research and thus are not funded through RA and PhD students have priority for TA positions. 
+Unlike PhD programs, which often have funding (@chap:funding), MS students are typically _not_ funded. This is because MS students do not focus on research and thus are not funded through RA and PhD students have priority for TA positions. 
 
-// \begin{itemize}
-// \item[\textbf{RA}] Profs. are not willing to take MS students as RAs because they are not around long enough to be productive. It can take a while for a student to get used to research and start being productive, and by that time (1--2 years), they are about to graduate. Moreover, the goal of most MS students is to get a job, not to do research, so they are not as motivated to do research.
+- *RA*: Profs. are not willing to take MS students as RAs because they are not around long enough to be productive. It can take a while for a student to get used to research and start being productive, and by that time (1--2 years), they are about to graduate. Moreover, the goal of most MS students is to get a job, not to do research, so they are not as motivated to do research.
 
-// \item[\textbf{TA}] MS students are typically not given TA positions because PhDs are given priority as they will stay much longer (\autoref{sec:time}). Many depts. do not have enough TAs for PhD students and so they cannot afford to give them to MS students.
-// \end{itemize}
+- *TA*: MS students are typically not given TA positions because PhDs are given priority as they will stay much longer (@sec:time). Many depts. do not have enough TAs for PhD students and so they cannot afford to give them to MS students.
 
-// \paragraph{Exceptions}
-// While MS students are typically not funded and do not focus on research, there are always exceptions.
-// Some MS programs are fully funded, e.g., those that are research-oriented and have a strong research component.
-// Moreover, some schools have TAs for MS students, and you can apply for these positions. For example, GMU CS has quite a few TAs for MS students, and my courses in the past two years have MS TAs.
-// Finally, if you have a strong background and can demonstrate that you can be productive in research, then a prof. might be willing to take you as their RA.  Some of these students convert to PhD students after having this research experience.
+*Exceptions*: While MS students are typically not funded and do not focus on research, there are always exceptions.
+Some MS programs are fully funded, e.g., those that are research-oriented and have a strong research component.
+Moreover, some schools have TAs for MS students, and you can apply for these positions. For example, GMU CS has quite a few TAs for MS students, and my courses in the past two years have MS TAs.
+
+Finally, if you have a strong background and can demonstrate that you can be productive in research, then a prof. might be willing to take you as their RA.  Some of these students convert to PhD students after having this research experience.
 
 == Selecting and Ranking Schools <sec:selecting-ranking-schools-ms>
 // \sectioninfo{How to select and rank MS programs in CS.}
 
-// Because of the differences between MS and PhD programs (\autoref{sec:phd-vs-ms}), you should consider different factors when selecting and ranking MS programs (see~\autoref{chap:choosing-school} for selecting PhD programs). For example, you might want to consider factors such as location, industry connections, and job placement instead of research areas and advisers (\autoref{chap:choosing-adviser}).
+Because of the differences between MS and PhD programs (@sec:phd-vs-ms), you should consider different factors when selecting and ranking MS programs (see @chap:choosing-school for selecting PhD programs). For example, you might want to consider factors such as location, industry connections, and job placement instead of research areas and advisers (@chap:choosing-adviser).
 
-// \begin{itemize}
+- *Location:* In addition to living in a place you like (e.g., warm weather, historical city, etc.), you should also consider the job opportunities in the area. For tech industry, consider MS programs in tech hubs like the Bay Area and Seattle. For government jobs, look at schools in the DC area. For example, many students at GMU work for the government or defense contractors in the DC area and take classes in the evening or online.
 
-// \item \textbf{Location:} In addition to living in a place you like (e.g., warm weather, historical city, etc.), you should also consider the job opportunities in the area.  For tech industry, consider MS programs in tech hubs like the Bay Area and Seattle. For government jobs, look at schools in the DC area.  For example, many students at GMU work for the government or defense contractors in the DC area and take classes in the evening or online.
+- *Industry Connections:* Universities often have strong connections with local companies and can help you get internships and jobs. For example, Microsoft and Amazon look for students in the Washington area while Google and Facebook recruit those in the Bay Area. Due to its location, GMU students naturally get jobs from the government, defense contractors, and Amazon, whose 2nd HQ is in Arlington.
 
-// \item \textbf{Industry Connections:} Universities often have strong connections with local companies and can help you get internships and jobs. For example, Microsoft and Amazon look for students in the Washington area while  Google and Facebook recruit those in the Bay Area.  Due to its location, GMU students naturally get jobs from the government, defense contractors, and Amazon, whose 2nd HQ is in Arlington.
+- *Ranking:* Unlike PhD programs where the adviser and research are likely the most important factor, in MS programs the ranking of the school is typically more important. Thus, you should consider the ranking of the school in CS, especially in the specific area you're interested in. For example, if you're interested in software engineering, you might want to consider schools with strong SWE programs.
 
-// \item \textbf{Ranking:} Unlike PhD programs where the adviser and research are likely the most important factor, in MS programs the ranking of the school is typically more important.  Thus, you should consider the ranking of the school in CS, especially in the specific area you're interested in.  For example, if you're interested in software engineering, you might want to consider schools with strong SWE programs. 
+- *Living Cost:* MS students are typically not funded (@sec:ms-funding), so living cost can be a big factor. You should consider the tuition and living expenses of the area. Note that sometimes living costs, e.g., renting, seem scary at first but students often find way to make it work, e.g., by sharing an apartment with other students.
 
-// \item \textbf{Living Cost:} MS students are typically not funded (\autoref{sec:ms-funding}), so living cost can be a big factor. You should consider the tuition and living expenses of the area. Note that sometimes living costs, e.g., renting, seem scary at first but students often find way to make it work, e.g., by sharing an apartment with other students.
-
-// \end{itemize}
-
+#pagebreak()
 = Research Opportunities <chap:research-opportunities>
 // \chapterinfo{How to get research experience as an undergrad.}
 
 #simpsons[Kids, you tried your best and you failed miserably. The lesson is: never try.]
 
-// \begin{center}
-//     \includegraphics[scale=0.5]{files/phd100404s.png}
-// \end{center}
+#figure(
+  image("files/phd100404s.png", width: 70%),
+)
 
-// As discussed in \autoref{chap:research-experience}, having a successful research experience can greatly strengthen a PhD application. Research experience gives you opportunities to try out research, determine what research area you're interested in, publish papers (\autoref{chap:research-experience}), connect with researchers, and get strong LoRs (\autoref{chap:lor}). This section provides some guidance on how to gain research experience as an undergraduate (or MS) student or student at a smaller college where research opportunities might be limited.
+As discussed in @chap:research-experience, having a successful research experience can greatly strengthen a PhD application. Research experience gives you opportunities to try out research, determine what research area you're interested in, publish papers (@chap:research-experience), connect with researchers, and get strong LoRs (@chap:lor). This section provides some guidance on how to gain research experience as an undergraduate (or MS) student or student at a smaller college where research opportunities might be limited.
 
 == Locally 
 
-// Start looking for research opportunities at your institution.
-// If you did well or liked a class, you can check with the professor of that class for research opportunities.
-// You can also go to the department directory and then professors' websites and see if they are looking for undergraduate researchers.
-// Even if they say they are looking for graduate students, you can still contact them and ask.
+Start looking for research opportunities at your institution.
+If you did well or liked a class, you can check with the professor of that class for research opportunities.
+You can also go to the department directory and then professors' websites and see if they are looking for undergraduate researchers.
+Even if they say they are looking for graduate students, you can still contact them and ask.
 
-// Many universities have programs to encourage undergraduate research. For example, GMU has the OSCAR program, UNL has UCARE, and \acrshort{NSF} has \acrshort{REU}'s (for US citizens and permanent residents).
+Many universities have programs to encourage undergraduate research. For example, GMU has the OSCAR program, UNL has UCARE, and NSF has REU's (for US citizens and permanent residents).
 
-// You can also take honor thesis or independent study courses with a professor.  This is a good way to get research experience and also get a LoR from the professor.  You can also ask your academic adviser or other faculty members for suggestions.  Finally, you can also ask your peers who are already doing research.  Use the method described in \autoref{sec:contact} to contact professors
+You can also take honor thesis or independent study courses with a professor.  This is a good way to get research experience and also get a LoR from the professor.  You can also ask your academic adviser or other faculty members for suggestions.  Finally, you can also ask your peers who are already doing research.  Use the method described in @sec:contact to contact professors
 
+#commentbox[
+I enjoy working with undergrads and actively recruit them to my research group. I get undergraduates through my classes, e.g., asking students who did well in my class if they are interested in research.  Occasionally I was introduced to students by other students or faculty. In many cases I directly email students who I think are good and ask if they are interested in research. 
 
-// \begin{commentbox}
-// I enjoy working with undergrads and actively recruit them to my research group. I get undergraduates through my classes, e.g., asking students who did well in my class if they are interested in research.  Occasionally I was introduced to students by other students or faculty. In many cases I directly email students who I think are good and ask if they are interested in research. 
-//     \\
-
-//     While most undergrads are understandably not productive in research, some are and I have published multiple papers with them---like with Kimhao and Stefania.  
-//     I also have written LoRs for them and have helped them get into good PhD programs.
-// \end{commentbox}
+While most undergrads are understandably not productive in research, some are and I have published multiple papers with them---like with Kimhao and Stefania.  
+I also have written LoRs for them and have helped them get into good PhD programs.
+]
 
 == Open Source Contributions <sec:open-source-contribs>
 
-// Open development platforms such as GitHub offer many research opportunities.
-// In CS and many other fields, research labs put their projects on GitHub to encourage collaboration and contributions from the community. For example, my research group, \href{https://roars.dev/}{Roars}, has many open-source projects that undergrads can contribute to (and in fact my of my undergrad researchers have contributed to them).
+Open development platforms such as GitHub offer many research opportunities.
+In CS and many other fields, research labs put their projects on GitHub to encourage collaboration and contributions from the community. For example, my research group, #link("https://roars.dev/")[Roars], has many open-source projects that undergrads can contribute to (and in fact my of my undergrad researchers have contributed to them).
 
-// By contributing code, fixing bugs, implementing new features, or providing documentation, students can gain practical research experience and interact with experienced developers and researchers in the field. Not only you gain research experience, but you might be able to get a LoR from the project maintainer, and you should write about this experience in your SOP (\autoref{chap:sop}.)
+By contributing code, fixing bugs, implementing new features, or providing documentation, students can gain practical research experience and interact with experienced developers and researchers in the field. Not only you gain research experience, but you might be able to get a LoR from the project maintainer, and you should write about this experience in your SOP (@chap:sop)
 
 == Virtual Research Opportunities 
-// This is less common but several places offer virtual internships and research programs aimed at providing hands-on research experience. These programs often involve working remotely under the guidance of experienced mentors and collaborating with a team of fellow researchers. For instance, \href{https://docs.google.com/forms/d/1btIwt4HwjyKMOUk-EMy3rbkfWzFxv2lNrMm_zkd0pA4/viewform?edit_requested=true}{UIUC+ Summer Undergraduate Research in Software Engineering}  offers an unpaid remote internship for software engineering students all over the world to collaborate with mentors from University of Illinois at Urbana Champaign.
+This is less common but several places offer virtual internships and research programs aimed at providing hands-on research experience. These programs often involve working remotely under the guidance of experienced mentors and collaborating with a team of fellow researchers. For instance, #link("https://docs.google.com/forms/d/1btIwt4HwjyKMOUk-EMy3rbkfWzFxv2lNrMm_zkd0pA4/viewform?edit_requested=true")[UIUC+ Summer Undergraduate Research in Software Engineering] offers an unpaid remote internship for software engineering students all over the world to collaborate with mentors from University of Illinois at Urbana Champaign.
 
 // % \paragraph{Online Conferences and Workshops}: Attending online conferences and workshops is another way to gain exposure to cutting-edge research and establish connections with experts in the field. Many conferences now provide virtual participation options, enabling students to access research talks, poster sessions, and panel discussions and sometimes access designated chat rooms or networking events where participants can engage with researchers, ask questions, and seek potential research collaborations. By creating profiles, joining relevant research groups, and participating in discussions, students can connect with established researchers, contribute to ongoing projects, and potentially collaborate on publications or research proposals as they provide access
 
@@ -2547,76 +2538,64 @@ As with PhD, English proficiency tests (TOEFL/IELTS) are required for internatio
 
 
 
-
+#pagebreak()
 
 = Fellowship Applications <chap:fellowships>
 // \chapterinfo{How fellowships such as NSF GRFP and DOD DSEG are evaluated.}
 
 #simpsons[You mean those leagues where parents push their kids into vicious competition to compensate for their own failed dreams of glory?]
 
-// Having an external and major fellowship can significantly relieve the financial burden of your PhD and improve your chances of getting into a good PhD program (\autoref{sec:fellowships}). 
-// Among the most wel-known and prestigious fellowships for CS PhD students who are US citizens or permanent residents (\autoref{chap:domestic-students}) are the National Science Foundation Graduate Research Fellowship Program (NSF GRFP) and the Department of Defense National Defense Science and Engineering Graduate Fellowship (DoD NDSEG). These fellowships provide multiple years of full financial support, including tuition, stipend, and health insurance.
+Having an external and major fellowship can significantly relieve the financial burden of your PhD and improve your chances of getting into a good PhD program (@sec:fellowships). 
+Among the most wel-known and prestigious fellowships for CS PhD students who are US citizens or permanent residents (@chap:domestic-students) are the National Science Foundation Graduate Research Fellowship Program (NSF GRFP) and the Department of Defense National Defense Science and Engineering Graduate Fellowship (DoD NDSEG). These fellowships provide multiple years of full financial support, including tuition, stipend, and health insurance.
 
-// The \href{https://www.nsfgrfp.org/}{GRFP} and \href{https://www.ndsegfellowships.org/}{NDSEG} websites have detailed information on the application process and eligibility requirements. The \href{https://www.nsf.gov/funding/information/faq-frequently-asked-questions-faqs-graduate-research-fellowship}{NSF GRFP FAQ} has many useful tips and resources. 
-// You can also find articles written by previous winners offering tips on writing a strong application (see the \href{https://code.roars.dev/phd-cs-us}{link} section on this book's website). However, keep in mind that while these writers were successful in securing the fellowship, they often have no insight into how their applications were actually evaluated or what the reviewers want to see.
+The #link("https://www.nsfgrfp.org/")[GRFP] and #link("https://www.ndsegfellowships.org/")[NDSEG] websites have detailed information on the application process and eligibility requirements. The #link("https://www.nsf.gov/funding/information/faq-frequently-asked-questions-faqs-graduate-research-fellowship")[NSF GRFP FAQ] has many useful tips and resources. 
+You can also find articles written by previous winners offering tips on writing a strong application (see the #link("https://code.roars.dev/phd-cs-us")[link] section on this book's website). However, keep in mind that while these writers were successful in securing the fellowship, they often have no insight into how their applications were actually evaluated or what the reviewers want to see.
 
-// This chapter focuses on how your application is evaluated, what reviewers look for, and tips on improving your application. Note that while these are specific GRFP and NDSEG, the given advice should be applicable to other major fellowships---including those for international students.
+This chapter focuses on how your application is evaluated, what reviewers look for, and tips on improving your application. Note that while these are specific GRFP and NDSEG, the given advice should be applicable to other major fellowships---including those for international students.
 
 
 == NSF GRFP <sec:nsf-grfp>
 
-// The NSF GRFP is a prestigious fellowship for US citizens, nationals, and permanent residents who are in the \emph{early stages} of their graduate study in STEM fields, including both MS and PhD students. The GRFP is highly competitive, with many applicants from top schools, with strong LoRs and research experience. In many cases, even an \emph{"honorable mention"}---meaning you did not get the fellowship but were considered a strong candidate---can help you get into a good PhD program (so make sure to mention it in your CV and application).
+The NSF GRFP is a prestigious fellowship for US citizens, nationals, and permanent residents who are in the _early stages_ of their graduate study in STEM fields, including both MS and PhD students. The GRFP is highly competitive, with many applicants from top schools, with strong LoRs and research experience. In many cases, even an _"honorable mention"_---meaning you did not get the fellowship but were considered a strong candidate---can help you get into a good PhD program (so make sure to mention it in your CV and application).
 
-// \subsection{How Applications are Evaluated}
+=== How Applications are Evaluated
 
-// \begin{itemize}
-// \item Each applicant is assigned to \emph{about 3 reviewers} who have expertise in the applicant's research field (e.g., if your topic is in PL, your reviewers will likely work in PL or did their PhD in PL). This means reviewers are quite knowledgeable in your field and your work, your LoR writers and their work, and thus can evaluate your application quite in depth. This is different from PhD applications where adcom reviewers (\autoref{sec:adcom}) might not be in your field.
+- Each applicant is assigned to _about 3 reviewers_ who have expertise in the applicant's research field (e.g., if your topic is in PL, your reviewers will likely work in PL or did their PhD in PL). This means reviewers are quite knowledgeable in your field and your work, your LoR writers and their work, and thus can evaluate your application quite in depth. This is different from PhD applications where adcom reviewers (@sec:adcom) might not be in your field.
 
-// \item While reviewers are likely in your field, they might not be research-focused faculty members (e.g., tenure-line), they can be teaching faculty (\autoref{sec:faculty-types}). In fact, I believe many reviewers are teaching faculty. So this means they may not be familiar to the latest related work or trend in the field. So make your research plan easy to understand and well-motivated (see \autoref{sec:grfp-pitfalls}).
+- While reviewers are likely in your field, they might not be research-focused faculty members (e.g., tenure-line), they can be teaching faculty (@sec:faculty-types). In fact, I believe many reviewers are teaching faculty. So this means they may not be familiar to the latest related work or trend in the field. So make your research plan easy to understand and well-motivated (see @sec:grfp-pitfalls).
 
+- Reviewers typically try to compare applicants _within their cohort level_. This means that we do not compare an undergrad, who is still applying to grad school, to a 2nd year PhD student who already has an adviser and published multiple papers. This ensures that each applicant is evaluated fairly based on their level.
 
-// \item Reviewers typically try to compare applicants \emph{within their cohort level}.  This means that we do not compare an undergrad, who is still applying to grad school, to a 2nd year PhD student who already has an adviser and published multiple papers. This ensures that each applicant is evaluated fairly based on their level.
-
-// \item Unlike CS PhD applications that focus on research potentials in which papers, research experience, and LoRs are important, NSF GRFP looks at both \emph{research potential} and \emph{broader impacts}, e.g., how you can help society or mentor others.  It is \emph{not expected} that you have published papers or have a lot of research experience (recall that students applying for MS are also eligible). Instead, you need to convince the reviewers that you have the \emph{potential} to be a good researcher (technical merits) and that you can help society (broader impacts). More in \autoref{sec:grfp-im-bi}. 
-
-// \end{itemize}
+- Unlike CS PhD applications that focus on research potentials in which papers, research experience, and LoRs are important, NSF GRFP looks at both _research potential_ and _broader impacts_, e.g., how you can help society or mentor others. It is _not expected_ that you have published papers or have a lot of research experience (recall that students applying for MS are also eligible). Instead, you need to convince the reviewers that you have the _potential_ to be a good researcher (technical merits) and that you can help society (broader impacts). More in @sec:grfp-im-bi.
 
 
-// \subsection{Intellectual Merit and Broader Impacts <sec:grfp-im-bi}
+=== Intellectual Merit and Broader Impacts <sec:grfp-im-bi>
 
-// Your application will be evaluated based on two criteria: Intellectual Merit (IM) and Broader Impacts (BI). 
+Your application will be evaluated based on two criteria: Intellectual Merit (IM) and Broader Impacts (BI). 
 
-// \paragraph{Intellectual merit (IM)} IM evaluates your research potential, e.g., your research experience, your potential to do research, and how you can contribute to the field.   Unlike a normal project or research proposal, in which the evaluation is entirely based on the merits of the proposed work, in the GRFP, the evaluation is \emph{not} entirely about the research plan. Reviewers are repeatedly reminded to not focus too much on the research plan as many applicants are still applying for PhD programs and might not even get into the field or work with a prof. that fit their research plan. 
+*Intellectual merit (IM):* IM evaluates your research potential, e.g., your research experience, your potential to do research, and how you can contribute to the field.   Unlike a normal project or research proposal, in which the evaluation is entirely based on the merits of the proposed work, in the GRFP, the evaluation is _not_ entirely about the research plan. Reviewers are repeatedly reminded to not focus too much on the research plan as many applicants are still applying for PhD programs and might not even get into the field or work with a prof. that fit their research plan. 
 
-// Instead, the evaluation is based on your \emph{potential} of being a good researcher using various criteria, e.g., your research experience, what others think of you (LoRs), research plan, etc. This also means that even if you have very little research experience, you can still get the fellowship if you can convince the reviewers that you have the potential to be a good researcher.  Vice versa, if you have a lot of research experience and in very top places but cannot convince the reviewers that you have the potential to be a good researcher, you will not get the fellowship.
+Instead, the evaluation is based on your _potential_ of being a good researcher using various criteria, e.g., your research experience, what others think of you (LoRs), research plan, etc. This also means that even if you have very little research experience, you can still get the fellowship if you can convince the reviewers that you have the potential to be a good researcher.  Vice versa, if you have a lot of research experience and in very top places but cannot convince the reviewers that you have the potential to be a good researcher, you will not get the fellowship.
 
-// \paragraph{Broader impacts (BM)} BM is a common and important component in NSF application. It is about how you and your research can \emph{benefit society}.  Many students just mention how their research is cross-discipline and thus has broader impacts (e.g., improve software quality and thus help society).  This is too common and not enough.  You also want to talk about how you, as a grad student with your research, can help society, e.g., through outreach, mentoring, etc. As mentioned below, you will want to be specific and concrete, e.g., \emph{"I will work with highschool students .."} is not as convincing as \emph{"I have had experience in mentoring highschool students X and will continue to do so through Y,Z ..."}.  
+*Broader impacts (BI):* BI is a common and important component in NSF application. It is about how you and your research can _benefit society_.  Many students just mention how their research is cross-discipline and thus has broader impacts (e.g., improve software quality and thus help society).  This is too common and not enough.  You also want to talk about how you, as a grad student with your research, can help society, e.g., through outreach, mentoring, etc. As mentioned below, you will want to be specific and concrete, e.g., _"I will work with highschool students .."_ is not as convincing as _"I have had experience in mentoring highschool students X and will continue to do so through Y,Z ..."_.  
 
-// Writing BM is often difficult, not only for students but also new faculty.  You should ask someone who has experience writing NSF proposals to review your BM.
+Writing BI is often difficult, not only for students but also new faculty.  You should ask someone who has experience writing NSF proposals to review your BI.
 
-// \subsection{Common Pitfalls and Tips <sec:grfp-pitfalls}
+=== Common Pitfalls and Tips <sec:grfp-pitfalls>
 
-// These are common pitfalls that many applicants make in their GRFP applications and tips on how to avoid them. Many of these can be avoided and fixed by asking someone who has experience writing NSF proposals to review your application.  You should also ask your LoR writers to review your research plan and SOP.  
-
-
-// \begin{itemize}
-
-// \item \textbf{Too Technical or Narrow.} Remember that you're writing to a general audience in CS, not experts in your field.  While NSF tries to match reviewers with your field, CS is simply too broad and you might get a reviewer in your field but not in your specific area or familiar with the research topics you're working on (see meanings of fields, areas, and topics in~\autoref{sec:fields-and-areas}).  For example, a person working in PL might not be familiar of all its areas, e.g., program synthesis, verification, or type inference.  
-// So avoid technical jargon, explain things in simple terms, and motivate your work well. If the reviewer cannot understand your research plan, they will likely give you a low score.
+These are common pitfalls that many applicants make in their GRFP applications and tips on how to avoid them. Many of these can be avoided and fixed by asking someone who has experience writing NSF proposals to review your application.  You should also ask your LoR writers to review your research plan and SOP.  
 
 
-// \item \textbf{Preliminary Work.} Your research plan should have some preliminary work to convince reviewers that you have thought about the problem and have some initial results.  It does not have to a lot, e.g., you don't need published results or an implementation, a small experiment done by hand on some small examples would suffice.  Moreover, it should be concrete and convincing, e.g., \emph{"When being applied to the program in Fig 1. of the paper published PLDI'19 that approach X failed, my idea worked and was able to ..."}.  This will set you apart from others who just have a plan but no results.
+- *Too Technical or Narrow.* Remember that you're writing to a general audience in CS, not experts in your field.  While NSF tries to match reviewers with your field, CS is simply too broad and you might get a reviewer in your field but not in your specific area or familiar with the research topics you're working on (see meanings of fields, areas, and topics in @sec:fields-and-areas).  For example, a person working in PL might not be familiar of all its areas, e.g., program synthesis, verification, or type inference.  
+  So avoid technical jargon, explain things in simple terms, and motivate your work well. If the reviewer cannot understand your research plan, they will likely give you a low score.
 
-// \item \textbf{Related Work and Challenges.} Many research plans motivate the problem well but do not discuss limitations of existing work, making it questionable if the problem is important or if you are aware of the challenges.  Thus, you should do a thorough literature review and discuss what people have done and their limitations.  Your research plan should then talk about how you plan to address these limitations, i.e., fill the gap in the literature.  
+- *Preliminary Work.* Your research plan should have some preliminary work to convince reviewers that you have thought about the problem and have some initial results.  It does not have to a lot, e.g., you don't need published results or an implementation, a small experiment done by hand on some small examples would suffice.  Moreover, it should be concrete and convincing, e.g., _"When being applied to the program in Fig 1. of the paper published PLDI'19 that approach X failed, my idea worked and was able to ..."_.  This will set you apart from others who just have a plan but no results.
 
-// \item \textbf{Do not BS.} Many research plans include technical details or proposed work that are vague, unrealistic, or even impossible. This is similar to a student taking an exam and write a lot of nonsense and hope for partial credits.  As mentioned, reviewers are often chosen based on their expertise in your field and can detect B.S. Again, do your homework and ask someone who knows the field, e.g., your advisor or LoR writer, to review your research plan.
+- *Related Work and Challenges.* Many research plans motivate the problem well but do not discuss limitations of existing work, making it questionable if the problem is important or if you are aware of the challenges.  Thus, you should do a thorough literature review and discuss what people have done and their limitations.  Your research plan should then talk about how you plan to address these limitations, i.e., fill the gap in the literature.  
 
+- *Do not BS.* Many research plans include technical details or proposed work that are vague, unrealistic, or even impossible. This is similar to a student taking an exam and write a lot of nonsense and hope for partial credits.  As mentioned, reviewers are often chosen based on their expertise in your field and can detect B.S. Again, do your homework and ask someone who knows the field, e.g., your advisor or LoR writer, to review your research plan.
 
-// \item \textbf{Overexaggeration Lors.} Many GRFP applicants have ref. letters from professors that are very good at writing LoRs. However, they often use flowery language and overrate their students. Reviewers can sense this overexaggeration and might not trust the LoRs. This is similar to overclaiming research contributions when writing papers---so \emph{ask your LoR writers to tone down} their enthusiasm and be specific with concrete examples to demonstrate why you're \emph{"the best"}. 
-
-
-
-// \end{itemize}
+- *Overexaggeration Lors.* Many GRFP applicants have ref. letters from professors that are very good at writing LoRs. However, they often use flowery language and overrate their students. Reviewers can sense this overexaggeration and might not trust the LoRs. This is similar to overclaiming research contributions when writing papers---so _ask your LoR writers to tone down_ their enthusiasm and be specific with concrete examples to demonstrate why you're _"the best"_.
 
 
 == DoD NDSEG <sec:dod-ndseg>
@@ -2885,6 +2864,7 @@ Homer: I mean an award that's worth winning.]
 // % \end{itemize}
 // % If an adviser has continuously secured funding over time, it suggests a stable research environment and long-term support for students.
 
+#pagebreak()
 = Writing in LaTeX <chap:writing-latex>
 // \chapterinfo{You should write your academic documents in \LaTeX{}.}
 
