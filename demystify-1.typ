@@ -1410,7 +1410,7 @@ You're missing out on some serious CS PhD programs: UCSD, UW, UMD, Michigan, Pur
 
 #strong[You don't need to be top.] Top schools will open doors to more opportunities. In countries like Vietnam, there are few top schools, and if you don't get into them, you are doomed (or so you think). But that is not the case in the US. There are many good schools, and it is not a binary choice between top X or nothing. In fact, equity is emphasized in the US and "smaller" schools are often given more resources and attention to help students succeed.  
 
-#keybox[
+#commentbox[
   Don't aim for just the moon and the stars; also try the sky, clouds, or even just the trees. You might find much happiness and success there, which can then catapult you places beyond the moon and the stars. This is the American dream, which is strongly embodied in its higher education system.
 ]
 
@@ -1420,15 +1420,15 @@ Note that what I said above might not apply to BS or even MS degrees, which ofte
 // \subsectioninfo{You can improve your profile by being unique and standing out.}
 
 #align(center)[
-  #image("files/alpinist-climbing-peak-mountain-comic-hand-drawn-vector-illustration.jpg", width: 20%)
+  #image("files/alpinist-climbing-peak-mountain-comic-hand-drawn-vector-illustration.jpg", width: 50%)
 ]
 
-Given the high number of quality applicants and a limited number of spots, in addition to having a good application profile, you want to show something that makes you *stand out*. For example, even if you do not have research experience, you can talk about your personal projects, as long as they show you can do research. If you have an open-source project (@sec:open-source-contribs) that has lots of stars on GitHub, mention it. If you often write technical, research-like blogs with many viewers, talk about them too.
+Given the high number of quality applicants and a limited number of spots, in addition to having a good application profile, you want to show something that makes you #highlight[stand out]. For example, even if you do not have research experience, you can talk about your personal projects, as long as they show you can do research. If you have an open-source project (@sec:open-source-contribs) that has lots of stars on GitHub, mention it. If you often write technical, research-like blogs with many viewers, talk about them too.
 
-There are other things you might not think are important but can make you stand out. For example, if you have a strong background in a non-CS field that can be integrated with CS, e.g., you have a degree or background in *dance* or *music* and want to integrate them with CS, do talk about it. If you have reported numerous bugs in Knuth's The Art of Computer Programming and received several reward checks from Knuth himself, mention them---this shows exceptional attention to detail and a good understanding of algorithms.
+There are other things you might not think are important but can make you stand out. For example, if you have a strong background in a non-CS field that can be integrated with CS, e.g., you have a degree or background in _dance_ or _music_ and want to integrate them with CS, do talk about it. If you have reported numerous bugs in Knuth's The Art of Computer Programming and received several reward checks from Knuth himself, mention them---this shows exceptional attention to detail and a good understanding of algorithms.
 
 #commentbox[
-  In #link("https://matt.might.net/articles/how-to-apply-and-get-in-to-graduate-school-in-science-mathematics-engineering-or-computer-science/")[his post], Matt Might was initially unsure about an application. However, upon learning that the applicant had led a *100km hike in the Himalayas*, he decided to accept the applicant. This is a good example of *standing out*, and I would also advocate for that student as this shows they have the persistence and determination required for research.
+  In #link("https://matt.might.net/articles/how-to-apply-and-get-in-to-graduate-school-in-science-mathematics-engineering-or-computer-science/")[his post], Matt Might was initially unsure about an application. However, upon learning that the applicant had led a *100km hike in the Himalayas*, he decided to accept the applicant. This is a good example of _standing out_, and I would also advocate for that student as this shows they have the persistence and determination required for research.
 ]
 
 #pagebreak()
@@ -1616,7 +1616,7 @@ PhD students often ask why their salary is low compared to the large grants thei
 @tab:cost shows the budget breakdown for a GRA per year.
 These numbers are based on my experience at public universities in the US. Private universities may have different numbers.  For simplicity, I will assume the department has a 9-month stipend of \$30K and a 3-month summer of \$10K (a third of the 9-month stipend). I will also use GMU tuition rate of about \$15K/year for full-time study (which is quite cheap compared to private universities, e.g., Univ. of Chicago is a whooping \$70K) and a 58.9% rate on *indirect cost*, which is a typical rate charged for overhead or administrative costs (yes, after all, universities are businesses!).  Finally, I assume the students take two conference trips per year, one domestic and one international (conf. registration, airline tickets, taxi, meals, etc are all included).
 
-In the end, the total budget comes out to be \$73K/year to support a PhD student. *The summary is that over your 5–6 years of your PhD, you cost about \$400K, and while your stipend is X, your adviser probably pays 2X for you*. But of course, the nicest thing is that you do not have to pay for any of this! You get to gain the knowledge, do research, travel, and also get paid!
+In the end, the total budget comes out to be \$73K/year to support a PhD student. #highlight[The summary is that over your 5--6 years of your PhD, you cost about \$400K, and while your stipend is X, your adviser probably pays 2X for you]. But of course, the nicest thing is that you do not have to pay for any of this! You get to gain the knowledge, do research, travel, and also get paid!
 
 == Choosing Schools <chap:choosing-school>
 // \chapterinfo{Not every university has a CS PhD program. Not every professor, even those in CS, can advise or graduate CS PhD students.}
@@ -2860,30 +2860,33 @@ These awards are not open to all researchers and face less competition (e.g.,  c
 // % If an adviser has continuously secured funding over time, it suggests a stable research environment and long-term support for students.
 
 #pagebreak()
-= Writing in LaTeX <chap:writing-latex>
+= Writing in LaTeX (or Typst) <chap:writing-latex>
 // \chapterinfo{You should write your academic documents in \LaTeX{}.}
 
 #simpsons[Coming to the book fair sure was a great idea. 'Cause you can't write if you don't know what the competition is up to.]
 
 
 
-When you're applying for PhD programs or fellowships (\autoref{sec:nsf-grfp}) such as the NSF GRFP or DOD NDSEG, you will need to write a personal statement, research statement, and CV.
-Many use MS Word, but you should strongly consider writing your statements (and even CV) in \LaTeX{} (and compiled to pdf's, which are then uploaded to the application system).  In CS and many other STEM fields, \LaTeX{} is the de facto standard for writing documents—papers, proposals, dissertations, and letters. \href{https://code.roars.dev/phd-cs-us}{This book}, for example, is written in \LaTeX{}.
+When you're applying for PhD programs or fellowships (@sec:nsf-grfp) such as the NSF GRFP or DOD NDSEG, you will need to write a personal statement, research statement, and CV.
+Many use MS Word, but you should strongly consider writing your statements (and even CV) in LaTeX (and compiled to PDFs, which are then uploaded to the application system). In CS and many other STEM fields, LaTeX is the de facto standard for writing documents—papers, proposals, dissertations, and letters. 
 
 
-Most CS faculty are used to seeing formatting that \LaTeX{} produces, and many find Word's default left-aligned, uneven layout distracting.
-While reviewers will not penalize you for using Word, subtle irritations can affect how they read your writing (after reading dozen of applications, these small things add up). Given that \LaTeX{} is free and easy to use (e.g., see \href{https://www.overleaf.com}{Overleaf}), it is worth the effort to learn. This is a small, easily fixable detail that indicates that you understand and respect the academic and technical culture you're trying to enter.
+Most CS faculty are used to seeing formatting that LaTeX produces, and many find Word's default left-aligned, uneven layout distracting.
+While reviewers will not penalize you for using Word, subtle irritations can affect how they read your writing (after reading dozens of applications, these small things add up). Given that LaTeX is free and easy to use (e.g., see #link("https://www.overleaf.com")[Overleaf]), it is worth the effort to learn. This is a small, easily fixable detail that indicates that you understand and respect the academic and technical culture you're trying to enter.
 
-\autoref{listing:latex} is a very basic example of a \LaTeX{} document with 11pt font and 1-inch margins. You can start with this and modify it. 
+Below is a very basic example of a LaTeX document with 11pt font and 1-inch margins. You can start with this and modify it.
 
-\begin{lstlisting}[language=TeX,basicstyle=\footnotesize,label={listing:latex},caption={A simple \LaTeX{} document.},keywordstyle=\color{blue},keywords={documentclass, usepackage, begin, end},commentstyle=\color{gray},numbers=left,numberstyle=\tiny\color{gray},stepnumber=1,numbersep=5pt]
-    \documentclass[11pt]{article}
-    \usepackage[margin=1in]{geometry}
-    \begin{document}
-    ...     
-    \end{document}
-\end{lstlisting}
+```
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\begin{document}
+...
+\end{document}`),
+  caption: [A simple LaTeX document.],
+)
+```
 
+#paragraph([A quick word on Typst])[#link("https://typst.app/")[Typst] is a new typesetting system that is gaining popularity for its ease of use and modern features, such as incremental compilation and live preview. It is not as widely used as LaTeX yet, but it is worth considering if you want to try something new (though you will likely need to learn LaTeX anyway as most publishing venues do not support Typst). For example, #link("https://code.roars.dev/phd-cs-us")[this book] is originally written in LaTeX and then converted to Typst.]
 
 #pagebreak()
 = Academic and Cultural Differences <chap:cultural>
@@ -2896,7 +2899,7 @@ This section lists some general academic and cultural issues that students, espe
 
 == Academic Integrity (Cheating and Plagiarism)
 
-Plagiarism and cheating (e.g., exams and assignments) are a BIG no-no in the US.  If you're caught cheating, you will face serious consequences and likely be expelled from the university (e.g., after the second time at GMU).   This is quite different from many international countries where cheating is common and often tolerated.  Faculty is extremely good at detecting cheating (we have been dealing with these situations so many times over so many years), and *will* report cheating cases.  In short, whatever you do, don't cheat---not worth it!
+Plagiarism and cheating (e.g., exams and assignments) are a BIG no-no in the US.  If you're caught cheating, you will face serious consequences and likely be expelled from the university (e.g., after the second time at GMU).   This is quite different from many international countries where cheating is common and often tolerated.  Faculty is extremely good at detecting cheating (we have been dealing with these situations so many times over so many years), and _will_ report cheating cases.  #highlight[In short, whatever you do, don't cheat---it can ruin your career and is not worth it!]
 
 Here are the typical steps that will happen if you are caught cheating (e.g., on an exam or assignment): 
   + A faculty suspecting a cheating case will report it to the Office of Academic Integrity (OAI) at the university---the report often has supporting evidence, e.g., a copy of the exam or assignment; 
@@ -2910,14 +2913,14 @@ This is because OAI is an independent office above your prof and depatment that 
 
 == Illegal Software <sec:illegal-software>
 
- Using illegal/cracked software is very common in many countries (and even in the US). However, _do not_ install or use them on university computers, even those given to you by your adviser.  It is unlikely that the university will track you down, but it is the _software company_ that will.  They have very sophisticated tools to detect illegal software and will sue your university/department.  Imagine your department or adviser being sued for a large sum of money, and it is _you_ who caused it.  If you need to purchase software,  ask your adviser or the department (@sec:buying-equipment).
+ Using illegal/cracked software is very common in many countries (and even in the US). However, #highlight[do not install or use them on university computers], even those given to you by your adviser.  It is unlikely that the university will track you down, but it is the _software company_ that will.  They have very sophisticated tools to detect illegal software and will sue your university/department.  Imagine your department or adviser being sued for a large sum of money, and it is _you_ who caused it.  If you need to purchase software,  ask your adviser or the department (@sec:buying-equipment).
 
 
 == Costly Gifts <sec:gifts>
 
 In many countries, it is customary to give professors costly gifts---such as fancy liquors, jewelry, or even an envelope stuff with cash during the holidays or special occastions.  It's meant to show respect and appreciation (or let's be honest, an attempt to get better grades or recommendations). Understandbly this is a cultural norm in many countries, and professors and students are used to it. That said, in the US, this is can be considered _widly inappropriate_ and strongly discouraged. Given your profs. these gifts will make them feel very uncomfortable and in many cases they are required to report them to the university.  
 
- However, that doesn't mean you can't show your appreciation. In fact, small, personal tokens, like small souvenir from your country, a fridge magnet, keychain from your hometown, or even just simple thank-you hand-written card, are very welcomed.  Some professors proudly display their gifts, which can come from students and colleagues (e.g., when they travel to their home countries or conferences). In summary, small gifts are fine, but avoid anything that might make your professors uncomfortable.
+ However, that doesn't mean you can't show your appreciation. In fact, small, personal tokens, like small souvenir from your country, a fridge magnet, keychain from your hometown, or even just simple thank-you hand-written card, are very welcomed.  Some professors proudly display their gifts, which can come from students and colleagues (e.g., when they travel to their home countries or conferences). In summary, #highlight[small gifts are fine], but avoid anything that might make your professors uncomfortable.
 
 == Maintaining Good Relationships with Your Profs. <sec:maintaining-relationships>
 
@@ -2946,9 +2949,9 @@ Many people maintain lifelong relationships with their professors and colleagues
 
 If you're reaching out to a professor for the first time,  address them as Prof. or Dr. Lastname (if you know that they they do not have a PhD, then don't use Dr., but Prof. is fine). Many international students use Prof. or Dr. FirstName LastName, but this can come across as if you're simply copying and pasting names. So just stick with Prof. or Dr. Lastname.  Using _Prof._ is generally the safest option.
 
-_Do not_ use Mr., Mrs., Ms, or Miss. This rarely happens, but I have seen  new students (e.g., undergraduate freshmen in the US) sometimes use these, which are used in K-12 schools but not in higher education.
+_Do not use Mr., Mrs., Ms, or Miss_. This rarely happens, but I have seen  new students (e.g., undergraduates) sometimes use these, which are used in K--12 schools but not in higher education.
 
-Moreover, do not call the prof. by their first name _at first_.  As you become more familiar with your prof and depending on their preferences, you may transition to addressing them by their first name.
+Moreover, _do not call the prof. by their first name when you first meet them or email them for the first time_. As you become more familiar with your prof and depending on their preferences, you may transition to addressing them by their first name.
 For example, I prefer that my students and colleagues call me Vu. Some students call me _Dr. Vu_, which I find a bit amusing but am totally fine with it.
 
 #commentbox[
@@ -2959,35 +2962,33 @@ For example, I prefer that my students and colleagues call me Vu. Some students 
 
 Note that in some universities the formal title Dr. Lastname is preferred over Prof. Lastname. Moreover, be aware that not all faculty members hold a PhD[At many places, including Mason, the requirement for adjunct faculty (@sec:faculty-types) is a PhD or an MS with significant industry experience.], in which case using Prof. Lastname is a suitable alternative. You just need to observe and follow the conventions at your particular institution. One way to determine how to address a prof. is to observe how they sign their emails or how they introduce themselves in class. For example, I introduce myself as "Vu" in class but I do not sign my emails. You will get used to it after a while!. 
 
-*Referring to Professors You Know:* When referring or talking about a prof (e.g., your mentor) that you know, you can just informally use their names if they are OK with it as mentioned above (or Dr./Prof., if you want to be formal). You can also include their institution if it makes it more precise.  For example, I can say:  _"I did my postdoc with Jeff Foster at Univ. of Maryland"_.
+#paragraph([Referring to Professors You Know])[When referring or talking about a prof (e.g., your mentor) that you know, you can just informally use their names if they are OK with it as mentioned above (or Dr./Prof., if you want to be formal). You can also include their institution if it makes it more precise.  For example, I can say:  _"I did my postdoc with Jeff Foster at Univ. of Maryland"_.
 
 Do not include ranking (@sec:faculty-types), e.g., Assistant, Associate, Scientist, ..., when referring to someone. I see many international students include a lengthy title of people they know, e.g., _I am advised by Asst. Prof. X, and I also collaborate with Distinguished Scientist Y_.
 
-This is _not necessary_ and makes it look like you're trying to show off your connections. These nuances represent some cultural and academic differences in the US that you may encounter but will gradually adapt to. 
+This is _not necessary_ and makes it look like you're trying to show off your connections. These nuances represent some cultural and academic differences in the US that you may encounter but will gradually adapt to.]
 
 == Miscs <chap:cultural-misc>
   
 Here are some other common surprises for international students in the US. Note that I skip topics involving politics, religion, tax, and racism as these happen in many countries and are not unique to the US.
 
-*Small talks* \
+#paragraph([Small talks])[
 People often engage in small talks, e.g., about the weather, sports, or weekend plans. This is a way to start a conversation and how social interaction starts in the US.
 
 However, avoid asking personal questions, e.g., about salary, age, relationship status, or health, as these are considered private. Talking about kids' activities or schools are OK. Also, do not talk about politics or religion. In fact, we often do not talk about these subjects with our family and friends to avoid conflicts.
 
 Sometimes foreigners are surprised by how Americans do not talk about their personal lives, e.g., sharing details about their families, health, or relationships, and that their conversations are often not very "deep" or "mind-provoking". This is just a cultural norm about privacy and personal space.
+]
 
-*Healthcare System* \
-You (and your spouse) will need health insurance! Otherwise you will be charged a lot for healthcare services when you need them. However, as mentioned in @chap:funding, your TA/RA (and fellowships) will cover health insurance. Your spouse/children also get health insurance or significant discounts under your plan.
+#paragraph([Healthcare System])[You (and your spouse) will need health insurance! Otherwise you will be charged a lot for healthcare services when you need them. However, as mentioned in @chap:funding, your TA/RA (and fellowships) will cover health insurance. Your spouse/children also get health insurance or significant discounts under your plan.
 
-Note that even with insurance, heathcare services might still be expensive. So you should know what your insurance covers and be prepared for unexpected costs. Moreover, healthcare system has many confusing jargons such as HMO, PPO, deductibles, co-pays, and coinsurance (try take a look at the Explanation of Benefits or EoB statement you received from your insurance company). It's arguably the most complicated system in the US and even Americans often do not understand it (and politicians often exploit this to their advantage). Do not hesitate to ask your HR or the insurance company for help.
+Note that even with insurance, heathcare services might still be expensive. So you should know what your insurance covers and be prepared for unexpected costs. Moreover, healthcare system has many confusing jargons such as HMO, PPO, deductibles, co-pays, and coinsurance (try take a look at the Explanation of Benefits or EoB statement you received from your insurance company). It's arguably the most complicated system in the US and even Americans often do not understand it (and politicians often exploit this to their advantage). Do not hesitate to ask your HR or the insurance company for help.]
 
-*Tipping Culture* \
-Unlike many other countries, tipping is expected for various services, especially in restaurant. So adding an extra 15--20% to your bills is common, especially in restaurants.
+#paragraph([Tipping Culture])[Unlike many other countries, tipping is expected for various services, especially in restaurant. So adding an extra 15--20% to your bills is common, especially in restaurants.]
 
 You should also tip other services, e.g., Uber, taxi, haircuts, and hotel services. The minimum wage for tipped employees is lower than the standard minimum wage, so tips are an important part of their income.
 
-*Car Dependency* \
-Most places in the US are highly car-dependent. If you do not have a car, you will need to rely on friends, Uber, or public transportation, which can be inconvenient and time-consuming. Many international students end up getting a driver's license, which is highly convenient and replaces many documents (e.g., ID, passport), and eventually buying a car.
+#paragraph([Car Dependency])[Most places in the US are highly car-dependent. If you do not have a car, you will need to rely on friends, Uber, or public transportation, which can be inconvenient and time-consuming. Many international students end up getting a driver's license, which is highly convenient and replaces many documents (e.g., ID, passport), and eventually buying a car.]
 
 
 //   %\paragraphP{Conversation} Americans are generally friendly and open.  However, there are certain things that we rarely talk about, e.g., salary, relationship status, or health. 
@@ -3039,7 +3040,7 @@ align(left)[
 == What's Wrong with Popular CS Rankings <sec:rankings-cra>
 
 Popular college rankings such as the #link("https://www.usnews.com/best-colleges")[U.S. News & World Report] or #link("https://www.topuniversities.com/university-rankings")[QS World University Rankings] are often based on subjective criteria---such as reputation, faculty credentials, and student satisfaction---and are not transparent---how scores are calculated is often not disclosed.
-CS research community has long questioned and discouraged the use of these rankings. For example, the Computing Research Association (CRA)---a highly respected organization in CS---issued a sharp critique of the U.S. News & World Report's global rankings for CS depts, calling the methodology _"deeply flawed and misleading"_#footnote([#link("https://cra.org/cra-statement-us-news-world-report-rankings-computer-science-universities/")]). Among many issues, the CRA highlighted that the rankings rely heavily on journal publications indexed by the Web of Science, ignoring conference publications—despite conferences being the primary venue for publishing top-tier CS research (<sec:pubs-top-tier>).   
+CS research community has long questioned and discouraged the use of these rankings. For example, the Computing Research Association (CRA)---a highly respected organization in CS---issued a sharp critique of the U.S. News & World Report's global rankings for CS depts, calling the methodology _"deeply flawed and misleading"_#footnote([#link("https://cra.org/cra-statement-us-news-world-report-rankings-computer-science-universities/")]). Among many issues, the CRA highlighted that the rankings rely heavily on journal publications indexed by the Web of Science, ignoring conference publications—despite conferences being the primary venue for publishing top-tier CS research (@sec:pubs-top-tier).   
 
 In short, rankings from sources like US News are mainly used high school and undergraduate students (or their parents) who are not familiar with CS research or PhD study. Those who know the field best---CS PhD students and faculty and researchers---largely discard them.
 
@@ -3065,7 +3066,7 @@ More details and justfication for this metric can be found in the #link("https:/
 
 
 
-*Selecting Faculty* Another useful feature of CSRankings is that you can filter faculty by research areas to find who are active in your area of interest. For example, if you are interested in ML, you can select ML and see departments and faculty members active in ML. You can also see the number of papers published by each faculty in that area,  and their publication counts in recent years (e.g., 2020--2024). This is useful for finding faculty publish frequently in your area of interest and gauge their productivity (@chap:research-achievements).
+#paragraph([Selecting Faculty])[Another useful feature of CSRankings is that you can filter faculty by research areas to find who are active in your area of interest. For example, if you are interested in ML, you can select ML and see departments and faculty members active in ML. You can also see the number of papers published by each faculty in that area,  and their publication counts in recent years (e.g., 2020--2024). This is useful for finding faculty publish frequently in your area of interest and gauge their productivity (@chap:research-achievements).]
 
 // === Top CS Programs in the US
 // @tab:ranking lists the top 50 CS programs from CSRankings. For the most up-to-date rankings, visit the website directly.
@@ -3108,7 +3109,8 @@ More details and justfication for this metric can be found in the #link("https:/
 
 == CSPicks <sec:cspicks>
 
-#link("https://roars/dev/cspicks")[CSPicks] is a new website developed by our ROARS lab that aims to help prospective students (and faculty candidate) explore the research strengths of CS departments and their faculty. It is _not_ a ranking system like CSRankings, but rather a tool to help students find faculty and departments that match their research interests. It allows you see trends and growths of CS departments and faculty, such as the number of publications in different areas over time.@fig:cspicks-gmu shows an example of CSPicks showing research areas of the CS department at George Mason.
+#link("https://roars/dev/cspicks")[CSPicks] is a new website developed by our ROARS lab that aims to help prospective students (and faculty candidate) explore the research strengths of CS departments and their faculty. It is _not_ a ranking system like CSRankings, but rather a tool to help students find faculty and departments that match their research interests. It allows you see trends and growths of CS departments and faculty, such as the number of publications in different areas over time.
+@fig:cspicks-gmu shows an example of CSPicks showing research areas of the CS department at George Mason.
 
 
 
