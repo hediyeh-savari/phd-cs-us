@@ -3145,7 +3145,7 @@ More details and justfication for this metric can be found in the #link("https:/
 
 I am also a member of the VietPhD group on Facebook and often browse forums like #link("https://www.reddit.com/r/gradadmissions/")[Reddit/gradadmissions] and #link("https://forum.thegradcafe.com/")[GradCafe]. I saw many questions from students about PhD programs, but most participants are students (often outside CS or outside the US), and answers are frequently inaccurate and confusing. So I thought a handbook focused on US CS PhD admissions from an insider perspective would be useful.
 
-I started writing this book in May 2023 and have updated it since then (mostly around deadline season when I procrastinate—#emph[productive procrastination]). The book was initially intended for international students but has expanded to include advice for domestic students (e.g., @chap:domestic-students and @chap:fellowships).
+I started writing this book in May 2023 and have updated it since then (mostly around deadline season when I procrastinate—#highlight[productive procrastination]). The book was initially intended for international students but has expanded to include advice for domestic students (e.g., @chap:domestic-students and @chap:fellowships).
 
 
 == Who Is This Book For?
@@ -3239,15 +3239,13 @@ I have been involved in the PhD admission process at GMU and UNL for many years.
 Though I was not an international student, many of my students and collaborators are or were. I also mentor students from Vietnam and have close colleagues and friends who were once international students. I hope to capture the diverse challenges and experiences they've faced in this book so that it can be a valuable resource for prospective international students.
 Finally, my upbringing in the US provides a perspective aligned with American culture, allowing me to shed light on various issues, particularly those related to cultural differences (@chap:cultural).
 
-#pagebreak()
 = Disclaimer <sec:disclaimer>
 
-This book is inherently _subjective_ and _opinionated_ based on my experience in PhD adcoms and student advising (@sec:about-me). Such a candid approach is beneficial, because overly neutral and "feel-good" advice often fails to address the specific challenges faced by students.
+This book is inherently #highlight[_subjective_ and _opinionated_] based on my experience in PhD adcoms and student advising (@sec:about-me). Such a candid approach is beneficial, because overly neutral and "feel-good" advice are often useless and unrealistic in the competitive CS PhD admissions process.
 
 Moreover, since PhD admission varies significantly across institutions, there's rarely a universal "correct" way, and too many choices often lead to confusion. Clear and direct guidance---even if opinionated---can provide practical pathways to help students like yourself to navigate the PhD admissions process better.
 
 
-#pagebreak()
 = Acknowledgement 
 
 Many people have contributed to this book.
