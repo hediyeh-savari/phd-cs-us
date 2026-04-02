@@ -32,10 +32,12 @@
 #let myred(txt) = text(fill:red)[#txt]
 
 
-#let part(title) = [
-  #pagebreak()
-  #heading(level: 1)[#title]
-]
+#let paragraph(title, body) = {
+  v(0.5em)
+  text(weight: "bold", style: "italic")[#title. ]
+  body
+}
+
 
 #let simpsons(s) = quote(
     attribution: "The Simpsons",
@@ -154,7 +156,7 @@ Moreover, you often receive additional benefits such as summer pay (@sec:summer-
 
 Full funding for CS PhD students is the norm in the US, and I'd go as far as to say that if you are not admitted with full funding, you might want to not accept the offer. The reason is that CS is in high demand and you're actively contributing to improving the reputation of the university and more generally advancing CS.
 
-#commentbox([While full funding is standard for CS PhD as mentioned above, always double-check the details of your offer (@sec:offer-letters) before accepting, especially for programs outside STEM or at smaller/private universities.]
+#warningbox([While full funding is standard for CS PhD as mentioned above, always double-check the details of your offer (@sec:offer-letters) before accepting, especially for programs outside STEM or at smaller/private universities.]
 )
 
 // % \paragraph{Discrimination is not tolerated} Not only is discrimination illegal, diversity and inclusion are highly valued in US universities. Many universities take great pride in their diverse student body and faculty.
@@ -475,7 +477,7 @@ Of course, my recommendation is just one of the three or four faculty reviews of
 If there are disagreements, the adcom chair asks the reviewers to discuss the application.
 Unfortunately, even if all reviewers recommend a student, they might not be admitted (@sec:why-rejected) if there are too many students or they are not a good fit for the program (e.g., no one is willing to advise them).
 
-=== Waiving Application Fee <sec:fee-waive>
+== Waiving Application Fee <sec:fee-waive>
 
 Some universities do waive application fees---for example, Rice and TTIC do not charge a fee for PhD applications, and many universities waive fees for domestic students (@chap:domestic-students).
 Some programs also waive the fee if applicants attend their open house or information sessions. Others may waive the fee if the applicant provides proof of financial hardship, such as a statement from a financial adviser or a bank statement.
@@ -532,7 +534,7 @@ Choose your LoR writers carefully, as they can make or break your application. L
 
 Having a strong letter from well-recognized researcher (@chap:research-achievements) can _significantly boost_ your application. Such letters can outweigh other weaknesses such as limited publications or low GPA. Adcom members trust people they know or have heard about and respect.  A well-known researcher is unlikely to recommend someone who is not good because it would damage their reputation.
 
-However, don't worry if you haven't worked directly with well-known researchers. A strong, personalized recommendation from someone who knows you well, even if less famous, is far more valuable than a generic letter from a prominent figure who barely knows you. So again, the emphasis is on _personalized_ and _research-focused_ letters--the fame is a bonus, not a requirement. 
+However, don't worry if you haven't worked directly with well-known researchers. A strong, personalized recommendation from someone who knows you well, even if less famous, is far more valuable than a generic letter from a prominent figure who barely knows you. So again, the emphasis is on _personalized_ and _research-focused_ letters---the fame is a bonus, not a requirement. 
 
 #commentbox[
   It is fine to get letters from a postdoc or even a senior PhD student who has worked closely with you and can write a strong letter. An enthusiast letter from a postdoc who has mentored you in research for the past six months is much better than a generic letter (@sec:generic-letters) from a well-known person.
@@ -636,7 +638,7 @@ When you ask someone to write a letter for you, *you should always waive your ri
 
 If you do not waive your right, the letter writer may refuse or write a generic letter. Reviewers may question a letter that is not waived—if you don't trust your writers, find someone else. In short, waiving your right is standard and respectful.
 
-#commentbox([
+#warningbox([
 If you ask me to write a letter and do not waive your right, I will refuse. I will explain why you should waive your right, but if you insist, I *will not* write for you.
 ])
   
@@ -775,9 +777,9 @@ However, some cases might raise some eyebrows, e.g., if you only aim at very top
 // % \end{commentbox}
 
 
+#pagebreak()
 
-
-== Research Experience <chap:research-experience>
+== Research Experience (e.g., Publications)<chap:research-experience>
 // \chapterinfo{Publications are not \textbf{required} but can \textbf{greatly help}. Papers in good venues are concrete evidence that you have successfully engaged in research.}
 
 #simpsons[I've got to study harder and publish faster!]
@@ -798,11 +800,11 @@ Having published papers, especially at top venues, is a sign that you have been 
 
 Publications are *never required* for PhD application. However, given the competitiveness of CS admission, they can significantly strengthen your application and *are becoming the norm*. Applicants admitted to top schools, especially in popular fields such as ML and NLP, often have multiple first-authored papers at top places. @fig:wu shows examples of applicants to Stanford CS PhD.
 
-#strong[Not the First Author] Being the first author typically means you own the work and therefore know the research well. However, it's *perfectly OK to be second or third or even last*. Adcom members know it is difficult to publish a good paper, and so being a co-author is still a good sign about your research experience. In any case, especially when you're not the first author, you should explain the work and your contribution. Better yet, have your LoR writers (@sec:help-your-LOR-writers) talk about your work and contribution in their letters.
+#paragraph([Not the First Author])[Being the first author typically means you own the work and therefore know the research well. However, it's *perfectly OK to be second or third or even last*. Adcom members know it is difficult to publish a good paper, and so being a co-author is still a good sign about your research experience. In any case, especially when you're not the first author, you should explain the work and your contribution. Better yet, have your LoR writers (@sec:help-your-LOR-writers) talk about your work and contributions in their letters.]
 
-#strong[Publications Not Relevant To CS or Your Research Interest]
+#paragraph([Publications Not Relevant To CS or Your Research Interest])[
 If you have published papers in other fields, e.g., physics, math, or even CS but not in your research interest, you should still talk about them in your SOP (@chap:sop) and upload them as writing samples (@sec:writing-sample). Also, have your LoR writers (@sec:help-your-LOR-writers) talk about them in their letters.
-While not as strong as CS publications, they still show your research ability and experience, which is what adcom members care about.
+While not as strong as CS publications, they still show your research ability and experience, which is what adcom members care about.]
 
 === What If You Don't Have Any Publications?
 
@@ -838,6 +840,7 @@ Winning _internationally recognized competitions_ can demonstrate your research 
 For example, participating in Math Olympiads if you want to do theory or winning ACM programming contests if you want to "build" systems (e.g., research prototypes).
 So do talk about them in your SOP (@chap:sop) and have your writers mention them in their LoRs (@sec:help-your-LOR-writers).
 
+#pagebreak()
 == Statement of Purpose (SOP) <chap:sop>
 // \chapterinfo{SOP is important. Write it in such a way that makes you \textbf{stand out}.}
 
@@ -897,12 +900,12 @@ CS academics like using LaTeX (common way to write our papers and other document
 
 === Using AI <sec:using-ai>
 
-As AI and LLMs become more popular, many students wonder if they could use AI chatbots such as ChatGPT and Claude to help with their statements and if the university or adcom reviewers would check and penalize them for doing so.
+As AI and LLMs become more popular, many students wonder if they could use AI chatbots such as ChatGPT and Claude to help with their statements and, especially, if the university or adcom reviewers would check and penalize them for doing so.
 
 Personally I _do not_ check your statements for AI contents. First, I do not have the time to do that. It is much easier for me to just read the statement and see if it makes sense and stands out (@sec:ievaluate). Hint: AI-generated content reads very strangely and faculty is just too experienced in reading essays and SOPs from students to not notice it.
 Second, AI-checking technology is very unreliable and inconsistent. For example, a checker might claim that 80% of an essay is AI-generated while another says it is 0%.  
 
-Finally, I think it is fine to use AI to help you polish your writing, e.g., the _"proofread"_ feature in Apple's `Writing Tools` is quite useful for fixing writing issues or finding better terminologies or phrases. This can help international students who might struggle with writing English and are not familiar with the academic writing style (you see how many "thus" used in this book?).  
+I also think it is _fine_ to use AI to help your writing, e.g., the _"proofread"_ feature in Apple's `Writing Tools` is quite useful for fixing writing issues or finding better terminologies or phrases. This can help international students who might struggle with writing English and are not familiar with the academic writing style (you see how many "thus" used in this book?). Thus, it's OK to use AI to help you but you should be the main part of the writing loop, i.e., you should be the one who writes the content and use AI to help you improve and refine it.
 
 === Diversity Statement <sec:diversity-statement>
 
@@ -925,7 +928,7 @@ At a high level, a diversity statement is _not_ an ideological endorsement, but 
   Moreover, _do not_ make up stories or exaggerate your experiences. Just show your awareness and understanding of the topic and what you did or how you plan to contribute. A good diversity statement I've read starts by the acknowledgement that the applicant is not a minority, but a white male in a STEM field (i.e., they are the majority), and that they do not have much experience in DEI, but show that they are aware of the challenges faced by minority groups and how they can contribute.
 ]
 
-
+#pagebreak()
 == Your School and Grades <chap:your-school>
 // \chapterinfo{Your schools might not as well-known as you think.  High grades probably won't help much, but bad ones likely will raise concerns.}
 
@@ -935,7 +938,7 @@ At a high level, a diversity statement is _not_ an ideological endorsement, but 
 Graduating from top universities _that adcom members recognize_ helps quite a bit.
 The emphasis here is _"that adcom members recognize"_. The reason is similar to LoRs from well-known researchers (@sec:famous-lor): if we know your school has a good reputation, we can trust its education and grades. Otherwise, we are uncertain about the quality of the school and the grades you received.
 
-For example, if you are an international student and your school is well-known, then it is considered \emph{"top foreign"}, which is a plus. However, if we do not know much about schools in your country, then we are uncertain about the quality of your school and likely treat your school as _"unknown foreign"_, which can be a minus point.
+For example, if you are an international student and your school is well-known, then it is considered _"top foreign"_, which is a plus. However, if we do not know much about schools in your country, then we are uncertain about the quality of your school and likely treat your school as _"unknown foreign"_, which can be a minus point.
 
 Many international students mistakenly assume that their school is well-known, but in fact, it is not (@sec:why-rejected). For example, although "Bach Khoa" is one of the best universities in Vietnam, it is not commonly recognized in the US---their confusing acronyms HUST and HCMUT only make it worse.
 
@@ -1119,10 +1122,10 @@ You should treat the interview as an informal chat. Prepare an _"elevator pitch"
 
 ==== After the Interview
 
-*Follow-Up Emails* If you had an interview and have not heard back, you can email to ask about the status of your application. See @sec:accept-postpone-decline for how to check status and follow-up emails. 
+#paragraph([Follow-Up Emails])[If you had an interview and have not heard back, you can email to ask about the status of your application. See @sec:accept-postpone-decline for how to check status and follow-up emails.]
 
 
-*Updating your profile* If you have important  achievements after you submitted your application, e.g., new top publications or big fellowship awards, you can mention to your interviewer. If you did not have interviews, you can try to ask the CS dept to update your application (though no guarantee that they will consider them). However, in general, you should not send emails to update your profile unless you really have important updates.
+#paragraph([Updating your profile])[If you have important  achievements after you submitted your application, e.g., new top publications or big fellowship awards, you can mention to your interviewer. If you did not have interviews, you can try to ask the CS dept to update your application (though no guarantee that they will consider them). However, in general, you should not send emails to update your profile unless you really have important updates.]
 
 === Not Getting Interviews <sec:no-interview>
 While it is generally good to get an interview, not getting one *does not* mean you're out. Many programs do not have the tradition of interviewing applicants. For example, at GMU, most admitted students with TA (@sec:ta) do not go through interviews.
@@ -1153,19 +1156,19 @@ Some schools send out admission letters in batches, some do _rolling admission_/
 
 Not much you can do other than to be patient and wait. Do not send emails asking about interviews or status; unless you have interviewed specifically with someone then you can ask that person for status updates and other questions (@sec:accept-postpone-decline).  You can, though not recommended, send an email to the CS dept to ask about your status, but likely they will not reply (in addition to being busy, they do not want to give you false hope or inaccurate information), or they can send a generic reply such as "we are still reviewing applications" or "you will hear in two weeks". @fig:waitlist shows an email from the University of Rochester about their admission process.
 
-#strong[Acceptance Letters] Universities prioritize sending out acceptance letters first. This allows the admitted students to make decisions and plan for their studies. Read carefully on the acceptance letter for terms and conditions, e.g., funding and other benefits (@sec:offer-letters).
+#paragraph([Acceptance Letters])[ Universities prioritize sending out acceptance letters first. This allows the admitted students to make decisions and plan for their studies. Read carefully on the acceptance letter for terms and conditions, e.g., funding and other benefits (@sec:offer-letters).
 
-Some universities have rolling-admission. Others have a specific date when they send out the first round of acceptance letters.   
+Some universities have rolling-admission. Others have a specific date when they send out the first round of acceptance letters.]
 
-#strong[Response Deadlines] Accepted students are usually given a deadline to make decisions on their offers, often around _April15_ in the US. After this date, CS programs can gauge how many slots remain unfilled.
+#paragraph([Response Deadlines])[ Accepted students are usually given a deadline to make decisions on their offers, often around _April 15_ in the US. After this date, CS programs can gauge how many slots remain unfilled.]
 
-#strong[Waitlist] Most CS programs have a limited number of slots for PhD students, and thus put many good students on a waitlist.  If accepted students decline the offer, then offers are sent to students on the waitlist. So if you see people getting accepted, that does not mean you are out yet. 
+#paragraph([Waitlist])[Most CS programs have a limited number of slots for PhD students, and thus put many good students on a waitlist.  If accepted students decline the offer, then offers are sent to students on the waitlist. So if you see people getting accepted, that does not mean you are out yet. 
 
-Also, do not feel embarrassed or discouraged if you are on the waitlist. Many students are on the waitlist, and there is a good chance that you will get an offer later.
+Also, do not feel embarrassed or discouraged if you are on the waitlist. Many students are on the waitlist, and there is a good chance that you will get an offer later.]
 
-#strong[Rejection Letters] Schools typically start sending out rejection letters to remaining applicants *after they have finalized their admissions decisions*. Thus, rejection letters are often sent out late (e.g., after April 15th or even much later). 
+#paragraph([Rejection Letters])[Schools typically start sending out rejection letters to remaining applicants _after they have finalized their admissions decisions_. Thus, rejection letters are often sent out late (e.g., after April 15th or even much later). 
 
-Not much you can do here. You can try to contact the school to ask about your status, but they might not reply, they might say they are still reviewing applications, or give you inaccurate information (e.g., you will hear in two weeks). In short, you just have to be patient and wait, and also beware that some schools do not send out rejection letters at all.
+Not much you can do here. You can try to contact the school to ask about your status, but they might not reply, they might say they are still reviewing applications, or give you inaccurate information (e.g., you will hear in two weeks). In short, you just have to be patient and wait, and also beware that some schools do not send out rejection letters at all.]
 
 // % \section{Preparing and Tracking Applications}
 
@@ -1192,7 +1195,7 @@ Not much you can do here. You can try to contact the school to ask about your st
 // % provide information for LORs, ..
 // %
 
-
+#pagebreak()
 == Getting Admitted <chap:accepted>
 // \chapterinfo{Congrats! Now it is your turn to evaluate the school!
 // Attend \emph{Open House} to learn more about the place and \emph{interview} profs---they would be much more willing to talk to you now.}
@@ -1204,18 +1207,19 @@ But you likely won't hear back from schools that do not want to admit you (@sec:
 
 If you receive offers, congratulations!  Now you're at a different game because the schools that have admitted you will try to get you to accept them!  Look carefully at the offer letters (@sec:offer-letters) for the terms and conditions of the offers.  Other important factors to consider include the reputation of schools (@chap:choosing-school) and professors (@chap:choosing-adviser), and funding availability (@chap:funding). You will have to make your decision (@sec:accept-postpone-decline) by a certain deadline, e.g., April 15.
 
-#strong[Open House] Most schools have _Open House_ or _Visit Day_ events, which are a great resource to learn about the school, department, faculty, research, living, etc.
+#paragraph([Open House])[Most schools have _Open House_ or _Visit Day_ events, which are a great resource to learn about the school, department, faculty, research, living, etc.
 
 Even if you can't come in person, you should attend virtually and meet with individual faculty. During the event, you get a chance to learn more about the program, and talk to individual faculty and current students.  Take notes of faculty who make you excited, and count those taking in new students (if they meet you, likely they are considering new students!).  Talk to students about their advisers, the dept, the area, and the funding situation.  Ask about anything you want to determine that they deserve _you_.
 
 #commentbox[
   GMU has _Virtual Open House (VOH)_, e.g., #link("https://cs-GMU.github.io/cs-phd-voh-s23/")[here]. We invite all admitted PhD students to the VOH through Zoom to learn about the CS program, the department, GMU, and the DC area in general. Students also get opportunities to chat with professors and current students.
 ]
+]
 
-#strong[What's next?] Make a decision, accept, reject, or defer the offers (@sec:accept-postpone-decline). Ask to meet with potential advisers (e.g., through Open House or separately) and even their students. Ask about computer equipment and software, office space, and other resources; in many cases these will be provided for free by your adviser or department (@sec:buying-equipment).
+#paragraph([What's next?])[Make a decision, accept, reject, or defer the offers (@sec:accept-postpone-decline). Ask to meet with potential advisers (e.g., through Open House or separately) and even their students. Ask about computer equipment and software, office space, and other resources; in many cases these will be provided for free by your adviser or department (@sec:buying-equipment).
 
 Also, do not forget to update and thank LoR writers and others who have supported you through this process (@sec:thank-writers).
-
+]
 
 
 === Checking Status, Accepting, Postponing, and Decline Offers <sec:accept-postpone-decline>
@@ -1971,7 +1975,7 @@ Most universities restrict who can advise PhD students based on departmental aff
 So check these carefully as this is different from one university to another.
 
 #warningbox[
-  University websites might not be up to date, and they might list faculty who are no longer active or have moved to another institution. In some rare and extreme cases, they might even list deceased faculty. In fact, even the faculty themselves might not update their websites. So do multiple checks, e.g., Google, recent publications, etc.
+  University websites might not be up to date and still list faculty who are no longer active or have moved to another institution. In some rare and extreme cases, they might even list deceased faculty. In fact, even the faculty themselves might not update their websites. So do multiple checks, e.g., Google, recent publications, etc.
 ]
 
 === Ranks (Assistant, Associate, Full, and More)
@@ -2901,20 +2905,16 @@ There's a misconception that in the US it's all business, with professors as bos
 
 However, the reality is quite the opposite. While people can be straightforward and appear "cold", they are also informal, friendly, and very caring (in ways that might surprise you).
 With lab mates and colleagues, you will often work and go to lunch together, confide in each other, help each other navigate the academic journey, and often become lifelong friends.
-With your professors, you can call them by their first name (\autoref{sec:address}), disagree with them and argue (and gain respect doing so), seek their help (even on personal matters), come to their houses for parties or gathering (e.g., my lab always come to my house for \href{https://photos.app.goo.gl/LFtbqQUuznq9eiL7A}{Thanksgiving}), and give them small thoughtful gifts that they proudly put on their desks (\autoref{sec:gifts}).  
+With your professors, you can call them by their first name (@sec:address), disagree with them and argue (and gain respect doing so), seek their help (even on personal matters), come to their houses for parties or gathering (e.g., my lab always come to my house for #link("https://photos.app.goo.gl/LFtbqQUuznq9eiL7A")[Thanksgiving]), and give them small thoughtful gifts that they proudly put on their desks (@sec:gifts).  
 Many people maintain lifelong relationships with their professors and colleagues, staying in touch through cards, emails, and visits, even after they no longer work together.
 
-\begin{commentbox}
-    I maintain a close relationship with my former professors and mentors. When there is a new event in my life (or theirs), I often email them or call them, e.g., when I get married, have a new baby, new job, etc. I think this does not bother them a bit; they are genuinely interested in knowing and helping solve these "dramas" in my life.
-    \\
-    
-    I also visit my former professors when I am in their area. I meet Thang Bui (my MS adviser) at least once a year when I come back to Harrisburg to visit my parents. When Steph was in DC for a meeting, I invited her to give a research talk at GMU. I have also collaborated with them after I graduated e.g., I recently got an NSF grant with Deepak.
-    \\
-    
-    In short, while I am a bit closer to my former advisers and mentors than most people (e.g., I still keep in touch with my middle school teacher), it is always a good idea to maintain a good relationship with people who have helped or worked well with you. A simple, short email or text once in a while (e.g., a \emph{"Hi X, I heard you just got promoted ... Congrats!"}) would suffice. They will appreciate it, and you never know when you might need their help.
-    
-        
-  \end{commentbox}
+#commentbox[
+  I maintain a close relationship with my former professors and mentors. When there is a new event in my life (or theirs), I often email them or call them, e.g., when I get married, have a new baby, new job, etc. I think this does not bother them a bit; they are genuinely interested in knowing and helping solve these "dramas" in my life.
+
+  I also visit my former professors when I am in their area. I meet Thang Bui (my MS adviser) at least once a year when I come back to Harrisburg to visit my parents. When Steph was in DC for a meeting, I invited her to give a research talk at GMU. I have also collaborated with them after I graduated e.g., I recently got an NSF grant with Deepak.
+
+  In short, while I am a bit closer to my former advisers and mentors than most people (e.g., I still keep in touch with my middle school teacher), it is always a good idea to maintain a good relationship with people who have helped or worked well with you. A simple, short email or text once in a while (e.g., a _"Hi X, I heard you just got promoted ... Congrats!"_) would suffice. They will appreciate it, and you never know when you might need their help.
+]
 
 == How to Call or Address a Professor? <sec:address>
 
