@@ -23,6 +23,20 @@
 #show raw.where(block: true): it => block(fill: rgb("#f0f0f0"), inset: 10pt, radius: 4pt, width: 100%, it)
 
 
+// #set heading(numbering: (..nums) => {
+//   let vals = nums.pos()
+//   if vals.len() == 1 {
+//     // Level 1: roman numerals
+//     numbering("I.", vals.first())
+//   } else {
+//     // Level 2+: regular numbers
+//     numbering("I.1.", ..vals)
+//   }
+// })
+
+
+
+
 #let mytitle = "Demystifying PhD Admissions in Computer Science"
 #let mysubtitle = "A Handbook for Navigating CS PhD Admissions in the U.S."
 #let me = "ThanhVu (Vu) Nguyen"
@@ -62,6 +76,11 @@
 #let keybox(msg) = cb(fill: rgb("#b8ebc1"), msg)
 #let examplebox(msg) = cb(fill: yellow.lighten(95%), msg)
 #let warningbox(msg) = cb(fill: rgb("#ffe6e6"), msg)
+#let redact(text, fill: black, height: 1em) = {
+  box(rect(fill: fill, height: height)[#hide(text)])
+}
+
+
 
 // Title Page
 #align(center)[
@@ -82,6 +101,8 @@
   ]
 ]
 
+
+
 #pagebreak()
 
 
@@ -92,7 +113,7 @@
   fill: rgb("f0f0f0")
 )[
   #text(size: 10pt)[
-    This #link(mybookgithub)[work] © 2025 by #me is licensed under CC BY-NC-ND 4.0. To view a copy of this license, visit #link("https://creativecommons.org/licenses/by-nc-nd/4.0/")[creativecommons.org].
+    This #link(mybookgithub)[work] © #datetime.today().year() by #me is licensed under CC BY-NC-ND 4.0. To view a copy of this license, visit #link("https://creativecommons.org/licenses/by-nc-nd/4.0/")[creativecommons.org].
   ]
 ]
 
@@ -100,7 +121,8 @@
 #outline(title: "Contents and Summary")
 #pagebreak()
 
-= Preface
+
+#heading(numbering: none)[Preface]
 
 Having been involved in PhD admission committees for many years, I've observed that students---especially those in smaller countries, less well-known universities, or 1st generation college students---often lack a clear understanding of the Computer Science (CS) PhD admission process at US universities. This confusion not only discourages them from applying but also creates the perception that getting admitted to a CS PhD program in the US is unrealistically difficult.
 
@@ -477,7 +499,7 @@ Of course, my recommendation is just one of the three or four faculty reviews of
 If there are disagreements, the adcom chair asks the reviewers to discuss the application.
 Unfortunately, even if all reviewers recommend a student, they might not be admitted (@sec:why-rejected) if there are too many students or they are not a good fit for the program (e.g., no one is willing to advise them).
 
-== Waiving Application Fee <sec:fee-waive>
+=== Waiving Application Fee <sec:fee-waive>
 
 Some universities do waive application fees---for example, Rice and TTIC do not charge a fee for PhD applications, and many universities waive fees for domestic students (@chap:domestic-students).
 Some programs also waive the fee if applicants attend their open house or information sessions. Others may waive the fee if the applicant provides proof of financial hardship, such as a statement from a financial adviser or a bank statement.
@@ -555,7 +577,7 @@ So it might be a good idea to directly ask if the prof. is willing to write a _s
 #warningbox([
   Several international students mentioned that some professors are unwilling to write letters or write weak ones because they do not want (good) students to go abroad or only go to places where they want the students to go to. If you are in this situation, you should find someone else to write for you.
 
-  Sometimes students would go to great lengths just to get letters from "top" professors in their school---like department head or dean (@sec:admin-letters). But as mentioned, if these professors do not know you, their letters would likely be generic and carry little value (sometimes #myred[red flag]). Moreover, a top professor at your university might not be well-known to US faculty (see more details in @sec:admin-letters and @chap:your-school). So save the trouble and get letters from _any_ professors/supervisors who know you well and can write a good letter about _your_ research ability (@sec:famous-lor). It's better to have a good personalized letter about your own research ability from someone who is less well-known than a generic/weak letter from a well-known person.
+  Sometimes students would go to great lengths just to get letters from "top" professors in their school---like department head or dean (@sec:admin-letters). But as mentioned, if these professors do not know you, their letters would likely be generic and carry little value (sometimes #highlight(fill:red)[red flag]. Moreover, a top professor at your university might not be well-known to US faculty (see more details in @sec:admin-letters and @chap:your-school). So save the trouble and get letters from _any_ professors/supervisors who know you well and can write a good letter about _your_ research ability (@sec:famous-lor). It's better to have a good personalized letter about your own research ability from someone who is less well-known than a generic/weak letter from a well-known person.
 ])
 
 
@@ -571,7 +593,7 @@ Moreover, while being well-known and respected in your local university, these w
   In many case, the letter reads like it was written by a student (@sec:self-letters), and thus is a red flag.  So if you are in this situation, you should find someone else to write for you as mentioned in this section.
 ]
   
-Many students get letters from supervisors from companies where they did internships or are working.  It is OK as long as it is a research-based personalized letter. Again, the emphasis here is _research_, i.e., the letters should describe your research experiences and potential. Letters focusing on non-research projects at a company won't carry much weight.
+Many students get letters from supervisors from companies where they did internships or are working.  It is OK as long as it is a research-based personalized letter. Again, the emphasis here is #highlight[research], i.e., the letters should describe your research experiences and potential. Letters focusing on non-research projects at a company won't carry much weight.
 
 Finally, despite best intentions, the writers might not have the experience to write a strong LoR or lack the ability to evaluate your research ability.
 This is unfortunate but common, and if you are in this situation, you should find someone else to write for you (see @sec:lor-writers and @sec:famous-lor).
@@ -1000,7 +1022,7 @@ Should you explain bad grades in relevant courses in your SOP? If you have just 
 While a few schools still require taking the #link("https://www.ets.org/gre")[GRE] exam (e.g., UCF), most good CS PhD programs in the US *no longer require it*. The reason is that GRE scores do not correlate well with research ability, which is the most important factor for PhD admission. Note that many faculty members themselves did not take the GRE or had bad scores.
 
 Thus, if you have bad GRE scores or haven't taken the GRE, then don't waste time (re)taking it. Being optional really means optional, and not taking it will not hurt your application.
-However, if you took it and have really good scores then it might be worth it to include (and perhaps talk about) them in your application, but don't expect them to make much difference. But if your scores are bad, then you should not include them in your application, which can be a #myred[red flag].
+However, if you took it and have really good scores then it might be worth it to include (and perhaps talk about) them in your application, but don't expect them to make much difference. But if your scores are bad, then you should not include them in your application, which can be a #highlight(fill:red)[red flag].
 
 #warningbox[
   I often see students asking about GRE requirements on internet forums or Facebook groups, only to get completely incorrect answers. Some people insist that you "need" to take the GRE or be in specific high range to get a chance.
@@ -1069,7 +1091,7 @@ You can mention your website and projects in your CV (@sec:cv) and SOP (@chap:so
 Having popular projects or active contributions can help you stand out (@sec:stand-out), especially if you do not have much research experience.
 
 #commentbox[
-  Many students include LinkedIn (or Facebook) profiles in their applications. While these are popular when applying for jobs, they are not very useful for PhD application evaluation. Many adcom members are not familiar with LinkedIn (and might not want to go to a page that requires us to have an account and login), so it is better to have a something like personal and project websites, which are far more common and easier to access.
+  Many students include LinkedIn (or Facebook and X/Twitter) profiles in their applications. While these might be popular when applying for jobs, they are not very useful for PhD application evaluation. Many adcom members are not familiar with LinkedIn (and might not want to go to a page that requires us to have an account and login), so it is better to have a something like personal and project websites, which are far more common and easier to access.
 ]
 
 
@@ -1093,7 +1115,7 @@ After you submit your applications, the waiting game begins! For many students, 
 
 === Interviews <sec:interviews> 
 
-After you apply, you \emph{might} get interviews. The most common case is that a specific prof. is interested in working with you and wants to chat, e.g., to offer RA (@sec:ra). In some cases, the interview is done by several professors, e.g., to see if a student fits in their group or to recruit a very strong student to their program.
+After you apply, you _might_ get interviews. The most common case is that a specific prof. is interested in working with you and wants to chat, e.g., to offer RA (@sec:ra). In some cases, the interview is done by several professors, e.g., to see if a student fits in their group or to recruit a very strong student to their program.
 
 Note that unlike other fields (e.g., Physics @fig:adcom-discuss-physics) that has formal interview where adcom members interview selected applicants to accept them in the program, CS interviews are usually with just one prof. or a few profs.---who might not adcom members---that have interests in recruiting specific applicants to work directly with them or their research group. In CS, adcom members rarely do interview to get students for the program as a whole.
 
@@ -1128,7 +1150,7 @@ You should treat the interview as an informal chat. Prepare an _"elevator pitch"
 #paragraph([Updating your profile])[If you have important  achievements after you submitted your application, e.g., new top publications or big fellowship awards, you can mention to your interviewer. If you did not have interviews, you can try to ask the CS dept to update your application (though no guarantee that they will consider them). However, in general, you should not send emails to update your profile unless you really have important updates.]
 
 === Not Getting Interviews <sec:no-interview>
-While it is generally good to get an interview, not getting one *does not* mean you're out. Many programs do not have the tradition of interviewing applicants. For example, at GMU, most admitted students with TA (@sec:ta) do not go through interviews.
+While in general it is good to get an interview, not getting one *does not* mean you're out. Many programs do not have the tradition of interviewing applicants. For example, at GMU, most admitted students with TA (@sec:ta) do not go through interviews.
 
 However, no interview usually means you are less likely to get an RA (@sec:ra), which is typically offered by an individual faculty member. If they want you to do research with them, they will likely interview you first. If you have no interviews, your application (and TA/fellowship funding) is decided by the adcom.
 
@@ -2562,7 +2584,7 @@ This chapter focuses on how your application is evaluated, what reviewers look f
 
 The NSF GRFP is a prestigious fellowship for US citizens, nationals, and permanent residents who are in the _early stages_ of their graduate study in STEM fields, including both MS and PhD students. The GRFP is highly competitive, with many applicants from top schools, with strong LoRs and research experience. In many cases, even an _"honorable mention"_---meaning you did not get the fellowship but were considered a strong candidate---can help you get into a good PhD program (so make sure to mention it in your CV and application).
 
-=== How Applications are Evaluated
+=== Evaluation
 
 - Each applicant is assigned to _about 3 reviewers_ who have expertise in the applicant's research field (e.g., if your topic is in PL, your reviewers will likely work in PL or did their PhD in PL). This means reviewers are quite knowledgeable in your field and your work, your LoR writers and their work, and thus can evaluate your application quite in depth. This is different from PhD applications where adcom reviewers (@sec:adcom) might not be in your field.
 
@@ -2657,6 +2679,7 @@ I also find GRFP applicants have stronger _research plans_. GRFP applicants ofte
 A quick note on compensation: GRFP reviewers, like other NSF panelists, receive a modest honorarium (\$200 total; I probably spent several full days reviewing dozen of applications). NDSEG reviewers aren't officially paid, though I did receive some compensation, e.g., \$50 Amercian Express gift card---but for whatever reason never worked when I tried to use it. So, not much for compensation (days of reviewing and writing comments for a couple of hundred dollars), but I enjoy the experience and would do it for free anyway!
 ]
 
+#pagebreak()
 = Faculty Research Activities and Achievements <chap:research-achievements>
 #simpsons[Homer: Oh, why won't anyone give me an award?\
 Lisa Simpson: You won a Grammy.\
@@ -2689,19 +2712,17 @@ For example, a conference paper might present a new algorithm and some initial e
 
 Many CS areas do not have journals but some do. For example, TSE (Transactions on Software Engineering) is a top journal in SE and has exceptionally high impact-factors (higher than many top conferences)---but this is a rare exception.
 
-%It is expected that a tenure-track faculty in SE would have a few journal papers in addition to conference papers when going up for tenure.  However, in general, journals are not as important as conference papers in CS and many fields do not even have a top journal.
-
 #commentbox[
   Note that some CS areas, such as PL and SE, are beginning to publish conference papers as journals, which among other reasons allow for longer papers and to be consistent with other disciplines such as math and physics. For example, papers in well-known PL conferences including POPL and OOPSLA are now published as special issues in the PACMPL (Proceedings of the ACM on Programming Languages) journal. However, despite this publishing technicality, these are still considered conferences and has the benefits of conferences such as fast review and publication process, and in-person presentation at the conference. Most researchers would treat them exactly as conference papers.
 ]
 
-*Best Paper Awards* Conferences often give out best or distinguished paper awards to a small set of accepted papers (e.g., 10% of accepted papers at ICSE) to recognize that they have high-quality and potential impact. AI/ML have "oral" and "spotlight" papers that are selected from accepted papers based on their quality and potential impact, and thus are equivalent to traditional best papers.
+#paragraph([Best Paper Awards])[Conferences often give out best or distinguished paper awards to a small set of accepted papers (e.g., 10% of accepted papers at ICSE) to recognize that they have high-quality and potential impact. AI/ML have "oral" and "spotlight" papers that are selected from accepted papers based on their quality and potential impact, and thus are equivalent to traditional best papers.
 
-These best paper awards are determined by the program committee and often presented to the authors at the conference. Note that these are not the same class as the "Test-of-time" paper awards, which are extremely prestigious and discussed in @sec:research-awards.
+These best paper awards are determined by the program committee and often presented to the authors at the conference. Note that these are not the same class as the "Test-of-time" paper awards, which are extremely prestigious and discussed in @sec:research-awards.]
 
-*Citations* Citation counts, e.g., through Google Scholar, are often used to measure the impact of a researcher's work---how many people have cited their work. Google Scholar also has other metrics such as h-index and i10-index. The h-index is the number of papers with at least h citations, while the i10-index is the number of papers with at least 10 citations.
+#paragraph([Citations])[Citation counts, e.g., through Google Scholar, are often used to measure the impact of a researcher's work---how many people have cited their work. Google Scholar also has other metrics such as h-index and i10-index. The h-index is the number of papers with at least h citations, while the i10-index is the number of papers with at least 10 citations.
 
-However, citation-based metrics can be inaccurate and misleading because this strongly depends on the areas. For example, AI/ML papers have very high citation counts---even when they are _not_ published and just appear on arXiv. There are also numerous stories of "gaming" the system, e.g., paying others for citations. Thus take citations with a grain of salt when it comes to selecting advisors. For example, new faculty often have low citation counts, but this does not mean they are not good researchers or not productive.
+However, citation-based metrics can be inaccurate and misleading because this strongly depends on the areas. For example, AI/ML papers often have very high citation counts---even when they are _not_ published and just appear on arXiv. There are also numerous stories of "gaming" the system, e.g., paying others for citations. Thus take citations with a grain of salt when it comes to selecting advisors. For example, new faculty often have low citation counts, but this does not mean they are not good researchers or not productive.]
 
 
 === Involvement in the Research Community
@@ -2726,36 +2747,37 @@ After all, you rarely see departments celebrating someone's paper acceptance, bu
 
 
 #figure(
-  image("files/phd030810s.png", width: 50%),
+  image("files/phd030810s.png", width: 70%),
   caption: [Adademic Awards.],
 )
 
 
-
-%GIVE EXAMPLES from Big Univs celebrating these awards. 
+//%GIVE EXAMPLES from Big Univs celebrating these awards. 
 
 === Early-Career Funding Awards
 
 These refer to prestigious grants and fellowships for early-career faculty such as assistant professors who have not yet received tenure (\autoref{sec:faculty-types}). In addition to coming with major funding, these awards are highly valued and can significantly boost the tenure case and career of the recipient. 
 
-+ *NSF CAREER Award* The most prestigious award for junior faculty with research _and_ educational excellence. It comes with a 5-year research grant, which is substantial for early-career researchers. 
++ *NSF CAREER Award:* The _most prestigious award_ for junior faculty with research _and_ educational excellence. It comes with a 5-year research grant, which is substantial for early-career researchers. 
   
   Given its impact on tenure review, some junior faculty consider the CAREER award so important that they may prioritize it over other major life events such as having children.
-  In some cases, faculty may consider moving to a better school after getting this award.
-  + *NSF CRII (CISE Research Initiation Initiative)* A "mini" version of CAREER for junior faculty in CISE (Computer and Information Science and Engineering) directorate. It comes with a 2-year grant and many faculty use this as a stepping stone to apply for the CAREER. Note that this seems to be phasing out and might not be available in the future. 
+  In some cases, faculty consider moving to a better school after getting this award.
+
+
+  + *NSF CRII (CISE Research Initiation Initiative):* A "mini" version of CAREER for junior faculty in CISE (Computer and Information Science and Engineering) directorate. It comes with a 2-year grant and many faculty use this as a stepping stone to apply for the CAREER. Note that this seems to be phasing out and might not be available in the future. 
     
-  + *PECASE* (Presidential Early Career Award for Scientists and Engineers) A small number of CAREER awardees are selected for this recognition and therefore highly prestigious. PECASE is given by the White House and is the highest honor given to early-career scientists and engineers. See an #link("https://www.csail.mit.edu/news/csails-broderick-and-carbin-earn-presidential-early-career-awards")[example] of a PECASE awardee from MIT.
+  + *PECASE:* (Presidential Early Career Award for Scientists and Engineers) A small number of CAREER awardees are selected for this recognition and therefore highly prestigious. PECASE is given by the White House and is the highest honor given to early-career scientists and engineers. See an #link("https://www.csail.mit.edu/news/csails-broderick-and-carbin-earn-presidential-early-career-awards")[example] of a PECASE awardee from MIT.
   
-+ *YIP (Young Investigator Program)* Given by defense agencies such as the DoD, DARPA, ONR and have the similar goals as CAREER but strictly for US citizen or permanent residents. They are not as popular as CAREER, focus on very restricted topics (e.g., only in areas that the DoD is interested in), and have a shorter duration---3 years instead of 5. YIP recipients can also be considered for the mentioned PECASE recognition.
++ *YIP (Young Investigator Program):* Given by defense agencies such as the DoD, DARPA, ONR and have the similar goals as CAREER but strictly for US citizen or permanent residents. They are not as popular as CAREER, focus on very restricted topics (e.g., only in areas that the DoD is interested in), and have a shorter duration---3 years instead of 5. YIP recipients can also be considered for the mentioned PECASE recognition.
   
-+ *Sloan Fellowship*  Comes with a \$75K research grant over 2 years for junior faculty with exceptional potential in their field. Unlike the CAREER or YIP, these are nominated by their institutions and faculty cannot apply directly.
++ *Sloan Fellowship:*  Comes with a \$75K research grant over 2 years for junior faculty with exceptional potential in their field. Unlike the CAREER or YIP, these are nominated by their institutions and faculty cannot apply directly.
 
 Other awards that junior faculty can get include the _ACM Dissertation Awards_ and early career awards from the industry. 
 The ACM SIGs (Special Interest Groups) such as SIGPLAN (programming languages) and SIGARCH (architecture) have  dissertation awards for best PhD dissertation in different areas of CS. These are typically given _after_ the student has graduated and thus are given very junior faculty who recently graduated.   
-Some industry labs---like ~~Google~~ and ~~Microsoft~~ (used to)---have fellowship programs for early-career faculty. These are also competitive and come with funding for one or two years. 
+Some industry labs---like #strike[Google] and #strike[Microsoft] (used to)---have fellowship programs for early-career faculty. These are also competitive and come with funding for one or two years. 
 
 
-%  These industrial awards are very flexible (unrestricted) and thus prof. often save them for emergencies (e.g., when they cannot get NSF funding).
+//%  These industrial awards are very flexible (unrestricted) and thus prof. often save them for emergencies (e.g., when they cannot get NSF funding).
 
 
 === Research Awards <sec:research-awards>
@@ -2783,28 +2805,26 @@ _Test of Time, Most Influential, and Impact Awards_ are given to papers that wer
 Note that these paper awards are different than Distinguished or Best Paper awards, which are given at the conference and therefore might not be as well-known or influential.   
 
 #figure(
-  box[
-    _"It is highly noteworthy that [Vu] has earned two 10-year test-of-time awards for [his] papers [, including a prestigious ICSE Most Influential Paper Award]. Senior computer scientists count themselves fortunate to
-    earn even one such award at some point in their careers, but it is highly unusual and commendable that [Vu]
+  commentbox[
+    _"It is highly noteworthy that #redact[Vu] has earned two 10-year test-of-time awards for [his] papers [, including a prestigious ICSE Most Influential Paper Award]. Senior computer scientists count themselves fortunate to
+    earn even one such award at some point in their careers, but it is highly unusual and commendable that #redact[Vu]
     has earned two of these awards already, less than ten years after completing [his] PhD ..."_
   ],
-  caption: [LoR written by an ACM and IEEE Fellow for a junior faculty (some texts endacted for anonymity).]
+  caption: [LoR written by an ACM and IEEE Fellow for a junior faculty (some texts redacted for anonymity).]
 ) <fig:lor4junior>
 
 Note that while typically given to senior researchers, some junior faculty have received these highly prestigious awards for their work as shown in @fig:lor4junior. 
 
 === Industrial and Other Awards
 
-CS faculty also aim to win awards from industry, which can be a sign of their impact on real-world applications and industry relevance. Some usual and well-known ones include:
+CS faculty also aim to win awards from industry, which can be a sign of their impact on real-world applications and industry relevance. Well-known ones include:
 
-\begin{itemize}
-  \item \textbf{Amazon Research Award (ARA)} Typically open twice a year for a wide-range of research areas. It also comes as a gift of up to \$80K but is highly competitive as it is open to all researchers (not just junior faculty in the US, like the NSF CAREERs).
-  %    \item Sony \textbf{Faculty Innovation Award} Open to all researchers  in fields related to Sony's business (e.g., AI, robotics, computer vision, gaming).
-  \item \textbf{Google Scholar Award} This award is given once a year for a wide-range of research areas in CS . It is only for junior faculty (within X years of their PhD) and is given as a gift.
+- *Amazon Research Award (ARA):* Typically open twice a year for a wide range of research areas. It also comes as a gift of cash or cloud credits.  The amount is small, but is _highly competitive_ as it attracts researchers all over the world, including senior researchers and those from top institutions.
+  // - Sony *Faculty Innovation Award:* Open to all researchers in fields related to Sony's business (e.g., AI, robotics, computer vision, gaming).
+- *Google Scholar Award:* This award is given once a year for a wide range of research areas in CS. It is only for junior faculty (within X years of their PhD) and is given as a gift.
+- *NVIDIA Academic Grant:* This relatively new award typically comes with a gift of "cool" hardware including GPUs and NVIDIA "super"-computer like the DGX Station.
 
-\end{itemize}
-
-There are also many awards from others companies and organization but only in specific areas relevant to their business, e.g., Sony, Samsung, Comcast, Nvidia, Ethereum Foundation. 
+There are also many awards from others companies and organization but only in specific areas relevant to their business, e.g., Sony, Samsung, Comcast, and Ethereum Foundation. 
 
 Some companies have partnerships with universities and created awards only for faculty (and students) at these universities (e.g., faculty awards from Intel and Qualcomm, and Packard Fellowships). 
 These awards are not open to all researchers and face less competition (e.g.,  compared to the Amazon ARA which attracts a huge number of applicants from all over the world).
@@ -2962,7 +2982,7 @@ You (and your spouse) will need health insurance! Otherwise you will be charged 
 Note that even with insurance, heathcare services might still be expensive. So you should know what your insurance covers and be prepared for unexpected costs. Moreover, healthcare system has many confusing jargons such as HMO, PPO, deductibles, co-pays, and coinsurance (try take a look at the Explanation of Benefits or EoB statement you received from your insurance company). It's arguably the most complicated system in the US and even Americans often do not understand it (and politicians often exploit this to their advantage). Do not hesitate to ask your HR or the insurance company for help.
 
 *Tipping Culture* \
-Unlike many other countries, tipping is expected for various services, especially in restaurant. So adding an extra 15–20% to your bills is common, especially in restaurants.
+Unlike many other countries, tipping is expected for various services, especially in restaurant. So adding an extra 15--20% to your bills is common, especially in restaurants.
 
 You should also tip other services, e.g., Uber, taxi, haircuts, and hotel services. The minimum wage for tipped employees is lower than the standard minimum wage, so tips are an important part of their income.
 
