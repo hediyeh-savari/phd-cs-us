@@ -2211,7 +2211,7 @@ But there's a good chance that we would respond to well-written emails (@sec:con
 
 
 
-= Glossary and Acronyms <chap:glossary>
+// = Glossary and Acronyms <chap:glossary>
 // \printglossary
 
 // \printglossary[type=\acronymtype]
@@ -2273,7 +2273,7 @@ But there's a good chance that we would respond to well-written emails (@sec:con
 
 #simpsons[I'm not a bad guy! I work hard, and I love my kids. So why should I spend half my Sunday hearing about how I'm going to Hell?]
 
-Most of what is written in this handbook applies to both domestic#footnote[As mentioned in @chap:glossary, domestic means you do not require a visa to study in the US.] and international students. However, there are some differences and benefits that domestic students should be aware of and can leverage to improve their chances of admission.
+Most of what is written in this handbook applies to both domestic#footnote[_Domestic_ means you do not require a visa to study in the US.] and international students. However, there are some differences and benefits that domestic students should be aware of and can leverage to improve their chances of admission.
 
 #strong[Standing out @sec:stand-out.] There are #emph[few] domestic applications compared to international ones (one reason is that many domestic students go to the workforce after their undergraduate degree). Many US universities thus want to increase the number of domestic students in their programs. So if you're a domestic student, you already #emph[stand out] from the crowd.
 
@@ -2610,229 +2610,200 @@ Reviewers mainly get to know you and evaluate your application by reading your r
 
 *Non-expert* NDSEG reviewers hold advanced degrees in STEM fields. However, NDSEG reviewers are more general and might not be in your specific field. For example, in GRFP I mostly review applications in PL, while in NDSEG it seems that I review applications in all fields of CS and even non-CS. Thus, you should make your research plan *more accessible to a general audience*.
 
-// \begin{commentbox}
-// I find it a bit difficult to evaluate NDSEG applications because I do not have the full picture.  For example, a student mentioned that they have published in the topic they proposed but redacted all information about the publication, so I have no idea where they published, what the paper is about, etc.  
-// It is also difficult to evaluate the academic background of the student, e.g., some student just started grad school and so their transcript is essentially blank. It is also annoying to see CVs with so many blanked out information (they might as well should just submit a blank CV).
-// \\
+#commentbox[
+I find it a bit difficult to evaluate NDSEG applications because I do not have the full picture.  For example, a student mentioned that they have published in the topic they proposed but redacted all information about the publication, so I have no idea where they published, what the paper is about, etc.  
+It is also difficult to evaluate the academic background of the student, e.g., some student just started grad school and so their transcript is essentially blank. It is also annoying to see CVs with so many blanked out information (they might as well should just submit a blank CV).
 
-// In the beginning I find it surprising that I don't get to see the LoRs, but I understand the reasoning behind it and gradually think it is a good idea. As mentioned above, LoR writers for NSF GRFP (\autoref{sec:grfp-pitfalls}), especially those from top schools, often overrate their students and thus can bias the evaluation. So I don't find I am missing much by not seeing the LoRs.
-// \end{commentbox}
+In the beginning I find it surprising that I don't get to see the LoRs, but I understand the reasoning behind it and gradually think it is a good idea. As mentioned above, LoR writers for NSF GRFP (@sec:grfp-pitfalls), especially those from top schools, often overrate their students and thus can bias the evaluation. So I don't find I am missing much by not seeing the LoRs.
+]
 
-// \subsection{Common Pitfalls and Tips <sec:ndseg-pitfalls}
+=== Common Pitfalls and Tips <sec:ndseg-pitfalls>
 
-// These are some common pitfalls I see in NDSEG applications and tips to avoid them.  Some of these are similar to NSF GRFP (\autoref{sec:grfp-pitfalls}) while some are specific to NDSEG.
+These are some common pitfalls I see in NDSEG applications and tips to avoid them.  Some of these are similar to NSF GRFP (@sec:grfp-pitfalls) while some are specific to NDSEG.
 
-// \begin{itemize}
+- *Customize your research to DoD* by doing some research to find specific projects from DARPA or ONR and explicitly mention them---like in the introduction or in its own section.  This is different from NSF GRFP where you want broader impacts to society.
 
-//     \item \textbf{Customize your research to DoD} by doing some research to find specific projects from DARPA or ONR and explicitly mention them---like in the introduction or in its own section.  This is different from NSF GRFP where you want broader impacts to society.
+- *Unclear research plan.* You should aim to have (i) clear problem statement, (ii) why it is important (esp. to DoD), (iii) what has been done and their challenges/limitations, and (iv) what you plan to do to address the challenges.  Moreover, research is often quite technical and ambitious, so you want to show some preliminary work, e.g., a small experiment by hand on some small examples, to convince reviewers that you have thought about the problem and have some initial results.
 
-//     \item \textbf{Unclear research plan.}
-//      You should aim to have (i) clear problem statement, (ii) why it is important (esp. to DoD), (iii) what has been done and their challenges/limitations, and (iv) what you plan to do to address the challenges.  Moreover, research is often quite technical and ambitious, so you want to show some preliminary work, e.g., a small experiment by hand on some small examples, to convince reviewers that you have thought about the problem and have some initial results.
-    
-    
-//     Unlike GRFP where we have more contents to evaluate, in NDSEG we mainly evaluate based on personally essays and especially research plan. So you should do proper research on what you propose and make it clear and convincing.
+  Unlike GRFP where we have more contents to evaluate, in NDSEG we mainly evaluate based on personally essays and especially research plan. So you should do proper research on what you propose and make it clear and convincing.
 
-//     \item \textbf{Personal stories and essays should be unique and interesting}. Many essays and stories I read are quite generic and do not tell much about the student. For example, involving in a robotics club or mentoring students are quite common and do not tell much.
-    
-//     You should pick a few thing and provide concrete examples and details.  For example, talk about what you have accomplished in your robotics club, e.g., you built a robot that won a competition.  Just a small, interesting detail can make your essay stand out.
-    
-//     \item \textbf{Not using all allowed pages}. Many research plans use only 1/2 or 2/3 of the number of allowed pages, which themselves are already quite short. This often does not provide enough information for reviewers to understand and evaluate the research plan.  So use all allowed pages to provide enough details about your research plan. This is especially important as we do not know much about you due to redacted materials.
-    
-// %personal essay / stories are written in text box and so do not llook very professional and doesn't seem to be heavily weighted compared to research plan (e.g., very few questions asked about the personal stories compared to questions asked on research plan).  
-
-// %- use latex,  do not write in word and especially use left justification  (see how CS and engineer people publish papers)  
-
-// \end{itemize}
-
-
-== Common Tips for Both Fellowships}
-
-// \begin{itemize}
-//   \item \textbf{Use \LaTeX{} to write your research plan and essays} (\autoref{chap:writing-latex}).  This is the standard in CS and engineering and will make your application look  professional.  Moreover, do not use the default Word settings, e.g., left justification, as it is not standard in CS and engineering and difficult to read.  
-
-//   \item \textbf{Ask your LoR writers and adviser to look at your writing/essays} (this is very important so I keep repeating it).  You are new to the field and research writing, and your ideas might not be accurate or have already been explored. It's better that they tell you now than for you to find out later from reviewers.
+- *Personal stories and essays should be unique and interesting*. Many essays and stories I read are quite generic and do not tell much about the student. For example, involving in a robotics club or mentoring students are quite common and do not tell much.
   
-//   \item \textbf{Do not BS}. I said this before (\autoref{sec:grfp-pitfalls}) and I say it again. Many times students have some achievements (e.g., publications) and thought they know a lot and start BSing. Surprisingly I find this being more common with students from top schools with strong LoRs and good research experience.
-// \end{itemize}
+  You should pick a few thing and provide concrete examples and details.  For example, talk about what you have accomplished in your robotics club, e.g., you built a robot that won a competition.  Just a small, interesting detail can make your essay stand out.
+
+- *Not using all allowed pages*. Many research plans use only 1/2 or 2/3 of the number of allowed pages, which themselves are already quite short. This often does not provide enough information for reviewers to understand and evaluate the research plan.  So use all allowed pages to provide enough details about your research plan. This is especially important as we do not know much about you due to redacted materials.
 
 
-== My experience as a reviewer}
+== Common Tips for Both Fellowships
 
-// \begin{commentbox}
-// I find the GRFP more familiar compared to NDSEG, which redacts most applicant information as mentioned above. I also spent more time reviewing GRFP applications---mainly because NDSEG doesn't provide much info to work with.
-// \\
+- *Use LaTeX to write your research plan and essays* (@chap:writing-latex).  This is the standard in CS and engineering and will make your application look  professional.  Moreover, do not use the default Word settings, e.g., left justification, as it is not standard in CS and engineering and difficult to read.  
 
-// I also find GRFP applicants have stronger \emph{research plans}. GRFP applicants often already have good research experience, with many have top tier publications. They also tend to come from well-known institutions with "fancy" LoRs. In contrast, NDSEG applicants come from a broader range of schools and backgrounds. Interestingly, I find the \emph{personal statements} in NDSEG applications more appealling, largely due to their personal stories and varied experiences.
-// \\
+- *Ask your LoR writers and adviser to look at your writing/essays* (this is very important so I keep repeating it).  You are new to the field and research writing, and your ideas might not be accurate or have already been explored. It's better that they tell you now than for you to find out later from reviewers.
 
-// A quick note on compensation: GRFP reviewers, like other NSF panelists, receive a modest honorarium (\$200 total; I probably spent several full days reviewing dozen of applications). NDSEG reviewers aren't officially paid, though I did receive some compensation, e.g., \$50 Amercian Express gift card---but for whatever reason never worked when I tried to use it. So, not much for compensation (days of reviewing and writing comments for a couple of hundred dollars), but I enjoy the experience and would do it for free anyway!
-// \end{commentbox}
+- *Do not BS*. I said this before (@sec:grfp-pitfalls) and I say it again. Many times students have some achievements (e.g., publications) and thought they know a lot and start BSing. Surprisingly I find this being more common with students from top schools with strong LoRs and good research experience.
 
 
+== My experience as a reviewer
+
+#commentbox[
+I find the GRFP more familiar compared to NDSEG, which redacts most applicant information as mentioned above. I also spent more time reviewing GRFP applications---mainly because NDSEG doesn't provide much info to work with.
+
+I also find GRFP applicants have stronger _research plans_. GRFP applicants often already have good research experience, with many have top tier publications. They also tend to come from well-known institutions with "fancy" LoRs. In contrast, NDSEG applicants come from a broader range of schools and backgrounds. Interestingly, I find the _personal statements_ in NDSEG applications more appealling, largely due to their personal stories and varied experiences.
+
+A quick note on compensation: GRFP reviewers, like other NSF panelists, receive a modest honorarium (\$200 total; I probably spent several full days reviewing dozen of applications). NDSEG reviewers aren't officially paid, though I did receive some compensation, e.g., \$50 Amercian Express gift card---but for whatever reason never worked when I tried to use it. So, not much for compensation (days of reviewing and writing comments for a couple of hundred dollars), but I enjoy the experience and would do it for free anyway!
+]
 
 = Faculty Research Activities and Achievements <chap:research-achievements>
 #simpsons[Homer: Oh, why won't anyone give me an award?\
 Lisa Simpson: You won a Grammy.\
 Homer: I mean an award that's worth winning.]
 
-// When exploring potential advisors, students often look at faculty websites to learn about their research and achievements. Common indiciators of research productivity include publications and involvement in research community. However, beyond these, CS has several prestigious and meaningful achievements that researchers aim for, but that are not as well-known to prospective students. 
+When exploring potential advisors, students often look at faculty websites to learn about their research and achievements. Common indiciators of research productivity include publications and involvement in research community. However, beyond these, CS has several prestigious and meaningful achievements that researchers aim for, but that are not as well-known to prospective students. 
 
-// This chapter first looks at the common research activities and then discusses the "big" research achievements that faculty often highlight on their websites, CVs, or departmental news and awards pages (e.g., at \href{https://cs.gmu.edu/about/faculty-awards/}{GMU} and \href{https://www.cs.washington.edu/people/honors-awards/}{UWash}).
-
+This chapter first looks at the common research activities and then discusses the "big" research achievements that faculty often highlight on their websites, CVs, or departmental news and awards pages (e.g., at #link("https://cs.gmu.edu/about/faculty-awards/")[GMU] and #link("https://www.cs.washington.edu/people/honors-awards/")[UWash]).
 
 
 == Common Research Activities <sec:common-research-indicators>
 
-// Publications and involvement in the research community are common indicators of research productivity. These are the \emph{"bread and butter"} of research and lacking in these areas can mean that the faculty is not active in research.
+Publications and involvement in the research community are common indicators of research productivity. These are the _"bread and butter"_ of research and lacking in these areas can mean that the faculty is not active in research.
 
-// \subsection{Publications in Top-Tier Venues <sec:pubs-top-tier}
+=== Publications in Top-Tier Venues <sec:pubs-top-tier>
 
-// Publications in \emph{top-tier} venues are the most reliable factor to measure the productivity of a faculty. They give visibility to the faculty's work and help establish their reputation in the area. For tenure-track faculty (\autoref{sec:faculty-types}), especially at top CS programs, publications at top-tier conferences and journals are often the most important factor for tenure.
+Publications in _top-tier_ venues are the most reliable factor to measure the productivity of a faculty. They give visibility to the faculty's work and help establish their reputation in the area. For tenure-track faculty (@sec:faculty-types), especially at top CS programs, publications at top-tier conferences and journals are often the most important factor for tenure.
 
-// \textbf{Conferences.} Unlike many STEM disciplines like Maths and Physics (\autoref{sec:fields-and-areas}) that prefer journals, most CS fields  focus on publising at \emph{conferences}. CS is a very fast moving and journals are often too slow---taking 1--2 years to publish---by which time the results may already be outdated.  In contrast, conferences have a much faster review process, typically taking 3--6 months from submission to publication.
+*Conferences.* Unlike many STEM disciplines like Maths and Physics (@sec:fields-and-areas) that prefer journals, most CS fields  focus on publising at _conferences_. CS is a very fast moving and journals are often too slow---taking 1--2 years to publish---by which time the results may already be outdated.  In contrast, conferences have a much faster review process, typically taking 3--6 months from submission to publication.
 
-// Each CS field (\autoref{sec:fields-and-areas}) has its own "top" conferences---usually around 2--4 per area. For example, NeurIPS, ICLR, and ICML are considered top conferences in AI/ML, while ICSE and FSE are among the the tops in Software Engineering.
-// These conferences have rigorous review process, and only a small percentage of papers are accepted. 
+Each CS field (@sec:fields-and-areas) has its own "top" conferences---usually around 2--4 per area. For example, NeurIPS, ICLR, and ICML are considered top conferences in AI/ML, while ICSE and FSE are among the the tops in Software Engineering.
+These conferences have rigorous review process, and only a small percentage of papers are accepted. 
 
-// As mentioned in~\autoref{chap:research-experience}, having a paper accepted at a top-tier conference can be a big deal and makes you stand out from other prospective students. 
-// CSrankings and CSPicks (\autoref{chap:rankings}) gives the top conferences in each area and rank departments based on their publications in these conferences.
-
-
-// \textbf{Journals.} While journals are not as popular in CS, they exist and serve a different purpose---to publish more mature and complete work.
-// For example, a conference paper might present a new algorithm and some initial experiments, while a journal paper would include full detailed proofs and more thorough experiments and analysis. 
-
-// Many CS areas do not have journals but some do. For example, TSE (Transactions on Software Engineering) is a top journal in SE and has exceptionally high impact-factors (higher than many top conferences)---but this is a rare exception.
-
-// %It is expected that a tenure-track faculty in SE would have a few journal papers in addition to conference papers when going up for tenure.  However, in general, journals are not as important as conference papers in CS and many fields do not even have a top journal.
-
-// \begin{commentbox}
-// Note that some CS areas, such as PL and SE, are beginning to publish conference papers as journals, which among other reasons allow for  longer papers and to be consistent with other disciplines such as math and physics. For example, papers in well-known PL conferences including  POPL and OOPSLA are now published as special issues in the PACMPL (Proceedings of the ACM on Programming Languages) journal. However, despite this publishing technicality, these are still considered conferences and has the benefits of conferences such as fast review and publication process, and in-person presentation at the conference. Most researchers would treat them exactly as conference papers. 
-// \end{commentbox}
-
-// \paragraph{Best Paper Awards} Conferences often give out best or distinguished paper awards to a small set of accepted papers (e.g., 10\% of accepted papers at ICSE) to recognize that they have high-quality and potential impact.
-// AI/ML have "oral" and "spotlight" papers that are selected from accepted papers based on their quality and potential impact, and thus are equivalent to traditional best papers.
-
-// These best paper awards are determined by the program committee and often presented to the authors at the conference. Note that these are not the same class as the "Test-of-time" paper awards, which are extremely prestigious and
-// discussed in \autoref{sec:research-awards}.
-
-// \paragraph{Citations} Citation counts, e.g., through Google Scholar, are often used to measure the impact of a researcher's work---how many people have cited their work. Google Scholar also has other metrics such as h-index and i10-index. The h-index is the number of papers with at least h citations, while the i10-index is the number of papers with at least 10 citations.  
-
-// However, citation-based metrics can be inaccurate and misleading because this strongly depends on the areas.  For example, AI/ML papers have very high citation counts---even when they are \emph{not} published and just appear on arXiv.  There are also numerous stories of "gaming" the system, e.g., paying others for citations.
-// Thus take citations with a grain of salt when it comes to selecting advisors. For example, new faculty often have low citation counts, but this does not mean they are not good researchers or not productive.
+As mentioned in @chap:research-experience, having a paper accepted at a top-tier conference can be a big deal and makes you stand out from other prospective students. 
+CSrankings and CSPicks (@chap:rankings) gives the top conferences in each area and rank departments based on their publications in these conferences.
 
 
-// \subsection{Involvement in the Research Community}
+*Journals.* While journals are not as popular in CS, they exist and serve a different purpose---to publish more mature and complete work.
+For example, a conference paper might present a new algorithm and some initial experiments, while a journal paper would include full detailed proofs and more thorough experiments and analysis. 
 
-// Faculty have various activities within their research community.
-// These are mostly voluntary, but they are important for establishing and maintaining their reputation and visibility.
+Many CS areas do not have journals but some do. For example, TSE (Transactions on Software Engineering) is a top journal in SE and has exceptionally high impact-factors (higher than many top conferences)---but this is a rare exception.
 
-// \begin{itemize}
-// \item Reviewers for Conferences. \emph{Being a PC member}---reviewer for papers---of a top conference is the most common. Just as publishing in top conferences, this gives visibility and establish repuation.
-// New faculty aims to be on the PC of a top conference in their area, and  for more leadership roles as they become more well-known. PC chairs of top conferences are often senior and well-known reseachers.
+%It is expected that a tenure-track faculty in SE would have a few journal papers in addition to conference papers when going up for tenure.  However, in general, journals are not as important as conference papers in CS and many fields do not even have a top journal.
 
-// \item Reviewers for Journals. Similar to PC member, faculty also serve as reviewers for journals such as being on the \emph{editorial board} of major SE journals like TSE, JSS, and TOSEM. 
-// However, being a journal reviewer is less visible than being a PC member because the journals do not list their reviewers as conferences do with PC members. Moreover, due to the focus of conferences in CS, many faculty do not publish in journals and therefore do not review for them.
+#commentbox[
+  Note that some CS areas, such as PL and SE, are beginning to publish conference papers as journals, which among other reasons allow for longer papers and to be consistent with other disciplines such as math and physics. For example, papers in well-known PL conferences including POPL and OOPSLA are now published as special issues in the PACMPL (Proceedings of the ACM on Programming Languages) journal. However, despite this publishing technicality, these are still considered conferences and has the benefits of conferences such as fast review and publication process, and in-person presentation at the conference. Most researchers would treat them exactly as conference papers.
+]
+
+*Best Paper Awards* Conferences often give out best or distinguished paper awards to a small set of accepted papers (e.g., 10% of accepted papers at ICSE) to recognize that they have high-quality and potential impact. AI/ML have "oral" and "spotlight" papers that are selected from accepted papers based on their quality and potential impact, and thus are equivalent to traditional best papers.
+
+These best paper awards are determined by the program committee and often presented to the authors at the conference. Note that these are not the same class as the "Test-of-time" paper awards, which are extremely prestigious and discussed in @sec:research-awards.
+
+*Citations* Citation counts, e.g., through Google Scholar, are often used to measure the impact of a researcher's work---how many people have cited their work. Google Scholar also has other metrics such as h-index and i10-index. The h-index is the number of papers with at least h citations, while the i10-index is the number of papers with at least 10 citations.
+
+However, citation-based metrics can be inaccurate and misleading because this strongly depends on the areas. For example, AI/ML papers have very high citation counts---even when they are _not_ published and just appear on arXiv. There are also numerous stories of "gaming" the system, e.g., paying others for citations. Thus take citations with a grain of salt when it comes to selecting advisors. For example, new faculty often have low citation counts, but this does not mean they are not good researchers or not productive.
 
 
-// \item {Proposal Panelist} Another service
-// is reviewing proposals for funding agencies such as the Nationsal Science Foundation or NSF. In addition to shaping the landscape of research directions (e.g., by deciding which proposals to fund), being on an \emph{NSF review panel} provides insights into good proposal writing and opportunities to connect with program officers and peers. However, being an NSF panelist is not as common as being a PC member (many faculty never got invited), and it is often seen as a "bonus" rather than a requirement for tenure. 
-// \end{itemize}
+=== Involvement in the Research Community
+
+Faculty have various activities within their research community.
+These are mostly voluntary, but they are important for establishing and maintaining their reputation and visibility.
+
+- Reviewers for Conferences. _Being a PC member_---reviewer for papers---of a top conference is the most common. Just as publishing in top conferences, this gives visibility and establish repuation.
+  New faculty aims to be on the PC of a top conference in their area, and  for more leadership roles as they become more well-known. PC chairs of top conferences are often senior and well-known reseachers.
+
+- Reviewers for Journals. Similar to PC member, faculty also serve as reviewers for journals such as being on the _editorial board_ of major SE journals like TSE, JSS, and TOSEM. 
+  However, being a journal reviewer is less visible than being a PC member because the journals do not list their reviewers as conferences do with PC members. Moreover, due to the focus of conferences in CS, many faculty do not publish in journals and therefore do not review for them.
+
+- Proposal Panelist. Another service
+  is reviewing proposals for funding agencies such as the Nationsal Science Foundation or NSF. In addition to shaping the landscape of research directions (e.g., by deciding which proposals to fund), being on an _NSF review panel_ provides insights into good proposal writing and opportunities to connect with program officers and peers. However, being an NSF panelist is not as common as being a PC member (many faculty never got invited), and it is often seen as a "bonus" rather than a requirement for tenure.
 
 == Research Achievements and Awards
 
-// Activities listed in~\autoref{sec:common-research-indicators}---publishing papers and involving in research community---are common and \emph{expected} for all research faculty, especially those at top institutions. 
-// They are the \emph{"bread and butter"} of research, but they are not \emph{exceptional} achievements that make a faculty stand out.
-// After all, you rarely see departments celebrating someone's paper acceptance, but they will spotlight certain awards and honors that are genuinely exceptional and give more meaningful insights into a researcher's impact and standing in the field.
+Activities listed in @sec:common-research-indicators --- publishing papers and involving in research community---are common and _expected_ for all research faculty, especially those at top institutions. 
+They are the _"bread and butter"_ of research, but they are not _exceptional_ achievements that make a faculty stand out.
+After all, you rarely see departments celebrating someone's paper acceptance, but they will spotlight certain awards and honors that are genuinely exceptional and give more meaningful insights into a researcher's impact and standing in the field.
 
 
-// \begin{figure}
-// \centering
-//   \includegraphics[scale=0.5]{files/phd030810s.png}
-//   \caption{Adademic Awards.}
-// \end{figure}
+#figure(
+  image("files/phd030810s.png", width: 50%),
+  caption: [Adademic Awards.],
+)
 
 
 
-// %GIVE EXAMPLES from Big Univs celebrating these awards. 
-// \subsection{Early-Career Funding Awards} These refer to prestigious grants and fellowships for early-career faculty such as assistant professors who have not yet received tenure (\autoref{sec:faculty-types}). In addition to coming with major funding, these awards are highly valued and can significantly boost the tenure case and career of the recipient. 
+%GIVE EXAMPLES from Big Univs celebrating these awards. 
 
-// \begin{itemize}
-//   \item \textbf{NSF CAREER Award} The most prestigious award for junior faculty with research \emph{and} educational excellence. It comes with a 5-year research grant, which is substantial for early-career researchers. 
+=== Early-Career Funding Awards
+
+These refer to prestigious grants and fellowships for early-career faculty such as assistant professors who have not yet received tenure (\autoref{sec:faculty-types}). In addition to coming with major funding, these awards are highly valued and can significantly boost the tenure case and career of the recipient. 
+
++ *NSF CAREER Award* The most prestigious award for junior faculty with research _and_ educational excellence. It comes with a 5-year research grant, which is substantial for early-career researchers. 
   
-//   Given its impact on tenure review, some junior faculty consider the CAREER award so important that they may prioritize it over other major life events such as having children.
-//   In some cases, faculty may consider moving to a better school after getting this award.
-//   \begin{itemize}
-//     \item \textbf{NSF CRII (CISE Research Initiation Initiative)} A "mini" version of CAREER for junior faculty in CISE (Computer and Information Science and Engineering) directorate. It comes with a 2-year grant and many faculty use this as a stepping stone to apply for the CAREER. Note that this seems to be phasing out and might not be available in the future. 
+  Given its impact on tenure review, some junior faculty consider the CAREER award so important that they may prioritize it over other major life events such as having children.
+  In some cases, faculty may consider moving to a better school after getting this award.
+  + *NSF CRII (CISE Research Initiation Initiative)* A "mini" version of CAREER for junior faculty in CISE (Computer and Information Science and Engineering) directorate. It comes with a 2-year grant and many faculty use this as a stepping stone to apply for the CAREER. Note that this seems to be phasing out and might not be available in the future. 
     
-//     \item \textbf{PECASE} (Presidential Early Career Award for Scientists and Engineers) A small number of CAREER awardees are selected for this recognition and therefore highly prestigious. PECASE is given by the White House and is the highest honor given to early-career scientists and engineers. See an \href{https://www.csail.mit.edu/news/csails-broderick-and-carbin-earn-presidential-early-career-awards}{example} of a PECASE awardee from MIT.
-//   \end{itemize}  
+  + *PECASE* (Presidential Early Career Award for Scientists and Engineers) A small number of CAREER awardees are selected for this recognition and therefore highly prestigious. PECASE is given by the White House and is the highest honor given to early-career scientists and engineers. See an #link("https://www.csail.mit.edu/news/csails-broderick-and-carbin-earn-presidential-early-career-awards")[example] of a PECASE awardee from MIT.
   
-//   \item \textbf{YIP (Young Investigator Program)} Given by defense agencies such as the DoD, DARPA, ONR and have the similar goals as CAREER but strictly for US citizen or permanent residents. They are not as popular as CAREER, focus on very restricted topics (e.g., only in areas that the DoD is interested in), and have a shorter duration---3 years instead of 5. YIP recipients can also be considered for the mentioned PECASE recognition.
++ *YIP (Young Investigator Program)* Given by defense agencies such as the DoD, DARPA, ONR and have the similar goals as CAREER but strictly for US citizen or permanent residents. They are not as popular as CAREER, focus on very restricted topics (e.g., only in areas that the DoD is interested in), and have a shorter duration---3 years instead of 5. YIP recipients can also be considered for the mentioned PECASE recognition.
   
-//   \item \textbf{Sloan Fellowship}  Comes with a \$75K research grant over 2 years for junior faculty with exceptional potential in their field. Unlike the CAREER or YIP, these are nominated by their institutions and faculty cannot apply directly.
++ *Sloan Fellowship*  Comes with a \$75K research grant over 2 years for junior faculty with exceptional potential in their field. Unlike the CAREER or YIP, these are nominated by their institutions and faculty cannot apply directly.
+
+Other awards that junior faculty can get include the _ACM Dissertation Awards_ and early career awards from the industry. 
+The ACM SIGs (Special Interest Groups) such as SIGPLAN (programming languages) and SIGARCH (architecture) have  dissertation awards for best PhD dissertation in different areas of CS. These are typically given _after_ the student has graduated and thus are given very junior faculty who recently graduated.   
+Some industry labs---like ~~Google~~ and ~~Microsoft~~ (used to)---have fellowship programs for early-career faculty. These are also competitive and come with funding for one or two years. 
+
+
+%  These industrial awards are very flexible (unrestricted) and thus prof. often save them for emergencies (e.g., when they cannot get NSF funding).
+
+
+=== Research Awards <sec:research-awards>
+
+These refer to awards given to more senior researchers for their outstanding contributions to their field.
+These can be (i) lifetime achievements in the field---such as ACM or IEEE Fellows, and (ii) specific work that were published 10+ years ago and that have made significant impact. 
+
+
+*Lifetime Achievements* 
+
+- #link("https://awards.acm.org/fellows")[*ACM*] and #link("https://www.ieee.org/communities-connection/awards-recognition/ieee-fellows")[*IEEE*] Fellows are prestigious honors for researchers with long-term contributions and leadership in computing fields. These are typically given to very senior researchers (e.g., full professors). Note that there are also ACM and IEEE Senior Members, which are a step below Fellows and can be self-applied (see news examples of an IEEE Fellow at #link("https://siebelschool.illinois.edu/news/elevation-to-ieee-fellow-further-proves-significance-of-hoiems-impact-in-computer-vision")[UIUC] and Senior Member at #link("https://uwaterloo.ca/computer-science/news/ian-goldberg-named-senior-member-ieee")[Waterloo]).
   
-// \end{itemize} 
-
-// Other awards that junior faculty can get include the \emph{ACM Dissertation Awards} and early career awards from the industry. 
-// The ACM SIGs (Special Interest Groups) such as SIGPLAN (programming languages) and SIGARCH (architecture) have  dissertation awards for best PhD dissertation in different areas of CS. These are typically given \emph{after} the student has graduated and thus are given very junior faculty who recently graduated.   
-// Some industry labs---like \cancel{Google} and \cancel{Microsoft} (used to)---have fellowship programs for early-career faculty. These are also competitive and come with funding for one or two years. 
-
-
-// %  These industrial awards are very flexible (unrestricted) and thus prof. often save them for emergencies (e.g., when they cannot get NSF funding).
-
-
-// \subsection{Research Awards <sec:research-awards}
-
-// These refer to awards given to more senior researchers for their outstanding contributions to their field.
-// These can be (i) lifetime achievements in the field---such as ACM or IEEE Fellows, and (ii) specific work that were published 10+ years ago and that have made significant impact. 
-
-
-// \paragraph{Lifetime Achievements} 
-
-// \begin{itemize}  
-//   \item \href{https://awards.acm.org/fellows}{\textbf{ACM}} and \href{https://www.ieee.org/communities-connection/awards-recognition/ieee-fellows}{\textbf{IEEE}} Fellows are prestigious honors for researchers with long-term contributions and leadership in computing fields. These are typically given to very senior researchers (e.g., full professors). Note that there are also ACM and IEEE Senior Members, which are a step below Fellows and can be self-applied (see news examples of an IEEE Fellow at \href{https://siebelschool.illinois.edu/news/elevation-to-ieee-fellow-further-proves-significance-of-hoiems-impact-in-computer-vision}{UIUC} and Senior Member at \href{https://uwaterloo.ca/computer-science/news/ian-goldberg-named-senior-member-ieee}{Waterloo}).
+- *#link("https://www.macfound.org/programs/awards/fellows/")[McArthur Fellowship]* are also known as the _"Genius Grant"_ and given to individuals who have shown exceptional creativity in their work and the promise for more in the future. 
   
-//   \item \textbf{\href{https://www.macfound.org/programs/awards/fellows/}{McArthur Fellowship}} are also known as the \emph{"Genius Grant"} and given to individuals who have shown exceptional creativity in their work and the promise for more in the future. 
-  
-//   \item \textbf{\href{https://awards.acm.org/turing}{Turing Award}} is the \emph{highest honor} in CS for lifetime achievements and contributions to the computing community. It comes with a \$1M prize and is often called the \emph{"Nobel Prize of Computing."}.
-// \end{itemize}
+- *#link("https://awards.acm.org/turing")[Turing Award]* is the _highest honor_ in CS for lifetime achievements and contributions to the computing community. It comes with a \$1M prize and is often called the _"Nobel Prize of Computing."_.
 
-// \begin{commentbox}
-//   CSRankings (\autoref{chap:rankings}) highlights if an individual is an ACM Fellow or Turing Award winner. Note that these individuals might no longer be active in research and therefore do not have many recent publications.
-// \end{commentbox}
+#align(center, box(width: 100%)[
+  CSRankings (@chap:rankings) highlights if an individual is an ACM Fellow or Turing Award winner. Note that these individuals might no longer be active in research and therefore do not have many recent publications.
+])
 
 
-// \paragraph{Most Influential Paper Awards}
-// \emph{Test of Time, Most Influential, and Impact Awards}  are given to papers that were published 10+ years ago at a top venue and made a lasting contribution to their area of research. In other words, the work described in these papers have stood the \emph{test of time}. Typically, these papers are highly cited and have inspired many follow-up works.
-// Note that these paper awards are different than Distinguished or Best Paper awards, which are given at the conference and therefore might not be as well-known or influential.   
+*Most Influential Paper Awards* 
 
-// \begin{figure}
-//     \begin{keybox}
-//       \emph{"It is highly noteworthy that \censor{Vu} has earned two 10-year test-of-time awards for \censor{his} papers \censor{, including a prestigious ICSE Most Influential Paper Award}. Senior computer scientists count themselves fortunate to
-//       earn even one such award at some point in their careers, but it is highly unusual and commendable that \censor{Vu}
-//       has earned two of these awards already, less than ten years after completing \censor{his} PhD ..."}\\
+_Test of Time, Most Influential, and Impact Awards_ are given to papers that were published 10+ years ago at a top venue and made a lasting contribution to their area of research. In other words, the work described in these papers have stood the _test of time_. Typically, these papers are highly cited and have inspired many follow-up works.
+Note that these paper awards are different than Distinguished or Best Paper awards, which are given at the conference and therefore might not be as well-known or influential.   
 
-//     \end{keybox}
-//     \caption{LoR written by an ACM and IEEE Fellow for a junior faculty (some texts endacted for anonymity). <fig:lor4junior}
-//   \end{figure}
+#figure(
+  box[
+    _"It is highly noteworthy that [Vu] has earned two 10-year test-of-time awards for [his] papers [, including a prestigious ICSE Most Influential Paper Award]. Senior computer scientists count themselves fortunate to
+    earn even one such award at some point in their careers, but it is highly unusual and commendable that [Vu]
+    has earned two of these awards already, less than ten years after completing [his] PhD ..."_
+  ],
+  caption: [LoR written by an ACM and IEEE Fellow for a junior faculty (some texts endacted for anonymity).]
+) <fig:lor4junior>
 
-//   Note that while typically given to senior researchers, some junior faculty have received these highly prestigious awards for their work as shown in~\autoref{fig:lor4junior}. 
+Note that while typically given to senior researchers, some junior faculty have received these highly prestigious awards for their work as shown in @fig:lor4junior. 
 
-// \subsection{Industrial and Other Awards}
+=== Industrial and Other Awards
 
-// CS faculty also aim to win awards from industry, which can be a sign of their impact on real-world applications and industry relevance. Some usual and well-known ones include:
+CS faculty also aim to win awards from industry, which can be a sign of their impact on real-world applications and industry relevance. Some usual and well-known ones include:
 
-// \begin{itemize}
-//   \item \textbf{Amazon Research Award (ARA)} Typically open twice a year for a wide-range of research areas. It also comes as a gift of up to \$80K but is highly competitive as it is open to all researchers (not just junior faculty in the US, like the NSF CAREERs).
-//   %    \item Sony \textbf{Faculty Innovation Award} Open to all researchers  in fields related to Sony's business (e.g., AI, robotics, computer vision, gaming).
-//   \item \textbf{Google Scholar Award} This award is given once a year for a wide-range of research areas in CS . It is only for junior faculty (within X years of their PhD) and is given as a gift.
+\begin{itemize}
+  \item \textbf{Amazon Research Award (ARA)} Typically open twice a year for a wide-range of research areas. It also comes as a gift of up to \$80K but is highly competitive as it is open to all researchers (not just junior faculty in the US, like the NSF CAREERs).
+  %    \item Sony \textbf{Faculty Innovation Award} Open to all researchers  in fields related to Sony's business (e.g., AI, robotics, computer vision, gaming).
+  \item \textbf{Google Scholar Award} This award is given once a year for a wide-range of research areas in CS . It is only for junior faculty (within X years of their PhD) and is given as a gift.
 
-// \end{itemize}
+\end{itemize}
 
-// There are also many awards from others companies and organization but only in specific areas relevant to their business, e.g., Sony, Samsung, Comcast, Nvidia, Ethereum Foundation. 
+There are also many awards from others companies and organization but only in specific areas relevant to their business, e.g., Sony, Samsung, Comcast, Nvidia, Ethereum Foundation. 
 
-// Some companies have partnerships with universities and created awards only for faculty (and students) at these universities (e.g., faculty awards from Intel and Qualcomm, and Packard Fellowships). 
-// These awards are not open to all researchers and face less competition (e.g.,  compared to the Amazon ARA which attracts a huge number of applicants from all over the world).
+Some companies have partnerships with universities and created awards only for faculty (and students) at these universities (e.g., faculty awards from Intel and Qualcomm, and Packard Fellowships). 
+These awards are not open to all researchers and face less competition (e.g.,  compared to the Amazon ARA which attracts a huge number of applicants from all over the world).
 
 // %\paragraph{Students' Achievements} 
 // %faculty proudly show achievements of their students, e.g., best paper awards, internships at top companies, and faculty positions at top universities.  Dissertation awards, GRFP , Undergrad students research awards, etc
@@ -2872,23 +2843,25 @@ Homer: I mean an award that's worth winning.]
 
 
 
-// When you're applying for PhD programs or fellowships (\autoref{sec:nsf-grfp}) such as the NSF GRFP or DOD NDSEG, you will need to write a personal statement, research statement, and CV.
-// Many use MS Word, but you should strongly consider writing your statements (and even CV) in \LaTeX{} (and compiled to pdf's, which are then uploaded to the application system).  In CS and many other STEM fields, \LaTeX{} is the de facto standard for writing documents—papers, proposals, dissertations, and letters. \href{https://code.roars.dev/phd-cs-us}{This book}, for example, is written in \LaTeX{}.
+When you're applying for PhD programs or fellowships (\autoref{sec:nsf-grfp}) such as the NSF GRFP or DOD NDSEG, you will need to write a personal statement, research statement, and CV.
+Many use MS Word, but you should strongly consider writing your statements (and even CV) in \LaTeX{} (and compiled to pdf's, which are then uploaded to the application system).  In CS and many other STEM fields, \LaTeX{} is the de facto standard for writing documents—papers, proposals, dissertations, and letters. \href{https://code.roars.dev/phd-cs-us}{This book}, for example, is written in \LaTeX{}.
 
 
-// Most CS faculty are used to seeing formatting that \LaTeX{} produces, and many find Word's default left-aligned, uneven layout distracting.
-// While reviewers will not penalize you for using Word, subtle irritations can affect how they read your writing (after reading dozen of applications, these small things add up). Given that \LaTeX{} is free and easy to use (e.g., see \href{https://www.overleaf.com}{Overleaf}), it is worth the effort to learn. This is a small, easily fixable detail that indicates that you understand and respect the academic and technical culture you're trying to enter.
+Most CS faculty are used to seeing formatting that \LaTeX{} produces, and many find Word's default left-aligned, uneven layout distracting.
+While reviewers will not penalize you for using Word, subtle irritations can affect how they read your writing (after reading dozen of applications, these small things add up). Given that \LaTeX{} is free and easy to use (e.g., see \href{https://www.overleaf.com}{Overleaf}), it is worth the effort to learn. This is a small, easily fixable detail that indicates that you understand and respect the academic and technical culture you're trying to enter.
 
-// \autoref{listing:latex} is a very basic example of a \LaTeX{} document with 11pt font and 1-inch margins. You can start with this and modify it. 
+\autoref{listing:latex} is a very basic example of a \LaTeX{} document with 11pt font and 1-inch margins. You can start with this and modify it. 
 
-// \begin{lstlisting}[language=TeX,basicstyle=\footnotesize,label={listing:latex},caption={A simple \LaTeX{} document.},keywordstyle=\color{blue},keywords={documentclass, usepackage, begin, end},commentstyle=\color{gray},numbers=left,numberstyle=\tiny\color{gray},stepnumber=1,numbersep=5pt]
-//     \documentclass[11pt]{article}
-//     \usepackage[margin=1in]{geometry}
-//     \begin{document}
-//     ...     
-//     \end{document}
-// \end{lstlisting}
+\begin{lstlisting}[language=TeX,basicstyle=\footnotesize,label={listing:latex},caption={A simple \LaTeX{} document.},keywordstyle=\color{blue},keywords={documentclass, usepackage, begin, end},commentstyle=\color{gray},numbers=left,numberstyle=\tiny\color{gray},stepnumber=1,numbersep=5pt]
+    \documentclass[11pt]{article}
+    \usepackage[margin=1in]{geometry}
+    \begin{document}
+    ...     
+    \end{document}
+\end{lstlisting}
 
+
+#pagebreak()
 = Academic and Cultural Differences <chap:cultural>
 
 #simpsons[As intelligent as you are, you have to learn to appreciate other points of view.]
@@ -2924,74 +2897,77 @@ In many countries, it is customary to give professors costly gifts---such as fan
 
 == Maintaining Good Relationships with Your Profs. <sec:maintaining-relationships>
 
-// There's a misconception that in the US it's all business, with professors as bosses who pay students for their work and that lab mates are just work colleagues; and that doing nice things means expecting something in return.
+There's a misconception that in the US it's all business, with professors as bosses who pay students for their work and that lab mates are just work colleagues; and that doing nice things means expecting something in return.
 
-// However, the reality is quite the opposite. While people can be straightforward and appear "cold", they are also informal, friendly, and very caring (in ways that might surprise you).
-// With lab mates and colleagues, you will often work and go to lunch together, confide in each other, help each other navigate the academic journey, and often become lifelong friends.
-// With your professors, you can call them by their first name (\autoref{sec:address}), disagree with them and argue (and gain respect doing so), seek their help (even on personal matters), come to their houses for parties or gathering (e.g., my lab always come to my house for \href{https://photos.app.goo.gl/LFtbqQUuznq9eiL7A}{Thanksgiving}), and give them small thoughtful gifts that they proudly put on their desks (\autoref{sec:gifts}).  
-// Many people maintain lifelong relationships with their professors and colleagues, staying in touch through cards, emails, and visits, even after they no longer work together.
+However, the reality is quite the opposite. While people can be straightforward and appear "cold", they are also informal, friendly, and very caring (in ways that might surprise you).
+With lab mates and colleagues, you will often work and go to lunch together, confide in each other, help each other navigate the academic journey, and often become lifelong friends.
+With your professors, you can call them by their first name (\autoref{sec:address}), disagree with them and argue (and gain respect doing so), seek their help (even on personal matters), come to their houses for parties or gathering (e.g., my lab always come to my house for \href{https://photos.app.goo.gl/LFtbqQUuznq9eiL7A}{Thanksgiving}), and give them small thoughtful gifts that they proudly put on their desks (\autoref{sec:gifts}).  
+Many people maintain lifelong relationships with their professors and colleagues, staying in touch through cards, emails, and visits, even after they no longer work together.
 
-// \begin{commentbox}
-//     I maintain a close relationship with my former professors and mentors. When there is a new event in my life (or theirs), I often email them or call them, e.g., when I get married, have a new baby, new job, etc. I think this does not bother them a bit; they are genuinely interested in knowing and helping solve these "dramas" in my life.
-//     \\
+\begin{commentbox}
+    I maintain a close relationship with my former professors and mentors. When there is a new event in my life (or theirs), I often email them or call them, e.g., when I get married, have a new baby, new job, etc. I think this does not bother them a bit; they are genuinely interested in knowing and helping solve these "dramas" in my life.
+    \\
     
-//     I also visit my former professors when I am in their area. I meet Thang Bui (my MS adviser) at least once a year when I come back to Harrisburg to visit my parents. When Steph was in DC for a meeting, I invited her to give a research talk at GMU. I have also collaborated with them after I graduated e.g., I recently got an NSF grant with Deepak.
-//     \\
+    I also visit my former professors when I am in their area. I meet Thang Bui (my MS adviser) at least once a year when I come back to Harrisburg to visit my parents. When Steph was in DC for a meeting, I invited her to give a research talk at GMU. I have also collaborated with them after I graduated e.g., I recently got an NSF grant with Deepak.
+    \\
     
-//     In short, while I am a bit closer to my former advisers and mentors than most people (e.g., I still keep in touch with my middle school teacher), it is always a good idea to maintain a good relationship with people who have helped or worked well with you. A simple, short email or text once in a while (e.g., a \emph{"Hi X, I heard you just got promoted ... Congrats!"}) would suffice. They will appreciate it, and you never know when you might need their help.
+    In short, while I am a bit closer to my former advisers and mentors than most people (e.g., I still keep in touch with my middle school teacher), it is always a good idea to maintain a good relationship with people who have helped or worked well with you. A simple, short email or text once in a while (e.g., a \emph{"Hi X, I heard you just got promoted ... Congrats!"}) would suffice. They will appreciate it, and you never know when you might need their help.
     
         
-//   \end{commentbox}
+  \end{commentbox}
 
 == How to Call or Address a Professor? <sec:address>
 
 // \sectioninfo{What should you call your profs.? Many possibilities (e.g., Prof., Dr., and even their firstnames), but not Mr., Mrs., or their firstname in the first email.}
 
-// \begin{center} 
-//   \includegraphics[scale=0.5]{files/c5.png}
-// \end{center}
+#align(center)[
+  #image("files/c5.png", width: 80%)
+]
 
-// If you're reaching out to a professor for the first time,  address them as Prof. or Dr. Lastname (if you know that they they do not have a PhD, then don't use Dr., but Prof. is fine). Many international students use Prof. or Dr. FirstName LastName, but this can come across as if you're simply copying and pasting names. So just stick with Prof. or Dr. Lastname.  Using \emph{Prof.} is generally the safest option.
+If you're reaching out to a professor for the first time,  address them as Prof. or Dr. Lastname (if you know that they they do not have a PhD, then don't use Dr., but Prof. is fine). Many international students use Prof. or Dr. FirstName LastName, but this can come across as if you're simply copying and pasting names. So just stick with Prof. or Dr. Lastname.  Using _Prof._ is generally the safest option.
 
-// \emph{Do not} use Mr., Mrs., Ms, or Miss. This rarely happens, but I have seen  new students (e.g., undergraduate freshmen in the US) sometimes use these, which are used in K-12 schools but not in higher education.
+_Do not_ use Mr., Mrs., Ms, or Miss. This rarely happens, but I have seen  new students (e.g., undergraduate freshmen in the US) sometimes use these, which are used in K-12 schools but not in higher education.
 
-// Moreover, do not call the prof. by their first name \emph{at first}.  As you become more familiar with your prof and depending on their preferences, you may transition to addressing them by their first name.
-// For example, I prefer that my students and colleagues call me Vu. Some students call me \emph{Dr. Vu}, which I find a bit amusing but am totally fine with it.
+Moreover, do not call the prof. by their first name _at first_.  As you become more familiar with your prof and depending on their preferences, you may transition to addressing them by their first name.
+For example, I prefer that my students and colleagues call me Vu. Some students call me _Dr. Vu_, which I find a bit amusing but am totally fine with it.
 
-// \begin{commentbox}[Kapur:]
-//   I was amused to read this as if I recall correctly, you never called me by my first name when you were at UNM. You always called me Prof. And, many times, I would jokingly call you back as Prof. Vu.
-//   \tcblower
-//   \textbf{Vu}: Yes, for some reason I enjoy calling you "Professor" (without appending a last or first name).  The use of Prof. Vu may have foreshadowed my future in academia.
-// \end{commentbox}
+#commentbox[
+  *Kapur:* I was amused to read this as if I recall correctly, you never called me by my first name when you were at UNM. You always called me Prof. And, many times, I would jokingly call you back as Prof. Vu.
+  
+  *Vu:* Yes, for some reason I enjoy calling you "Professor" (without appending a last or first name).  The use of Prof. Vu may have foreshadowed my future in academia.
+]
 
-// Note that in some universities the formal title Dr. Lastname is preferred over Prof. Lastname. Moreover, be aware that not all faculty members hold a PhD\footnote{At many places, including Mason, the requirement for adjunct faculty (\autoref{sec:faculty-types}) is a PhD or an MS with significant industry experience.}, in which case using Prof. Lastname is a suitable alternative. 	You just need to observe and follow the conventions at your particular institution. One way to determine how to address a prof. is to observe how they sign their emails or how they introduce themselves in class. For example, I introduce myself as "Vu" in class but I do not sign my emails. You will get used to it after a while!. 
+Note that in some universities the formal title Dr. Lastname is preferred over Prof. Lastname. Moreover, be aware that not all faculty members hold a PhD[At many places, including Mason, the requirement for adjunct faculty (@sec:faculty-types) is a PhD or an MS with significant industry experience.], in which case using Prof. Lastname is a suitable alternative. You just need to observe and follow the conventions at your particular institution. One way to determine how to address a prof. is to observe how they sign their emails or how they introduce themselves in class. For example, I introduce myself as "Vu" in class but I do not sign my emails. You will get used to it after a while!. 
 
-// \paragraph{Referring to Professors You Know} When referring or talking about a prof (e.g., your mentor) that you know, you can just informally use their names if they are OK with it as mentioned above (or Dr./Prof., if you want to be formal). You can also include their institution if it makes it more precise.  For example, I can say:  \emph{"I did my postdoc with Jeff Foster at Univ. of Maryland"}.
+*Referring to Professors You Know:* When referring or talking about a prof (e.g., your mentor) that you know, you can just informally use their names if they are OK with it as mentioned above (or Dr./Prof., if you want to be formal). You can also include their institution if it makes it more precise.  For example, I can say:  _"I did my postdoc with Jeff Foster at Univ. of Maryland"_.
 
-// Do not include ranking (\autoref{sec:faculty-types}), e.g., Assistant, Associate, Scientist, ..., when referring to someone. I see many international students include a lengthy title of people they know, e.g., \emph{I am advised by Asst. Prof. X, and I also collaborate with Distinguished Scientist Y}.
+Do not include ranking (@sec:faculty-types), e.g., Assistant, Associate, Scientist, ..., when referring to someone. I see many international students include a lengthy title of people they know, e.g., _I am advised by Asst. Prof. X, and I also collaborate with Distinguished Scientist Y_.
 
-// This is \emph{not necessary} and makes it look like you're trying to show off your connections. These nuances represent some cultural and academic differences in the US that you may encounter but will gradually adapt to. 
+This is _not necessary_ and makes it look like you're trying to show off your connections. These nuances represent some cultural and academic differences in the US that you may encounter but will gradually adapt to. 
 
 == Miscs <chap:cultural-misc>
   
-// Here are some other common surprises for international students in the US. Note that I skip topics involving politics, religion, tax, and racism as these happen in many countries and are not unique to the US.
+Here are some other common surprises for international students in the US. Note that I skip topics involving politics, religion, tax, and racism as these happen in many countries and are not unique to the US.
 
-// \paragraph{Small talks} People often engage in small talks, e.g., about the weather, sports, or weekend plans.  This is a way to start a conversation and how social interaction starts in the US.
-  
-// However, avoid asking personal questions, e.g., about salary, age, relationship status, or health, as these are considered private.  Talking about kids' activities or schools are OK. Also, do not talk about politics or religion.  In fact, we often do not talk about these subjects with our family and friends to avoid conflicts.  
+*Small talks* \
+People often engage in small talks, e.g., about the weather, sports, or weekend plans. This is a way to start a conversation and how social interaction starts in the US.
 
-// Sometimes foreigners are surprised by how Americans do not talk about their personal lives, e.g., sharing details about their families, health, or relationships, and that their conversations are often not very "deep" or "mind-provoking". This is just a cultural norm about privacy and personal space.
+However, avoid asking personal questions, e.g., about salary, age, relationship status, or health, as these are considered private. Talking about kids' activities or schools are OK. Also, do not talk about politics or religion. In fact, we often do not talk about these subjects with our family and friends to avoid conflicts.
 
-//   \paragraph{Healthcare System}  You (and your spouse) will need health insurance! Otherwise you will be charged a lot for healthcare services when you need them. However, as mentioned in \autoref{chap:funding}, your  TA/RA (and fellowships)  will cover health insurance. Your spouse/children also get health insurance or significant discounts under your plan.
-  
-//   Note that even with insurance, heathcare services might still be expensive. So you should know what your insurance covers and be prepared for unexpected costs.  Moreover, healthcare system has many confusing jargons such as HMO, PPO, deductibles, co-pays, and coinsurance (try take a look at the Explanation of Benefits or EoB statement you received from your insurance company). It's arguably the most complicated system in the US and even Americans often do not understand it (and politicians often exploit this to their advantage).  Do not hesitate to ask your HR or the insurance company for help.
-  
-  
-//   \paragraph{Tipping Culture} Unlike many other countries, tipping is expected for various services, especially in restaurant. So adding an extra 15--20\% to your bills is common, especially in restaurants.
+Sometimes foreigners are surprised by how Americans do not talk about their personal lives, e.g., sharing details about their families, health, or relationships, and that their conversations are often not very "deep" or "mind-provoking". This is just a cultural norm about privacy and personal space.
 
-//   You should also tip other services, e.g., Uber, taxi, haircuts, and hotel services.  The minimum wage for tipped employees is lower than the standard minimum wage, so tips are an important part of their income.
+*Healthcare System* \
+You (and your spouse) will need health insurance! Otherwise you will be charged a lot for healthcare services when you need them. However, as mentioned in @chap:funding, your TA/RA (and fellowships) will cover health insurance. Your spouse/children also get health insurance or significant discounts under your plan.
 
-//   \paragraph{Car Dependency} Most places in the US are highly car-dependent. If you do not have a car, you will need to rely on friends, Uber, or public transportation, which can be inconvenient and time-consuming. Many international students end up getting a driver's license, which is highly convenient and replaces many documents (e.g., ID, passport), and eventually buying a car.
+Note that even with insurance, heathcare services might still be expensive. So you should know what your insurance covers and be prepared for unexpected costs. Moreover, healthcare system has many confusing jargons such as HMO, PPO, deductibles, co-pays, and coinsurance (try take a look at the Explanation of Benefits or EoB statement you received from your insurance company). It's arguably the most complicated system in the US and even Americans often do not understand it (and politicians often exploit this to their advantage). Do not hesitate to ask your HR or the insurance company for help.
+
+*Tipping Culture* \
+Unlike many other countries, tipping is expected for various services, especially in restaurant. So adding an extra 15–20% to your bills is common, especially in restaurants.
+
+You should also tip other services, e.g., Uber, taxi, haircuts, and hotel services. The minimum wage for tipped employees is lower than the standard minimum wage, so tips are an important part of their income.
+
+*Car Dependency* \
+Most places in the US are highly car-dependent. If you do not have a car, you will need to rely on friends, Uber, or public transportation, which can be inconvenient and time-consuming. Many international students end up getting a driver's license, which is highly convenient and replaces many documents (e.g., ID, passport), and eventually buying a car.
 
 
 //   %\paragraphP{Conversation} Americans are generally friendly and open.  However, there are certain things that we rarely talk about, e.g., salary, relationship status, or health. 
@@ -3020,99 +2996,99 @@ In many countries, it is customary to give professors costly gifts---such as fan
 // %   [DK:] Here are a few items you may consider addressing: putting international students in touch with other students from their countries, assuring them that they would be picked up from airports upon their arrival and that their initial stay will be taken care of. Most universities have other resources for these, but it is worth mentioning that they would be taken care of upon arrival and can get help during the transition phase. Learning to cook was a big deal when I arrived over 50 years ago-August 1973. But things have changed as one can find many ethnic food places, a big contrast from 1973, when there were two Indian restaurants in Greater Boston area.
 // % \end{commentbox}
 
-
+#pagebreak()
 = Rankings of CS PhD programs <chap:rankings>
 // \chapterinfo{CSRankings.org is a ranking system based on faculty publications at top CS conferences. CSPicks is not a ranking system and instead focuses on exploring the research strengths of CS departments and faculty.}
 
 #simpsons[The whole damn system is wrong!]
 
-// When researching where to do a CS PhD, many students use rankings like the U.S. News \& World Report. However, these widely publicized rankings are often criticized by CS researchers (e.g.,\autoref{fig:csrankings-quote}) for their lack of transparency and relevance. In contrast, data-driven open source ones such as CSRankings.org are increasingly used by faculty and PhD students to assess the true research strengths of CS depts. 
-// \begin{figure}[h]
-//     \begin{keybox}
-//       \emph{"The ranking methodology [of US News] is flawed, for a simple reason that any computer science researcher could tell them immediately. And we did. Influential researchers in computer science pointed out the flaws directly to editors at US News; they were ignored."}\\
+When researching where to do a CS PhD, many students use rankings like the U.S. News & World Report. However, these widely publicized rankings are often criticized by CS researchers (e.g., @fig:csrankings-quote) for their lack of transparency and relevance. In contrast, data-driven open source ones such as CSRankings.org are increasingly used by faculty and PhD students to assess the true research strengths of CS depts. 
 
-//       \emph{"'No ranking is perfect, but this [CSrankings] is defensible and open.”'}
-//     \end{keybox}
-//     \caption{\url{https://www.theexclusive.org/2017/11/cs-rankings.html
-// }, Charles Sutton (Google Deepmind). <fig:csrankings-quote}
-// \end{figure}
+#figure(
+align(left)[
+  #commentbox(["The ranking methodology \[of US News\] is flawed, for a simple reason that any computer science researcher could tell them immediately. And we did. Influential researchers in computer science pointed out the flaws directly to editors at US News; they were ignored."
+
+  "No ranking is perfect, but this \[CSrankings\] is defensible and open."])],
+
+  caption:[#link("https://www.theexclusive.org/2017/11/cs-rankings.html")[Charles Sutton (Google Deepmind).]])<fig:csrankings-quote>
+
 
 
 
 
 == What's Wrong with Popular CS Rankings <sec:rankings-cra>
 
-// Popular college rankings such as the \href{https://www.usnews.com/best-colleges}{U.S. News \& World Report} or \href{https://www.topuniversities.com/university-rankings}{QS World University Rankings} are often based on subjective criteria---such as reputation, faculty credentials, and student satisfaction---and are not transparent---how scores are calculated is often not disclosed.
-// CS research community has long questioned and discouraged the use of these rankings. For example, the Computing Research Association (CRA)---a highly respected organization in CS---issued a sharp critique of the U.S. News \& World Report's global rankings for CS depts, calling the methodology \emph{"deeply flawed and misleading"}\footnote{\url{https://cra.org/cra-statement-us-news-world-report-rankings-computer-science-universities/}}. Among many issues, the CRA highlighted that the rankings rely heavily on journal publications indexed by the Web of Science, ignoring conference publications—despite conferences being the primary venue for publishing top-tier CS research (\autoref{sec:pubs-top-tier}).   
+Popular college rankings such as the #link("https://www.usnews.com/best-colleges")[U.S. News & World Report] or #link("https://www.topuniversities.com/university-rankings")[QS World University Rankings] are often based on subjective criteria---such as reputation, faculty credentials, and student satisfaction---and are not transparent---how scores are calculated is often not disclosed.
+CS research community has long questioned and discouraged the use of these rankings. For example, the Computing Research Association (CRA)---a highly respected organization in CS---issued a sharp critique of the U.S. News & World Report's global rankings for CS depts, calling the methodology _"deeply flawed and misleading"_#footnote([#link("https://cra.org/cra-statement-us-news-world-report-rankings-computer-science-universities/")]). Among many issues, the CRA highlighted that the rankings rely heavily on journal publications indexed by the Web of Science, ignoring conference publications—despite conferences being the primary venue for publishing top-tier CS research (<sec:pubs-top-tier>).   
 
-// In short, rankings from sources like US News are mainly used high school and undergraduate students (or their parents) who are not familiar with CS research or PhD study. Those who know the field best---CS PhD students and faculty and researchers---largely discard them.
+In short, rankings from sources like US News are mainly used high school and undergraduate students (or their parents) who are not familiar with CS research or PhD study. Those who know the field best---CS PhD students and faculty and researchers---largely discard them.
 
 // % \begin{commentbox}[CRA:]
 // %   Anyone with knowledge of CS research will see these rankings for what they are — nonsense — and ignore them. But others may be seriously misled. 
 // % \end{commentbox}
 
 == CSRankings.org <sec:csrankings>
-// Instead of traditional school rankings, many PhD students and faculty use \href{https://www.csrankings.org}{CSRankings.org}, which is a ranking system based on faculty publications at top CS conferences.  The metrics and ranking calculation are transparent and ranking results are updated automatically (after the conference proceedings are indexed in DBLP).  Because the approach is entirely data-driven, it is not influenced by any subjective opinions or biases, and very difficult to manipulate. The number of Github pull requests by CS faculty (in fact, even non-CS faculty) to be included in the rankings is a good indicator of the impact of the rankings.  
+Instead of traditional school rankings, many PhD students and faculty use #link("https://www.csrankings.org")[CSRankings.org], which is a ranking system based on faculty publications at top CS conferences.  The metrics and ranking calculation are transparent and ranking results are updated automatically (after the conference proceedings are indexed in DBLP).  Because the approach is entirely data-driven, it is not influenced by any subjective opinions or biases, and very difficult to manipulate. The number of Github pull requests by CS faculty (in fact, even non-CS faculty) to be included in the rankings is a good indicator of the impact of the rankings.  
 
-// \paragraph{Geometric Mean} CSRankings uses the \emph{geometric mean} to summarize the performance of a department across multiple disciplines. The score for each department is calculated as follows:
+*Geometric Mean* CSRankings uses the _geometric mean_ to summarize the performance of a department across multiple disciplines. The score for each department is calculated as follows:
 
-// \[
-// \text{averageCount} = \sqrt[N]{\prod_{i=1}^N (\text{adjustedCounts}_i + 1)}
-// \]
-// where $N$ is the number of fields (e.g., OS, Cryptography, ML, PL) selected, and \texttt{adjustedCounts$_i$} is the number of papers published by faculty of that department in a field $i$. 
-// CSRankings thus favors departments that publish in multiple fields.  For example, a department that has 10 papers in each of the 10 fields will have a higher \texttt{averageCount} ($\sqrt[10]{11^{10}}=11$) than a department that has 100 papers in one field and 0 in the others ($\sqrt[10]{101 \cdot 1^9} = 1.59$). This is because the geometric mean is designed to favor departments that have a balanced distribution of publications across multiple fields, rather than excelling in just one field. 
+// $
+// "averageCount" = sqrt(N, prod_(i=1)^N ("adjustedCounts"_i + 1))
+// $
+$ "averageCount" = root(N, product_(i=1)^N ("adjustedCounts"_i + 1)) $
 
-// Note that CSRankings allows users to select the fields they are interested in, so the \texttt{averageCount} can be calculated based on a subset of fields. For example, if the student is only interested in field $X$, then the \texttt{averageCount} will be $\sqrt[1]{101} = 101$.
-// More details and justfication for this metric can be found in the \href{https://csrankings.org/faq.html}{CSRankings FAQ}.
+where $N$ is the number of fields (e.g., OS, Cryptography, ML, PL) selected, and `adjustedCounts_i` is the number of papers published by faculty of that department in a field $i$. 
+CSRankings thus favors departments that publish in multiple fields.  For example, a department that has 10 papers in each of the 10 fields will have a higher `averageCount` ($root(10, 11^10) = 11$)than a department that has 100 papers in one field and 0 in the others ($root(10, 101 · 1^9) = 1.59$). This is because the geometric mean is designed to favor departments that have a balanced distribution of publications across multiple fields, rather than excelling in just one field. 
 
-
-
-// \paragraph{Selecting Faculty} Another useful feature of CSRankings is that you can filter faculty by research areas to find who are active in your area of interest. For example, if you are interested in ML, you can select ML and see departments and faculty members active in ML. You can also see the number of papers published by each faculty in that area,  and their publication counts in recent years (e.g., 2020--2024). This is useful for finding faculty publish frequently in your area of interest and gauge their productivity (\autoref{chap:research-achievements}).
-
-// \subsection{Top CS Programs in the US}
-// \autoref{tab:ranking} lists the top 50 CS programs from CSRankings. For the most up-to-date rankings, visit the website directly.
+Note that CSRankings allows users to select the fields they are interested in, so the `averageCount` can be calculated based on a subset of fields. For example, if the student is only interested in field $X$, then the `averageCount` will be $root(1, 101) = 101$.
+More details and justfication for this metric can be found in the #link("https://csrankings.org/faq.html")[CSRankings FAQ].
 
 
-// \begin{table}
-//   \centering
-//   \small
-//   \caption{The top 50 CS programs in the US (\href{https://www.csrankings.org}{CSRankings.org}, Jan. 2025). \red{$^*$} indicates that the university has \href{https://roars.dev/phd-cs-us/viet-cs-profs-us}{Vietnamese prof.} that can advise CS PhD students. <tab:ranking}
-//   \begin{tabular}{rl|rl}
-//     \toprule
-//     1 & Carnegie Mellon & 26 & Northwestern University\\
-//     2 & Univ. of Illinois at Urbana-Champaign\red{$^*$}  & 27 & Pennsylvania State University  \\
-//     3 & Univ. of California-San Diego & 27 & Univ. of California - Riverside \\
-//     4 & Georgia Institute of Technology & 29 & Univ. of California - Santa Barbara \\
-//     5 & MIT                            & 30 &   Duke University \\
-//     6 & University of Michigan - Ann Arbor\red{$^*$}  & 30 & Rutgers University\red{$^*$} \\
-//     7 & University of Washington    & 32& University of Utah\\
-//     8 & Univ. of California - Berkeley    &33 & George Mason University\red{$^*$}\\
-//     9 & Cornell University   &34&   Texas A\&M University\red{$^*$}  \\
-//     10 & University of Maryland - College Park & 34 &  Univ. of California - Santa Cruz \\
-//     11 & Stanford University  &  36& North Carolina State University \\
-//     12 & Northeastern University\red{$^*$} &37& Ohio State \\
-//     13 & Purdue University &37& University of Virginia  \\
-//     14 & New York University  &37 & Yale University \\
-//     14 & University of Texas at Austin &40& Boston University  \\
-//     16 & Princeton University\red{$^*$}&41 & Univ. Of California - Davis \\
-//     16 & University of Pennsylvania  &42 & Brown University \\
-//     18 & Columbia University\red{$^*$}  & 42& Harvard \\
-//     19 & Univ. of California - Los Angeles  & 42& University of Illinois at Chicago  \\
-//     20 &  University of Wisconsin - Madison\red{$^*$}  &45& Arizona State University\red{$^*$} \\
-//     21 &  University of Southern California &45& University at Buffalo\red{$^*$} \\
-//     22 & University of Massachusetts-Amherst\red{$^*$} &45& University of North Carolina\red{$^*$} \\
-//     23 & University of Chicago &48& Oregon State University\red{$^*$}\\
-//     24 & Stony Brook University\red{$^*$} &48& Rice University\\
-//     25 &  Univ. of California - Irvine&48& University of Colorado-Boulder \\
-//     & &48& University of Minnesota\\ 
-//     \bottomrule
-//   \end{tabular}
-// \end{table}
+
+*Selecting Faculty* Another useful feature of CSRankings is that you can filter faculty by research areas to find who are active in your area of interest. For example, if you are interested in ML, you can select ML and see departments and faculty members active in ML. You can also see the number of papers published by each faculty in that area,  and their publication counts in recent years (e.g., 2020--2024). This is useful for finding faculty publish frequently in your area of interest and gauge their productivity (@chap:research-achievements).
+
+// === Top CS Programs in the US
+// @tab:ranking lists the top 50 CS programs from CSRankings. For the most up-to-date rankings, visit the website directly.
+
+
+// #figure(
+//   table(
+//     columns: (auto, 1fr, auto, 1fr),
+//     stroke: none,
+//     [*1*], [Carnegie Mellon], [*26*], [Northwestern University],
+//     [*2*], [Univ. of Illinois at Urbana-Champaign#super[*]], [*27*], [Pennsylvania State University],
+//     [*3*], [Univ. of California-San Diego], [*27*], [Univ. of California - Riverside],
+//     [*4*], [Georgia Institute of Technology], [*29*], [Univ. of California - Santa Barbara],
+//     [*5*], [MIT], [*30*], [Duke University],
+//     [*6*], [University of Michigan - Ann Arbor#super[*]], [*30*], [Rutgers University#super[*]],
+//     [*7*], [University of Washington], [*32*], [University of Utah],
+//     [*8*], [Univ. of California - Berkeley], [*33*], [George Mason University#super[*]],
+//     [*9*], [Cornell University], [*34*], [Texas A&M University#super[*]],
+//     [*10*], [University of Maryland - College Park], [*34*], [Univ. of California - Santa Cruz],
+//     [*11*], [Stanford University], [*36*], [North Carolina State University],
+//     [*12*], [Northeastern University#super[*]], [*37*], [Ohio State],
+//     [*13*], [Purdue University], [*37*], [University of Virginia],
+//     [*14*], [New York University], [*37*], [Yale University],
+//     [*14*], [University of Texas at Austin], [*40*], [Boston University],
+//     [*16*], [Princeton University#super[*]], [*41*], [Univ. Of California - Davis],
+//     [*16*], [University of Pennsylvania], [*42*], [Brown University],
+//     [*18*], [Columbia University#super[*]], [*42*], [Harvard],
+//     [*19*], [Univ. of California - Los Angeles], [*42*], [University of Illinois at Chicago],
+//     [*20*], [University of Wisconsin - Madison#super[*]], [*45*], [Arizona State University#super[*]],
+//     [*21*], [University of Southern California], [*45*], [University at Buffalo#super[*]],
+//     [*22*], [University of Massachusetts-Amherst#super[*]], [*45*], [University of North Carolina#super[*]],
+//     [*23*], [University of Chicago], [*48*], [Oregon State University#super[*]],
+//     [*24*], [Stony Brook University#super[*]], [*48*], [Rice University],
+//     [*25*], [Univ. of California - Irvine], [*48*], [University of Colorado-Boulder],
+//     [], [], [*48*], [University of Minnesota],
+//   ),
+//   caption: [The top 50 CS programs in the US (#link("https://www.csrankings.org")[CSRankings.org], Jan. 2025). #super[*] indicates that the university has Vietnamese prof. that can advise CS PhD students.],
+// ) <tab:ranking>
 
 
 == CSPicks <sec:cspicks>
 
-\href{https://roars/dev/cspicks}{CSPicks} is a new website developed by our Roar lab that aims to help prospective students (and faculty candidate) explore the research strengths of CS departments and their faculty. It is \emph{not} a ranking system like CSRankings, but rather a tool to help students find faculty and departments that match their research interests. It allows you see trends and growths of CS departments and faculty, such as the number of publications in different areas over time.\autoref{fig:cspicks-gmu} shows an example of CSPicks showing research areas of the CS department at George Mason.
+#link("https://roars/dev/cspicks")[CSPicks] is a new website developed by our ROARS lab that aims to help prospective students (and faculty candidate) explore the research strengths of CS departments and their faculty. It is _not_ a ranking system like CSRankings, but rather a tool to help students find faculty and departments that match their research interests. It allows you see trends and growths of CS departments and faculty, such as the number of publications in different areas over time.@fig:cspicks-gmu shows an example of CSPicks showing research areas of the CS department at George Mason.
 
 
 
@@ -3126,20 +3102,6 @@ In many countries, it is customary to give professors costly gifts---such as fan
   caption: [CSPicks for George Mason.],
 ) <fig:cspicks-gmu>
 
-// \begin{figure}
-//   \centering
-//   \begin{minipage}{0.48\textwidth}
-//     \centering
-//     \includegraphics[width=\linewidth]{files/cspicks1.png}
-//   \end{minipage}\hfill
-//   \begin{minipage}{0.48\textwidth}
-//     \centering
-//     \includegraphics[width=\linewidth]{files/cspicks2.png}
-//   \end{minipage}\hfill
-//   \caption{CSPicks for George Mason.}
-//   \label{fig:cspicks-gmu}
-// \end{figure}
-
 
 
 
@@ -3150,6 +3112,7 @@ In many countries, it is customary to give professors costly gifts---such as fan
 // % = Advisor Guide: Answers to Common Questions <chap:advising-guide}
 // % Specific answers to questions about my advising guide in \href{https://roars.dev}{Roars Lab}. Adapted from \href{https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-Advisor.pdf}{this guide}.
 
+#pagebreak()
 = About <chap:about>
 
 == About This Book <sec:about-this-book>
@@ -3163,7 +3126,7 @@ I am also a member of the VietPhD group on Facebook and often browse forums like
 I started writing this book in May 2023 and have updated it since then (mostly around deadline season when I procrastinate—#emph[productive procrastination]). The book was initially intended for international students but has expanded to include advice for domestic students (e.g., @chap:domestic-students and @chap:fellowships).
 
 
-=== Who Is This Book For?
+== Who Is This Book For?
 
 While this book can be useful for all students, it would most benefit *international students* from *smaller countries and less well-known universities*. It is also useful for *domestic students* from small US universities with no PhD programs or limited research opportunities (@chap:research-opportunities).
 
@@ -3189,7 +3152,7 @@ Writing is a relaxing process for me, and I enjoy experimenting with new things 
 Finally, this book is highly _opinionated_ and _subjective_, which is both a strength and a weakness (see @sec:disclaimer).
 
 
-=== How to Read This Book?
+== How to Read This Book?
 This book is designed to be read in any order. So you can start with any chapter that fit your current needs and stage in the application process.  For example, if you are still in undergrad, then you might be interested in getting research experience (@chap:research-opportunities). If you are ready to apply, you can read on how your application is evaluated (@chap:evalapps) or funding opportunities (@chap:funding). If you are a domestic student, you can look at advice (@chap:domestic-students) and fellowships (@chap:fellowships) specifically for you.
 
 // % \begin{commentbox}
@@ -3229,19 +3192,20 @@ This book will _always be free_ and _open source_ at
   #box(inset: 5pt, stroke: 0.2pt + black, fill: rgb("f0f0f0"))[#mybookgithub]
 ]
 
-If you spot an error, have a different experience, or want to suggest something, open an issue on the #link(mybookgithub)[GitHub repo]. Community input helps keep this resource current and useful.
+If you spot an error, have a different experience, or want to suggest something, open an issue on the #link(mybookgithub)[GitHub repo]. Community input helps keep the book current and useful.
 
 *Supporting This Book:* 
 You can support this book in many ways. The best way is to #emph[share it with others] who might find it useful, e.g., your friends, colleagues, or students.
 You can also _link to it_ from your website or social media accounts. I was very happy to hear that it has helped many students, especially those from smaller countries---which is the main reason I wrote it.
 
-You can also: (i) leave a review on #link("https://www.amazon.com/dp/B0F41HP6Y2")[Amazon] and #link("mailto:tvn@roars.dev")[send me] a _"Thank you"_ note and let me know how it helped you (those messages make my day!),
-(ii) give it a star on its #link(mybookgithub)[GitHub repo],
-(iii) share it with friends, or
-(iv) buy the Kindle book on #link("https://www.amazon.com/dp/B0F41HP6Y2")[Amazon]---so that I can brag about having a book on Amazon (priced at \$7.77---Unix 777 permission and the open nature of the book).
+You can also: 
+- leave a review on #link("https://www.amazon.com/dp/B0F41HP6Y2")[Amazon] and #link("mailto:tvn@roars.dev")[send me] a _"Thank you"_ note and let me know how it helped you (those messages make my day!)
+- give it a star on its #link(mybookgithub)[GitHub repo],
+- share it with friends, or
+- buy the Kindle book on #link("https://www.amazon.com/dp/B0F41HP6Y2")[Amazon]---so that I can brag about having a book on Amazon (priced at \$7.77---Unix 777 permission and the open nature of the book).
 
 
-
+#pagebreak()
 
 = About Me  <sec:about-me>
 
@@ -3253,15 +3217,18 @@ I have been involved in the PhD admission process at GMU and UNL for many years.
 Though I was not an international student, many of my students and collaborators are or were. I also mentor students from Vietnam and have close colleagues and friends who were once international students. I hope to capture the diverse challenges and experiences they've faced in this book so that it can be a valuable resource for prospective international students.
 Finally, my upbringing in the US provides a perspective aligned with American culture, allowing me to shed light on various issues, particularly those related to cultural differences (@chap:cultural).
 
+#pagebreak()
 = Disclaimer <sec:disclaimer>
 
 This book is inherently _subjective_ and _opinionated_ based on my experience in PhD adcoms and student advising (@sec:about-me). Such a candid approach is beneficial, because overly neutral and "feel-good" advice often fails to address the specific challenges faced by students.
 
 Moreover, since PhD admission varies significantly across institutions, there's rarely a universal "correct" way, and too many choices often lead to confusion. Clear and direct guidance---even if opinionated---can provide practical pathways to help students like yourself to navigate the PhD admissions process better.
 
+
+#pagebreak()
 = Acknowledgement 
 
-Many people have contributed to this work.
+Many people have contributed to this book.
 Profs. Craig Yu (GMU), Hakan Aydin (GMU), 
 Xiaokuan Zhang (GMU), Hung Le (UMass), and Deepak Kapur (UNM) provided valuable input in the early version. Many students including Didier (GMU), Thanh (Melbourne), and Dat (Melbourne) have contributed valuable questions and feedback (@sec:contribute).
 
