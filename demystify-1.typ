@@ -1432,9 +1432,8 @@ There are other things you might not think are important but can make you stand 
 ]
 
 #pagebreak()
-= Funding, Schools, and Profs. <part:funding-schools-profs>
 
-== Funding <chap:funding>
+= Funding <chap:funding>
 
 // \chapterinfo{TAs, RAs, and fellowships are main funding sources for PhDs.  TAs are provided by the department to help with classes. RAs are given by profs. to help with their research.  Fellowships, provided by the university, department, or external sources such as government or industry, give move flexibility but can be very competitive.}
 
@@ -1467,7 +1466,7 @@ Note that funding is typically more available for PhD students than MS (@sec:ms-
   ),
 ) <tab:funding>
 
-=== Graduate Assistantship (TA/RA) <sec:ta-ra>
+== Graduate Assistantship (TA/RA) <sec:ta-ra>
 The most common type of funding is *graduate assistantship*, which comes in two main forms: TA (Teaching Assistant) and RA (Research Assistant). Both TA and RA positions typically include a tuition waiver (so you don't pay tuition), health insurance (which is required in the US), and a stipend (your salary). Some universities also offer discounts or insurance coverage for spouses and children.
 
 A few notes about stipends:
@@ -1542,9 +1541,9 @@ Such major fellowships typically require a clear and good research plan (the GRF
 
 In general, external fellowships are highly competitive and prestigious---you will stand out if you get one.  Every PhD student has pubs, but only a few would have the NSF GRFP#footnote[#link("https://www.alexhunterlang.com/nsf-fellowship")[is a good starting place for the GRFP with lots of proposal examples.]] or Microsoft fellowships. In fact, these are so prestigious that even if you didn't get it but make it to the final round or even *"honorable mentioning"* you should put it on your CV. @chap:fellowships discusses the evaluation processes of the NSF GRFP and DoD NDSEG.
 
-=== Funding Miscs
+== Funding Miscs
 
-==== Low Stipend? <sec:low-stipend>
+=== Low Stipend? <sec:low-stipend>
 
 Students often think their stipend is too low and not enough to live on.  For example, if you look at the stipend at GMU, which is around \$30K for 9-month, and then compare it to the cost of living in Fairfax, VA, which says you need \$70K to live in a 1-bed apartment, then you might be in a panic.
 
@@ -1555,7 +1554,7 @@ In fact, it might be enough to support your spouse and kids.  Many CS PhD studen
 For a full breakdown of how much a graduate student costs, see @sec:ra-cost.
 
 
-==== Funding in the Summer <sec:summer-funding>
+=== Funding in the Summer <sec:summer-funding>
 
 Students often get confused about summer funding, e.g., if they will get paid during the summer.  This is a good question because PhD students have no classes over the summer and so are often more productive and produce good research. However, summer salary is largely depending on your funding source.
 
@@ -1572,7 +1571,7 @@ For my students, I have been fortunate to have funding to support them over the 
 
 Finally, for fellowships (@sec:fellowships) you might get paid over the summer depending on your fellowship (@sec:fellowships). Good ones, e.g., from NSF, Google, and Microsoft, will pay you the whole year.
 
-==== How much do *YOU* cost? <sec:ra-cost>
+=== How much do *YOU* cost? <sec:ra-cost>
 // \subsectioninfo{Your entire PhD program costs about \$400K in total, but you \emph{do not} pay for it.}
 
 PhD students often ask why their salary is low compared to the large grants their advisers get. They also wonder why their offer letters sometimes show that their benefits are higher than what they receive as stipend (e.g., your financial assistance says you get a package of \$60K, but your stipend is only \$30K).  The reason is that the cost of supporting a PhD student is much higher than just their stipend.  In fact, the total cost of supporting a PhD student can be around \$70K per year, which includes not only the stipend but also tuition, health insurance, and other expenses. Over the course of a 5-6 year PhD program, this can add up to around \$400K.
@@ -1617,6 +1616,10 @@ PhD students often ask why their salary is low compared to the large grants thei
 These numbers are based on my experience at public universities in the US. Private universities may have different numbers.  For simplicity, I will assume the department has a 9-month stipend of \$30K and a 3-month summer of \$10K (a third of the 9-month stipend). I will also use GMU tuition rate of about \$15K/year for full-time study (which is quite cheap compared to private universities, e.g., Univ. of Chicago is a whooping \$70K) and a 58.9% rate on *indirect cost*, which is a typical rate charged for overhead or administrative costs (yes, after all, universities are businesses!).  Finally, I assume the students take two conference trips per year, one domestic and one international (conf. registration, airline tickets, taxi, meals, etc are all included).
 
 In the end, the total budget comes out to be \$73K/year to support a PhD student. #highlight[The summary is that over your 5--6 years of your PhD, you cost about \$400K, and while your stipend is X, your adviser probably pays 2X for you]. But of course, the nicest thing is that you do not have to pay for any of this! You get to gain the knowledge, do research, travel, and also get paid!
+
+#pagebreak()
+= Schools and Profs. <part:schools-profs>
+
 
 == Choosing Schools <chap:choosing-school>
 // \chapterinfo{Not every university has a CS PhD program. Not every professor, even those in CS, can advise or graduate CS PhD students.}
@@ -2000,7 +2003,7 @@ So check these carefully as this is different from one university to another.
   University websites might not be up to date and still list faculty who are no longer active or have moved to another institution. In some rare and extreme cases, they might even list deceased faculty. In fact, even the faculty themselves might not update their websites. So do multiple checks, e.g., Google, recent publications, etc.
 ]
 
-=== Ranks (Assistant, Associate, Full, and More)
+==== Ranks (Assistant, Associate, Full, and More)
 
 Regardless of type (tenure-line or teaching), faculty are generally assigned one of three academic ranks:
 + *Assistant*: typically an early-career faculty member
