@@ -2891,7 +2891,7 @@ Below is a very basic example of a LaTeX document with 11pt font and 1-inch marg
 )
 ```
 
-#paragraph([A quick word on Typst])[#link("https://typst.app/")[Typst] is a new typesetting system that is gaining popularity for its ease of use and modern features, such as incremental compilation and live preview. It is not as widely used as LaTeX yet, but it is worth considering if you want to try something new (though you will likely need to learn LaTeX anyway as most publishing venues do not support Typst). For example, #link("https://code.roars.dev/phd-cs-us")[this book] is originally written in  #link("https://code.roars.dev/phd-cs-us/demystify-old.tex")[LaTeX] and then converted to #link("https://code.roars.dev/phd-cs-us/demystify.typ")[Typst].]
+#paragraph([A quick word on Typst])[#link("https://typst.app/")[Typst] is a new typesetting system that is gaining popularity for its ease of use and modern features, such as incremental compilation and live preview. It is not as widely used as LaTeX yet, but it is worth considering if you want to try something new (though you will likely need to learn LaTeX anyway as most publishing venues do not support Typst). For example, #link("https://code.roars.dev/phd-cs-us")[this book] is originally written in  #link("https://code.roars.dev/phd-cs-us/blob/main/demystify-old.tex")[LaTeX] and then converted to #link("https://code.roars.dev/phd-cs-us/blob/main/demystify.typ")[Typst].]
 
 #pagebreak()
 = Academic and Cultural Differences <chap:cultural>
