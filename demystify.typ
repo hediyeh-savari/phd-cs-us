@@ -9,7 +9,6 @@
   size: 12pt
 )
 
-
 #set list(indent: 1em)
 #set enum(indent: 1em)
 #show heading: set block(below: 1.5em, above: 1.5em)
@@ -51,7 +50,7 @@
 #let alert(txt) = {highlight(fill:red.lighten(30%))[#txt]}
 #let paragraph(title, body) = {
   v(0.5em)
-  text(weight: "bold", style: "italic")[#highlight(fill:gray.lighten(70%))[#title.] ]
+  text(weight: "bold", style: "italic")[#highlight(fill:gray.lighten(70%))[#title] ]
   body
 }
 
@@ -62,27 +61,32 @@
   )[
     "#emph(s)"
   ]
-
-#let cb(who: none, fill: rgb("f0f0f0"), msg) = box(
-  stroke: (x: 0.5pt + gray, y: 0.5pt + gray),
-  inset: 11pt,
-  fill: fill
+#let cb(who: none, fill:gray, msg) = block(
+  width: 100%,
+  fill: fill,
+  radius: (right: 5pt),
+  stroke: (left: 3pt + fill.darken(10%)),
+  inset: (left: 10pt, right: 10pt, y: 10pt),
 )[
   #if who != none [
-    *#who*: 
+    #text(weight: "bold", size: 0.85em)[#who] \
   ]
-  #text(size:0.8em, font:"New Computer Modern")[#msg]
+  #text(size: 0.9em, font: "New Computer Modern")[#msg]
 ]
 
 
-#let commentbox(who: none, msg) = cb(who: who, fill: rgb("f0f0f0"), msg)
+#let commentbox(who: none, msg) = cb(who: who, fill: gray.lighten(80%), msg)
 #let keybox(msg) = cb(fill: rgb("#b8ebc1"), msg)
 #let examplebox(msg) = cb(fill: yellow.lighten(95%), msg)
-#let warningbox(msg) = cb(fill: rgb("#ffe6e6"), msg)
+#let warningbox(msg) = cb(fill:red.lighten(80%), msg)
 #let redact(text, fill: black, height: 1em) = {
   box(rect(fill: fill, height: height)[#hide(text)])
 }
 
+#show figure.where(kind: image): set figure(supplement: [Fig.])
+#show figure.where(kind: table): set figure(supplement: [Tab.])
+#show math.equation: set math.equation(supplement: [Eq.])
+#show heading: set heading(supplement: [Sec.])
 
 
 // Title Page
@@ -270,7 +274,7 @@ Typically it takes 5--7 years for a CS PhD in the US. This is usually longer com
 
 The first two years are typically spent taking coursework (somewhat equivalent to MS study), finding an adviser, and learning how to do research. The next 2--3 years focus on research, forming a dissertation topic, and getting results published. The last 1--2 years are usually spent continuing to publish, writing and defending the dissertation, and looking for a job.
 
-Within these 5--7 years, CS PhD students often take a "leave of absence" for 1--2 semesters or for a summer to do internships at companies and research labs.
+Within these 5--7 years, CS PhD students sometimes take a "leave of absence" for 1--2 semesters or for a summer to do internships at companies and research labs.
 
 #commentbox[
   I started my PhD with an MS, and it took me 7 years (Fall '07--Fall '14). I spent half a year doing an internship at the #link("https://www.nrl.navy.mil")[Naval Research Lab]. My PhD did take a bit longer than usual, but it allowed me to explore new research areas and topics.
@@ -278,12 +282,12 @@ Within these 5--7 years, CS PhD students often take a "leave of absence" for 1--
 
 
 
-=== Undergrad Not in CS or Related Disciplines} <sec:non-stem>
+=== Undergrad Not in CS or Related Disciplines <sec:non-stem>
 // \sectioninfo{You can successfully apply to CS PhD even if you have non-CS background.}
 
-You still can apply to a PhD in CS _as long as_ you can demonstrate that you are ready for it through your background, research experience, LoRs, statements, etc. You might even be able to leverage this to make your profile stand out, as mentioned in @sec:stand-out.
+Even if your undergraduate degree is not in CS or a related discipline, you still can apply to a PhD in CS _as long as_ you can demonstrate that you are ready for it through your background, research experience, LoRs, statements, etc. You might even be able to leverage this to make your profile stand out, as mentioned in @sec:stand-out.
 
-A main concern the admissions committee (@sec:adcom) has for a non-CS or non-STEM student is whether you have sufficient technical background from core CS courses. So you need to show that you have this knowledge through your coursework, projects, or research.
+A main concern for a non-CS or non-STEM student is whether you have sufficient technical background from core CS courses. So you need to demonstrate that you have this knowledge through your coursework, projects, or research.
 
 For example, if you have taken a class on algorithms, even an online course from Coursera, you can talk about it in your SOP. If you have done a project that requires knowledge of operating systems or have a professional certification (e.g., A+) through work, you can talk about it. If you have done research that requires knowledge of discrete math, you can talk about it. You can also ask your LoR writers to discuss your technical background.
 
@@ -295,7 +299,7 @@ For example, if you have taken a class on algorithms, even an online course from
 - *Computer OS or systems:* memory management, file systems, processes.
 ]
 
-In short, you _do not need_ to formally take CS courses; you just need to show that you have this essential knowledge, for example through the ways mentioned above. Many universities are well aware that incoming graduate students might not have all the technical background, so they often have “bridge” courses to help students catch up. For example, GMU has four bridge courses corresponding to the four core areas above that incoming students can take to catch up on their CS knowledge.
+In short, you _do not need_ to formally take CS courses. You just need to show that you have this essential knowledge, for example through the ways mentioned above. Many universities are well aware that incoming graduate students might not have all the technical background, so they often have _“bridge”_ courses to help students catch up. For example, GMU has four bridge courses corresponding to the four core areas above that incoming students can take to catch up on their CS knowledge.
 
 #commentbox[
   I would advocate for a non-STEM student who shows they have a strong drive for CS by studying core CS knowledge through various channels (e.g., self-study through online courses, projects, etc.). I have seen many students with non-CS backgrounds who are very successful in CS PhD. I have also seen many students with CS backgrounds who are not successful in a CS PhD. So it is not about your background; it is about your drive and passion for CS research.
@@ -309,7 +313,7 @@ In short, you _do not need_ to formally take CS courses; you just need to show t
 No, while other countries often encourage or even require an MS for PhD students in CS (@sec:non-us-differences), it is common in the US to directly apply for a PhD program after a 4-year undergraduate program (e.g., after getting a BS degree). In addition, most CS PhD programs are designed so that students can get an MS degree "along the way" to the PhD, for example after finishing the 2-year coursework. This is one of the reasons why a CS PhD in the US takes longer (5--7 years, @sec:time) than in other countries.
 
 However, an MS _can help_ admission if it gives research experience or is from a more well-known school than your undergraduate institution (@chap:your-school).
-Some professors also prefer students with an MS since they have more experience and are more mature. But this is not a requirement, and many professors are happy to take students without an MS.
+Some professors prefer students with an MS since they have more experience and are more mature. But this is not a requirement, and many professors are happy to take students without an MS.
 Moreover, if you have an MS, then some coursework _might_ be transferred for course credit, which _might_ save some time. But in general, don't count on finishing earlier just because you have an MS.
 
 #commentbox[
@@ -3047,16 +3051,16 @@ align(left)[
 Popular college rankings such as the #link("https://www.usnews.com/best-colleges")[U.S. News & World Report] or #link("https://www.topuniversities.com/university-rankings")[QS World University Rankings] are often based on subjective criteria---such as reputation, faculty credentials, and student satisfaction---and are not transparent---how scores are calculated is often not disclosed.
 CS research community has long questioned and discouraged the use of these rankings. For example, the Computing Research Association (CRA)---a highly respected organization in CS---issued a sharp critique of the U.S. News & World Report's global rankings for CS depts, calling the methodology _"deeply flawed and misleading"_#footnote([#link("https://cra.org/cra-statement-us-news-world-report-rankings-computer-science-universities/")]). Among many issues, the CRA highlighted that the rankings rely heavily on journal publications indexed by the Web of Science, ignoring conference publications—despite conferences being the primary venue for publishing top-tier CS research (@sec:pubs-top-tier).   
 
-In short, rankings from sources like US News are mainly used high school and undergraduate students (or their parents) who are not familiar with CS research or PhD study. Those who know the field best---CS PhD students and faculty and researchers---largely discard them.
+// In short, rankings from sources like US News are mainly used high school and undergraduate students (or their parents) who are not familiar with CS research or PhD study. Those who know the field best---CS PhD students and faculty and researchers---largely discard them.
 
 // % \begin{commentbox}[CRA:]
 // %   Anyone with knowledge of CS research will see these rankings for what they are — nonsense — and ignore them. But others may be seriously misled. 
 // % \end{commentbox}
 
 == CSRankings.org <sec:csrankings>
-Instead of traditional school rankings, many PhD students and faculty use #link("https://www.csrankings.org")[CSRankings.org], which is a ranking system based on faculty publications at top CS conferences.  The metrics and ranking calculation are transparent and ranking results are updated automatically (after the conference proceedings are indexed in DBLP).  Because the approach is entirely data-driven, it is not influenced by any subjective opinions or biases, and very difficult to manipulate. The number of Github pull requests by CS faculty (in fact, even non-CS faculty) to be included in the rankings is a good indicator of the impact of the rankings.  
+Instead of traditional school rankings, many PhD students and faculty use #link("https://www.csrankings.org")[CSRankings.org], which is a ranking system based on faculty publications at top CS conferences.  The metrics and ranking calculation are transparent and ranking results are updated automatically (after the conference proceedings are indexed in DBLP).  Because the approach is entirely data-driven and open source, it is not influenced by any subjective opinions or biases, and very difficult to manipulate. The number of #link("https://github.com/emeryberger/CSrankings/pulls")[Github pull requests] by CS faculty (in fact, even non-CS faculty) to be included in the rankings is a good indicator of the impact of the rankings.  
 
-*Geometric Mean* CSRankings uses the _geometric mean_ to summarize the performance of a department across multiple disciplines. The score for each department is calculated as follows:
+*Ranking Method* CSRankings uses the _geometric mean_ to summarize the performance of a department across multiple disciplines. The score for each department is calculated as follows:
 
 // $
 // "averageCount" = sqrt(N, prod_(i=1)^N ("adjustedCounts"_i + 1))
@@ -3123,8 +3127,8 @@ More details and justfication for this metric can be found in the #link("https:/
   grid(
     columns: (1fr, 1fr),
     gutter: 0.2em,
-    image("files/cspicks1.png", width: 100%),
-    image("files/cspicks2.png", width: 100%),
+    image("files/cspicks1.png", width: 110%),
+    image("files/cspicks2.png", width: 110%),
   ),
   caption: [CSPicks for George Mason.],
 ) <fig:cspicks-gmu>
@@ -3146,11 +3150,11 @@ More details and justfication for this metric can be found in the #link("https:/
 // \sectioninfo{This book aims to provide in depth information about the CS PhD admission process in the US. It is particularly useful for international students from smaller countries and less well-known universities as they often lack access to such information.}
 
 
-*History:* This book was conceived during a lunch with a faculty member at GMU. We talked about why GMU was not able to attract good Vietnamese and other international students, despite having a much stronger CS program than many schools these students target (part of the reason is discussed in @sec:selecting-ranking-schools). We wished there were a way for international students to better understand PhD programs in the US.
+#paragraph([History])[This book was conceived during a lunch with a faculty member at GMU. We talked about why GMU was not able to attract good Vietnamese and other international students, despite having a much stronger CS program than many schools these students target (part of the reason is discussed in @sec:selecting-ranking-schools). We wished there were a way for international students to better understand PhD programs in the US.
 
 I am also a member of the VietPhD group on Facebook and often browse forums like #link("https://www.reddit.com/r/gradadmissions/")[Reddit/gradadmissions] and #link("https://forum.thegradcafe.com/")[GradCafe]. I saw many questions from students about PhD programs, but most participants are students (often outside CS or outside the US), and answers are frequently inaccurate and confusing. So I thought a handbook focused on US CS PhD admissions from an insider perspective would be useful.
 
-I started writing this book in May 2023 and have updated it since then (mostly around deadline season when I procrastinate—#highlight[productive procrastination]). The book was initially intended for international students but has expanded to include advice for domestic students (e.g., @chap:domestic-students and @chap:fellowships).
+I started writing this book in May 2023 and have updated it since then (mostly around deadline season when I procrastinate—#highlight[productive procrastination]). The book was initially intended for international students but has expanded to include advice for domestic students (e.g., @chap:domestic-students and @chap:fellowships).]
 
 
 == Who Is This Book For?
@@ -3221,7 +3225,7 @@ This book will _always be free_ and _open source_ at
 
 If you spot an error, have a different experience, or want to suggest something, open an issue on the #link(mybookgithub)[GitHub repo]. Community input helps keep the book current and useful.
 
-*Supporting This Book:* 
+#paragraph([Supporting This Book])[ 
 You can support this book in many ways. The best way is to #emph[share it with others] who might find it useful, e.g., your friends, colleagues, or students.
 You can also _link to it_ from your website or social media accounts. I was very happy to hear that it has helped many students, especially those from smaller countries---which is the main reason I wrote it.
 
@@ -3229,9 +3233,8 @@ You can also:
 - leave a review on #link("https://www.amazon.com/dp/B0F41HP6Y2")[Amazon] and #link("mailto:tvn@roars.dev")[send me] a _"Thank you"_ note and let me know how it helped you (those messages make my day!)
 - give it a star on its #link(mybookgithub)[GitHub repo],
 - share it with friends, or
-- buy the Kindle book on #link("https://www.amazon.com/dp/B0F41HP6Y2")[Amazon]---so that I can brag about having a book on Amazon (priced at \$7.77---Unix 777 permission and the open nature of the book).
-
-
+- buy the Kindle book on #link("https://www.amazon.com/dp/B0F41HP6Y2")[Amazon]---so that I can brag about having a book on Amazon (priced at \$7.77---Unix/Linux 777 permission and the open nature of the book).
+]
 #pagebreak()
 
 = About Me  <sec:about-me>
