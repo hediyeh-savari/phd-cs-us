@@ -4,8 +4,11 @@
 
 #set text(
   //font: "Noto Serif",
+  //font: "New Computer Modern",
+  //font: "TeX Gyre Pagella",
   size: 12pt
 )
+
 
 #set list(indent: 1em)
 #set enum(indent: 1em)
@@ -35,7 +38,7 @@
 // })
 
 
-
+#set par(first-line-indent: (amount: 1.5em, all: false))
 
 #let mytitle = "Demystifying PhD Admissions in Computer Science"
 #let mysubtitle = "A Handbook for Navigating CS PhD Admissions in the U.S."
@@ -43,12 +46,12 @@
 #let institute = "George Mason University"
 #let mybookgithub = "https://code.roars.dev/phd-cs-us"
 
-#let myred(txt) = text(fill:red)[#txt]
 
 
+#let alert(txt) = {highlight(fill:red.lighten(30%))[#txt]}
 #let paragraph(title, body) = {
   v(0.5em)
-  text(weight: "bold", style: "italic")[#title. ]
+  text(weight: "bold", style: "italic")[#highlight(fill:gray.lighten(70%))[#title.] ]
   body
 }
 
@@ -62,13 +65,13 @@
 
 #let cb(who: none, fill: rgb("f0f0f0"), msg) = box(
   stroke: (x: 0.5pt + gray, y: 0.5pt + gray),
-  inset: 10pt,
+  inset: 11pt,
   fill: fill
 )[
   #if who != none [
     *#who*: 
   ]
-  #text(size:10pt)[#msg]
+  #text(size:0.8em, font:"New Computer Modern")[#msg]
 ]
 
 
@@ -161,16 +164,16 @@ This book aims to address these concerns.
   caption: [Stress caused by imposter syndrome is real. Don't let it stop you from applying to CS PhD programs in the US!]
 ) <fig:imposter>
 
-*Not any harder than other countries* Applying to a good US university *should not* be any harder than at schools in other countries. It might even be more flexible since CS PhD in the US *do not* require having an MS or a research topic, proposal, or adviser in advance (@sec:non-us-differences compares CS PhD study in the US to other countries). It doesn't even require having a CS background (@sec:non-stem).
+#paragraph([Not any harder than other countries])[Applying to a good US university *should not* be any harder than at schools in other countries. It might even be more flexible since CS PhD in the US *do not* require having an MS or a research topic, proposal, or adviser in advance (@sec:non-us-differences compares CS PhD study in the US to other countries). It doesn't even require having a CS background (@sec:non-stem).
 
-If you believe you have a chance in other countries, e.g., Australia, Canada, Japan, Germany, UK, South Korea, and Singapore, then you will surely have a chance in the US as well.
+If you believe you have a chance in other countries, e.g., Australia, Canada, Japan, Germany, UK, South Korea, and Singapore, then you will surely have a chance in the US as well.]
 
 #commentbox([The most selective US schools, e.g., top 10 in CS (@chap:rankings), are extremely competitive for everyone, regardless of background. Don't be discouraged if you don't get into a "household name" university as there are many excellent CS programs (@sec:selecting-ranking-schools) in the US that are not as well-known internationally but still offer great research opportunities and training. In fact, many top CS researchers and faculty members in the US did not graduate from Ivy League or top 10 schools.
 
 Many students, especially those from smaller countries or schools, feel *imposter syndrome*---worrying they're "not good enough", or get discouraged when competing with others with "stronger" profiles (@sec:profile-not-strong). Remember (@chap:evalapps): adcom looks for potential and evidence you'll thrive in research environment and fit well at their institution---in other words, things that usually have nothing to do with your GPA or GRE scores.
 ])
 
-*Funding Is Not An Issue*  In most cases CS PhD students _do not_ need to worry about funding, especially at good R1 universities in the US. 
+#paragraph([Funding Is Not An Issue])[In most cases CS PhD students _do not_ need to worry about funding, especially at good R1 universities in the US. 
 If you are admitted, you will almost certainly receive _full funding_ (@chap:funding) to support your study. 
 
 Your funding includes tuition, health insurance, and stipend /*TODO @glossary[stipend]*/ (in STEM field in CS you get paid for your study!).
@@ -180,7 +183,7 @@ Full funding for CS PhD students is the norm in the US, and I'd go as far as to 
 
 #warningbox([While full funding is standard for CS PhD as mentioned above, always double-check the details of your offer (@sec:offer-letters) before accepting, especially for programs outside STEM or at smaller/private universities.]
 )
-
+]
 // % \paragraph{Discrimination is not tolerated} Not only is discrimination illegal, diversity and inclusion are highly valued in US universities. Many universities take great pride in their diverse student body and faculty.
 
 // % In fact, many resources are available to encourage and support students from minority and diverse groups to pursue higher education and research, e.g., specific scholarships and fellowships. Faculty in CS are also familiar with and are encouraged to support such students in their group. There are also incentives, such as dedicated funding and awards, to motivate faculty to recruit and mentor minority students (\autoref{sec:urm}).
@@ -414,7 +417,7 @@ After screening, your application is complete and forwarded to the CS department
 
 Your applications are reviewed by a PhD adcom /*\acrfull{adcom}*/ consisting of CS faculty with diverse expertise (e.g., AI, systems, theory, HCI). Some committees may include affiliated faculty from other disciplines.
 
-The size and workload of the adcom depend on the department. At GMU, the PhD adcom has about 15–20 faculty, each reviewing ~30 applications. Large schools often have separate adcoms for MS programs (@chap:ms).
+The size and workload of the adcom depend on the department. At GMU, the PhD adcom has about 15--20 faculty, each reviewing ~30 applications. Large schools often have separate adcoms for MS programs (@chap:ms).
 
 PhD adcoms typically include assistant professors (@sec:faculty-types), giving junior faculty opportunities to recruit students. The adcom chair /*\gls{adcom-chair}*/ is usually a senior faculty who assigns applications to reviewers based on research interests or faculty mentioned by applicants (e.g., I review SE applicants).
 
@@ -577,7 +580,7 @@ So it might be a good idea to directly ask if the prof. is willing to write a _s
 #warningbox([
   Several international students mentioned that some professors are unwilling to write letters or write weak ones because they do not want (good) students to go abroad or only go to places where they want the students to go to. If you are in this situation, you should find someone else to write for you.
 
-  Sometimes students would go to great lengths just to get letters from "top" professors in their school---like department head or dean (@sec:admin-letters). But as mentioned, if these professors do not know you, their letters would likely be generic and carry little value (sometimes #highlight(fill:red)[red flag]. Moreover, a top professor at your university might not be well-known to US faculty (see more details in @sec:admin-letters and @chap:your-school). So save the trouble and get letters from _any_ professors/supervisors who know you well and can write a good letter about _your_ research ability (@sec:famous-lor). It's better to have a good personalized letter about your own research ability from someone who is less well-known than a generic/weak letter from a well-known person.
+  Sometimes students would go to great lengths just to get letters from "top" professors in their school---like department head or dean (@sec:admin-letters). But as mentioned, if these professors do not know you, their letters would likely be generic and carry little value (sometimes #alert[red flag]. Moreover, a top professor at your university might not be well-known to US faculty (see more details in @sec:admin-letters and @chap:your-school). So save the trouble and get letters from _any_ professors/supervisors who know you well and can write a good letter about _your_ research ability (@sec:famous-lor). It's better to have a good personalized letter about your own research ability from someone who is less well-known than a generic/weak letter from a well-known person.
 ])
 
 
@@ -610,7 +613,7 @@ Many letter writers ask students to write their own letters---a common practice 
  
 
 Self-written letters are _easy to spot_ because an experienced professor would write differently compared to an undergraduate student.
-For example, they can provide convincing and concrete examples based on their experience and compare you to their own students, and of course the writing style is different---imagine the difference between a letter written by a professors who has been writing letters for decades and a letter written by an undergraduate student who has never written a letter before, even if the student has subscribed to ChatGPT+ (@sec:using-ai). Worse yet, if we suspect that the student wrote the letter, it is a #myred[red flag] as we will question both the student's integrity and the letter writer's credibility (because they allow this to happen).
+For example, they can provide convincing and concrete examples based on their experience and compare you to their own students, and of course the writing style is different---imagine the difference between a letter written by a professors who has been writing letters for decades and a letter written by an undergraduate student who has never written a letter before, even if the student has subscribed to ChatGPT+ (@sec:using-ai). Worse yet, if we suspect that the student wrote the letter, it is a #alert[red flag] as we will question both the student's integrity and the letter writer's credibility (because they allow this to happen).
 
 
 #commentbox[
@@ -692,7 +695,6 @@ Note that most places only have deadlines for the applicant, but are very flexib
     fill: gray
     )[
     #align(left)[
-
       #text(size:9pt)[
 *Sample 1 (No deadline):*
 
@@ -1044,11 +1046,11 @@ Unless your degrees are from the US (e.g., you did your undergrad or MS in the U
   Also, the university often requires a certain level of English proficiency for TA (@sec:ta), as you will need to communicate with students. 
 ]
 
-Just as with grades (@chap:your-school) and GRE (@sec:gre), having high scores in English tests might not help, but having too low scores can be a #myred[red flag] and can result in an automatic rejection (@sec:why-rejected), e.g., below the minimum requirement.
+Just as with grades (@chap:your-school) and GRE (@sec:gre), having high scores in English tests might not help, but having too low scores can be a #alert[red flag] and can result in an automatic rejection (@sec:why-rejected), e.g., below the minimum requirement.
 
 #commentbox[
   Here is the minimum requirements at GMU. 
-  Being above this might not mean much, but below is a #myred[red flag].
+  Being above this might not mean much, but below is a #alert[red flag].
   - *GPA:* $>= 3.0$ in your undergrad (but we also consider the rank/prestige of your school)
   - *GRE:* not required 
   - #link("https://www.gmu.edu/international/english-language-requirements")[English proficiency requirements] (one of the below)
@@ -2690,18 +2692,18 @@ Homer: I mean an award that's worth winning.]
 
 When exploring potential advisors, students often look at faculty websites to learn about their research and achievements. Common indiciators of research productivity include publications and involvement in research community. However, beyond these, CS has several prestigious and meaningful achievements that researchers aim for, but that are not as well-known to prospective students. 
 
-This chapter first looks at the common research activities and then discusses the "big" research achievements that faculty often highlight on their websites, CVs, or departmental news and awards pages (e.g., at #link("https://cs.gmu.edu/about/faculty-awards/")[GMU] and #link("https://www.cs.washington.edu/people/honors-awards/")[UWash]).
+This chapter first looks at the common research activities and then discusses the "big" research achievements that faculty often highlight on their websites, CVs, or departmental news and awards pages (e.g., at #link("https://realgmucs.github.io/awards.html")[GMU] and #link("https://www.cs.washington.edu/people/honors-awards/")[UWash]).
 
 
 == Common Research Activities <sec:common-research-indicators>
 
-Publications and involvement in the research community are common indicators of research productivity. These are the _"bread and butter"_ of research and lacking in these areas can mean that the faculty is not active in research.
+Publications and involvement in the research community are common indicators of research productivity. These are the _"bread and butter"_ of research and lacking in these areas can indicate that the faculty is not active in research.
 
 === Publications in Top-Tier Venues <sec:pubs-top-tier>
 
-Publications in _top-tier_ venues are the most reliable factor to measure the productivity of a faculty. They give visibility to the faculty's work and help establish their reputation in the area. For tenure-track faculty (@sec:faculty-types), especially at top CS programs, publications at top-tier conferences and journals are often the most important factor for tenure.
+Publications in _top-tier_ venues are the most reliable factor to measure the productivity of a faculty. They give visibility to the faculty's work and help establish their reputation in the area. For tenure-track faculty (@sec:faculty-types), especially at top CS programs, publications at top-tier conferences and journals are often the standard for tenure and promotion. 
 
-*Conferences.* Unlike many STEM disciplines like Maths and Physics (@sec:fields-and-areas) that prefer journals, most CS fields  focus on publising at _conferences_. CS is a very fast moving and journals are often too slow---taking 1--2 years to publish---by which time the results may already be outdated.  In contrast, conferences have a much faster review process, typically taking 3--6 months from submission to publication.
+*Conferences.* Unlike many STEM disciplines like Maths and Physics (@sec:fields-and-areas) that prefer journals, most CS fields  focus on publising at _conferences_. CS is a very fast moving and journals are often too slow---taking 1--2 years to publish---by which time the results and even the problems may already be outdated.  In contrast, conferences have a much faster review process, typically taking 3--6 months from submission to publication.
 
 Each CS field (@sec:fields-and-areas) has its own "top" conferences---usually around 2--4 per area. For example, NeurIPS, ICLR, and ICML are considered top conferences in AI/ML, while ICSE and FSE are among the the tops in Software Engineering.
 These conferences have rigorous review process, and only a small percentage of papers are accepted. 
