@@ -484,7 +484,7 @@ caption:[An example of how a PhD admission committee in Physics evaluates applic
 // \sectioninfo{It takes me about 10--15 minutes to review an application.}
 
 
-In the schools I've been at, the application deadline is in Dec, and adcom meets when school starts in mid or end of Jan. The adcom chair sends out review assignments to adcom members, about 30-ish per faculty (@sec:adcom). We usually have about 2 weeks to review all applications. As mentioned in @sec:adcom-discuss, adcom members review applications individually and independently. We only discuss when there are disagreements (the adcom chair determines which applications to discuss).
+#commentbox[In the schools I've been at, the application deadline is in Dec, and adcom meets when school starts in mid or end of Jan. The adcom chair sends out review assignments to adcom members, about 30-ish per faculty (@sec:adcom). We usually have about 2 weeks to review all applications. As mentioned in @sec:adcom-discuss, adcom members review applications individually and independently. We only discuss when there are disagreements (the adcom chair determines which applications to discuss).
 
 I typically reserve a whole day (or two days) to review all applications.
 On average, I spend about 10--15 minutes reviewing each application (less for clear rejections and more for potential acceptances). While this seems short, it is not that difficult to tell if an application is good or bad. In fact, this is twice what other faculty spend on average; for example, Philip Guo spent #link("https://pg.ucsd.edu/PhD-application-tips.htm")[3--5 minutes] per application.
@@ -504,6 +504,7 @@ This is quite different from other disciplines, where reviews, interviews, and s
 Of course, my recommendation is just one of the three or four faculty reviews of the application. The adcom chair compiles all recommendations and makes a decision based on them (@sec:adcom-discuss).
 If there are disagreements, the adcom chair asks the reviewers to discuss the application.
 Unfortunately, even if all reviewers recommend a student, they might not be admitted (@sec:why-rejected) if there are too many students or they are not a good fit for the program (e.g., no one is willing to advise them).
+]
 
 === Waiving Application Fee <sec:fee-waive>
 
@@ -693,12 +694,8 @@ Note that most places only have deadlines for the applicant, but are very flexib
 
 #figure(
   caption: [Examples of LoR invitation emails],
-  box(
-    inset:10pt,
-    fill: gray
-    )[
-    #align(left)[
-      #text(size:9pt)[
+  align(left)[
+  #commentbox[
 *Sample 1 (No deadline):*
 
 .. is applying for admission into the Computer Science (Ph.D.) program in the Graduate School at the University of Massachusetts Amherst and has listed you as a reference.
@@ -752,7 +749,7 @@ Applicant: ..
 Click Here if your mail system provides html content or use the URL below to enter your letter of recommendation in PDF form only.
 
 Your letter of recommendation is due by *12 p.m. (Noon) EST on December 10, 20XX*. Thank you for taking the time to respond.
-  ]]]
+  ]]
    ) <fig:lor-invitations>
 
 Also, many places do not begin the admission review process right after the deadline and work on application reviews in the next semester (mid-January).
