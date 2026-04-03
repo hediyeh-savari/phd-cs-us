@@ -190,9 +190,9 @@ Full funding for CS PhD students is the norm in the US, and I'd go as far as to 
 
 == What's a PhD in CS? <sec:phd-in-cs>
 //\sectioninfo{A PhD in CS is a \textbf{research} degree that transforms you into a researcher in a specific area of CS.
- You will become an expert in a particular topic and know more about it than anyone else in the world (in many cases even your advisor).}
+// You will become an expert in a particular topic and know more about it than anyone else in the world (in many cases even your advisor).}
 
-A PhD in CS is a _research_ degree. Unlike undergraduate or even Master's programs (@chap:ms), which focus on breadth of knowledge through coursework, a PhD is about depth and pushing the boundary of a specific area within a CS fields (e.g., software verification within the field of programming languages or formal methods). You will become an expert in your area of research and contribute something new to the field that has never been done before. 
+A PhD in CS is a #highlight[research degree]. Unlike undergraduate or even Master's programs (@chap:ms), which focus on breadth of knowledge through coursework, a PhD is about depth and pushing the boundary of a specific area within a CS fields, such as software verification within the field of Programming Languages or Formal Methods (@sec:fields-and-areas). You will become an expert in your area of research and contribute something new to the field that has never been done before. 
 
 
 #commentbox([This #link("https://matt.might.net/articles/phd-school-in-pictures/")[series of pictures] from #link("https://matt.might.net")[Matt Might] illustrates what a PhD means.])
@@ -206,7 +206,7 @@ Career-wise, a CS PhD prepares you for jobs that require deep technical expertis
 
 CS is a broad academic discipline with many specialized areas of research. Understanding the structure of CS can help you communicate your research interests and goals more effectively, e.g., in your SOP (@chap:sop), and also assist you in finding suitable advisers and research topics (@sec:finding-adviser).
 
-*Disciplines* At the highest level, academic _disciplines_ are broad domains of scholarly study, such as CS, Mathematics, Physics, Biology, Economics, Law, Social Sciences, and the Humanities. Universities typically have entire departments and degree programs centered on these disciplines (e.g., a Dept. of Computer Science or of Economics).
+#paragraph([Disciplines])[At the highest level, academic _disciplines_ are broad domains of scholarly study, such as CS, Mathematics, Physics, Biology, Economics, Law, Social Sciences, and the Humanities. Universities typically have entire departments and degree programs centered on these disciplines (e.g., a Dept. of Computer Science or of Economics).]
 
 #commentbox([_STEM fields_ collectively refer to the disciplines in the domains of:
 - *Science:* Physics, Chemistry, Biology, Geology
@@ -215,31 +215,33 @@ CS is a broad academic discipline with many specialized areas of research. Under
 - *Mathematics:* Pure and Applied Math, Statistics, Operations Research
 ])
 
-*Fields*: Within a discipline such as CS, we have _fields_---major branches that often correspond to faculty groups, conference communities, and sometimes even degree tracks. Common fields in CS include:
-Artificial Intelligence (AI),
-Machine Learning (ML),
-Software Engineering (SE),
-Programming Languages (PL),
-Theory of Computation (TCS),
-Systems,
-Computer Architecture,
-Security and Privacy,
-Computer Vision (CV),
-Natural Language Processing (NLP),
-Human-Computer Interaction (HCI),
-Databases,
-Networking,
-Graphics and Visualization,
-and Computational Biology
+#paragraph([Fields])[Within a discipline such as CS, we have _fields_---major branches that often correspond to faculty groups, conference communities, and sometimes even degree tracks. Common fields in CS include:
+
+- Artificial Intelligence (AI),
+- Machine Learning (ML),
+- Software Engineering (SE),
+- Programming Languages (PL),
+- Theory of Computation (TCS),
+- Computer Architecture,
+- Operating Systems,
+- Security and Privacy,
+- Computer Vision (CV),
+- Natural Language Processing (NLP),
+- Human-Computer Interaction (HCI),
+- Databases,
+- Networking,
+- Graphics and Visualization,
+- Computational Biology
 
 Most faculty have a "home" field with which they are primarily associated, but may also publish in related fields. For example, SE researchers often work in PL and Formal Methods; Security researchers may also work in Systems and Theory.
+]
 
-*Areas*: Within a field, we have _areas_---narrower subfields where people specialize. For example, PL includes Type Systems, Formal Verification, Program Synthesis; SE includes Testing, Program Repair, Empirical SE, and AI4SE (a new and fast-growing area); and
+#paragraph([Areas])[Within a field, we have _areas_---narrower subfields where people specialize. For example, PL includes Type Systems, Formal Verification, Program Synthesis; SE includes Testing, Program Repair, Empirical SE, and AI4SE (a new and fast-growing area); and
 ML includes Supervised/Unsupervised Learning, Reinforcement Learning, and ML Theory, and
 AI traditionally includes Planning, Reasoning, and Robotics (though many of these are now distinct fields).
-Some areas are growing so large that they are becoming fields in their own right. ML, for instance, originated within AI but is now widely regarded as a standalone field.
+Some areas are growing so large that they are becoming fields in their own right. ML, for instance, originated within AI but is now widely regarded as a standalone field.]
 
-*Topics and Projects*: Finally, we have _research topics_, which refer to concrete problems or techniques within an area. For instance,
+#paragraph([Topics and Projects])[Finally, we have _research topics_, which refer to concrete problems or techniques within an area. For instance,
  Model Checking, Theorem Proving in Formal Verification, and Mutation Testing, Test Prioritization, and Symbolic Execution in Software Testing.
 
 
@@ -251,9 +253,9 @@ For example, my own #link("https://roars.dev")[research profile] can be structur
 - *Fields:* Software Engineering and Formal Methods
 - *Areas:* Software Verification, Testing, and Analysis
 - *Topics:* Theorem Proving, Symbolic Execution, Test Generation
-- *Project:* Applying automated theorem proving to verify the correctness of deep learning systems, and generating benchmarks to evaluate formal verifiers
+- *Projects:* Applying automated theorem proving to verify the correctness of deep neural networks, and using dynamic analysis to synthesize program invariants
 ])
-
+]
 
 
 === How long to complete the CS PhD program? <sec:time>
@@ -285,12 +287,13 @@ A main concern the admissions committee (@sec:adcom) has for a non-CS or non-STE
 
 For example, if you have taken a class on algorithms, even an online course from Coursera, you can talk about it in your SOP. If you have done a project that requires knowledge of operating systems or have a professional certification (e.g., A+) through work, you can talk about it. If you have done research that requires knowledge of discrete math, you can talk about it. You can also ask your LoR writers to discuss your technical background.
 
-*Core CS topics.* Common CS knowledge that you should know includes:
+#paragraph([Core CS topics])[Common CS knowledge that you should know includes:
 
 - *Programming foundation:* programming concepts in modern languages such as C++ or Java.
 - *Discrete math:* logic, set theory, proof techniques.
 - *Data structures and algorithms:* linked lists, trees, sorting, searching.
 - *Computer OS or systems:* memory management, file systems, processes.
+]
 
 In short, you _do not need_ to formally take CS courses; you just need to show that you have this essential knowledge, for example through the ways mentioned above. Many universities are well aware that incoming graduate students might not have all the technical background, so they often have “bridge” courses to help students catch up. For example, GMU has four bridge courses corresponding to the four core areas above that incoming students can take to catch up on their CS knowledge.
 
@@ -415,7 +418,7 @@ After screening, your application is complete and forwarded to the CS department
 === Admission Committee <sec:adcom>
 // \sectioninfo{Adcom members are faculty who evaluate your application. They consider various factors, e.g., research experience, LoRs, SOP}
 
-Your applications are reviewed by a PhD adcom /*\acrfull{adcom}*/ consisting of CS faculty with diverse expertise (e.g., AI, systems, theory, HCI). Some committees may include affiliated faculty from other disciplines.
+Your applications are reviewed by a PhD admission committee or #highlight[adcom] /*\acrfull{adcom}*/, which consists of CS faculty with diverse expertise (e.g., AI, Systems, Theory, SE, HCI). Some committees may include affiliated faculty from other disciplines.
 
 The size and workload of the adcom depend on the department. At GMU, the PhD adcom has about 15--20 faculty, each reviewing ~30 applications. Large schools often have separate adcoms for MS programs (@chap:ms).
 
