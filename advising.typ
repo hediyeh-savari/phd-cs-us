@@ -428,12 +428,12 @@ Questions that are not categorized into the above sections but can help you unde
 
     If people---even our competitors in the same research area---are interested or curious about our work, then give it to them; no need to hide the "secrets" sauce or anything important. Give people details, point them to our code base, e.g., #link("https://code.roars.dev")[project repos], which are _always_ open-source and publicly available, to see all the cool things we're doing. And if they want some code or benchmarks etc, help them out and encourage them to use our work and even build on top of it.
 
-    Of course, this might clash with collaborators, funding sources, or projects that have restrictions on sharing. In those cases, we will re-examine, but I will not be happy about it, and so in general would avoid such collaborations or projects. So far our projects, even those with industry collaborators, are all open-source and publicly available.
+    Of course, this might clash with collaborators, funding sources, or projects that have restrictions on sharing. In those cases, we will re-examine, but I will not be happy about it. So far our projects, even those with industry collaborators, are all open-source and publicly available.
 
 
 + *If someone contributes little to a paper, do they deserve co-authorship?*
     
-  "Little" is subjective!  We don't seek co-authors to help with our work, but if it happens that someone can help make the work better, we will share the credits. Even if we did 99% of the work, but can't do the other 1%, and someone else can help with that 1\%, then we should offer them co-authorship. The person who did most of the work is still the first author, etc.  The point is that if we can't ship the work without that 1\%, then that 1\% is highly important and deserves co-authorship.  Thus, it's not about giving co-authorship to someone who contributed a little, but rather about giving co-authorship to someone who contributed something that we can't do ourselves that is necessary to ship the work.
+  "Little" is subjective!  We don't seek co-authors to help with our work, but if it happens that someone can help make the work better, we will share the credits. Even if we did 99% of the work, but can't do the other 1%, and someone else can help with that 1%, then we should offer them co-authorship. The person who did most of the work is still the first author, etc.  The point is that if we can't ship the work without that 1%, then that 1% is highly difficult and important and therefore deserves co-authorship.  Thus, it's not about giving co-authorship to someone who contributed a "little", but rather about giving co-authorship to someone who contributed something that we can't do ourselves that is necessary to ship the work.
 
    In addition, as co-author, the person can claim the work is theirs and do whatever they want with it--and doesn't need to include or involve us at all.  We don't care about that. We just want to do good work and get it out. In fact, if they use it and talk a lot about it, that's great---free advertisement for us.  And if they completely "steal" it, we should be flattered and consider it a compliment! //(@q:scooping)!
 
@@ -441,7 +441,7 @@ Questions that are not categorized into the above sections but can help you unde
     
   #highlight[No], we only submit papers that we think are good. We don't send out "feelers" to see if the community likes our work.   We  should not use the volunteering reviewers as guinea pigs to test our work (besides, the comments from a couple of reviewers do not represent the community). Moreover, we don't need to send out papers just to get feedbacki, if we do enough homework we should have a good idea of how the community would react to our work. In fact, if our work is so good, we can change the community's mind and get them to like it. So just do the work, get good results, then write a good paper about it.  
 
-  Note that this does not mean we always submit full papers to top conferences. Our lab submit to a variety of venues, e.g., journals as extensions of our conference papers, short papers to specialized workshops or to introduce early ideas (e.g., New Ideas and Emerging Results track at ICSE), invited papers, etc.  
+  Note that this does not mean we always submit full papers to top conferences. Our lab submits to a variety of venues, e.g., journals as extensions of our conference papers, short papers to specialized workshops or to introduce early ideas (e.g., New Ideas and Emerging Results track at ICSE), invited papers, etc.  
   We also submit to places that are not our usual venues if we think they are a better fit for the work, e.g., for our work on verifying computer vision models, we submitted to CVPR instead of our usual SE/PL/FM venues.
   So we are open to exploring different venues and formats, but we don't submit papers because we don't know its worth or to get feedback. 
         
@@ -473,12 +473,14 @@ Questions that are not categorized into the above sections but can help you unde
   I don't want to students to take courses or read many papers before they start working on their project---the same thing kids in my Chess club don't learn openings and strategies when they start---just play tons of games and study openings later.
   
   So, dig right into the code, make some changes, and break something.  If it helps, even reimplement it from scratch. I want you to get get frustrated with existing work and think of ways to improve it. Reinventing the wheel is a great way to learn and understand something deeply---and understanding something deeply is the key to doing research on it.
-  
+
   Reading papers won't reveal issues or limitations with the work, and in fact, can demotivate the students ("too many good work already, how do I come up with something better?"").  Every work has limitations, and if you understand the code very well (e.g., by reimplement it), you will find all the issues and think of ways to improve the work --- that's how we come up with ideas. Not only this applies to engineering or tool building projects, but also to theoretical work---find the flaws in the proofs and the theorems, and come up with ways to fix them (or create new ones).
 
-  Once you understand something well, then you will be motivated to read papers in that area to see what others have done and how you can improve on them. You also will read papers in a different way---not with the "wow" or "impostor syndrome" feeling, but with the ability to understand the work deeply, appreciate the good stuff, and identify and improve the bad stuff---usually hidden in the polished writing.
 
+Once you understand something well, then you will be motivated to read papers in that area to see what others have done and how you can improve on them. You also will read papers in a different way---not with the "wow" or "impostor syndrome" feeling, but with the ability to understand the work deeply, appreciate the good stuff, and identify and improve the bad stuff---usually hidden in the polished writing.
 
+  
+Note that even in pure theoretical work where there is no code to play with, you can still do the same. Theorems and proofs can have mistakes as they are written by human (even if that human is Fermat). Understand the proofs deeply and you might find unrealistic assumptions and even flaws in the chain of reasoning and fix them (just as Paul Wolfskehl did as an example for Fermat's Last Theorem). Better yet, formalize the proof and check it with a proof assistant like Lean!
 
 
 // \item\textbf{What are your expectations about code release? How do you ensure experiments are reproducible?}
