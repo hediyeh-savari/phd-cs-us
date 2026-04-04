@@ -63,30 +63,32 @@
 
 
 #let simpsons(s) = quote(
-    attribution: "The Simpsons",
+    attribution: [#text(size:0.85em)[*The Simpsons* 😱]],
     block:true
   )[
-    "#emph(s)"
+      #text(style:"italic", size:0.85em)[#s]
   ]
-#let cb(who: none, fill:gray, msg) = block(
+
+  
+#let cb(who: none, fill:gray, icon, msg) = block(
   width: 100%,
   fill: fill,
   radius: (right: 5pt),
   stroke: (left: 3pt + fill.darken(10%)),
   inset: (left: 10pt, right: 10pt, y: 10pt),
 )[
+    #icon 
   #if who != none [
-    #text(weight: "bold", size: 0.85em)[#who] \
+    #text(weight: "bold", size: 0.9em)[#who] \
   ]
-  #text(size: 0.9em)[#msg]
+  #text(size: 0.85em)[#msg]
 ]
 
 
-#let commentbox(who: none, msg) = cb(who: who, fill: gray.lighten(80%), msg)
-#let keybox(msg) = cb(fill: yellow.lighten(90%), msg)
-#let examplebox(msg) = cb(fill: green.lighten(95%), msg)
-#let warningbox(msg) = cb(fill:red.lighten(80%), msg)
-
+#let commentbox(who: none, msg) = cb(who: who, fill: gray.lighten(80%), [💬], msg)
+#let keybox(msg) = cb(fill: yellow.lighten(90%), [🔑],msg)
+#let examplebox(msg) = cb(fill: green.lighten(95%), [💡], msg)
+#let warningbox(msg) = cb(fill:red.lighten(80%), [🚨️], msg)
 
 #let redact(text, fill: black, height: 1em) = {
   box(rect(fill: fill, height: height)[#hide(text)])
@@ -116,8 +118,6 @@
     #text(size: 14pt)[#institute]
   ]
 ]
-
-
 
 #pagebreak()
 
@@ -241,7 +241,7 @@ CS is a broad academic discipline with many specialized areas of research. Under
 - Graphics and Visualization,
 - Computational Biology
 
-Most faculty have a "home" field with which they are primarily associated, but may also publish in related fields. For example, SE researchers often work in PL and Formal Methods; Security researchers may also work in Systems and Theory.
+Most faculty have a _home_ field with which they are primarily associated, but may also publish in related fields. For example, SE researchers often work in PL and Formal Methods; Security researchers may also work in Systems and Theory.
 ]
 
 #paragraph([Areas])[Within a field, we have _areas_---narrower subfields where people specialize. For example, PL includes Type Systems, Formal Verification, Program Synthesis; SE includes Testing, Program Repair, Empirical SE, and AI4SE (a new and fast-growing area); and
@@ -648,7 +648,7 @@ For example, they can provide convincing and concrete examples based on their ex
 
 
 
-As mentioned in @sec:lor-writers, LoR writers should be someone who knows you well and has the credibility to evaluate your research ability. In the US, it's common for students to explicitly ask if the writer would be willing to provide a strong letter, and the writer are also very direct in their response. If they are not willing, then you should ask someone else (you should also be thankful that they are honest with you).
+As mentioned in @sec:lor-writers, LoR writers should be someone who knows you well and has the credibility to evaluate your research ability. In the US, it's common for students to explicitly ask if the writer would be willing to provide a strong letter, and the writer can also be very direct in their response. If they are not willing, then you should ask someone else (you should also be thankful that they are honest with you).
 
 #figure(
   image("files/no-bandwidth.jpeg", width: 60%),
@@ -830,7 +830,7 @@ Here we look at publications and other research experiences that can strengthen 
 The most concrete evidence of research ability is having *papers in reputable international conferences or journals*.
 Having published papers, especially at top venues, is a sign that you have been successfully involved in research.
 
-Publications are *never required* for PhD application. However, given the competitiveness of CS admission, they can significantly strengthen your application and *are becoming the norm*. Applicants admitted to top schools, especially in popular fields such as ML and NLP, often have multiple first-authored papers at top places. @fig:wu shows examples of applicants to Stanford CS PhD.
+Publications are #highlight[never required] for PhD application. However, given the competitiveness of CS admission, they can significantly strengthen your application and #highlight[are becoming the norm] for top places. Applicants admitted to top schools, especially in popular fields such as ML and NLP, often have multiple first-authored papers at top places. @fig:wu shows examples of applicants to Stanford CS PhD.
 
 #paragraph([Not the First Author])[Being the first author typically means you own the work and therefore know the research well. However, it's *perfectly OK to be second or third or even last*. Adcom members know it is difficult to publish a good paper, and so being a co-author is still a good sign about your research experience. In any case, especially when you're not the first author, you should explain the work and your contribution. Better yet, have your LoR writers (@sec:help-your-LOR-writers) talk about your work and contributions in their letters.]
 
@@ -1020,6 +1020,7 @@ Should you explain bad grades in relevant courses in your SOP? If you have just 
   GMU College of Engineering and Computing requires a minimum GPA of 3.0/4.0 for PhD applications, and will _autoreject_ applications below this threshold.
 ]
 
+#pagebreak()
 == Standard Tests (GRE and IELTS) <chap:standard-tests>
 // \chapterinfo{Standard tests are \textbf{not} important. \acrshort{GRE} typically \emph{is not} required. For standard English tests (not required for domestic students), just do enough to pass the minimum requirements.}
 
@@ -1104,7 +1105,7 @@ Having popular projects or active contributions can help you stand out (@sec:sta
   Many students include LinkedIn (or Facebook and X/Twitter) profiles in their applications. While these might be popular when applying for jobs, they are not very useful for PhD application evaluation. Many adcom members are not familiar with LinkedIn (and might not want to go to a page that requires us to have an account and login), so it is better to have a something like personal and project websites, which are far more common and easier to access.
 ]
 
-
+#pagebreak()
 = After You Apply <part:after-apply>
 
 == Interview and The Waiting Game <chap:interview>
@@ -1579,7 +1580,7 @@ When writing grant proposals, profs. typically include summer funding for their 
 For my students, I have been fortunate to have funding to support them over the summer. Over the 3-summer months, I typically pay them 1/3 of their 9-month stipend. I prioritize summer funding for my students because GMU has good TA resources so they never have to worry about funding during the AY.
 ]
 
-Finally, for fellowships (@sec:fellowships) you might get paid over the summer depending on your fellowship (@sec:fellowships). Good ones, e.g., from NSF, Google, and Microsoft, will pay you the whole year.
+Finally, for fellowships (@sec:fellowships) you might get paid over the summer depending on your fellowship (@sec:fellowships). Major ones, e.g., from NSF, Google, and Microsoft, will pay you the whole year.
 
 === How much do *YOU* cost? <sec:ra-cost>
 // \subsectioninfo{Your entire PhD program costs about \$400K in total, but you \emph{do not} pay for it.}
