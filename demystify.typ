@@ -22,7 +22,14 @@
 #show raw.where(block: false): it => box(fill: rgb("#f0f0f0"), inset: (x: 2pt), radius: 2pt, it)
 
 // Code blocks
-#show raw.where(block: true): it => block(fill: rgb("#f0f0f0"), inset: 10pt, radius: 4pt, width: 100%, it)
+
+#show raw.where(block: true): it => block(
+  fill: gray.lighten(80%),
+  inset: 10pt,
+  radius: 5pt,
+  width: 100%,
+  text(size: 0.85em, it)
+)
 
 
 // #set heading(numbering: (..nums) => {
@@ -71,7 +78,7 @@
   #if who != none [
     #text(weight: "bold", size: 0.85em)[#who] \
   ]
-  #text(size: 0.9em, font: "New Computer Modern")[#msg]
+  #text(size: 0.9em)[#msg]
 ]
 
 
@@ -116,15 +123,10 @@
 
 
 #v(1fr)
-#box(
-  stroke: 0.5pt + black,
-  inset: 10pt,
-  fill: rgb("f0f0f0")
-)[
-  #text(size: 10pt)[
+#commentbox[
     This #link(mybookgithub)[work] © #datetime.today().year() by #me is licensed under CC BY-NC-ND 4.0. To view a copy of this license, visit #link("https://creativecommons.org/licenses/by-nc-nd/4.0/")[creativecommons.org].
-  ]
 ]
+
 
 #pagebreak()
 #outline(title: "Contents and Summary")
@@ -2871,18 +2873,17 @@ These awards are not open to all researchers and face less competition (e.g.,  c
 // % If an adviser has continuously secured funding over time, it suggests a stable research environment and long-term support for students.
 
 #pagebreak()
-= Writing in LaTeX (or Typst) <chap:writing-latex>
+= Writing in LaTeX or Typst <chap:writing-latex>
 // \chapterinfo{You should write your academic documents in \LaTeX{}.}
 
 #simpsons[Coming to the book fair sure was a great idea. 'Cause you can't write if you don't know what the competition is up to.]
 
 
+When you apply for PhD programs or fellowships (@sec:nsf-grfp) such as the NSF GRFP or DOD NDSEG, you will need to write multiple statements and CV.
+You might be using MS Word, but you should strongly consider writing your statements and even CV in LaTeX (and compiled to PDFs, which are then uploaded to the application system). In CS and many other STEM fields, #highlight[LaTeX is the de facto standard] for writing documents—papers, proposals, dissertations, and letters. 
 
-When you're applying for PhD programs or fellowships (@sec:nsf-grfp) such as the NSF GRFP or DOD NDSEG, you will need to write a personal statement, research statement, and CV.
-Many use MS Word, but you should strongly consider writing your statements (and even CV) in LaTeX (and compiled to PDFs, which are then uploaded to the application system). In CS and many other STEM fields, LaTeX is the de facto standard for writing documents—papers, proposals, dissertations, and letters. 
 
-
-Most CS faculty are used to seeing formatting that LaTeX produces, and many find Word's default left-aligned, uneven layout distracting.
+Most CS faculty are used to seeing formatting that LaTeX produces, and some might find Word's default left-aligned, uneven layout distracting.
 While reviewers will not penalize you for using Word, subtle irritations can affect how they read your writing (after reading dozens of applications, these small things add up). Given that LaTeX is free and easy to use (e.g., see #link("https://www.overleaf.com")[Overleaf]), it is worth the effort to learn. This is a small, easily fixable detail that indicates that you understand and respect the academic and technical culture you're trying to enter.
 
 Below is a very basic example of a LaTeX document with 11pt font and 1-inch margins. You can start with this and modify it.
