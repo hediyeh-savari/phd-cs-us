@@ -282,11 +282,11 @@ This document, adapted from #link("https://www.cs.columbia.edu/wp-content/upload
 
 + *What factors will affect whether or not you take a student?*
     
-  Here's a concrete example: One day the CS faculty were talking about a GMU Reddit post from someone who built a web app to identify #highlight["easy A"] classes at GMU (because they find `RateMyProfessors` useless). Some profs. found it problematic because this app allows students to find and take easy classes (and they also complained that it doesn't represent their own classes fairly). But I was _intrigued_.  
+  Here's a concrete example: One day the CS faculty were talking about a GMU Reddit post from someone who built an opensource web app to identify #highlight["easy A"] classes at GMU (because they find `RateMyProfessors` useless). Some profs. found it problematic because this app allows students to find and take easy classes (and they also complained that it doesn't represent their own classes fairly). But I was _intrigued_.  
     
     I didn't care much about the app itself, but the initiative and technical skill caught my attention: the student finds a problem, comes up with a solution using an unconventional way (from publicly available FOIA data that no one pays attention to), and implements an app that attracts many students (and upset professors!).
     
-    That same evening, I mentioned the app on our lab Discord server, and we determined the developer's identity by analyzing the code and deployment details. I emailed him right after, we talked the next day, he was interested in our research, and so I hired him on the spot.
+  That same evening, I mentioned the app on our lab Discord server, and we determined the developer's identity by analyzing the code on Github, and deployment details. I emailed him right after, we talked the next day, and I hired him on the spot.
 
     #figure(
         image("files/ascrapper.png", width: 70%),
