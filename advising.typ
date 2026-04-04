@@ -34,7 +34,7 @@
 #block(stroke:green, inset:1em)[
 
 This document, adapted from #link("https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-Advisor.pdf")[these questions], aims to help current and future students in my #link("https://roars.dev")[Roars Lab] 
- understand my advising style, expectations, and practices. If you're interested in working with me, you can read this guide to see if my lab would be a good *fit*, which is crucial for a successful PhD advising. More general PhD admission advice can be found in the
+    understand my advising style, expectations, and practices. If you're interested in working with me, you can read this guide to see if my lab would be a good #highlight[fit], which is crucial for a successful PhD advising. More general PhD admission advice can be found in the
 #link("https://code.roars.dev/phd-cs-us/")[PhD Admission Demystify] book.
 ]
 
@@ -282,17 +282,18 @@ This document, adapted from #link("https://www.cs.columbia.edu/wp-content/upload
 
 + *What factors will affect whether or not you take a student?*
     
-  Here's a concrete example: One day the CS faculty were talking about a GMU Reddit post from someone who built an opensource web app to identify #highlight["easy A"] classes at GMU (because they find `RateMyProfessors` useless). Some profs. found it problematic because this app allows students to find and take easy classes (and they also complained that it doesn't represent their own classes fairly). But I was _intrigued_.  
+  Here's a concrete example: One day the CS faculty were talking about a GMU Reddit post from someone who built an opensource web app to identify #highlight["easy A"] classes at GMU (because they find `RateMyProfessors` useless). Some profs. found it problematic (and also complained that it doesn't represent their own classes fairly). But I was _intrigued_.  
     
-    I didn't care much about the app itself, but the initiative and technical skill caught my attention: the student finds a problem, comes up with a solution using an unconventional way (from publicly available FOIA data that no one pays attention to), and implements an app that attracts many students (and upset professors!).
+  I didn't care much about the app itself, but the initiative and technical skill caught my attention: the student finds a problem, comes up with a solution using an unconventional way (from publicly available FOIA data that no one pays attention to), and implements an app that works (and has a very good UI).
     
-  That same evening, I mentioned the app on our lab Discord server, and we determined the developer's identity by analyzing the code on Github, and deployment details. I emailed him right after, we talked the next day, and I hired him on the spot.
+  That same evening, I talked about the app with my lab and tracked down the developer. I reached out to him that evening, we talked the next day, and I hired him on the spot.
 
     #figure(
         image("files/ascrapper.png", width: 70%),
         caption: [Recruiting the "A scrapper student".],
         placement: auto
     ) <fig:ascrapper>
+
 
 + *Do you think our research interests are a good match?*
     
