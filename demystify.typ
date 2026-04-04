@@ -76,9 +76,11 @@
 
 
 #let commentbox(who: none, msg) = cb(who: who, fill: gray.lighten(80%), msg)
-#let keybox(msg) = cb(fill: rgb("#b8ebc1"), msg)
-#let examplebox(msg) = cb(fill: yellow.lighten(95%), msg)
+#let keybox(msg) = cb(fill: yellow.lighten(90%), msg)
+#let examplebox(msg) = cb(fill: green.lighten(95%), msg)
 #let warningbox(msg) = cb(fill:red.lighten(80%), msg)
+
+
 #let redact(text, fill: black, height: 1em) = {
   box(rect(fill: fill, height: height)[#hide(text)])
 }
@@ -1904,7 +1906,7 @@ While department chairs do not usually get involved in PhD admissions decisions 
 In addition, a CS department has various *administrative staff* who handle day-to-day operations, e.g., contacting applicants, processing applications, and managing student records. While staff do not make admissions decisions, they ensure the process runs smoothly and efficiently---a critical behind-the-scenes role.
 
 
-
+#pagebreak()
 == Choosing an Adviser <chap:choosing-adviser>
 // \chapterinfo{The best adviser is the one that \textbf{fits}, e.g., you can work well with, and has the ability to help you succeed. But you do not know that until you start working with them.}
 
