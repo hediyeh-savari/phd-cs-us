@@ -2911,7 +2911,7 @@ This section lists some general academic and cultural issues that students, espe
 
 == Academic Integrity (Cheating and Plagiarism)
 
-Plagiarism and cheating (e.g., exams and assignments) are a BIG no-no in the US.  If you're caught cheating, you will face serious consequences and likely be expelled from the university (e.g., after the second time at GMU).   This is quite different from many international countries where cheating is common and often tolerated.  Faculty is extremely good at detecting cheating (we have been dealing with these situations so many times over so many years), and _will_ report cheating cases.  #highlight[In short, whatever you do, don't cheat---it can ruin your career and is not worth it!]
+Plagiarism and cheating (e.g., exams and assignments) are a BIG no-no in the US.  If you're caught cheating, you will face serious consequences and likely be expelled from the university (e.g., after the second time at GMU).   This is quite different from many international countries where cheating is common and often tolerated.  Faculty is quite good at detecting cheating (we have been dealing with these situations so many times over so many years), and _will_ report cheating cases.  #highlight[In short, whatever you do, don't cheat---it can ruin your career and is not worth it!]
 
 Here are the typical steps that will happen if you are caught cheating (e.g., on an exam or assignment): 
   + A faculty suspecting a cheating case will report it to the Office of Academic Integrity (OAI) at the university---the report often has supporting evidence, e.g., a copy of the exam or assignment; 
@@ -2919,7 +2919,7 @@ Here are the typical steps that will happen if you are caught cheating (e.g., on
   + OAI will make a decision, e.g., whether the student is guilty or not; and 
   + If guilty, OAI will decide on the punishment, e.g., a failing grade for the assignment or exam, a failing grade for the course, or even expulsion from the university, especially for repeat offenders.
 
-It is important to note that *after* receiving the report from your prof., OAI *completely* takes over and makes its decision.  
+It is important to note that in most cases _after_ receiving the report from your prof., OAI _completely_ takes over and makes its decision.  
 This means begging your professor will not help because they simply are no longer involved in the case and cannot do anything.
 This is because OAI is an independent office above your prof and depatment that handles all academic integrity cases at the university, and they have their own procedures and policies.  If you are found guilty, you can appeal to OAI, but not to your prof. or department.
 

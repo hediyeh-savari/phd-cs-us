@@ -59,7 +59,7 @@ This document, adapted from #link("https://www.cs.columbia.edu/wp-content/upload
 + *What is the professor's formal training / background / PhD?*  [helps contextualize problems/approaches] 
 
   
-  I did my undergraduate and Master's in CS at Penn State University. Then I did my Ph.D. in CS at the University of New Mexico-Albuquerque and then a postdoc at the University of Maryland (in the #link("https://plum-umd.github.io")[PLUM lab]). I started wanting to work on evolutionary computing, and then gradually changed to software engineering, programming languages, and formal methods. Outside of academia I have worked at the Naval Research Lab and Lockheed Martin.
+  I did my undergraduate and Master's in CS at Penn State. Then I did my PhD in CS at the University of New Mexico-Albuquerque and then a postdoc at the University of Maryland (#link("https://plum-umd.github.io")[PLUM lab]). I started wanting to work on evolutionary computing, and then gradually changed to software engineering, programming languages, and formal methods. Outside of academia I have worked at the Naval Research Lab and Lockheed Martin.
 
   Outside of work, I have a family with three young kids. With my wife and I run the Chess club at my kids' elementary school (and the club consistently ranks as the top team in the county!).
 
@@ -67,9 +67,7 @@ This document, adapted from #link("https://www.cs.columbia.edu/wp-content/upload
 
 + *What have previous lab members done after getting their PhD?* [Gone to industry?/Post-doc?/Professor?]  
 
-  So far I have only graduated one Ph.D. student: Guolong Zheng (2022), who is now a faculty at Minjiang University in China. Didier plans to graduate in May'26 and is applying for faculty positions.
-
-  I also graduated an MS student, Alex, who now works at Oracle, and an undergrad, KimHao, who works at Jump Trading.
+  So far I have only graduated two PhDs: Guolong (2022, now a faculty at Minjiang University in China) and Didier (2026). Hai is also on track to graduate in 2027. I also graduated an MS student, Alex, who now works at Oracle, and an undergrad, KimHao, who works at Jump Trading.
 
 = Group Composition & Structure <group>
 
@@ -77,7 +75,7 @@ This document, adapted from #link("https://www.cs.columbia.edu/wp-content/upload
 
   Yes, I work with many undergraduates over the years. Typically at any time I have 2--3 undergraduates working in the lab.
 
-  My undergrads are often supported either through research grants (e.g., NSF REU and university funding) or hourly pay. I treat my undergrads as PhD students, give them flexibility to find solutions, and push them (_way_) beyond their comfort zone to realize their potential.
+  My undergrads are often supported either through research grants (e.g., NSF REU and university funding) or hourly pay. I #highlight[treat my undergrads as PhD students], give them flexibility to find solutions, and push them (_way_) beyond their comfort zone to realize their potential.
 
   As examples, Linhan started as an undergrad at UNL and continued as a PhD student GMU, KimHao published _9 papers at top conferences and journals_ as an undergrad at UNL, Stefania won the Outstanding Undergraduate Research Award at GMU, and Azan---a first year freshman when joining our lab---built #link("https://roars.dev/cspicks")[CSPicks] within just a week of joining.
 
@@ -85,11 +83,11 @@ This document, adapted from #link("https://www.cs.columbia.edu/wp-content/upload
 
 + *How many students are in the group?*
 
-  Check out the #link("https://roars.dev#people")[Roars People section]. Typically we have around 5 PhD students and a couple of undergrads.  We have yet to have a postdoc, but my students collaborate with postdocs at other institutions, e.g., Hai works with Thanh Le at  NICT (Japan) and Guolong with Chanh Le.  We call these collaborators "honorary" lab members and they are very much part of our lab family.
+  Check out the #link("https://roars.dev#people")[Roars People section]. Typically we have around 5 PhD students and a couple of undergrads.  We have yet to have a postdoc, but my students collaborate with postdocs at other institutions, e.g., Hai works with Thanh Le at  NICT (Japan) and Guolong with Chanh Le.  We call our collaborators "honorary" lab members and they are very much part of our lab family.
 
 + *What is the lab structure?* 
 
-  Each student—regardless of undergrad or PhD—has projects that they lead. However, everyone is encouraged to collaborate and help each other. In weekly lab meetings, you will hear about the progress of other projects and can contribute ideas. We also have a lab server on Discord where we chat about research and other random things.
+  #highlight[Each student—regardless of undergrad or PhD—has projects that they lead]. However, everyone is encouraged to collaborate and help each other. In weekly lab meetings, you will hear about the progress of other projects and can contribute ideas. We also have a lab server on Discord where we chat about research and other random things.
 
   As examples, Didier works on Complexity analysis. KimHao worked analyzing build systems, and also complexity analysis and invariant generation. Hai works on DNN verification. Linhan works on DNN testing. Hai, Linhan, and Nguyen often talk to each other as their projects involve neural networks. Long does not work with verification but contributes ideas and expertise as he knows ML systems well. And everyone contributes to fun web apps (e.g., #link("https://roars.dev/cspicks")[CSPicks] by Azan).
 
@@ -101,11 +99,11 @@ This document, adapted from #link("https://www.cs.columbia.edu/wp-content/upload
 
 + *Does the advisor consider themselves a "hands-on" or "hands-off" advisor?*
 
-  I am a _hands-off_ advisor. Students who need a lot of guidance and hand-holding _will not_ enjoy working with me.
+  I am a #highlight[_hands-off_] advisor. Students who need a lot of guidance and hand-holding _will not_ enjoy working with me.
   I will suggest directions and ideas, but I expect students to work independently and take ownership of their projects.
   My students---including undergrads---need to be self-motivated and take initiative.  
 
-  For new students, I can provide some help (e.g., directions and writing). As students become more senior/mature, I would gradually transition to a hands-off advisor. However, if I see new members capable of working independently from day one, I will let them do so from day one -- I don't get in the way of capable students. 
+  For new students, I can provide some help (e.g., directions and writing). As students become more senior/mature, I would gradually transition to a hands-off advisor. However, if I see new members capable of working independently from day one, I will let them do so from day one---I don't get in the way of capable students. 
   Here's a real example from Discord. This was my response to a technical question from a new _undergrad_ who impressed me by building a solid prototype in their first few weeks
 
   #quote(block:true,attribution:none)[
@@ -155,7 +153,7 @@ This document, adapted from #link("https://www.cs.columbia.edu/wp-content/upload
 
 + *How often are students expected to be contactable by their advisor?* 
 
-  Most of our communications happen over Discord. I sometimes contact students through email when it is something important, (e.g., the university asks me to get in touch with you about something). For such occasions, I expect you to respond to my emails quickly. However, in general, communications through Discord are more casual and you can respond when you see them --- though I find that all my students are quite responsive on Discord.
+  Most of our communications happen over Discord. I sometimes contact students through email (e.g., forwarding messages from the university). For such occasions, I expect you to respond to my emails quickly. However, in general, communications through Discord are more casual and you can respond when you see them --- though I find that all my students are quite responsive on Discord.
 
 
 = Research Fit & Projects
@@ -197,7 +195,7 @@ This document, adapted from #link("https://www.cs.columbia.edu/wp-content/upload
 
   However, if you want to work on some areas that I am not interested in, then I would rather you find another faculty because I can't guide a topic I don't know or care about.
 
-  That said, I am open to new ideas *if* you can convince me you can make them work. The best way to do that is as follows: if you come up with an idea that is quite different than what you're working on, *DO NOT* tell me about it, especially if you don't have good things to back it up, because I will likely shoot it down. Instead, just pursue it (while still working on your main project), and build *a prototype* and achieve some *good results*. If you can show me your ideas work with concrete results, I will much more open to them. This happens multiple times in my lab, and probably some of my students are currently working on secret ideas that I don't know about yet!
+  That said, I am open to new ideas *if* you can convince me you can make them work. The best way to do that is as follows: if you come up with an idea that is quite different than what you're working on, #highlight[DO NOT] tell me about it, especially if you don't have good things to back it up, because I will likely shoot it down. Instead, just pursue it (while still working on your main project), and build *a prototype* and achieve some *good results*. If you can show me your ideas work with concrete results, I will much more open to them. This happens multiple times in my lab, and probably some of my students are currently working on secret ideas that I don't know about yet!
 
 + *Are there other students you are interested in working with? If so, what would they be working on project-wise?*
 
@@ -234,9 +232,9 @@ This document, adapted from #link("https://www.cs.columbia.edu/wp-content/upload
 + *When have you given a letter of concern? Why?* 
 
   I haven't given a letter of concern yet, and I hope I never have to.  
-  But I'd remind and warn the student if they need to be on track or do not meet the expectation. 
+  But I'd remind and give plenty of warnings the student if they need to be on track or do not meet the expectation. There is no surprise in my lab and you will know if you're not doing well. 
     
-  Here is the expected progress for my Ph.D. student. By the end of the second year, you should publish at least a second-author paper. You are doing well if you publish a first-author paper at that time. By the end of the third year, you are considered behind if you do not publish a first-author paper and are seriously behind if no good submissions were made. A typical student in SE/PL will have 4--5 publications, students in ROARS lab often have a lot more than that.
+  Here is the expected progress for my PhD student. By the end of the second year, you should publish at least a second-author paper. You are doing well if you publish a first-author paper at that time. By the end of the third year, you are considered behind if you do not publish a first-author paper and are seriously behind if no good submissions were made. A typical student in SE/PL will have 4--5 publications, students in ROARS lab often have a lot more than that.
 
 = Funding & Obligations
 
@@ -257,7 +255,7 @@ This document, adapted from #link("https://www.cs.columbia.edu/wp-content/upload
 
 + *If you run out of your primary funding for a student how do you expect the student to handle that?* [advisor's responsibility / you'll have to write a grant with me / dept will cover the student / you have to find their own funding]  
     
-  One of my responsibilities is finding funding to support my students, and I have been quite lucky to have sufficient funding to support my students (including summer). However, as a fallback, the department can also cover the student with TA-ship. #link("https://github.com/dynaroars/dynaroars.github.io/wiki/About-GMU")[CS\@GMU] is _very good_ at providing Ph.D. students TA-ships.
+  One of my responsibilities is finding funding to support my students, and I have been quite lucky to have sufficient funding to support my students (including summer). However, as a fallback, the department can also cover the student with TA-ship. #link("https://github.com/dynaroars/dynaroars.github.io/wiki/About-GMU")[CS\@GMU] is _very good_ at providing PhD students TA-ships.
 
   I also encourage students to apply for fellowships. I will help them with the applications (e.g., give feedback on your statements and provide LORs). These fellowships are not necessary for funding, but they are prestigious and can help your career. I take pride in my students' achievements---sometimes more than in my own. When a student wins a fellowship or an award, it's also a win for me and the entire lab!
 
@@ -279,12 +277,12 @@ This document, adapted from #link("https://www.cs.columbia.edu/wp-content/upload
 
   I am *not actively recruiting*. My lab already has quite a few students. In fact, this advising guide is actually not meant for recruiting, but to help my current and future students understand my advising style and expectations.
   
-  That said, I am always looking out for *standout* students. Standing out is difficult to define and subjective---I can only know it when I see it (e.g., see the Reddit example below). So read this guide and if you think you would do well in my lab, then reach out to me.  
+  That said, I am always looking out for #highlight[standout] students. Standing out is difficult to define and subjective---I can only know it when I see it (e.g., see the Reddit example below). So read this guide and if you think you would do well in my lab, then reach out to me.  
 
 
 + *What factors will affect whether or not you take a student?*
     
-    Here's a concrete example: One day the CS faculty were talking about a GMU Reddit post from a student who built a web app to identify "easy A" classes at GMU (because they find RateMyProfessors not useful). Some profs. found it problematic because this app allows students to find and take easy classes (and they also complained that it doesn't represent their own classes fairly). But I was intrigued.  
+  Here's a concrete example: One day the CS faculty were talking about a GMU Reddit post from someone who built a web app to identify #highlight["easy A"] classes at GMU (because they find `RateMyProfessors` useless). Some profs. found it problematic because this app allows students to find and take easy classes (and they also complained that it doesn't represent their own classes fairly). But I was _intrigued_.  
     
     I didn't care much about the app itself, but the initiative and technical skill caught my attention: the student finds a problem, comes up with a solution using an unconventional way (from publicly available FOIA data that no one pays attention to), and implements an app that attracts many students (and upset professors!).
     
@@ -309,7 +307,7 @@ This document, adapted from #link("https://www.cs.columbia.edu/wp-content/upload
 
 + *Would the advisor be interested in co-advising?* 
 
-  I was co-advised during my PhD and it worked out, but I *prefer to be your main or sole advisor*, and other faculty members can be collaborators (but not co-advisor). This way, you can get more attention from me while still being mentored by other experts. For example, Hai is advised by me but also collaborates (and therefore mentored) by Matt Dwyer at UVA through our NeuralSAT project. It's also easier for me because I do not want to deal with conflicts between co-advisors, e.g., if they want you to do something that I don't want you to do (and vice versa).
+  I was co-advised during my PhD and it worked out, but I #highlight[prefer to be your main or sole advisor], and other faculty members can be collaborators (but not co-advisor). This way, you can get more attention from me while still being mentored by other experts. For example, Hai is advised by me but also collaborates (and therefore mentored) by Matt Dwyer at UVA through our NeuralSAT project. It's also easier for me because I do not want to deal with conflicts between co-advisors, e.g., if they want you to do something that I don't want you to do (and vice versa).
 
     
   In addition, I am *not* into broad *interdisciplinary research*, which would be beneficial for co-advising. I prefer to work on problems in my fields of SE/PL/FM and related ones (e.g., logics, mathematical proofs). So if you want to do interdisciplinary research in areas outside my core expertise (e.g., CS + Bio), then I may not be the best fit for you. While interdisciplinary work has many values (and I admire people who do it well), I have determined that it is not my strength and I prefer to focus on my core areas.
@@ -330,7 +328,9 @@ This document, adapted from #link("https://www.cs.columbia.edu/wp-content/upload
   I purchase computers and electronics for my students (e.g., computers, laptops, monitors, hard drives, memory, headsets, keyboards, etc). Our lab has several #link("https://github.com/dynaroars/dynaroars.github.io/wiki/Servers")[powerful servers] such as Nvidia Spark DGX (a gift from NVidia), that are shared among the students.  
     Let me put it this way: our lab machines are much better than most other labs and our experiments get done much faster than others.
 
-+ *Do students work together in common space? Do students often get meals together?* Sort of. Due to office space limitations, my students are sharing space with other SWE PhD students. There are advantages of that as you get to interact with more people outside our lab.
++ *Do students work together in common space? Do students often get meals together?*
+
+    Sort of. Due to office space limitations, my students are sharing space with other SWE PhD students. There are advantages of that as you get to interact with more people outside our lab.
 
 + *Do students often work late?* [Often / only before conference deadlines.]  
     
@@ -370,11 +370,11 @@ This document, adapted from #link("https://www.cs.columbia.edu/wp-content/upload
 + *Is the professor in an 80/20 with a company? Are students' research projects tied to industry funding?* 
     
     
-    No, but I collaborate with researchers from the industry (e.g., Facebook) and have industrial grants/awards (e.g., Amazon). Some students' projects are directly applicable to industrial problems, and they get opportunities to do internships at cool companies.
+    No, but I collaborate with researchers from the industry (e.g., Facebook) and have industrial grants/awards (e.g., Amazon). Some students' projects are directly applicable to industrial problems, and they get opportunities to do internships at cool companies. However, we do not have any contractual relationship with any company, and so there are no obligations or constraints from the industry on our research.
 
 + *Will it be acceptable/encouraged to intern at a company during the summer?* [Does this change with seniority?]  
     
-    Definitely, in fact I encourage you to do that. E.g., KimHao works at Facebook (twice) during the summer. However, as PhD students, you should do research internships (e.g., at research labs in the industry) rather than engineering internships. Best if you can do something that is related to your research and can lead to publications and things you can use to support your dissertation. But if you want to do an engineering internship, I will support you as well.
+    Definitely, and in fact I encourage you to do that. E.g., KimHao works at Facebook (twice) during the summer. However, as PhD students, you should do research internships (e.g., at research labs in the industry) rather than engineering internships. Best if you can do something that is related to your research and can lead to publications and things you can use to support your dissertation. But if you want to do an engineering internship, I will support you as well.
 
 
 = Culture, Time Off & Social Life
@@ -413,20 +413,21 @@ Questions that are not categorized into the above sections but can help you unde
     @fig:stefania is a snippet from a LoR I wrote for my undergrad student to nominate her for an Outstanding Undergrad award. At that moment, she has not done much research, but her volunteer activities show self-motivation and initiative, and that impressed me that I hired her to be my undergrad researcher and then later nominated her for the award.
     Note that the last sentence is a bit of self-deprecating humor: her pure altruistic work puts her in a different league, one that even NSF CAREER recipients, including myself, feel inadequate. The award committee apparently agreed, as she won out of many nominees.
 
-    #figure(
-    quote(block:true)[
+  #figure(
+      align(left)[
+    #quote(block:true)[
         At NOVA, Stefania initiated the Girls Who Code club and volunteered in various activities during COVID-19. These include *tutoring elderly individuals* on using Zoom, ordering groceries online, and collecting old computers to refurbish and *donate to underprivileged families*.
         These efforts were not connected to any specific class or organization; she just did them with her friends out of a desire to help. It is worth noting that such activities are often mentioned in NSF CAREER proposals; the main difference is that most only talk about doing them while she actually did them.
-    ],
+    ]],
     caption: [Stefania's LoR snippet.]
     ) <fig:stefania>
             
-    I would go further and say if even at the admission level GPA is not that important then during the PhD it is even less important.  I rarely ask about course work and grades from my PhD students.  In fact, if they are not doing well in research but doing very well in course work, then I would question that as that can be a sign of them struggling in research and using course work as a way of coping or just trying to get by.  In short, *if you're my PhD student and you get 4.0 GPA in your classes, then I might question why you spend so much time on coursework instead of research*. Just do enough to get by course work and focus on research.
+    I would go further and say if even at the admission level GPA is not that important then during the PhD it is even less important.  I rarely ask about course work and grades from my PhD students.  In fact, if they are not doing well in research but doing very well in course work, then I would question that as that can be a sign of them struggling in research and using course work as a way of coping or just trying to get by.  In short, _if you're my PhD student and you get 4.0 GPA in your classes, then I might question why you spend so much time on coursework instead of research_. Just do enough to get by course work and focus on research.
 
 
 + *What do you think about safeguarding ideas and results so that they don't get scooped?*
     
-    We have many ideas, so if someone wants to steal some of them, it's not a big deal, and in fact, we should be be *amused, flattered, and consider it a compliment*! 
+  We have many ideas, so if someone wants to steal some of them, it's not a big deal, and in fact, we should be be #highlight[amused, flattered, and consider it a compliment!] 
 
     Ideas are meant to be executed. If we fail to execute the ideas, then we are the one to be blamed, not the ones who take the ideas and execute them.  If the ideas are ours then we want to quickly realize them, publish them, and get the credit for them. If we don't/can't get something to work, we might as well give them to others.  And they can acknowledge us if they want -- or not (doesn't matter to me).  
 
@@ -443,7 +444,7 @@ Questions that are not categorized into the above sections but can help you unde
 
 + *Do we submit papers to see what the community thinks and get feedback*
     
-  *No*, we only submit papers that we think are good. We don't send out "feelers" to see if the community likes our work.   We  should not use the volunteering reviewers as guinea pigs to test our work (besides, the comments from a couple of reviewers do not represent the community). Moreover, we don't need to send out papers just to get feedbacki, if we do enough homework we should have a good idea of how the community would react to our work. In fact, if our work is so good, we can change the community's mind and get them to like it. So just do the work, get good results, then write a good paper about it.  
+  #highlight[No], we only submit papers that we think are good. We don't send out "feelers" to see if the community likes our work.   We  should not use the volunteering reviewers as guinea pigs to test our work (besides, the comments from a couple of reviewers do not represent the community). Moreover, we don't need to send out papers just to get feedbacki, if we do enough homework we should have a good idea of how the community would react to our work. In fact, if our work is so good, we can change the community's mind and get them to like it. So just do the work, get good results, then write a good paper about it.  
 
   Note that this does not mean we always submit full papers to top conferences. Our lab submit to a variety of venues, e.g., journals as extensions of our conference papers, short papers to specialized workshops or to introduce early ideas (e.g., New Ideas and Emerging Results track at ICSE), invited papers, etc.  
   We also submit to places that are not our usual venues if we think they are a better fit for the work, e.g., for our work on verifying computer vision models, we submitted to CVPR instead of our usual SE/PL/FM venues.
