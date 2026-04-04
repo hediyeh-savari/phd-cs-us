@@ -288,12 +288,6 @@ This document, adapted from #link("https://www.cs.columbia.edu/wp-content/upload
     
   That same evening, I talked about the app with my lab and tracked down the developer. I reached out to him that evening, we talked the next day, and I hired him on the spot.
 
-    #figure(
-        image("files/ascrapper.png", width: 70%),
-        caption: [Recruiting the "A scrapper student".],
-        placement: auto
-    ) <fig:ascrapper>
-
 
 + *Do you think our research interests are a good match?*
     
