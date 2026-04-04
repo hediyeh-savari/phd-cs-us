@@ -439,34 +439,34 @@ Questions that are not categorized into the above sections but can help you unde
 
 + *Do we submit papers to see what the community thinks and get feedback*
     
-  #highlight[No], we only submit papers that we think are good. We don't send out "feelers" to see if the community likes our work.   We  should not use the volunteering reviewers as guinea pigs to test our work (besides, the comments from a couple of reviewers do not represent the community). Moreover, we don't need to send out papers just to get feedbacki, if we do enough homework we should have a good idea of how the community would react to our work. In fact, if our work is so good, we can change the community's mind and get them to like it. So just do the work, get good results, then write a good paper about it.  
+  #highlight[No], we don't send out "feelers" to see if the community likes our work.   We  should not use the volunteering reviewers as guinea pigs to test our work (besides, the comments from a couple of reviewers do not represent the community). Moreover, we don't need to send out papers just to get feedbacki, if we do enough homework we should have a good idea of how the community would react to our work.  In fact, if our work is so good, we can change the community's mind and get them to like it. So just do the work, get good results, then write and submit a good paper about it.  
 
   Note that this does not mean we always submit full papers to top conferences. Our lab submits to a variety of venues, e.g., journals as extensions of our conference papers, short papers to specialized workshops or to introduce early ideas (e.g., New Ideas and Emerging Results track at ICSE), invited papers, etc.  
   We also submit to places that are not our usual venues if we think they are a better fit for the work, e.g., for our work on verifying computer vision models, we submitted to CVPR instead of our usual SE/PL/FM venues.
   So we are open to exploring different venues and formats, but we don't submit papers because we don't know its worth or to get feedback. 
         
 + *How do you approach rebuttals? Strategy?* [Do you respond to every reviewer comment, even unreasonable ones? How do you handle clearly incorrect reviews?]
+        
+      If the reviewers are very negative (e.g., not even a borderline), we should just *withdraw the paper*. This saves both ours and the reviewers' time. Note that even if we withdraw, we should put a note to *thank the reviewers for their time and feedback* and say that we will withdraw the paper and try to address the concerns in the future. I am adamant about this---whether we find the feedback useful or completely garbage, we will acknowledge and thank the reviewers for their time and feedback.
     
-  If the reviewers are very negative (e.g., not even a borderline), we should just *withdraw the paper*. This saves both ours and the reviewers' time. Note that even if we withdraw, we should put a note to *thank the reviewers for their time and feedback* and say that we will withdraw the paper and try to address the concerns in the future. I am adamant about this---whether we find the feedback useful or completely garbage, we will acknowledge and thank the reviewers for their time and feedback.
-
-
-   However, our papers are typically not so bad that everyone hates them (i.e., we don't submit papers when they are not ready as mentioned), so we get to do a rebuttal. My students, especially the main author(s), will draft the rebuttal (usually on shared Google Docs), and I will give feedback and revise the writing. There are many good practices (e.g., don't over-promise, don't be defensive, etc). But the most important thing is to treat rebuttal as an opportunity to improve the paper, and not to worry about the outcome or trying to please the reviewers.
-
-
-  + *Always acknowledge* the reviewers' time and feedback, even if you think they are unreasonable or won't care (most likely they don't), but we need to do it because it's the right thing to do--even if we really hate their questions and believe nothing will change their mind.
     
-  + *Don't do the rebuttal when we are emotionally upset* (e.g., after reading the reviews). Take a break, calm down, and then come back to it. The comments---no matter how bad they initially seem---typically have some truths in them (e.g., if they ask a really "dumb" basic question, this could be because we assume too much and don't explain things well enough; if they don't like the problem, then may be because we didn't motivate it well enough or we submitted to the wrong venue, etc).
-
-
-  + *Don't try to find the champion and the defectors*. This is a very common strategy---find the reviewers who clearly like the paper and provide them with the ammunition to fight against the defectors.  I personally don't find this useful because, as mentioned, even the most negative comments have some truths in them and therefore can help improve the paper. Moreover, while a reviewer might appear to be strongly for or against the paper, they might actually be the opposite (e.g., a champion might not actually do anything to help the paper while a defector who is open to changing their mind if we can address their concerns).  So just address the comments with the purpose to improve the paper, and don't worry about who is a champion or a defector.
-
-  In most cases, especially at top confs., papers will get rejected; and in such cases we improve and resubmit and get best paper award, e.g., our compositional verification work was rejected at CAV'25 and get Research Spotlight Award at NeurIPS'25. In some rare cases, however, rebuttal can actually change reviewers' mind as shown in @fig:rebuttal. 
-  So embrace the uncertainties of the review process; treat rebuttal as an opportunity to improve our writing and work (think of them as _bug reports_ that make your code better), and don't worry about the rest.    
-
-    #figure(
-        image("files/cvpr-acceptance.png", width: 90%),
-        caption: [CVPR'26 paper that got accepted even with largely negative reviews but a very positive rebuttal.]
-    ) <fig:rebuttal>
+       However, our papers are typically not so bad that everyone hates them (i.e., we don't submit papers when they are not ready as mentioned), so we get to do a rebuttal. My students, especially the main author(s), will draft the rebuttal (usually on shared Google Docs), and I will give feedback and revise the writing. There are many good practices (e.g., don't over-promise, don't be defensive, etc). But the most important thing is to treat rebuttal as an opportunity to improve the paper, and not to worry about the outcome or trying to please the reviewers.
+    
+    
+      + *Always acknowledge* the reviewers' time and feedback, even if you think they are unreasonable or won't care (most likely they don't), but we need to do it because it's the right thing to do--even if we really hate their questions and believe nothing will change their mind.
+        
+      + *Don't do the rebuttal when we are emotionally upset* (e.g., after reading the reviews). Take a break, calm down, and then come back to it. The comments---no matter how bad they initially seem---typically have some truths in them (e.g., if they ask a really "dumb" basic question, this could be because we assume too much and don't explain things well enough; if they don't like the problem, then may be because we didn't motivate it well enough or we submitted to the wrong venue, etc).
+    
+    
+      + *Don't try to find the champion and the defectors*. This is a very common strategy---find the reviewers who clearly like the paper and provide them with the ammunition to fight against the defectors.  I personally don't find this useful because, as mentioned, even the most negative comments have some truths in them and therefore can help improve the paper. Moreover, while a reviewer might appear to be strongly for or against the paper, they might actually be the opposite (e.g., a champion might not actually do anything to help the paper while a defector who is open to changing their mind if we can address their concerns).  So just address the comments with the purpose to improve the paper, and don't worry about who is a champion or a defector.
+    
+    In most cases, especially at top confs., papers will get rejected; and in such cases we improve and resubmit and get best paper award, e.g., our compositional verification work was rejected at CAV'25 and get Research Spotlight Award at NeurIPS'25. In some rare cases, however, rebuttal can actually change reviewers' mind as shown in @fig:rebuttal. 
+      So embrace the uncertainties of the review process; treat rebuttal as an opportunity to improve our writing and work (think of them as _bug reports_ that make your code better), and don't worry about the rest.    
+    
+        #figure(
+            image("files/cvpr-acceptance.png", width: 90%),
+            caption: [CVPR'26 paper that got accepted even with largely negative reviews but a very positive rebuttal.]
+        ) <fig:rebuttal>
 
 + *How should a student get sufficient background for their project? Do you expect them to take courses, read papers, or something else?*
 
@@ -474,13 +474,11 @@ Questions that are not categorized into the above sections but can help you unde
   
   So, dig right into the code, make some changes, and break something.  If it helps, even reimplement it from scratch. I want you to get get frustrated with existing work and think of ways to improve it. Reinventing the wheel is a great way to learn and understand something deeply---and understanding something deeply is the key to doing research on it.
 
-  Reading papers won't reveal issues or limitations with the work, and in fact, can demotivate the students ("too many good work already, how do I come up with something better?"").  Every work has limitations, and if you understand the code very well (e.g., by reimplement it), you will find all the issues and think of ways to improve the work --- that's how we come up with ideas. Not only this applies to engineering or tool building projects, but also to theoretical work---find the flaws in the proofs and the theorems, and come up with ways to fix them (or create new ones).
+  Reading papers won't reveal issues or limitations with the work, and in fact, can demotivate the students (_"too many good work already, how do I come up with something better?"_).  Every work has limitations, and if you understand the code very well (e.g., by reimplement it), you will find all the issues and think of ways to improve the work --- that's how we come up with ideas. Not only this applies to engineering or tool building projects, but also to theoretical work---find the flaws in the proofs and theorems (like  Paul Wolfskehl), and come up with ways to fix them or create new ones (better yet, formalize the proof and check it with a proof assistant like Lean).
 
-
-Once you understand something well, then you will be motivated to read papers in that area to see what others have done and how you can improve on them. You also will read papers in a different way---not with the "wow" or "impostor syndrome" feeling, but with the ability to understand the work deeply, appreciate the good stuff, and identify and improve the bad stuff---usually hidden in the polished writing.
+    Once you understand something well, then you will be motivated to read papers in that area to see what others have done and how you can improve on them. You also will read papers in a different way---not with the "wow" or "impostor syndrome" feeling, but with the ability to understand the work deeply, appreciate the good stuff, and identify and improve the bad stuff---usually hidden in the polished writing.
 
   
-Note that even in pure theoretical work where there is no code to play with, you can still do the same. Theorems and proofs can have mistakes as they are written by human (even if that human is Fermat). Understand the proofs deeply and you might find unrealistic assumptions and even flaws in the chain of reasoning and fix them (just as Paul Wolfskehl did as an example for Fermat's Last Theorem). Better yet, formalize the proof and check it with a proof assistant like Lean!
 
 
 // \item\textbf{What are your expectations about code release? How do you ensure experiments are reproducible?}
