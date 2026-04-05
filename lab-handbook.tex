@@ -500,45 +500,6 @@ Anyone listed as Author on an ACM submission must meet all the following criteri
 % The Better Posters Gallery, which is part of the Better Posters blog by Zen Faulkes
 % Better Posters Blog, by Zen Faulkes
 
-\chapter{Writing Styles and File Organization}
-
-Every one has their own way of organizing files and writing papers. Below is my approach that has worked well for me over the years. If you're my student and write papers with me, I expect you follow this approach so that I can easily find things.  
-
-However, if we collaborate with others, we can adapt how we write and organize files as needed. Typically, the main group lead will decide how to organize things and the rest of us will follow their lead.  For example, if we lead a paper, then we will follow my approach below.  But if we collaborate on a paper led by others, then we will follow their approach.
-
-
-\section{File Organization}\label{sec:file-organization}
-
-
-\begin{enumerate}
-\item Create a separate Github Repo for each \emph{project}.
-\begin{itemize}
-  \item The reason is that we will likely write multiple papers for the same project (e.g., conference papers, journal papers, workshop papers, etc). Having a single repo per project makes it easier to manage and find things.
-  \item Name the repo \code{paper\_projectname}, e.g., `\code{paper\_gentree}` where \code{gentree} is the name of the work.
-\end{itemize}
-\item Within the repo, create a separate directory (folder) for each \emph{paper}.
-  \begin{itemize}
-    \item Name the directory based on the venue and year, e.g., \code{icse2025} for a paper submitted to ICSE 2025.
-  \end{itemize}
-\item Within the paper directory, I use \emph{very few} files (e.g., the entire paper in a single TeX file).   Typically, I have the following:
-  
-\begin{enumerate}
-  \item \code{paper.tex}: a \emph{single} \code{TeX} file for the entire paper. 
-  \begin{itemize}
-    \item Others might prefer using multiple files / directories (e.g., \code{intro.tex}, \code{eval.tex}, \code{sections/related.tex}. But I find it easier to just use a single file because I can easily search and replace for things and I don't have to switch between files.
-  \item Even when sharing or collaborating with others, in which conflict edits can arise, a single file still works well because Git is pretty good at resolving conflict issues. Note that I do have conflicts with this approach, but they also happen with multiple files.
-      \end{itemize}
-  \item \code{paper.bib}: A single \code{bib} file for bibliography references.
-      \begin{itemize}
-        \item I prefer a single bib file because it is easier to manage and search for references.  Others might prefer multiple bib files (e.g., \code{refs1.bib}, \code{refs2.bib} for different sections).
-        \item My collaborators sometimes put in their own bib files.
-      \end{itemize}
-  \item \code{figures/}: A directory (folder) containing all figures for the paper.
-
-\end{enumerate}
-
-
-\end{enumerate}
   
 
 % ## After submission

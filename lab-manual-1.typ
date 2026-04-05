@@ -94,6 +94,35 @@ Lab members, who all have write access, are encouraged to provide feedback and s
   - _Focus on motivation and high-level ideas_. The goal of the presentation is to get people interested into your work and talk to you and read your paper, which has more technical details. 
 
 
+#pagebreak()
+= Writing Styles and File Organization
+
+Every one has their own way of organizing files and writing papers. Below is my approach that has worked well for me over the years. If you're my student and write papers with me, I expect you follow this approach so that I can easily find things.
+
+However, if we collaborate with others, we can adapt how we write and organize files as needed. Typically, the main group lead will decide how to organize things and the rest of us will follow their lead. For example, if we lead a paper, then we will follow my approach below. But if we collaborate on a paper led by others, then we will follow their approach.
+
+== File Organization <sec:file-organization>
+
++ Create a separate Github Repo for each _project_.
+  - The reason is that we will likely write multiple papers for the same project (e.g., conference papers, journal papers, workshop papers, etc). Having a single repo per project makes it easier to manage and find things.
+  - Name the repo `paper_projectname`, e.g., `paper_gentree` where `gentree` is the name of the work.
+
++ Within the repo, create a separate directory (folder) for each _paper_.
+  - Name the directory based on the venue and year, e.g., `icse2025` for a paper submitted to ICSE 2025.
+
++ Within the paper directory, I use _very few_ files (e.g., the entire paper in a single TeX file). Typically, I have the following:
+
+  + `paper.tex`: a _single_ `TeX` file for the entire paper.
+    - Others might prefer using multiple files / directories (e.g., `intro.tex`, `eval.tex`, `sections/related.tex`). But I find it easier to just use a single file because I can easily search and replace for things and I don't have to switch between files.
+    - Even when sharing or collaborating with others, in which conflict edits can arise, a single file still works well because Git is pretty good at resolving conflict issues. Note that I do have conflicts with this approach, but they also happen with multiple files.
+
+  + `paper.bib`: A single `bib` file for bibliography references.
+    - I prefer a single bib file because it is easier to manage and search for references. Others might prefer multiple bib files (e.g., `refs1.bib`, `refs2.bib` for different sections).
+    - My collaborators sometimes put in their own bib files.
+
+  + `figures/`: A directory (folder) containing all figures for the paper.
+
+
 = Lab Resources
   
 == Web Links
