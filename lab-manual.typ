@@ -78,10 +78,6 @@ Lab members, who all have write access, are encouraged to provide feedback and s
 
 = Publication
 
-== Rebuttal
-
-+ *Thank you note*: Start with a thank you note to the reviewers for their time and feedback. Reviewing is a thankless job and reviewers often put in lots of time and effort to provide feedback. Even if the reviews are harsh and you hate them, *do it anyway*.
-
 
 
 
@@ -90,10 +86,11 @@ Lab members, who all have write access, are encouraged to provide feedback and s
 
 Everyone has their own way of organizing files and writing papers. Below is my approach that has worked well for me over the years. If you're my student and write papers with me, #highlight[I expect you follow this approach] so that we can be on the same page and work efficiently together.
 
-#rect[However, if we collaborate with others, we can adapt how we write and organize files as needed. Typically, the main group lead will decide how to organize things and the rest of us will follow their lead. For example, if we lead a paper, then we will follow my approach below. But if we collaborate on a paper led by others, then we will follow their approach.]
+#rect[Note that if we collaborate with others, we can adapt how we write and organize files as needed. Typically, the main group lead will decide how to organize things and the rest of us will follow their lead. For example, if we lead a paper, then we will follow my approach below. But if we collaborate on a paper led by others, then we will follow their approach.]
 
 == File Organization <sec:file-organization>
-+ _Use #highlight[Git control] (e.g., Github) for version control_. This is essential for managing changes to the paper, especially when collaborating with others. Even if we use something like `Overleaf`, link it to a Github repo 
++ _Use #highlight[Git control] (e.g., Github) for version control_. This is essential for managing changes to the paper, especially when collaborating with others. 
+  - Even if we use something like `Overleaf`, link it to a Github repo.
   
 + _Keep it simple_. I prefer a very simple file organization structure for writing papers. #highlight[As few files and directories as possible].
     + `paper.tex`: a _single_ `TeX` file for the entire paper.
@@ -103,10 +100,16 @@ Everyone has their own way of organizing files and writing papers. Below is my a
         - Sometimes I append things to the end of the file to indicate the venue (e.g., `paper-cacm26.tex` for a paper submitted to CACM). But the main idea still remains: an entire paper in a single file.
           
     + `paper.bib`: A single `bib` file for bibliography references.
-        - I prefer a single bib file because it is easier to manage and search for references. Others might prefer multiple bib files (e.g., `refs1.bib`, `refs2.bib` for different sections).
+        - Using a _single_ `bib` file makes it easier to manage and search for references. Others might prefer multiple bib files (e.g., `refs1.bib`, `refs2.bib` for different sections).
         - My collaborators sometimes put in their own bib files.
+        - Do not symbolically link to a shared bib file (e.g., `~/myrefs.bib`) because it can cause issues when sharing the paper with others (e.g., for review or collaboration), and also if you update the shared bib file, it can cause issues for other work that also uses that bib file.  Instead, #highlight[just copy the bib file to the paper directory and use it there] and make things self-contained.
+        - `bibentry` conventions: use `authorYearFirstWordOfTitle` as the bib entry key, e.g., `duong2020verifying` for a paper by Duong in 2020 with the title "Verifying ...". This makes it easier to remember and use the bib entries in the paper. Note that Google Scholar also uses this convention when you export bib files, so it is easy to copy and paste from Google Scholar to your bib file.
+          - If there are multiple papers by the same author in the same year, add a number to the end of the bib entry key, e.g., `duong2026verifying`, `duong2026verifying2`, etc.
     
-    + `figures/`: A directory (folder) containing all figures for the paper.  If there are just a few figures, I might just put them in the same directory as the paper file. But if there are many figures, I prefer to keep them in a separate directory.
+    + `figures/`: A directory (folder) containing all figures for the paper.  
+      - If there are just a few figures, I might just put them in the same directory as the paper file. But if there are many figures, I prefer to keep them in a separate directory.
+      - Same as the bib file, do not symbolically link to a shared figures directory (e.g., `~/myfigs/`) because it can cause issues when sharing the paper with others.
+
 
 #pagebreak()
 == Writing Order for Research Papers
@@ -167,6 +170,14 @@ published at `OOPSLA'21`.
       - Results: briefly summarize the results.
         
 #pagebreak()
+
+
+== Rebuttal
+
++ *Thank you note*: Start with a thank you note to the reviewers for their time and feedback. Reviewing is a thankless job and reviewers often put in lots of time and effort to provide feedback. Even if the reviews are harsh and you hate them, *do it anyway*.
+
+
+#pagebreak()
 == Presentation
 
 + *Title slide* with paper title, authors (highlight or underline the presenter's name), affiliations, conference or event name, date.
@@ -175,8 +186,7 @@ published at `OOPSLA'21`.
 + *Avoid Technical Stuff*. 
   - Avoid slides that are too technical (e.g., formulae, code snippets, algorithms, etc) unless absolutely necessary.
     - _Focus on motivation and high-level ideas_. #highlight[The goal of the presentation is to get people interested into your work and talk to you and read your paper], which has more technical details. 
-
-
++ [Optional] Use *LaTeX/Beamer* for slides. It's easier to update and maintain consistency with the paper.
 
 //  + Create a separate Github Repo for each _project_.
 //   - The reason is that we will likely write multiple papers for the same project (e.g., conference papers, journal papers, workshop papers, etc). Having a single repo per project makes it easier to manage and find things.
@@ -276,7 +286,7 @@ To get an account on the server, send a request and your *SSH public key* (for _
 === VPN for Lab Servers
 You will need VPN and Computing access to log into lab servers remotely. Send an email to #link("mailto:cechelp@gmu.edu")[cechelp\@gmu.edu] and also CC the PI.
 
-#block(fill: rgb("#fff3cd"), stroke: rgb("#ffc107"), inset: 1em)[
+#rect[
   *Subject*: VPN and Computing Access (Mesa AD Groups)
   
   Dear CECHelp,
@@ -312,7 +322,7 @@ You will need VPN and Computing access to log into lab servers remotely. Send an
 + Click `Connect` to establish connection
 
 
-
+#pagebreak()
 
 = Conference Registration and Travel
 
@@ -332,6 +342,8 @@ You will need VPN and Computing access to log into lab servers remotely. Send an
 
 + The first day and the last day of travel, they will not pay the full per diem rate because you are not there for the full day.
 
+
+#pagebreak()
 = Comprehensive Exam and Defense
 
 == Defense
@@ -346,7 +358,7 @@ Chair:
   - Then the student can be invited and informed about the decision.
 
 
-
+#pagebreak()
 = Contact information
 
 + Lab website: #link("https://roars.dev")
@@ -372,4 +384,45 @@ Chair:
   United States
   ```
   ]
-  
+
+
+#pagebreak()
+
+//Appendices
+#set heading(numbering: "A.1")
+= LOR
+== Asking
+
+- If you want a letter from me, you should *ask* at least 2 weeks in advance (ideally a month).
+  - *DO NOT* put my name in the application system without explicitly asking me first.
+- If I don't know you well enough, I will let you know and advise you to find someone else. But if you insist, I will still write you a letter.
+- You need to *waive your right* to view the letter. It is a confidential evaluation, and I will not write one if you insist on seeing what I write.
+- You should provide me your CV and, if you'd like, your SOP, so I can determine whether I could complement some of the things you've said.
+  - Feel free to provide me with any other information that you think is relevant, e.g., your grades, projects, research experience, awards, etc. I might not use them if I don't think they are relevant, but they might help if I miss something.
+
+== Writing
+
+- I *will not ask you to draft a letter* for me. My reputation is on the line, and I do not want a student (or AI) writing a letter on my behalf.
+- I *do not write negative letters*, i.e., I don't say bad things about you (even if you're bad). However, if I don't know you well then a neutral, short, or generic letter will not help your case given the competitiveness.
+- It takes me about *an hour* for a strong letter for someone I know well, and about 10 minutes for a letter for someone I don't know well.
+- In all letters, at the end I will include a short paragraph about *an area you need to improve*, regardless of whether you're super strong or weak. But I will phrase it in such a way that the graduate study environment or a good advisor can help you overcome it. It makes the letter more complete and not just full of praise.
+- I *do not customize* the letter for specific schools.
+  - You customize your SOP to explain why you want to apply to school `X` and work with professor `Y`. I do not need to explain why you want to go to school `X` or why you would be a good fit for professor `Y`. Note that if I know you and `Y` very well, then I might send a letter directly to `Y` to mention you.
+- My letter will have the university logo and my (digital) signature.
+  - However, I should note that when I read a LoR, I do not pay attention to whether it has a logo or signature.
+
+== Sending
+
+- After you put my email into the application system, it will send me a request email with a unique URL to go to. It will also give me some deadline that is _likely_ not the same as yours---usually later.
+  - In some cases the systems don't even give me a deadline (various LoR request examples are shown in my `Demystify` book, e.g., Section 3.2.3: #link("https://github.com/dynaroars/phd-cs-us/")[https://github.com/dynaroars/phd-cs-us/]).
+- I *do not mind if the student is anxious and sends me multiple reminders*. I will likely not respond to them. But I am not bothered by reminders. Over-communication is better than under.
+- Most systems simply ask me to upload the letter---though a few have short questions like comparing the applicant to undergrads or grad students. As an adcom reviewer, I don't really pay attention to these comparisons---only the letter matters.
+- I usually send my letter (in PDF) in *batch mode*, e.g., I just sent out 10+ letters all at once and cleared my inbox of these requests.
+  - For each request, it took me less than 30 seconds to upload the PDF and hit `submit`. So do not worry that it is time-consuming or a burden; it's not.
+- After I send my batch, I'll let you know I just sent everything and ask if I missed any.
+  - I would appreciate if you share an online spreadsheet showing what schools you have asked me to write letters for so I know what to expect (and if I miss something).
+
+== Updating
+
+- Let me know your progress and especially your outcomes, e.g., interviews, offers, and where you eventually go to. I'd love to hear these updates from you.
+- This is a common courtesy. Though I probably won't remember or expect you to do this. However, if you do this and then years later reach out for another letter, I might not be able to help you.
