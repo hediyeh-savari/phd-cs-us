@@ -96,7 +96,7 @@
   I will suggest directions and ideas, but I expect students to work independently and take ownership of their projects.
   My students---including undergrads---need to be self-motivated and take initiative.  
 
-  For new students, I can provide some help (e.g., directions and writing). As students become more senior/mature, I would gradually transition to a hands-off advisor. However, if I see new members capable of working independently from day one, I will let them do so from day one---I don't get in the way of capable students. 
+  For new students, I provide helps with project directions and writing. As students become more senior/mature, I would gradually transition to a hands-off advisor. However, if I see new members capable of working independently from day one, I will let them do so from day one---I don't get in the way of capable students. 
   Here's a real example from Discord. This was my response to a technical question from a new _undergrad_ who impressed me by building a solid prototype in their first few weeks
 
   #quote(block:true,attribution:none)[
@@ -108,17 +108,17 @@
   Also, as mentioned in @group, I highly encourage my students to talk to other lab members for help and guidance. More experienced students can help new ones with ideas and research guidance.
 
 == How does the advisor give feedback on papers?
-   For the students' first papers, I ask for drafts and revise them iteratively with the students (e.g., through Overleaf). In some cases, I rewrite large portions of early drafts, especially the Intro and Evaluation sections, so students can see how papers are written.  This helps the students see how papers are written. Same thing with paper rebuttals, I will work with the students and revise the writing directly.  
+   For the students' first papers, I ask for drafts and revise them iteratively with the students (e.g., through Overleaf). In some cases, I rewrite large portions of early drafts, especially the Intro and Evaluation sections.  This helps the students see how papers are written. Same thing with paper rebuttals, I will work with the students and revise the writing directly.  
   
-   As the students have more experience, I will let go more and more. By the time the students can write and successfully publish the paper by themselves without much revision and editing from me, then I know they are ready to graduate.
+   As the students have more experience, I will let go more and more. By the time the students can write and successfully publish the paper by themselves without much revision and editing from me, then I know they are ready to graduate. This is typically how I determine #highlight[when a student is ready to graduate]: not by specific time or number of papers, but when they can write and publish top papers independently without much help from me.
 
 
 == Are there lab meetings? What are other meetings you will see your advisor in a group with other people?
    Yes, we meet weekly in the conference room on Thursday afternoon in the CS conference room. Everyone speaks, everyone contributes, no one is silent. Typically, the students talk about what they have been doing in the past week and what they will do next week. They also talk about issues they are facing and others contribute ideas to help solve the problems.  
    
-   After status updates, a student will typically present their work in depth. The meeting usually lasts about 1--2 hours depending on how much we have to discuss. I am usually available after the meeting to chat with students individually if they have more questions.
+   Sometimes, after status updates, a student will present their work in depth. The meeting usually lasts about 1--2 hours depending on how much we have to discuss. I am usually available after the meeting to chat with students individually if they have more questions.
 
-   Sometimes we all come and work together in a large conference room (e.g., when we are close to a paper deadline), and then have lunch together. This #link("https://photos.roars.dev/")[Google Photos album] shows some of our lab gatherings.
+   Occasionally we all come and work together in a large conference room (e.g., when we are close to a paper deadline), and then have lunch together. This #link("https://photos.roars.dev/")[Google Photos album] shows some of our lab gatherings.
 
 == What does a group/lab meeting look like? [Or other relevant meetings]  
     
@@ -137,7 +137,7 @@
     
   In addition to weekly lab meetings described above, students can talk to me individually about any thing they want (usually we would talk right after regular lab meetings). And during paper deadlines, we sometimes meet several times a day on Zoom.
 
-  Many of my students work late at night and so do I (after kids have gone to bed!). So I've been making myself available to work with my students at night whenever they need, often 9:30--11:30 PM (much later when I was younger).
+  Many of my students work late at night and so do I (after kids have gone to bed!). So I've been making myself available to work with my students at night whenever they need, often 10PM --1 AM (much later when I was younger).
     
   That said, I highly value independence, and so as long as it works for you and you're productive, it _doesn't matter_ to me how/when you work.
 
@@ -151,16 +151,18 @@
 
 == How directly applicable will your future technical skills be to the roles you want after graduating? [If set on industry]
 
-  During PhD we train you to be researchers, and so if your post-graduate career is not related to research, then you are not directly using the skills you learn in the PhD. Still, many other skills that you learn---being independent, problem solving, read/write technical papers, endure my advising style, etc---are applicable to many careers.
-
-  More specifically, skills you learn in my group (formal reasoning, verification, program analysis, being independent, writing well, etc) are real skills that are applicable to both academia, industry, and everywhere else.  We go for hard problems and they often coincide with real problems in the industry. We didn't set out to solve "industry problems" per se, but we often end up solving them anyway. For example, KimHao's work on build systems is directly applicable to large-scale software development at Facebook. Hai's work on DNN verification is applicable to many systems that use DNNs, which we believe will soon be everywhere (e.g., self-driving cars).
+  During PhD we train you to be researchers, and so if your post-graduate career is not related to research, then you are not directly using the skills you learn in the PhD. 
+  
+  Still, many other skills that you learn---being independent, problem solving, read/write technical papers, endure my advising style, etc---are applicable to many careers. More specifically, skills you learn in my group (formal reasoning, verification, program analysis, being independent, writing well, etc) are real skills that are applicable to both academia, industry, and everywhere else.  We go for hard problems and they often coincide with real problems in the industry. We didn't set out to solve "industry problems" per se, but we often end up solving them anyway. For example, KimHao's work on build systems is directly applicable to large-scale software development at Facebook. Hai's work on DNN verification is applicable to many systems that use DNNs, which we believe will soon be everywhere (e.g., self-driving cars).
 
     
 == What research methods does the lab use? (What types of papers / contributions / conferences targeted)  
     
-  Our work is often on developing new techniques/algorithms and building tools. We target top-tier conferences in the field (e.g., ICSE, FSE, ASE, ISSTA, OOPSLA, PLDI, CAV). For work we wish to extend, we also publish in journals such as IEEE TSE.  
-    
+  Our work is often on developing new techniques/algorithms and building tools. We target top-tier conferences in the field (e.g., ICSE, FSE, ASE, ISSTA, OOPSLA, PLDI, CAV). For work we wish to extend, we also publish in journals such as IEEE TSE. 
+
   Ok, that was a boring neutral "academic" answer. The fact is that we don't just publish papers or produce boring incremental results, we also develop tools that actually work, win competitions, and receive significant awards. Our competitors are the best in the world and we enjoy *beating them*. For example, #link("https://code.roars.dev/neuralsat")[NeuralSAT] is often considered one of the best at DNN verification competition and outperforms many other state-of-the-art tools.
+
+  We also explore new areas and venues if they are relevant to our research. For example, since we work on DNNs, we also publish in AI and ML conferences (e.g., NeurIPS, ICML, ICLR). We have been quite successful in those venues as well (e.g., Highlight and Spotlight papers at NeurIPS'25, CVPR'26, ICML'26).
 
 == What are some of the projects that you and your students are currently working on? 
 
@@ -168,7 +170,7 @@
 
   Ok, cross out #strike[program repair] --- I moved on from that. Nowadays I am more interested in DNN verification and reasoning and also using LLM-based proof assistants to formalize and prove mathematics.
 
-== In general, do you tend to give your students projects or have them select their own? 
+== In general, do you tend to give your students projects or have them select their own? <sec:own-projects>
 
   I give them research topics or directions to explore. For new students, usually, I give them more specific projects to start with so they can get familiar with the research area and techniques. As they are more familiar, they will be able to come up with their own projects. For example, Linhan bounces around several ideas before settling on his work on DNN benchmarking, and Hai and Long work with several students (some not even in our lab) on various projects.
     
@@ -186,10 +188,10 @@
 
   However, if you want to work on some areas that I am not interested in, then I would rather you find another faculty because I can't guide a topic I don't know or care about.
 
-  That said, I am open to new ideas and directions _if_ you can convince me you can make them work. The best way to do that is as follows: if you come up with an idea that is quite different than what you're working on, #highlight[DO NOT] tell me about it, especially if you don't have good things to back it up, because I will likely shoot it down. Instead, just pursue it (while still working on your main project), and build _a prototype_ and achieve some _good results_. If you can show me your ideas work with concrete results, I will much more open to them. This happens multiple times in my lab, and probably some of my students are currently working on secret ideas that I don't know about yet!
+  That said, I am open to new ideas and directions _if_ you can convince me you can make them work. The best way to do that is as follows: if you come up with an idea that is quite different than what you're working on, #highlight[do not] tell me about it, especially if you don't have good things to back it up, because I will likely shoot it down. Instead, just pursue it (while still working on your main project), and build _a prototype_ and achieve some _good results_. If you can show me your ideas work with concrete results, I will much more open to them. This happens multiple times in my lab, and probably some of my students are currently working on secret ideas that I don't know about yet!
 
 == Are there other students you are interested in working with? If so, what would they be working on project-wise?
-  Not sure what "other students" means. But if the question is whether you have to compete with other students in the lab, then the answer is NO. As mentioned, in the beginning you will likely work on projects with other students, but eventually you will have your own projects. Moreover, ROARS members are very collaborative and they help each other with ideas and problems.
+  Not sure what "other students" means. But if the question is whether you have to compete with other students in the lab, then the answer is NO. As mentioned in @sec:own-projects, in the beginning you will likely work on projects with other students, but eventually you will have your own projects. Moreover, ROARS members are very collaborative and they help each other with ideas and problems.
 
   Now if the question is if I'd spend time working equally with all my students, then the answer is also NO. 
   I will spend more time with students that get me excited and involved in their work by showing me progress and results. I made this explicitly to my students: get my attention by showing me results and progress! Don't just talk about ideas (or change them frequently), but show me results!
