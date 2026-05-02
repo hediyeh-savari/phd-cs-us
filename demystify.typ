@@ -4,7 +4,7 @@
 
 #set text(
   //font: "Noto Serif",
-  //font: "New Computer Modern",
+  
   //font: "TeX Gyre Pagella",
   size: 12pt
 )
@@ -2446,8 +2446,8 @@ Because of the differences between MS and PhD programs (@sec:phd-vs-ms), you sho
 #figure(
   image("files/phd100404s.png", width: 70%),
 )
-
-As discussed in @chap:research-experience, having a successful research experience can greatly strengthen a PhD application. Research experience gives you opportunities to try out research, determine what research area you're interested in, publish papers (@chap:research-experience), connect with researchers, and get strong LoRs (@chap:lor). This section provides some guidance on how to gain research experience as an undergraduate (or MS) student or student at a smaller college where research opportunities might be limited.
+Research experience gives you opportunities to try out research, determine what research area you're interested in, publish papers (@chap:research-experience), connect with researchers, and get strong LoRs (@chap:lor).
+A successful research experience also greatly strengthens a PhD application (@chap:research-experience). This section provides some guidance on how to gain research experience as an undergraduate (or MS) student or student at a smaller college where research opportunities might be limited.
 
 == Locally 
 
@@ -2461,7 +2461,11 @@ Many universities have programs to encourage undergraduate research. For example
 You can also take honor thesis or independent study courses with a professor.  This is a good way to get research experience and also get a LoR from the professor.  You can also ask your academic adviser or other faculty members for suggestions.  Finally, you can also ask your peers who are already doing research.  Use the method described in @sec:contact to contact professors
 
 #commentbox[
-I enjoy working with undergrads and actively recruit them to my research group. I get undergraduates through my classes, e.g., asking students who did well in my class if they are interested in research.  Occasionally I was introduced to students by other students or faculty. In many cases I directly email students who I think are good and ask if they are interested in research. 
+    I enjoy working with undergrads and actively recruit them to my research group.
+    I get undergraduates through my classes, e.g., asking students who did well in my class if they are interested in research.
+    Occasionally I was introduced to students by other students or faculty (though I didnot have much success with this method).
+    Sometimes I found students by accident, e.g., a student came to my office hours and we had a good conversation about research, or I see some news about a student and I reach out to them.  This has been my most successful method (e.g., Stefania came to my office for advising, I found out about KimHao because he participated in an ACM competition, and Azan created a website that aiming to replace Ratemyprofessors that got my attention).
+     
 
 While most undergrads are understandably not productive in research, some are and I have published multiple papers with them---like with Kimhao and Stefania.  
 I also have written LoRs for them and have helped them get into good PhD programs.
@@ -2470,7 +2474,7 @@ I also have written LoRs for them and have helped them get into good PhD program
 == Open Source Contributions <sec:open-source-contribs>
 
 Open development platforms such as GitHub offer many research opportunities.
-In CS and many other fields, research labs put their projects on GitHub to encourage collaboration and contributions from the community. For example, my research group, #link("https://roars.dev/")[Roars], has many open-source projects that undergrads can contribute to (and in fact my of my undergrad researchers have contributed to them).
+In CS and many other fields, research labs put their projects on GitHub to encourage collaboration and contributions from the community. For example, my research group, #link("https://roars.dev/")[Roars], has many open-source projects that undergrads can contribute to (some of my undergrad actually created and maintain these projects, e.g., #link("https://roars.dev/cspicks")[CSPicks]).
 
 By contributing code, fixing bugs, implementing new features, or providing documentation, students can gain practical research experience and interact with experienced developers and researchers in the field. Not only you gain research experience, but you might be able to get a LoR from the project maintainer, and you should write about this experience in your SOP (@chap:sop)
 

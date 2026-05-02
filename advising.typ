@@ -34,10 +34,9 @@
 #block(stroke:green, inset:1em)[
 
     This document, adapted from #link("https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-Advisor.pdf")[these questions], aims to help current and future students in my #link("https://roars.dev")[Roars Lab] 
-    understand my advising style, expectations, and practices. If you're interested in working with me, you can read this guide to see if my lab would be a good _fit_, which is crucial for a successful PhD advising. More general PhD admission advice can be found in the
+    understand my advising style, expectations, and practices. If you're interested in working with me, you can read this guide to see if my lab would be a #highlight[good fit], which is crucial for a successful PhD advising. More general PhD admission advice can be found in the
     #link("https://code.roars.dev/phd-cs-us/")[PhD Admission Demystify] book.
 ]
-
 
 
 #outline()
@@ -51,12 +50,13 @@
   
   Yes, I am tenured. If you are wondering if I will be around for a while, the answer is yes. Northern Virginia is a great place to live and work, and #link("https://realgmucs.github.io/stats")[CS\@GMU] is growing fast and getting better every year.
 
-  More importantly, having tenure allows me to take risks, pick problems I care about, and ignore the _publish-or-perish_ pressure that many non-tenured faculty face. That also means my students have to be independent and take initiative in their work because I won't be pushing them to do things (actually, regardless of tenure, I have always been a hands-off advisor and I expect my students to be independent).
+  More importantly, having tenure allows me to take risks, pick problems I care about, and ignore the _publish-or-perish_ pressure that many non-tenured faculty face. That also means my students have to be independent and take initiative in their work because I won't be pushing them to do things (actually, regardless of tenure, I have always been a hands-off advisor and expect my students to be independent).
 
 == What is the professor's formal training / background / PhD?  [helps contextualize problems/approaches] 
 
   
-  I did my undergraduate and Master's in CS at Penn State. Then I did my PhD in CS at the University of New Mexico-Albuquerque and then a postdoc at the University of Maryland (#link("https://plum-umd.github.io")[PLUM lab]). I started wanting to work on evolutionary computing, and then gradually changed to software engineering, programming languages, and formal methods. Outside of academia I have worked at the Naval Research Lab and Lockheed Martin.
+  I did my undergraduate and Master's in CS at Penn State (in fact, all of my cousins went to Penn State and I have 15+ Nittany Lions in my family). I did my PhD in CS at the University of New Mexico-Albuquerque (with Stephanie Forrest and the late Deepak Kapur as my advisors)
+  and then a postdoc at the University of Maryland (#link("https://plum-umd.github.io")[PLUM lab] with Jeff Foster). I started wanting to work on evolutionary computing, and then gradually changed to software engineering and formal methods (automated reasoning). Outside of academia I have worked at the Naval Research Lab and Lockheed Martin.
 
   Outside of work, I have a family with three young kids. With my wife and I run the Chess club at my kids' elementary school (and the club consistently ranks as the top team in the county!).
 
@@ -342,9 +342,6 @@
   
   I strongly believe that students do not know what they are capable of until they push themselves, and they should not remain in their comfort zone (of course, not the level of craziness of #link("https://davidgoggins.com/")[David Goggins]).
 
-  //I mentioned I coached Chess at my kid's elementary school, about 25 students K--5. Initially most of them just want to have fun, but we encourage---and in many cases push---them to participate in tournaments---real ones at the county level. They were nervous, have doubts, lost games, and many cried! But they kept going, they practice on ChessKids.com with their friends until 10!, go to practice sessions Wegmans during the weekend, and get their parents/relatives to play with them (one connected with his cousin who's a GM and taught him some tricky opening that quickly checkmates). And one day they win their first game, and then their first tournament, and then there's no stopping them. Now when we go to tournaments, we often win first place in team categories and _haul_ individual trophies (and their parents went crazy! I have multiple videos to show that!).
-
-
 
 == Is the professor in an 80/20 with a company? Are students' research projects tied to industry funding? 
     
@@ -450,9 +447,9 @@ Questions that are not categorized into the above sections but can help you unde
   ) <fig:rebuttal>
 
 == How should a student get sufficient background for their project? Do you expect them to take courses, read papers, or something else?
-    I don't encourage my students to take courses or read many papers before they start working on their project---the same thing kids in my Chess club don't learn openings and strategies when they start---just play tons of games and study openings later.
+I don't encourage my students to take courses or read many papers before they start working on their project---the same thing kids in my Chess club don't learn openings and strategies when they start---just play tons of games and study openings and endgames later.
   
-    Instead, dig right into (existing) code, make changes, and break something.  If it helps, reimplement it from scratch. I want you to get get frustrated with existing work and think of ways to improve it. Reinventing the wheel is a great way to learn and understand something deeply---and understanding something deeply is the key to doing research on it.
+    Thus, dig right into (existing) code, make changes, and break something.  If it helps, reimplement it from scratch. I want you to get get frustrated with existing work and think of ways to improve it. Reinventing the wheel is a great way to learn and understand something deeply---and understanding something deeply is the key to doing research on it.
 
     Reading papers won't reveal issues or limitations with the work, and in fact, can demotivate the students (_"too many good work already, how do I come up with something better?"_).  Every work has limitations, and if you understand the code very well (e.g., by reimplement it), you will find all the issues and think of ways to improve the work --- that's how we come up with ideas and advance the state of the art.
 
