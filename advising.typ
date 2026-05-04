@@ -352,7 +352,7 @@
 
 == Will it be acceptable/encouraged to intern at a company during the summer? [Does this change with seniority?]  
     
-  Definitely, and in fact I encourage you to do that. E.g., KimHao works at Facebook (twice) during the summer. However, as PhD students, you should do research internships (e.g., at research labs in the industry) rather than engineering internships. Best if you can do something that is related to your research and can lead to publications and things you can use to support your dissertation. But if you want to do an engineering internship, I will support you as well.
+  Definitely, and in fact I encourage you to do that. E.g., Hai interns at Amazon AWS and KimHao at Facebook (twice) during the summer. Note that, as PhD students, you should do research internships (e.g., at research labs in the industry) rather than engineering internships. Best if you can do something that is related to your research and can lead to publications and things you can use to support your dissertation. But if you want to do an engineering internship, I will support you as well.
 
 
 = Culture, Time Off & Social Life
@@ -445,7 +445,7 @@ Questions that are not categorized into the above sections but can help you unde
     
   #figure(
       image("files/cvpr-acceptance.png", width: 90%),
-      caption: [CVPR'26 paper that got accepted even with largely negative reviews but a very positive rebuttal.]
+      caption: [Even with largely negative reviews, we had a very positive rebuttal that changed the reviewers' mind and got the paper accepted at CVPR'26 (updated: and was given a #highlight[Highlight] Paper Award).]
   ) <fig:rebuttal>
 
 == How should a student get sufficient background for their project? Do you expect them to take courses, read papers, or something else?
@@ -472,3 +472,4 @@ I don't encourage my students to take courses or read many papers before they st
 
 - #link("https://jbhuang0604.github.io/advisor_guide.html")[Jia-Bin Huang's answers]
 - #link("https://ideal.umd.edu/blog/Prospective-Students-FAQ")[IDEAL Lab's answers]
+- #link("https://www.qlou.org/advisor_guide.html")[Qian Lou's answers]
