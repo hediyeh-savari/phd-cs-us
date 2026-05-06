@@ -4,9 +4,9 @@
 
 == Assumption that the reviewers are knowledgeable about the topic or field.
 
-This is perhaps the number one killer for proposal. Usually experienced proposal writers do not have this problem, but for new proposal writers, it is very common to assume that the reviewers are knowledgeable about the topic or field. The truth is they DO NOT. Sure they work in say software engineering or formal methods, but they might be familiar with say "gradual refinement type" or "neural network verification".  
+Usually experienced proposal writers do not have this problem, but for new proposal writers, it is very common to assume that the reviewers are knowledgeable about the topic or field. The truth is they DO NOT. Sure they work in say software engineering or formal methods, but they might be familiar with say "gradual refinement type" or "neural network verification".  
 
-You might ask then why do they get to review your precious proposal? Because your job is not to convince the 5 people in the world who are experts in your topic (well they probably already like your work, or hate it), but to convince the more general reviewers who are not experts in your topic that your work is important and worth funding (now imagine those reviewers in turn need to convince the NSF program officers who are also not experts in your topic, who in turn need to convince the NSF director who is also not an expert in your topic).  
+You might ask then why do they get to review your proposal? Because your job is not to convince the small group of people in the world who are experts in your topic (well they probably already like your work, or hate it), but to convince the more general reviewers who are not experts in your topic that your work is important and worth funding (now imagine those reviewers in turn need to convince the NSF program officers who are also not experts in your topic, who in turn need to convince the NSF director who is even less familiar with your topic).  
 
 
 #highlight[So motivate, use examples, and explain your work in a way that is accessible to a general audience].
