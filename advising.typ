@@ -360,11 +360,11 @@
 == How often do students take time off? Are there lab/department outings/events? 
 
   *Time off*: Academia is flexible and I am flexible with my students (as long as they get their work done).
-  However I expect my students to be in the lab at least 3 days a week (part of school requirement otherwise they will lose their space, which I think is fair).  But if they need to take time off (e.g., health appointments, personal/family events), they can always tell me and take some time off.  
+  However I expect my students to be in the lab at least 3 days a week (part of school requirement otherwise they will lose their space, which I think is fair).  But if they need to take time off (e.g., health appointments, personal/family events), they can always tell me and do so.
     
   *Lab dinner/gathering*: Usually twice a semester (e.g., #link("https://photos.google.com/share/AF1QipNMHIvnSmq5bjer6I6r1Ddb4yiBt3jgq4yrA7q5lSmo4ePHfmiXhXqhk8IhKf47lA?key=SkJhMjZtYmoyT1Q2aW1ERGpRa2VTclZrbzJVLUpR")[group gathering] at the beginning and the end of a semester and during Thanksgiving). Once a year we also hang out with other labs at Round One (bowling and arcade).  
     
-  *Department outings/events*: There are various events throughout the semester in both the SWE group and the department. I highly encourage my students to attend these to have fun and know other people.
+  *Department outings/events*: There are various events throughout the semester in both the SWE group and the department. I highly encourage students to attend these to have fun and know other people.
 
 = Support, Conflicts & Student Well-Being
 
@@ -400,7 +400,7 @@ Questions that are not categorized into the above sections but can help you unde
       caption: [Stefania's LoR snippet.]
   ) <fig:stefania>
             
-  I would go further and say if even at the admission level GPA is not that important then during the PhD it is even less important.  I rarely ask about course work and grades from my PhD students.  In fact, if they are not doing well in research but doing very well in course work, then I would question that as that can be a sign of them struggling in research and using course work as a way of coping or just trying to get by.  In short, _if you're my PhD student and you get 4.0 GPA in your classes, then I might question why you spend so much time on coursework instead of research_. Just do enough to get by course work and focus on research.
+  I would go further and say if even at the admission level GPA is not that important then during the PhD it is _even less important_.  I rarely ask about course work and grades from my PhD students.  In fact, if they are not doing well in research but doing very well in course work, then I would question that as that can be a sign of them struggling in research and using course work as a way of coping or just trying to get by.  In short, _if you're my PhD student and you get 4.0 GPA in your classes, then I might question why you spend so much time on coursework instead of research_. Just do enough to get by course work and focus on research.
 
 
 == What do you think about safeguarding ideas and results so that they don't get scooped?  <sec:idea-safeguard>
@@ -452,11 +452,11 @@ Questions that are not categorized into the above sections but can help you unde
 == How should a student get sufficient background for their project? Do you expect them to take courses, read papers, or something else?
 I actually don't encourage my students to take courses or read many papers before they start working on their project---the same thing kids in my Chess club don't learn openings and strategies when they start---just play lots of games and study openings and endgames later.
   
-    Thus, dig right into (existing) code, make changes, and break something.  If it helps, reimplement it from scratch. I want you to get get frustrated with existing work and think of ways to improve it. Reinventing the wheel is a great way to learn and understand something deeply---and understanding something deeply is the key to doing research on it.
+Thus, dig right into (existing) code, make changes, and break something.  If it helps, reimplement it from scratch. I want you to get get frustrated with existing work and think of ways to improve it. Reinventing the wheel is a great way to learn and understand something deeply---and understanding something deeply is the key to doing research on it.
 
     Reading papers won't reveal issues or limitations with the work, and even might demotivate the students (_"too many good work already, how do I come up with something better?"_).  Every work has limitations, but if you understand the code very well (e.g., by reimplement it), you will find all the issues and think of ways to improve the work --- that's how we come up with ideas and advance the state of the art.
 
-    Not only this applies to engineering or tool building projects, but also to theoretical work---find the flaws in the proofs and theorems (like  Paul Wolfskehl), and come up with ways to fix them or create new ones (better yet, formalize the proof and check it with a proof assistant like Lean).
+Not only this applies to engineering or tool building projects, but also to theoretical work---find the flaws in the proofs and theorems (like  Paul Wolfskehl), and come up with ways to fix them or create new ones (better yet, formalize the proof and check it with a proof assistant like Lean).
 
     Once you understand something well, then you will be motivated to read papers in the area to see what others have done and how you can improve on them. You also will read papers in a different way---not with the "wow" or "impostor syndrome" feeling, but with the ability to understand the work deeply, appreciate the good stuff, and identify and improve the bad stuff---usually hidden in the polished writing.
 
