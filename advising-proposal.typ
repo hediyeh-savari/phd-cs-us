@@ -1,14 +1,27 @@
 
+#set page(numbering: "1", number-align: center)
+#set heading(numbering: "1.")
+#set text(lang: "en", size: 11pt)
+#set list(indent: 1em)
+#set enum(indent: 1em)
+#set document(
+    title: "Advisor Guide: Answers to Common Questions",
+    author: "ThanhVu Nguyen"
+)
+#set par(justify: true)
+
 #rect[These notes are accumulated from my experience and reflections. I usually work on it when I am writing my own proposal or reviewing other proposals, and just want to write down my thoughts as they are still fresh in my mind.]
 
+= General Issues in Proposals
 
 == Assumption that the reviewers are knowledgeable
 
 Usually experienced proposal writers do not have this problem, but new proposal writers sometimes assume that the reviewers are knowledgeable about the topic or field. The truth is reviewers, while work in your general area, might not be familiar with your specific topic.  For example, they work in the area of _Software Engineering_ or _Formal Methods_, but they might be familiar with topics such as _gradual refinement type_ or _neural network verification_.
 
-You might ask then why reviewers who are not familiar with your topic get to review your proposal? Because your job is not to convince the small group of people who work in your topic (well they probably already like your work, or hate it), but to convince the more general reviewers who are not experts in your topic that your work is important and worth funding (now imagine those reviewers in turn need to convince the NSF program officers who are also not experts in your topic, who in turn need to convince the NSF director who is even less familiar with your topic).  
+Thus, your job is not to convince the small group of people who work in your topic (well they probably already like your work, or hate it), but to convince the more general reviewers who are not experts in your topic that your work is important and worth funding (now imagine those reviewers in turn need to convince the NSF program officers who are also not experts in your topic, who in turn need to convince the NSF director who is even less familiar with your topic).  
 
-#highlight[So motivate, use examples to demonstrate, and explain your work in a way that is accessible to a general audience].
+#highlight[So motivate, use examples to demonstrate, and explain your work in a way that is accessible to a general audience. Better yet, have someone who is not an expert in your topic read your proposal and give you feedback on whether they understand the motivation, the problem, and the proposed solution. Usualy they just need to read the introduction to give you this feedback.
+].
 
 
 #rect[In my experience, proposals that are a bit heavy on foundations and theories often have this problem.  This could be a cultural issue in some research communities (e.g., theoretical papers often start with some very technical theorem or definition and the reviewers are expected to understand and able to follow them).]
