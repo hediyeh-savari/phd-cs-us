@@ -19,5 +19,10 @@
   - [CSPicks](https://roars.dev/cspicks): explores faculty, CS programs, and research areas.
   - For discussion and questions, open a new Github issue [https://github.com/dynaroars/phd-cs-us/issues](https://github.com/dynaroars/phd-cs-us/issues)
 
-- **Advising Guide**
-Answers to common questions about advising and lab culture. Basically a good example of what it means to "fit" in a lab (in this case my [ROARS](https://roars.dev) lab).
+- [**Advising Guide**](https://roars.dev/phd-cs-us/advising.pdf)
+
+  Answers to common questions about advising and lab culture. Basically a good example of what it means to _fit_ in a lab. It is highly opinionated and customized for ROARS lab (hence explaining what "fit" means in my lab).
+
+- [**Vietnamese (CS) Profs. in the US**](https://roars.dev/phd-cs-us/viet-cs-profs-us)
+
+  A list of Vietnamese Computer Science professors in the US, with their research areas. Note that this only only list Vietnamese profs that fit the criteria defined in CSRankings (e.g., tenure-line, full-time, can advise CS students etc).
