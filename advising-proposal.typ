@@ -28,3 +28,4 @@ In my experience, this concept seems to be very difficult for theoretical CS peo
 
 
 == Generic Broader Impacts or Education Plan
+  - be specific ! give concrete examples ! numbers, stats, names, etc  . You are more responsible and credible when you are specific.
