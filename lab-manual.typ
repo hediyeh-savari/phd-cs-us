@@ -425,4 +425,4 @@ Chair:
 == Updating
 
 - Let me know your progress and especially your outcomes, e.g., interviews, offers, and where you eventually go to. I'd love to hear these updates from you.
-- This is a common courtesy. Though I probably won't remember or expect you to do this. However, if you do this and then years later reach out for another letter, I might not be able to help you.
+- This is a common courtesy. Though I probably won't remember or expect you to do this. However, if you don't this and then years later reach out for another letter, I might remember and probably don't feel too enthusiastic about writing you another letter.
