@@ -6723,6 +6723,18 @@ NNs vary in architecture depending on how information flows through them and how
 
 // % \part{Advanced Topics\label{part:advanced-topics}}
 
+#pagebreak()
+
+
+#counter(heading).update(0)
+
+#set heading(
+  numbering: "A.1",
+  supplement: "Advanced Topics",
+)
+
+
+
 // % = DNN Verification Benchmarks <chap:benchmarks}
 // % Here we survey the latest benchmarks in DNN verification and how SOTA tools perform on them.  These results are taken from the Verification Neural Network Competitions (VNN-COMP)~\cite{brix2024fifth} and the recent work by Duong et al.~\cite{duong2024harnessing}.
 
@@ -7568,38 +7580,50 @@ NNs vary in architecture depending on how information flows through them and how
 // \part{Background <part:background}
 // \renewcommand{\appendixname}{Background}
 // \appendix
+#pagebreak()
 
-// = Formal Methods <chap:formal-methods}
 
-// Neural network verification (NNV) is a rising topic that applies \emph{formal methods} (FM) to ML systems, particularly neural networks (NN).  This chapter explains what FM are, how verification differs from testing and debugging, and key concepts such as specifications and common FM techniques.
+#counter(heading).update(0)
 
-//  === What Are Formal Methods (FM)?}
+#set heading(
+  numbering: "A.1",
+  supplement: "Background",
+)
 
-// FM are techniques for analyzing systems, e.g., computer software, using \emph{mathematically precise models and reasoning}. In FM the behavior of a program is described and analyzed using logic and mathematics rather than informal reasoning or empirical testing. This allows FM to provide \emph{guarantees} about system properties. For example, an FM might prove that a sorting algorithm always produces a correctly ordered list for any input list
 
-// \paragraph{Compared to Testing} To motivate the need for FM, consider a simple function that computes the absolute value of an integer, where the goal is to show that the function always returns a non-negative number.
+= Formal Methods <chap:formal-methods>
 
-// \begin{lstlisting}[language=Python, caption={Absolute value function}, label={lst:abs_val}]
-// def abs_val(x):
-//     if x >= 0:
-//         return x
-//     else:
-//         return -x
-// \end{lstlisting}
+Neural network verification (NNV) is a rising topic that applies #highlight[formal methods] (FM) to ML systems, particularly neural networks (NN).  This chapter explains FM techniques, how verification differs from testing and debugging, and key concepts such as specifications and common FM techniques.
 
-// We might \emph{test} \code{abs\_val} by running it on a few inputs:
+== What Are Formal Methods (FM)?
 
-// \begin{lstlisting}
-// abs_val(3) = 3
-// abs_val(-5) = 5
-// abs_val(0) = 0
-// ...
-// \end{lstlisting}
+FM are techniques for analyzing systems, e.g., computer software, using _mathematical models and reasoning_. In FM the behavior of a program is described and analyzed using logic and mathematics rather than informal reasoning or empirical testing. This allows FM to provide \emph{guarantees} about system properties. For example, an FM might prove that a sorting algorithm always produces a correctly ordered list for any input list
 
-// The program works correctly on these inputs, returning non-negative numbers. We could run many more tests with different inputs to increase our confidence. However, we can never test all possible integers, and therefore cannot be certain that the function works correctly for all possible inputs.
-// This is precisely where bugs can hide, and why testing---no matter how extensive---alone cannot provide absolute guarantees about program correctness. 
+#paragraph[Compared to Testing][To motivate the need for FM, consider a simple function that computes the absolute value of an integer, where the goal is to show that the function always returns a non-negative number.
+]
 
-// An FM would instead reason directly about the structure of the code and atempts to prove the statement:
+```python
+def abs_val(x):
+    if x >= 0:
+        return x
+    else:
+        return -x
+```
+We might #highlight[test] `abs_val` by running it on a few inputs and checking the outputs:
+
+```python
+assert(abs_val(3) == 3)
+assert(abs_val(-5) == 5)
+assert(abs_val(0) == 0)
+...
+```
+
+The program works correctly on these inputs, returning non-negative values as expected. We could run many more tests with different inputs to increase our confidence. However, we can never test all possible integers, and therefore cannot be certain that the function works correctly for all possible inputs.
+This is precisely where bugs can hide, and why testing---no matter how extensive---alone cannot provide absolute guarantees about program correctness.
+
+#quote(block:true, attribution: [#text(size:0.85em)[*Edsger Dijkstra*]])[_"Testing can only show the presence of bugs, not their absence"_]
+
+In contrast, an FM technique would instead reason directly about the structure of the code and atempts to prove the statement:
 
 // \begin{equation <eq:abs_val_nonneg}
 //  \text{For all integers}~x, \text{abs\_val}(x) \geq 0.
