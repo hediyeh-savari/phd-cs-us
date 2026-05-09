@@ -8654,14 +8654,16 @@ $
   $(0,0)$, $(4,0)$, $(0,4)$.
 
   Evaluating the objective at each vertex:
-
-  #table(
+  #align(center,
+  table(
     columns: 3,
+    stroke:none,
     table.header[$x$][$y$][$z = 1.5x + 2y$],
+    table.hline(),
     $0$, $0$, $0$,
     $4$, $0$, $6$,
     $0$, $4$, $8$,
-  )
+  ))
 
   The maximum value of $z$ is $8$, achieved at vertex $(0, 4)$.
 ] <ex:lp-example1>
@@ -8675,13 +8677,16 @@ $
 
   Evaluating the objective at each vertex:
 
-  #table(
+  #align(center,
+  table(
     columns: 3,
+    stroke:none,
     table.header[$x$][$y$][$z = x + y$],
+    table.hline(),
     $0$, $3$, $3$,
     $4$, $0$, $4$,
     $2/3$, $5/3$, $7/3$,
-  )
+  ))
 
   The minimum value of $z$ is $7/3$, achieved at $(2/3, 5/3)$.
 ] <ex:lp-example2>
@@ -8746,15 +8751,17 @@ $
 
   The feasible vertices are $(0,0)$, $(0,10)$, $(80/3, 0)$, and
   $(280/11, 40/11)$. Evaluating $P$:
-
-  #table(
+  #align(center,
+  table(
     columns: 3,
+    stroke:none,
     table.header[$x$][$y$][$P = 30x + 50y$],
+    table.hline(),
     $0$, $0$, $0$,
     $0$, $10$, $500$,
     $80/3$, $0$, $800$,
     $280/11$, $40/11$, $945.45$,
-  )
+  ))
 
   The maximum is \$945.45 at $(280/11, 40/11)$. Since fractional production
   is not possible, the company should produce 24 chairs and 4 tables per week
@@ -8869,36 +8876,36 @@ problems, but Z3 is effective for demonstration purposes.
   + State the optimal solution.
 ] <problem:milp-hand>
 
-#solution[
-  *1. Constraints and Objective Function:*
+// #solution[
+//   *1. Constraints and Objective Function:*
 
-  Minimize $z = x + y$ subject to $x + 2y >= 3$, $3x + y >= 3$, $x, y >= 0$.
+//   Minimize $z = x + y$ subject to $x + 2y >= 3$, $3x + y >= 3$, $x, y >= 0$.
 
-  *2. Corner Points:*
+//   *2. Corner Points:*
 
-  - $x = 0$ and $x + 2y = 3$: $(0, 1.5)$. Check: $3(0) + 1.5 = 1.5 < 3$, not feasible.
-  - $y = 0$ and $x + 2y = 3$: $(3, 0)$. Check: $3(3) = 9 >= 3$, feasible.
-  - $x = 0$ and $3x + y = 3$: $(0, 3)$. Check: $0 + 2(3) = 6 >= 3$, feasible.
-  - $y = 0$ and $3x + y = 3$: $(1, 0)$. Check: $1 + 0 = 1 < 3$, not feasible.
-  - Intersection of $x + 2y = 3$ and $3x + y = 3$: $x = 3/5$, $y = 6/5$, feasible.
+//   - $x = 0$ and $x + 2y = 3$: $(0, 1.5)$. Check: $3(0) + 1.5 = 1.5 < 3$, not feasible.
+//   - $y = 0$ and $x + 2y = 3$: $(3, 0)$. Check: $3(3) = 9 >= 3$, feasible.
+//   - $x = 0$ and $3x + y = 3$: $(0, 3)$. Check: $0 + 2(3) = 6 >= 3$, feasible.
+//   - $y = 0$ and $3x + y = 3$: $(1, 0)$. Check: $1 + 0 = 1 < 3$, not feasible.
+//   - Intersection of $x + 2y = 3$ and $3x + y = 3$: $x = 3/5$, $y = 6/5$, feasible.
 
-  Feasible corner points: $(3, 0)$, $(0, 3)$, $(3/5, 6/5)$.
+//   Feasible corner points: $(3, 0)$, $(0, 3)$, $(3/5, 6/5)$.
 
-  *3. Objective Values:*
+//   *3. Objective Values:*
 
-  #table(
-    columns: 3,
-    table.header[$x$][$y$][$z = x + y$],
-    $3$, $0$, $3$,
-    $0$, $3$, $3$,
-    $3/5$, $6/5$, $1.8$,
-  )
+//   #table(
+//     columns: 3,
+//     table.header[$x$][$y$][$z = x + y$],
+//     $3$, $0$, $3$,
+//     $0$, $3$, $3$,
+//     $3/5$, $6/5$, $1.8$,
+//   )
 
-  *4. Optimal Solution:*
+//   *4. Optimal Solution:*
 
-  The minimum value of $z$ is $9/5 = 1.8$, achieved at $(3/5, 6/5)$. Both
-  constraints are binding (active) at this point.
-]
+//   The minimum value of $z$ is $9/5 = 1.8$, achieved at $(3/5, 6/5)$. Both
+//   constraints are binding (active) at this point.
+// ]
 
 === Using LP as Feasibility Checking <sec:lp-feasibility>
 
