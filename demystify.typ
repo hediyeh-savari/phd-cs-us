@@ -172,16 +172,16 @@ This book aims to address these concerns.
   caption: [Stress caused by imposter syndrome is real. Don't let it stop you from applying to CS PhD programs in the US!]
 ) <fig:imposter>
 
-#paragraph([Not any harder than other countries])[Applying to a good US university *should not* be any harder than at schools in other countries. It might even be more flexible since CS PhD in the US *do not* require having an MS or a research topic, proposal, or adviser in advance (@sec:non-us-differences compares CS PhD study in the US to other countries). It doesn't even require having a CS background (@sec:non-stem).
+#paragraph[Not any harder than other countries][Applying to a good US university *should not* be any harder than at schools in other countries. It might even be more flexible since CS PhD in the US *do not* require having an MS or a research topic, proposal, or adviser in advance (@sec:non-us-differences compares CS PhD study in the US to other countries). It doesn't even require having a CS background (@sec:non-stem).
 
 If you believe you have a chance in other countries, e.g., Australia, Canada, Japan, Germany, UK, South Korea, and Singapore, then you will surely have a chance in the US as well.]
 
-#commentbox([The most selective US schools, e.g., top 10 in CS (@chap:rankings), are extremely competitive for everyone, regardless of background. Don't be discouraged if you don't get into a "household name" university as there are many excellent CS programs (@sec:selecting-ranking-schools) in the US that are not as well-known internationally but still offer great research opportunities and training. In fact, many top CS researchers and faculty members in the US did not graduate from Ivy League or top 10 schools.
+#commentbox[The most selective US schools, e.g., top 10 in CS (@chap:rankings), are extremely competitive for everyone, regardless of background. Don't be discouraged if you don't get into a "household name" university as there are many excellent CS programs (@sec:selecting-ranking-schools) in the US that are not as well-known internationally but still offer great research opportunities and training. In fact, many top CS researchers and faculty members in the US did not graduate from Ivy League or top 10 schools.
 
 Many students, especially those from smaller countries or schools, feel *imposter syndrome*---worrying they're "not good enough", or get discouraged when competing with others with "stronger" profiles (@sec:profile-not-strong). Remember (@chap:evalapps): adcom looks for potential and evidence you'll thrive in research environment and fit well at their institution---in other words, things that usually have nothing to do with your GPA or GRE scores.
 ])
 
-#paragraph([Funding Is Not An Issue])[In most cases CS PhD students _do not_ need to worry about funding, especially at good R1 universities in the US. 
+#paragraph[Funding Is Not An Issue][In most cases CS PhD students _do not_ need to worry about funding, especially at good R1 universities in the US. 
 If you are admitted, you will almost certainly receive _full funding_ (@chap:funding) to support your study. 
 
 Your funding includes tuition, health insurance, and stipend /*TODO @glossary[stipend]*/ (in STEM field in CS you get paid for your study!).
@@ -214,7 +214,7 @@ Career-wise, a CS PhD prepares you for jobs that require deep technical expertis
 
 CS is a broad academic discipline with many specialized areas of research. Understanding the structure of CS can help you communicate your research interests and goals more effectively, e.g., in your SOP (@chap:sop), and also assist you in finding suitable advisers and research topics (@sec:finding-adviser).
 
-#paragraph([Disciplines])[At the highest level, academic _disciplines_ are broad domains of scholarly study, such as CS, Mathematics, Physics, Biology, Economics, Law, Social Sciences, and the Humanities. Universities typically have entire departments and degree programs centered on these disciplines (e.g., a Dept. of Computer Science or of Economics).]
+#paragraph[Disciplines][At the highest level, academic _disciplines_ are broad domains of scholarly study, such as CS, Mathematics, Physics, Biology, Economics, Law, Social Sciences, and the Humanities. Universities typically have entire departments and degree programs centered on these disciplines (e.g., a Dept. of Computer Science or of Economics).]
 
 #commentbox([_STEM fields_ collectively refer to the disciplines in the domains of:
 - *Science:* Physics, Chemistry, Biology, Geology
@@ -223,7 +223,7 @@ CS is a broad academic discipline with many specialized areas of research. Under
 - *Mathematics:* Pure and Applied Math, Statistics, Operations Research
 ])
 
-#paragraph([Fields])[Within a discipline such as CS, we have _fields_---major branches that often correspond to faculty groups, conference communities, and sometimes even degree tracks. Common fields in CS include:
+#paragraph[Fields][Within a discipline such as CS, we have _fields_---major branches that often correspond to faculty groups, conference communities, and sometimes even degree tracks. Common fields in CS include:
 
 - Artificial Intelligence (AI),
 - Machine Learning (ML),
@@ -244,12 +244,12 @@ CS is a broad academic discipline with many specialized areas of research. Under
 Most faculty have a _home_ field with which they are primarily associated, but may also publish in related fields. For example, SE researchers often work in PL and Formal Methods; Security researchers may also work in Systems and Theory.
 ]
 
-#paragraph([Areas])[Within a field, we have _areas_---narrower subfields where people specialize. For example, PL includes Type Systems, Formal Verification, Program Synthesis; SE includes Testing, Program Repair, Empirical SE, and AI4SE (a new and fast-growing area); and
+#paragraph[Areas][Within a field, we have _areas_---narrower subfields where people specialize. For example, PL includes Type Systems, Formal Verification, Program Synthesis; SE includes Testing, Program Repair, Empirical SE, and AI4SE (a new and fast-growing area); and
 ML includes Supervised/Unsupervised Learning, Reinforcement Learning, and ML Theory, and
 AI traditionally includes Planning, Reasoning, and Robotics (though many of these are now distinct fields).
 Some areas are growing so large that they are becoming fields in their own right. ML, for instance, originated within AI but is now widely regarded as a standalone field.]
 
-#paragraph([Topics and Projects])[Finally, we have _research topics_, which refer to concrete problems or techniques within an area. For instance,
+#paragraph[Topics and Projects][Finally, we have _research topics_, which refer to concrete problems or techniques within an area. For instance,
  Model Checking, Theorem Proving in Formal Verification, and Mutation Testing, Test Prioritization, and Symbolic Execution in Software Testing.
 
 
@@ -295,7 +295,7 @@ A main concern for a non-CS or non-STEM student is whether you have sufficient t
 
 For example, if you have taken a class on algorithms, even an online course from Coursera, you can talk about it in your SOP. If you have done a project that requires knowledge of operating systems or have a professional certification (e.g., A+) through work, you can talk about it. If you have done research that requires knowledge of discrete math, you can talk about it. You can also ask your LoR writers to discuss your technical background.
 
-#paragraph([Core CS topics])[Common CS knowledge that you should know includes:
+#paragraph[Core CS topics][Common CS knowledge that you should know includes:
 
 - *Programming foundation:* programming concepts in modern languages such as C++ or Java.
 - *Discrete math:* logic, set theory, proof techniques.
@@ -831,9 +831,9 @@ Having published papers, especially at top venues, is a sign that you have been 
 
 Publications are #highlight[never required] for PhD application. However, given the competitiveness of CS admission, they can significantly strengthen your application and #highlight[are becoming the norm] for top places. Applicants admitted to top schools, especially in popular fields such as ML and NLP, often have multiple first-authored papers at top places. @fig:wu shows examples of applicants to Stanford CS PhD.
 
-#paragraph([Not the First Author])[Being the first author typically means you own the work and therefore know the research well. However, it's *perfectly OK to be second or third or even last*. Adcom members know it is difficult to publish a good paper, and so being a co-author is still a good sign about your research experience. In any case, especially when you're not the first author, you should explain the work and your contribution. Better yet, have your LoR writers (@sec:help-your-LOR-writers) talk about your work and contributions in their letters.]
+#paragraph[Not the First Author][Being the first author typically means you own the work and therefore know the research well. However, it's *perfectly OK to be second or third or even last*. Adcom members know it is difficult to publish a good paper, and so being a co-author is still a good sign about your research experience. In any case, especially when you're not the first author, you should explain the work and your contribution. Better yet, have your LoR writers (@sec:help-your-LOR-writers) talk about your work and contributions in their letters.]
 
-#paragraph([Publications Not Relevant To CS or Your Research Interest])[
+#paragraph[Publications Not Relevant To CS or Your Research Interest][
 If you have published papers in other fields, e.g., physics, math, or even CS but not in your research interest, you should still talk about them in your SOP (@chap:sop) and upload them as writing samples (@sec:writing-sample). Also, have your LoR writers (@sec:help-your-LOR-writers) talk about them in their letters.
 While not as strong as CS publications, they still show your research ability and experience, which is what adcom members care about.]
 
@@ -1154,10 +1154,10 @@ You should treat the interview as an informal chat. Prepare an _"elevator pitch"
 
 ==== After the Interview
 
-#paragraph([Follow-Up Emails])[If you had an interview and have not heard back, you can email to ask about the status of your application. See @sec:accept-postpone-decline for how to check status and follow-up emails.]
+#paragraph[Follow-Up Emails][If you had an interview and have not heard back, you can email to ask about the status of your application. See @sec:accept-postpone-decline for how to check status and follow-up emails.]
 
 
-#paragraph([Updating your profile])[If you have important  achievements after you submitted your application, e.g., new top publications or big fellowship awards, you can mention to your interviewer. If you did not have interviews, you can try to ask the CS dept to update your application (though no guarantee that they will consider them). However, in general, you should not send emails to update your profile unless you really have important updates.]
+#paragraph[Updating your profile][If you have important  achievements after you submitted your application, e.g., new top publications or big fellowship awards, you can mention to your interviewer. If you did not have interviews, you can try to ask the CS dept to update your application (though no guarantee that they will consider them). However, in general, you should not send emails to update your profile unless you really have important updates.]
 
 === Not Getting Interviews <sec:no-interview>
 While in general it is good to get an interview, not getting one *does not* mean you're out. Many programs do not have the tradition of interviewing applicants. For example, at GMU, most admitted students with TA (@sec:ta) do not go through interviews.
@@ -1188,17 +1188,17 @@ Some schools send out admission letters in batches, some do _rolling admission_/
 
 Not much you can do other than to be patient and wait. Do not send emails asking about interviews or status; unless you have interviewed specifically with someone then you can ask that person for status updates and other questions (@sec:accept-postpone-decline).  You can, though not recommended, send an email to the CS dept to ask about your status, but likely they will not reply (in addition to being busy, they do not want to give you false hope or inaccurate information), or they can send a generic reply such as "we are still reviewing applications" or "you will hear in two weeks". @fig:waitlist shows an email from the University of Rochester about their admission process.
 
-#paragraph([Acceptance Letters])[ Universities prioritize sending out acceptance letters first. This allows the admitted students to make decisions and plan for their studies. Read carefully on the acceptance letter for terms and conditions, e.g., funding and other benefits (@sec:offer-letters).
+#paragraph[Acceptance Letters][ Universities prioritize sending out acceptance letters first. This allows the admitted students to make decisions and plan for their studies. Read carefully on the acceptance letter for terms and conditions, e.g., funding and other benefits (@sec:offer-letters).
 
 Some universities have rolling-admission. Others have a specific date when they send out the first round of acceptance letters.]
 
-#paragraph([Response Deadlines])[ Accepted students are usually given a deadline to make decisions on their offers, often around _April 15_ in the US. After this date, CS programs can gauge how many slots remain unfilled.]
+#paragraph[Response Deadlines][ Accepted students are usually given a deadline to make decisions on their offers, often around _April 15_ in the US. After this date, CS programs can gauge how many slots remain unfilled.]
 
-#paragraph([Waitlist])[Most CS programs have a limited number of slots for PhD students, and thus put many good students on a waitlist.  If accepted students decline the offer, then offers are sent to students on the waitlist. So if you see people getting accepted, that does not mean you are out yet. 
+#paragraph[Waitlist][Most CS programs have a limited number of slots for PhD students, and thus put many good students on a waitlist.  If accepted students decline the offer, then offers are sent to students on the waitlist. So if you see people getting accepted, that does not mean you are out yet. 
 
 Also, do not feel embarrassed or discouraged if you are on the waitlist. Many students are on the waitlist, and there is a good chance that you will get an offer later.]
 
-#paragraph([Rejection Letters])[Schools typically start sending out rejection letters to remaining applicants _after they have finalized their admissions decisions_. Thus, rejection letters are often sent out late (e.g., after April 15th or even much later). 
+#paragraph[Rejection Letters][Schools typically start sending out rejection letters to remaining applicants _after they have finalized their admissions decisions_. Thus, rejection letters are often sent out late (e.g., after April 15th or even much later). 
 
 Not much you can do here. You can try to contact the school to ask about your status, but they might not reply, they might say they are still reviewing applications, or give you inaccurate information (e.g., you will hear in two weeks). In short, you just have to be patient and wait, and also beware that some schools do not send out rejection letters at all.]
 
@@ -1239,7 +1239,7 @@ But you likely won't hear back from schools that do not want to admit you (@sec:
 
 If you receive offers, congratulations!  Now you're at a different game because the schools that have admitted you will try to get you to accept them!  Look carefully at the offer letters (@sec:offer-letters) for the terms and conditions of the offers.  Other important factors to consider include the reputation of schools (@chap:choosing-school) and professors (@chap:choosing-adviser), and funding availability (@chap:funding). You will have to make your decision (@sec:accept-postpone-decline) by a certain deadline, e.g., April 15.
 
-#paragraph([Open House])[Most schools have _Open House_ or _Visit Day_ events, which are a great resource to learn about the school, department, faculty, research, living, etc.
+#paragraph[Open House][Most schools have _Open House_ or _Visit Day_ events, which are a great resource to learn about the school, department, faculty, research, living, etc.
 
 Even if you can't come in person, you should attend virtually and meet with individual faculty. During the event, you get a chance to learn more about the program, and talk to individual faculty and current students.  Take notes of faculty who make you excited, and count those taking in new students (if they meet you, likely they are considering new students!).  Talk to students about their advisers, the dept, the area, and the funding situation.  Ask about anything you want to determine that they deserve _you_.
 
@@ -1248,7 +1248,7 @@ Even if you can't come in person, you should attend virtually and meet with indi
 ]
 ]
 
-#paragraph([What's next?])[Make a decision, accept, reject, or defer the offers (@sec:accept-postpone-decline). Ask to meet with potential advisers (e.g., through Open House or separately) and even their students. Ask about computer equipment and software, office space, and other resources; in many cases these will be provided for free by your adviser or department (@sec:buying-equipment).
+#paragraph[What's next?][Make a decision, accept, reject, or defer the offers (@sec:accept-postpone-decline). Ask to meet with potential advisers (e.g., through Open House or separately) and even their students. Ask about computer equipment and software, office space, and other resources; in many cases these will be provided for free by your adviser or department (@sec:buying-equipment).
 
 Also, do not forget to update and thank LoR writers and others who have supported you through this process (@sec:thank-writers).
 ]
@@ -2134,7 +2134,7 @@ Finally, profs. are busy (@sec:busy), so don't take it personally if you don't g
 
 - *Self-focus.* Focusing too much about you and your achievements but not why you are interested in the prof.'s work (@sec:contact). Mention why you're interested in their work and how your background can contribute.
 
-- *Too long.* Keep it to about 3–4 short paragraphs. Less is more and too-long emails are often not read and discarded. Don't attach course transcripts or test scores in the first email. If they are interested, they will ask for them. Attaching your CV is OK. Sample papers (@sec:writing-sample) and links to your Arxiv papers or GitHub projects are also OK if they are relevant.
+- *Too long.* Keep it to about 3--4 short paragraphs. Less is more and too-long emails are often not read and discarded. Don't attach course transcripts or test scores in the first email. If they are interested, they will ask for them. Attaching your CV is OK. Sample papers (@sec:writing-sample) and links to your Arxiv papers or GitHub projects are also OK if they are relevant.
 
 - *Flowery greetings and language.* Don't use "Dear esteemed professor". Do not call the prof. by their first name in the first email (some don't care but you don't want to take the risk—you don't know them that well yet). Do not use Mr., Mrs., etc. To be safe, use Prof. Lastname or Dr. Lastname (@sec:address).
 
@@ -2734,11 +2734,11 @@ Many CS areas do not have journals but some do. For example, TSE (Transactions o
   Note that some CS areas, such as PL and SE, are beginning to publish conference papers as journals, which among other reasons allow for longer papers and to be consistent with other disciplines such as math and physics. For example, papers in well-known PL conferences including POPL and OOPSLA are now published as special issues in the PACMPL (Proceedings of the ACM on Programming Languages) journal. However, despite this publishing technicality, these are still considered conferences and has the benefits of conferences such as fast review and publication process, and in-person presentation at the conference. Most researchers would treat them exactly as conference papers.
 ]
 
-#paragraph([Best Paper Awards])[Conferences often give out best or distinguished paper awards to a small set of accepted papers (e.g., 10% of accepted papers at ICSE) to recognize that they have high-quality and potential impact. AI/ML have "oral" and "spotlight" papers that are selected from accepted papers based on their quality and potential impact, and thus are equivalent to traditional best papers.
+#paragraph[Best Paper Awards][Conferences often give out best or distinguished paper awards to a small set of accepted papers (e.g., 10% of accepted papers at ICSE) to recognize that they have high-quality and potential impact. AI/ML have "oral" and "spotlight" papers that are selected from accepted papers based on their quality and potential impact, and thus are equivalent to traditional best papers.
 
 These best paper awards are determined by the program committee and often presented to the authors at the conference. Note that these are not the same class as the "Test-of-time" paper awards, which are extremely prestigious and discussed in @sec:research-awards.]
 
-#paragraph([Citations])[Citation counts, e.g., through Google Scholar, are often used to measure the impact of a researcher's work---how many people have cited their work. Google Scholar also has other metrics such as h-index and i10-index. The h-index is the number of papers with at least h citations, while the i10-index is the number of papers with at least 10 citations.
+#paragraph[Citations][Citation counts, e.g., through Google Scholar, are often used to measure the impact of a researcher's work---how many people have cited their work. Google Scholar also has other metrics such as h-index and i10-index. The h-index is the number of papers with at least h citations, while the i10-index is the number of papers with at least 10 citations.
 
 However, citation-based metrics can be inaccurate and misleading because this strongly depends on the areas. For example, AI/ML papers often have very high citation counts---even when they are _not_ published and just appear on arXiv. There are also numerous stories of "gaming" the system, e.g., paying others for citations. Thus take citations with a grain of salt when it comes to selecting advisors. For example, new faculty often have low citation counts, but this does not mean they are not good researchers or not productive.]
 
@@ -2903,7 +2903,7 @@ Below is a very basic example of a LaTeX document with 11pt font and 1-inch marg
 )
 ```
 
-#paragraph([A quick word on Typst])[#link("https://typst.app/")[Typst] is a new typesetting system that is gaining popularity for its ease of use and modern features, such as incremental compilation and live preview. It is not as widely used as LaTeX yet, but it is worth considering if you want to try something new (though you will likely need to learn LaTeX anyway as most publishing venues do not support Typst). For example, #link("https://code.roars.dev/phd-cs-us")[this book] is originally written in  #link("https://code.roars.dev/phd-cs-us/blob/main/demystify-old.tex")[LaTeX] and then converted to #link("https://code.roars.dev/phd-cs-us/blob/main/demystify.typ")[Typst].]
+#paragraph[A quick word on Typst][#link("https://typst.app/")[Typst] is a new typesetting system that is gaining popularity for its ease of use and modern features, such as incremental compilation and live preview. It is not as widely used as LaTeX yet, but it is worth considering if you want to try something new (though you will likely need to learn LaTeX anyway as most publishing venues do not support Typst). For example, #link("https://code.roars.dev/phd-cs-us")[this book] is originally written in  #link("https://code.roars.dev/phd-cs-us/blob/main/demystify-old.tex")[LaTeX] and then converted to #link("https://code.roars.dev/phd-cs-us/blob/main/demystify.typ")[Typst].]
 
 #pagebreak()
 = Academic and Cultural Differences <chap:cultural>
@@ -2979,7 +2979,7 @@ For example, I prefer that my students and colleagues call me Vu. Some students 
 
 Note that in some universities the formal title Dr. Lastname is preferred over Prof. Lastname. Moreover, be aware that not all faculty members hold a PhD[At many places, including Mason, the requirement for adjunct faculty (@sec:faculty-types) is a PhD or an MS with significant industry experience.], in which case using Prof. Lastname is a suitable alternative. You just need to observe and follow the conventions at your particular institution. One way to determine how to address a prof. is to observe how they sign their emails or how they introduce themselves in class. For example, I introduce myself as "Vu" in class but I do not sign my emails. You will get used to it after a while!. 
 
-#paragraph([Referring to Professors You Know])[When referring or talking about a prof (e.g., your mentor) that you know, you can just informally use their names if they are OK with it as mentioned above (or Dr./Prof., if you want to be formal). You can also include their institution if it makes it more precise.  For example, I can say:  _"I did my postdoc with Jeff Foster at Univ. of Maryland"_.
+#paragraph[Referring to Professors You Know][When referring or talking about a prof (e.g., your mentor) that you know, you can just informally use their names if they are OK with it as mentioned above (or Dr./Prof., if you want to be formal). You can also include their institution if it makes it more precise.  For example, I can say:  _"I did my postdoc with Jeff Foster at Univ. of Maryland"_.
 
 Do not include ranking (@sec:faculty-types), e.g., Assistant, Associate, Scientist, ..., when referring to someone. I see many international students include a lengthy title of people they know, e.g., _I am advised by Asst. Prof. X, and I also collaborate with Distinguished Scientist Y_.
 
@@ -2989,23 +2989,22 @@ This is _not necessary_ and makes it look like you're trying to show off your co
   
 Here are some other common surprises for international students in the US. Note that I skip topics involving politics, religion, tax, and racism as these happen in many countries and are not unique to the US.
 
-#paragraph([Small talks])[
-People often engage in small talks, e.g., about the weather, sports, or weekend plans. This is a way to start a conversation and how social interaction starts in the US.
+#paragraph[Small talks][People often engage in small talks, e.g., about the weather, sports, or weekend plans. This is a way to start a conversation and how social interaction starts in the US.
 
 However, avoid asking personal questions, e.g., about salary, age, relationship status, or health, as these are considered private. Talking about kids' activities or schools are OK. Also, do not talk about politics or religion. In fact, we often do not talk about these subjects with our family and friends to avoid conflicts.
 
 Sometimes foreigners are surprised by how Americans do not talk about their personal lives, e.g., sharing details about their families, health, or relationships, and that their conversations are often not very "deep" or "mind-provoking". This is just a cultural norm about privacy and personal space.
 ]
 
-#paragraph([Healthcare System])[You (and your spouse) will need health insurance! Otherwise you will be charged a lot for healthcare services when you need them. However, as mentioned in @chap:funding, your TA/RA (and fellowships) will cover health insurance. Your spouse/children also get health insurance or significant discounts under your plan.
+#paragraph[Healthcare System][You (and your spouse) will need health insurance! Otherwise you will be charged a lot for healthcare services when you need them. However, as mentioned in @chap:funding, your TA/RA (and fellowships) will cover health insurance. Your spouse/children also get health insurance or significant discounts under your plan.
 
 Note that even with insurance, heathcare services might still be expensive. So you should know what your insurance covers and be prepared for unexpected costs. Moreover, healthcare system has many confusing jargons such as HMO, PPO, deductibles, co-pays, and coinsurance (try take a look at the Explanation of Benefits or EoB statement you received from your insurance company). It's arguably the most complicated system in the US and even Americans often do not understand it (and politicians often exploit this to their advantage). Do not hesitate to ask your HR or the insurance company for help.]
 
-#paragraph([Tipping Culture])[Unlike many other countries, tipping is expected for various services, especially in restaurant. So adding an extra 15--20% to your bills is common, especially in restaurants.]
+#paragraph[Tipping Culture][Unlike many other countries, tipping is expected for various services, especially in restaurant. So adding an extra 15--20% to your bills is common, especially in restaurants.]
 
 You should also tip other services, e.g., Uber, taxi, haircuts, and hotel services. The minimum wage for tipped employees is lower than the standard minimum wage, so tips are an important part of their income.
 
-#paragraph([Car Dependency])[Most places in the US are highly car-dependent. If you do not have a car, you will need to rely on friends, Uber, or public transportation, which can be inconvenient and time-consuming. Many international students end up getting a driver's license, which is highly convenient and replaces many documents (e.g., ID, passport), and eventually buying a car.]
+#paragraph[Car Dependency][Most places in the US are highly car-dependent. If you do not have a car, you will need to rely on friends, Uber, or public transportation, which can be inconvenient and time-consuming. Many international students end up getting a driver's license, which is highly convenient and replaces many documents (e.g., ID, passport), and eventually buying a car.]
 
 
 //   %\paragraphP{Conversation} Americans are generally friendly and open.  However, there are certain things that we rarely talk about, e.g., salary, relationship status, or health. 
@@ -3083,7 +3082,8 @@ More details and justfication for this metric can be found in the #link("https:/
 
 
 
-#paragraph([Selecting Faculty])[Another useful feature of CSRankings is that you can filter faculty by research areas to find who are active in your area of interest. For example, if you are interested in ML, you can select ML and see departments and faculty members active in ML. You can also see the number of papers published by each faculty in that area,  and their publication counts in recent years (e.g., 2020--2024). This is useful for finding faculty publish frequently in your area of interest and gauge their productivity (@chap:research-achievements).]
+
+#paragraph[Selecting Faculty][Another useful feature of CSRankings is that you can filter faculty by research areas to find who are active in your area of interest. For example, if you are interested in ML, you can select ML and see departments and faculty members active in ML. You can also see the number of papers published by each faculty in that area,  and their publication counts in recent years (e.g., 2020--2024). This is useful for finding faculty publish frequently in your area of interest and gauge their productivity (@chap:research-achievements).]
 
 // === Top CS Programs in the US
 // @tab:ranking lists the top 50 CS programs from CSRankings. For the most up-to-date rankings, visit the website directly.
@@ -3158,7 +3158,7 @@ More details and justfication for this metric can be found in the #link("https:/
 // \sectioninfo{This book aims to provide in depth information about the CS PhD admission process in the US. It is particularly useful for international students from smaller countries and less well-known universities as they often lack access to such information.}
 
 
-#paragraph([History])[This book was conceived during a lunch with a faculty member at GMU. We talked about why GMU was not able to attract good Vietnamese and other international students, despite having a much stronger CS program than many schools these students target (part of the reason is discussed in @sec:selecting-ranking-schools). We wished there were a way for international students to better understand PhD programs in the US.
+#paragraph[History][This book was conceived during a lunch with a faculty member at GMU. We talked about why GMU was not able to attract good Vietnamese and other international students, despite having a much stronger CS program than many schools these students target (part of the reason is discussed in @sec:selecting-ranking-schools). We wished there were a way for international students to better understand PhD programs in the US.
 
 I am also a member of the VietPhD group on Facebook and often browse forums like #link("https://www.reddit.com/r/gradadmissions/")[Reddit/gradadmissions] and #link("https://forum.thegradcafe.com/")[GradCafe]. I saw many questions from students about PhD programs, but most participants are students (often outside CS or outside the US), and answers are frequently inaccurate and confusing. So I thought a handbook focused on US CS PhD admissions from an insider perspective would be useful.
 
@@ -3233,7 +3233,7 @@ This book will _always be free_ and _open source_ at
 
 If you spot an error, have a different experience, or want to suggest something, open an issue on the #link(mybookgithub)[GitHub repo]. Community input helps keep the book current and useful.
 
-#paragraph([Supporting This Book])[ 
+#paragraph[Supporting This Book][ 
 You can support this book in many ways. The best way is to #emph[share it with others] who might find it useful, e.g., your friends, colleagues, or students.
 You can also _link to it_ from your website or social media accounts. I was very happy to hear that it has helped many students, especially those from smaller countries---which is the main reason I wrote it.
 

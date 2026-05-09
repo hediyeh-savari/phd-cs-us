@@ -869,6 +869,7 @@ A ReLU activated neuron is said to be _active_ if its input is greater than zero
 ) <fig:relu>
 
 
+#paragraph([test])[hello]
 
 // \paragraph{Logical encoding} ReLU can be encoded using the following logical formula:
 // \[y = \relu{x} \iff (x \leq 0 \land y = 0) \lor (x > 0 \land y = x).\]
