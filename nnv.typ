@@ -1,5 +1,4 @@
 #import "@preview/simple-plot:0.3.0": plot
-
 #import "@preview/theorion:0.6.0": *
 #import cosmos.fancy: *
 #show: show-theorion
@@ -39,7 +38,8 @@
 )
 
 #let code(body) = raw(body, lang: none)
-
+#let sat = smallcaps[sat]
+#let unsat = smallcaps[unsat]
 
 // #set heading(numbering: (..nums) => {
 //   let vals = nums.pos()
@@ -91,7 +91,6 @@
   ]
   #text(size: 0.85em)[#msg]
 ]
-
 
 #let commentbox(who: none, msg) = cb(who: who, fill: gray.lighten(80%), [💬], msg)
 #let keybox(msg) = cb(fill: yellow.lighten(90%), [🔑],msg)
@@ -2537,7 +2536,7 @@ NNs vary in architecture depending on how information flows through them and how
 // % More advanced abstractions like zonotopes can capture linear relationships between variables, while polytopes can represent arbitrary linear constraints.
 
 
-// = Abstractions <chap:abstractions}
+== Abstractions <chap:abstractions>
 
 
 // As mentioned in~\autoref{sec:relu-encoding} the computation of upper and lower bounds of the neuron values help determine neuron stability and therefore can help scale NNV. Modern NNV tools explore different \emph{abstraction} techniques to compute these bounds more precisely while balancing computational efficiency.
@@ -7611,7 +7610,7 @@ def abs_val(x):
     else:
         return -x
 ```
-We might #highlight[test] `abs_val` by running it on a few inputs and checking the outputs:
+We might _test_ `abs_val` by running it on a few inputs and checking the outputs:
 
 ```python
 assert(abs_val(3) == 3)
@@ -7631,11 +7630,11 @@ $ "For all integers" x, "abs_val"(x) >= 0. $ <eq:abs_val_nonneg>
 
 If FM can prove this statement, we have a mathematical guarantee that the function behaves correctly for _all integers_---not just the ones we used in testing.
 
-Thus, the #highlight[fundamental difference] between FM and testing is that FM provides mathematical guarantees about program behavior---without even running the program---, while testing can only provide empirical evidence based on a finite set of inputs that we run the program on.
+Thus, the _fundamental difference_ between FM and testing is that FM provides mathematical guarantees about program behavior---without even running the program---, while testing can only provide empirical evidence based on a finite set of inputs that we run the program on.
 
 == Specifications
 
-At the heart of FM is a _specification_---a precise description of what it
+At the heart of FM is a #highlight[specification]---a precise description of what it
 means for a system to be correct (or safe, or robust, etc.). A specification
 defines the properties we want to verify about a system.
 
@@ -7903,15 +7902,15 @@ We will use the `clip` function (@example:clip) as a running example to demonstr
 each technique reasons about the same model and specification.
 
 
-*Model Checking.*
+#paragraph[Model Checking][
 Model checking (MC) works by _exploring all possible states_ of a system and
-checking whether _bad states_ that violate the specification are reachable.
+checking whether _bad states_ that violate the specification are reachable. At a high level, MC constructs a state machine to model the system's behavior and systematically checks whether any execution path leads to a violation of the specification.
 
 MC works well for systems with a finite number of states---such as hardware
 designs and communication protocols---because these systems have finite state
 spaces that can be exhaustively explored. However, MC struggles with systems
 involving continuous variables or infinite state spaces, e.g., a program with
-loops.
+loops.]
 
 #example[
   For #code("clip"), MC would build a state machine representing all possible
@@ -7920,21 +7919,21 @@ loops.
 
   A standard (naïve) MC would struggle here because the number of states is
   huge (the input $x$ is a real number). So MC would need to discretize or
-  bound the input space---e.g., by considering only integer values of $x$ from
-  $-1000$ to $1000$---to make the analysis feasible.
+  _bound_ the input space---e.g., by considering only integer values of $x$ from
+  $-1000$ to $1000$---to make the reasoning more feasible.
 ]
 
 
-*Interactive Theorem Proving.*
+#paragraph[Interactive Theorem Proving][
 An interactive theorem prover (ITP) or _proof assistant_ attempts to reason
 about the program using _logical inference rules_ to construct a formal proof
 that the specification holds for all possible inputs. The reason it is called
-"interactive" is that the user must guide the proof process by providing lemmas,
+"interactive" is that the user is often involved to guide the proof process by providing lemmas,
 definitions, and strategies to help the prover construct the proof.
 
 ITPs are powerful and can prove deep, rich properties about programs. However,
 they may require significant human guidance to construct the proofs and do not
-scale well to large or complex systems.
+scale well to large or complex systems.]
 
 #example[
   For #code("clip"), a theorem prover might reason as follows:
@@ -7948,8 +7947,13 @@ scale well to large or complex systems.
 ]
 
 
-*Satisfiability Checking (SAT) and Satisfiability Modulo Theories (SMT) Solving.*
-SAT and SMT solving are automated techniques---also referred to as
+#paragraph[Satisfiability Checking (SAT) and Satisfiability Modulo Theories (SMT) Solving][
+SAT and SMT solving are _automated reasoning_ techniques#footnote[
+  _Automated reasoning_ (AR) is the subfield of CS focused on algorithms that
+  draw logical conclusions automatically, of which SAT/SMT solvers are a key
+  example. FM is one major application of AR: it uses these reasoning engines
+  to verify real systems against formal specifications.
+]---also referred to as
 _automatic theorem proving_---that reduce the verification problem to a question
 of _logical satisfiability_. These solvers take as input a set of logical
 formulae representing the program and the _negation_ of the specification, and
@@ -7961,9 +7965,9 @@ violation.
 
 SAT/SMT solving is crucial to modern formal methods and software verification
 tools due to its automation and ability to handle complex logical constraints.
-However, pure SAT/SMT solving struggles with scalability for neural networks,
-leading to the development of hybrid techniques that combine SAT/SMT solving
-with other methods such as abstract interpretation.
+However, pure SAT/SMT solving might struggle with scalability (e.g., to analyze large neural networks).
+This leads to the development of hybrid techniques that combine SAT/SMT solving
+with other methods such as abstract interpretation (described below).]
 
 #example[
   For #code("clip"), a SAT/SMT solver would encode the program as logical
@@ -7985,7 +7989,7 @@ with other methods such as abstract interpretation.
 ]
 
 
-*Abstract Interpretation.*
+#paragraph[Abstract Interpretation][
 Abstract interpretation (AbsInt) analyzes a program by automatically computing
 _over-approximations_ of its behavior. Instead of tracking exact values, AbsInt
 tracks abstract properties such as ranges or signs of variables---e.g., instead
@@ -7996,6 +8000,7 @@ Because AbsInt is fully automated and uses over-approximations, it is efficient
 and scales well to large programs. However, over-approximation comes at the cost
 of precision: it can cause AbsInt to produce false positives by reporting
 potential violations that are not real bugs.
+]
 
 #example[
   For #code("clip"), an AbsInt tool might reason:
@@ -8009,7 +8014,7 @@ potential violations that are not real bugs.
 ]
 
 For neural network verification, AbsInt is often used to compute bounds on the
-outputs of neural network layers given bounds on the inputs. AbsInt is necessary
+outputs of neural network layers given bounds on the inputs (@chap:abstractions). AbsInt is necessary
 because neural networks are very large and have complex nonlinear functions such
 as ReLU that are difficult to analyze exactly.
 
@@ -8060,286 +8065,897 @@ often computationally infeasible for complex systems. Between the two, soundness
 is typically prioritized in safety-critical settings because it is better to be
 unsure about a system (and say "unknown", or even claim that it is unsafe) than
 to incorrectly claim that it is safe when it is not. Thus, most practical FM
-algorithms are designed to be *sound but incomplete*.
+algorithms are designed to be _sound but incomplete_.
+
+#pagebreak()
+= Logics <chap:logics>
+
+The topic of neural network verification (NNV) relies heavily on two fundamental
+areas: #highlight[logic] (to formalize and reason about properties as logical formulae)
+and #highlight[optimization] (to formulate and reason about numerical constraints). This
+chapter provides the necessary background on both topics in detail, starting
+with propositional logic and satisfiability, and then moving to linear and
+mixed-integer programming.
+
+
+== Propositional Logic and Satisfiability <sec:propositional-logic>
+
+Propositional, or Boolean, logic is the branch of logic that studies formulae
+built from Boolean variables, where each variable can take only the values
+`True` or `False`. These formulae are combined using logical connectives such
+as `and`, `or`, and `not`, and their evaluation always reduces to a single
+truth value.
+
+=== Syntax <sec:syntax>
+
+A _propositional variable_ is a symbol (e.g., $x, y, z$). Logical formulae
+are built _inductively_ from these variables using logical connectives as
+follows:
+
+- *Variables:* Any propositional variable $p$ is a formula.
+- *Constants:* $top$ and $bot$ are formulae.
+- *Negation:* If $phi$ is a formula, then so is $not phi$.
+- *Binary connectives:* If $phi, psi$ are formulae, then so are
+  $(phi and psi)$, $(phi or psi)$, and $(phi => psi)$.
+
+#example[
+  $
+    (x or y) and (not x or z)
+  $
+  is a formula involving three variables $x, y, z$.
+]
+
+*Special connectives.* In addition to the standard connectives, we define some
+special connectives that are often useful:
+
+- _Implication_: $phi -> psi equiv not phi or psi$
+- _Biconditional_ (or _equivalence_): $phi <-> psi equiv (phi -> psi) and (psi -> phi)$
+
+#commentbox[
+Notice here that we purely define the _syntax_ of propositional logic, which
+allows us to construct valid formulae. We will discuss the _semantics_ or
+meanings of formulae in @sec:propositional-semantics.
+]
+
+*Conjunctive Normal Form (CNF).* A formula is in CNF if it is a _conjunction_
+of _clauses_, where each clause is a _disjunction_ of _literals_, where a
+literal is either a variable $p$ or its negation $not p$.
+
+#example[
+  The formula
+  $
+    (x or y) and (not x or z)
+  $
+  is in CNF. Each clause $(x or y)$, $(not x or z)$ is a disjunction of
+  literals.
+]
+
+*Transforming to CNF.* Any formula can be transformed into CNF. The process
+generally involves the following steps:
+
++ Eliminate biconditionals and implications.
++ Move negations inward using De Morgan's laws.
++ Distribute disjunctions over conjunctions.
+
+#problem[
+  Transform the following formula into CNF:
+  $
+    (x -> y) and (y -> z)
+  $
+]
+
+=== Semantics <sec:propositional-semantics>
+
+A logical formula in propositional logic has a truth value, which can be either
+`True` or `False`. For example, the formula $x or not x$ is always `True`,
+while the formula $x and y$ is `True` if both $x$ and $y$ are `True`, and
+`False` otherwise. This is the _semantics_ of the formula.
+
+An _assignment_ $sigma$, which is a mapping from propositional variables to
+truth values, evaluates each formula to `True` or `False`. The truth value of
+a propositional formula over the connectives $top, bot, not, and, or, =>$ under
+an assignment $sigma$ is defined recursively:
+
+$
+  sigma(top) &= "True", \
+  sigma(bot) &= "False", \
+  sigma(not phi) = "True" quad &"iff" quad sigma(phi) = "False", \
+  sigma(phi and psi) = "True" quad &"iff" quad sigma(phi) = "True" "and" sigma(psi) = "True", \
+  sigma(phi or psi) = "True" quad &"iff" quad sigma(phi) = "True" "or" sigma(psi) = "True", \
+  sigma(phi => psi) = "True" quad &"iff" quad sigma(phi) = "False" "or" sigma(psi) = "True".
+$
+
+#problem[
+  For the formula
+  $
+    (x or y) and (not x or z),
+  $
+  evaluate its truth value under all $2^3 = 8$ possible assignments of
+  $x, y, z$.
+]
+
+
+== Satisfiability and Validity
+
+#definition(title: "Satisfiability")[
+  A formula $phi$
+
+  - is _satisfiable_ if there exists *some* assignment $sigma$ that satisfies
+    it, i.e., $exists sigma. space sigma(phi) = "True"$.
+  - is _unsatisfiable_ if *no* assignment satisfies it, i.e.,
+    $forall sigma. space sigma(phi) = "False"$.
+  - is _valid_ if *all* assignments satisfy it, i.e.,
+    $forall sigma. space sigma(phi) = "True"$.
+] <def:sat-validity>
+
+#example[
+  The formula $p$ is satisfiable (i.e., $exists sigma. space sigma(p) = "True"$).
+
+  The formula
+  $
+    (p) and (not p)
+  $
+  is unsatisfiable (no assignment works). In contrast,
+  $
+    (p or not p)
+  $
+  is valid.
+]
 
-// = Logics <chap:logics}
+#problem[
+  Show that $(phi => psi)$ is equivalent to $(not phi or psi)$.
+  (Hint: construct a truth table.)
+]
+
+#problem[
+  Assume $p, q$ are boolean variables.
+
+  + Can a formula be satisfiable but not valid? If yes, provide an example of
+    such a formula over $p, q$.
+  + Can a formula be valid but not satisfiable? If yes, provide an example of
+    such a formula over $p, q$.
+  + Give a formula over $p, q$ that is satisfiable under exactly 1 assignment.
+  + Let $phi$ be a formula over $p, q$. If $phi$ is valid, how many
+    assignments satisfy it?
+] <problem:short-questions>
 
-// The topic of neural network verification (NNV) relies heavily on two fundamental areas: 
-// \emph{logic} (to formalize and reason about properties as logical formulae) and \emph{optimization} (to formulate and reason about numerical constraints).
-// This chapter provides the necessary background on both topics in detail, starting with propositional logic and satisfiability, and then moving to linear and mixed-integer programming.
 
 
-//  === Propositional Logic and Satisfiability <sec:propositional-logic}
+=== SAT Checking <sec:sat-solving>
+
+A _SAT solver_ takes a propositional formula, typically in CNF, as input and
+determines its satisfiability by searching for a satisfying assignment $sigma$
+that makes the formula true. If one exists it returns #sat (and optionally
+$sigma$); otherwise it reports unsat.
 
-// Propositional, or Boolean, logic is the branch of logic that studies formulae built from Boolean variables, where each variable can take only the values \texttt{True} or \texttt{False}. These formulae are combined using logical connectives such as \texttt{and}, \texttt{or}, and \texttt{not}, and their evaluation always reduces to a single truth value.
+#example[
+  $
+    phi_1 &= (x or y) and (not x or z) quad => #sat \
+    phi_2 &= (x) and (not x) quad => #unsat
+  $
+]
+
+#problem[
+  Use the Z3 solver to check whether
+  $
+    (x or y) and (not x or y) and (x or not y)
+  $
+  is satisfiable. Provide a satisfying assignment if it exists.
+]
+
+
+=== Validity Checking <sec:validity-checking>
+
+A formula $alpha$ is valid if all assignments satisfy it. This is equivalent to
+its negation $not alpha$ being unsatisfiable:
+$
+  "valid"(alpha) <==> "unsat"(not alpha).
+$
+Thus, to check that $alpha$ is valid, we can use a SAT solver to check that
+$not alpha$ is #unsat.
+
+
+=== Complexity of SAT <sec:complexity-sat>
+
+SAT checking (and therefore validity checking) of propositional formulae is
+NP-Complete. This means it is unlikely that an efficient (polynomial-time)
+algorithm exists for all SAT instances, and in the worst case any SAT solving
+algorithm may need to explore an exponential number of assignments. SAT solvers
+therefore employ heuristics and optimizations to handle practical instances
+efficiently, even though worst-case complexity remains exponential. We discuss
+DPLL, a popular SAT solving algorithm, next.
+
+
+== Satisfiability Modulo Theories (SMT) <chap:smt>
+
+SAT solvers only reason about propositional formulae, which contain only Boolean
+variables and logical operators such as $and, or$. However, in verification
+problems we often need to reason about arithmetic constraints such as
+$2x + 3y <= 7$, $x >= 0$, $x, y in ZZ$.
+
+This leads to _Satisfiability Modulo Theories (SMT)_:
+
+- SMT generalizes propositional logic by adding background theories (e.g.,
+  linear arithmetic, bit-vectors, arrays).
+- An SMT formula mixes Boolean structure with constraints from these theories.
+
+#example[
+  Is the formula $2x = 1$ satisfiable?
+
+  The answer depends on the chosen theory. Over the reals ($RR$) it is #sat
+  (e.g., $x = 0.5$), but over the integers ($ZZ$) it is #unsat.
+] <ex:smt2>
+
+
+=== SMT Solvers <sec:smt-solvers>
+
+Popular SMT solvers include Z3 (Microsoft Research), CVC5, and dReal. They
+combine:
+
+- A SAT solver for the Boolean skeleton.
+- A _theory solver_ or T-solver (e.g., linear arithmetic) for the numeric
+  parts.
+
+The SAT solver guesses a truth assignment for the Boolean structure. The
+T-solver checks whether the corresponding arithmetic constraints are feasible.
+This loop continues until either a satisfying assignment is found or #unsat is
+proven.
+
+#problem[
+  Decide the satisfiability of:
+  $
+    (x > 3) and (y < 2) and (x + y < 1).
+  $
+  First reason informally by hand, then confirm with an SMT solver such as Z3.
+]
+
+
+== Z3 SMT Solver <sec:z3>
+
+Z3 is a well-known SMT solver developed by Microsoft Research. Here we show how
+to use it to check propositional formulae and SMT formulae involving linear
+arithmetic constraints.
+
+*Installing.* You can install Z3 using your package manager:
+
+```sh
+brew install z3          # Homebrew
+pip install z3-solver    # pip
+apt install z3 python3-z3  # apt (Debian-based Linux)
+conda install z3solver   # conda
+```
+
+Then try its Python interface:
+
+```python
+from z3 import *
+x = Int('x')
+y = Int('y')
+solve(x > 2, y < 10, x + 2*y == 7)
+```
+
+#example(title: "Propositional Logic")[
+  We use Z3 to check satisfiability of propositional formulae and generate
+  counterexamples.
+
+  ```python
+  from z3 import *
+
+  x, y = Bools('x y')
+  formula = And(Or(x, y), Or(Not(x), y))
+  s = Solver()
+  s.add(formula)
+  print(s.check())   # output: sat
+  print(s.model())   # a possible model is {x=True, y=True}
+  ```
+] <ex:z3-propositional>
+
+#problem[
+  Modify the code in the propositional logic example above to check
+  $
+    (x and not x).
+  $
+  Confirm that the result is `unsat`.
+] <prob:z3-0>
+
+#example(title: "Linear Constraints")[
+  We now use Z3 as an SMT solver to check linear constraints.
+
+  ```python
+  from z3 import *
+  x, y = Reals('x y')
+
+  # example 1
+  s = Solver()
+  s.add(x > 0, y > 0, 2*x + y <= 1)
+  print(s.check())  # Output: unsat
+
+  # example 2
+  s = Solver()
+  s.add(x + y <= 4, x >= 0, y >= 0)
+  print(s.check())  # Output: sat
+  print(s.model())  # Output: {x=0, y=0}
+
+  # example 3
+  x, y = Ints('x y')
+  s = Solver()
+  s.add(Implies(x > 3, y > 2))
+  print(s.check())  # Output: sat
+  print(s.model())  # Output: {x=0, y=0}
+  ```
+] <ex:z3-linear-constraints>
+
+#problem[
+  Use Z3 to check whether the constraints
+  $
+    x + y = 5, quad x >= 0, quad y >= 0
+  $
+  are satisfiable, and if so, ask Z3 for a model.
+] <prob:z3-1>
+
+#problem[
+  Use Z3 to check the formula given in the SMT example above. Do it for both
+  the reals and integers.
+] <prob:z3-2>
+
+#problem[
+  Use Z3 to formulate and check the statement
+  _"If $x > 3$ then $y > 2$ AND $x <= 1$"_. Is it satisfiable? What model
+  does Z3 return?
+] <prob:z3-3>
+
+#example(title: "DNN-style checking")[
+  Consider a one-neuron ReLU: $y = max(0, x - 1)$. We want to check if the
+  property _"For all $x <= 0$, we have $y = 0$"_ holds.
+
+  ```python
+  x, y = Reals('x y')
+  s = Solver()
+
+  # y = max(0, x-1)
+  s.add(y >= x-1, y >= 0)
+  s.add(Or(y == x-1, y == 0))  # ReLU
+  s.add(x <= 0, y != 0)        # Negation of property
+
+  print(s.check())  # Output: unsat, property holds
+  ```
+]
+
+#problem[
+  Modify the above to check the property:
+  _"For all $x >= 2$, we have $y >= 1$."_
+  What does Z3 return?
+]
+
+= SAT Solving Algorithms <chap:sat-solving-algorithms>
+
+== DPLL <sec:dpll>
+
+*Figure:* _(See figure/dpll.pdf for the classical DPLL algorithm diagram.)_
+
+*DPLL* is a SAT solving technique introduced in 1961 by Davis, Putnam,
+Logemann, and Loveland. DPLL is an iterative algorithm that takes as input a
+propositional formula and (i) decides an unassigned variable and assigns it a
+truth value, (ii) performs Boolean constraint propagation (BCP, also called
+Unit Propagation), which detects single-literal clauses that either force a
+literal to be true or give rise to a conflict, (iii) analyzes the conflict to
+backtrack to a previous decision level `dl`, and (iv) erases assignments at
+levels greater than `dl` to try new assignments.
+
+These steps repeat until DPLL finds a satisfying assignment and returns `sat`,
+or decides that it cannot backtrack (`dl = -1`) and returns `unsat`.
+
+
+=== Decide
+
+The _Decide_ step selects an unassigned variable and assigns it a truth value.
+Decision is the main source of state-space explosion in DPLL because it uses
+random choices or heuristics (e.g., VSIDS) to select the variable and truth
+value. Thus, value assignments can be _wrong_, leading to conflicts later on.
+
+Each decision creates a new _decision level_. The decision level starts at 0
+and increases by 1 with each new assignment. Decision level is used to manage
+backtracking.
+
+#example(title: "Simple Decision")[
+  Consider the CNF:
+  $
+    phi = (x_1 or x_2) and (not x_1 or x_3).
+  $
+  All variables are initially unassigned. DPLL may choose:
+  $
+    "Decide: " x_1 = "True" quad ("Decision level " 1).
+  $
+]
+
+#example(title: "Decision Using a Heuristic")[
+  Given:
+  $
+    phi = (x_1 or x_3) and (x_3 or x_4) and (not x_3 or x_2),
+  $
+  a heuristic such as VSIDS may choose the most frequent variable:
+  $
+    "Decide: " x_3 = "False".
+  $
+]
+
+
+=== Boolean Constraint Propagation (BCP) <sec:bcp>
+
+BCP detects _unit clauses_, i.e., clauses with exactly one unassigned literal
+and all other literals set to False. Such clauses force the remaining literal
+to be assigned True.
+
+BCP is very useful because it can determine variable assignments directly
+without guessing. For example, if we have the clause $(not x_1 or x_2)$ and
+$x_1$ is True, then $x_2$ must be True to satisfy the clause. BCP is often
+invoked after each decision to propagate the consequences of the assignment.
+
+#example(title: "Single Propagation")[
+  $
+    phi = (x_1) and (not x_1 or x_2).
+  $
+  The unit clause $(x_1)$ forces $x_1 = "True"$. Now $(not x_1 or x_2)$
+  becomes $("False" or x_2)$, hence $x_2 = "True"$.
+]
+
+#example(title: "Propagation Leading to Conflict")[
+  $
+    phi = (x_1) and (not x_1).
+  $
+  BCP assigns $x_1 = "True"$, immediately contradicting $(not x_1)$.
+]
+
+#example(title: "Cascade of Propagations")[
+  $
+    phi = (x_1) and (not x_1 or x_2) and (not x_2 or x_3).
+  $
+  BCP yields:
+  $
+    x_1 = "True" => x_2 = "True" => x_3 = "True".
+  $
+]
+
+
+=== Conflict Analysis and Backtracking <sec:conflict-analysis>
+
+A _conflict_ occurs when the formula is False under the current assignment
+$sigma$. Since the formula is in CNF, a conflict arises when at least one
+clause is False (i.e., all its literals are False).
+
+#example[
+  $
+    phi = (not x_1 or x_2) and (not x_2) and (x_1).
+  $
+  Assignments $x_1 = "True"$ and $x_2 = "False"$ make
+  $(not x_1 or x_2) = ("False" or "False")$, producing a conflict.
+]
+
+*Conflict Analysis.* Conflict analysis explains why the conflict occurred and
+generates a _learned clause_ that prevents the solver from revisiting the same
+conflicting assignment. Most modern solvers use the 1st-UIP (Unique Implication
+Point) learning scheme.
+
+#example(title: "Simple Learned Clause")[
+  $
+    (x_1) and (not x_1).
+  $
+  The conflict directly yields the learned clause $not x_1 or x_1$. Because
+  this is always false, the solver concludes the formula is unsatisfiable.
+]
+
+#example(title: "UIP Conflict Analysis")[
+  Assume decision levels:
+  $
+    x_1 = "True" space (d l = 1), quad x_2 = "False" space (d l = 2).
+  $
+  Clauses:
+  $
+    (not x_1 or x_2 or x_3), quad (not x_2 or x_3), quad (not x_3).
+  $
+  Propagation yields $x_3 = "False"$, causing a conflict with $(not x_3)$.
+  The learned clause (1st-UIP) is:
+  $
+    (not x_2 or not x_1).
+  $
+]
+
+*Backtracking.* Given a learned clause, DPLL backtracks to the decision level
+at which the clause becomes unit.
+
+#example(title: "Non-Chronological Backtracking")[
+  Decision levels:
+  $
+    d l = 1: x_1 = "True", quad d l = 2: x_2 = "True", quad d l = 3: x_3 = "False".
+  $
+  Conflict analysis produces the learned clause $(not x_1 or x_3)$. The
+  highest decision level in the clause except the most recent UIP is 1, so the
+  solver backtracks to level 1, undoing assignments to $x_2$ and $x_3$.
+]
+
+
+== CDCL
+
+Modern DPLL solving improves the original version with Conflict-Driven Clause
+Learning (CDCL). DPLL with CDCL can _learn new clauses_ to avoid past conflicts
+and backtrack more intelligently (e.g., using non-chronological backjumping).
+Due to its ability to learn new clauses, CDCL can significantly reduce the
+search space and allow SAT solvers to scale to large problems. Whenever we
+refer to DPLL hereafter, we mean DPLL with CDCL.
+
+
+=== DPLL(T)
+
+DPLL(T) extends DPLL for propositional formulae to check SMT formulae involving
+non-Boolean variables, e.g., real numbers and data structures such as strings,
+arrays, and lists. DPLL(T) combines DPLL with dedicated _theory solvers_ to
+analyze formulae in those
+theories.#footnote[SMT stands for Satisfiability Modulo Theories; the T in
+DPLL(T) stands for Theories.]
+
+For example, to check a formula involving linear arithmetic over the reals
+(LRA), DPLL(T) may use a theory solver that applies linear programming to check
+the constraints in the formula. Modern DPLL(T)-based SMT solvers such as Z3 and
+CVC4 include solvers supporting a wide range of theories including linear
+arithmetic, nonlinear arithmetic, strings, and arrays.
+
+
+// ─── Chapter: Linear Programming ──────────────────────────────────────────
+
+= Linear Programming (LP) <chap:lp>
+
+Linear Programming (LP) and its generalization Mixed-Integer Linear Programming
+(MILP) form the optimization backbone of many NNV techniques. This chapter
+provides an overview of LP and MILP in the context of NNV.
+
+
+== Linear Constraints and Objectives <sec:lp>
+
+At a high level, LP is a method for optimizing an objective with respect to
+certain constraints. In LP, both the objective and the constraints are _linear_.
+
+*Linear Constraints.* Linear constraints are inequalities involving linear
+combinations of variables. A linear inequality has the general form
+$
+  c_1 x_1 + c_2 x_2 + dots + c_n x_n <= b,
+$
+where $c_i, b in RR$. These constraints limit the feasible values the variables
+$x_i$ can take. The set of points satisfying all constraints is called the
+_feasible region_.
+
+#example[
+  Consider the following linear constraints:
+  $
+    x + y <= 4, quad x >= 0, quad y >= 0.
+  $
+  The feasible region is a triangle with vertices at $(0,0)$, $(4,0)$,
+  $(0,4)$.
+] <ex:lp-constraints>
+
+*Linear Objective Functions.* A linear objective function $z$ has the general
+form
+$
+  z(x_1, x_2, dots, x_n) = c_1 x_1 + c_2 x_2 + dots + c_n x_n,
+$
+where $c_i in RR$ are coefficients and $x_i in RR$ are decision variables.
+
+*Optimizing Goals.* The goal is to optimize (maximize or minimize) $z$ subject
+to a set of linear constraints:
+$
+  & "maximize" quad z \
+  & "subject to" \
+  & quad {c_1 x_1 + dots + c_n x_n <= b, dots}
+$
+
+#example[
+  Maximize $1.5x + 2y$ subject to $x + y <= 4$, $x >= 0$, $y >= 0$.
+
+  Solving for the intersection points gives the vertices of the feasible region:
+  $(0,0)$, $(4,0)$, $(0,4)$.
+
+  Evaluating the objective at each vertex:
+
+  #table(
+    columns: 3,
+    table.header[$x$][$y$][$z = 1.5x + 2y$],
+    $0$, $0$, $0$,
+    $4$, $0$, $6$,
+    $0$, $4$, $8$,
+  )
+
+  The maximum value of $z$ is $8$, achieved at vertex $(0, 4)$.
+] <ex:lp-example1>
+
+#example[
+  Minimize $z = x + y$ subject to $2x + y >= 3$, $x + 2y >= 4$,
+  $x >= 0$, $y >= 0$.
+
+  Solving the boundary equations gives the vertices of the feasible region:
+  $(0, 3)$, $(4, 0)$, $(2/3, 5/3)$.
+
+  Evaluating the objective at each vertex:
+
+  #table(
+    columns: 3,
+    table.header[$x$][$y$][$z = x + y$],
+    $0$, $3$, $3$,
+    $4$, $0$, $4$,
+    $2/3$, $5/3$, $7/3$,
+  )
+
+  The minimum value of $z$ is $7/3$, achieved at $(2/3, 5/3)$.
+] <ex:lp-example2>
+
+#problem[
+  Maximize $z = 4x + 5y$ subject to $x + y <= 20$, $2x + 4y <= 72$.
+
+  + Identify the corner points.
+  + Evaluate the objective function at each corner point.
+] <ex:lp-problem2>
+
+
+== Mixed-Integer Linear Programming (MILP) <sec:milp-basics>
+
+LP assumes continuous variables over real numbers. A mixed-integer linear
+program---MILP---extends LP by requiring some variables to be integers (often
+binary 0 or 1). This is useful for modeling discrete decisions and logical
+constraints, e.g., on/off decisions, yes/no choices, and active/inactive ReLU.
+
+*Linear Constraints.* In MILP, a linear constraint can involve both integer and
+continuous decision variables:
+$
+  c_1 x_1 + dots + c_n x_n + d_1 y_1 + dots + d_m y_m <= b,
+$
+where $x_i in RR$ are continuous variables, $y_j in ZZ$ are integer variables,
+and $c_i, d_j, b in RR$.
+
+*Objective Function.* A linear objective function in MILP:
+$
+  z = c_1 x_1 + dots + c_n x_n + d_1 y_1 + dots + d_m y_m.
+$
+
+*Optimizing Goals.*
+$
+  & "maximize" quad z(x_1, dots, x_n, y_1, dots, y_m) \
+  & "subject to" \
+  & quad {c_1 x_1 + dots + c_n x_n + d_1 y_1 + dots + d_m y_m <= b}
+$
+
+#example[
+  A company sells a chair for \$50 and a table for \$120. Production costs are
+  \$20 per chair and \$70 per table. It takes 3 hours and 5 units of wood to
+  produce a chair, and 1 hour and 20 units of wood to produce a table.
+
+  Maximize profit without exceeding a monthly budget of 200 units of wood,
+  80 hours of labor, and \$800 in production costs.
+
+  *Decision variables:* $x$ = number of chairs, $y$ = number of tables.
+
+  *Objective:*
+  $
+    P = 50x + 120y - 20x - 70y = 30x + 50y.
+  $
+
+  *Constraints:*
+  $
+    5x + 20y <= 200 & quad => quad x + 4y <= 40, \
+    3x + y <= 80, \
+    20x + 70y <= 800 & quad => quad 2x + 7y <= 80, \
+    x >= 0, quad y >= 0.
+  $
+
+  The feasible vertices are $(0,0)$, $(0,10)$, $(80/3, 0)$, and
+  $(280/11, 40/11)$. Evaluating $P$:
+
+  #table(
+    columns: 3,
+    table.header[$x$][$y$][$P = 30x + 50y$],
+    $0$, $0$, $0$,
+    $0$, $10$, $500$,
+    $80/3$, $0$, $800$,
+    $280/11$, $40/11$, $945.45$,
+  )
+
+  The maximum is \$945.45 at $(280/11, 40/11)$. Since fractional production
+  is not possible, the company should produce 24 chairs and 4 tables per week
+  for a profit of \$920.00.
+] <ex:lp-example3>
+
+
+=== Encoding Binary Variables <sec:milp-binary>
+
+MILP problems often involve conditions where the answer depends on some
+condition. We can encode such conditions using binary variables ($z in {0,1}$)
+and a large constant $M$ (e.g., $infinity$) to encode logical implications.
+
+#example[
+  To encode "if $z = 1$ then $x >= 5$", use:
+  $
+    x >= 5 - M(1 - z), quad z in {0, 1}.
+  $
+  This works because:
+  - $z = 1 => x >= 5 - M(0) => x >= 5$.
+  - $z = 0 => x >= 5 - M$, which is vacuously true for large $M$.
+]
+
+#problem[
+  Encode the disjunction $x >= 5 or x <= 3$ in MILP.
+]
+
+#solution[
+  Use two constraints:
+  - $x >= 5 - M(1 - z)$ (if $z = 1$, this enforces $x >= 5$)
+  - $x <= 3 + M z$ (if $z = 0$, this enforces $x <= 3$)
+]
+
+#example(title: "Encoding ReLU in MILP")[
+  To encode the ReLU activation function $y = max(0, x)$, use:
+  $
+    & y >= x, \
+    & y >= 0, \
+    & y <= x + M(1 - z), \
+    & y <= M z, \
+    & z in {0, 1}.
+  $
+  This works because $z = 1 => y = x$ and $z = 0 => y = 0$.
+] <ex:relu_milp>
+
+#problem[
+  Consider again the ReLU encoding above but now $x$ has bounds $L <= x <= U$.
+  Modify the MILP encoding so that $L$ and $U$ are used _directly_ instead of
+  a large constant $M$.
+] <problem:relu-milp-bounds>
+
+#solution[
+  $
+    & y >= x, \
+    & y >= 0, \
+    & y <= x + (U - x)(1 - z), \
+    & y <= U z, quad z in {0, 1}, \
+    & L <= x <= U.
+  $
+]
+
+
+== Using Z3 to Solve LP and MILP
+
+We can use Z3's optimization capabilities to solve both LP and MILP problems.
+In practice, dedicated solvers such as Gurobi or CPLEX are used for large
+problems, but Z3 is effective for demonstration purposes.
+
+#example[
+  We model and solve the LP example from @ex:lp-example1 using Z3:
+
+  ```python
+  from z3 import *
+
+  x, y = Reals("x y")
+  opt = Optimize()
+  opt.add(x + y <= 4, x >= 0, y >= 0)
+
+  z = 1.5*x + 2*y
+  h = opt.maximize(z)
+
+  if opt.check() == sat:
+      print("Optimal sol:", opt.model())  # [x = 0, y = 4]
+      print("Max value:", opt.upper(h))   # 8
+  ```
+] <ex:lp-z3>
+
+#problem[
+  Solve @ex:lp-problem2 using Z3.
+]
+
+#problem[
+  Solve @ex:lp-example3 using Z3.
+]
+
+#problem[
+  Find two interesting MILP problems online, formulate each as a MILP, solve
+  by hand (showing all steps), and implement in Z3. For each problem: write
+  down the problem statement and cite the source, clearly state the objective
+  and constraints, and document the Z3 code with comments.
+] <ex:milp-online>
+
+#problem[
+  Minimize $z = x + y$ subject to:
+  $
+    x + 2y >= 3, quad 3x + y >= 3, quad x, y >= 0, quad x, y in RR.
+  $
+
+  + State the constraints and objective function.
+  + Find the corner or candidate points.
+  + Evaluate the objective at each corner point.
+  + State the optimal solution.
+] <problem:milp-hand>
+
+#solution[
+  *1. Constraints and Objective Function:*
+
+  Minimize $z = x + y$ subject to $x + 2y >= 3$, $3x + y >= 3$, $x, y >= 0$.
+
+  *2. Corner Points:*
+
+  - $x = 0$ and $x + 2y = 3$: $(0, 1.5)$. Check: $3(0) + 1.5 = 1.5 < 3$, not feasible.
+  - $y = 0$ and $x + 2y = 3$: $(3, 0)$. Check: $3(3) = 9 >= 3$, feasible.
+  - $x = 0$ and $3x + y = 3$: $(0, 3)$. Check: $0 + 2(3) = 6 >= 3$, feasible.
+  - $y = 0$ and $3x + y = 3$: $(1, 0)$. Check: $1 + 0 = 1 < 3$, not feasible.
+  - Intersection of $x + 2y = 3$ and $3x + y = 3$: $x = 3/5$, $y = 6/5$, feasible.
+
+  Feasible corner points: $(3, 0)$, $(0, 3)$, $(3/5, 6/5)$.
+
+  *3. Objective Values:*
+
+  #table(
+    columns: 3,
+    table.header[$x$][$y$][$z = x + y$],
+    $3$, $0$, $3$,
+    $0$, $3$, $3$,
+    $3/5$, $6/5$, $1.8$,
+  )
+
+  *4. Optimal Solution:*
+
+  The minimum value of $z$ is $9/5 = 1.8$, achieved at $(3/5, 6/5)$. Both
+  constraints are binding (active) at this point.
+]
+
+=== Using LP as Feasibility Checking <sec:lp-feasibility>
+
+In addition to optimization, LP can be used for _feasibility checking_ of
+linear constraints: are there any values for the variables that satisfy all the
+constraints? This is achieved by running the LP solver with a constant objective
+(e.g., "minimize 0"), in which case it tries to find _any_ point in the
+feasible region or show that _none_ exists. This makes LP solving useful for
+property checking and verification.
+
+The main difference between LP feasibility and SMT satisfiability checking is
+the type of constraints they handle. SMT can handle richer logics involving
+booleans, integers, nonlinear arithmetic, and other theories, while LP
+feasibility is limited to linear equalities/inequalities over real numbers. For
+NNV problems that involve only linear real arithmetic, LP feasibility is
+sufficient and often more efficient.
+
+#example[
+  For the constraints $x + y <= 4$, $x >= 0$, $y >= 0$, running an LP solver
+  with objective $min 0$ will return a point (e.g., $x = 0, y = 0$) within the
+  feasible region.
+]
+
+
+// #solution[
+//   *1. Satisfiable but not valid:*
+
+//   Yes. A formula is satisfiable if _some_ assignment makes it true, while
+//   validity requires _all_ assignments to make it true.
+
+//   Example: $p$ is satisfiable (true when $p = "True"$) but not valid (false
+//   when $p = "False"$). Another example: $p and q$ is true only when both are
+//   `True`.
+
+//   *2. Valid but not satisfiable:*
+
+//   No. If a formula is valid it is true under every assignment, hence certainly
+//   true under _some_ assignment. Every valid formula is also satisfiable.
+
+//   *3. Formula satisfiable under exactly 1 assignment:*
+
+//   Example: $p and not q$ is satisfiable only when $p = "True"$ and
+//   $q = "False"$. Checking all four assignments:
+
+//   - $p = "True",  q = "True"$: $(p and not q) = ("True" and "False") = "False"$
+//   - $p = "True",  q = "False"$: $(p and not q) = ("True" and "True") = "True"$
+//   - $p = "False", q = "True"$: $(p and not q) = ("False" and "False") = "False"$
+//   - $p = "False", q = "False"$: $(p and not q) = ("False" and "True") = "False"$
+
+//   Another example: $p and q$ is satisfiable only when both are `True`.
+
+//   *4. Number of satisfying assignments for a valid formula:*
+
+//   If $phi$ is valid over $p, q$ there are $2^2 = 4$ total assignments and all
+//   4 satisfy $phi$. The answer is *4*.
+// ]
 
-// \subsection{Syntax <sec:syntax}
-
-// A \emph{propositional variable} is a symbol (e.g., $x, y, z$). Logical formulae are built \emph{inductively} from these variables using logical connectives as follows:
-
-// \begin{itemize}
-//   \item Variables: Any propositional variable $p$ is a formula.
-//   \item Constants: $\top$ and $\bot$ are formulae.
-//   \item Negation: If $\phi$ is a formula, then so is $\lnot{\phi}$.
-//   \item Binary connectives: If $\phi, \psi$ are formulae, then so are
-//     $(\phi \land \psi)$, $(\phi \lor \psi)$, and $(\phi \implies \psi)$.
-// \end{itemize}
-
-// \begin{example}
-
-// \[
-// (x \lor y) \land (\lnot x \lor z)
-// \]
-// is a formula involving three variables $x,y,z$.
-// \end{example}
-
-// \paragraph{Special connectives} In addition to the standard connectives, we define some special connectives that are often useful:
-
-// \begin{itemize}
-//     \item \emph{Implication}: $\phi \to \psi \equiv \lnot{\phi} \lor \psi$
-//     \item \emph{Biconditional} (or \emph{equivalence}): $\phi \leftrightarrow \psi \equiv (\phi \to \psi) \land (\psi \to \phi)$
-// \end{itemize}
-
-// \begin{commentbox}
-// Notice here that we purely define the syntax of propositional logic, which allows us to construct valid formulae. We will discuss the semantics or meanings of formulae next (\autoref{sec:propositional-semantics}).
-// \end{commentbox}
-
-// \paragraph{Conjunctive Normal Form (CNF)} A formula is in CNF if it is a \emph{conjunction} of  \emph{clauses}, where each clause is a \emph{disjunction} of \emph{literals}, where a literal is either a variable $p$ or its negation $\lnot{p}$.
-
-// \begin{example}
-// \[
-// (x \lor y) \land (\lnot{x} \lor z)
-// \]
-// is in CNF. Each clause $(x \lor y)$, $(\lnot{x} \lor z)$ is a disjunction of literals.
-// \end{example}
-
-
-// \paragraph{Transforming to CNF} Any formula can be transformed into CNF. The process generally involves the following steps:
-// \begin{enumerate}
-// \item Eliminate biconditionals and implications.
-// \item Move negations inward using De Morgan's laws.
-// \item Distribute disjunctions over conjunctions.
-// \end{enumerate}
-
-// \begin{problem}
-// Transform the following formula into CNF:
-// \[
-// (x \to y) \land (y \to z)
-// \]
-// \end{problem}
-
-
-
-
-// \subsection{Semantics <sec:propositional-semantics}
-
-// A logical formula in propositional logic has a truth value, which can be either \texttt{True} or \texttt{False}.
-// For example, the formula $x \lor \lnot{x}$ is always \texttt{True}, while the formula $x \land y$ is \texttt{True} if both $x$ and $y$ are \texttt{True}, and \texttt{False} otherwise.
-// This is the \emph{semantics} of the formula.
-
-// A\emph{assignment} $\sigma$, which is a mapping from propositional variables to truth values, evaluates each formula to $\texttt{True}$ or $\texttt{False}$.
-// The truth value of a propositional formula over the connectives $\top, \bot, \lnot, \land, \lor, \implies$ under an assignment $\sigma$
-// is defined recursively:
-// \begin{align*}
-//   \sigma(\top) &\quad = \texttt{True}, \\
-//   \sigma(\bot) &\quad = \texttt{False}, \\
-//   \sigma(\lnot{\phi}) = \texttt{True} &\quad \text{iff } \sigma(\phi) = \texttt{False}, \\
-//   \sigma(\phi \land \psi) = \texttt{True} &\quad \text{iff } \sigma(\phi) = \texttt{True} \text{ and } \sigma(\psi) = \texttt{True}, \\
-//   \sigma(\phi \lor \psi) = \texttt{True} &\quad \text{iff } \sigma(\phi) = \texttt{True} \text{ or } \sigma(\psi) = \texttt{True}, \\
-//   \sigma(\phi \implies \psi) = \texttt{True} &\quad \text{iff } \sigma(\phi) = \texttt{False} \text{ or } \sigma(\psi) = \texttt{True}.
-// \end{align*}
-
-// \begin{problem}
-// For the formula
-// \[
-// (x \lor y) \land (\lnot x \lor z),
-// \]
-// evaluate its truth value under all $2^3=8$ possible assignments of $x,y,z$.
-// \end{problem}
-
-//  === Satisfiability and Validity}
-// \begin{definition}[Satisfiability]\label{def:sat-validity}
-//      A formula $\phi$
-
-// \begin{itemize}
-//   \item is \emph{satisfiable} if there exists \textbf{some} assignment $\sigma$ that satisfies it, i.e., $\exists \sigma.~ \sigma(\phi) = \texttt{True}$.
-//   \item is \emph{unsatisfiable} if \textbf{no} assignment satisfies it, i.e., $\forall \sigma.~\sigma(\phi) = \texttt{False}$.
-//   \item is \emph{valid} if \textbf{all} assignments satisfy it, i.e., $\forall \sigma. \sigma(\phi) = \texttt{True}$.
-// \end{itemize}
-// \end{definition}
-
-// \begin{example} The formula $p$ is satisfiable (i.e., $\exists \sigma.~\sigma(p) = \texttt{True}$).
-
-
-// \noindent The formula
-// \[
-// (p) \land (\lnot{p})
-// \]
-// is unsatisfiable (no assignment works).
-// In contrast,
-// \[
-// (p \lor \lnot{p})
-// \]
-// is valid.
-// \end{example}
-
-// \begin{problem}
-// Show that $(\phi \implies \psi)$ is equivalent to $(\lnot \phi \lor \psi)$.
-// (Hint: construct a truth table.)
-// \end{problem}
-
-// \begin{problem <problem:short-questions}
-//     Assume $p,q$ are boolean variables.
-//     \begin{enumerate}
-//         \item Can a formula be satisfiable but not valid?  If yes, provide an example of such a formula over $p,q$.
-//         \item Can a formula be valid but not satisfiable? If yes, provide an example of such a formula over $p,q$.
-//         \item Give a formula over $p,q$ that is satisfiable under exactly 1 assignment.
-//         \item Let $\phi$ be a formula over $p,q$, if $\phi$ is valid, how many assignments satisfy it?
-//     \end{enumerate}
-// \end{problem}
-// \begin{solution}
-
-// ~
-
-// \noindent\textbf{1. Satisfiable but not valid:}
-
-// \noindent Yes, a formula can be satisfiable but not valid. By definition, a formula is satisfiable if \emph{some} assignment makes it true, while a formula is valid if \emph{all} assignments make it true.
-
-// \noindent Example: $p$ is satisfiable (true when $p = \texttt{True}$) but not valid (false when $p = \texttt{False}$).
-
-// \noindent Another example: $p \land q$ is true when $p = \texttt{True}$ and $q = \texttt{True}$, but false under all other assignments.
-
-// \vspace{0.5\baselineskip}
-
-// \noindent\textbf{2. Valid but not satisfiable:}
-
-// \noindent No, a formula cannot be valid but not satisfiable. If a formula is valid, it is true under all assignments, which means it is certainly true under \emph{some} assignment (in fact, under every assignment). Thus, every valid formula is also satisfiable.
-
-// \vspace{0.5\baselineskip}
-
-// \noindent\textbf{3. Formula satisfiable under exactly 1 assignment:}
-
-// \noindent Example: $p \land \lnot q$ is satisfiable only when $p = \texttt{True}$ and $q = \texttt{False}$. We can verify this by checking all four possible assignments:
-
-// \begin{itemize}
-//     \item $p = \texttt{True}, \; q = \texttt{True}$:
-//     \[
-//         (p \land \lnot q)
-//         = (\texttt{True} \land \texttt{False})
-//         = \texttt{False}
-//     \]
-
-//     \item $p = \texttt{True}, \; q = \texttt{False}$:
-//     \[
-//         (p \land \lnot q)
-//         = (\texttt{True} \land \texttt{True})
-//         = \texttt{True}
-//     \]
-
-//     \item $p = \texttt{False}, \; q = \texttt{True}$:
-//     \[
-//         (p \land \lnot q)
-//         = (\texttt{False} \land \texttt{False})
-//         = \texttt{False}
-//     \]
-
-//     \item $p = \texttt{False}, \; q = \texttt{False}$:
-//     \[
-//         (p \land \lnot q)
-//         = (\texttt{False} \land \texttt{True})
-//         = \texttt{False}
-//     \]
-// \end{itemize}
-
-// \noindent Another example: $p \land q$ is satisfiable only when both $p = \texttt{True}$ and $q = \texttt{True}$.
-
-// \vspace{0.5\baselineskip}
-
-// \noindent\textbf{4. Number of satisfying assignments for valid formula:}
-
-// \noindent If $\phi$ is a valid formula over $p, q$, then by definition it is true under all possible assignments. Since there are $2$ variables, there are $2^2 = 4$ total assignments, and all $4$ assignments satisfy $\phi$.
-
-// \noindent Therefore, the answer is \textbf{4}.
-
-// \end{solution}
-// \subsection{SAT Checking <sec:sat-solving}
-
-// \emph{A SAT solver} takes a propositional formula, typically in CNF (\autoref{sec:syntax}), as input and determines its satisfiability by searching for a satisfying assignment $\sigma$ that makes the formula true. If one exists, it returns \sat{} (and optionally $\sigma$); otherwise, it reports \unsat{}.
-
-// \begin{example}
-// \begin{align*}
-// \phi_2 &= (x \lor y) \land (\lnot x \lor z) \quad \Rightarrow \, \sat{}\\
-// \phi_2 &= (x) \land (\lnot x) \quad \Rightarrow \unsat{}
-// \end{align*}
-// \end{example}
-
-
-
-
-// \begin{problem}
-// Use the Z3 solver to check whether
-// \[
-// (x \lor y) \land (\lnot x \lor y) \land (x \lor \lnot y)
-// \] is satisfiable.
-// Provide a satisfying assignment if it exists.
-// \end{problem}
-
-
-
-
-// \subsection{Validity Checking <sec:validity-checking}
-// By~\autoref{def:sat-validity}, a formula $\alpha$ is valid if all assignments satisfy it.
-// This is equivalent to saying that its negation $\lnot{\alpha}$ is unsatisfiable (no assignment satisfies $\lnot{\alpha}$), i.e.,
-// \[
-// \text{valid}(\alpha) \iff \text{unsat}(\lnot{\alpha})
-// \]
-// Thus, to check that $\alpha$ is valid, we can use a SAT solver to check that $\lnot{\alpha}$ is \unsat{}.
-
-
-
-// \subsection{Complexity of SAT <sec:complexity-sat}
-
-// SAT checking (and therefore validity checking) of propositional formulae is \NP-Complete~\cite{cook2023complexity,karp2009reducibility}.
-// This means that unlikely there exists an efficient (i.e., polynomial-time) algorithm that can solve all SAT instances, and that in the worst case, any SAT solving algorithm may need to explore an exponential number of assignments (in the number of variables) to determine satisfiability. Thus, SAT solvers typically employ heuristics and optimizations to handle practical instances efficiently, even though the worst-case complexity remains exponential. We will discuss DPLL, a popular SAT solving algorithm, next (\autoref{sec:dpll}).
-
-//  === Satisfiability Modulo Theories (SMT) <chap:smt}
-
-// SAT solvers only reason about propositional formulae, which only contain Boolean variables and logical operators such as $\land, \lor$.  However, in verification problems, we often need to reason about arithmetic constraints $2x + 3y \leq 7; x \geq 0; x,y \in \mathbb{Z}$.
-
-
-// This leads to \emph{Satisfiability Modulo Theories (SMT)}:
-// \begin{itemize}
-//   \item SMT generalizes propositional logic by adding background theories (e.g., linear arithmetic, bit-vectors, arrays).
-//   \item An SMT formula mixes Boolean structure with constraints from these theories.
-// \end{itemize}
-
-// \begin{example <ex:smt2}
-// Is the formula $2x = 1$ satisfiable?
-
-// The answer depends on the chosen theory. Here, over real numbers ($\mathbb{R}$), it is SAT (e.g., $x=0.5$), but over integers ($\mathbb{Z}$) it is UNSAT.
-
-// \end{example}
-// \subsection{SMT Solvers <sec:smt-solvers}
-
-// % Like SAT solving, an SMT solver ..
-
-// Popular SMT solvers include Z3 (Microsoft Research), CVC5, and dReal.
-// They combine:
-// \begin{itemize}
-//   \item A SAT solver for the Boolean skeleton.
-//   \item A \emph{theory solver} or T-solver (e.g., linear arithmetic) for the numeric parts.
-// \end{itemize}
-
-// The SAT solver guesses a truth assignment for the Boolean structure. The T-solver checks whether the corresponding arithmetic constraints are feasible. This loop continues until either a satisfying assignment is found or \unsat{} is proven.
-
-// \begin{problem}
-// Decide the satisfiability of:
-// \[
-// (x > 3) \land (y < 2) \land (x+y < 1).
-// \]
-
-// First, do the reasoning informally by hand, and then confirm with an SMT solver such as Z3.
-// \end{problem}
 
 
 //  === Z3 SMT Solver <sec:z3}
@@ -10476,4 +11092,78 @@ algorithms are designed to be *sound but incomplete*.
 #bibliography("nnv.bib", style:"ieee")
 #set page(numbering: "1")
 
-// \end{document}
+
+
+#import "@preview/cetz:0.3.4": canvas, draw
+
+#canvas({
+  import draw: *
+
+  // Node radius
+  let r = 0.35
+
+  // Node coordinates
+  let x1 = (0, 2)
+  let x2 = (0, 0)
+  let x3 = (3, 2)
+  let x4 = (3, 0)
+  let x5 = (6, 1)
+
+  // Draw a connection between circle boundaries with an arrowhead entering b
+  let connect = (a, b, label, p) => {
+    let dx = b.at(0) - a.at(0)
+    let dy = b.at(1) - a.at(1)
+    let len = calc.sqrt(dx * dx + dy * dy)
+
+    let ux = dx / len
+    let uy = dy / len
+
+    let start = (a.at(0) + r * ux, a.at(1) + r * uy)
+    let end   = (b.at(0) - r * ux, b.at(1) - r * uy)
+
+    line(start, end, stroke: 1pt, end: ">")
+
+    content(
+      p,
+      box(
+        fill: white,
+        inset: 1pt,
+        text(size: 9pt)[#label],
+      ),
+    )
+  }
+
+  // Edges
+  connect(x1, x3, "-1.0", (1.5, 2.25))
+  connect(x1, x4, "-0.5", (1.5, 1.25))
+  connect(x2, x3, "-0.5", (1.5, 0.75))
+  connect(x2, x4, "1.0",  (1.5, -0.25))
+  connect(x3, x5, "1.0",  (4.5, 1.75))
+  connect(x4, x5, "-1.0", (4.5, 0.25))
+
+  // Nodes with fills:
+  // - Inputs (x1, x2): light blue
+  // - Hidden (x3, x4): white
+  // - Output (x5): light green
+  for (pos, label, fill-color) in (
+    (x1, $x_1$, rgb("#dbeafe")),
+    (x2, $x_2$, rgb("#dbeafe")),
+    (x3, $x_3$, white),
+    (x4, $x_4$, white),
+    (x5, $x_5$, rgb("#dcfce7")),
+  ) {
+    circle(
+      pos,
+      radius: r,
+      stroke: 1pt,
+      fill: fill-color,
+    )
+    content(pos, label)
+  }
+
+  // External arrows entering/leaving nodes
+  line((-0.8, 2), (-r, 2), stroke: 1pt, end: ">")
+  line((-0.8, 0), (-r, 0), stroke: 1pt, end: ">")
+  line((6 + r, 1), (6.8, 1), stroke: 1pt, end: ">")
+})
+
