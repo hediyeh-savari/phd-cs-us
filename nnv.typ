@@ -38,6 +38,8 @@
   text(size: 0.85em, it)
 )
 
+#let code(body) = raw(body, lang: none)
+
 
 // #set heading(numbering: (..nums) => {
 //   let vals = nums.pos()
@@ -7631,7 +7633,7 @@ If FM can prove this statement, we have a mathematical guarantee that the functi
 
 Thus, the #highlight[fundamental difference] between FM and testing is that FM provides mathematical guarantees about program behavior---without even running the program---, while testing can only provide empirical evidence based on a finite set of inputs that we run the program on.
 
-= Specifications
+== Specifications
 
 At the heart of FM is a _specification_---a precise description of what it
 means for a system to be correct (or safe, or robust, etc.). A specification
@@ -7684,7 +7686,7 @@ $ <eq:robustness>
 Once having a formal specification like this, we can apply formal verification
 techniques to prove or disprove it.
 
-== Pre and Post Conditions
+=== Pre and Post Conditions
 
 A common way to express formal specifications is using #highlight[preconditions] and
 #highlight[postconditions]. A precondition describes the assumptions about the inputs to
@@ -7776,26 +7778,26 @@ non-negative and its square equals `x`.
 // ]
 
 
-= FM Techniques
+== FM Techniques
 
 At a high level, an FM technique is an algorithm, often implemented as a
 software tool, that analyzes a system. The FM tool takes as _inputs_:
 
-- A _model_ of the system to be analyzed
-- A _specification_ of the desired property of the system or program
++ A _model_ of the system to be analyzed
++ A _specification_ of the desired property of the system or program
 
 and applies a _reasoning process_ to determine whether the model satisfies the
 specification. The tool produces an _output_ indicating whether the property
 holds, does not hold, or is unknown.
 
-*System Model.* The FM tool takes as input a _model_ of the system to be
+#paragraph[System Model][The FM tool takes as input a _model_ of the system to be
 analyzed. This model is a mathematical abstraction of the system's behavior. It
 may be a program written in a language such as C or Python, a neural network in
 ONNX format, or other representations such as state machines or transition
-systems. This model, e.g., the program, is created by the programmer and is
+systems. This model, e.g., the program code, is created by the programmer and is
 intended to capture the desired specification of the system. However, the model
 might contain bugs or inaccuracies that violate the intended specification,
-which is what the FM tool aims to detect.
+which is what the FM tool aims to detect.]
 
 #example("Clip")[
   Consider the following simple system that "clips" an input value into the
@@ -7803,16 +7805,13 @@ which is what the FM tool aims to detect.
 
   ```python
   def clip(x):
-      if x < 0:
-          return 0
-      elif x > 10:
-          return 10
-      else:
-          return x
+      if x < 0: return 0          
+      elif x > 10: return 10          
+      else: return x          
   ```
-]
+] <example:clip>
 
-The formal specification of the system is:
+The formal specification of the `clip` system is:
 
 $ forall x in RR, quad 0 <= "clip"(x) <= 10. $
 
@@ -7891,114 +7890,177 @@ FM techniques, each with its own reasoning process.
 
 // % ---
 
-//  === Major Classes of Formal Methods Algorithms <sec:fm-techniques}
+=== Major Classes of Formal Methods Algorithms <sec:fm-techniques>
 
-// % *(Using One Running Example)*
+// *(Using One Running Example)*
 
-// We now introduce the major classes of formal-methods techniques. In contrast to dynamic or testing-based analysis, which execute the program on specific inputs, these formal methods statically analyze the program's structure and logic to reason about all possible behaviors.
+We now introduce the major classes of formal-methods techniques. In contrast to
+dynamic or testing-based analysis, which execute the program on specific inputs,
+these formal methods _statically_ analyze the program's structure and logic to
+reason about all possible behaviors.
 
-// We will use the \code{clip} function in~\autoref{ex:clip} as a running example demonstrate how each technique reasons about the same model and specification.
-
-
-
-// \paragraph{Model Checking}
-
-// Model checking (MC) works by \emph{exploring all possible states} of a system and checking whether \emph{bad states} which violate the specification are reachable. 
-
-// MC works well for systems with a finite number of states such as hardware designs and communication protocols because these systems have finite state spaces that can be exhaustively explored. However, MC struggles with systems involving continuous variables or infinite state spaces, e.g., a program with loops. 
-
-// \begin{example}
-// For \code{clip}, MC would build a state machine representing all possible execution paths of the program for different inputs. It would then check whether any path leads to a state where the output is < 0 or > 10. 
-
-// A standard (na\"ive) MC would struggle here because the number of states is huge (the input $x$ is a real number). So MC would need to discretize or bound the input space, e.g., by considering only integer values of x from -1000 to 1000, to make the analysis feasible.
-// \end{example}
-
-// \paragraph{Interactive Theorem Proving}  
-// An interactive theorem prover (ITP) or \emph{proof assistant} attempts to reason about the program using \emph{logical inference rules} to construct a formal proof that the specification holds for all possible inputs. The reason it is called ``interactive'' is that the user must guide the proof process by providing lemmas, definitions, and strategies to help the prover construct the proof.  
-
-// ITPs are powerful and can prove deep rich properties about programs. However, they may require significant human guidance to construct the proofs and do not scale well to large or complex systems. 
-
-// \begin{example}
-// For \code{clip}, a TP might reason as follows:
-// \begin{enumerate}
-// \item Case 1: If \code{x < 0}, \code{clip} returns 0, which is in $[0, 10]$
-// \item Case 2: If \code{x > 10}, \code{clip} returns 10, which is in $[0, 10]$
-// \item Case 3: Otherwise, $0 \leq x \leq 10$, \code{clip} returns \code{x}, which is in $[0, 10]$.
-// \end{enumerate}
-// \end{example}
+We will use the `clip` function (@example:clip) as a running example to demonstrate how
+each technique reasons about the same model and specification.
 
 
-// \paragraph{Satisfaiblity Checking (SAT) and Satisfaiblity Modulo Theories (SMT) Solving}
-// SAT and SMT solving are automated techniques---also referred to as \emph{automatic theorem proving}---that reduce the verification problem to a question of \emph{logical satisfiability}. These solvers take as input a set of logical formulae representing the program and the \emph{negation} of the specification, and determine whether there exists an assignment of variables that makes the formulae true (satisfiable) or not (unsatisfiable). If the formulae are unsatisfiable, the property is proved. If satisfiable, the property is disproved, and the solver provides a concrete counterexample demonstrating the violation.
+*Model Checking.*
+Model checking (MC) works by _exploring all possible states_ of a system and
+checking whether _bad states_ that violate the specification are reachable.
 
-// SAT/SMT solving is crucial to modern formal methods and software verification tools due to its automation and ability to handle complex logical constraints. However, as we will see, pure SAT/SMT solving struggle with scalability for neural networks and thus leading to the development of hybrid techniques that combine SAT/SMT solving with other methods such as abstract interpretation.
+MC works well for systems with a finite number of states---such as hardware
+designs and communication protocols---because these systems have finite state
+spaces that can be exhaustively explored. However, MC struggles with systems
+involving continuous variables or infinite state spaces, e.g., a program with
+loops.
 
-// \begin{example}
-// For \code{clip}, a SAT/SMT solver would encode the program as logical constraints: 
+#example[
+  For #code("clip"), MC would build a state machine representing all possible
+  execution paths of the program for different inputs. It would then check
+  whether any path leads to a state where the output is $< 0$ or $> 10$.
 
-// \begin{align}
-//     & (x < 0 \implies y = 0) \land \\
-//     & (x > 10 \implies y = 10) \land \\
-//     & (0 \leq x \leq 10 \implies y = x)
-// \end{align}            
-
-// and the negation of the specification
-
-// \begin{equation}
-//     (y < 0) \lor (y > 10)    
-// \end{equation}
-
-// It would then check whether these constraints are satisfiable. In this case, the solver would find that the constraints are unsatisfiable, proving that \code{clip} always returns a value in [0, 10].
-// \end{example}
+  A standard (naïve) MC would struggle here because the number of states is
+  huge (the input $x$ is a real number). So MC would need to discretize or
+  bound the input space---e.g., by considering only integer values of $x$ from
+  $-1000$ to $1000$---to make the analysis feasible.
+]
 
 
-// \paragraph{Abstract Interpretation}
-// Abstract interpretation (AbsInt) analyzes a program by automatically computing \emph{over-approximations} of its behavior. Instead of tracking exact values, AbsInt tracks abstract properties such as ranges or signs of variables, e.g., instead of saying ``x = 5'', AbsInt might say ``x is in [0, 10]'' or ``x is non-negative''. 
+*Interactive Theorem Proving.*
+An interactive theorem prover (ITP) or _proof assistant_ attempts to reason
+about the program using _logical inference rules_ to construct a formal proof
+that the specification holds for all possible inputs. The reason it is called
+"interactive" is that the user must guide the proof process by providing lemmas,
+definitions, and strategies to help the prover construct the proof.
 
-// Because AbsInt is fully automated and uses over-approximations, it is efficient and scales well to large programs. However, overapproximation comes at the cost of precision: it can cause AbsInt to produce false positives by reporting potential violations that are not real bugs.
+ITPs are powerful and can prove deep, rich properties about programs. However,
+they may require significant human guidance to construct the proofs and do not
+scale well to large or complex systems.
 
+#example[
+  For #code("clip"), a theorem prover might reason as follows:
 
-// \begin{example}
-// For \code{clip}, an AbsInt tool might reason:
-// \begin{enumerate}
-//     \item Input \code{x} is in $(-\infty, \infty)$ and output \code{y} is unknown initially.
-//     \item After \code{if x < 0} branch, output \code{y} is in $[0, 0]$.
-//     \item After \code{if x > 10} branch, output \code{y} is in $[10, 10]$.
-//     \item After the else branch, output \code{y} is in $[0, 10]$.
-//     \item Combining all branches, output \code{y} is in $[0, 10]$.
-// \end{enumerate}
-// \end{example}
-
-// For neural network verification, AbsInt is often used to compute bounds on the outputs of neural network layers given bounds on the inputs. AbsInt is necessarily because neural networksare are very large and have complex nonlinear functions such as ReLU that are difficult to analyze exactly.
-
-//  === Soundness and Completeness}
-
-// Two core concepts in formal methods are \emph{soundness} and \emph{completeness}. These describe the correctness and power of an FM algorithm\footnote{Mike Hicks also wrote a good blog post on this topic: \url{http://www.pl-enthusiast.net/2017/10/23/what-is-soundness-in-static-analysis/}.}.
-
-// \begin{definition}
-// An FM algorithm is \textbf{sound} if every property it claims to prove is actually true. In other words, if it says \emph{``this property holds in this system,''} then the property truly holds. Conversely, an FM algorithm is \emph{not} sound if it can claim that a false property is true.
-// \end{definition}
+  + *Case 1:* If #code("x < 0"), #code("clip") returns $0$, which is in
+    $[0, 10]$.
+  + *Case 2:* If #code("x > 10"), #code("clip") returns $10$, which is in
+    $[0, 10]$.
+  + *Case 3:* Otherwise, $0 <= x <= 10$, so #code("clip") returns #code("x"),
+    which is in $[0, 10]$.
+]
 
 
+*Satisfiability Checking (SAT) and Satisfiability Modulo Theories (SMT) Solving.*
+SAT and SMT solving are automated techniques---also referred to as
+_automatic theorem proving_---that reduce the verification problem to a question
+of _logical satisfiability_. These solvers take as input a set of logical
+formulae representing the program and the _negation_ of the specification, and
+determine whether there exists an assignment of variables that makes the
+formulae true (satisfiable) or not (unsatisfiable). If the formulae are
+unsatisfiable, the property is proved. If satisfiable, the property is
+disproved, and the solver provides a concrete counterexample demonstrating the
+violation.
 
-// \begin{definition}
-// An FM algorithm is \textbf{complete} if it can prove every true property. That is, if the property holds, the verifier will always be able to prove it. Conversely, an FM algorithm is \textbf{incomplete} if there exist true properties that it cannot prove.
-// \end{definition}
+SAT/SMT solving is crucial to modern formal methods and software verification
+tools due to its automation and ability to handle complex logical constraints.
+However, pure SAT/SMT solving struggles with scalability for neural networks,
+leading to the development of hybrid techniques that combine SAT/SMT solving
+with other methods such as abstract interpretation.
+
+#example[
+  For #code("clip"), a SAT/SMT solver would encode the program as logical
+  constraints:
+
+  $
+    & (x < 0 ==> y = 0) \
+    & quad and (x > 10 ==> y = 10) \
+    & quad and (0 <= x <= 10 ==> y = x)
+  $
+
+  and the negation of the specification:
+
+  $ (y < 0) or (y > 10) $
+
+  It would then check whether these constraints are satisfiable. In this case,
+  the solver would find that the constraints are _unsatisfiable_, proving that
+  #code("clip") always returns a value in $[0, 10]$.
+]
 
 
+*Abstract Interpretation.*
+Abstract interpretation (AbsInt) analyzes a program by automatically computing
+_over-approximations_ of its behavior. Instead of tracking exact values, AbsInt
+tracks abstract properties such as ranges or signs of variables---e.g., instead
+of saying "#code("x = 5")", AbsInt might say "#code("x")$ in [0, 10]$" or
+"#code("x") is non-negative".
 
-// Some notes
-// \begin{itemize}
-//     \item While a sound FM algorithm never claims a false property is true, it may claim that a true property is false (i.e., it can give false counterexamples). Thus, an extremely conservative FM algorithm that claims every property is false is still sound. Similarly, an FM algorithm that returns ``unknown'' for every property is also sound. 
-    
-//     Similarly, while a complete FM algorithm can prove every true property, it may also claim that a false property is true (i.e., it can produce false proofs). Thus, an extremely reckless (and not trustworth) FM algorithm that claims every property is true is still complete. Similarly, an FM algorithm that returns ``unknown'' for every property is also complete. 
+Because AbsInt is fully automated and uses over-approximations, it is efficient
+and scales well to large programs. However, over-approximation comes at the cost
+of precision: it can cause AbsInt to produce false positives by reporting
+potential violations that are not real bugs.
 
-//     \item It is important to distinguish between an FM algorithm and its implementation (the software tool). An FM algorithm may be sound (or complete), but its implementation---typically written by human (or AI nowadays)---may contain bugs that cause it to produce unsound (or incomplete) results. 
-// \end{itemize}
+#example[
+  For #code("clip"), an AbsInt tool might reason:
+
+  + Input #code("x") is in $(-infinity, +infinity)$ and output #code("y") is
+    unknown initially.
+  + After the #code("if x < 0") branch, output #code("y") is in $[0, 0]$.
+  + After the #code("if x > 10") branch, output #code("y") is in $[10, 10]$.
+  + After the else branch, output #code("y") is in $[0, 10]$.
+  + Combining all branches, output #code("y") is in $[0, 10]$.
+]
+
+For neural network verification, AbsInt is often used to compute bounds on the
+outputs of neural network layers given bounds on the inputs. AbsInt is necessary
+because neural networks are very large and have complex nonlinear functions such
+as ReLU that are difficult to analyze exactly.
 
 
+=== Soundness and Completeness in FM
 
-// Ideally, FM algorithm should be both sound and complete: never prove a false property and can prove every true property. However,  we can only hope to achieve one of the two properties because achieving both is often computationally infeasible for complex systems. Between the two, soundness is typically prioritized in safety-critical settings because it is better to be unsure about a system (and say ``unknown'' or even claim that it is unsafe) than to incorrectly claim that it is safe when it is not. Thus, most practical FM algorithms are designed to be sound but incomplete.
+Two core concepts in FM are _soundness_ and _completeness_. These
+describe the correctness and power of an FM
+algorithm.#footnote[Mike Hicks wrote a good blog post on this topic:
+#link("http://www.pl-enthusiast.net/2017/10/23/what-is-soundness-in-static-analysis/").]
+
+#definition[
+  An FM algorithm is *sound* if every property it claims to prove is actually
+  true. In other words, if it says _"this property holds in this system,"_ then
+  the property truly holds. Conversely, an FM algorithm is _not_ sound if it
+  can claim that a false property is true.
+]
+
+#definition[
+  An FM algorithm is *complete* if it can prove every true property. That is,
+  if the property holds, the verifier will always be able to prove it.
+  Conversely, an FM algorithm is *incomplete* if there exist true properties
+  that it cannot prove.
+]
+
+Some notes:
+
+- While a sound FM algorithm never claims a false property is true, it _may_
+  claim that a true property is false (i.e., it can give false counterexamples).
+  Thus, an extremely conservative FM algorithm that claims every property is
+  false is still sound. Similarly, an FM algorithm that returns "unknown" for
+  every property is also sound.
+
+  Similarly, while a complete FM algorithm can prove every true property, it may
+  also claim that a false property is true (i.e., it can produce false proofs).
+  Thus, an extremely reckless (and untrustworthy) FM algorithm that claims every
+  property is true is still complete. An FM algorithm that returns "unknown" for
+  every property is also complete.
+
+- It is important to distinguish between an FM algorithm and its implementation
+  (the software tool). An FM algorithm may be sound (or complete), but its
+  implementation---typically written by humans (or AI nowadays)---may contain
+  bugs that cause it to produce unsound (or incomplete) results.
+
+Ideally, an FM algorithm should be both sound and complete: never proving a
+false property and able to prove every true property. However, achieving both is
+often computationally infeasible for complex systems. Between the two, soundness
+is typically prioritized in safety-critical settings because it is better to be
+unsure about a system (and say "unknown", or even claim that it is unsafe) than
+to incorrectly claim that it is safe when it is not. Thus, most practical FM
+algorithms are designed to be *sound but incomplete*.
 
 // = Logics <chap:logics}
 
