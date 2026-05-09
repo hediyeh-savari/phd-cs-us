@@ -8859,7 +8859,9 @@ problems, but Z3 is effective for demonstration purposes.
 
 #problem[
   Find two interesting MILP problems online, formulate each as a MILP, solve
-  by hand (showing all steps), and implement in Z3. For each problem: write
+  by hand (showing all steps), and implement in Z3. 
+  
+  For each problem: write
   down the problem statement and cite the source, clearly state the objective
   and constraints, and document the Z3 code with comments.
 ] <ex:milp-online>
@@ -8870,6 +8872,7 @@ problems, but Z3 is effective for demonstration purposes.
     x + 2y >= 3, quad 3x + y >= 3, quad x, y >= 0, quad x, y in RR.
   $
 
+Remember to:
   + State the constraints and objective function.
   + Find the corner or candidate points.
   + Evaluate the objective at each corner point.
@@ -11114,7 +11117,7 @@ sufficient and often more efficient.
   let x2 = (0, 0)
   let x3 = (3, 2)
   let x4 = (3, 0)
-  let x5 = (6, 1)
+  let x5 = (5, 1)
 
   // Draw a connection between circle boundaries with an arrowhead entering b
   let connect = (a, b, label, p) => {
@@ -11142,11 +11145,11 @@ sufficient and often more efficient.
 
   // Edges
   connect(x1, x3, "-1.0", (1.5, 2.25))
-  connect(x1, x4, "-0.5", (1.5, 1.25))
-  connect(x2, x3, "-0.5", (1.5, 0.75))
+  connect(x1, x4, "-0.5", (2.2, 1.25))
+  connect(x2, x3, "-0.5", (2.2, 0.75))
   connect(x2, x4, "1.0",  (1.5, -0.25))
-  connect(x3, x5, "1.0",  (4.5, 1.75))
-  connect(x4, x5, "-1.0", (4.5, 0.25))
+  connect(x3, x5, "1.0",  (4, 1.75))
+  connect(x4, x5, "-1.0", (4, 0.25))
 
   // Nodes with fills:
   // - Inputs (x1, x2): light blue
@@ -11171,6 +11174,6 @@ sufficient and often more efficient.
   // External arrows entering/leaving nodes
   line((-0.8, 2), (-r, 2), stroke: 1pt, end: ">")
   line((-0.8, 0), (-r, 0), stroke: 1pt, end: ">")
-  line((6 + r, 1), (6.8, 1), stroke: 1pt, end: ">")
+  line((5 + r, 1), (6, 1), stroke: 1pt, end: ">")
 })
 
