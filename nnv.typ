@@ -11127,26 +11127,26 @@ sufficient and often more efficient.
         line(start, end, stroke: 1pt, end: ">")
         content(p, box(fill: white, inset: 1pt, text(size: 9pt)[#label]))
       }
-      connect(x1, x3, "-1.0", (1.5, 2.25))
-      connect(x1, x4, "-0.5", (2.2, 1.25))
-      connect(x2, x3, "-0.5", (2.2, 0.75))
-      connect(x2, x4, "1.0",  (1.5, -0.25))
-      connect(x3, x5, "1.0",  (4, 1.75))
-      connect(x4, x5, "-1.0", (4, 0.25))
+      connect(x1, x3, "-0.5", (1.5, 2.25))
+      connect(x1, x4, "0.5", (2.0, 0.55))
+      connect(x2, x3, "0.5", (2.0, 1.55))
+      connect(x2, x4, "-0.5",  (1.5, -0.25))
+      connect(x3, x5, "-1.0",  (4.0, 1.50))
+      connect(x4, x5, "1.0", (4.0, 0.50))
       for (pos, label, fill-color, value) in (
-        (x1, $x_1$, white, "-0.5"),
-        (x2, $x_2$, white, "-1.0"),
-        (x3, $x_3$, white,          "1.0"),
-        (x4, $x_4$, white,          "1.0"),
-        (x5, $x_5$, white, "-1.0"),
+        (x1, $x_1$, green.lighten(50%), ""),
+        (x2, $x_2$, green.lighten(50%), ""),
+        (x3, $x_3$, yellow.lighten(50%), "1.0"),
+        (x4, $x_4$, yellow.lighten(50%), "-1.0"),
+        (x5, $x_5$, red.lighten(50%), "-1.0"),
       ) {
         circle(pos, radius: r, stroke: 1pt, fill: fill-color)
         content(pos, label)
         content((pos.at(0), pos.at(1) - 0.65), text(size: 9pt)[#value])
       }
-      line((-0.8, 2), (-r, 2), stroke: 1pt, end: ">")
-      line((-0.8, 0), (-r, 0), stroke: 1pt, end: ">")
-      line((5 + r, 1), (6, 1), stroke: 1pt, end: ">")
+      //line((-0.8, 2), (-r, 2), stroke: 1pt, end: ">")
+      //line((-0.8, 0), (-r, 0), stroke: 1pt, end: ">")
+      //line((5 + r, 1), (6, 1), stroke: 1pt, end: ">")
     })
   ]
 )
