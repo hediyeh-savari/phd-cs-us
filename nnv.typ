@@ -11106,74 +11106,50 @@ sufficient and often more efficient.
 
 #import "@preview/cetz:0.3.4": canvas, draw
 
-#canvas({
-  import draw: *
+#let mydnn(sc: 1) = figure(
+  scale(sc * 100%)[
+    #canvas({
+      import draw: *
+      let r = 0.45
+      let x1 = (0, 2)
+      let x2 = (0, 0)
+      let x3 = (3, 2)
+      let x4 = (3, 0)
+      let x5 = (5, 1)
+      let connect = (a, b, label, p) => {
+        let dx = b.at(0) - a.at(0)
+        let dy = b.at(1) - a.at(1)
+        let len = calc.sqrt(dx * dx + dy * dy)
+        let ux = dx / len
+        let uy = dy / len
+        let start = (a.at(0) + r * ux, a.at(1) + r * uy)
+        let end   = (b.at(0) - r * ux, b.at(1) - r * uy)
+        line(start, end, stroke: 1pt, end: ">")
+        content(p, box(fill: white, inset: 1pt, text(size: 9pt)[#label]))
+      }
+      connect(x1, x3, "-1.0", (1.5, 2.25))
+      connect(x1, x4, "-0.5", (2.2, 1.25))
+      connect(x2, x3, "-0.5", (2.2, 0.75))
+      connect(x2, x4, "1.0",  (1.5, -0.25))
+      connect(x3, x5, "1.0",  (4, 1.75))
+      connect(x4, x5, "-1.0", (4, 0.25))
+      for (pos, label, fill-color, value) in (
+        (x1, $x_1$, white, "-0.5"),
+        (x2, $x_2$, white, "-1.0"),
+        (x3, $x_3$, white,          "1.0"),
+        (x4, $x_4$, white,          "1.0"),
+        (x5, $x_5$, white, "-1.0"),
+      ) {
+        circle(pos, radius: r, stroke: 1pt, fill: fill-color)
+        content(pos, label)
+        content((pos.at(0), pos.at(1) - 0.65), text(size: 9pt)[#value])
+      }
+      line((-0.8, 2), (-r, 2), stroke: 1pt, end: ">")
+      line((-0.8, 0), (-r, 0), stroke: 1pt, end: ">")
+      line((5 + r, 1), (6, 1), stroke: 1pt, end: ">")
+    })
+  ]
+)
 
-  // Node radius
-  let r = 0.35
-
-  // Node coordinates
-  let x1 = (0, 2)
-  let x2 = (0, 0)
-  let x3 = (3, 2)
-  let x4 = (3, 0)
-  let x5 = (5, 1)
-
-  // Draw a connection between circle boundaries with an arrowhead entering b
-  let connect = (a, b, label, p) => {
-    let dx = b.at(0) - a.at(0)
-    let dy = b.at(1) - a.at(1)
-    let len = calc.sqrt(dx * dx + dy * dy)
-
-    let ux = dx / len
-    let uy = dy / len
-
-    let start = (a.at(0) + r * ux, a.at(1) + r * uy)
-    let end   = (b.at(0) - r * ux, b.at(1) - r * uy)
-
-    line(start, end, stroke: 1pt, end: ">")
-
-    content(
-      p,
-      box(
-        fill: white,
-        inset: 1pt,
-        text(size: 9pt)[#label],
-      ),
-    )
-  }
-
-  // Edges
-  connect(x1, x3, "-1.0", (1.5, 2.25))
-  connect(x1, x4, "-0.5", (2.2, 1.25))
-  connect(x2, x3, "-0.5", (2.2, 0.75))
-  connect(x2, x4, "1.0",  (1.5, -0.25))
-  connect(x3, x5, "1.0",  (4, 1.75))
-  connect(x4, x5, "-1.0", (4, 0.25))
-
-  // Nodes with fills:
-  // - Inputs (x1, x2): light blue
-  // - Hidden (x3, x4): white
-  // - Output (x5): light green
-  for (pos, label, fill-color) in (
-    (x1, $x_1$, rgb("#dbeafe")),
-    (x2, $x_2$, rgb("#dbeafe")),
-    (x3, $x_3$, white),
-    (x4, $x_4$, white),
-    (x5, $x_5$, rgb("#dcfce7")),
-  ) {
-    circle(
-      pos,
-      radius: r,
-      stroke: 1pt,
-      fill: fill-color,
-    )
-    content(pos, label)
-  }
-
-  // External arrows entering/leaving nodes
-  line((-0.8, 2), (-r, 2), stroke: 1pt, end: ">")
-  line((-0.8, 0), (-r, 0), stroke: 1pt, end: ">")
-  line((5 + r, 1), (6, 1), stroke: 1pt, end: ">")
-})
+#mydnn(sc: 1)
 
