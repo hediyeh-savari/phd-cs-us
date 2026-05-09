@@ -8577,7 +8577,7 @@ at which the clause becomes unit.
 == CDCL
 
 Modern DPLL solving improves the original version with Conflict-Driven Clause
-Learning (CDCL). DPLL with CDCL can _learn new clauses_ to avoid past conflicts
+Learning (CDCL). DPLL with CDCL _learns new clauses_ to avoid past conflicts
 and backtrack more intelligently (e.g., using non-chronological backjumping).
 Due to its ability to learn new clauses, CDCL can significantly reduce the
 search space and allow SAT solvers to scale to large problems. Whenever we
