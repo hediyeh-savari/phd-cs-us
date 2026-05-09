@@ -7619,7 +7619,7 @@ assert(abs_val(0) == 0)
 ```
 
 The program works correctly on these inputs, returning non-negative values as expected. We could run many more tests with different inputs to increase our confidence. However, we can never test all possible integers, and therefore cannot be certain that the function works correctly for all possible inputs.
-This is precisely where bugs can hide, and why testing---no matter how extensive---alone cannot provide absolute guarantees about program correctness.
+This is precisely where bugs can hide, and why testing---no matter how extensive---alone cannot provide absolute guarantees about program correctness, as observed by Dijkstra:
 
 #quote(block:true, attribution: [#text(size:0.85em)[*Edsger Dijkstra*]])[_"Testing can only show the presence of bugs, not their absence"_]
 
@@ -7631,144 +7631,195 @@ If FM can prove this statement, we have a mathematical guarantee that the functi
 
 Thus, the #highlight[fundamental difference] between FM and testing is that FM provides mathematical guarantees about program behavior---without even running the program---, while testing can only provide empirical evidence based on a finite set of inputs that we run the program on.
 
-// % ---
+= Specifications
 
-//  === Specifications <sec:fm-spec}
+At the heart of FM is a _specification_---a precise description of what it
+means for a system to be correct (or safe, or robust, etc.). A specification
+defines the properties we want to verify about a system.
 
-// At the heart of FM is a \emph{specification}---a precise description of what it means for a system to be correct (or safe, or robust, etc.). A specification defines the properties we want to verify about a system.
+Software engineers often write specifications informally in natural language,
+e.g., an algorithm should be "correct" and "fast", or a web server should be
+"robust against attacks". However, these informal specifications are often
+ambiguous and imprecise, making them vulnerable to misinterpretation and error.
+For example, what is correct? How fast is fast enough? How much perturbation
+should a system be able to handle to be considered "robust"?
 
-// Software engineers often write specifications informally in natural language, e.g., an algorithm should be ``corect'' and ``fast' or a web server should be ``robust against attacks''. However, these informal specifications are often ambiguous and imprecise, making them vulnerable to misinterpretation and error. For example, What is correct? how fast is fast enough? How much perturbation should a system be able to handle to be considered ``robust''?  
+#problem("Sorting Specification")[
+  Give the formal specification for a sorting function `sort(l1)` that
+  takes a list of integers `l1` and returns a list of integers
+  `l2`. The specification should define what it means for the output
+  `l2` to be a correct sorting of the input `l1`.
+]
 
-// \begin{problem}[Sorting Specification] 
-//     Give the formal specification for a sorting function \code{sort(l1)} that takes a list of integers \code{l1} and returns a list of integers \code{l2}. The specification should define what it means for the output \code{l2} to be a correct sorting of the input \code{l1}.
-// \end{problem}    
+In contrast, a formal specification must be _unambiguous_ and _mathematically
+expressible_---typically using logic. It precisely defines the conditions under
+which the system is considered correct.
 
-// In contrast, a formal specification must be \emph{unambiguous} and \emph{mathematically expressible}---typically using logic. It precisely defines the conditions under which the system is considered correct.
+For example, a desirable property of neural networks used for image
+classification is being _robust_ to small perturbations of the input image.
+For this property, an informal specification might say:
 
-// For example, a desirable property of neural networks used for image classification is being \emph{robust} to small perturbations of the input image.  For this property, an informal specification might say:
+#block(inset: (left: 1.5em))[
+  _"Small changes to the input image shouldn't cause the neural network to
+  change its classification label."_
+]
 
-// \emph{``Small changes to the input image shouldn't cause the neural network to change its classification label''. }
+In contrast, a formal specification of robustness would instead say:
 
-// In contrast a formal specification of robustness would instead say:
+#block(inset: (left: 1.5em))[
+  _"For an input image $x$, for all images $x'$ such that the distance between
+  $x$ and $x'$ is at most $epsilon$, the output label of a network $N$ for $x'$
+  must be the same as for $x$."_
+]
 
-// \emph{``For an input image $x$, for all images $x'$ such that the distance between $x$ and $x'$ is at most $\epsilon$, the output label of a network $N$ for $x'$ must be the same as for $x$''}
+This statement is more precise. It defines exactly what inputs are allowed
+(those within distance $epsilon$ of $x$) and exactly what behavior is required
+(the output label must remain the same). Typically, we go further and express
+this property in formal logic:
 
-// This statement is more precise. It defines exactly what inputs are allowed (those within distance $\epsilon$ of $x$) and exactly what behavior is required (the output label must remain the same). Typically, we even go further and express this property in formal logic, e.g.,
+$
+  forall x', norm(x - x') <= epsilon ==> N(x') = N(x)
+$ <eq:robustness>
 
-// \begin{equation <eq:robustness}
-// \forall x', \|x - x'\| \leq \epsilon \implies N(x') = N(x)
-// \end{equation}
+Once having a formal specification like this, we can apply formal verification
+techniques to prove or disprove it.
 
-// Once having a formal specification like this, we can apply formal verification techniques to prove or disprove it.
+== Pre and Post Conditions
 
+A common way to express formal specifications is using #highlight[preconditions] and
+#highlight[postconditions]. A precondition describes the assumptions about the inputs to
+a function, while a postcondition describes the guarantees about the outputs
+given that the preconditions hold. Typically, preconditions and postconditions
+are expressed using logical formulae and together form the specification of the
+form:
 
-// \subsection{Pre and Post Conditions}
-// A common way to express formal specifications is using \emph{preconditions} and \emph{postconditions}. A precondition describes the assumptions about the inputs to a function, while a postcondition describes the guarantees about the outputs given that the preconditions hold. Typically, preconditions and postconditions are expressed using logical formulae (\autoref{chap:logics}) and together form the specification of the form: 
-// \begin{equation}
-// P \implies Q,
-// \end{equation}
-// which means: if the precondition $P$ holds for the inputs, then the postcondition $Q$ must hold for the outputs.
+$ P ==> Q, $
 
+which means: _"if the precondition $P$ holds for the inputs, then the
+postcondition $Q$ must hold for the outputs"_.
 
-// \paragraph{Post-condition} A postcondition is a logical statement that must be true after a function has executed, assuming the precondition held. It typically describes the \emph{expected behavior} and \emph{outcomes} of the function with respect to its inputs. For example, the postcondition for \code{sqrt(x)} might state that the output $y$ must be non-negative and that $y^2 = x$. For \code{idiv(a, b)}, the postcondition might state that the output $q$ must satisfy $a = b \cdot q + r$ for some remainder $r$ such that $0 \leq r < |b|$.
+#paragraph[Postcondition][A postcondition is a logical statement that must be true
+after a function has executed, assuming the precondition held. It typically
+describes the _expected behavior_ and _outcomes_ of the function with respect
+to its inputs. For example, the postcondition for `sqrt(x)` might state
+that the output $y$ must be non-negative and that $y^2 = x$. For
+`idiv(a, b)`, the postcondition might state that the output $q$ must
+satisfy $a = b dot q + r$ for some remainder $r$ such that $0 <= r < |b|$.
 
-// We want the postcondition to be as strong as possible, i.e., it as precisely as possible describes the expected behavior of the function. For example, for \code{idiv(a, b)}, a (weak) postcondition might simply state that the output is an integer, while a (strong) postcondition would specify the exact relationship between inputs and outputs as described above. Similarly, for \code{sqrt(x)}, a weak postcondition might state that the output is a real number, while a strong postcondition would specify the exact relationship between input and output $y^2 = x$.
+We want the postcondition to be as strong as possible, i.e., it should as
+precisely as possible describe the expected behavior of the function. For
+example, for `idiv(a, b)`, a (weak) postcondition might simply state
+that the output is an integer, while a (strong) postcondition would specify the
+exact relationship between inputs and outputs as described above. Similarly,
+for `sqrt(x)`, a weak postcondition might state that the output is a
+real number, while a strong postcondition would specify the exact relationship
+$y^2 = x$.]
 
+#paragraph[Precondition][A precondition is a logical statement that must be true before
+a function is executed. It typically lists _assumptions_ and _constraints_ on
+the inputs. For example, a `sqrt(x)` function might have the
+precondition that `x` must be non-negative. Similarly, an integer
+division function `idiv(a, b)` might have the precondition that
+`b` must be non-zero to avoid division-by-zero errors.
 
-// \paragraph{Pre-condition} A precondition is a logical statement that must be true before a function is executed. It typically lists \emph{assumptions} and \emph{constraints} on the inputs. For example, a \code{sqrt(x)} function might have the precondition that \code{x} must be non-negative. Similarly, an integer division function \code{idiv(a, b)} might have the precondition that \code{b} must be non-zero to avoid division by zero errors.
+The precondition should be as weak as possible, i.e., it should not impose
+unnecessary restrictions or assumptions that limit the applicability of the
+function. Moreover, the user might not even be aware of all the assumptions
+needed for the function to work correctly, and therefore a strong precondition
+might be unrealistic. Ideally, there should be _no_ precondition at all (i.e.,
+as weak as possible), meaning the function works for all possible inputs. For
+example, for `sqrt(x)` we can have a weak precondition that `x`
+is any real number, and the postcondition would then specify that if the input
+is negative the output is NaN (not a number), and otherwise the output is
+non-negative and its square equals `x`.
+]
 
-// The precondition should be as weak as possible, i.e., it should not impose unnecessary restrictions or assumptions that limit the applicability of the function. Moreover, the user might not even be aware of all the assumptions that are needed for the function to work correctly, and therefore a strong precondition might be unrealistic. Ideally, there should be \emph{no} precondition at all (i.e., as weak as possible), meaning the function works for all possible inputs.
-// For example, for \code{sqrt(x)} we can have a weak precondition that \code{x} is any real number, and the postcondition would then specify if the input is negative, the output is NaN (not a number) and otherwise the output is non-negative and its square is equal to \code{x}.
+#problem("Minimum Specification")[
+  Give a specification for a function `m = min(l)` that takes a list of
+  integers `l` and returns the minimum integer `m` in the list.
+  Clearly state the precondition and postcondition for the function.
+]
 
+#problem("Duplicate")[
+  Give a specification for a function `l2 = remove_duplicates(l)` that
+  takes a list of integers `l` and returns a list of integers `l2`
+  that contains the same integers as`l` but with all duplicates removed.
+  Clearly state the precondition and postcondition for the function.
+] <prob:remove_duplicates>
 
-// \begin{problem}[Minimum Specification]
-//     Give a specification for a function \code{m=min(l)} that takes a list of integers \code{l} and returns the minimum integer \code{m} in the list.  Clearly state the precondition and postcondition for the function.
-// \end{problem}
+// #solution[
+//   *Precondition:*
 
-// \begin{problem}[Duplicate]\label{problem:duplicate-specs}
-//     Give a specification for a function \code{l2=remove\_duplicates(l)} that takes a list of integers \code{l} and returns a list of integers \code{l2} that contains the same integers as \code{l} but with all duplicates removed.  Clearly state the precondition and postcondition for the function.
-// \end{problem}
-// \begin{solution}
+//   - `l` is a list of integers.
 
-// ~
+//   *Postcondition:*
 
-// \vspace{0.5\baselineskip}
+//   Let `l2 = remove_duplicates(l)`. Then:
 
-// \textbf{Precondition:}
+//   + For all $x in$ `l2`, we have $x in$ `l` (all elements of
+//     `l2` appear in `l`).
 
-// \begin{itemize}
-//     \item \code{l} is a list of integers.
-// \end{itemize}
+//   + For all $x in$ `l`, we have $x in$ `l2` (all unique elements
+//     of `l` appear in `l2`).
 
-// \vspace{0.5\baselineskip}
-
-// \textbf{Postcondition:}
-// ~
-
-// Let \code{l2 = remove\_duplicates(l)}. Then:
-
-// \begin{enumerate}
-//     \item For all $x \in \code{l2}$, we have $x \in \code{l}$ (all elements of \code{l2} appear in \code{l}).
-
-//     \item For all $x \in \code{l}$, we have $x \in \code{l2}$ (all unique elements of \code{l} appear in \code{l2}).
-
-//     \item All elements in \code{l2} are distinct. Formally, for all indices $i, j$ such that
-//     \[
-//         0 \le i < j < |\code{l2}|,
-//     \]
+//   + All elements in `l2` are distinct. Formally, for all indices $i, j$
+//     such that
+//     $ 0 <= i < j < |"l2"|, $
 //     we have
-//     \[
-//         \code{l2}[i] \ne \code{l2}[j].
-//     \]
-// \end{enumerate}
+//     $ "l2"[i] != "l2"[j]. $
 
-// Equivalently,
-// \[
-//     \text{set}(\code{l2}) = \text{set}(\code{l}).
-// \]
+//   Equivalently,
+//   $ "set"("l2") = "set"("l"). $
 
-// For example, if \code{l = [1, 2, 3, 2, 4, 1, 5]}, then a valid output is \code{l2 = [1, 2, 3, 4, 5]}.
-
-// \end{solution} 
+//   For example, if `l = [1, 2, 3, 2, 4, 1, 5]`, then a valid output is
+//   `l2 = [1, 2, 3, 4, 5]`.
+// ]
 
 
-// %\paragraph{What to Blame?} 
-//  === FM Techniques}
-// % ## Formal Methods as Tools: Models, Specifications, and Reasoning
+= FM Techniques
 
-// At a high level, an FM technique is an algorithm, often implemented as a software tool that analyzes a system.  The FM tool takes as \emph{inputs}
-// \begin{itemize}
-//     \item A \emph{model} of the system to be analyzed
-//     \item A \emph{specification} of the desired property of the system or program
-// \end{itemize}
-// and applies a \emph{reasoning process} to determine whether the model satisfies the specification. The tool produces an \emph{output} indicating whether the property holds, does not hold, or is unknown.
+At a high level, an FM technique is an algorithm, often implemented as a
+software tool, that analyzes a system. The FM tool takes as _inputs_:
 
-// \paragraph{System Model}
-// The FM tool takes as input a \emph{model} of the system to be analyzed. This model is a mathematical abstraction of the system's behavior. It may be a program written in a language such as C or Python, a neural network in ONNX format, or other representations such as state machines or transition systems. This model, e.g., the program, is created by the programmer and is intended to capture the desired specification (\autoref{sec:fm-spec}) of the system.  However, the model might contain bugs or inaccuracies that violate the intended specification, which is what the FM tool aims to detect.
+- A _model_ of the system to be analyzed
+- A _specification_ of the desired property of the system or program
 
+and applies a _reasoning process_ to determine whether the model satisfies the
+specification. The tool produces an _output_ indicating whether the property
+holds, does not hold, or is unknown.
 
-// \begin{example <ex:clip}
-// For example, consider the following simple system that ``clips'' an input value into the range [0, 10]. This system is modeled by the following Python function:
+*System Model.* The FM tool takes as input a _model_ of the system to be
+analyzed. This model is a mathematical abstraction of the system's behavior. It
+may be a program written in a language such as C or Python, a neural network in
+ONNX format, or other representations such as state machines or transition
+systems. This model, e.g., the program, is created by the programmer and is
+intended to capture the desired specification of the system. However, the model
+might contain bugs or inaccuracies that violate the intended specification,
+which is what the FM tool aims to detect.
 
-// \begin{lstlisting}
-// def clip(x):
-//    if x < 0:
-//        return 0
-//    elif x > 10:
-//        return 10
-//    else:
-//        return x    
-// \end{lstlisting}
-// \end{example}
+#example("Clip")[
+  Consider the following simple system that "clips" an input value into the
+  range $[0, 10]$. This system is modeled by the following Python function:
 
-// The formal specification of the system is: 
-// \begin{equation}
-// \forall x \in \mathbb{R}, 0 \leq clip(x) \leq 10.
-// \end{equation}
+  ```python
+  def clip(x):
+      if x < 0:
+          return 0
+      elif x > 10:
+          return 10
+      else:
+          return x
+  ```
+]
 
-// \paragraph{FM Reasoning Process}
+The formal specification of the system is:
 
-// Once the model and specification are given, a FM tool applies a \emph{reasoning process}---an algorithm---to determine whether the model satisfies the specification. \autoref{sec:fm-techniques} describes several major classes of FM techniques, each with its own reasoning process.
+$ forall x in RR, quad 0 <= "clip"(x) <= 10. $
+
+*FM Reasoning Process.* Once the model and specification are given, an FM tool
+applies a _reasoning process_---an algorithm---to determine whether the model
+satisfies the specification. The next section describes several major classes of
+FM techniques, each with its own reasoning process.
 
 // % Different formal-methods techniques use different reasoning processes:
 
