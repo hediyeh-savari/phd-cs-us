@@ -345,8 +345,8 @@ However, many universities also accept PhD students in the Spring or Summer, esp
 
 
 #figure(caption: [Comparison of the CS PhD program in the US and other countries],
-  text(size:11pt)[
-    #table(
+text(size: 0.8em,
+    table(
       columns: 3, align: left, stroke: none,
       table.header(
         [*Aspect*], [*US PhD Programs*], [*Other Countries*],
@@ -359,8 +359,7 @@ However, many universities also accept PhD students in the Spring or Summer, esp
       [Research Proposal Required], [No], [Yes (in some countries)],
       [Academic (Faculty) Job], [Direct], [Postdoc],
       [Work-Life Balance], [Less], [More],
-    )
-  ]
+    ))
 )<tab:us-vs-other>
 
 @tab:us-vs-other summarizes the main differences between CS PhD in the US and other countries. Note that these differences can vary by institution and country. Some countries might have a PhD program that is similar to the US. The following are some common differences:
@@ -1459,6 +1458,7 @@ Note that funding is typically more available for PhD students than MS (@sec:ms-
 
 #figure(
   caption: [Different types of PhD funding. All cover tuition, insurance, and stipend.],  
+  text(size: 0.8em,
   table(
     columns: 4,
     align: left,
@@ -1474,7 +1474,7 @@ Note that funding is typically more available for PhD students than MS (@sec:ms-
     table.hline(),
     [*Pros*], [Research Freedom], [Get to do research], [Research Freedom],
     [*Cons*], [Teaching Duties], [Research Restriction], [Competitive, Limited],
-  ),
+  ))
 ) <tab:funding>
 
 == Graduate Assistantship (TA/RA) <sec:ta-ra>
@@ -1593,7 +1593,7 @@ PhD students often ask why their salary is low compared to the large grants thei
 
 #figure(
   caption: [GRA cost breakdown. F & A is Facilities & Administrative Cost Base and MTDC is Modified Total Direct Cost. These are things that the university can charge overhead to.],
-  text(size: 10pt,
+  text(size: 0.8em,
   table(
     columns: 3,
     align: left,

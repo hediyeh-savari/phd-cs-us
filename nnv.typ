@@ -1,3 +1,10 @@
+#import "@preview/simple-plot:0.3.0": plot
+
+#import "@preview/theorion:0.6.0": *
+#import cosmos.fancy: *
+#show: show-theorion
+#set-inherited-levels(5)
+
 #set page(numbering: "1", number-align: center)
 #set heading(numbering: "1.")
 #set par(justify: true)
@@ -16,7 +23,7 @@
 #show ref: set text(fill:blue)
 #show link: set text(fill:blue)
 #show link: underline
-#show figure.caption: set text(size: 10pt)
+#show figure.caption: set text(size: 0.8em)
 
 // Inline code
 #show raw.where(block: false): it => box(fill: rgb("#f0f0f0"), inset: (x: 2pt), radius: 2pt, it)
@@ -52,6 +59,7 @@
 #let institute = "George Mason University"
 #let mybookgithub = "https://code.roars.dev/phd-cs-us"
 
+let relu = #smallcaps([relu])
 
 
 #let alert(txt) = {highlight(fill:red.lighten(30%))[#txt]}
@@ -87,7 +95,7 @@
 
 #let commentbox(who: none, msg) = cb(who: who, fill: gray.lighten(80%), [💬], msg)
 #let keybox(msg) = cb(fill: yellow.lighten(90%), [🔑],msg)
-#let examplebox(msg) = cb(fill: green.lighten(95%), [💡], msg)
+//#let examplebox(msg) = cb(fill: green.lighten(95%), [💡], msg)
 #let warningbox(msg) = cb(fill:red.lighten(80%), [🚨️], msg)
 
 #let redact(text, fill: black, height: 1em) = {
@@ -95,31 +103,12 @@
 }
 
 
-
-#let ex  = counter("example")
-#let exr = counter("exercise")
-
-// reset both counters at every new heading
-#show heading: it => { ex.update(0); exr.update(0); it }
-
-
-#let example(body) = {
-  ex.step()
-  block[*Example #context [#counter(heading).display("1.1").#ex.display()].* #body]
-}
-
-#let exercise(body) = {
-  exr.step()
-  block[*Exercise #context [#counter(heading).display("1").#exr.display()].* #body]
-  if label != none { [#content #label] } else { content }
-}
-
-
-
 #show figure.where(kind: image): set figure(supplement: [Fig.])
 #show figure.where(kind: table): set figure(supplement: [Tab.])
 #show math.equation: set math.equation(supplement: [Eq.])
 #show heading: set heading(supplement: [Sec.])
+
+
 
 
 // Title Page
@@ -746,44 +735,27 @@ where $n$ is the number of input neurons and $m$ is the number of output neurons
 #example[
 @fig:dnn shows an NN with two inputs $x_1, x_2 in RR$, two hidden neurons $x_3, x_4$ in one hidden layer, and one output neuron $x_5$. The connections between the neurons are weighted edges, and the biases are shown below each neuron.
 
-] <ex:test>
 
 
+- The hidden neurons compute:
+  $ x_3 = "relu"(-0.5 x_1 + 0.5 x_2 + 1.0), x_4 = "relu"(0.5 x_1 - 0.5 x_2 - 1.0), $
+  where $"relu"(x) = "max"(x, 0)$ is the ReLU activation function.
+- The output neuron computes:
+  $ x_5 = -1.0 dot x_3 + 1.0 dot x_4 - 1.0. $
 
-//@ex:test describes an NN with the following computations
-
-
-// \begin{itemize}
-//     \item The hidden neurons compute:
-//     \[
-//     x_3 = \relu{-0.5 x_1 + 0.5 x_2 + 1.0},\quad x_4 = \relu{0.5 x_1 + -0.5 x_2 + -1.0},
-//     \]
-//     where $\relu{x} = \max(x, 0)$ is the ReLU activation function.
-//     \item The output neuron computes:
-//     \[
-//     x_5 = -1.0 \cdot x_3 + 1.0 \cdot x_4 - 1.0.
-//     \]
-// \end{itemize}
-
-// Thus, this NN computes a function \(f: \mathbb{R}^2 \to \mathbb{R}\) where:
-// \[
-// f(x_1, x_2) = -\relu{-0.5 x_1 + 0.5 x_2 + 1.0} + \relu{0.5x_1 -0.5 x_2 - 1.0} - 1.0.
-// \]
-// \end{example}
-
+Thus, this NN computes a function $f: RR^2 -> RR$ where:
+$ f(x_1, x_2) = -"relu"(-0.5 x_1 + 0.5 x_2 + 1.0) + "relu"(0.5 x_1 - 0.5 x_2 - 1.0) - 1.0. $
+] <ex:dnn>
 
 === Affine Transformation <sec:affine>
-// 
-// The affine transformation (AF) of a neuron consists of a \emph{linear combination}---a weighted sum\footnote{A weighted sum is a sum of the form \( \sum_{i=1}^{n} w_i v_i \), where \(w_i\) are weights and \(v_i\) are variables or terms.}---of its inputs, followed by the addition of a bias term. More specifically, for a neuron with weights \(w_1, \dots, w_n\), bias \(b\), and inputs \(v_1, \dots, v_n\) from the previous layer, the AF computes:
 
-// \begin{equation <eq:affine}
-//     f(v_1, v_2, \dots,v_n) = \sum_{i=1}^{n} w_i v_i + b.
-// \end{equation}
+The affine transformation (AF) of a neuron consists of a _linear combination_---a weighted sum $sum$---of its inputs, followed by the addition of a bias term. More specifically, for a neuron with weights $w_1, dots, w_n$, bias $b$, and inputs $v_1, dots, v_n$ from the previous layer, the AF computes:
 
+$ f(v_1, v_2, dots, v_n) = sum_(i=1)^(n) w_i v_i + b. $ <eq:affine>
 
-// \begin{example}
-// In~\autoref{fig:dnn}, neuron \(x_3\) receives inputs \(x_1\) and \(x_2\) with weights \(-0.5\), \(0.5\), and bias \(1.0\), so its AF is $x_3 = -0.5 x_1 + 0.5 x_2 + 1.0$.
-// \end{example}
+#example[
+In @fig:dnn, neuron $x_3$ receives inputs $x_1$ and $x_2$ with weights $-0.5$, $0.5$, and bias $1.0$, so its AF is $x_3 = -0.5 x_1 + 0.5 x_2 + 1.0$.
+]
 
 
 // % \paragraph{Matrix Form} AF can also be represented in matrix form.
@@ -846,78 +818,56 @@ where $n$ is the number of input neurons and $m$ is the number of output neurons
 // % \]
 
 === Activation Functions <sec:activation>
-// Popular activation functions used in NNs include ReLU, Sigmoid, Tanh, and Softmax. All of these are non-linear\footnote{Non-linear means that the output of the function is not a linear combination of its inputs.} functions that introduce non-linearity to the network, allowing it to learn complex patterns in the data.
+Popular activation functions used in NNs include ReLU, Sigmoid, Tanh, and Softmax. All of these are _non-linear_#footnote[Non-linear means that the output of the function is not a linear combination of its inputs.] functions that introduce non-linearity to the network, allowing it to learn complex patterns in the data.
 
-// \autoref{tab:activation} summarizes the most common activation functions used in NNs, their equations, output ranges, and key uses.
+@tab:activation summarizes the most common activation functions used in NNs, their equations, output ranges, and key uses.
 
-// \begin{table}
-//   \centering
-//   \caption{Summary of Common Neural Network Activation Functions <tab:activation}
-//   \small
-//   \begin{tabular}{llll}
-//     \toprule
-//     \textbf{Name} & \textbf{Equation} & \textbf{Output Range} & \textbf{Key Use} \\
-//     \midrule
-//     ReLU      & $ \max(0, x) $                   & $[0, \infty)$   & Hidden layers, fast train \\
-//     Sigmoid   & $ \frac{1}{1 + e^{-x}} $         & $(0, 1)$        & Binary classification \\
-//     Tanh      & $ \tanh(x) $                     & $(-1, 1)$       & Hidden layers, zero-centered \\
-//     Softmax   & $ \frac{e^{x_i}}{\sum_j e^{x_j}} $& $(0, 1), \sum_i=1 $ & Multi-class output \\
-//     % Leaky ReLU& $ \begin{cases} x & x>0 \\ \alpha x & x\leq 0 \end{cases} $ & $(-\infty, \infty)$ & Prevent dead neurons \\
-//     % Swish     & $ x \cdot \sigmoid{x} $  & $(-\infty, \infty)$ & Deep networks \\
-//     % ELU       & $ \begin{cases} x & x>0 \\ \alpha(e^{x}-1) & x\leq 0 \end{cases} $ & $(-\alpha, \infty)$ & Advanced networks \\
-//     \bottomrule
-//   \end{tabular}
-// \end{table}
+#figure(caption: [Summary of Common Neural Network Activation Functions],
+  text(size: 0.8em,
+  table(
+    columns: 4,
+    align: left, stroke: none,
+    [*Name*], [*Equation*], [*Output Range*], [*Key Use*],
+    table.hline(),
+    [ReLU], $max(0, x)$, $[0, infinity)$, [Hidden layers, fast train],
+    [Sigmoid], $frac(1, 1 + e^(-x))$, $(0, 1)$, [Binary classification],
+    [Tanh], $tanh(x)$, $(-1, 1)$, [Hidden layers, zero-centered],
+    [Softmax], $frac(e^(x_i), sum_j e^(x_j))$, $(0, 1), sum_i=1$, [Multi-class output],
+  ))
+) <tab:activation>
 
 
-// \subsection{ReLU (Rectified Linear Unit) <sec:relu}
+==== ReLU (Rectified Linear Unit) <sec:relu>
 
-// ReLU is a widely used activation function in neural networks. It is defined as:
-
-// \[
-// \relu{x} = \max(0, x) =
-// \begin{cases}
-// 0 & \text{if } x \leq 0 \\
-// x & \text{if } x > 0
-// \end{cases}
-// \]
-
-// ReLU is \textbf{piecewise linear} because it consists of two linear segments as shown as in~\autoref{fig:relu}: (i) a constant function ($0$) when $x \leq 0$, (ii) and (ii) a linear function ($x$) when $x > 0$.
-// A ReLU activated neuron is said to be \emph{active} if its input is greater than zero and \emph{inactive} otherwise.
+ReLU is a widely used activation function in neural networks. It is defined as:
 
 
-// \begin{figure}[h]
-//     \centering
-//     \begin{tikzpicture}
-//         \begin{axis}[
-//             width=1.7in, height=1.7in,
-//             axis x line=middle, axis y line=middle,
-//             xlabel={}, ylabel={},
-//             axis equal,
-//             xtick={-4, -2, 0, 2, 4},
-//             ytick={0, 2, 4},
-//             xmin=-4.5, xmax=4.5, ymin=-0.5, ymax=4.5,
-//             enlargelimits=false,
-//             samples=2,
-//             domain=-4.5:4.5,
-//             axis line style={-latex},
-//             tick label style={font=\small},
-//             % yticklabel style={font=\small},
-//             % xticklabel style={font=\small},
-//             tick align=outside,
-//             minor tick num=0,
-//         ]
-//         % ReLU curve: flat at zero, then linear
-//         \addplot[line width=1.5pt, red!80!black, samples=2, domain=-4.5:0] {0};
-//         \addplot[line width=1.5pt, red!80!black, domain=0:4.5] {x};
-//       \end{axis}
-//     \end{tikzpicture}
-//     \caption{ReLU (Rectified Linear Unit) function. <fig:relu}
-// \end{figure}
+$
+"relu"(x) = max(0, x) = cases(
+0 & "if " x <= 0,
+x & "if " x > 0
+)
+$
 
-// \begin{example}
-// $\relu{-1.2} = 0$ (inactive), $\relu{0} = 0$ (inactive), and $\relu{2.8} = 2.8$ (active).
-// \end{example}
+ReLU(x) is *piecewise linear* because it consists of two linear segments as shown in @fig:relu: (i) a constant function that always return $0$ when $x <= 0$, (ii) an identity function that returns $x$ when $x > 0$.
+A ReLU activated neuron is said to be _active_ if its input is greater than zero and _inactive_ otherwise.
+
+#figure(
+  caption: [ReLU (Rectified Linear Unit) function.],  
+  {
+
+    plot(
+    xmin: -4, xmax: 4,
+    ymin: -2, ymax: 4,
+    width:6, height:4,
+    xlabel: $x$,
+    ylabel: $y$,
+    show-grid: true,
+    (fn: x => if x < 0 {0} else {x}, stroke: red + 1.2pt),
+    )
+  }
+) <fig:relu>
+
 
 
 // \paragraph{Logical encoding} ReLU can be encoded using the following logical formula:
