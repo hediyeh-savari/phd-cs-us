@@ -59,8 +59,6 @@
 #let institute = "George Mason University"
 #let mybookgithub = "https://code.roars.dev/phd-cs-us"
 
-let relu = #smallcaps([relu])
-
 
 #let alert(txt) = {highlight(fill:red.lighten(30%))[#txt]}
 #let paragraph(title, body) = {
@@ -849,7 +847,7 @@ x & "if " x > 0
 )
 $
 
-ReLU(x) is *piecewise linear* because it consists of two linear segments as shown in @fig:relu: (i) a constant function that always return $0$ when $x <= 0$, (ii) an identity function that returns $x$ when $x > 0$.
+ReLU(x) is called #highlight[piecewise linear] because it consists of two linear segments as shown in @fig:relu: (i) a constant function that always return $0$ when $x <= 0$, (ii) an identity function that returns $x$ when $x > 0$.
 A ReLU activated neuron is said to be _active_ if its input is greater than zero and _inactive_ otherwise.
 
 #figure(
@@ -869,23 +867,27 @@ A ReLU activated neuron is said to be _active_ if its input is greater than zero
 ) <fig:relu>
 
 
-#paragraph([test])[hello]
 
-// \paragraph{Logical encoding} ReLU can be encoded using the following logical formula:
-// \[y = \relu{x} \iff (x \leq 0 \land y = 0) \lor (x > 0 \land y = x).\]
-// In other words, if \(x \le 0\), \(y\) must be zero; otherwise; otherwise, \(y\) must equal \(x\).
 
-// \begin{example}
-// In Z3, we can declare ReLU using \texttt{If()}
-// \begin{lstlisting}[language=python]
-//     import z3
-//     def relu(x): return z3.If(x <= 0, 0, x)
+#paragraph[Logical encoding][ 
+ReLU can be encoded using the following logical formula:
 
-//     relu(-1.2)  # returns 0
-//     relu(0)     # returns 0
-//     relu(2.8)   # returns 2.8
-// \end{lstlisting}
-// \end{example}
+$y = "relu"(x) <==> (x <= 0 and y = 0) or (x > 0 and y = x).$
+
+In other words, if $x <= 0$, $y$ must be zero; otherwise, $y$ must equal $x$.
+]
+
+#example[
+In Z3, we can declare ReLU using `If()`
+```python
+    import z3
+    def relu(x): return z3.If(x <= 0, 0, x)
+
+    relu(-1.2)  # returns 0
+    relu(0)     # returns 0
+    relu(2.8)   # returns 2.8
+```]
+
 // \paragraph{Nonlinear Property} Despite being piecewise linear, ReLU is \textbf{nonlinear} because it does not satisfy the two core properties of a linear function
 
 //     \begin{itemize}
@@ -1079,28 +1081,32 @@ A ReLU activated neuron is said to be _active_ if its input is greater than zero
 //     \item Add another input $x_{new}$ and update the network accordingly. Then, use Z3 to find an input $(x_1, x_2, x_{new})$ that {minimizes} the output $x_5$ of the updated network.
 //     \end{enumerate}
 // \end{problem}
-//  === Neural Network Architectures and Layers}
 
-// NNs vary in architecture depending on how information flows through them and how computations are structured. Most common models are variations of the \emph{feedforward network}, with additional structures or constraints layered on top. ~\autoref{tab:nn-types} summarizes several common NN architectures and their typical application domains.
+==== Neural Network Architectures and Layers
+
+NNs vary in architecture depending on how information flows through them and how computations are structured. Most common models are variations of the _feedforward network_, with additional structures or constraints layered on top. @tab:nn-types summarizes several common NN architectures and their typical application domains.
+
+#figure(caption: [Popular NN Architectures and Applications],
+  text(size: 0.8em,
+  table(
+    columns: (auto, auto, 1fr),
+    stroke: none,
+    table.hline(),
+    table.header(
+      [*Name*], [*Acronym*], [*Typical Applications*],
+    ),
+    table.hline(),
+    [Feedforward NN], [FNN / MLP], [General function approximation, tabular data],
+    [Convolutional NN], [CNN], [Image processing, video analysis],
+    [Residual NN], [ResNet], [Deep image recognition, medical imaging],
+    [Recurrent NN], [RNN], [Sequence modeling, NLP, time series],
+    [Transformer], [--], [NLP, summarization, code generation, vision],
+    [Graph NN], [GNN], [Graph-structured data, molecule modeling, recommendation],
+    table.hline(),
+  ))
+) <tab:nn-types>
 
 
-// \begin{table}[h]
-// \caption{Popular NN Architectures and Applications <tab:nn-types}
-// \centering
-// \small
-// \begin{tabular}{llp{8cm}@{}}
-// \toprule
-// \textbf{Name} & \textbf{Acronym} & \textbf{Typical Applications} \\
-// \midrule
-// Feedforward NN & FNN / MLP & General function approximation, tabular data \\
-// Convolutional NN & CNN & Image processing, video analysis \\
-// Residual NN & ResNet & Deep image recognition, medical imaging \\
-// Recurrent NN & RNN & Sequence modeling, NLP, time series \\
-// Transformer & -- & NLP, summarization, code generation, vision \\
-// Graph NN & GNN & Graph-structured data, molecule modeling, recommendation \\
-// \bottomrule
-// \end{tabular}
-// \end{table}
 
 // \subsection{Feedforward Neural Networks (FNNs) <sec:ffn}
 
@@ -10330,8 +10336,7 @@ A ReLU activated neuron is said to be _active_ if its input is greater than zero
 // \end{itemize}
 
 
-
-// \bibliographystyle{abbrv}
+#pagebreak()
 #bibliography("nnv.bib", style:"ieee")
 #set page(numbering: "1")
 
