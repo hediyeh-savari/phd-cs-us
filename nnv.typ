@@ -7625,12 +7625,11 @@ This is precisely where bugs can hide, and why testing---no matter how extensive
 
 In contrast, an FM technique would instead reason directly about the structure of the code and atempts to prove the statement:
 
-// \begin{equation <eq:abs_val_nonneg}
-//  \text{For all integers}~x, \text{abs\_val}(x) \geq 0.
-// \end{equation}
+$ "For all integers" x, "abs_val"(x) >= 0. $ <eq:abs_val_nonneg>
 
-// If FM can prove this statement, we have a mathematical guarantee that the function behaves correctly for \emph{all integers}---not just the ones we happened to test.
-// Thus, FM are about this kind of reasoning. They aim to establish \emph{guarantees} and \emph{proofs}, not probabilities or empirical evidence.
+If FM can prove this statement, we have a mathematical guarantee that the function behaves correctly for _all integers_---not just the ones we used in testing.
+
+Thus, the #highlight[fundamental difference] between FM and testing is that FM provides mathematical guarantees about program behavior---without even running the program---, while testing can only provide empirical evidence based on a finite set of inputs that we run the program on.
 
 // % ---
 
