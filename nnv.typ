@@ -1,10 +1,29 @@
+#set heading(numbering: "1.1.1.1.1")
+// #set heading(numbering: (..nums) => {
+//   let n = nums.pos()
+//   if n.len() = 1 { "Part "+ str(n.at(0)) }                       
+//   if n.len() = 2 { "Chapter " + str(n.at(1)) }  // chapter: just chapter number
+//   if n.len() = 3 { str(n.at(1)) + "." + str(n.at(2)) }  // section: 1.2
+// })
+
+
+// #show heading.where(level: 1): it => {
+//   pagebreak(weak: true)
+//   v(3cm)
+//   align(center)[
+//     #text(size: 13pt, fill: gray, tracking: 3pt)[PART]
+//     #v(0.5cm)
+//     #text(size: 28pt, weight: "bold")[#it.body]
+//   ]
+//   pagebreak(weak: true)
+// }
 #import "@preview/simple-plot:0.3.0": plot
 #import "@preview/cetz:0.3.4": canvas, draw
 
 #import "@preview/theorion:0.6.0": *
 #import cosmos.fancy: *
 #show: show-theorion
-#set-inherited-levels(5)
+#set-inherited-levels(3)
 
 #let (exercise-counter, exercise-box, exercise, show-exercise) = make-frame(
   "exercise",
@@ -17,15 +36,9 @@
 
 
 
-
 #set page(numbering: "1", number-align: center)
-#set heading(numbering: "1.")
 #set par(justify: true)
-
 #set text(
-  //font: "Noto Serif",
-  
-  //font: "TeX Gyre Pagella",
   size: 12pt
 )
 
@@ -36,7 +49,7 @@
 #show ref: set text(fill:blue)
 #show link: set text(fill:blue)
 #show link: underline
-#show figure.caption: set text(size: 0.8em)
+#show figure.caption: set text(size: 0.9em)
 
 // Inline code
 #show raw.where(block: false): it => box(fill: rgb("#f0f0f0"), inset: (x: 2pt), radius: 2pt, it)
@@ -57,7 +70,7 @@
 
 // #set heading(numbering: (..nums) => {
 //   let vals = nums.pos()
-//   if vals.len() == 1 {
+//   if vals.len() = 1 {
 //     // Level 1: roman numerals
 //     numbering("I.", vals.first())
 //   } else {
@@ -518,18 +531,7 @@
 //     \shade[
 //     left color=ForestGreen,
 //     rounded corner
-      let connect = (a, b, label, p) => {
-        let dx = b.at(0) - a.at(0)
-        let dy = b.at(1) - a.at(1)
-        let len = calc.sqrt(dx * dx + dy * dy)
-        let ux = dx / len
-        let uy = dy / len
-        let start = (a.at(0) + r * ux, a.at(1) + r * uy)
-        let end   = (b.at(0) - r * ux, b.at(1) - r * uy)
-        line(start, end, stroke: 1pt, end: ">")
-        content(p, box(fill: white, inset: 1pt, text(size: 9pt)[#label]))
-      }
- s=0.4cm,
+
 //     transform canvas ={rotate around ={45:($(current page.north west)+(19,-5.65)$)}}]
 //     ($(current page.north west)+(19,-5.65)$) rectangle ++(15,0.8);
 
@@ -646,10 +648,11 @@
 // \end{tikzpicture}
 // }
 
-= Basics of Neural Networks and Verification
-== Neural Networks <chap:nn-basics>
 
-=== Basics of Neural Networks
+//Basics of Neural Networks and Verification
+= Neural Networks <chap:nn-basics>
+
+== Basics of Neural Networks
 A _neural network_ (*NN*) @Goodfellow-et-al-2016 consists of an input layer, multiple hidden layers, and an output layer. Each layer has a number of neurons, each connected to neurons in the next layer through a predefined set of weights (computed during training). 
 A _Deep Neural Network_ (*DNN*) is an NN with _two_ or more hidden layers.
 
@@ -659,7 +662,7 @@ The value of a neuron in the input layer is the input data.
 The value of a neuron in the hidden layers is computed by applying an _affine transformation_ (@sec:affine) to values of neurons in the previous layers, then followed by an _activation function_ (@sec:activation) such as ReLU and Sigmoid.
 The value of a neuron in the output layer is computed similarly but may skip the activation function.
 
-=== NN as a Function
+== NN as a Function
 We can view an NN as a function that maps input vectors to output vectors:
 
 $ f: RR^n -> RR^m $
@@ -750,7 +753,7 @@ Thus, this NN computes a function $f: RR^2 -> RR$ where:
 $ f(x_1, x_2) = -"relu"(-0.5 x_1 + 0.5 x_2 + 1.0) + "relu"(0.5 x_1 - 0.5 x_2 - 1.0) - 1.0. $
 ] <ex:dnn>
 
-=== Affine Transformation <sec:affine>
+== Affine Transformation <sec:affine>
 
 The affine transformation (AF) of a neuron consists of a _linear combination_---a weighted sum $sum$---of its inputs, followed by the addition of a bias term. More specifically, for a neuron with weights $w_1, dots, w_n$, bias $b$, and inputs $v_1, dots, v_n$ from the previous layer, the AF computes:
 
@@ -820,13 +823,13 @@ In @fig:dnn, neuron $x_3$ receives inputs $x_1$ and $x_2$ with weights $-0.5$, $
 // % \end{pmatrix}
 // % \]
 
-=== Activation Functions <sec:activation>
-Popular activation functions used in NNs include ReLU, Sigmoid, Tanh, and Softmax. All of these are _non-linear_#footnote[Non-linear means that the output of the function is not a linear combination of its inputs.] functions that introduce non-linearity to the network, allowing it to learn complex patterns in the data.
+== Activation Functions <sec:activation>
+Activation functions in NNs are mathematical functions applied to the output of a neuron after the affine transformation. They introduce non-linearity to the network, allowing it to learn complex patterns in the data. Without activation functions, an NN would simply be a linear model, regardless of the number of layers, and would not be able to capture intricate relationships in the data. 
 
 @tab:activation summarizes the most common activation functions used in NNs, their equations, output ranges, and key uses.
 
 #figure(caption: [Summary of Common Neural Network Activation Functions],
-  text(size: 0.8em,
+  text(size: 0.9em,
   table(
     columns: 4,
     align: left, stroke: none,
@@ -840,7 +843,7 @@ Popular activation functions used in NNs include ReLU, Sigmoid, Tanh, and Softma
 ) <tab:activation>
 
 
-==== ReLU (Rectified Linear Unit) <sec:relu>
+=== ReLU (Rectified Linear Unit) <sec:relu>
 
 ReLU is a widely used activation function in neural networks. It is defined as:
 
@@ -984,7 +987,7 @@ In Z3, we can declare ReLU using `If()`
 // $\tanh(-1.2) \approx -0.83$, $\tanh(0) = 0$, and $\tanh(2.8) \approx 0.99$. This means that the tanh function maps -1.2 to a value close to -1, 0 to 0, and 2.8 to a value close to 1.
 // \end{example}
 
-==== Softmax <sec:softmax>
+=== Softmax <sec:softmax>
 
 
 // \begin{figure}[htp]
@@ -1050,11 +1053,11 @@ x3, x3_, = Real('x3'), Real('x3_')
 x4, x4_ = Real('x4'), Real('x4_')
 x5 = Real('x5')
 
-l2a = x3 == -0.5 * x1 + 0.5 * x2 + 1.0
-l2a_ = x3_ == If(x3 > 0, x3, 0)
-l2b = x4 ==  0.5 * x1 - 0.5 * x2 - 1.0
-l2b_ = x4_ == If(x4 > 0, x4, 0)
-l3 = x5 == -1.0 * x3_ + 1.0 * x4_ - 1.0
+l2a = x3 = -0.5 * x1 + 0.5 * x2 + 1.0
+l2a_ = x3_ = If(x3 > 0, x3, 0)
+l2b = x4 =  0.5 * x1 - 0.5 * x2 - 1.0
+l2b_ = x4_ = If(x4 > 0, x4, 0)
+l3 = x5 = -1.0 * x3_ + 1.0 * x4_ - 1.0
 
 # output for input (x1, x2) = (2.0, 0.5)
 s = Solver()
@@ -1062,8 +1065,8 @@ s.add(l2a); s.add(l2b)
 s.add(l2a_); s.add(l2b_); s.add(l3)
 
 # specify input values
-s.add(x1 == 2.0); s.add(x2 == 0.5)
-if s.check() == sat:
+s.add(x1 = 2.0); s.add(x2 = 0.5)
+if s.check() = sat:
   print(s.model())
 
 # find an input that maximizes the output x5
@@ -1073,7 +1076,7 @@ o.add(l2a_); o.add(l2b_); o.add(l3)
 
 # maximize x5
 o.maximize(x5)
-if o.check() == sat:
+if o.check() = sat:
   print(o.model())
 ```
 ] <ex:z3-dnn>
@@ -1087,12 +1090,12 @@ Use @ex:z3-dnn as an example and try the following exercises:
 + Add another input $x_("new")$ and update the network accordingly. Then, use Z3 to find an input $(x_1, x_2, x_("new"))$ that _minimizes_ the output $x_5$ of the updated network.
 ] <prob:z3-dnn>
 
-=== Neural Network Architectures and Layers
+== Neural Network Architectures and Layers
 
 NNs vary in architecture depending on how information flows through them and how computations are structured. Most common models are variations of the _feedforward network_, with additional structures or constraints layered on top. @tab:nn-types summarizes several common NN architectures and their typical application domains.
 
 #figure(caption: [Popular NN Architectures and Applications],
-  text(size: 0.8em,
+  text(size: 0.9em,
   table(
     columns: (auto, auto, 1fr),
     stroke: none,
@@ -1113,7 +1116,7 @@ NNs vary in architecture depending on how information flows through them and how
 
 
 
-==== Feedforward Neural Networks (FNNs) <sec:ffn>
+=== Feedforward Neural Networks (FNNs) <sec:ffn>
 
 In an FNN, information flows in one direction: from the input layer, through one or more hidden layers, and finally to the output layer. There are no loops or cycles in the computation graph.
 
@@ -1300,12 +1303,12 @@ Widely used feedforward architectures include fully connected, convolutional, an
 // %     \item \textbf{Residual (Skip) Connections}: Enable shortcut paths from earlier to later layers.
 // % \end{itemize}
 
-==== Other NN Architectures
+=== Other NN Architectures
 
 Not all NNs are feedforward.
 Some architectures introduce cycles, dynamic connections, or non-Euclidean#footnote[Euclidean data refers to data that can be represented in a flat, two-dimensional space, such as images.] data structures (e.g., graphs).
 
-===== Recurrent Neural Networks (RNNs)
+==== Recurrent Neural Networks (RNNs)
 RNNs, often used in natural language processing (NLP) and speech recognition, are designed to recognize patterns in sequences of data. RNNs have _loops_ in them, allowing information to be sent forward and backward.
 
 Currently, most NNV work tackles RNNs by _unrolling_ them into an equivalent feedforward network. While this allows us to apply feedforward verification techniques, it can lead to an exponential increase in the size of the network, making verification more challenging.
@@ -1397,15 +1400,15 @@ Currently, most NNV work tackles RNNs by _unrolling_ them into an equivalent fee
 
 // \end{example}
 
-===== Transformers
+==== Transformers
 Transformers are designed for long-range dependencies using _self-attention_ rather than recurrence. They dominate applications in natural language processing and are increasingly used in vision and reinforcement learning.
 
-===== Graph Neural Networks (GNNs)
+==== Graph Neural Networks (GNNs)
 Graph Neural Networks (GNNs) operate on graphs (instead of vectors like FNNs or sequences like RNNs). 
 It uses message passing between nodes in the graph and allows each node to aggregate information from its neighbors. GNNs are used in applications involving structured data like molecules or social networks. Currently, most NNV tools do not support GNNs, and we will not focus on them in this book. However, they are an important area of research in the broader field of NNV.
 
 
-=== Representing Neural Networks with ONNX <sec:onnx>
+== Representing Neural Networks with ONNX <sec:onnx>
 
 *ONNX* (Open Neural Network Exchange) @onnx is an open source and widely adopted standard for representing neural networks. It provides a common format for representing the structure and parameters of neural networks, enabling interoperability between different ML frameworks and tools.
 
@@ -1457,14 +1460,14 @@ ONNX operators that cover most sequential feedforward networks include:
 
 
 #pagebreak()
-== Properties <chap:properties>
+= Properties <chap:properties>
 
 // Similar to traditional software systems, neural networks (NNs) have desirable properties to ensure the network behaves as expected. These could be specific to the applications modeled by the network, e.g., safety properties for a network modelling a collision avoidance system, or general properties that are desired by all networks, e.g., robustness to small perturbations in the input data.
 
 // Below we will discuss properties that are relevant to the verification of NNs. Specifically, these properties can be
 // expressed in a formal language supported by a NNV tool. Additional properties can be found in the literature~\cite{seshia2018formal}.
 
-//  === Definition <sec:properties-def>
+//  == Definition <sec:properties-def>
 
 // As described in~\autoref{chap:nn-basics} NNs define functions of the form $f: \mathbb{R}^{n} \to \mathbb{R}^{m}$,
 // where $n$ is the dimension of the input and $m$ is the dimension of the output. Thus, the properties or specifications of an NN---similarly to properties of software program---are defined in terms of its input and output:
@@ -1477,7 +1480,7 @@ ONNX operators that cover most sequential feedforward networks include:
 
 
 
-//== Common Properties in Neural Networks>
+//= Common Properties in Neural Networks>
 
 // We now define some commonly studied properties in NNs verification.
 
@@ -1573,7 +1576,7 @@ ONNX operators that cover most sequential feedforward networks include:
 // \end{solution}
 // \end{problem}
 
-//  === Other properties <sec:other-properties}
+//  == Other properties <sec:other-properties}
 
 // \subsection{Consistency}
 
@@ -1624,7 +1627,7 @@ ONNX operators that cover most sequential feedforward networks include:
 
 
 
-//  === Counterexamples <sec:properties-counterexamples}
+//  == Counterexamples <sec:properties-counterexamples}
 
 // A \emph{counterexample} (\textbf{cex}) is a witness that falsifies the correctness property. Given the property defined in~\autoref{sec:properties-def}, a counterexample is an input $x$ that satisfies the precondition $P$ but produces an output $f(x)$ that violates the postcondition $Q$.
 
@@ -1668,7 +1671,7 @@ ONNX operators that cover most sequential feedforward networks include:
 // \end{example}
 
 
-//  === The VNN-LIB  Specification Language <sec:vnnlib}
+//  == The VNN-LIB  Specification Language <sec:vnnlib}
 
 
 // The VNN-LIB standard~\cite{demarchi2023supporting,vnnlib} defines a format to describe neural networks and properties. Such a standard format enables the sharing of benchmarks across different tools and platforms, facilitating evaluations and comparisons of their performance. VNN-COMP~\cite{brix2024fifth} uses VNN-LIB to evaluate different neural network verification tools.
@@ -1797,7 +1800,7 @@ ONNX operators that cover most sequential feedforward networks include:
 
 
 
-//  === Problems}
+//  == Problems}
 
 // \begin{problem}[Robustness + Safety: Drone Controller]\label{problem:drone}
 // An autonomous drone computes its thrust level using a (neural) network controller $f(w,d)$, where $w$ is wind speed and $d$ the distance to nearest obstacle. State the following properties in formal logic (remember to use quantifiers, e.g., $\forall$ and $\exists$):
@@ -1972,7 +1975,7 @@ ONNX operators that cover most sequential feedforward networks include:
 // This chapter discusses the problem of verifying neural networks, i.e., checking if a given property holds for a neural network.
 // We define the NN verification problem in~\autoref{sec:nnv-problem} and its satisfiability formulation, which is commonly used by NNV tools.
 
-//  === The Neural Network Verification (NNV) Problem <sec:nnv-problem}
+//  == The Neural Network Verification (NNV) Problem <sec:nnv-problem}
 
 // \begin{definition}[NNV]\label{def:nnv}
 // Given a NN \(N\) and a property $\phi$, the NNV problem asks if $\phi$ is a valid property\footnote{\autoref{chap:properties} provides various examples of properties.} of $N$.
@@ -2024,7 +2027,7 @@ ONNX operators that cover most sequential feedforward networks include:
 // \end{example}
 
 
-//  === Satisfiability Formulation and Checking <sec:satisfiability-and-activation-pattern-search}
+//  == Satisfiability Formulation and Checking <sec:satisfiability-and-activation-pattern-search}
 
 // As with traditional software verification, NNV is often represented as a satisfiability problem, which can be solved using an SMT solver (e.g., Z3~\cite{de2008z3}) or a MILP solver (e.g., Gurobi~\cite{gurobi}).
 
@@ -2166,7 +2169,7 @@ ONNX operators that cover most sequential feedforward networks include:
   caption: [A simple network with 2 inputs, 2 hidden ReLU neurons, and 2 outputs.],
 ) <fig:mydnntwo>
 
-
+#exercise[test]
 // Consider the neural network in~\autoref{fig:mydnntwo}.  Do the following:
 // \begin{enumerate}
 //     \item Write the formula $\alpha$ representing the network.
@@ -2209,19 +2212,19 @@ ONNX operators that cover most sequential feedforward networks include:
 // x3, x3_, x4, x4_ = Real('x3'), Real('x3_'), Real('x4'), Real('x4_')
 // x5, x6 = Real('x5'), Real('x6')
 
-// l2a = x3 == -0.7 * x1 + 0.3 * x2 + 0.8
-// l2a_ = x3_ == If(x3 > 0, x3, 0)
-// l2b = x4 == 1.2 * x1 - 0.5 * x2 - 2.0
-// l2b_ = x4_ == If(x4 > 0, x4, 0)
-// l3a = x5 == -2.0 * x3_ + 3.0 * x4_ - 1.2
-// l3b = x6 == -1.8 * x3_ + 0.7 * x4_ - 0.3
+// l2a = x3 = -0.7 * x1 + 0.3 * x2 + 0.8
+// l2a_ = x3_ = If(x3 > 0, x3, 0)
+// l2b = x4 = 1.2 * x1 - 0.5 * x2 - 2.0
+// l2b_ = x4_ = If(x4 > 0, x4, 0)
+// l3a = x5 = -2.0 * x3_ + 3.0 * x4_ - 1.2
+// l3b = x6 = -1.8 * x3_ + 0.7 * x4_ - 0.3
 
 // s = Solver()
 // s.add(l2a, l2a_, l2b, l2b_, l3a, l3b)
 // s.add(x1 >= -1, x1 <= 1, x2 >= -1, x2 <= 1)
 // s.add(x5 < x6)
 
-// if s.check() == sat:
+// if s.check() = sat:
 //     m = s.model()
 //     print("Satisfiable - counterexample found:")
 //     print(f"x1 = {m[x1]}, x2 = {m[x2]}")
@@ -2235,11 +2238,11 @@ ONNX operators that cover most sequential feedforward networks include:
 // \end{solution}
 // \end{problem}
 
-//  === Complexity <sec:complexity}
+//  == Complexity <sec:complexity}
 
 // ReLU-based NNV is \NP{}-complete as shown in~\cite{katz2017reluplex,salzer2023reachability} by reducing the 3-SAT problem to it. This means that the problem of checking whether a given ReLu-based network satisfies a property is computationally hard, and no polynomial-time algorithm is known to solve it in the general case.
 
-// %  === Challenges} %TODO
+// %  == Challenges} %TODO
 
 // % \subsection{Scalability} Neural networks can be very large, with millions of parameters. This makes it difficult to verify their correctness, as the number of possible inputs grows exponentially with the size of the network.
 
@@ -2257,7 +2260,7 @@ ONNX operators that cover most sequential feedforward networks include:
 
 
 
-// %  === Challenges in Specifying Properties}\tvn{TODO}
+// %  == Challenges in Specifying Properties}\tvn{TODO}
 
 // % Specifying desirable properties for neural networks is not straightforward. Some challenges include:
 // % \begin{itemize}
@@ -2269,9 +2272,9 @@ ONNX operators that cover most sequential feedforward networks include:
 
 // \part{Constraint Solving and Abstraction <part:constraint-solving-abstraction}
 
-// = Constraint Solving <chap:constraint-solving}
+= Constraint Solving <chap:constraint-solving>
 
-//  === Symbolic Execution and SMT Solving <sec:se-smt}
+//  == Symbolic Execution and SMT Solving <sec:se-smt}
 // As described in~\autoref{sec:satisfiability-and-activation-pattern-search} the Neural Network Verification (NNV) problem can be formulated as a satisfiability problem. Specifically, we encode the network as a logical formula, and use a constraint solver to check that formula satisfies the property of interest.
 
 // A straightforward and automated way to do this encoding is using \emph{symbolic execution} (SE)~\cite{baldoni2018survey,king1976symbolic}, a well-known software testing technique for finding bugs.  SE executes a program on symbolic inputs, i.e., inputs represented as symbols rather than concrete values, and tracks the reachability of program state as symbolic expressions, i.e., logical formulae over symbolic inputs. The satisfiability of these formulae is then checked using an SMT solver, and satisfying assignments represent inputs leading to the undesirable (buggy) program state.
@@ -2340,7 +2343,7 @@ ONNX operators that cover most sequential feedforward networks include:
 
 // %\tvn{Hai, include some references or results, e.g., from Nguyen's, showing that SMT solvers are not scalable for DNN verification.}\hai{where can I find the results?}\tvn{Not sure, I thought Nguyen record the results/graphs in some TeX document. Could you ask him?}
 
-//  === MILP <sec:using-milp}
+//  == MILP <sec:using-milp}
 
 // Instead of using SMT solving, we can encode the NNV problem as a Mixed Integer Linear Programming (MILP) constraints (\autoref{sec:lp}), and then invoke an MILP solver such as Gurobi~\cite{gurobi} to check their \emph{feasibility} or satisfiability (\autoref{sec:lp-feasibility}).
 
@@ -2615,14 +2618,14 @@ ONNX operators that cover most sequential feedforward networks include:
 // % More advanced abstractions like zonotopes can capture linear relationships between variables, while polytopes can represent arbitrary linear constraints.
 
 #pagebreak()
-== Abstractions <chap:abstractions>
+= Abstractions <chap:abstractions>
 
 
 // As mentioned in~\autoref{sec:relu-encoding} the computation of upper and lower bounds of the neuron values help determine neuron stability and therefore can help scale NNV. Modern NNV tools explore different \emph{abstraction} techniques to compute these bounds more precisely while balancing computational efficiency.
 
 // This chapter discusses the interval, zonotope, and polytope abstract domains commonly used in NNV. Each domain provides a different way to represent and compute the bounds of neurons, with its own trade-offs in terms of precision and computational complexity.
 
-//  === Overview and Background}
+//  == Overview and Background}
 
 // %We will focus on ReLU (\autoref{sec:relu}) activation functions, which are the most common in DNNs. The goal is to compute the bounds of a post-ReLU neuron $\hat{z}$ given the bounds of its pre-ReLU value $z$ over the input region. For example, for a ReLU neuron $y = \max(0, x)$, we want to compute the bounds $[l_y(x), u_y(x)]$ of $y$ given the bounds $[l_x, u_x]$ on $x$.\tvn{is the pre-Relu bounds always computed like what was described in~\autoref{sec:pre-relu-bounds}? Is that computation considered interval too? Can that bound computation be obtained using other abstractions?}
 // %\hd{yes, concrete bounds will always be computed like what was described in~\autoref{sec:pre-relu-bounds} IF the bounds of a neurons are presented as linear equations. In other words, abstractions differ in the way they construct the linear equations, concretization step will be the same.}
@@ -2978,7 +2981,7 @@ ONNX operators that cover most sequential feedforward networks include:
 // \centering
 // \begin{tikzpicture}[scale=1.1,>=stealth]
 
-// % === LEFT: corner-based rectangle ===
+// % == LEFT: corner-based rectangle ===
 // \begin{scope}[shift={(-3.8,0)}]
 //   % rectangle
 //   \fill[blue!10] (0,0) rectangle (2,1.4);
@@ -2995,7 +2998,7 @@ ONNX operators that cover most sequential feedforward networks include:
 // \end{scope}
 
 
-// % === RIGHT: Generator-based rectangle (interval abstraction) ===
+// % == RIGHT: Generator-based rectangle (interval abstraction) ===
 // \begin{scope}[shift={(3.8,0)}]
 //   % rectangle (same shape)
 //   \fill[orange!15] (0,0) rectangle (2,1.4);
@@ -3161,12 +3164,12 @@ ONNX operators that cover most sequential feedforward networks include:
 // \end{example}
 
 
-//  === Abstract Domains <sec:abstract-domains}
+//  == Abstract Domains <sec:abstract-domains}
 
 // We now introduce several abstract domains that are commonly used in NNV. Each domain has its own abstract transformer functions  to compute the bounds of neurons.
 
 // Note that the input to the transformer functions (\autoref{sec:transformer-functions}) are the abstract values and the output is also an abstract value.  For example, for interval transformers, the input is an interval $[l, u]$ and the output is also an interval $[l', u']$. Similarly for zonotope transformers, the input is a zonotope defined by center and generators, and the output is also a zonotope.
-=== Interval <sec:interval-abstraction>
+== Interval <sec:interval-abstraction>
 
 // Interval is a very simple abstraction which represents the possible values of a variable as an interval $[l, u]$, where $l$ is the lower bound and $u$ is the upper bound.
 // For example, the set of values $\{-2.5, -8.2, -10.7, 2, 4.7, 5.1\}$ can be represented as $[-10.7, 5.1]$.
@@ -3354,7 +3357,7 @@ ONNX operators that cover most sequential feedforward networks include:
 // \end{problem}
 
 
-=== Zonotope <sec:zonotope-abstraction>
+== Zonotope <sec:zonotope-abstraction>
 
 
 // Interval abstraction (\autoref{sec:interval-abstraction}) treats each variable independently. For example, if \(x_1 \in [1,2]\) and \(x_2 \in [3,4]\), interval assumes any combination of \(x_1\) and \(x_2\) is possible. But variables can correlate: e.g., when \(x_1\) increases, \(x_2\) also increases\tvn{but this doesn't happens in neural networks, so why do we need zonotope? does it help with ReLU abstraction?}.  Zonotopes can capture such correlations and therefore  provide a tighter abstraction.
@@ -3385,7 +3388,7 @@ ONNX operators that cover most sequential feedforward networks include:
 // \centering
 // \begin{tikzpicture}[scale=1.0,>=stealth]
 
-// % === Left: independent generators ===
+// % == Left: independent generators ===
 // \begin{scope}[shift={(-3.8,0)}]
 //   \fill[blue!10] (0,0) -- (2,0) -- (2,1.5) -- (0,1.5) -- cycle;
 //   \draw[blue!70!black,thick] (0,0) rectangle (2,1.5);
@@ -3396,7 +3399,7 @@ ONNX operators that cover most sequential feedforward networks include:
 //   \node at (1,-0.5) {\small Independent $\Rightarrow$ Rectangle};
 // \end{scope}
 
-// % === Right: correlated generators ===
+// % == Right: correlated generators ===
 // \begin{scope}[shift={(3.8,0)}]
 //   \fill[orange!15] (0,0) -- (2,0.5) -- (1,2.0) -- (-1,1.5) -- cycle;
 //   \draw[orange!80!black,thick] (0,0)--(2,0.5)--(1,2.0)--(-1,1.5)--cycle;
@@ -3496,7 +3499,7 @@ ONNX operators that cover most sequential feedforward networks include:
 // % \centering
 // % \begin{tikzpicture}[scale=1.1,>=stealth]
 
-// % % === LEFT: Vertex-based ===
+// % % == LEFT: Vertex-based ===
 // % \begin{scope}[shift={(-3.8,0)}]
 // %   % Parallelogram (same shape as right)
 // %   \fill[blue!10] (0,0) -- (2,0.4) -- (2.4,1.6) -- (0.4,1.2) -- cycle;
@@ -3512,7 +3515,7 @@ ONNX operators that cover most sequential feedforward networks include:
 // %   \node at (1.2,-0.4) {\small Defined by vertices};
 // % \end{scope}
 
-// % % === RIGHT: Generator-based ===
+// % % == RIGHT: Generator-based ===
 // % \begin{scope}[shift={(3.8,0)}]
 // %   % Parallelogram (same shape)
 // %   \fill[orange!15] (0,0) -- (2,0.4) -- (2.4,1.6) -- (0.4,1.2) -- cycle;
@@ -4069,9 +4072,9 @@ ONNX operators that cover most sequential feedforward networks include:
 // % Therefore, DeepPoly achieves a balance, combining the expressiveness of polyhedral domains with the efficiency required for deep network verification.
 
 
-// %  === Abstractions for Other Activation Functions}
+// %  == Abstractions for Other Activation Functions}
 
-// %  === Problems}
+// %  == Problems}
 // % \subsection{Interval Abstraction}
 
 // % \begin{example}[Full Example of Interval Abstraction]\label{ex:interval-abstraction-full}
@@ -4115,11 +4118,11 @@ ONNX operators that cover most sequential feedforward networks include:
 // % \end{example}
 
 
-
+#pagebreak()
 // \part{The Branch and Bound Approach <part:bab}
-// = The Branch and Bound Search Algorithm <chap:bab}
+= The Branch and Bound Search Algorithm <chap:bab>
 
-// As shown in~\autoref{chap:constraint-solving}, NNV can be formulated as a satisfiability problem, solvable using a constraint solver,  e.g., SMT and MILP solvers.  However, such solvers do not scale to large networks due to the complexity of the underlying formulae. Thus, modern NNV techniques reframe the problem to search for \emph{activation patterns} that satisfy the constraints, and use the \emph{Branch-and-Bound} algorithm to explore the space of possible activation patterns.
+As shown in @chap:constraint-solving, NNV can be formulated as a satisfiability problem, solvable using a constraint solver,  e.g., SMT and MILP solvers.  However, such solvers do not scale to large networks due to the complexity of the underlying formulae. Thus, modern NNV techniques reframe the problem to search for _activation patterns_ that satisfy the constraints, and use the _Branch-and-Bound_ algorithm to explore the space of possible activation patterns.
 
 // %These activation patterns fix the activation status (active/inactive) of each neuron, allowing us to simplify involved constraints to linear constraints that are easier to solve.
 
@@ -4127,7 +4130,7 @@ ONNX operators that cover most sequential feedforward networks include:
 
 
 
-//  === Activation Pattern Search <sec:activation-patterns}
+//  == Activation Pattern Search <sec:activation-patterns}
 
 // Neural networks with piecewise linear activation functions have a special structure that can be exploited for verification.
 // For example, each ReLU (\autoref{sec:relu}) function
@@ -4364,7 +4367,7 @@ ONNX operators that cover most sequential feedforward networks include:
 // %\tvn{may need to add some trees}
 
 
-//  === The Branch and Bound Algorithm <sec:bab-alg}
+//  == The Branch and Bound Algorithm <sec:bab-alg}
 
 // Many modern NNV tools adopt the Branch-and-Bound (BaB) approach to explore the space of possible neuron activation patterns (\autoref{sec:activation-patterns}). BaB splits (\emph{branch}) the verification problem into smaller subproblems by fixing activation statuses of neurons, and uses abstraction (\emph{bound}) techniques to compute upper and lower bounds on the output values for these subproblems. If the bounds, computed using abstraction (\autoref{chap:abstractions}), indicate infeasible (cannot contain a counterexample), the subproblem is pruned from the search space. This process continues until either a counterexample is found or all subproblems are exhausted, proving the property holds.
 
@@ -4656,7 +4659,7 @@ ONNX operators that cover most sequential feedforward networks include:
 // Thus, modern verification tools have two phases: (i) attempt to \emph{falsify} the property with adversarial attacks, and (ii) if no counterexample is found, attempt to \emph{verify} the property using search algorithms such as \bab{} (\autoref{chap:bab}). Of course, during the verification phase, the verifier may also discover counterexamples that the falsify phase misses.
 
 
-//  === Random Search Attack}
+//  == Random Search Attack}
 // \textbf{Random search} is a simple adversarial attack method.  It randomly samples points in the allowed input ranges and checks if any samples violate the property; if so, a counterexample is found.
 
 // \begin{example <ex:random-search}
@@ -4704,7 +4707,7 @@ ONNX operators that cover most sequential feedforward networks include:
 // \end{enumerate}
 // \end{problem}
 
-//  === Projected Gradient Descent (PGD)}
+//  == Projected Gradient Descent (PGD)}
 
 // \textbf{PGD} is a powerful and widely used adversarial attack that builds on the idea of \emph{gradient descent}.
 // Gradient descent is the procedure of repeatedly moving the input a small amount in the direction that most rapidly \emph{decreases} (or, for an attack, increases the likelihood of) some objective by following the negative (or positive) gradient.
@@ -4967,7 +4970,7 @@ ONNX operators that cover most sequential feedforward networks include:
 // While checking counterexamples is relatively straightforward (we can just evaluate the network on the input), checking \unsat{} results---proving no counterexample exists---is more challenging as it requires tracing the reasoning steps of the verifier.
 // In this chapter, we discuss work~\cite{duong2025generating} on generating and checking proofs of \unsat{} results generated by BaB-based NNV tools.
 
-//  === Proof Generation for Branch and Bound Algorithms <sec:proofgen}
+//  == Proof Generation for Branch and Bound Algorithms <sec:proofgen}
 
 
 // \begin{algorithm}
@@ -5089,7 +5092,7 @@ ONNX operators that cover most sequential feedforward networks include:
 
 
 
-//  === Proof Language <sec:prooflang}
+//  == Proof Language <sec:prooflang}
 
 
 // \newcommand{\lra}[1]{
@@ -5194,7 +5197,7 @@ ONNX operators that cover most sequential feedforward networks include:
 // The network weights and bias terms are readily available in the standard ONNX~\cite{onnx} format, which is typically used to represent the network input to a \proofgen{}-based NNV tool and can be accessed by any \prooflang{} checker like the one described next in~\autoref{sec:proofchecking}.
 
 
-//  === Proof Checker <sec:proofchecking}
+//  == Proof Checker <sec:proofchecking}
 // We present \proofcheck{}, a proof checker for \prooflang{} proofs generated by BaB-based NNV tools.
 // %Finally, we need to check that the generated proof is correct and proves that the original DNN verification problem is indeed \unsat{}. %The checker must be efficient to handle large proofs and trusted of its results (if it verifies the proof, then the original NNV problem is proved).
 // \proofcheck{} is verifier-independent and support \prooflang{} proofs generated by different verification tools. \proofcheck{} also has several optimizations to handle large proofs efficiently.
@@ -5426,12 +5429,12 @@ ONNX operators that cover most sequential feedforward networks include:
 
 // \paragraph{Parallelization} Finally, the structure of a prooflang{} proof trees is designed to be easily parallelized.  Each tree path is an independent sub-proof and partitions of the tree allow checker to leverage multiprocessing to check large proof trees efficiently. \proofcheck{} uses a parameter $k$ to control the number of leaf nodes to be checked in parallel.
 
-// % === Rounding Errors <sec:rounding-errors}
+// % == Rounding Errors <sec:rounding-errors}
 
 // %\tvn{Give concrete examples of rounding errors in VNN-COMP}
 
 
-// %  === Evaluation <sec:evaluation}
+// %  == Evaluation <sec:evaluation}
 // % Our goals are to understand how checking of \prooflang{}s performs, how it can be optimized, and how robust checking is to
 // % verification optimizations.
 // % We focus our evaluation on the following research questions:
@@ -5884,7 +5887,7 @@ ONNX operators that cover most sequential feedforward networks include:
 
 // In addition to adversarial attacks (\autoref{chap:adversarial-attacks}), NNV tools often employ a range of optimizations and engineering techniques to improve performance. This chapter discusses some of those common techniques.
 
-//  === Input Splitting <sec:input-splitting}
+//  == Input Splitting <sec:input-splitting}
 
 // Many verifiers, e.g.,~\cite{katz2019marabou,wang2018formal,wang2021beta,duong2025neuralsat}, use a technique called \emph{input splitting} to quickly deal with networks with verification problems involving low-dimensional networks, such as those in the ACAS Xu benchmark where the networks have a small number of inputs (e.g., $\le 50$).
 // %~\autoref{sec:acasxu}
@@ -5906,7 +5909,7 @@ ONNX operators that cover most sequential feedforward networks include:
 // \end{example}
 
 
-//  === Bounds Tightening <sec:boundstigthten}
+//  == Bounds Tightening <sec:boundstigthten}
 
 // \subsection{Input Bounds Tightening <sec:inputboundstigthten}
 
@@ -6001,7 +6004,7 @@ ONNX operators that cover most sequential feedforward networks include:
 
 
 // % \ignore{
-// %  === Branching Heuristics <sec:branchingheuristics}
+// %  == Branching Heuristics <sec:branchingheuristics}
 // % Decision or branching heuristics decide free variables to make assignments and thus are crucial for the scalability of DPLL by reducing assignment mistakes~\cite{kroening2016decision,beyer2022progress}.
 
 // % For networks with small inputs, \tool{} prioritizes variables representing neurons with the \emph{furthest bounds} from the decision value 0 of ReLU, i.e., the 0 in $\max(x,0)$.
@@ -6012,7 +6015,7 @@ ONNX operators that cover most sequential feedforward networks include:
 
 
 
-//  === Batch Processing} \label{sec:batchprocessing}
+//  == Batch Processing} \label{sec:batchprocessing}
 // % \tvn{Do we still use this?  or we use the Parallel DPLL(T) in~\autoref{sec:parallel-search} instead?}
 // % For networks with small inputs, \tool{} uses a simple approach to create and solve subproblems in parallel.
 // % Given a verification problem $N_{orig} = (\alpha, \phi_{in}, \phi_{out})$, where $\alpha$ is the DNN and $\phi_{in} \Rightarrow \phi_{out}$ is the desired property, \tool{} creates subproblems $N_i = (\alpha, \phi_{{in}_i}, \phi_{out})$, where $\phi_{{in}_i}$ is the $i$-th subregion of the input region specified by $\phi_{in}$.
@@ -6152,7 +6155,7 @@ ONNX operators that cover most sequential feedforward networks include:
 
 
 
-//  === GPU Processing <sec:gpu}
+//  == GPU Processing <sec:gpu}
 
 
 
@@ -6217,7 +6220,7 @@ ONNX operators that cover most sequential feedforward networks include:
 
 
 // \tvn{TODO: rewrite completely because hard to explain without knowing BCP and stuff. Have a section on DPLL(T) first.}
-//  === Overview <sec:neuralsat:overview}
+//  == Overview <sec:neuralsat:overview}
 // \begin{figure}[h]
 //     \centering
 //     \includegraphics[width=0.4\linewidth]{figure/arch.pdf}
@@ -6242,7 +6245,7 @@ ONNX operators that cover most sequential feedforward networks include:
 // % TODO: uncomment after I put back sec:neuralsat-alg.
 // % \autoref{sec:neuralsat-alg} provides more details on the \neuralsat{} algorithm, describing the main components of \neuralsat{} and how they work together to verify networks.
 
-//  === Illustration}
+//  == Illustration}
 
 // \begin{example <ex:neuralsat}
 // We use \neuralsat{} to prove that for inputs $x_1 \in [-1, 1], x_2 \in [-2,2]$ the network in~\autoref{fig:dnn} produces the output $x_5 \le 0$.
@@ -6467,7 +6470,7 @@ ONNX operators that cover most sequential feedforward networks include:
 
 
 
-//  === \tool{} vs. BaB <sec:restart-tree}
+//  == \tool{} vs. BaB <sec:restart-tree}
 
 
 // \begin{figure}[t]
@@ -6529,7 +6532,7 @@ ONNX operators that cover most sequential feedforward networks include:
 
 // \reluplex{}~\cite{katz2017reluplex} is a classical BaB (\autoref{chap:bab}) approach for NNV. The technique extends the \emph{simplex} method~\cite{nelder1965simplex} to support the ReLU activation function (\textbf{Reluplex} = \textbf{Relu} + Sim\textbf{plex}). \reluplex{} has been succeeded by the more efficient Marabou tool~\cite{katz2019marabou}. However, the core ideas of \reluplex{} are still relevant and thus presented here as another example of BaB-based NNV techniques.
 
-//  === Algorithm Overview <sec:reluplex-overview}
+//  == Algorithm Overview <sec:reluplex-overview}
 
 
 // \reluplex{} extends the classical simplex method to handle the
@@ -6559,7 +6562,7 @@ ONNX operators that cover most sequential feedforward networks include:
 
 
 
-//  === Illustration}
+//  == Illustration}
 
 
 // \newcommand{\mydnnthree}[1]{
@@ -6819,7 +6822,7 @@ ONNX operators that cover most sequential feedforward networks include:
 // % Here we survey the latest benchmarks in DNN verification and how SOTA tools perform on them.  These results are taken from the Verification Neural Network Competitions (VNN-COMP)~\cite{brix2024fifth} and the recent work by Duong et al.~\cite{duong2024harnessing}.
 
 
-// %  === VNN-COMP Benchmarks}
+// %  == VNN-COMP Benchmarks}
 
 // % %Artifacts for all benchmarks are available in the repository\footnote{\url{https://github.com/ChristopherBrix/vnncomp2024_benchmarks/tree/main/benchmarks}}.
 
@@ -7341,7 +7344,7 @@ ONNX operators that cover most sequential feedforward networks include:
 // % \paragraph*{Specifications} All networks are trained on classification tasks. The goal is to verify that no image within a given input set is incorrectly classified.
 // % \paragraph*{Link} \url{https://github.com/kollerlukas/cora-vnncomp2024-benchmark}
 
-// %  === Results}
+// %  == Results}
 
 
 // % \paragraph{Results}~\autoref{tab:score} shows the results. We report the Rank (\textbf{\#}) and  \textbf{\%} is the percentage of solved problems over all problem instances of the corresponding benchmark.   The last two columns break down the number of problems each verifier was able to verify and falsify. For example, for ACAS Xu, all tools other than \crowndefault{} were able to verify all 186 problems (139 + 47), and \crowndefault{} was only able to solve 113 problems (78 + 35), which is 60.8\% of the total problems.
@@ -7447,7 +7450,7 @@ ONNX operators that cover most sequential feedforward networks include:
 // As NNV matured, it became increasingly difficult to compare approaches. Papers often evaluated tools on different benchmarks, under different hardware assumptions, and using different specification languages. This fragmentation made it hard to assess the true state of the art, identify open challenges, and drive progress. This chapter describes the VNN-COMPs, which were created to address this problem by providing a common platform for evaluating and comparing NNV tools, and discusses common features of SOTA tools.
 
 
-//  === VNN-COMPs}
+//  == VNN-COMPs}
 // Inspired by the success of other formal methods competitions (e.g., SAT, SMT, model checking), the International Verification of Neural Networks Competition (\textbf{VNN-COMP}~\cite{kaulen20256thinternationalverificationneural,brix2024fifth,brix2023fourth}) is to encourage the standardization of tool interfaces, and bring together the NNV community.
 // To this end, VNN-COMP uses standardized formats for networks (ONNX~\cite{onnx}) and specification (VNN-LIB~\cite{vnnlib}), and evaluates tools 
 // using a common set of benchmarks (collected from various sources including previous papers and contributions from the community) on a common platform (AWS instances).
@@ -7484,7 +7487,7 @@ ONNX operators that cover most sequential feedforward networks include:
 // \end{figure}
 
 
-//  === Common Features of SOTA Tools}
+//  == Common Features of SOTA Tools}
 // \begin{table}
 //     \caption{Common features of SOTA NNV tools.} \label{tab:features}
 //     \centering
@@ -7565,7 +7568,7 @@ ONNX operators that cover most sequential feedforward networks include:
 
 
 
-// %  === The 2025 Edition at a Glance}
+// %  == The 2025 Edition at a Glance}
 
 // % VNN-COMP 2025 continued the trend toward increased automation, standardization, and scale. In this iteration:
 
@@ -7579,7 +7582,7 @@ ONNX operators that cover most sequential feedforward networks include:
 
 // % The competition evaluated tools under realistic constraints that reflect how verification systems are used in practice, rather than under hand-tuned, tool-specific experimental setups.
 
-// %  === Standardization Efforts}
+// %  == Standardization Efforts}
 
 // % A defining feature of VNN-COMP is its emphasis on standardization. Without common standards, meaningful comparison between tools is nearly impossible. The 2025 competition standardized three key aspects.
 
@@ -7619,7 +7622,7 @@ ONNX operators that cover most sequential feedforward networks include:
 
 // % This setup prevents overfitting to specific benchmarks and mirrors realistic deployment scenarios.
 
-// %  === Organization and Timeline}
+// %  == Organization and Timeline}
 
 // % The organization of VNN-COMP 2025 followed a well-defined timeline:
 
@@ -7648,7 +7651,7 @@ ONNX operators that cover most sequential feedforward networks include:
 
 // % These papers were reviewed by a program committee composed primarily of tool-team members. While lighter-weight than traditional conference papers, these contributions serve as valuable documentation of the state of the art and complement the raw competition results.
 
-// %  === Perspective: Why VNN-COMP Matters}
+// %  == Perspective: Why VNN-COMP Matters}
 
 // % From a broader perspective, VNN-COMP plays a role similar to that of SAT, SMT, and model-checking competitions in earlier decades. Those competitions were instrumental in transforming formal methods from primarily theoretical pursuits into robust, industrially relevant technologies.
 
@@ -7692,9 +7695,9 @@ def abs_val(x):
 We might _test_ `abs_val` by running it on a few inputs and checking the outputs:
 
 ```python
-assert(abs_val(3) == 3)
-assert(abs_val(-5) == 5)
-assert(abs_val(0) == 0)
+assert(abs_val(3) = 3)
+assert(abs_val(-5) = 5)
+assert(abs_val(0) = 0)
 ...
 ```
 
@@ -8366,7 +8369,7 @@ This leads to _Satisfiability Modulo Theories (SMT)_:
 ] <ex:smt2>
 
 
-=== SMT Solvers <sec:smt-solvers>
+== SMT Solvers <sec:smt-solvers>
 
 Popular SMT solvers include Z3 (Microsoft Research), CVC5, and dReal. They
 combine:
@@ -8389,7 +8392,7 @@ proven.
 ]
 
 
-== Z3 SMT Solver <sec:z3>
+=== Z3 SMT Solver <sec:z3>
 
 Z3 is a well-known SMT solver developed by Microsoft Research. Here we show how
 to use it to check propositional formulae and SMT formulae involving linear
@@ -8410,7 +8413,7 @@ Then try its Python interface:
 from z3 import *
 x = Int('x')
 y = Int('y')
-solve(x > 2, y < 10, x + 2*y == 7)
+solve(x > 2, y < 10, x + 2*y = 7)
 ```
 
 #example(title: "Propositional Logic")[
@@ -8493,7 +8496,7 @@ solve(x > 2, y < 10, x + 2*y == 7)
 
   # y = max(0, x-1)
   s.add(y >= x-1, y >= 0)
-  s.add(Or(y == x-1, y == 0))  # ReLU
+  s.add(Or(y = x-1, y = 0))  # ReLU
   s.add(x <= 0, y != 0)        # Negation of property
 
   print(s.check())  # Output: unsat, property holds
@@ -8653,7 +8656,7 @@ at which the clause becomes unit.
 ]
 
 
-== CDCL
+=== CDCL
 
 Modern DPLL solving improves the original version with Conflict-Driven Clause
 Learning (CDCL). DPLL with CDCL _learns new clauses_ to avoid past conflicts
@@ -8677,7 +8680,6 @@ For example, to check a formula involving linear arithmetic over the reals
 the constraints in the formula. Modern DPLL(T)-based SMT solvers such as Z3 and
 CVC4 include solvers supporting a wide range of theories including linear
 arithmetic, nonlinear arithmetic, strings, and arrays.
-
 
 
 = Linear Programming (LP) <chap:lp>
@@ -8921,7 +8923,7 @@ problems, but Z3 is effective for demonstration purposes.
   z = 1.5*x + 2*y
   h = opt.maximize(z)
 
-  if opt.check() == sat:
+  if opt.check() = sat:
       print("Optimal sol:", opt.model())  # [x = 0, y = 4]
       print("Max value:", opt.upper(h))   # 8
   ```
@@ -9046,7 +9048,7 @@ sufficient and often more efficient.
 
 
 
-//  === Z3 SMT Solver <sec:z3}
+//  == Z3 SMT Solver <sec:z3}
 
 // Z3~\cite{de2008z3} is a well-known SMT solver developed by Microsoft Research. Here we'll show how to use it to check propositional formulae and SMT formulae involving linear arithmetic constraints.
 
@@ -9066,7 +9068,7 @@ sufficient and often more efficient.
 //     from z3 import *
 //     x = Int(`x')
 //     y = Int(`y')
-//     solve(x > 2, y < 10, x + 2*y == 7)
+//     solve(x > 2, y < 10, x + 2*y = 7)
 // \end{lstlisting}
 
 
@@ -9158,7 +9160,7 @@ sufficient and often more efficient.
 
 // # y = max(0, x-1)
 // s.add(y >= x-1, y >= 0)
-// s.add(Or(y == x-1, y == 0)) # ReLU
+// s.add(Or(y = x-1, y = 0)) # ReLU
 // s.add(x <= 0, y != 0) # Negation of property
 
 // print(s.check()) # Output: unsat, property holds
@@ -9174,7 +9176,7 @@ sufficient and often more efficient.
 
 
 // = SAT Solving Algorithms <chap:sat-solving-algorithms}
-//  === DPLL <sec:dpll}
+//  == DPLL <sec:dpll}
 
 // \begin{figure}
 //     \centering
@@ -9428,7 +9430,7 @@ sufficient and often more efficient.
 // %DPLL is both sound (its results are correct) and complete (it can find a solution for any input in finite time). %Since its introduction, many heuristics have been introduced to make DPLL more efficient,
 // %However, because SAT solving is NP-Complete and DPLL has a worst-case exponential time complexity. %However, many heuristics have been developed to help DPLL efficient in practice,  e.g., choosing variables to assign values and decision levels to backtrack to~\cite{TODO}.
 
-//  === CDCL}
+//  == CDCL}
 
 // Modern DPLL solving improves the original version with Conflict-Driven Clause Learning (\emph{CDCL}~\cite{bayardo1997using,marques1999grasp,569607}).
 // DPLL with CDCL can \emph{learn new clauses} to avoid past conflicts and backtrack more intelligently (e.g., using non-chronologically backjumping).
@@ -9456,7 +9458,7 @@ sufficient and often more efficient.
 // This chapter provides an overview of LP and MILP in the context of NNV.
 
 
-//  === Linear Constraints and Objectives <sec:lp}
+//  == Linear Constraints and Objectives <sec:lp}
 
 // At a high level, LP is a method for optimizing an objective with respect to certain constraints. For example, we want to maximize profit while keeping production costs within budget. In LP, both the objective and constraints are \emph{linear}.
 
@@ -9659,7 +9661,7 @@ sufficient and often more efficient.
 // \end{problem}
 
 
-//  === Mixed-Integer Linear Programming (MILP) <sec:milp-basics}
+//  == Mixed-Integer Linear Programming (MILP) <sec:milp-basics}
 
 // LP (\autoref{sec:lp}) assumes continuous variables over real numbers.
 // A mixed-integer linear program---MILP---extends LP by requiring some variables to be integers (often binary 0 or 1).  This is useful because it allows for modeling discrete decisions and logical constraints, e.g., on/off decisions, yes/no choices, and active/inactive ReLU.
@@ -9835,7 +9837,7 @@ sufficient and often more efficient.
 // \end{problem}
 
 
-//  === Using Z3 to Solve LP and MILP}
+//  == Using Z3 to Solve LP and MILP}
 
 // We can use Z3's optimization capabilities to solve both LP and MILP problems. Note that in practice, we often use dedicated solvers such as Gurobi or CPLEX for large problems, but Z3 is effective for demonstration purposes.
 
@@ -9854,7 +9856,7 @@ sufficient and often more efficient.
 // h = opt.maximize(z)
 
 // # Solve
-// if (opt.check() == sat):
+// if (opt.check() = sat):
 //     print("Optimal sol:", opt.model())  # output [x = 0, y = 4]
 //     print("Max value:", opt.upper(h))   # output 8
 //     \end{lstlisting}
@@ -10258,7 +10260,7 @@ sufficient and often more efficient.
 
 
 
-// %  === Boolean Abstraction}
+// %  == Boolean Abstraction}
 // % \texttt{BooleanAbstraction} (\autoref{fig:alg}~\autoref{line:Booleanabstraction}) encodes the DNN verification problem into a Boolean constraint to be solved by DPLL.  This step creates Boolean variables to represent the \emph{activation status} of hidden neurons in the DNN. Observe that when evaluating the DNN on any concrete input, the value of each hidden neuron \emph{before} applying ReLU is either $>0$ (the neuron is \emph{active} and the input is passed through to the output) or $\le 0$ (the neuron is \emph{inactive} because the output is 0).
 // % This allows partial assignments to these variables to represent neuron activation patterns within the DNN.
 
@@ -10296,7 +10298,7 @@ sufficient and often more efficient.
 
 // % %Thus, during preprocessing, \tool{} also creates Boolean variables representing the status values of hidden pre-ReLU neurons and an initial set of clause enforcing that each variable needs to be either $T$ (\texttt{on}) or $F$ (\texttt{off}).
 
-// %  === DPLL <sec:ns-dpll}
+// %  == DPLL <sec:ns-dpll}
 
 // % After \texttt{BooleanAbstraction}, \tool{} iteratively searches for an assignment satisfying the status clauses (\autoref{fig:alg}, lines~\ref{line:dpllstart}--~\ref{line:dpllend}).
 // % % \tvn{something is wrong with the line ?? here} \hd{fixed}
@@ -10599,7 +10601,7 @@ sufficient and often more efficient.
 
 
 
-// %  === Deduction (Theory Solving) <sec:deduction}
+// %  == Deduction (Theory Solving) <sec:deduction}
 
 // % \begin{algorithm}[t]
 // %     \small
@@ -10711,7 +10713,7 @@ sufficient and often more efficient.
 
 
 
-// %  === \tool{}'s Optimizations <sec:optimizations}
+// %  == \tool{}'s Optimizations <sec:optimizations}
 
 // % \tool{} implements several optimizations to improve the performance of the search. First are the common optimizations used by other DNN verifiers, such as input splittings (\autoref{chap:common-engineering}) and adversarial attacks (\autoref{chap:adversarial-attacks}). In addition, \neuralsat{} implements several unique optimizations~\cite{duong2024harnessing} to improve the performance of the search. These are neuron stability, restart tree, and restart.
 
