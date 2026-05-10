@@ -1960,54 +1960,59 @@ $
 #pagebreak()
 = The Neural Network Verification (NNV) Problem <sec:nnv-problem>
 
-// \begin{definition}[NNV]\label{def:nnv}
-// Given a NN \(N\) and a property $\phi$, the NNV problem asks if $\phi$ is a valid property\footnote{\autoref{chap:properties} provides various examples of properties.} of $N$.
+#definition[NNV][
+  Given a NN $N$ and a property $phi$, the NNV problem asks if $phi$ is a valid property#footnote[@chap:properties provides various examples of properties.] of $N$.
 
-// Typically, $\phi$ is a formula of the form
+  Typically, $phi$ is a formula of the form
 
-// \[
-// \phi_{in} \Rightarrow \phi_{out},
-// \]
-// where $\phi_{in}$ is the \emph{precondition}, i.e., a condition over the inputs of $N$, and $\phi_{out}$ is the \emph{postcondition}, i.e., a condition over the outputs of $N$.
+  $
+    phi_("in") arrow.r phi_("out"),
+  $
 
-// An NNV tool attempts to find a \emph{counterexample} input to $N$ that satisfies $\phi_{in}$ but violates $\phi_{out}$.  If no such counterexample exists, $\phi$ is a valid property of $N$. Otherwise, $\phi$ is not valid and the counterexample can be used to retrain or debug the network~\cite{huang2017safety}.
-// \end{definition}
+  where $phi_("in")$ is the _precondition_, i.e., a condition over the inputs of $N$, and $phi_("out")$ is the _postcondition_, i.e., a condition over the outputs of $N$.
 
-
-
-// \begin{example}[Safety Property for Collision Avoidance System]
-//     In~\autoref{ex:collision-safety}, we defined a safety property (\autoref{sec:properties-safety}) for a collision avoidance system:
-// \[
-// d_{intruder} > d_{threshold} \land v_{intruder} < v_{threshold} \implies v_{us} < v_{threshold},
-// \]
-// where $d_{intruder}$ is the distance to the intruder, $d_{threshold}$ is a predefined safe distance, $v_{intruder}$ is the speed of the intruder, and $v_{us}$ is our speed.
-
-// Here, the precondition is
-// \[
-// \phi_{in} = d_{intruder} > d_{threshold} \land v_{intruder} < v_{threshold},
-// \]
-// and the postcondition is
-// \[
-// \phi_{out} = v_{us} < v_{threshold}.
-// \]
-// \end{example}
+  An NNV tool attempts to find a _counterexample_ input to $N$ that satisfies $phi_("in")$ but violates $phi_("out")$. If no such counterexample exists, $phi$ is a valid property of $N$. Otherwise, $phi$ is not valid and the counterexample can be used to retrain or debug the network @huang2017safety.
+] <def:nnv>
 
 
 
+#example[
+  *Safety Property for Collision Avoidance System.*
+  In @ex:collision-safety, we defined a safety property (@sec:properties-safety) for a collision avoidance system:
 
-// \begin{example <ex:dnn-b}
+  $
+    d_("intruder") > d_("threshold") and v_("intruder") < v_("threshold") arrow.r v_("us") < v_("threshold"),
+  $
 
-// \begin{figure}
-// \centering
-// \mydnn{1}
-// \caption{\label{fig:dnn-b}A simple network (similar to~\autoref{fig:dnn}).}
-// \end{figure}
+  where $d_("intruder")$ is the distance to the intruder, $d_("threshold")$ is a predefined safe distance, $v_("intruder")$ is the speed of the intruder, and $v_("us")$ is our speed.
 
-// For the network in~\autoref{fig:dnn-b} a \emph{valid} property is that the output is $x_5 \le 0$ for any inputs $x_1 \in [-1,1], x_2\in[-2,2]$.
+  Here, the precondition is
 
-// An \emph{invalid} property is that $x_5 > 0$ for those similar inputs.
-// A counterexample showing this property violation is $\{x_1=-1, x_2=2\}$, from which the network evaluates to $x_5=-3.5$.
-// \end{example}
+  $
+    phi_("in") = d_("intruder") > d_("threshold") and v_("intruder") < v_("threshold"),
+  $
+
+  and the postcondition is
+
+  $
+    phi_("out") = v_("us") < v_("threshold").
+  $
+]
+
+
+
+
+#example[
+  #figure(
+    [#mydnn(sc:100%)],
+    caption: [A simple network (similar to @fig:dnn).],
+  ) <fig:dnn-b>
+
+  For the network in~@fig:dnn-b, a _valid_ property is that the output is $x_5 <= 0$ for any inputs $x_1 in [-1, 1], x_2 in [-2, 2]$.
+
+  An _invalid_ property is that $x_5 > 0$ for similar inputs.
+  A counterexample showing this property violation is ${x_1 = -1, x_2 = 2}$, from which the network evaluates to $x_5 = -3.5$.
+] <ex:dnn-b>
 
 
 //  == Satisfiability Formulation and Checking <sec:satisfiability-and-activation-pattern-search}
@@ -4293,6 +4298,7 @@ checking the satisfiability of $alpha_p and phi_"in" and not phi_"out"$ is
 easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 
 #example[
+  //TODO fig:dnn-b
   The network can be represented as the formula $alpha$:
   $
     & hat(x)_3 = -0.5x_1 + 0.5x_2 + 1.0 \
