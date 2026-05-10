@@ -1,9 +1,22 @@
 #import "@preview/simple-plot:0.3.0": plot
 #import "@preview/cetz:0.3.4": canvas, draw
+
 #import "@preview/theorion:0.6.0": *
 #import cosmos.fancy: *
 #show: show-theorion
 #set-inherited-levels(5)
+
+#let (exercise-counter, exercise-box, exercise, show-exercise) = make-frame(
+  "exercise",
+  "Exercise",
+  counter: corollary-counter,
+  inherited-from: heading,
+  render: corollary-box.with(),  // reuse definition's render/style
+)
+#show: show-exercise
+
+
+
 
 #set page(numbering: "1", number-align: center)
 #set heading(numbering: "1.")
@@ -109,50 +122,8 @@
 #show heading: set heading(supplement: [Sec.])
 
 
-#let mydnn(sc: 1) = figure(
-  scale(sc * 100%)[
-    #canvas({
-      import draw: *
-      let r = 0.42
-      let x1 = (0, 2)
-      let x2 = (0, 0)
-      let x3 = (3, 2)
-      let x4 = (3, 0)
-      let x5 = (5, 1)
-      let connect = (a, b, label, p) => {
-        let dx = b.at(0) - a.at(0)
-        let dy = b.at(1) - a.at(1)
-        let len = calc.sqrt(dx * dx + dy * dy)
-        let ux = dx / len
-        let uy = dy / len
-        let start = (a.at(0) + r * ux, a.at(1) + r * uy)
-        let end   = (b.at(0) - r * ux, b.at(1) - r * uy)
-        line(start, end, stroke: 1pt, end: ">")
-        content(p, box(fill: white, inset: 1pt, text(size: 9pt)[#label]))
-      }
-      connect(x1, x3, "-0.5", (1.5, 2.25))
-      connect(x1, x4, "0.5", (2.0, 0.55))
-      connect(x2, x3, "0.5", (2.0, 1.55))
-      connect(x2, x4, "-0.5",  (1.5, -0.25))
-      connect(x3, x5, "-1.0",  (4.0, 1.50))
-      connect(x4, x5, "1.0", (4.0, 0.50))
-      for (pos, label, fill-color, value) in (
-        (x1, $x_1$, green.lighten(50%), ""),
-        (x2, $x_2$, green.lighten(50%), ""),
-        (x3, $x_3$, yellow.lighten(50%), "1.0"),
-        (x4, $x_4$, yellow.lighten(50%), "-1.0"),
-        (x5, $x_5$, red.lighten(50%), "-1.0"),
-      ) {
-        circle(pos, radius: r, stroke: 1pt, fill: fill-color)
-        content(pos, label)
-        content((pos.at(0), pos.at(1) - 0.65), text(size: 9pt)[#value])
-      }
-      //line((-0.8, 2), (-r, 2), stroke: 1pt, end: ">")
-      //line((-0.8, 0), (-r, 0), stroke: 1pt, end: ">")
-      //line((5 + r, 1), (6, 1), stroke: 1pt, end: ">")
-    })
-  ]
-)
+
+
 
 
 // Title Page
@@ -168,7 +139,7 @@
     #v(1fr)
     //#image("files/usamap.png", width: 100%)
     #v(1fr)
-    #text(size: 18pt, weight: "bold")[#me]
+    #text(size: 18pt)[*#me* and *Hai Duong*]
     #v(0.2fr)
     #text(size: 14pt)[#institute]
   ]
@@ -179,7 +150,7 @@
 
 #v(1fr)
 #commentbox[
-    This #link(mybookgithub)[work] © #datetime.today().year() by #me is licensed under CC BY-NC-ND 4.0. To view a copy of this license, visit #link("https://creativecommons.org/licenses/by-nc-nd/4.0/")[creativecommons.org].
+    This #link(mybookgithub)[work] © #datetime.today().year() by #me and Hai Duong is licensed under CC BY-NC-ND 4.0. To view a copy of this license, visit #link("https://creativecommons.org/licenses/by-nc-nd/4.0/")[creativecommons.org].
 ]
 
 
@@ -546,7 +517,19 @@
 
 //     \shade[
 //     left color=ForestGreen,
-//     rounded corners=0.4cm,
+//     rounded corner
+      let connect = (a, b, label, p) => {
+        let dx = b.at(0) - a.at(0)
+        let dy = b.at(1) - a.at(1)
+        let len = calc.sqrt(dx * dx + dy * dy)
+        let ux = dx / len
+        let uy = dy / len
+        let start = (a.at(0) + r * ux, a.at(1) + r * uy)
+        let end   = (b.at(0) - r * ux, b.at(1) - r * uy)
+        line(start, end, stroke: 1pt, end: ">")
+        content(p, box(fill: white, inset: 1pt, text(size: 9pt)[#label]))
+      }
+ s=0.4cm,
 //     transform canvas ={rotate around ={45:($(current page.north west)+(19,-5.65)$)}}]
 //     ($(current page.north west)+(19,-5.65)$) rectangle ++(15,0.8);
 
@@ -685,40 +668,70 @@ where $n$ is the number of input neurons and $m$ is the number of output neurons
 
 
 
-// \newcommand{\mydnntwo}[1]{
-// \begin{tikzpicture}[scale=#1, transform shape, semithick, ->]
-//     % Input nodes
-//     \node[input] (x1) at (0,1)  {$x_1$};
-//     \node[input] (x2) at (0,-1) {$x_2$};
+#let mydnn(sc: 100%) = figure(
+  scale(sc)[
+    #canvas({
+      import draw: *
+      let r = 0.42
+      let x1 = (0, 2)
+      let x2 = (0, 0)
+      let x3 = (3, 2)
+      let x4 = (3, 0)
+      let x5 = (5, 1)
 
-//     % Hidden layer
-//     \node[hidden] (x3) at (2.8,1) {$x_3$};
-//     \node[hidden] (x4) at (2.8,-1) {$x_4$};
+      let edges = (
+        (x1, x3, "-0.5", "above"),
+        (x1, x4,  "0.5", "below"),
+        (x2, x3,  "0.5", "above"),
+        (x2, x4, "-0.5", "below"),
+        (x3, x5, "-1.0", "above"),
+        (x4, x5,  "1.0", "below"),
+      )
 
-//     % Output layer node (centered horizontally)
-//     \node[output] (x5) at (5,1) {$x_5$};
-//     \node[output] (x6) at (5,-1) {$x_6$};
+      // pass 1: lines only
+      for (a, b, label, side) in edges {
+        let dx = b.at(0) - a.at(0)
+        let dy = b.at(1) - a.at(1)
+        let len = calc.sqrt(dx * dx + dy * dy)
+        let ux = dx / len
+        let uy = dy / len
+        let start = (a.at(0) + r * ux, a.at(1) + r * uy)
+        let end   = (b.at(0) - r * ux, b.at(1) - r * uy)
+        line(start, end, stroke: 1pt, mark: (end: ">"))
+      }
 
-//     % Connections with weights
-//     \draw (x1) -- (x3) node[midway, above] {$-0.7$} ;
-//     \draw (x1) -- (x4) node[near end, below] {$1.2$} ;
-//     \draw (x2) -- (x3) node[near end, above] {$0.3$} ;
-//     \draw (x2) -- (x4) node[midway, below] {$-0.5$} ;
-//     \draw (x3) -- (x5) node[midway, above] {$-2.0$};
-//     \draw (x4) -- (x5) node[near end, above] {$3.0$};
-//     \draw (x3) -- (x6) node[near end, below] {$-1.8$};
-//     \draw (x4) -- (x6) node[midway, below] {$0.7$};
+      // pass 2: labels on top of lines
+      for (a, b, label, side) in edges {
+        let dx = b.at(0) - a.at(0)
+        let dy = b.at(1) - a.at(1)
+        let len = calc.sqrt(dx * dx + dy * dy)
+        let ux = dx / len
+        let uy = dy / len
+        let sign = if side == "above" { 1 } else { -1 }
+        let mx = (a.at(0) + b.at(0)) / 2 + (-uy * 0.25 * sign)
+        let my = (a.at(1) + b.at(1)) / 2 + ( ux * 0.25 * sign)
+        content((mx, my), box(fill: gray.lighten(70%), inset: 1pt, text(size: 9pt)[#label]))
+      }
 
-//     % Biases
-//     \node[above] at (x3.north) {$.8$};
-//     \node[below] at (x4.south) {$-2.0$};
-//     \node[above] at (x5.north) {$-1.2$};
-//     \node[below] at (x6.south) {$-.3$};
-// \end{tikzpicture}
-// }
+      // pass 3: nodes on top of everything
+      for (pos, label, fill-color, value) in (
+        (x1, $x_1$, green.lighten(50%),  ""),
+        (x2, $x_2$, green.lighten(50%),  ""),
+        (x3, $x_3$, yellow.lighten(50%), "1.0"),
+        (x4, $x_4$, yellow.lighten(50%), "-1.0"),
+        (x5, $x_5$, red.lighten(50%),    "-1.0"),
+      ) {
+        circle(pos, radius: r, stroke: 1pt, fill: fill-color)
+        content(pos, label)
+        content((pos.at(0), pos.at(1) - 0.65), text(size: 9pt)[#value])
+      }
+    })
+  ]
+)
+
 
 #figure(
-mydnn(sc: 1),
+mydnn(sc: 100%),
   caption: [A simple network with two inputs $x_1,x_2$, two hidden neurons $x_3,x_4$, and one output neuron $x_5$.],
 ) <fig:dnn>
 
@@ -1026,53 +1039,54 @@ In Z3, we can declare ReLU using `If()`
 // This means that softmax maps the input vector $x$ to a probability distribution over the three classes, where the first class has a probability of 0.71, the second class has a probability of 0.24, and the third class has a probability of 0.05.
 // \end{example}
 
-// \begin{example <ex:z3-dnn}
-// Use Z3 to encode the network in~\autoref{fig:dnn} and compute its output $x_5$ for the input $(x_1, x_2) = (2.0, 0.5)$ and find an input that maximizes the output $x_5$.
+#example[
+Use Z3 to encode the network in @fig:dnn and compute its output $x_5$ for the input $(x_1, x_2) = (2.0, 0.5)$ and find an input that maximizes the output $x_5$.
 
-// \begin{lstlisting}[language=python,multicols=2]
-// from z3 import Real, If, Solver, sat
+```python
+from z3 import Real, If, Solver, Optimize, sat
 
-// x1, x2, = Real('x1'), Real('x2') 
-// x3, x3_, = Real('x3'), Real('x3_')
-// x4, x4_ = Real('x4'), Real('x4_')
-// x5 = Real('x5')
+x1, x2, = Real('x1'), Real('x2')
+x3, x3_, = Real('x3'), Real('x3_')
+x4, x4_ = Real('x4'), Real('x4_')
+x5 = Real('x5')
 
-// l2a = x3 == -0.5 * x1 + 0.5 * x2 + 1.0
-// l2a_ = x3_ == If(x3 > 0, x3, 0)
-// l2b = x4 ==  0.5 * x1 - 0.5 * x2 - 1.0
-// l2b_ = x4_ == If(x4 > 0, x4, 0)
-// l3 = x5 == -1.0 * x3_ + 1.0 * x4_ - 1.0
+l2a = x3 == -0.5 * x1 + 0.5 * x2 + 1.0
+l2a_ = x3_ == If(x3 > 0, x3, 0)
+l2b = x4 ==  0.5 * x1 - 0.5 * x2 - 1.0
+l2b_ = x4_ == If(x4 > 0, x4, 0)
+l3 = x5 == -1.0 * x3_ + 1.0 * x4_ - 1.0
 
-// # output for input (x1, x2) = (2.0, 0.5)
-// s = Solver()
-// s.add(l2a);s.add(l2b);
-// s.add(l2a_); s.add(l2b_);s.add(l3)
+# output for input (x1, x2) = (2.0, 0.5)
+s = Solver()
+s.add(l2a); s.add(l2b)
+s.add(l2a_); s.add(l2b_); s.add(l3)
 
-// # specify input values
-// s.add(x1 == 2.0); s.add(x2 == 0.5)
-// if s.check() == sat:
-//     print(s.model())
+# specify input values
+s.add(x1 == 2.0); s.add(x2 == 0.5)
+if s.check() == sat:
+  print(s.model())
 
-// # find an input that maximizes the output x5
-// o = Optimize()
-// o.add(l2a); o.add(l2b)
-// o.add(l2a_); o.add(l2b_); o.add(l3)
+# find an input that maximizes the output x5
+o = Optimize()
+o.add(l2a); o.add(l2b)
+o.add(l2a_); o.add(l2b_); o.add(l3)
 
-// #maximize x5
-// o.maximize(x5)
-// if o.check() == sat:
-//     print(o.model())
-// \end{lstlisting} 
-// \end{example}
+# maximize x5
+o.maximize(x5)
+if o.check() == sat:
+  print(o.model())
+```
+] <ex:z3-dnn>
 
-// \begin{problem <prob:z3-dnn}
-//     Use~\autoref{ex:z3-dnn} as an example and try the following exercises:
-//     \begin{enumerate}
-//     \item Use Z3 to encode the network in~\autoref{fig:dnn} and compute the outputs of \emph{all} neurons for the input $(x_1, x_2) = (-1.3, 3.5)$.
-//     \item Use Z3 to find an input $(x_1, x_2)$ that \emph{maximizes} the output $x_5$ of the network in~\autoref{fig:dnn}.
-//     \item Add another input $x_{new}$ and update the network accordingly. Then, use Z3 to find an input $(x_1, x_2, x_{new})$ that {minimizes} the output $x_5$ of the updated network.
-//     \end{enumerate}
-// \end{problem}
+
+
+#exercise[
+Use @ex:z3-dnn as an example and try the following exercises:
+
++ Use Z3 to encode the network in @fig:dnn and compute the outputs of _all_ neurons for the input $(x_1, x_2) = (-1.3, 3.5)$.
++ Use Z3 to find an input $(x_1, x_2)$ that _maximizes_ the output $x_5$ of the network in @fig:dnn.
++ Add another input $x_("new")$ and update the network accordingly. Then, use Z3 to find an input $(x_1, x_2, x_("new"))$ that _minimizes_ the output $x_5$ of the updated network.
+] <prob:z3-dnn>
 
 == Neural Network Architectures and Layers
 
@@ -2074,13 +2088,86 @@ RNNs, often used in natural language processing (NLP) and speech recognition, ar
 // Use Z3 to do~\autoref{ex:dnn-sat}. You might find~\autoref{ex:z3-dnn} useful.  Make sure that you also ask Z3 to  find a counterexample violating the property (does not have to be the same as above).
 // \end{problem}
 
+
+
+
+#let mydnn2(sc: 100%) = figure(
+  scale(sc)[
+    #canvas({
+      import draw: *
+      let r = 0.42
+      let x1 = (0,   1)
+      let x2 = (0,  -1)
+      let x3 = (2.8, 1)
+      let x4 = (2.8,-1)
+      let x5 = (5,   1)
+      let x6 = (5,  -1)
+
+      // (from, to, label, above/below, midway=0.5/near-end=0.75)
+      let edges = (
+        (x1, x3, "-0.7", "above", 0.5),
+        (x1, x4,  "1.2", "below", 0.75),
+        (x2, x3,  "0.3", "above", 0.75),
+        (x2, x4, "-0.5", "below", 0.5),
+        (x3, x5, "-2.0", "above", 0.5),
+        (x4, x5,  "3.0", "above", 0.75),
+        (x3, x6, "-1.8", "below", 0.75),
+        (x4, x6,  "0.7", "below", 0.5),
+      )
+
+      // pass 1: lines
+      for (a, b, label, side, t) in edges {
+        let dx = b.at(0) - a.at(0)
+        let dy = b.at(1) - a.at(1)
+        let len = calc.sqrt(dx * dx + dy * dy)
+        let ux = dx / len
+        let uy = dy / len
+        let start = (a.at(0) + r * ux, a.at(1) + r * uy)
+        let end   = (b.at(0) - r * ux, b.at(1) - r * uy)
+        line(start, end, stroke: 1pt, mark: (end: ">"))
+      }
+
+      // pass 2: edge labels
+      for (a, b, label, side, t) in edges {
+        let dx = b.at(0) - a.at(0)
+        let dy = b.at(1) - a.at(1)
+        let len = calc.sqrt(dx * dx + dy * dy)
+        let ux = dx / len
+        let uy = dy / len
+        let sign = if side == "above" { 1 } else { -1 }
+        let mx = a.at(0) + dx * t + (-uy * 0.25 * sign)
+        let my = a.at(1) + dy * t + ( ux * 0.25 * sign)
+        content((mx, my), box(fill: white, inset: 1pt, text(size: 9pt)[#label]))
+      }
+
+      // pass 3: nodes + bias labels
+      for (pos, label, fill-color, bias, bias-pos) in (
+        (x1, $x_1$, green.lighten(50%),  none,    none),
+        (x2, $x_2$, green.lighten(50%),  none,    none),
+        (x3, $x_3$, yellow.lighten(50%), $0.8$,   "above"),
+        (x4, $x_4$, yellow.lighten(50%), $-2.0$,  "below"),
+        (x5, $x_5$, red.lighten(50%),    $-1.2$,  "above"),
+        (x6, $x_6$, red.lighten(50%),    $-0.3$,  "below"),
+      ) {
+        circle(pos, radius: r, stroke: 1pt, fill: fill-color)
+        content(pos, label)
+        if bias != none {
+          let sign = if bias-pos == "above" { 1 } else { -1 }
+          content(
+            (pos.at(0), pos.at(1) + (r + 0.2) * sign),
+            text(size: 9pt)[#bias]
+          )
+        }
+      }
+    })
+  ]
+)
 // \begin{problem <problem:mydnntwo}
-// \begin{figure}
-//     \centering
-//     \mydnntwo{1.0}
-//     \caption{A simple network with 2 inputs, 2 hidden ReLU neurons, and 2 outputs.}
-//     \label{fig:mydnntwo}
-// \end{figure}
+#figure(
+  mydnn2(sc: 100%),
+  caption: [A simple network with 2 inputs, 2 hidden ReLU neurons, and 2 outputs.],
+) <fig:mydnntwo>
+
 
 // Consider the neural network in~\autoref{fig:mydnntwo}.  Do the following:
 // \begin{enumerate}
