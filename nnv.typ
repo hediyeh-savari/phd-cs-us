@@ -1087,7 +1087,7 @@ Use @ex:z3-dnn as an example and try the following exercises:
 + Add another input $x_("new")$ and update the network accordingly. Then, use Z3 to find an input $(x_1, x_2, x_("new"))$ that _minimizes_ the output $x_5$ of the updated network.
 ] <prob:z3-dnn>
 
-== Neural Network Architectures and Layers
+=== Neural Network Architectures and Layers
 
 NNs vary in architecture depending on how information flows through them and how computations are structured. Most common models are variations of the _feedforward network_, with additional structures or constraints layered on top. @tab:nn-types summarizes several common NN architectures and their typical application domains.
 
@@ -1113,15 +1113,13 @@ NNs vary in architecture depending on how information flows through them and how
 
 
 
-=== Feedforward Neural Networks (FNNs) <sec:ffn>
+==== Feedforward Neural Networks (FNNs) <sec:ffn>
 
 In an FNN, information flows in one direction: from the input layer, through one or more hidden layers, and finally to the output layer. There are no loops or cycles in the computation graph.
 
 Widely used feedforward architectures include fully connected, convolutional, and residual networks. Each architecture has its own strengths and is suited for different types of tasks.
 
-=== Fully Connected NNs (FCNs)
-
-In FCNs, each neuron in a layer is connected to every neuron in the next layer. Thus, every neuron in the input layer is connected to every neuron in the first hidden layer, every neuron in the first hidden layer is connected to every neuron in the second hidden layer, and so on, until the output layer. Fully connected NNs, sometimes called _dense networks_, are the most basic type of FNNs and are commonly used for tasks like classification.
+#paragraph[Fully Connected NNs (FCNs)][In FCNs, each neuron in a layer is connected to every neuron in the next layer. Thus, every neuron in the input layer is connected to every neuron in the first hidden layer, every neuron in the first hidden layer is connected to every neuron in the second hidden layer, and so on, until the output layer. Fully connected NNs, sometimes called _dense networks_, are the most basic type of FNNs and are commonly used for tasks like classification.]
 
 // TODO
 // \begin{example}
@@ -1302,13 +1300,15 @@ In FCNs, each neuron in a layer is connected to every neuron in the next layer. 
 // %     \item \textbf{Residual (Skip) Connections}: Enable shortcut paths from earlier to later layers.
 // % \end{itemize}
 
-== Other NN Architectures
+==== Other NN Architectures
 
 Not all NNs are feedforward.
 Some architectures introduce cycles, dynamic connections, or non-Euclidean#footnote[Euclidean data refers to data that can be represented in a flat, two-dimensional space, such as images.] data structures (e.g., graphs).
 
-=== Recurrent Neural Networks (RNNs)
+===== Recurrent Neural Networks (RNNs)
 RNNs, often used in natural language processing (NLP) and speech recognition, are designed to recognize patterns in sequences of data. RNNs have _loops_ in them, allowing information to be sent forward and backward.
+
+Currently, most NNV work tackles RNNs by _unrolling_ them into an equivalent feedforward network. While this allows us to apply feedforward verification techniques, it can lead to an exponential increase in the size of the network, making verification more challenging.
 
 
 // \begin{figure}[h]
@@ -1397,64 +1397,63 @@ RNNs, often used in natural language processing (NLP) and speech recognition, ar
 
 // \end{example}
 
-// \subsubsection{Transformers} Transformers are designed for long-range dependencies using \emph{self-attention} rather than recurrence. They dominate applications in natural language processing and are increasingly used in vision and reinforcement learning.
+===== Transformers
+Transformers are designed for long-range dependencies using _self-attention_ rather than recurrence. They dominate applications in natural language processing and are increasingly used in vision and reinforcement learning.
 
-// \subsubsection{Graph Neural Networks (GNNs)} operate on graphs, allowing each node to aggregate information from its neighbors. GNNs are used in applications involving structured data like molecules or social networks.
-
-
-
-//  === ONNX: Modelling Neural Networks <sec:onnx}
-
-// \textbf{ONNX} (Open Neural Network Exchange)~\cite{onnx} is an open source and widely adopted standard for representing neural networks. It provides a common format for representing the structure and parameters of neural networks, enabling interoperability between different ML frameworks and tools.
-
-// %\paragraph{Supported ONNX Operators} VNN-LIB supports a subset of ONNX operators that cover most sequential feedforward networks used in NN verification. These operators include:
+===== Graph Neural Networks (GNNs)
+Graph Neural Networks (GNNs) operate on graphs (instead of vectors like FNNs or sequences like RNNs). 
+It uses message passing between nodes in the graph and allows each node to aggregate information from its neighbors. GNNs are used in applications involving structured data like molecules or social networks. Currently, most NNV tools do not support GNNs, and we will not focus on them in this book. However, they are an important area of research in the broader field of NNV.
 
 
-// ONNX operators that cover most sequential feedforward networks include:
-// \begin{itemize}
-//     \item \texttt{Add, Sub, Gemm, MatMul}: basic arithmetic and matrix operations.
-//     \item \texttt{ReLU, Sigmoid, SoftMax}: activation functions.
-//     \item \texttt{AveragePool, MaxPool, Flatten, Reshape}: tensor manipulation.
-//     \item \texttt{Conv, BatchNormalization, LRN}: CNN layers and normalizations.
-//     \item \texttt{Concat, Dropout, Unsqueeze}: tensor operations.
-// \end{itemize}
+=== Representing Neural Networks with ONNX <sec:onnx>
 
-// %\textbf{Note:} Preprocessing (e.g., normalization) should not be included in the model itself to keep property alignment clear.
+*ONNX* (Open Neural Network Exchange) @onnx is an open source and widely adopted standard for representing neural networks. It provides a common format for representing the structure and parameters of neural networks, enabling interoperability between different ML frameworks and tools.
 
-// \begin{example} For the network in~\autoref{fig:dnn}, the ONNX representation would include:
-// \begin{itemize}
-//     \item Input: $x_1, x_2$.
-//     \item Hidden layer: $x_3 = \relu{-0.5x_1 + 0.5x_2 + 1.0}$, $x_4 = \relu{0.5x_1 - 0.5x_2 + 1.0}$.
-//     \item Output: $x_5 = -x_3 + x_4 - 1$.
-// \end{itemize}
-// The ONNX representation would look like:
 
-// %\tvn{check for accuracy, I make it very small just to illustrate what ONNX looks like}
-// \begin{lstlisting}
-// ir_version: 9
-// opset_import { version: 13 }
-// graph example_nn {
-//   input: "x"
-//   output: "x5"
+ONNX operators that cover most sequential feedforward networks include:
 
-//   node { op_type: "Gemm" input: "x" input: "W1" input: "b1" output: "h1" }   # -0.5*x1+0.5*x2+1
-//   node { op_type: "Relu" input: "h1" output: "x3" }
+- `Add, Sub, Gemm, MatMul`: basic arithmetic and matrix operations.
+- `ReLU, Sigmoid, SoftMax`: activation functions.
+- `AveragePool, MaxPool, Flatten, Reshape`: tensor manipulation.
+- `Conv, BatchNormalization, LRN`: CNN layers and normalizations.
+- `Concat, Dropout, Unsqueeze`: tensor operations.
 
-//   node { op_type: "Gemm" input: "x" input: "W2" input: "b2" output: "h2" }   # 0.5*x1-0.5*x2+1
-//   node { op_type: "Relu" input: "h2" output: "x4" }
+// Note: Preprocessing (e.g., normalization) should not be included in the model itself to keep property alignment clear.
 
-//   node { op_type: "Neg" input: "x3" output: "nx3" }
-//   node { op_type: "Add" input: "nx3" input: "x4" output: "s1" }
-//   node { op_type: "Add" input: "s1" input: "c_minus_1" output: "x5" }
+#example[
+  For the network in @fig:dnn, the ONNX representation would include:
 
-//   initializer { name: "W1" values: [-0.5, 0.5] }
-//   initializer { name: "b1" values: [1.0] }
-//   initializer { name: "W2" values: [0.5, -0.5] }
-//   initializer { name: "b2" values: [1.0] }
-//   initializer { name: "c_minus_1" values: [-1.0] }
-// }
-// \end{lstlisting}
-// \end{example}
+  - Input: $x_1, x_2$.
+  - Hidden layer: $x_3 = "relu"(-0.5x_1 + 0.5x_2 + 1.0)$, $x_4 = "relu"(0.5x_1 - 0.5x_2 + 1.0)$.
+  - Output: $x_5 = -x_3 + x_4 - 1$.
+
+  The ONNX representation would look like:
+
+  ```
+  ir_version: 9
+  opset_import { version: 13 }
+  graph example_nn {
+    input: "x"
+    output: "x5"
+
+    node { op_type: "Gemm" input: "x" input: "W1" input: "b1" output: "h1" }   # -0.5*x1+0.5*x2+1
+    node { op_type: "Relu" input: "h1" output: "x3" }
+
+    node { op_type: "Gemm" input: "x" input: "W2" input: "b2" output: "h2" }   # 0.5*x1-0.5*x2+1
+    node { op_type: "Relu" input: "h2" output: "x4" }
+
+    node { op_type: "Neg" input: "x3" output: "nx3" }
+    node { op_type: "Add" input: "nx3" input: "x4" output: "s1" }
+    node { op_type: "Add" input: "s1" input: "c_minus_1" output: "x5" }
+
+    initializer { name: "W1" values: [-0.5, 0.5] }
+    initializer { name: "b1" values: [1.0] }
+    initializer { name: "W2" values: [0.5, -0.5] }
+    initializer { name: "b2" values: [1.0] }
+    initializer { name: "c_minus_1" values: [-1.0] }
+  }
+  ```
+]
 
 
 #pagebreak()
