@@ -9,11 +9,11 @@
 #let (exercise-counter, exercise-box, exercise, show-exercise) = make-frame(
   "exercise",
   "Exercise",
-  counter: corollary-counter,
-  inherited-from: heading,
-  render: corollary-box.with(),  // reuse definition's render/style
+  counter: lemma-counter,
+  //inherited-from: heading,
+  render: lemma-box.with(),  // reuse definition's render/style
 )
-#show: show-exercise
+//#show: show-exercise
 
 
 
@@ -1077,7 +1077,6 @@ if o.check() == sat:
   print(o.model())
 ```
 ] <ex:z3-dnn>
-
 
 
 #exercise[
