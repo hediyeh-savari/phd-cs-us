@@ -1,22 +1,3 @@
-#set heading(numbering: "1.1.1.1.1")
-// #set heading(numbering: (..nums) => {
-//   let n = nums.pos()
-//   if n.len() = 1 { "Part "+ str(n.at(0)) }                       
-//   if n.len() = 2 { "Chapter " + str(n.at(1)) }  // chapter: just chapter number
-//   if n.len() = 3 { str(n.at(1)) + "." + str(n.at(2)) }  // section: 1.2
-// })
-
-
-// #show heading.where(level: 1): it => {
-//   pagebreak(weak: true)
-//   v(3cm)
-//   align(center)[
-//     #text(size: 13pt, fill: gray, tracking: 3pt)[PART]
-//     #v(0.5cm)
-//     #text(size: 28pt, weight: "bold")[#it.body]
-//   ]
-//   pagebreak(weak: true)
-// }
 #import "@preview/simple-plot:0.3.0": plot
 #import "@preview/cetz:0.3.4": canvas, draw
 
@@ -35,7 +16,8 @@
 //#show: show-exercise
 
 
-
+#set heading(numbering: "1.1.1.1.1")
+#set math.equation(numbering: "(1)")
 #set page(numbering: "1", number-align: center)
 #set par(justify: true)
 #set text(
@@ -1462,138 +1444,136 @@ ONNX operators that cover most sequential feedforward networks include:
 #pagebreak()
 = Properties <chap:properties>
 
-// Similar to traditional software systems, neural networks (NNs) have desirable properties to ensure the network behaves as expected. These could be specific to the applications modeled by the network, e.g., safety properties for a network modelling a collision avoidance system, or general properties that are desired by all networks, e.g., robustness to small perturbations in the input data.
+Similar to traditional software systems, neural networks (NNs) have desirable properties to ensure the network behaves as expected. These could be specific to the applications modeled by the network, e.g., safety properties for a network modelling a collision avoidance system, or general properties that are desired by all networks, e.g., robustness to small perturbations in the input data.
 
-// Below we will discuss properties that are relevant to the verification of NNs. Specifically, these properties can be
-// expressed in a formal language supported by a NNV tool. Additional properties can be found in the literature~\cite{seshia2018formal}.
+Below we will discuss properties that are relevant to the verification of NNs. Specifically, these properties can be
+expressed in a formal language supported by a NNV tool. Additional properties can be found in the literature~\cite{seshia2018formal}.
 
-//  == Definition <sec:properties-def>
+== Definition <sec:properties-def>
 
-// As described in~\autoref{chap:nn-basics} NNs define functions of the form $f: \mathbb{R}^{n} \to \mathbb{R}^{m}$,
-// where $n$ is the dimension of the input and $m$ is the dimension of the output. Thus, the properties or specifications of an NN---similarly to properties of software program---are defined in terms of its input and output:
+As described in @chap:nn-basics, NNs define functions of the form $f: RR^n -> RR^m$,
+where $n$ is the dimension of the input and $m$ is the dimension of the output. Thus, the properties or specifications of an NN---similarly to properties of software program---are defined in terms of its input and output:
 
-// \begin{quote}
-// \textit{For any input $x \in \mathbb{R}^{n}$ satisfying a precondition $P$, the neural network should produce an output $f(x) \in \mathbb{R}^{m}$ that satisfies a postcondition $Q$.}
-// \end{quote}
+#quote[
+_For any input $x in RR^n$ satisfying a precondition $P$, the neural network should produce an output $f(x) in RR^m$ that satisfies a postcondition $Q$._
+]
 
-// This says that if the input $x$ satisfies the precondition $P$, then the output $f(x)$ should satisfy the postcondition $Q$.
-
-
-
-//= Common Properties in Neural Networks>
-
-// We now define some commonly studied properties in NNs verification.
-
-// \subsection{Robustness <sec:properties-robustness}
-
-// \textbf{Robustness} ensures that small changes in the input do not drastically change the output. This is a desirable property for all neural networks, especially classifiers, where we want to ensure that similar inputs yield similar outputs. For example, a slightly blurred image of a red light should still be classified as a red light.
-
-// There are two types of robustness properties: \emph{local} (robustness around a chosen point) and  \emph{global} (robustness everywhere).
+This says that if the input $x$ satisfies the precondition $P$, then the output $f(x)$ should satisfy the postcondition $Q$.
 
 
 
+== Common Properties in Neural Networks
 
-// \paragraph{Local Robustness}
-// A neural network $f$ is $\epsilon$-locally-robust at point $x$ with respect to norm $\| \cdot \|$ if
-// \begin{equation}
-//     \forall x', \qquad \|x-x'\| \leq \epsilon \implies f(x) = f(x').
-// \end{equation}
-// where $\|x - x'\| \leq \epsilon$ indicates that the difference between the two points is within a certain (small) threshold $\epsilon$.
+We now define some commonly studied properties in NNs verification.
 
+=== Robustness <sec:properties-robustness>
 
-// Thus local robustness says that a network is robust if all nearby inputs $x'$ (within radius $\epsilon$) are classified the same as $x$. In other words, no small perturbation around this specific point $x$ will fool the classifier."
+*Robustness* ensures that small changes in the input do not drastically change the output. This is a desirable property for all neural networks, especially classifiers, where we want to ensure that similar inputs yield similar outputs. For example, a slightly blurred image of a red light should still be classified as a red light.
 
-// Local robustness is what most adversarial robustness papers mean, e.g., checking whether an image of a cat is still classified as a cat under small pixel noise.
-
-// \begin{example}[Local Robustness: Image Classification]
-// Consider a neural network $f$ that classifies images into different categories (e.g., dog, cat, etc.). A robustness property requires that if an input image $c$ is classified as a dog, then any perturbed image $x$ that is visually similar to $c$ should also be classified as a dog. This can be expressed as:
-
-// \[
-// \forall x, \qquad \|c - x\| \leq \epsilon \implies f(x) = f(c)
-// \]
-
-// \end{example}
-
-
-
-// \paragraph{Global Robustness}
-
-// A neural network $f$ is $\epsilon$-globally-robust with respect to norm $\| \cdot \|$ if
-// \begin{equation}
-//     \forall x_1, x_2, \qquad \|x_1 - x_2\| \leq \epsilon \implies f(x_1) = f(x_2).
-// \end{equation}
-
-//  This says the property must hold for all pairs of inputs in the domain: whenever two points are within $\epsilon$ of each other, they must share the same label.
-
-// Global robustness is a very strong definition, and in practice, almost impossible unless the network is trivial (e.g., outputs the same label everywhere).
-
-
-
-// \begin{problem}
-// Suppose that an network classifies an input image $x$ as digit 7.
-// We want to ensure that if the image is slightly perturbed (e.g., brightness changed by a small amount $\epsilon$),
-// the network still outputs 7.
-
-// \begin{solution}
-// \[
-// \forall x', \quad \|x - x'\| \leq \epsilon \implies f(x') = f(x) = 7
-// \]
-// \end{solution}
-// \end{problem}
+There are two types of robustness properties: \emph{local} (robustness around a chosen point) and  \emph{global} (robustness everywhere).
 
 
 
 
+==== Local Robustness
+A neural network $f$ is $epsilon$-locally robust at point $x$ with respect to norm $|| dot ||$ if
+$
+forall x', quad ||x - x'|| <= epsilon => f(x) = f(x').
+$
+where $|x - x'| <= epsilon$ indicates that the difference between the two points is within a certain (small) threshold $epsilon$.
 
 
-// \subsection{Safety <sec:properties-safety}
+Thus local robustness says that a network is robust if all nearby inputs $x'$ (within radius $epsilon$) are classified the same as $x$. In other words, no small perturbation around this specific point $x$ will fool the classifier.
+
+Local robustness is what most adversarial robustness papers mean, e.g., checking whether an image of a cat is still classified as a cat under small pixel noise.
 
 
-// \textbf{Safety} properties ensure that the network conforms to certain safety constraints. This is particularly important in safety-critical applications, such as autonomous vehicles or medical diagnosis systems, where incorrect outputs can lead to catastrophic consequences. %For example, in a self-driving car, we want to ensure that the car maintains a safe distance from other vehicles and pedestrians under all scenarios.
+#example[Local Robustness: Image Classification][
+Consider a neural network $f$ that classifies images into different categories (e.g., dog, cat, etc.). A robustness property requires that if an input image $c$ is classified as a dog, then any perturbed image $x$ that is visually similar to $c$ should also be classified as a dog. This can be expressed as:
 
-// \begin{problem}[Collision Avoidance System]\label{ex:collision-safety}
-//     A safety property in a collision avoidance system such as an autonomous vehicle might be that if the intruder is distant and significantly slower than us, then we stay below a certain velocity threshold. Formally, this can be expressed as:
-// \[
-// d_{intruder} > d_{threshold} \land v_{intruder} < v_{threshold} \implies v_{us} < v_{threshold},
-// \]
-// where $d_{intruder}$ is the distance to the intruder, $d_{threshold}$ is a predefined safe distance, $v_{intruder}$ is the speed of the intruder, and $v_{us}$ is our speed.
-// \end{problem}
+$
+forall x, quad ||c - x|| <= epsilon => f(x) = f(c)
+$
 
-
-// Unlike robustness properties, which are often desirable in all networks, safety properties are often \emph{specific} to the application domain. For example, a safety property for an autonomous vehicle may not be relevant for a surgical robot.
+]
 
 
 
-// \begin{problem}[Safety: Self-Driving Car]\label{problem:safety}
-// A network controlling a self-driving car on a highway might require that:
-// If the car in front is at least 160 meters away  and moving slower than us,
-// then we should not accelerate.
+==== Global Robustness
 
-// \begin{solution}
-// \[
-// d \geq 160 \land v_{\text{front}} < v_{\text{us}} \implies a_{\text{us}} \leq 0
-// \]
-// \end{solution}
-// \end{problem}
+A neural network $f$ is $epsilon$-globally robust with respect to norm $|| dot ||$ if
+$
+forall x_1, x_2, quad ||x_1 - x_2|| <= epsilon => f(x_1) = f(x_2).
+$
 
-//  == Other properties <sec:other-properties}
+ This says the property must hold for all pairs of inputs in the domain: whenever two points are within $epsilon$ of each other, they must share the same label.
 
-// \subsection{Consistency}
+Global robustness is a very strong definition, and in practice, almost impossible unless the network is trivial (e.g., outputs the same label everywhere).
 
-// \textbf{Consistency} requires that a NN behaves consistently when given semantically equivalent or related inputs.
 
-// \begin{example}[Logical Consistency in LLMs] Consider queries $q_1$, $q_2$, and $q_3$ about a person's age:
-// \[
-// q_1: \texttt{``How old is person X?''}
-// \]
-// \[
-// q_2: \texttt{``What year was X born if they are currently Y years old?''}
-// \]
-// \[
-// q_3: \texttt{``Will X be Z years old in 2025?''}
-// \]
-// Thus, if the LLM outputs age $Y$ for $q_1$, then $q_2$ should output $\texttt{current\_year} - Y$, and the answer to $q_3$ should be logically consistent with the stated age. This prevents scenarios where an LLM claims someone is 30 years old but was born in 1985 when the current year is 2024.
-// \end{example}
+
+#exercise[
+Suppose that an network classifies an input image $x$ as digit 7.
+We want to ensure that if the image is slightly perturbed (e.g., brightness changed by a small amount $epsilon$),
+the network still outputs 7.
+
+// *Solution.*
+// $
+// forall x', quad ||x - x'|| <= epsilon => f(x') = f(x) = 7
+// $
+]
+
+
+
+
+
+=== Safety <sec:properties-safety>
+
+
+*Safety* properties ensure that the network conforms to certain safety constraints. This is particularly important in safety-critical applications, such as autonomous vehicles or medical diagnosis systems, where incorrect outputs can lead to catastrophic consequences. %For example, in a self-driving car, we want to ensure that the car maintains a safe distance from other vehicles and pedestrians under all scenarios.
+
+#example[Collision Avoidance System][
+
+A safety property in a collision avoidance system such as an autonomous vehicle might be that if the intruder is distant and significantly slower than us, then we stay below a certain velocity threshold. Formally, this can be expressed as:
+
+$
+d_("intruder") > d_("threshold") ∧ v_("intruder") < v_("threshold") ⇒ v_("us") < v_("threshold")
+$
+
+where $d_("intruder")$ is the distance to the intruder, $d_("threshold")$ is a predefined safe distance, $v_("intruder")$ is the speed of the intruder, and $v_("us")$ is our speed.
+
+
+Unlike robustness properties, which are often desirable in all networks, safety properties are often _specific_ to the application domain. For example, a safety property for an autonomous vehicle may not be relevant for a surgical robot.
+]<ex:collision-safety>
+
+
+#exercise[Safety: Self-Driving Car][ 
+
+A network controlling a self-driving car on a highway might require that:
+If the car in front is at least 160 meters away  and moving slower than us,
+then we should not accelerate.
+
+// *Solution.*
+
+// $
+// d ≥ 160 ∧ v_("front") < v_("us") ⇒ a_("us") ≤ 0
+// $
+]<problem:safety>
+=== Other properties <sec:other-properties>
+
+==== Consistency
+
+*Consistency* requires that a NN behaves consistently when given semantically equivalent or related inputs.
+
+*Example (Logical Consistency in LLMs).* Consider queries $q_1$, $q_2$, and $q_3$ about a person's age:
+
+$q_1: "How old is person X?"$
+
+$q_2: "What year was X born if they are currently Y years old?"$
+
+$q_3: "Will X be Z years old in 2025?"$
+
+Thus, if the LLM outputs age $Y$ for $q_1$, then $q_2$ should output `current_year - Y`, and the answer to $q_3$ should be logically consistent with the stated age. This prevents scenarios where an LLM claims someone is 30 years old but was born in 1985 when the current year is 2024.
 
 
 // % \paragraph{Example: Object Position Consistency.}
@@ -1606,69 +1586,71 @@ ONNX operators that cover most sequential feedforward networks include:
 // % \quad \{ \text{consistent}(r_1, r_2) \}
 // % \]
 
-// \subsection{Monotonicity}
+==== Monotonicity
 
-// \textbf{Monotonicity} ensures that the NN maintains a consistent ordering relationship between inputs and outputs: an increase in certain input features always leads to a non-decreasing output value. This property is important in applications where domain knowledge dictates logical ordering constraints, such as fairness-aware systems, medical diagnosis, and scientific applications where physical laws impose natural ordering relationships.
+*Monotonicity* ensures that the NN maintains a consistent ordering relationship between inputs and outputs: an increase in certain input features always leads to a non-decreasing output value. This property is important in applications where domain knowledge dictates logical ordering constraints, such as fairness-aware systems, medical diagnosis, and scientific applications where physical laws impose natural ordering relationships.
 
-// \begin{example}[Fairness]
-//     A network modelling the probability of admission to a university should be monotonically non-decreasing with respect to GPA and test scores, regardless of gender. Formally, for applicants with profiles $(p, s, g)$ and $(p', s', g')$ where $p, p'$ are GPAs, $s, s'$ are test scores, and $g, g'$ are gender indicators:
-// \[
-// p \leq p' \land s = s' \land g \neq g' \implies f(p, s, g) \leq f(p', s', g'),
-// \]
-// \[
-// s \leq s' \land p = p' \land g \neq g' \implies f(p, s, g) \leq f(p, s', g'),
-// \]
-// where $f$ is the neural network computing admission probability. Additionally, for fairness:
-// \[
-// f(p, s, \text{male}) = f(p, s, \text{female}) \text{ for all } p, s,
-// \]
-// ensuring that applicants with identical academic qualifications receive the same treatment regardless of gender.
-// \end{example}
+*Example (Fairness).*
 
+A network modelling the probability of admission to a university should be monotonically non-decreasing with respect to GPA and test scores, regardless of gender. Formally, for applicants with profiles $(p, s, g)$ and $(p', s', g')$ where $p, p'$ are GPAs, $s, s'$ are test scores, and $g, g'$ are gender indicators:
 
+$
+p ≤ p' ∧ s = s' ∧ g ≠ g' ⇒ f(p, s, g) ≤ f(p', s', g')
+$
 
-//  == Counterexamples <sec:properties-counterexamples}
+$
+s ≤ s' ∧ p = p' ∧ g ≠ g' ⇒ f(p, s, g) ≤ f(p, s', g')
+$
 
-// A \emph{counterexample} (\textbf{cex}) is a witness that falsifies the correctness property. Given the property defined in~\autoref{sec:properties-def}, a counterexample is an input $x$ that satisfies the precondition $P$ but produces an output $f(x)$ that violates the postcondition $Q$.
+where $f$ is the neural network computing admission probability. Additionally, for fairness:
 
+$
+f(p, s, "male") = f(p, s, "female") " for all " p, s
+$
 
-// \begin{example}[Counterexample to Robustness Property]
-// For local robustness property (\autoref{sec:properties-robustness}):
-// \[
-// f(x) \neq f(x') \land \|x - x'\| \leq \epsilon \implies x' \text{ is a counterexample.}
-// \]
-// \end{example}
-
-// The goal of NNV (\autoref{sec:nnv-problem}) is to either prove that a property holds---no cex exist---or find a cex that violates the property.
+ensuring that applicants with identical academic qualifications receive the same treatment regardless of gender.
 
 
+== Counterexamples <sec:properties-counterexamples>
+
+A _counterexample_ (*cex*) is a witness that falsifies the correctness property. Given the property defined in @sec:properties-def, a counterexample is an input $x$ that satisfies the precondition $P$ but produces an output $f(x)$ that violates the postcondition $Q$.
 
 
-// \begin{example}[Counterexample: Monotonicity in Admission]
-// A network predicts admission probability to a university. Inputs: GPA $p$ and test score $s$.
+*Example (Counterexample to Robustness Property).*
 
-// We want: a higher GPA with same score should not decrease admission probability.
+For local robustness property (@sec:properties-robustness):
 
-// But we observe a case violating this:
-// \begin{itemize}
-//  \item A: GPA = 3.0, score = 1500, prediction = 0.8
-//  \item B: GPA = 3.5, score = 1500, prediction = 0.6
-// \end{itemize}
+$
+f(x) ≠ f(x') ∧ ‖x - x'‖ ≤ ε ⇒ x' " is a counterexample."
+$
 
-// Using the numbers in this violating case, write the monotonicity requirement and show how this is a counterexample.
+The goal of NNV (@sec:nnv-problem) is to either prove that a property holds---no cex exist---or find a cex that violates the property.
 
 
-// Monotonicity requirement:
-// \[
-// p \leq p' \land s = s' \implies f(p,s) \leq f(p',s')
-// \]
 
-// Counterexample:
-// \[
-// 3.0 \leq 3.5 \land 1500 = 1500 \quad \text{but} \quad f(3.0,1500)=0.8 > f(3.5,1500)=0.6
-// \]
 
-// \end{example}
+*Example (Counterexample: Monotonicity in Admission).*
+
+A network predicts admission probability to a university. Inputs: GPA $p$ and test score $s$.
+
+We want: a higher GPA with same score should not decrease admission probability.
+
+But we observe a case violating this:
+- A: GPA = 3.0, score = 1500, prediction = 0.8
+- B: GPA = 3.5, score = 1500, prediction = 0.6
+
+Using the numbers in this violating case, write the monotonicity requirement and show how this is a counterexample.
+
+
+Monotonicity requirement:
+$
+p ≤ p' ∧ s = s' ⇒ f(p,s) ≤ f(p',s')
+$
+
+Counterexample:
+$
+3.0 ≤ 3.5 ∧ 1500 = 1500 " but " f(3.0,1500)=0.8 > f(3.5,1500)=0.6
+$
 
 
 //  == The VNN-LIB  Specification Language <sec:vnnlib}
@@ -1975,7 +1957,8 @@ ONNX operators that cover most sequential feedforward networks include:
 // This chapter discusses the problem of verifying neural networks, i.e., checking if a given property holds for a neural network.
 // We define the NN verification problem in~\autoref{sec:nnv-problem} and its satisfiability formulation, which is commonly used by NNV tools.
 
-//  == The Neural Network Verification (NNV) Problem <sec:nnv-problem}
+#pagebreak()
+= The Neural Network Verification (NNV) Problem <sec:nnv-problem>
 
 // \begin{definition}[NNV]\label{def:nnv}
 // Given a NN \(N\) and a property $\phi$, the NNV problem asks if $\phi$ is a valid property\footnote{\autoref{chap:properties} provides various examples of properties.} of $N$.
@@ -4124,13 +4107,250 @@ ONNX operators that cover most sequential feedforward networks include:
 
 As shown in @chap:constraint-solving, NNV can be formulated as a satisfiability problem, solvable using a constraint solver,  e.g., SMT and MILP solvers.  However, such solvers do not scale to large networks due to the complexity of the underlying formulae. Thus, modern NNV techniques reframe the problem to search for _activation patterns_ that satisfy the constraints, and use the _Branch-and-Bound_ algorithm to explore the space of possible activation patterns.
 
-// %These activation patterns fix the activation status (active/inactive) of each neuron, allowing us to simplify involved constraints to linear constraints that are easier to solve.
 
-// %In addition,
+== Activation Pattern Search <sec:activation-patterns>
+
+Neural networks with piecewise linear activation functions have a special
+structure that can be exploited for verification. For example, each ReLU
+function has two _activation statuses_: active and inactive. Each status
+partitions the input space into two regions---one where the neuron is active
+and one where it is inactive. Within each region, the network behavior can be
+encoded as _a linear constraint_, which can be efficiently analyzed.
+
+Thus, the NNV problem reduces to checking that none of these linear regions
+contains a counterexample. More specifically, we can rewrite the satisfiability
+formulation as a disjunction:
+$
+  or.big_(p in P) (alpha_p and phi_"in" and not phi_"out")
+$ <eq:nnv3>
+
+where $P$ is the set of all possible _activation patterns_---boolean
+assignments of activation statuses of all neurons---of the network, and
+$alpha_p$ is the formula $alpha$ restricted to the linear region defined by the
+activation pattern $p$. This means that $alpha_p$ includes additional
+constraints that fix the activation status of each neuron according to $p$. For
+example, if $p$ specifies that neuron $n_i$ is active, then $alpha_p$ includes
+the constraint $z_i >= 0$, indicating that the pre-activation value $z_i$ of
+$n_i$ is non-negative. Similarly, if $n_i$ is inactive, then $alpha_p$
+includes $z_i < 0$.
+
+As long as one of the disjuncts in @eq:nnv3 is satisfiable, i.e., a
+counterexample exists in one of the linear regions, the entire formula is
+satisfiable, indicating that the property is invalid. Conversely, if all
+disjuncts are unsatisfiable, the property is valid because no counterexample
+exists.
+
+This allows us to break down the verification problem into smaller subproblems,
+each searching for an activation pattern that satisfies the formula. Modern NNV
+techniques all adopt this idea and search for a satisfying activation pattern
+to find a counterexample.
+
+
+=== Activation Patterns
+
+#definition(title: "Activation Pattern")[
+  Let $N$ be a neural network with ReLU neurons $n_1, dots, n_m$. An
+  _activation pattern_ is a Boolean assignment of the activation status of a
+  subset (or all) of the neurons. If a neuron $n_i$ is active, we set
+  $b_i = #raw("true")$ (meaning $z_i >= 0$); if it is inactive,
+  $b_i = #raw("false")$ (meaning $z_i < 0$).
+] <def:activation-pattern>
+
+#definition(title: "Complete Activation Pattern")[
+  A _complete activation pattern_ assigns an activation status to *every*
+  neuron in the network:
+  $
+    p = chevron.l b_1, b_2, dots, b_m chevron.r in {#raw("true"), #raw("false")}^m.
+  $
+] <def:complete-pattern>
+
+#definition(title: "Partial Activation Pattern")[
+  A _partial activation pattern_ assigns activation statuses to only a *subset*
+  of the neurons:
+  $
+    q = chevron.l b_1, b_2, *, b_4, *, dots, b_m chevron.r
+      in {#raw("true"), #raw("false"), *}^m,
+  $
+  where $*$ means "undetermined" or "don't care". Each partial activation
+  pattern represents multiple complete activation patterns.
+] <def:partial-pattern>
+
+#example[
+  Consider a network with three ReLU neurons $n_1, n_2, n_3$. A complete
+  activation pattern might be
+  $
+    p = chevron.l #raw("true"), #raw("false"), #raw("true") chevron.r,
+  $
+  which means $n_1$ and $n_3$ are active while $n_2$ is inactive.
+
+  In contrast, a partial activation pattern such as
+  $
+    q = chevron.l #raw("true"), #raw("false"), * chevron.r
+  $
+  represents *both* complete patterns
+  $chevron.l #raw("true"), #raw("false"), #raw("true") chevron.r$ and
+  $chevron.l #raw("true"), #raw("false"), #raw("false") chevron.r$.
+]
+
+#definition(title: "Empty Activation Pattern")[
+  An _empty_ activation pattern is a partial pattern that assigns *no*
+  activation statuses to any neurons:
+  $
+    p = chevron.l *, *, dots, * chevron.r in {#raw("true"), #raw("false"), *}^m.
+  $
+  It thus represents all $2^m$ complete activation patterns.
+] <def:empty-pattern>
+
+#problem[
+  Consider an NN with 3 ReLU neurons:
+  + How many complete activation patterns are there?
+  + How many partial patterns of size 2 (i.e., fixing 2 neurons but leaving 1
+    unspecified) are there?
+  + Give an explicit example of one partial pattern and list all the complete
+    patterns it represents.
+
+#solution[
+  
+  + $2^3 = 8$ complete patterns.
+  + Choose 2 neurons to fix: $binom(3,2) = 3$ ways. For each, $2^2 = 4$ assignments. Total $= 12$ partial patterns.
+  + Example: $p' = {n_1 = sans("true"), n_3 = sans("false")}$ represents
+  ${n_1 = sans("true"), n_2 = sans("true"), n_3 = sans("false")}$ and
+  ${n_1 = sans("true"), n_2 = sans("false"), n_3 = sans("false")}$.
+]    
+] <problem:pattern-enumeration>
 
 
 
-//  == Activation Pattern Search <sec:activation-patterns}
+#problem[
+  Suppose we have a network with $m = 10$ ReLU neurons. Consider a partial
+  pattern $p'$ that fixes 4 neurons.
+  + How many complete patterns extend $p'$?
+  + Suppose we restrict $p'$ further by adding 2 more neuron assignments. How
+    many extensions now?
+  + Generalize: if $p'$ fixes $k$ neurons out of $m$, how many complete
+    patterns are there?
+
+#solution[
+  + $2^(10-4) = 2^6 = 64$.
+
+  + $2^(10-6) = 2^4 = 16$.
+
+  + General: $2^(m-k)$.
+]    
+] <problem:counting-patterns>
+
+
+
+
+=== Set Notation of Activation Patterns <sec:pattern-notation>
+
+We can use set notation to represent activation patterns more concisely by
+listing only the neurons whose activation statuses are fixed. For example, the
+activation pattern
+$
+  p = chevron.l #raw("true"), #raw("false"), *, #raw("true"), #raw("false") chevron.r
+$
+can be represented as
+$
+  p = {n_1 = #raw("true"), n_2 = #raw("false"), n_3 = *, n_4 = #raw("true"), n_5 = #raw("false")},
+$
+or more compactly
+$
+  p = {n_1, overline(n_2), n_4, overline(n_5)},
+$
+where $n_i$ indicates that neuron $n_i$ is active, $overline(n_i)$ indicates
+that it is inactive, and the absence of $n_3$ indicates that its activation
+status is unspecified.
+
+Thus, given a set of neurons, we can construct an activation pattern by
+specifying which neurons are active and which are inactive. If the set includes
+all neurons, it is a complete pattern; otherwise, it is a partial pattern (and
+if it is an empty set $emptyset$, it is the empty pattern as in
+@def:empty-pattern).
+
+
+=== State Space Reduction <sec:pattern-reduction>
+
+Once having an activation pattern $p$, we can simplify the formula $alpha$
+representing the network by replacing each ReLU function with a linear
+constraint according to the activation status specified in $p$. For example,
+if $p$ specifies that neuron $n_i$ is active, we replace $"ReLU"(z_i)$ with
+$z_i >= 0$. Otherwise, if $n_i$ is inactive, we replace $"ReLU"(z_i)$ with
+$z_i < 0$. This gives us the formula $alpha_p$ corresponding to the linear
+region defined by $p$.
+
+A complete activation pattern $p$ defines a unique linear region of the
+network because with a complete pattern, $alpha_p$ becomes a purely linear
+formula. In contrast, a partial activation pattern $q$ defines multiple linear
+regions, one for each complete pattern it represents. With $q$, $alpha_q$ may
+still contain some ReLU functions that are not fixed by $q$. However, since $q$
+fixes the status of some neurons, we can simplify $alpha$ by replacing those
+neurons' ReLU functions with linear constraints.
+
+In any case, given an activation pattern, we can reduce the complexity of the
+satisfiability check by fixing the activation status of some neurons. Thus,
+checking the satisfiability of $alpha_p and phi_"in" and not phi_"out"$ is
+easier than checking that of $alpha and phi_"in" and not phi_"out"$.
+
+#example[
+  The network can be represented as the formula $alpha$:
+  $
+    & hat(x)_3 = -0.5x_1 + 0.5x_2 + 1.0 \
+    & hat(x)_4 = 0.5x_1 - 0.5x_2 - 1.0 \
+    & x_3 = "ReLU"(hat(x)_3) \
+    & x_4 = "ReLU"(hat(x)_4) \
+    & x_5 = -x_3 + x_4 - 1.0,
+  $
+  where $hat(x)_3$ and $hat(x)_4$ are the pre-activation values of the ReLU
+  neurons $x_3$ and $x_4$, respectively. Fixing the activation status of $x_3$
+  and $x_4$ simplifies $alpha$ by replacing the ReLUs with linear constraints.
+
+  *Complete activation pattern.* A complete activation pattern specifies the
+  status of both ReLU neurons. For instance,
+  $
+    p = {x_3, overline(x_4)}
+  $
+  means $x_3$ is active while $x_4$ is inactive; that is, $hat(x)_3 >= 0$ (so
+  $x_3 = hat(x)_3$) while $hat(x)_4 < 0$ (so $x_4 = 0$). In this case,
+  $alpha$ reduces to a single linear constraint:
+  $
+    x_5 = -(-0.5x_1 + 0.5x_2 + 1.0) + 0 - 1.0 = 0.5x_1 - 0.5x_2 - 2.0.
+  $
+  This reduction significantly simplifies the satisfiability check: we no
+  longer have to reason about the non-linearity of ReLU, and can directly check
+  whether the linear constraint is satisfiable with the input and output
+  constraints.
+
+  *Partial activation pattern.* A partial pattern specifies only some
+  activation statuses. For example,
+  $
+    q = {x_3}
+  $
+  means $hat(x)_3 >= 0$ but places no restriction on $hat(x)_4$. Here,
+  $alpha$ reduces to:
+  $
+    & hat(x)_4 = 0.5x_1 - 0.5x_2 - 1.0 \
+    & x_4 = "ReLU"(hat(x)_4) \
+    & x_5 = -(-0.5x_1 + 0.5x_2 + 1.0) + x_4 - 1.0.
+  $
+  Because $q$ does not fix the status of $x_4$, we cannot simplify the ReLU
+  for $x_4$. Thus, the formula still contains a ReLU which splits $x_4$ into
+  two linear regions. Note that this is still simpler than the original $alpha$
+  because we have simplified the ReLU for $x_3$.
+]
+
+#problem[
+  Consider the network above. Suppose we fix the activation pattern
+  $p = {x_3, x_4}$.
+
+  + Provide the constraints $alpha$ induced by $p$.
+  + Consider an invalid property $x_5 > 0$ for inputs $x_1 in [-1,1]$,
+    $x_2 in [-2,2]$. Find an activation pattern that satisfies the formula
+    $alpha_p and phi_"in" and not phi_"out"$. In other words, find a pattern
+    that contains a counterexample to the property.
+] <problem:nnv-pattern>
+
+// == Activation Pattern Search <sec:activation-patterns>
 
 // Neural networks with piecewise linear activation functions have a special structure that can be exploited for verification.
 // For example, each ReLU (\autoref{sec:relu}) function
@@ -4139,9 +4359,9 @@ As shown in @chap:constraint-solving, NNV can be formulated as a satisfiability 
 // Within each region, the network behavior can be encoded as \emph{a linear constraint}, which can be efficiently analyzed.
 
 // Thus, the NNV problem (\autoref{def:nnv}) reduces to checking that none of these linear regions contains a counterexample. More specifically, we can rewrite the satisfiability formulation in~\autoref{eq:nnv2} as a disjunction:
-// \begin{equation <eq:nnv3}
+// $
 //   \bigvee_{p \in P} \left( \alpha_p \land \phi_{in} \land \neg \phi_{out} \right)
-// \end{equation}
+// $ <eq:nnv3>
 // where $P$ is the set of all possible \emph{activation patterns}---boolean assignments of activation statuses of all neurons-- of the network, and $\alpha_p$ is the formula $\alpha$ restricted to the linear region defined by the activation pattern $p$. This means that $\alpha_p$ includes additional constraints that fix the activation status of each neuron according to $p$. For example, if $p$ specifies that neuron $n_i$ is active, then $\alpha_p$ includes the constraint $z_i \ge 0$, indicating that the pre-activation value $z_i$ of neuron $n_i$ is non-negative. Similarly, if $n_i$ is inactive, then $\alpha_p$ includes $z_i < 0$.
 
 // As long as one of the disjuncts in~\autoref{eq:nnv3} is satisfiable, i.e., a counterexample exists in one of the linear regions, the entire formula is satisfiable, indicating that the property is invalid. Conversely, if all disjuncts are unsatisfiable, the property is valid because no counterexample exists.
@@ -4149,7 +4369,7 @@ As shown in @chap:constraint-solving, NNV can be formulated as a satisfiability 
 // This allows us to break down the verification problem into smaller subproblems, each searches for an activation pattern that satisfies the formula in~\autoref{eq:nnv2}.
 // Modern NNV techniques~\cite{bunel2020branch,wang2021beta,ferrari2022complete,duong2024harnessing,duong2023dpllt,ovalbab,katz2019marabou,bak2021nnenum} all adopt this idea and search for a satisfying activation pattern to find a counterexample.
 
-// \subsection{Activation Patterns}
+// === Activation Patterns
 // \begin{definition}[Activation Pattern]\label{def:activation-pattern}
 // Let $N$ be a neural network with ReLU neurons $n_1,\dots,n_m$.
 // An \emph{activation pattern} is a Boolean assignment of the activation status of a subset (or all) of the neurons.
@@ -4240,7 +4460,7 @@ As shown in @chap:constraint-solving, NNV can be formulated as a satisfiability 
 // \end{solution}
 // \end{problem}
 
-// \subsection{Set Notation of Activation Patterns <sec:pattern-notation}
+// === Set Notation of Activation Patterns <sec:pattern-notation>
 // We can use set notation to represent activation patterns more concisely by listing only the neurons whose activation statuses are fixed.
 // For example, the activation pattern
 // \[p = \langle \texttt{true}, \texttt{false}, *, \texttt{true}, \texttt{false} \rangle\]
@@ -4255,7 +4475,7 @@ As shown in @chap:constraint-solving, NNV can be formulated as a satisfiability 
 // Thus, given a set of neurons, we can construct an activation pattern by specifying which neurons are active and which are inactive. If the set includes all neurons, it is a complete pattern; otherwise, it is a partial pattern (and if it is an empty set $\emptyset$, it is the empty pattern as shown in~\autoref{def:empty-pattern}).
 
 
-// \subsection{State Space Reduction <sec:pattern-reduction}
+// === State Space Reduction <sec:pattern-reduction>
 // Once having an activation pattern $p$, we can simplify the formula $\alpha$ representing the network by replacing each ReLU function with a linear constraint according to the activation status specified in $p$. For example, if $p$ specifies that neuron $n_i$ is active, we replace $\relu{z_i}$ with the constraint $z_i \ge 0$, i.e., the pre-activation value $z_i$ must be non-negative. Otherwise, if $n_i$ is inactive, we replace $\relu{z_i}$ with $z_i < 0$.
 // This gives us the formula $\alpha_p$ corresponding to the linear region defined by $p$.
 
@@ -4317,7 +4537,7 @@ As shown in @chap:constraint-solving, NNV can be formulated as a satisfiability 
 
 
 
-// \begin{problem <problem:nnv-pattern}
+// \begin{problem}[Activation Pattern Feasibility and Counterexample Search]\label{problem:nnv-pattern}
 // Consider the network in \autoref{fig:dnn-b}. Suppose we fix the activation pattern $p=\{x_3, x_4\}$.
 
 // \begin{enumerate}
@@ -8992,19 +9212,9 @@ Remember to:
 
 === Using LP as Feasibility Checking <sec:lp-feasibility>
 
-In addition to optimization, LP can be used for _feasibility checking_ of
-linear constraints: are there any values for the variables that satisfy all the
-constraints? This is achieved by running the LP solver with a constant objective
-(e.g., "minimize 0"), in which case it tries to find _any_ point in the
-feasible region or show that _none_ exists. This makes LP solving useful for
-property checking and verification.
+In addition to optimization, LP can be used for _feasibility checking_ of linear constraints: are there any values for the variables that satisfy all the constraints? This is achieved by running the LP solver with a constant objective (e.g., "minimize 0"), in which case it tries to find _any_ point in the feasible region or show that _none_ exists. This makes LP solving useful for property checking and verification.
 
-The main difference between LP feasibility and SMT satisfiability checking is
-the type of constraints they handle. SMT can handle richer logics involving
-booleans, integers, nonlinear arithmetic, and other theories, while LP
-feasibility is limited to linear equalities/inequalities over real numbers. For
-NNV problems that involve only linear real arithmetic, LP feasibility is
-sufficient and often more efficient.
+The main difference between LP feasibility and SMT satisfiability checking is the type of constraints they handle. SMT can handle richer logics involving booleans, integers, nonlinear arithmetic, and other theories, while LP feasibility is limited to linear equalities/inequalities over real numbers. For NNV problems that involve only linear real arithmetic, LP feasibility is sufficient and often more efficient.
 
 #example[
   For the constraints $x + y <= 4$, $x >= 0$, $y >= 0$, running an LP solver
@@ -9961,16 +10171,6 @@ sufficient and often more efficient.
 
 
 
-// \subsection{Using LP as Feasibility Checking <sec:lp-feasibility}
-
-// In addition to optimization, LP can be used for satisfiability or \emph{feasibility} checking of linear constraints, i.e.,
-// are there any values for the variables that satisfy all the constraints?
-// This is achieved by running the LP solver with a constant objective (e.g., ``minimize 0''), in which case it would try to find \emph{any} point in the feasible region or show that \emph{none} exists (unsatisfiable or infeasible). This thus makes LP solving useful for property checking and verification (e.g., showing that no counterexample exists).
-
-
-// The main difference between LP feasibility and SMT satisfiability checking is the type of constraints and logic they can handle.
-// SMT satisfiability can handle richer logics involving booleans, integers, nonlinear arithmetic, and other theories while LP feasibility is limited to linear equalities/inequalities over real numbers. For problems involving more complex logic or theories, SMT solvers are necessary.
-// But for NNV problems that involve only linear real arithmetic, LP feasibility is sufficient and often more efficient. 
 
 
 // % \subsubsection*{Examples (adapted from earlier LP sections)}
