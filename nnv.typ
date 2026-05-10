@@ -1976,8 +1976,7 @@ $
 
 
 
-#example[
-  *Safety Property for Collision Avoidance System.*
+#example[Safety Property for Collision Avoidance System][
   In @ex:collision-safety, we defined a safety property (@sec:properties-safety) for a collision avoidance system:
 
   $
