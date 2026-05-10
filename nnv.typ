@@ -9048,7 +9048,7 @@ sufficient and often more efficient.
 
 
 
-//  == Z3 SMT Solver <sec:z3}
+//  == Z3 SMT Solver <sec:z3>
 
 // Z3~\cite{de2008z3} is a well-known SMT solver developed by Microsoft Research. Here we'll show how to use it to check propositional formulae and SMT formulae involving linear arithmetic constraints.
 
