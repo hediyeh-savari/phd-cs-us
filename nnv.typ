@@ -1,4 +1,5 @@
 #import "@preview/simple-plot:0.3.0": plot
+#import "@preview/cetz:0.3.4": canvas, draw
 #import "@preview/theorion:0.6.0": *
 #import cosmos.fancy: *
 #show: show-theorion
@@ -108,6 +109,50 @@
 #show heading: set heading(supplement: [Sec.])
 
 
+#let mydnn(sc: 1) = figure(
+  scale(sc * 100%)[
+    #canvas({
+      import draw: *
+      let r = 0.42
+      let x1 = (0, 2)
+      let x2 = (0, 0)
+      let x3 = (3, 2)
+      let x4 = (3, 0)
+      let x5 = (5, 1)
+      let connect = (a, b, label, p) => {
+        let dx = b.at(0) - a.at(0)
+        let dy = b.at(1) - a.at(1)
+        let len = calc.sqrt(dx * dx + dy * dy)
+        let ux = dx / len
+        let uy = dy / len
+        let start = (a.at(0) + r * ux, a.at(1) + r * uy)
+        let end   = (b.at(0) - r * ux, b.at(1) - r * uy)
+        line(start, end, stroke: 1pt, end: ">")
+        content(p, box(fill: white, inset: 1pt, text(size: 9pt)[#label]))
+      }
+      connect(x1, x3, "-0.5", (1.5, 2.25))
+      connect(x1, x4, "0.5", (2.0, 0.55))
+      connect(x2, x3, "0.5", (2.0, 1.55))
+      connect(x2, x4, "-0.5",  (1.5, -0.25))
+      connect(x3, x5, "-1.0",  (4.0, 1.50))
+      connect(x4, x5, "1.0", (4.0, 0.50))
+      for (pos, label, fill-color, value) in (
+        (x1, $x_1$, green.lighten(50%), ""),
+        (x2, $x_2$, green.lighten(50%), ""),
+        (x3, $x_3$, yellow.lighten(50%), "1.0"),
+        (x4, $x_4$, yellow.lighten(50%), "-1.0"),
+        (x5, $x_5$, red.lighten(50%), "-1.0"),
+      ) {
+        circle(pos, radius: r, stroke: 1pt, fill: fill-color)
+        content(pos, label)
+        content((pos.at(0), pos.at(1) - 0.65), text(size: 9pt)[#value])
+      }
+      //line((-0.8, 2), (-r, 2), stroke: 1pt, end: ">")
+      //line((-0.8, 0), (-r, 0), stroke: 1pt, end: ">")
+      //line((5 + r, 1), (6, 1), stroke: 1pt, end: ">")
+    })
+  ]
+)
 
 
 // Title Page
@@ -639,60 +684,6 @@ $ f: RR^n -> RR^m $
 where $n$ is the number of input neurons and $m$ is the number of output neurons. The neurons in the input layer are the inputs to the function, and the neurons in the output layer are the outputs of the function. The neurons in the hidden layers are also functions that transform the inputs from the previous layer to produce outputs for the next layer.
 
 
-#let mydnn(scale) = {
-  let unit = 1.2cm * scale
-  let node-radius = 0.34cm * scale
-  let width = 5.8 * unit
-  let height = 3.2 * unit
-
-  let x1 = (0.5 * unit, 0.7 * unit)
-  let x2 = (0.5 * unit, 2.5 * unit)
-  let x3 = (3.0 * unit, 0.7 * unit)
-  let x4 = (3.0 * unit, 2.5 * unit)
-  let x5 = (5.2 * unit, 1.6 * unit)
-
-  let node(pos, label, fill) = place(left + top, dx: pos.at(0) - node-radius, dy: pos.at(1) - node-radius)[
-    circle(
-      radius: node-radius,
-      stroke: 0.8pt,
-      fill: fill,
-    )[
-      #align(center + horizon)[#label]
-    ]
-  ]
-
-  let weight(pos, label) = place(left + top, dx: pos.at(0), dy: pos.at(1))[
-    #text(size: 9pt * scale)[$#label$]
-  ]
-
-  box(width: width, height: height)[
-    #place(left + top)[
-      #line(start: x1, end: x3, stroke: 1pt)
-      #line(start: x1, end: x4, stroke: 1pt)
-      #line(start: x2, end: x3, stroke: 1pt)
-      #line(start: x2, end: x4, stroke: 1pt)
-      #line(start: x3, end: x5, stroke: 1pt)
-      #line(start: x4, end: x5, stroke: 1pt)
-    ]
-
-    #node(x1, $x_1$, aqua.lighten(70%))
-    #node(x2, $x_2$, aqua.lighten(70%))
-    #node(x3, $x_3$, orange.lighten(70%))
-    #node(x4, $x_4$, orange.lighten(70%))
-    #node(x5, $x_5$, green.lighten(70%))
-
-    #weight((1.45 * unit, 0.25 * unit), -0.5)
-    #weight((1.55 * unit, 1.45 * unit), 0.5)
-    #weight((1.6 * unit, 1.7 * unit), 0.5)
-    #weight((1.45 * unit, 2.7 * unit), -0.5)
-    #weight((3.95 * unit, 0.95 * unit), -1.0)
-    #weight((4.0 * unit, 2.1 * unit), 1.0)
-
-    #weight((2.72 * unit, -0.15 * unit), +1.0)
-    #weight((2.72 * unit, 3.0 * unit), -1.0)
-    #weight((5.0 * unit, 0.55 * unit), -1.0)
-  ]
-}
 
 // \newcommand{\mydnntwo}[1]{
 // \begin{tikzpicture}[scale=#1, transform shape, semithick, ->]
@@ -727,7 +718,7 @@ where $n$ is the number of input neurons and $m$ is the number of output neurons
 // }
 
 #figure(
-[],
+mydnn(sc: 1),
   caption: [A simple network with two inputs $x_1,x_2$, two hidden neurons $x_3,x_4$, and one output neuron $x_5$.],
 ) <fig:dnn>
 
@@ -980,7 +971,7 @@ In Z3, we can declare ReLU using `If()`
 // $\tanh(-1.2) \approx -0.83$, $\tanh(0) = 0$, and $\tanh(2.8) \approx 0.99$. This means that the tanh function maps -1.2 to a value close to -1, 0 to 0, and 2.8 to a value close to 1.
 // \end{example}
 
-// \subsection{Softmax <sec:softmax}
+==== Softmax <sec:softmax>
 
 
 // \begin{figure}[htp]
@@ -1083,7 +1074,7 @@ In Z3, we can declare ReLU using `If()`
 //     \end{enumerate}
 // \end{problem}
 
-==== Neural Network Architectures and Layers
+== Neural Network Architectures and Layers
 
 NNs vary in architecture depending on how information flows through them and how computations are structured. Most common models are variations of the _feedforward network_, with additional structures or constraints layered on top. @tab:nn-types summarizes several common NN architectures and their typical application domains.
 
@@ -1109,16 +1100,17 @@ NNs vary in architecture depending on how information flows through them and how
 
 
 
-// \subsection{Feedforward Neural Networks (FNNs) <sec:ffn}
+=== Feedforward Neural Networks (FNNs) <sec:ffn>
 
-// In an FNN, information flows in one direction: from the input layer, through one or more hidden layers, and finally to the output layer. There are no loops or cycles in the computation graph.
+In an FNN, information flows in one direction: from the input layer, through one or more hidden layers, and finally to the output layer. There are no loops or cycles in the computation graph.
 
-// Widely used feedforward architectures include fully connected, convolutional, and residual networks. Each architecture has its own strengths and is suited for different types of tasks.
+Widely used feedforward architectures include fully connected, convolutional, and residual networks. Each architecture has its own strengths and is suited for different types of tasks.
 
-// \paragraph{Fully Connected NNs (FCNs)}
+=== Fully Connected NNs (FCNs)
 
-// In FCNs, each neuron in a layer is connected to every neuron in the next layer. Thus, every neuron in the input layer is connected to every neuron in the first hidden layer, every neuron in the first hidden layer is connected to every neuron in the second hidden layer, and so on, until the output layer. Fully connected NNs, sometimes called \emph{dense networks}, are the most basic type of FNNs and are commonly used for tasks like classification.
+In FCNs, each neuron in a layer is connected to every neuron in the next layer. Thus, every neuron in the input layer is connected to every neuron in the first hidden layer, every neuron in the first hidden layer is connected to every neuron in the second hidden layer, and so on, until the output layer. Fully connected NNs, sometimes called _dense networks_, are the most basic type of FNNs and are commonly used for tasks like classification.
 
+// TODO
 // \begin{example}
 // \autoref{fig:dnn} earlier is an FCN with two inputs and one hidden layer with two neurons, and one output neuron.~\autoref{fig:ffn} below shows an FCN with four inputs, two hidden layers with five neurons each, and three output neurons (weights and biases not shown for simplicity).
 
@@ -1168,12 +1160,13 @@ NNs vary in architecture depending on how information flows through them and how
 // \end{example}
 
 
-// \begin{example}[Classifier]
-// A common use case for FCNs is classification. They take an input, e.g., pixels of an image, and predict what the image is (e.g., cat, dog, car). The output layer represents the probabilities of each class (e.g., $y_1$ is the probability of cat, $y_2$ is the probability of dog). Moreover, the outputs are often passed through a softmax activation function (\autoref{sec:softmax}) to convert them into probabilities that sum to 1, and the class with the highest probability is chosen as the predicted label.
+#example[Classifier][
+  A common use case for FCNs is classification. They take an input, e.g., pixels of an image, and predict what the image is (e.g., cat, dog, car). The output layer represents the probabilities of each class (e.g., $y_1$ is the probability of cat, $y_2$ is the probability of dog). Moreover, the outputs are often passed through a `softmax` activation function (@sec:softmax) to convert them into probabilities that sum to 1, and the class with the highest probability is chosen as the predicted label.
+]
 
-// \end{example}
-
-// \paragraph{Convolutional NNs (CNNs)} CNNs replace fully connected layers with \emph{convolutional layers}, which apply local filters across the input space. In CNNs, each neuron receives several inputs, takes a weighted sum over them, passes it through an activation function, and responds with an output.  CNNs are commonly used in computer vision and image processing. Despite their local structure, CNNs remain feedforward: data flows forward without cycles.
+#paragraph([Convolutional NNs (CNNs)], [
+  CNNs replace fully connected layers with _convolutional layers_, which apply local filters across the input space. In CNNs, each neuron receives several inputs, takes a weighted sum over them, passes it through an activation function, and responds with an output. CNNs are commonly used in computer vision and image processing. Despite their local structure, CNNs remain feedforward: data flows forward without cycles.
+])
 
 
 
@@ -1296,12 +1289,13 @@ NNs vary in architecture depending on how information flows through them and how
 // %     \item \textbf{Residual (Skip) Connections}: Enable shortcut paths from earlier to later layers.
 // % \end{itemize}
 
-// \subsection{Other NN Architectures}
+== Other NN Architectures
 
-// Not all NNs are feedforward.
-// Some architectures introduce cycles, dynamic connections, or non-Euclidean\footnote{Euclidean data refers to data that can be represented in a flat, two-dimensional space, such as images.} data structures (e.g., graphs).
+Not all NNs are feedforward.
+Some architectures introduce cycles, dynamic connections, or non-Euclidean#footnote[Euclidean data refers to data that can be represented in a flat, two-dimensional space, such as images.] data structures (e.g., graphs).
 
-// \subsubsection{Recurrent Neural Networks (RNNs)} RNNs, often used in natural language processing (NLP) and speech recognition, are designed to recognize patterns in sequences of data. RNNs have \emph{loops} in them, allowing information to be sent forward and backward.
+=== Recurrent Neural Networks (RNNs)
+RNNs, often used in natural language processing (NLP) and speech recognition, are designed to recognize patterns in sequences of data. RNNs have _loops_ in them, allowing information to be sent forward and backward.
 
 
 // \begin{figure}[h]
@@ -1450,8 +1444,8 @@ NNs vary in architecture depending on how information flows through them and how
 // \end{example}
 
 
-
-// = Properties <chap:properties>
+#pagebreak()
+== Properties <chap:properties>
 
 // Similar to traditional software systems, neural networks (NNs) have desirable properties to ensure the network behaves as expected. These could be specific to the applications modeled by the network, e.g., safety properties for a network modelling a collision avoidance system, or general properties that are desired by all networks, e.g., robustness to small perturbations in the input data.
 
@@ -2535,7 +2529,7 @@ NNs vary in architecture depending on how information flows through them and how
 // % The fundamental limitation is that intervals cannot capture correlations between variables---each neuron's bounds are computed independently, ignoring relationships with other neurons which leads to over-approximation that becomes increasingly loose in deeper networks.
 // % More advanced abstractions like zonotopes can capture linear relationships between variables, while polytopes can represent arbitrary linear constraints.
 
-
+#pagebreak()
 == Abstractions <chap:abstractions>
 
 
@@ -3082,14 +3076,12 @@ NNs vary in architecture depending on how information flows through them and how
 // \end{example}
 
 
-
 //  === Abstract Domains <sec:abstract-domains}
 
 // We now introduce several abstract domains that are commonly used in NNV. Each domain has its own abstract transformer functions  to compute the bounds of neurons.
 
 // Note that the input to the transformer functions (\autoref{sec:transformer-functions}) are the abstract values and the output is also an abstract value.  For example, for interval transformers, the input is an interval $[l, u]$ and the output is also an interval $[l', u']$. Similarly for zonotope transformers, the input is a zonotope defined by center and generators, and the output is also a zonotope.
-
-// \subsection{Interval <sec:interval-abstraction}
+=== Interval <sec:interval-abstraction>
 
 // Interval is a very simple abstraction which represents the possible values of a variable as an interval $[l, u]$, where $l$ is the lower bound and $u$ is the upper bound.
 // For example, the set of values $\{-2.5, -8.2, -10.7, 2, 4.7, 5.1\}$ can be represented as $[-10.7, 5.1]$.
@@ -3275,7 +3267,9 @@ NNs vary in architecture depending on how information flows through them and how
 //         \item Using the correct abstraction (if both are correct, use the more precise one), can we use it verify the property $y \leq 3$? How about $y \le 5$? Explain your answers.
 //     \end{enumerate}
 // \end{problem}
-// \subsection{Zonotope <sec:zonotope-abstraction}
+
+
+=== Zonotope <sec:zonotope-abstraction>
 
 
 // Interval abstraction (\autoref{sec:interval-abstraction}) treats each variable independently. For example, if \(x_1 \in [1,2]\) and \(x_2 \in [3,4]\), interval assumes any combination of \(x_1\) and \(x_2\) is possible. But variables can correlate: e.g., when \(x_1\) increases, \(x_2\) also increases\tvn{but this doesn't happens in neural networks, so why do we need zonotope? does it help with ReLU abstraction?}.  Zonotopes can capture such correlations and therefore  provide a tighter abstraction.
@@ -8600,7 +8594,6 @@ CVC4 include solvers supporting a wide range of theories including linear
 arithmetic, nonlinear arithmetic, strings, and arrays.
 
 
-// ─── Chapter: Linear Programming ──────────────────────────────────────────
 
 = Linear Programming (LP) <chap:lp>
 
@@ -8795,7 +8788,7 @@ and a large constant $M$ (e.g., $infinity$) to encode logical implications.
   - $x <= 3 + M z$ (if $z = 0$, this enforces $x <= 3$)
 ]
 
-#example(title: "Encoding ReLU in MILP")[
+#example[Encoding ReLU in MILP][
   To encode the ReLU activation function $y = max(0, x)$, use:
   $
     & y >= x, \
@@ -8831,7 +8824,7 @@ In practice, dedicated solvers such as Gurobi or CPLEX are used for large
 problems, but Z3 is effective for demonstration purposes.
 
 #example[
-  We model and solve the LP example from @ex:lp-example1 using Z3:
+  We solve the LP example from @ex:lp-example1 using Z3:
 
   ```python
   from z3 import *
@@ -11104,52 +11097,9 @@ sufficient and often more efficient.
 
 
 
-#import "@preview/cetz:0.3.4": canvas, draw
 
-#let mydnn(sc: 1) = figure(
-  scale(sc * 100%)[
-    #canvas({
-      import draw: *
-      let r = 0.45
-      let x1 = (0, 2)
-      let x2 = (0, 0)
-      let x3 = (3, 2)
-      let x4 = (3, 0)
-      let x5 = (5, 1)
-      let connect = (a, b, label, p) => {
-        let dx = b.at(0) - a.at(0)
-        let dy = b.at(1) - a.at(1)
-        let len = calc.sqrt(dx * dx + dy * dy)
-        let ux = dx / len
-        let uy = dy / len
-        let start = (a.at(0) + r * ux, a.at(1) + r * uy)
-        let end   = (b.at(0) - r * ux, b.at(1) - r * uy)
-        line(start, end, stroke: 1pt, end: ">")
-        content(p, box(fill: white, inset: 1pt, text(size: 9pt)[#label]))
-      }
-      connect(x1, x3, "-0.5", (1.5, 2.25))
-      connect(x1, x4, "0.5", (2.0, 0.55))
-      connect(x2, x3, "0.5", (2.0, 1.55))
-      connect(x2, x4, "-0.5",  (1.5, -0.25))
-      connect(x3, x5, "-1.0",  (4.0, 1.50))
-      connect(x4, x5, "1.0", (4.0, 0.50))
-      for (pos, label, fill-color, value) in (
-        (x1, $x_1$, green.lighten(50%), ""),
-        (x2, $x_2$, green.lighten(50%), ""),
-        (x3, $x_3$, yellow.lighten(50%), "1.0"),
-        (x4, $x_4$, yellow.lighten(50%), "-1.0"),
-        (x5, $x_5$, red.lighten(50%), "-1.0"),
-      ) {
-        circle(pos, radius: r, stroke: 1pt, fill: fill-color)
-        content(pos, label)
-        content((pos.at(0), pos.at(1) - 0.65), text(size: 9pt)[#value])
-      }
-      //line((-0.8, 2), (-r, 2), stroke: 1pt, end: ">")
-      //line((-0.8, 0), (-r, 0), stroke: 1pt, end: ">")
-      //line((5 + r, 1), (6, 1), stroke: 1pt, end: ">")
-    })
-  ]
-)
 
-#mydnn(sc: 1)
+
+
+
 
