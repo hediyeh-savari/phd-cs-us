@@ -2014,67 +2014,123 @@ $
 ] <ex:dnn-b>
 
 
-//  == Satisfiability Formulation and Checking <sec:satisfiability-and-activation-pattern-search}
+ == Satisfiability Formulation and Checking <sec:satisfiability-and-activation-pattern-search>
 
-// As with traditional software verification, NNV is often represented as a satisfiability problem, which can be solved using an SMT solver (e.g., Z3~\cite{de2008z3}) or a MILP solver (e.g., Gurobi~\cite{gurobi}).
+As with traditional software verification, NNV is often represented as a satisfiability problem, which can be solved using an SMT solver (e.g., Z3 @de2008z3) or a MILP solver (e.g., Gurobi @gurobi).
 
-// \paragraph{Formulation} To formulate the problem, we first define a formula $\alpha$ to represent the network.
-// Typically $\alpha$ is a conjunction ($\bigwedge$) of constraints representing the affine transformation (\autoref{sec:affine}) and activation function (\autoref{sec:activation}) of each neuron in the network.
-// For example, for a fully-connected neural network (\autoref{sec:ffn}) with $L$ layers, $N$ ReLU neurons per layer, this formula is:
+*Formulation.* To formulate the problem, we first define a formula $alpha$ to represent the network.
+Typically $alpha$ is a conjunction of constraints representing the affine transformation (@sec:affine) and activation function (@sec:activation) of each neuron in the network.
+For example, for a fully-connected neural network (@sec:ffn) with $L$ layers and $N$ ReLU neurons per layer, $alpha$ is:
 
-// \begin{equation}
-// \alpha = \bigwedge_{\begin{smallmatrix}i \in [1,L]\\ j \in [1,N]\end{smallmatrix}}~~v_{i,j} \equiv \relu{\sum_{k \in [1,N]} (w_{i-1,j,k} \cdot v_{i-1,j}) + b_{i,j}}
-// \end{equation}
-// where $v_{i,j}$ is the output of the $j$-th neuron in layer $i$, $w_{i-1,j,k}$ is the weight connecting the $k$-th neuron in layer $i-1$ to the $j$-th neuron in layer $i$, and $b_{i,j}$ is the bias of the $j$-th neuron in layer $i$.  The input layer is layer 0, i.e., $v_{0,j}$ are the input variables.
-
-
-
-// With this the NNV problem (\autoref{def:nnv}) can be formulated as checking the validity of the following formula:
-// \begin{equation <eq:nnv}
-//     \alpha \implies (\phi_{in} \implies \phi_{out}).
-// \end{equation}
-// Formula~\autoref{eq:nnv} checks if network $N$ satisfies (implies) the property $\phi_{in} \implies \phi_{out}$. This validity checking can be reduced to checking the satisfiability of the formula:
-
-// \begin{equation <eq:nnv2}
-//   \alpha \land \phi_{in} \land \neg \phi_{out}
-// \end{equation}
-// If~\autoref{eq:nnv2} is unsatisfiable, then $\phi$ is a valid property of $N$. Otherwise, $\phi$ is not valid.  Moreover, we can extract a counterexample for the original problem from the satisfying assignment of~\autoref{eq:nnv2}.
-
-// \begin{problem <ex:prop-neg1}
-//   Let $\alpha$ represent our network and the robustness property $| x - x | \le \epsilon \implies  f(x) = f(y)$. Form the satisfiability formula (\autoref{eq:nnv2}) that we need to check.
-// \end{problem}
+$ 
+alpha =    and.big (i in [1, L], j in [1, N])
+    v_(i, j) =
+    "relu"(
+      sum_(k in [1, N])
+      (w_(i - 1, j, k) dot v_(i - 1, k))
+      + b_(i, j)
+    )
+$
 
 
-// \begin{problem <ex:prop-neg2}
-//   Let $\alpha$ represent our network and the property $y>0$ for any input $x_1 \in [r_1,r_2], x_2 \in [r_3,r_4]$. Form the satisfiability formula (\autoref{eq:nnv2}) that we need to check.
-// \end{problem}
+where $v_(i, j)$ is the output of the $j$-th neuron in layer $i$,
+$w_(i - 1, j, k)$ is the weight connecting the $k$-th neuron in layer $i - 1$
+to the $j$-th neuron in layer $i$, and $b_(i, j)$ is the bias of the
+$j$-th neuron in layer $i$. The input layer is layer $0$, i.e.,
+$v_(0, j)$ are the input variables.
 
-// \begin{problem}[Validity Formulation]\label{ex:negation-trick}
-// Show that $\alpha \implies (\phi_{in} \implies \phi_{out})$ (\autoref{eq:nnv}) is valid if and only if $\alpha \land \phi_{in} \land \neg \phi_{out}$ (\autoref{eq:nnv2}) is unsatisfiable.
-// First, do this by hand (on paper) by explicitly writing out the logical equivalences step by step. Then, verify your result using Z3, i.e., show that the negation of the first formula is equivalent to the second formula.
-// \end{problem}
+#parbreak()
 
-// \begin{example <ex:dnn-sat}
-// We represent the network in~\autoref{fig:dnn-b} as a formula $\alpha$:
-// \begin{align*}
-// & x_3 = \relu{-0.5x_1 + 0.5x_2 + 1.0}  ~\land \\
-// & x_4 = \relu{0.5x_1 - 0.5x_2 - 1.0}  ~\land \\
-// & x_5 = -x_3 + x_4 - 1.0,
-// \end{align*}
-// \noindent and the property $x_5 > 0$ for any inputs $x_1 \in [-1,1], x_2\in[-2,2]$ as:
-// \begin{equation*}
-// \phi_{in} = (-1 \le x_1 \le 1) \land (-2 \le x_2 \le 2); \qquad
-// \phi_{out} = (x_5 > 0)
-// \end{equation*}
+With this, the NNV problem (@def:nnv) can be formulated as checking the validity of the following formula:
 
-// \paragraph{Satisfiability Solving} We can check the satisfiability of $\alpha \land \phi_{in} \land \neg \phi_{out}$ using constraint solving, e.g., the Z3 SMT solver.~\autoref{sec:se-smt} shows how to perform symbolic execution and an SMT solver to automatically generate this formula from a given network and property, and check its satisfiability.~\autoref{sec:using-milp} shows how to encode the problem as a MILP constraints, solvable using a MILP solver (e.g., Gurobi).
+$ 
+  alpha => (phi_("in") => phi_("out")) 
+$<eq-nnv>
 
-// For~\autoref{ex:dnn-sat}, the formula is satisfiable, i.e., the property is invalid, and the solver returns \sat{}.  Any satisfying assignment, e.g., $x_1=-1$ and $x_2=2$, is a counterexample (\autoref{sec:properties-counterexamples}) to the property, as it satisfies the precondition $\phi_{in}$ but violates the postcondition $\phi_{out}$, i.e., $x_5 = -3.5$, which is  $< 0$.
-// \end{example}
+Equation @eq-nnv checks if network $N$ satisfies (implies) the property
+$phi_("in") => phi_("out")$. This validity checking can be reduced to checking
+the satisfiability of the formula:
 
-// \begin{problem <problem:z3-dnn}
-// Use Z3 to do~\autoref{ex:dnn-sat}. You might find~\autoref{ex:z3-dnn} useful.  Make sure that you also ask Z3 to  find a counterexample violating the property (does not have to be the same as above).
-// \end{problem}
+
+$ 
+alpha and phi_("in") and not phi_("out") 
+$<eq-nnv2>
+
+If @eq-nnv2 is unsatisfiable, then $phi$ is a valid property of $N$.
+Otherwise, $phi$ is not valid. Moreover, we can extract a counterexample
+for the original problem from the satisfying assignment of @eq-nnv2.
+
+#problem[
+Let $alpha$ represent our network and the robustness property
+$abs(x - y) <= epsilon => f(x) = f(y)$.
+Form the satisfiability formula (@eq-nnv2) that we need to check.
+] <ex-prop-neg1>
+
+#problem[
+Let $alpha$ represent our network and the property $y > 0$ for any input
+$x_1 in [r_1, r_2], x_2 in [r_3, r_4]$.
+Form the satisfiability formula (@eq-nnv2) that we need to check.
+] <ex-prop-neg2>
+
+#problem(title: [Validity Formulation])[
+Show that $alpha =>   phi_("in") => phi_("out"))$ (@eq-nnv) is valid if and only if
+$alpha and phi_("in") and not phi_("out")$ (@eq-nnv2) is unsatisfiable.
+
+First, do this by hand (on paper) by explicitly writing out the logical
+equivalences step by step. Then, verify your result using Z3, i.e., show
+that the negation of the first formula is equivalent to the second formula.
+] <ex-negation-trick>
+
+#example[
+We represent the network in @fig:dnn-b as a formula $alpha$:
+
+$
+  x_3 = "relu"(-0.5 x_1 + 0.5 x_2 + 1.0) and
+$
+
+$
+  x_4 = "relu"(0.5 x_1 - 0.5 x_2 - 1.0) and
+$
+
+$
+  x_5 = -x_3 + x_4 - 1.0
+$
+
+and the property $x_5 > 0$ for any inputs
+$x_1 in [-1, 1], x_2 in [-2, 2]$ as:
+
+$
+  phi_("in") = (-1 <= x_1 <= 1) and (-2 <= x_2 <= 2)
+$
+
+$
+  phi_("out") = (x_5 > 0)
+$
+
+// *Satisfiability Solving.* We can check the satisfiability of
+// $alpha and phi_("in") and not phi_("out")$ using constraint solving, e.g.,
+// the Z3 SMT solver. Section @sec-se-smt shows how to perform symbolic
+// execution and use an SMT solver to automatically generate this formula
+// from a given network and property, and check its satisfiability.
+// Section @sec-using-milp shows how to encode the problem as MILP
+// constraints, solvable using a MILP solver (e.g., Gurobi).
+
+// For @ex-dnn-sat, the formula is satisfiable, i.e., the property is invalid,
+// and the solver returns #sat. Any satisfying assignment, e.g.,
+// $x_1 = -1$ and $x_2 = 2$, is a counterexample
+// (@sec-properties-counterexamples) to the property, as it satisfies the
+// precondition $phi_("in")$ but violates the postcondition $phi_("out")$,
+// i.e., $x_5 = -3.5$, which is $< 0$.
+// 
+] <ex-dnn-sat>
+
+// #problem[
+// Use Z3 to do @ex-dnn-sat. You might find @ex-z3-dnn useful.
+// Make sure that you also ask Z3 to find a counterexample violating the
+// property (it does not have to be the same as above).
+// ] <problem-z3-dnn>
+
+
 
 
 
@@ -2258,7 +2314,7 @@ $
 
 
 // \part{Constraint Solving and Abstraction <part:constraint-solving-abstraction}
-
+#pagebreak()
 = Constraint Solving <chap:constraint-solving>
 
 //  == Symbolic Execution and SMT Solving <sec:se-smt}
