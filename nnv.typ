@@ -4354,7 +4354,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 
 #example[
   //TODO fig:dnn-b
-  The network can be represented as the formula $alpha$:
+  Recall the network from @fig:dnn-b can be represented as the formula $alpha$
   $
     & hat(x)_3 = -0.5x_1 + 0.5x_2 + 1.0 \
     & hat(x)_4 = 0.5x_1 - 0.5x_2 - 1.0 \
@@ -4363,10 +4363,10 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
     & x_5 = -x_3 + x_4 - 1.0,
   $
   where $hat(x)_3$ and $hat(x)_4$ are the pre-activation values of the ReLU
-  neurons $x_3$ and $x_4$, respectively. Fixing the activation status of $x_3$
-  and $x_4$ simplifies $alpha$ by replacing the ReLUs with linear constraints.
+  neurons $x_3$ and $x_4$, respectively. Thus, if we fix the the activation status of $x_3$
+  and $x_4$, we can simplify $alpha$ by replacing the ReLUs with linear constraints.
 
-  *Complete activation pattern.* A complete activation pattern specifies the
+  As an example, a _complete_ activation pattern specifies the
   status of both ReLU neurons. For instance,
   $
     p = {x_3, overline(x_4)}
@@ -4381,8 +4381,8 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
   longer have to reason about the non-linearity of ReLU, and can directly check
   whether the linear constraint is satisfiable with the input and output
   constraints.
-
-  *Partial activation pattern.* A partial pattern specifies only some
+  
+  As another example, a _partial_ pattern specifies only some
   activation statuses. For example,
   $
     q = {x_3}
