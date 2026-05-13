@@ -2824,6 +2824,10 @@ These can be (i) lifetime achievements in the field---such as ACM or IEEE Fellow
 _Test of Time, Most Influential, and Impact Awards_ are given to papers that were published 10+ years ago at a top venue and made a lasting contribution to their area of research. In other words, the work described in these papers have stood the _test of time_. Typically, these papers are highly cited and have inspired many follow-up works.
 Note that these paper awards are different than Distinguished or Best Paper awards, which are given at the conference and therefore might not be as well-known or influential.   
 
+
+
+Note that while typically given to senior researchers, some junior faculty have received these highly prestigious awards for their work as shown in @fig:lor4junior. 
+
 #figure(
   align(left)[#commentbox[
     _"It is highly noteworthy that #redact[Vu] has earned two 10-year test-of-time awards for [his] papers [, including a prestigious ICSE Most Influential Paper Award]. Senior computer scientists count themselves fortunate to
@@ -2833,11 +2837,10 @@ Note that these paper awards are different than Distinguished or Best Paper awar
   caption: [LoR written by an ACM and IEEE Fellow for a junior faculty (some texts redacted for anonymity).]
 ) <fig:lor4junior>
 
-Note that while typically given to senior researchers, some junior faculty have received these highly prestigious awards for their work as shown in @fig:lor4junior. 
-
 === Industrial and Other Awards
 
-CS faculty also aim to win awards from industry, which can be a sign of their impact on real-world applications and industry relevance. Well-known ones include:
+CS faculty also aim to win awards from industry, which shows that their work has
+ impact on real-world applications and industry relevance. Well-known industrial awards include:
 
 - *Amazon Research Award (ARA):* Typically open twice a year for a wide range of research areas. It also comes as a gift of cash or cloud credits.  The amount is small, but is _highly competitive_ as it attracts researchers all over the world, including senior researchers and those from top institutions.
   // - Sony *Faculty Innovation Award:* Open to all researchers in fields related to Sony's business (e.g., AI, robotics, computer vision, gaming).
