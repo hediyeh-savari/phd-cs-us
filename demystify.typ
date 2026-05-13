@@ -44,7 +44,7 @@
 // })
 
 
-#set par(first-line-indent: (amount: 1.5em, all: false))
+//#set par(first-line-indent: (amount: 1.5em, all: false))
 
 #let mytitle = "Demystifying PhD Admissions in Computer Science"
 #let mysubtitle = "A Handbook for Navigating CS PhD Admissions in the U.S."
@@ -69,23 +69,22 @@
       #text(style:"italic", size:0.85em)[#s]
   ]
 
-  
-#let cb(who: none, fill:gray, icon, msg) = block(
+#let cb(who: none, fill: gray, icon, msg) = block(
   width: 100%,
   fill: fill,
   radius: (right: 5pt),
   stroke: (left: 3pt + fill.darken(10%)),
   inset: (left: 10pt, right: 10pt, y: 10pt),
 )[
-    #icon 
+  #icon #h(5pt) 
   #if who != none [
-    #text(weight: "bold", size: 0.9em)[#who] \
+    #text(weight: "bold", size: 0.9em)[#who] — 
   ]
-  #text(size: 0.85em)[#msg]
+  #text(size: 0.9em)[#msg]
 ]
 
 
-#let commentbox(who: none, msg) = cb(who: who, fill: gray.lighten(80%), [💬], msg)
+#let commentbox(who: none, msg) = cb(who: who, fill: gray.lighten(80%), [💬],msg)
 #let keybox(msg) = cb(fill: yellow.lighten(90%), [🔑],msg)
 #let examplebox(msg) = cb(fill: green.lighten(95%), [💡], msg)
 #let warningbox(msg) = cb(fill:red.lighten(80%), [🚨️], msg)
@@ -172,14 +171,14 @@ This book aims to address these concerns.
   caption: [Stress caused by imposter syndrome is real. Don't let it stop you from applying to CS PhD programs in the US!]
 ) <fig:imposter>
 
-#paragraph[Not any harder than other countries][Applying to a good US university *should not* be any harder than at schools in other countries. It might even be more flexible since CS PhD in the US *do not* require having an MS or a research topic, proposal, or adviser in advance (@sec:non-us-differences compares CS PhD study in the US to other countries). It doesn't even require having a CS background (@sec:non-stem).
+#paragraph[Not any harder than other countries][While admission to a good CS PhD program in the US is very competitive, it *should not* be any harder than admission to good CS PhD programs in other countries. It might even be more flexible since CS PhD in the US *do not* require having an MS or a research topic, proposal, or adviser in advance (@sec:non-us-differences compares CS PhD study in the US to other countries). It doesn't even require having a CS background (@sec:non-stem).
 
 If you believe you have a chance in other countries, e.g., Australia, Canada, Japan, Germany, UK, South Korea, and Singapore, then you will surely have a chance in the US as well.]
 
 #commentbox[The most selective US schools, e.g., top 10 in CS (@chap:rankings), are extremely competitive for everyone, regardless of background. Don't be discouraged if you don't get into a "household name" university as there are many excellent CS programs (@sec:selecting-ranking-schools) in the US that are not as well-known internationally but still offer great research opportunities and training. In fact, many top CS researchers and faculty members in the US did not graduate from Ivy League or top 10 schools.
 
 Many students, especially those from smaller countries or schools, feel *imposter syndrome*---worrying they're "not good enough", or get discouraged when competing with others with "stronger" profiles (@sec:profile-not-strong). Remember (@chap:evalapps): adcom looks for potential and evidence you'll thrive in research environment and fit well at their institution---in other words, things that usually have nothing to do with your GPA or GRE scores.
-])
+]
 
 #paragraph[Funding Is Not An Issue][In most cases CS PhD students _do not_ need to worry about funding, especially at good R1 universities in the US. 
 If you are admitted, you will almost certainly receive _full funding_ (@chap:funding) to support your study. 
@@ -189,7 +188,7 @@ Moreover, you often receive additional benefits such as summer pay (@sec:summer-
 
 Full funding for CS PhD students is the norm in the US, and I'd go as far as to say that if you are not admitted with full funding, you might want to not accept the offer. The reason is that CS is in high demand and you're actively contributing to improving the reputation of the university and more generally advancing CS.
 
-#warningbox([While full funding is standard for CS PhD as mentioned above, always double-check the details of your offer (@sec:offer-letters) before accepting, especially for programs outside STEM or at smaller/private universities.]
+#warningbox([While full funding is standard for CS PhD, always double-check the details of your offer (@sec:offer-letters) before accepting, especially for programs outside STEM or at smaller/private universities.]
 )
 ]
 // % \paragraph{Discrimination is not tolerated} Not only is discrimination illegal, diversity and inclusion are highly valued in US universities. Many universities take great pride in their diverse student body and faculty.
@@ -345,7 +344,7 @@ However, many universities also accept PhD students in the Spring or Summer, esp
 
 
 #figure(caption: [Comparison of the CS PhD program in the US and other countries],
-text(size: 0.8em,
+text(size: 0.9em,
     table(
       columns: 3, align: left, stroke: none,
       table.header(
@@ -550,7 +549,7 @@ The committee will look at various factors, but the most important ones are lett
 Letters of Recommendation (LoRs) are crucial for PhD because (i) they paint a picture of your research ability and potential from someone who has worked closely with you, and (ii) adcom trust the opinions of your LoR writers, who are usually faculty members or researchers who have the expertise and reputation to evaluate your research ability (@sec:lor-writers). Most PhD programs require at least _two_ LORs. 
 
 #commentbox[
-  When reviewing applications (@sec:ievaluate), I usually read LoRs first, then the SOP (@chap:sop). If these make a strong impression, I skim through the rest of the materials; if not, I pay closer attention to other aspects before making a decision.
+When reviewing applications (@sec:ievaluate), I usually read LoRs first, then the SOP (@chap:sop). If these make a strong impression, I skim through the rest of the materials; if not, I pay closer attention to other aspects before making a decision.
 ]
 
 
@@ -810,7 +809,7 @@ However, some cases might raise some eyebrows, e.g., if you only aim at very top
 
 #pagebreak()
 
-== Research Experience (e.g., Publications)<chap:research-experience>
+== Research Experience (e.g., Publications) <chap:research-experience>
 // \chapterinfo{Publications are not \textbf{required} but can \textbf{greatly help}. Papers in good venues are concrete evidence that you have successfully engaged in research.}
 
 #simpsons[I've got to study harder and publish faster!]
@@ -934,9 +933,10 @@ CS academics like using LaTeX (common way to write our papers and other document
 As AI and LLMs become more popular, many students wonder if they could use AI chatbots such as ChatGPT and Claude to help with their statements and, especially, if the university or adcom reviewers would check and penalize them for doing so.
 
 Personally I _do not_ check your statements for AI contents. First, I do not have the time to do that. It is much easier for me to just read the statement and see if it makes sense and stands out (@sec:ievaluate). Hint: AI-generated content reads very strangely and faculty is just too experienced in reading essays and SOPs from students to not notice it.
-Second, AI-checking technology is very unreliable and inconsistent. For example, a checker might claim that 80% of an essay is AI-generated while another says it is 0%.  
 
-I also think it is _fine_ to use AI to help your writing, e.g., the _"proofread"_ feature in Apple's `Writing Tools` is quite useful for fixing writing issues or finding better terminologies or phrases. This can help international students who might struggle with writing English and are not familiar with the academic writing style (you see how many "thus" used in this book?). Thus, it's OK to use AI to help you but you should be the main part of the writing loop, i.e., you should be the one who writes the content and use AI to help you improve and refine it.
+Second, AI-checking technology is very unreliable and inconsistent. For example, a checker might claim that 80% of an essay is AI-generated while another says it is 0%.
+
+Finally, I think it is _fine_ to use AI to help your writing, e.g., the _"proofread"_ feature in Apple's `Writing Tools` is quite useful for fixing writing issues or finding better terminologies or phrases. This can help international students who might struggle with writing English and are not familiar with the academic writing style (you see how many "thus" used in this book?). Thus, it's OK to use AI to help you but you should be the main part of the writing loop, i.e., you should be the one who writes the content and use AI to help you improve and refine it.
 
 === Diversity Statement <sec:diversity-statement>
 
@@ -967,7 +967,7 @@ At a high level, a diversity statement is _not_ an ideological endorsement, but 
 
 === School
 Graduating from top universities _that adcom members recognize_ helps quite a bit.
-The emphasis here is _"that adcom members recognize"_. The reason is similar to LoRs from well-known researchers (@sec:famous-lor): if we know your school has a good reputation, we can trust its education and grades. Otherwise, we are uncertain about the quality of the school and the grades you received.
+The emphasis here is #highlight[_"that adcom members recognize"_]. The reason is similar to LoRs from well-known researchers (@sec:famous-lor): if we know your school has a good reputation, we can trust its education and grades. Otherwise, we are uncertain about the quality of the school and the grades you received.
 
 For example, if you are an international student and your school is well-known, then it is considered _"top foreign"_, which is a plus. However, if we do not know much about schools in your country, then we are uncertain about the quality of your school and likely treat your school as _"unknown foreign"_, which can be a minus point.
 
@@ -995,7 +995,7 @@ Compared to other factors such as LoRs (@chap:lor) and research experiences (@ch
 
 PhD in CS is a research degree and doing well in courses does not necessarily mean you can do research---other factors such as research experiences, pubs, LoRs are more important. Thus, do not assume that having a high GPA (e.g., 3.8/4.0 or 9.0/10) will help much in your application.
 
-That said, if you are from a well-known school (@chap:your-school), having good grades _might_ help a bit, e.g., adcom members often note details such as "good GPA from well-known school (@sec:ievaluate)". However if your school is not well-known, having top grades or rankings usually will not help because we cannot evaluate them (e.g., we don't know how hard it is to get a 4.0 or A's at your school). This can be an issue for students in many top international universities where the competition is so high that very good students can still have low rankings from these schools (and be overlooked by adcom).
+That said, if you are from a well-known school (@chap:your-school), having good grades _might_ help, e.g., adcom members often note details such as "good GPA from well-known school (@sec:ievaluate)". However if your school is not well-known, having top grades or rankings usually will not help because we cannot evaluate them (e.g., we don't know how hard it is to get a 4.0 or A's at your school). This can be an issue for students in many top international universities where the competition is so high that very good students can still have low rankings from these schools (and be overlooked by adcom).
 
 As with school reputation, you and your LoR writers can mention the grading system of your university if you think that is helpful for adcom to evaluate (@sec:help-your-LOR-writers).
 
@@ -1005,7 +1005,7 @@ As with school reputation, you and your LoR writers can mention the grading syst
 
 === Bad Grades Likely Will Hurt
 
-While having good GPA might not help much (@sec:good-grades), _having bad GPA will likely hurt your application_. If you have bad grades, you should explain them in your SOP, or better yet, have your LOR writers explain them in their letters if they know the reasons.
+While having good GPA might not help much (@sec:good-grades), #highlight[_having bad GPA will likely hurt your application_]. If you have bad grades, you should explain them in your SOP, or better yet, have your LOR writers explain them in their letters if they know the reasons.
 
 Moreover, having bad grades in relevant courses, e.g., Math and CS, can be a red flag.
 Adcom members often scan through transcripts (@sec:ievaluate) looking for C and lower grades in Math and CS courses and raise concerns if they see several of them.
@@ -1013,7 +1013,7 @@ Note that bad grades in non-relevant courses, e.g., politics or history, are not
 
 Should you explain bad grades in relevant courses in your SOP? If you have just a few, they do not matter much, so don't spend much time explaining them (many adcom reviewers themselves have bad grades in relevant courses!). But if you have many bad grades for an entire semester or year due to some specific reasons, then try to explain them in your SOP.
 
-#strong[Below Minimum Requirement] Many universities have a minimum GPA requirement (e.g., $> 3.0$) and will automatically reject applications with GPAs below the requirement (@sec:why-rejected). This means adcom members might not even see your application if your GPA is below the minimum requirement.
+#paragraph[Below Minimum Requirement][Many universities have a minimum GPA requirement (e.g., $> 3.0$) and will automatically reject applications with GPAs below the requirement (@sec:why-rejected). This means adcom members might not even see your application if your GPA is below the minimum requirement.]
 
 #warningbox[
   GMU College of Engineering and Computing requires a minimum GPA of 3.0/4.0 for PhD applications, and will _autoreject_ applications below this threshold.
@@ -1029,10 +1029,10 @@ Should you explain bad grades in relevant courses in your SOP? If you have just 
 
 === GREs Are Optional and Do Not Matter for PhD Admissions <sec:gre>
 
-While a few schools still require taking the #link("https://www.ets.org/gre")[GRE] exam (e.g., UCF), most good CS PhD programs in the US *no longer require it*. The reason is that GRE scores do not correlate well with research ability, which is the most important factor for PhD admission. Note that many faculty members themselves did not take the GRE or had bad scores.
+While a few schools still require taking the #link("https://www.ets.org/gre")[GRE] exam (e.g., UCF), most good CS PhD programs in the US #highlight[do not require it]. The reason is that GRE scores do not correlate well with research ability @chap:research-experience, which is the most important factor for PhD admission. Note that many faculty members themselves did not take the GRE or had bad scores.
 
 Thus, if you have bad GRE scores or haven't taken the GRE, then don't waste time (re)taking it. Being optional really means optional, and not taking it will not hurt your application.
-However, if you took it and have really good scores then it might be worth it to include (and perhaps talk about) them in your application, but don't expect them to make much difference. But if your scores are bad, then you should not include them in your application, which can be a #highlight(fill:red)[red flag].
+However, if you took it and have really good scores then it might be worth it to include (and perhaps talk about) them in your application, but don't expect them to make much difference. But if your scores are bad, then you should not include them in your application, which can be a #alert[red flag].
 
 #warningbox[
   I often see students asking about GRE requirements on internet forums or Facebook groups, only to get completely incorrect answers. Some people insist that you "need" to take the GRE or be in specific high range to get a chance.
@@ -1067,6 +1067,7 @@ Just as with grades (@chap:your-school) and GRE (@sec:gre), having high scores i
     - DuoLingo Graduate English: $>= 120$ OR
     - Pearson Test of Academic English: $>= 67$
 ]
+#pagebreak()
 
 == Other Materials <chap:other-materials>
 
@@ -1408,7 +1409,7 @@ Various issues can raise concerns: many STEM courses with low grades or withdraw
 
 ==== "Chance me" on Getting into T10 Programs <sec:chance-me>
 
-Many international students aim for very top schools such as Stanford and MIT, and #link("https://en.wikipedia.org/wiki/Ivy_League")[Ivy League schools]. Every year Reddit and other forums have numerous students asking for evaluation of their chances of getting into these schools (the so-called #emph["chance me"] or #emph["roast my CV/profile"] posts) and then later posts on being #emph["ghosted and rejected everywhere"]. Here's my take on this (adapted from my #link("https://www.reddit.com/r/gradadmissions/comments/1fogyg5/reality_check_for_aspiring_phd_applicants_youre/")[post on Reddit]):
+Many international students aim for very top schools such as Stanford and MIT, and #link("https://en.wikipedia.org/wiki/Ivy_League")[Ivy League schools]. Every year #link("https://www.reddit.com/r/gradadmissions/")[Reddit] and other forums have numerous students asking for evaluation of their chances of getting into these schools (the so-called #emph["chance me"] or #emph["roast my CV/profile"] posts) and then later posts on being #emph["ghosted and rejected everywhere"]. Here's my take on this (adapted from my #link("https://www.reddit.com/r/gradadmissions/comments/1fogyg5/reality_check_for_aspiring_phd_applicants_youre/")[post on Reddit]):
 
 #strong[You are unlikely to get in these schools.] While being ambitious is good, you also need to be realistic, and the harsh reality is that it is very unlikely that you will get into MIT or Harvard unless you are very exceptional (in which case you would not be asking about your chances on Reddit). 
 
@@ -1458,7 +1459,7 @@ Note that funding is typically more available for PhD students than MS (@sec:ms-
 
 #figure(
   caption: [Different types of PhD funding. All cover tuition, insurance, and stipend.],  
-  text(size: 0.8em,
+  text(size: 0.9em,
   table(
     columns: 4,
     align: left,
@@ -1556,7 +1557,7 @@ In general, external fellowships are highly competitive and prestigious---you wi
 
 === Low Stipend? <sec:low-stipend>
 
-Students often think their stipend is too low and not enough to live on.  For example, if you look at the stipend at GMU, which is around \$30K for 9-month, and then compare it to the cost of living in Fairfax, VA, which says you need \$70K to live in a 1-bed apartment, then you might be in a panic.
+Students often think their stipend is too low and not enough to live on.  For example, if you look at the stipend at GMU, which is around \$30K for _9-month_, and then compare it to the cost of living in Fairfax, VA, which says you need \$70K _annually_ to live in a 1-bed apartment, then you might be in a panic.
 
 However,  in almost all cases, the stipend is enough to live on.  You might not be able to live in a 1-bed apartment by yourself, but you can live in a shared apartment or house with other students (most grad students shared apt).  You might not be able to buy a new car, but you get a good, used one (most students do this) or use public transportation.  In short, while the stipend is not high, it is not bad, and you can live comfortably with it.  
 
@@ -1569,7 +1570,7 @@ For a full breakdown of how much a graduate student costs, see @sec:ra-cost.
 
 Students often get confused about summer funding, e.g., if they will get paid during the summer.  This is a good question because PhD students have no classes over the summer and so are often more productive and produce good research. However, summer salary is largely depending on your funding source.
 
-First, recall that an *AY* (academic year)---consisting of Fall and Spring semesters---is typically 9 months, thus your stipend is for 9 months and do not cover the three summer months (and many places allow you to #emph[spread] it over 12 months, so you get paid monthly over 12 months, but the total amount is still the same).
+First, recall that an *AY* (academic year)---consisting of Fall and Spring semesters---is typically 9 months. Thus, your stipend is for 9 months and do not cover the three summer months (and many places allow you to #emph[spread] it over 12 months, so you get paid monthly over 12 months, but the total amount is still the same).
 
 If your funding source is TA (@sec:ta), you typically do not get paid over the summer because there are no classes to teach.  Some CS departments offer summer funding, but it is not guaranteed and might not be a lot. For example, at GMU, we offer summer funding for 1st-year PhD TA students. The amount over the 3-month summer is similar to their monthly stipend (i.e., their 9-month stipend divided by 3 for the 3 summer months).
 
@@ -1593,7 +1594,7 @@ PhD students often ask why their salary is low compared to the large grants thei
 
 #figure(
   caption: [GRA cost breakdown. F & A is Facilities & Administrative Cost Base and MTDC is Modified Total Direct Cost. These are things that the university can charge overhead to.],
-  text(size: 0.8em,
+  text(size: 0.9em,
   table(
     columns: 3,
     align: left,
@@ -1626,7 +1627,7 @@ PhD students often ask why their salary is low compared to the large grants thei
 @tab:cost shows the budget breakdown for a GRA per year.
 These numbers are based on my experience at public universities in the US. Private universities may have different numbers.  For simplicity, I will assume the department has a 9-month stipend of \$30K and a 3-month summer of \$10K (a third of the 9-month stipend). I will also use GMU tuition rate of about \$15K/year for full-time study (which is quite cheap compared to private universities, e.g., Univ. of Chicago is a whooping \$70K) and a 58.9% rate on *indirect cost*, which is a typical rate charged for overhead or administrative costs (yes, after all, universities are businesses!).  Finally, I assume the students take two conference trips per year, one domestic and one international (conf. registration, airline tickets, taxi, meals, etc are all included).
 
-In the end, the total budget comes out to be \$73K/year to support a PhD student. #highlight[The summary is that over your 5--6 years of your PhD, you cost about \$400K, and while your stipend is X, your adviser probably pays 2X for you]. But of course, the nicest thing is that you do not have to pay for any of this! You get to gain the knowledge, do research, travel, and also get paid!
+In the end, the total budget comes out to be \$73K/year to support a PhD student. The summary is that #highlight[over your 5--6 years of your PhD, you cost about \$400K], and while your stipend is X, your adviser probably pays 2X for you. But of course, the nicest thing is that you do not have to pay for any of this! You get to gain the knowledge, do research, travel, and also get paid!
 
 #pagebreak()
 = Schools and Profs. <part:schools-profs>
@@ -1962,8 +1963,8 @@ Ultimately, choose a prof. that fits you by communicating with them, taking thei
 === Faculty Types
 
 At most research-intensive (R1) universities, faculty generally fall into two categories:
-- Tenure-line faculty (tenured or tenure-track)
-- Non-tenure-line faculty (e.g., teaching, adjunct, or research faculty)
++ Tenure-line faculty (tenured or tenure-track)
++ Non-tenure-line faculty (e.g., teaching, adjunct, or research faculty)
 
 The key distinction is in their responsibilities—whether they are expected to do research, get funding, and supervise PhD students.
 
@@ -1996,7 +1997,7 @@ Some universities have research faculty or research scientists (e.g., postdocs a
 
 ==== Adjunct and Emeritus Faculty
 
-These faculty members are typically not involved in research or PhD advising. Adjunct faculty are usually part-time instructors who may have a full-time job outside academia. Emeritus faculty are retired professors and are usually no longer active in research or advising.
+These faculty members are typically not involved in research or PhD advising. _Emeritus faculty_ are retired professors and are usually no longer active in research or advising. _Adjunct faculty_ are usually part-time instructors who may have a full-time job outside academia#footnote[Fun fact: Mike Pence, who was the former Vice President of the United States, is an adjunct faculty member at George Mason. ]. They are usually only affiliated with the university only for their period of teaching contract (e.g., one semester) and thus do not have the institutional role to advise PhD students.
 
 Because of their limited roles, adjunct and emeritus faculty do not serve as PhD advisers. So, do not contact them to ask about research openings.
 
@@ -2011,17 +2012,17 @@ Most universities restrict who can advise PhD students based on departmental aff
 So check these carefully as this is different from one university to another.
 
 #warningbox[
-  University websites might not be up to date and still list faculty who are no longer active or have moved to another institution. In some rare and extreme cases, they might even list deceased faculty. In fact, even the faculty themselves might not update their websites. So do multiple checks, e.g., Google, recent publications, etc.
+  University websites might not be up to date and still list faculty who are no longer active or have moved to another institution. In some rare and extreme cases, they might even list deceased faculty (no kidding!). In fact, even the faculty themselves might not update their websites. So do multiple checks, e.g., Google, recent publications, etc.
 ]
 
 ==== Ranks (Assistant, Associate, Full, and More)
 
-Regardless of type (tenure-line or teaching), faculty are generally assigned one of three academic ranks:
+Regardless of type--tenure-line or teaching, faculty are generally assigned one of three academic ranks:
 + *Assistant*: typically an early-career faculty member
 + *Associate*: mid-career, often after tenure
 + *Full*: senior, often tenured with a strong record of achievement
 
-Tenure-line faculty generally start as assistant professor (unless they have a strong research record, e.g., from an industrial research lab), undergo a rigorous review around year six, and if successful are promoted to associate professor with tenure. Note that getting tenure is a huge deal, and it might change the way they work with students (@sec:tenure-vs-tenure-track).
+Tenure-line faculty generally start as assistant professor, undergo a rigorous review around year six, and if successful are promoted to associate professor with tenure. Note that getting tenure is a huge deal, and it might change the way they work with students (@sec:tenure-vs-tenure-track).
 
 The timeline for becoming a full professor varies widely; some do it within a few years after tenure, others take a decade or more, and some become emeritus faculty without ever reaching full professor status. Teaching and research faculty may also progress through these ranks, though the promotion criteria and timelines differ.
 
@@ -2069,9 +2070,9 @@ Thus, don't worry about this too much and just apply to the profs. you think are
 
 === Should I Contact a Prof. Before Applying? How to Get a Positive Reply? <sec:contact>
 
-*Caveat:* Faculty members _cannot directly admit_ a student—so do not email and ask if you have a chance. However, faculty can _advocate_ for a student and therefore increase their admission chance—so contact and introduce yourself.
+*Caveat:* Faculty members _cannot directly admit_ a student: so do not email and ask if you have a chance. However, faculty can _advocate_ for a student with adcom and therefore increase their admission chance: so contact and introduce yourself.
 
-Faculty often receive "cold" emails from prospective students. Most of the time, we ignore these emails (@sec:busy), but on some rare occasions, we do answer them. So how to write an email that gets our attention?
+Faculty often receive "cold" emails from prospective students. Most of the time, we #highlight[just ignore these emails] (@sec:busy), but on some rare occasions, we do answer them. _So how to write an email that gets our attention?_
 
 First, if you want to contact a prof. to _ask about your admission chance_, please *don't*. We don't know and can't answer because, as explained in @chap:evalapps, we don't make individual decisions and might not even be assigned to evaluate your application. It is the same as sending a paper draft to a journal editor or program chair and asking them if your paper has a chance.
 
@@ -2126,7 +2127,7 @@ Finally, profs. are busy (@sec:busy), so don't take it personally if you don't g
 
 ==== Kiss of Death in Emails <sec:kiss-of-death-emails>
 
-- *Send emails to the wrong prof.* Many students do not pay attention or know about this, but a very common reason why you don't get a reply is that you send emails to profs. who do not / cannot advise CS PhD students (e.g., adjunct, emeritus, teaching, non-CS). See @sec:faculty-types for details. While these profs. might be able to co-advise, they typically do not have the bandwidth, funding, and the desire to mentor students for research (they are already overloaded with teaching and other service duties).
+- *Send emails to the wrong prof.* Many students do not pay attention or know about this, but a very common reason why you don't get a reply is that you send emails to profs. who do not / cannot advise CS PhD students (e.g., adjunct, emeritus, teaching, non-CS). See @sec:faculty-types for details. //While these profs. might be able to co-advise, they typically do not have the bandwidth, funding, and the desire to mentor students for research (they are already overloaded with teaching and other service duties).
 
   So do some homework before sending emails, e.g., most CS profs. who are active in research will have a website with their work (publications) and students; some also have lab websites dedicated to their group. Most teaching and adjunct profs. do not have a research group or students listed on their website.
 
@@ -2140,7 +2141,7 @@ Finally, profs. are busy (@sec:busy), so don't take it personally if you don't g
 
 - *Ignoring the Prof's guideline* and asking questions that are already answered on their website. Many profs. put very specific information on how to contact them on their website (e.g., email subject, what to include). Following this helps you stand out and increase your chance of getting a reply.
 
-- *Mass emails.* I've seen it many times when a student mass emails all profs in a department, e.g., through CC or even BCC. This will result in no reply or a very harsh one on how unprofessional you are.
+- *Mass Emails.* I've seen it many times when a student mass emails all profs in a department, e.g., through CC or even BCC. This will result in no reply or a very harsh one on how unprofessional you are.
 
 - *Do Not Call.* Not related to email but sometimes students get desperate and call the prof. This is a big no-no, especially for CS people who often prefer email over phone calls.
 
@@ -2307,13 +2308,13 @@ But there's a good chance that we would respond to well-written emails (@sec:con
 // % \end{itemize}
 // % F-2 visa holders must leave the US if the primary F-1 student visa holder loses status or completes their program.
 
-#pagebreak()
 = Domestic Students <chap:domestic-students>
 // \chapterinfo{Specific benefits and opportunities for domestic students applying to CS PhD programs.}
 
 #simpsons[I'm not a bad guy! I work hard, and I love my kids. So why should I spend half my Sunday hearing about how I'm going to Hell?]
 
-Most of what is written in this handbook applies to both domestic#footnote[_Domestic_ means you do not require a visa to study in the US.] and international students. However, there are some differences and benefits that domestic students should be aware of and can leverage to improve their chances of admission.
+Most of what is written in this handbook applies to both domestic and international students (_domestic_ here simply means you do not require a visa to study in the US.). 
+However, there are some differences and benefits that domestic students should be aware of and can leverage to improve their chances of admission.
 
 #strong[Standing out @sec:stand-out.] There are #emph[few] domestic applications compared to international ones (one reason is that many domestic students go to the workforce after their undergraduate degree). Many US universities thus want to increase the number of domestic students in their programs. So if you're a domestic student, you already #emph[stand out] from the crowd.
 
@@ -2334,6 +2335,7 @@ Most of what is written in this handbook applies to both domestic#footnote[_Dome
 // % \begin{domesticbox}[Domestic students:] If you're a domestic student, you have several advantages in your application.   You also have more opportunities for funding, e.g., through government scholarships for US citizens and residents. Finally,
 // % \end{domesticbox}
 
+#pagebreak()
 = MS Admission <chap:ms>
 // \chapterinfo{MS focuses on coursework and prepares you for \emph{industry}, while PhD focuses on research and prepares you for academia or research. So admission requirements are different.}
 
@@ -2903,7 +2905,7 @@ Below is a very basic example of a LaTeX document with 11pt font and 1-inch marg
 )
 ```
 
-#paragraph[A quick word on Typst][#link("https://typst.app/")[Typst] is a new typesetting system that is gaining popularity for its ease of use and modern features, such as incremental compilation and live preview. It is not as widely used as LaTeX yet, but it is worth considering if you want to try something new (though you will likely need to learn LaTeX anyway as most publishing venues do not support Typst). For example, #link("https://code.roars.dev/phd-cs-us")[this book] is originally written in  #link("https://code.roars.dev/phd-cs-us/blob/main/demystify-old.tex")[LaTeX] and then converted to #link("https://code.roars.dev/phd-cs-us/blob/main/demystify.typ")[Typst].]
+#paragraph[A quick word on Typst][#link("https://typst.app/")[Typst] is a new typesetting system that is gaining popularity for its ease of use and modern features, such as incremental compilation and live preview. It is not as widely used as LaTeX yet, but it is worth considering if you want to try something new (though you will likely need to learn LaTeX anyway as most publishing venues do not support Typst). For example, #link("https://code.roars.dev/phd-cs-us")[this book] is originally written in  #link("https://code.roars.dev/phd-cs-us/blob/main/demystify-old.tex")[LaTeX] but has been converted to #link("https://code.roars.dev/phd-cs-us/blob/main/demystify.typ")[Typst].]
 
 #pagebreak()
 = Academic and Cultural Differences <chap:cultural>
@@ -2961,7 +2963,7 @@ Many people maintain lifelong relationships with their professors and colleagues
 // \sectioninfo{What should you call your profs.? Many possibilities (e.g., Prof., Dr., and even their firstnames), but not Mr., Mrs., or their firstname in the first email.}
 
 #align(center)[
-  #image("files/c5.png", width: 80%)
+  #image("files/c5.png", width: 85%)
 ]
 
 If you're reaching out to a professor for the first time,  address them as Prof. or Dr. Lastname (if you know that they they do not have a PhD, then don't use Dr., but Prof. is fine). Many international students use Prof. or Dr. FirstName LastName, but this can come across as if you're simply copying and pasting names. So just stick with Prof. or Dr. Lastname.  Using _Prof._ is generally the safest option.
@@ -2969,20 +2971,19 @@ If you're reaching out to a professor for the first time,  address them as Prof.
 _Do not use Mr., Mrs., Ms, or Miss_. This rarely happens, but I have seen  new students (e.g., undergraduates) sometimes use these, which are used in K--12 schools but not in higher education.
 
 Moreover, _do not call the prof. by their first name when you first meet them or email them for the first time_. As you become more familiar with your prof and depending on their preferences, you may transition to addressing them by their first name.
-For example, I prefer that my students and colleagues call me Vu. Some students call me _Dr. Vu_, which I find a bit amusing but am totally fine with it.
+For example, I prefer that my students and colleagues call me Vu. Some students call me _Dr. Vu_, which I find a bit amusing but am totally fine with it. And, of course, don't call the prof. "dude" or #link("https://www.reddit.com/r/Professors/comments/1fzjai1/strangest_way_a_student_addressed_me/")["bro"].
 
 #commentbox[
-  *Kapur:* I was amused to read this as if I recall correctly, you never called me by my first name when you were at UNM. You always called me Prof. And, many times, I would jokingly call you back as Prof. Vu.
+  *Kapur:* I was amused to read this as if I recall correctly, you never called me by my first name when you were at UNM. You always called me Prof. And, many times, I would jokingly call you back as Prof.
   
   *Vu:* Yes, for some reason I enjoy calling you "Professor" (without appending a last or first name).  The use of Prof. Vu may have foreshadowed my future in academia.
 ]
 
-Note that in some universities the formal title Dr. Lastname is preferred over Prof. Lastname. Moreover, be aware that not all faculty members hold a PhD[At many places, including Mason, the requirement for adjunct faculty (@sec:faculty-types) is a PhD or an MS with significant industry experience.], in which case using Prof. Lastname is a suitable alternative. You just need to observe and follow the conventions at your particular institution. One way to determine how to address a prof. is to observe how they sign their emails or how they introduce themselves in class. For example, I introduce myself as "Vu" in class but I do not sign my emails. You will get used to it after a while!. 
+Note that in some universities the formal title Dr. Lastname is preferred over Prof. Lastname. Moreover, be aware that not all faculty members hold a PhD, so using Prof. Lastname is a suitable alternative. For example, at many places, including Mason, the requirement for adjunct faculty (@sec:faculty-types) is a PhD or an MS with significant industry experience. You just need to observe and follow the conventions at your particular institution. One way to determine how to address a prof. is to observe how they sign their emails or how they introduce themselves in class. For example, while I don't sign my emails,I introduce myself as "Vu" in class. You will get used to it after a while. 
 
 #paragraph[Referring to Professors You Know][When referring or talking about a prof (e.g., your mentor) that you know, you can just informally use their names if they are OK with it as mentioned above (or Dr./Prof., if you want to be formal). You can also include their institution if it makes it more precise.  For example, I can say:  _"I did my postdoc with Jeff Foster at Univ. of Maryland"_.
 
-Do not include ranking (@sec:faculty-types), e.g., Assistant, Associate, Scientist, ..., when referring to someone. I see many international students include a lengthy title of people they know, e.g., _I am advised by Asst. Prof. X, and I also collaborate with Distinguished Scientist Y_.
-
+Do not include ranking (@sec:faculty-types), e.g., Assistant, Associate, Scientist, ..., when referring to someone. I see many international students include a lengthy title of people they know, e.g., _I am advised by Asst. Prof. X, and also collaborate with Distinguished Scientist Y_.
 This is _not necessary_ and makes it look like you're trying to show off your connections. These nuances represent some cultural and academic differences in the US that you may encounter but will gradually adapt to.]
 
 == Miscs <chap:cultural-misc>
