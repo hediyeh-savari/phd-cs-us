@@ -2825,11 +2825,11 @@ _Test of Time, Most Influential, and Impact Awards_ are given to papers that wer
 Note that these paper awards are different than Distinguished or Best Paper awards, which are given at the conference and therefore might not be as well-known or influential.   
 
 #figure(
-  commentbox[
+  align(left)[#commentbox[
     _"It is highly noteworthy that #redact[Vu] has earned two 10-year test-of-time awards for [his] papers [, including a prestigious ICSE Most Influential Paper Award]. Senior computer scientists count themselves fortunate to
     earn even one such award at some point in their careers, but it is highly unusual and commendable that #redact[Vu]
-    has earned two of these awards already, less than ten years after completing [his] PhD ..."_
-  ],
+    has earned two of these awards already, less than ten years after completing [his] PhD ..."_]]
+,
   caption: [LoR written by an ACM and IEEE Fellow for a junior faculty (some texts redacted for anonymity).]
 ) <fig:lor4junior>
 
@@ -2895,7 +2895,7 @@ While reviewers will not penalize you for using Word, subtle irritations can aff
 
 Below is a very basic example of a LaTeX document with 11pt font and 1-inch margins. You can start with this and modify it.
 
-```
+```tex
 \documentclass[11pt]{article}
 \usepackage[margin=1in]{geometry}
 \begin{document}
