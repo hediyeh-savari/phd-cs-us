@@ -380,7 +380,7 @@ text(size: 0.9em,
     
 - *Work-life Balance*: PhD students in the US are often said to be overworked compared to other countries, e.g., in Europe. This is partly due to the longer PhD program and that US PhD students are often paid through TA, which requires them to do TA in addition to their own research. In contrast, PhD students in other countries are often paid through fellowships, which might not require doing TA.
     #remark-block[
-      Work-life balance is more of a personal and cultural issue than a regulatory one. US academia is known for its intense work culture, because students themselves are fiercely competitive (after reading this book you would see how competitive it is to get into a good PhD program in the US), and faculty are expected to publish frequently.
+      Work-life balance is more of a personal and cultural issue (@chap:cultural) than a regulatory one. US academia is known for its intense work culture, because students themselves are fiercely competitive (after reading this book you would see how competitive it is to get into a good PhD program in the US), and faculty are expected to publish frequently.
       The system strongly favors those that work hard and produce results, which can create a culture of long hours and high stress.
     ]
 
