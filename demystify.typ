@@ -538,7 +538,7 @@ However, most universities do not waive the application fee, as it is typically 
 #simpsons[Son, if you really want something in this life, you have to work for it. Now quiet! They're about to announce the lottery numbers.]
 
 
-The goal of adcom is to evaluate your research experience, potential, and interest to see if you _fit into their PhD program_! The emphasis here is _fitting_, which varies from school to school, faculty to faculty, and even from year to year.  
+The goal of adcom is to evaluate your research experience, potential, and interest to see if you _fit into their PhD program_! The emphasis here is #highlight[_fitting_], which varies from school to school, faculty to faculty, and even from year to year.  
 The committee will look at various factors, but the most important ones are letters of recommendation (LORs),  statements of purpose (SOP), and research background and experience, e.g., publications.
 
  
@@ -611,7 +611,7 @@ Moreover, while being well-known and respected in your local university, these w
   In many case, the letter reads like it was written by a student (@sec:self-letters), and thus is a #alert[red flag].  So if you are in this situation, you should find someone else to write for you as mentioned in this section.
 ]
   
-Many students get letters from supervisors from companies where they did internships or are working.  It is OK as long as it is a research-based personalized letter. Again, the emphasis here is #highlight[research], i.e., the letters should describe your research experiences and potential. Letters focusing on non-research projects at a company won't carry much weight.
+Many students get letters from supervisors from companies where they did internships or are working.  It is OK as long as it is a research-based personalized letter. Again, the emphasis here is #highlight[_research_], i.e., the letters should describe your research experiences and potential. Letters focusing on non-research projects at a company won't carry much weight.
 
 Finally, despite best intentions, the writers might not have the experience to write a strong LoR or lack the ability to evaluate your research ability.
 This is unfortunate but common, and if you are in this situation, you should find someone else to write for you (see @sec:lor-writers and @sec:famous-lor).
