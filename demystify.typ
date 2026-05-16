@@ -75,24 +75,24 @@
 //#import cosmos.clouds: *
 //#show: show-theorion
 
-#let cb(who: none, fill: gray, icon, msg) = block(
-  width: 100%,
-  fill: fill,
-  radius: (right: 5pt),
-  stroke: (left: 3pt + fill.darken(10%)),
-  inset: (left: 10pt, right: 10pt, y: 10pt),
-)[
-  #icon #h(5pt) 
-  #if who != none [
-    #text(weight: "bold", size: 0.9em)[#who] — 
-  ]
-  #text(size: 0.9em)[#msg]
-]
+// #let cb(who: none, fill: gray, icon, msg) = block(
+//   width: 100%,
+//   fill: fill,
+//   radius: (right: 5pt),
+//   stroke: (left: 3pt + fill.darken(10%)),
+//   inset: (left: 10pt, right: 10pt, y: 10pt),
+// )[
+//   #icon #h(5pt) 
+//   #if who != none [
+//     #text(weight: "bold", size: 0.9em)[#who] — 
+//   ]
+//   #text(size: 0.9em)[#msg]
+// ]
 
-#let commentbox(who: none, msg) = cb(who: who, fill: gray.lighten(80%), [💬],msg)
-#let keybox(msg) = cb(fill: yellow.lighten(90%), [🔑],msg)
-#let examplebox(msg) = cb(fill: green.lighten(95%), [💡], msg)
-#let warningbox(msg) = cb(fill:red.lighten(80%), [🚨️], msg)
+// #let commentbox(who: none, msg) = cb(who: who, fill: gray.lighten(80%), [💬],msg)
+// #let keybox(msg) = cb(fill: yellow.lighten(90%), [🔑],msg)
+// #let examplebox(msg) = cb(fill: green.lighten(95%), [💡], msg)
+// #let warningbox(msg) = cb(fill:red.lighten(80%), [🚨️], msg)
 
 #let redact(text, fill: black, height: 1em) = {
   box(rect(fill: fill, height: height)[#hide(text)])
@@ -210,7 +210,7 @@ A PhD in CS is a #highlight[research degree]. Unlike undergraduate or even Maste
 
 Career-wise, a CS PhD prepares you for jobs that require deep technical expertise and the ability to do independent research. Many graduates become professors or academic researchers while others pursue positions in industry research labs, advanced engineering teams, or technical leadership positions. The degree also opens doors to national labs, government agencies, and startups, where the ability to solve unknown and complex problems is necessary.
 
-#tip-block[A PhD is not just a degree, it is a *journey* that transforms you into a researcher. You will learn how to think critically, solve problems, deal with adversity, and work independently. You will also learn how to write and "sell" your work, collaborate with others, and effectively communicate your ideas. In the end, you will have a deep understanding of your chosen field and become an expert in your area of research. In fact, you will know about your research topic more than *anyone* else in the world, including, in many cases, your adviser! This is a scary thought, but it is also exciting and rewarding.]
+#remark-block[A PhD is not just a degree, it is a *journey* that transforms you into a researcher. You will learn how to think critically, solve problems, deal with adversity, and work independently. You will also learn how to write and "sell" your work, collaborate with others, and effectively communicate your ideas. In the end, you will have a deep understanding of your chosen field and become an expert in your area of research. In fact, you will know about your research topic more than *anyone* else in the world, including, in many cases, your adviser! This is a scary thought, but it is also exciting and rewarding.]
 
 
 === CS Fields and Areas <sec:fields-and-areas>
@@ -1962,7 +1962,7 @@ Ultimately, choose a prof. that fits you by communicating with them, taking thei
 
 === Types of Faculty: Who can serve as a PhD adviser? <sec:faculty-types>
 
-*Not every faculty* can serve as your official PhD adviser. Understanding the different types of faculty roles such as  tenured, tenure-track, teaching, research, adjunct, and emeritus professors will help you avoid common mistakes, e.g.,  contacting the wrong person (@sec:contact) for research opportunities or listing in your SOP (@chap:sop) someone who can't actually supervise PhD students.
+#highlight[Not every faculty] can serve as your official PhD adviser. Understanding the different types of faculty roles such as  tenured, tenure-track, teaching, research, adjunct, and emeritus professors will help you avoid common mistakes, e.g.,  contacting the wrong person (@sec:contact) for research opportunities or listing in your SOP (@chap:sop) someone who can't actually supervise PhD students.
 
 === Faculty Types
 
@@ -1979,7 +1979,7 @@ These faculty members are expected to perform research, publish in top venues, g
 - *Tenure-track faculty* are on the path to tenure and are often actively recruiting students.
 - *Tenured faculty* have already earned permanent status and might be less active in building their research group.
 
-#keybox[
+#emph-block[
   *If you're reaching out to professors about potential advising, focus on tenure-line faculty*. These are the faculty most likely to have funding, institutional authority, and the capacity to take on new PhD students. See @sec:tenure-vs-tenure-track for more on choosing between tenured and tenure-track faculty as advisers.
 ]
 
@@ -2005,7 +2005,7 @@ These faculty members are typically not involved in research or PhD advising. _E
 
 Because of their limited roles, adjunct and emeritus faculty do not serve as PhD advisers. So, do not contact them to ask about research openings.
 
-#warningbox[
+#warning-block[
   This #link("https://www.reddit.com/r/gradadmissions/comments/1iyt2k8/_/")[Reddit thread] shares an example of a student being rejected after listing emeritus professors in their SOP. This was a sign that the applicant did not do their homework and thus was not a good fit for the program. This is a common mistake, especially for international students who are not familiar with the US system.
 ]
 
@@ -2015,7 +2015,7 @@ Most universities restrict who can advise PhD students based on departmental aff
 
 So check these carefully as this is different from one university to another.
 
-#warningbox[
+#caution-block[
   University websites might not be up to date and still list faculty who are no longer active or have moved to another institution. In some rare and extreme cases, they might even list deceased faculty (no kidding!). In fact, even the faculty themselves might not update their websites. So do multiple checks, e.g., Google, recent publications, etc.
 ]
 
@@ -2096,7 +2096,7 @@ In general, your email should talk about how/why their work would match yours, h
 
 Below is a good example:
 
-#examplebox[
+#emph-block[
   Dear Prof. Nguyen,
 
   I am writing to inquire about potential research opportunities as a GRA in your group at GMU. Currently, I am an undergraduate student in Computer Science at UNIV and plan to graduate in May 2023.
@@ -3230,7 +3230,7 @@ This book is designed to be read in any order. So you can start with any chapter
 //     \bottomrule
 //     \end{tabular}
 // \end{table}
-    
+                 
 
 
 == Contributing and Supporting This Book <sec:contribute>
