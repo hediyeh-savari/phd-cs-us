@@ -889,21 +889,20 @@ While you might not have control over LoRs (@chap:lor) or where you go to school
 
 In your SOP, focus on research potential (@chap:research-experience) and convince reviewers through your experience, e.g., published papers (@sec:publications). Back up your claims with *concrete evidence*. For example, if you say you have teaching experience, show what you did, e.g., undergraduate TA or mentoring someone. If you say you worked on a research project, show some results, e.g., paper submitted (or even rejected), achieved certain performance improvement over the state of the art.
 
-You should talk about things that adcom members might not know about and that can help make you *stand out* in the application pool of thousands of applicants, e.g., your personal GitHub project with hundreds or thousands of stars or your regular contributions to well-known open-source projects (see @sec:stand-out for increasing your admission chance).
+You should talk about things that adcom members might not know about and that can help make you #highlight[stand out] in the application pool of thousands of applicants, e.g., your personal GitHub project with hundreds or thousands of stars or your regular contributions to well-known open-source projects (see @sec:stand-out for increasing your admission chance).
 
 This is a simple but often overlooked task: *tailor your SOP to the institution you're applying for*, e.g., why apply *here*? Who do you want to work with? Provide names of professors you're interested in (if they are not already in the adcom, your application might get forwarded to them for evaluation; and they might be interested in interviewing and recruiting you). This shows that you're serious and have done homework on places you're applying to. Adcom will look for this part (@sec:why-rejected).
 
 Finally, have your SOP reviewed by your LoR writers (@sec:help-your-LOR-writers) and professors, especially those who have served in adcom, or even postdocs or PhD students as they have been through this process.
 
-#commentbox(who: [Jeff Erickson (UIUC) through a #link("https://www.reddit.com/r/gradadmissions/comments/1owtfgl/comment/nosxvdm/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1")[Reddit post]], [
-  The main thing that I (and other CS faculty) look for in application statements is concrete evidence of research potential. I don't want you to *tell* me that you're excited/motivated/passionate about computer science research. I want you to *show* me your specific interests and your investment/commitment. I want your statement to *demonstrate* your technical background, self-awareness, clarity of thought, intellectual (and ideally emotional) maturity, independence, creativity, discipline, attention to detail, willingness to take risks, and understanding of what research actually is. (Hint: Not just more homework.) I want you to show enough investment in your specific research interests to describe them in credible technical detail.
+#remark-block[*Jeff Erickson* (UIUC) through a #link("https://www.reddit.com/r/gradadmissions/comments/1owtfgl/comment/nosxvdm/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1")[Reddit post]: The main thing that I (and other CS faculty) look for in application statements is concrete evidence of research potential. I don't want you to *tell* me that you're excited/motivated/passionate about computer science research. I want you to *show* me your specific interests and your investment/commitment. I want your statement to *demonstrate* your technical background, self-awareness, clarity of thought, intellectual (and ideally emotional) maturity, independence, creativity, discipline, attention to detail, willingness to take risks, and understanding of what research actually is. (Hint: Not just more homework.) I want you to show enough investment in your specific research interests to describe them in credible technical detail.
 
   In particular, I do not want to read about how many programming languages you know, or stories about how you've been coding since the womb, or starry-eyed platitudes about how artificial intelligence is the best thing since sliced bread, or about your goal to be the next Geoffrey Hinton or Terry Tao. Nothing about your first trembling steps.
 
   You are applying for a job. I want evidence that you are likely to do that job well. I don't want to be entertained. I want to be *informed*.
-])
+]
 
-#commentbox[
+#tip-block[
   I often read LoRs and SOP first (@sec:ievaluate). If I am persuaded by them, I would skim over other factors and advocate for admission (unless I see red flags elsewhere). However, if I am not convinced, then I will likely recommend rejection (unless I see something stand out in other parts).
 
   Do careful research on professors; don't mention *emeritus* or adjunct faculty (@sec:faculty-types). Also, be careful not to send statements to the wrong schools or provide wrong information (e.g., talking about school X but mentioning working with professors at school Y; and do not talk about George Washington when applying to George Mason). I have seen such statements more times than I should.
@@ -941,7 +940,7 @@ Personally I _do not_ check your statements for AI contents. First, I do not hav
 
 Second, AI-checking technology is very unreliable and inconsistent. For example, a checker might claim that 80% of an essay is AI-generated while another says it is 0%.
 
-Finally, I think it is _fine_ to use AI to help your writing, e.g., the _"proofread"_ feature in Apple's `Writing Tools` is quite useful for fixing writing issues or finding better terminologies or phrases. This can help international students who might struggle with writing English and are not familiar with the academic writing style (you see how many "thus" used in this book?). Thus, it's OK to use AI to help you but you should be the main part of the writing loop, i.e., you should be the one who writes the content and use AI to help you improve and refine it.
+Finally, I think it is _fine_ to use AI to help your writing, e.g., the _"proofread"_ feature in Apple's `Writing Tools` is quite useful for fixing writing issues or finding better terminologies or phrases. This can help international students who might struggle with writing English and are not familiar with the academic writing style (you see how many _"thus"_ used in this book?). Thus, it's OK to use AI to help you but you should be the main part of the writing loop, i.e., you should be the one who writes the content and use AI to help you improve and refine it.
 
 === Diversity Statement <sec:diversity-statement>
 
@@ -958,10 +957,10 @@ At a high level, a diversity statement is _not_ an ideological endorsement, but 
 
 - *Customize it to your application.* Think about your research or teaching: could it indirectly support or create collaboration across under-represented groups? Could you mentor students from underrepresented groups? Could you help improve access to technology or education in underserved communities? These are all valid and meaningful contributions.
 
-#commentbox[
+#tip-block[
   One common pitfall is to write about how you are from a poor family, a small town, or a developing country. These are not related to DEI and show that you do not understand the topic. I have seen people consider themselves as minority because they are Asian or international students studying in the US (have you seen how many Asian or international students are in CS programs?).
 
-  Moreover, _do not_ make up stories or exaggerate your experiences. Just show your awareness and understanding of the topic and what you did or how you plan to contribute. A good diversity statement I've read starts by the acknowledgement that the applicant is not a minority, but a white male in a STEM field (i.e., they are the majority), and that they do not have much experience in DEI, but show that they are aware of the challenges faced by minority groups and how they can contribute.
+  Moreover, _do not_ make up stories or exaggerate your experiences. Just #highlight[show your awareness and understanding] of the topic and what you did or how you plan to contribute. A good diversity statement I've read starts by the acknowledgement that the applicant is not a minority, but a white male in a STEM field (i.e., they are the majority), and that they do not have much experience in DEI, but show that they are aware of the challenges faced by minority groups and how they can contribute.
 ]
 
 #pagebreak()
@@ -992,7 +991,7 @@ Of course, if you're interested in working with Vietnamese, consider #link("http
 
 Compared to other factors such as LoRs (@chap:lor) and research experiences (@chap:research-experience), grades generally do not matter much for CS PhD admission. In fact, many CS faculty members themselves have bad grades in undergrad courses (and some were proud of that!).
 
-#commentbox[
+#note-block[
   #link("https://jeffe.cs.illinois.edu/")[Jeff Erickson] (UIUC) has an undergraduate GPA (2.4/4.0) and wrote a #link("https://jeffgerickson.substack.com/p/re-phd-with-low-gpa")[blog] about it.
 ]
 
@@ -1004,9 +1003,9 @@ That said, if you are from a well-known school (@chap:your-school), having good 
 
 As with school reputation, you and your LoR writers can mention the grading system of your university if you think that is helpful for adcom to evaluate (@sec:help-your-LOR-writers).
 
-#commentbox(who: "Thanh", [
+#note-block[*Thanh*:
   Vietnamese universities typically offer specialized programs, such as the talented engineer program at HUST, that have highly competitive entrance exams and a limited number of available slots (e.g., 30 per year). However, these programs often set higher requirements for students, including more demanding tests and assignments, resulting in lower GPAs and overall rankings. For example, 3.5 GPA students from such talented programs are typically much better than 4.0 GPA students not in those programs. Similarly, variations in GPA standards exist among different universities, with technical universities generally having lower GPAs than economic universities. These make gaining admission in the US difficult as US faculty are not familiar with these issues.
-])
+]
 
 === Bad Grades Likely Will Hurt
 
