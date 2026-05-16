@@ -127,7 +127,7 @@
 
 
 #v(1fr)
-#commentbox[
+#emph-block[
     This #link(mybookgithub)[work] © #datetime.today().year() by #me is licensed under CC BY-NC-ND 4.0. To view a copy of this license, visit #link("https://creativecommons.org/licenses/by-nc-nd/4.0/")[creativecommons.org].
 ]
 
@@ -477,13 +477,15 @@ In CS, both the reviews and interviews are often done independently (@sec:interv
 
 #figure(
 align(left)[
-#note-block[*From a prof. in Physics at an R1 university*: 
+  #text(size: 0.8em)[
+  #note-block[*From a prof. in Physics at an R1 university*: 
   We have a pretty well fleshed out grading rubric for applications that has categories like grades, research, writing ability, etc. I would say our rubric is weighted about 1/2 on academics (research, LORs, grades) and 1/2 on the idea of "grit" or "resilience" (engagement, leadership, working through obstacles).
   
   The rubric helps a lot to standardize how committee members grade, and speeds things up a bit because you know what to look for. We spent what seemed like forever on the details of the grading system (e.g., what does a a score of "3" vs a "2" in writing look like?) but now it's very helpful.
 
-  We also do roughly three rounds of selection: a first "triage" round to determine the top ~100 applications, a second round to determine about 25 people to interview, and then a third round to decide the actual offers. That also helps to speed things up a bit, since in the first round with all the applications you can move fairly quickly since you just need to sort into "good" and "bad". By the time we're getting into the details and reading everything more closely in rounds 2 and 3 most of the applications have been removed from consideration. So for this method I do maybe 5 minutes per app in round 1, but closer to 20 minutes per app in round 2, and usually round 3 is long discussions about specific people.]],
-caption:[An example of how a PhD admission committee in Physics evaluates applications. Note that this is not common in CS, where we typically do not have a grading rubric and do not discuss applications in a meeting.]
+  We also do roughly three rounds of selection: a first "triage" round to determine the top ~100 applications, a second round to determine about 25 people to interview, and then a third round to decide the actual offers. That also helps to speed things up a bit, since in the first round with all the applications you can move fairly quickly since you just need to sort into "good" and "bad". By the time we're getting into the details and reading everything more closely in rounds 2 and 3 most of the applications have been removed from consideration. So for this method I do maybe 5 minutes per app in round 1, but closer to 20 minutes per app in round 2, and usually round 3 is long discussions about specific people.]]],
+  
+  caption:[An example of how a PhD admission committee in Physics evaluates applications. Note that this is not common in CS, where we typically do not have a grading rubric and do not discuss applications in a meeting.]
 ) <fig:adcom-discuss-physics>
 
 // 
@@ -702,7 +704,7 @@ Note that most places only have deadlines for the applicant, but are very flexib
   caption: [Examples of LoR invitation emails],
   align(left)[
     #text(size: 0.8em,
-  example[
+  note-block[
 *Sample 1 (No deadline):*
 
 .. is applying for admission into the Computer Science (Ph.D.) program in the Graduate School at the University of Massachusetts Amherst and has listed you as a reference.
@@ -1058,7 +1060,7 @@ Unless your degrees are from the US (e.g., you did your undergrad or MS in the U
 
 Just as with grades (@chap:your-school) and GRE (@sec:gre), having high scores in English tests might not help, but having too low scores can be a #alert[red flag] and can result in an automatic rejection (@sec:why-rejected), e.g., below the minimum requirement.
 
-#commentbox[
+#remark-block[
   Here is the minimum requirements at GMU. 
   Being above this might not mean much, but below is a #alert[red flag].
   - *GPA:* $>= 3.0$ in your undergrad (but we also consider the rank/prestige of your school)
@@ -1378,8 +1380,10 @@ I have seen many cases where students think they have a strong profile, but they
 
 #figure(
   caption: [Comment from an NLP researcher on an applicant with multiple NeurIPS papers.],
-  align(left)[#remark-block[_"The applicant has done some interesting work, but much of what they have done has been only on dataset creation, with almost nothing on actual modeling or tackling tasks. This has merits, but it's more of an engineering feat than a research feat."_]
-    ]  
+  align(left)[
+    #text(size: 0.8em)[
+      #remark-block[_"The applicant has done some interesting work, but much of what they have done has been only on dataset creation, with almost nothing on actual modeling or tackling tasks. This has merits, but it's more of an engineering feat than a research feat."_]
+    ]]  
 ) <fig:comment-neurips>
 
 
@@ -1673,7 +1677,7 @@ You can learn about these using resources such as #link("https://roars.dev/cspic
 @fig:cspicks-compare and @fig:cspicks-gmu show the research strengths of CS programs using CSPicks. 
 You will be very surprised to learn that a school that you didn't know much about can have very strong research in your topic (and vice versa, a school you thought highly about might have no faculty working in the research field you're interested in). This is also a good way to learn about individual faculty, e.g., who works on what, and well-known CS conferences#footnote[In CS (and probably only in CS), conferences, not journals, are often the main venue to publish research findings (see #link("https://homes.cs.washington.edu/~mernst/advice/conferences-vs-journals.html")[why here]).]. 
 
-#commentbox([Most Vietnamese students, including those from top schools, *do not know* about CSRankings. Maybe applicants who worked at top research places such as VinAI would know about it.], who: "Dat")
+#note-block[*Dat*: Most Vietnamese students, including those from top schools, *do not know* about CSRankings. Maybe applicants who worked at top research places such as VinAI would know about it.]
 
 *What matters to you?* While many find CSRankings and CSPicks useful, it is still superficial as every other ranking (@chap:rankings). You should not just look at the number of papers or the number of faculty in your area. You should also consider the quality of the faculty, e.g., how many of them are tenured, well-known in their field, and have a good publication record. You can find this information from their CVs or their homepages. You can also check their #link("https://scholar.google.com")[Google Scholar] profiles to see their h-index and i10-index. See @chap:choosing-adviser and @chap:research-achievements for more details on how to find and evaluate faculty.
 
@@ -1681,7 +1685,7 @@ You should also consider other factors that matter to you. You might prefer scho
 
 If you get admission to several places, you should consider attending Open Houses (@chap:accepted) and contact profs. that you're interested in at those places and talk to them. They would be more willing to chat with you now that you have been admitted. Ask questions about #link("https://roars.dev/phd-cs-us/advising.pdf")[their advising style], how they manage their lab, and their expectations. You can even ask to contact their students.
 
-#commentbox(who: "Xiaokuan", [
+#remark-block[*Xiaokuan*: 
   Chinese students often only look at US News rankings when selecting their PhD universities (I did that, too, when I was applying for PhD positions).
   Now that I am a professor, I find it to be the least promising way.
   
@@ -1697,8 +1701,7 @@ If you get admission to several places, you should consider attending Open House
   You might regret it if you did not consider this seriously before applying.
 ])
 
-#commentbox[
-  When selecting schools, keep in mind that there are many good schools in the US and that the differences among them might not be that significant. For example, schools in the top 10 (@sec:csrankings) are likely in the same equivalent class, top 20 are in the same equivalent class, and so on. In addition, the lower ranked universities can have subfields that are very strong (NCState is top 40, but in Software Engineering it is easily top 5). This is in contrast with universities in other countries such as Vietnam, where there are large gaps among the top 5, 10, and so on.
+#remark-block[When selecting schools, keep in mind that there are many good schools in the US and that the differences among them might not be that significant. For example, schools in the top 10 (@sec:csrankings) are likely in the same equivalent class, top 20 are in the same equivalent class, and so on. In addition, the lower ranked universities can have subfields that are very strong (NCState is top 40, but in Software Engineering it is easily top 5). This is in contrast with universities in other countries such as Vietnam, where there are large gaps among the top 5, 10, and so on.
 ]
 
 
@@ -1710,7 +1713,7 @@ In addition, while @sec:selecting-ranking-schools talks about various factors (e
 
 So I will be direct and say that _if you don't have any strong preference_ (i.e., you don't know much about the schools or profs), then _if you get into a large/well-known program, you should strongly consider going there_. These programs typically have more resources, more faculty, better students (to work with), and more opportunities (e.g., internships, jobs). Note here that "large/well-known" is subjective and relative. For simplicity, I refer to the top 50 CS programs from CSRankings (@sec:csrankings) in the US as large/well-known.
 
-#commentbox[
+#note-block[
   Many PhD candidates face this similar dilemma when they apply for faculty jobs. In most cases, when everything else is equal, they would choose the top school for similar reasons: more resources (e.g., funding and support from the university) and better students (which are critical for research).
 
   The main difference is that these PhD candidates have more information (e.g., they spent 6--7 years in grad school in the US). For example, they know and prefer West Coast over East Coast because of the culture and lifestyle. They might want a location closer to their family and friends.
@@ -1721,7 +1724,7 @@ One important thing is that large programs have many faculty in diverse research
 
 That said, an advantage of being at a small program is that you can easily stand out. With just a NeurIPS or PLDI paper, you can be the star in your research group and even the entire CS program and can graduate quickly. In contrast, in a large program, those same papers might not get you much attention and you are under more pressure to publish more.
 
-#commentbox[
+#remark-block[
   There are always trade-offs, but I've found that young students---without the burdens of family or other major responsibilities---benefit most from being pushed and exposed to opportunities. As Steve Jobs said, _"Stay hungry, stay foolish."_ You should go where you'll be challenged to grow the most, and large, well-known CS programs typically provide that.
 ]
 
@@ -1838,7 +1841,7 @@ For this specific reason, CSRankings and CSPicks focus on faculty who can advise
     node((0,1), [President / Chancellor], name: <president>),
     node((0,2), [Provost], name: <provost>),
     node((0,3), [Graduate School Dean], name: <grad>),
-    node((0,4), [Dean (Engineering / A&S / Computing)], name: <dean>),
+    node((0,4), [Dean (Engineering / Art and Science / Computing)], name: <dean>),
     node((0,5), [CS Department Chair], name: <chair>, fill: yellow.lighten(50%)),
     node((-0.8,6), [Adcom / Potential Advisors], name: <adcom>, fill: yellow.lighten(50%)),
     node((0.8,6), [Faculty / Admin Staff], name: <staff>, fill: yellow.lighten(50%)),
@@ -1883,7 +1886,7 @@ Thus, Senate decisions can indirectly affect CS students by changing graduate re
 
 The Senate acts as an independent check on the administration. They can question decisions (e.g., of the Board and the President), propose resolutions, and advocate for faculty interests. Even though they are not part of the executive chain, they are the #emph[voice] of the faculty, and thus the Board and President will typically listen to them.
 
-#commentbox[
+#note-block[
   I am one of the faculty senators at GMU. Here, the Faculty Senate serves as an advisory body to administration. It does not have administrative power, but can propose resolutions and advocate for faculty interests. The Senate has various committees that touch on all aspects of university life, including research, teaching, student affairs, and even its athletic aspects.
 ]
 
@@ -1891,7 +1894,7 @@ The Senate acts as an independent check on the administration. They can question
 
 Under the top administration are the various colleges or schools that house different academic departments. Common examples include the College of Engineering, College of Arts and Sciences, and increasingly, a separate College of Computing (e.g., like at Georgia Tech).  Schools are typically under a college, e.g., the School of Computing within the College of Engineering at UNL. But in some universities, the School is a standalone unit, e.g., the School of Computer Science at CMU.
 
-#commentbox[
+#note-block[
   At GMU, CS is under School of Computing (SoC), which is under College of Engineering and Computing (CEC).   The School of Computing (SoC) has its own Dean, who reports to the Dean of CEC, who then reports to the Provost.
 
   GMU SoC consists of CS, IST, Stats.  CEC consists of SoC and other engineering departments such as Electrical and Computing Engineering (ECE), Biomedical Engineering (BME), and Mechanical Engineering (ME).  CEC is one of the largest colleges at GMU, and CS is the largest department in CEC.
@@ -1944,7 +1947,7 @@ You can also ask to do an independent study or research with a prof. This can be
 
 Ultimately, choose a prof. that fits you by communicating with them, taking their courses, meeting and asking them questions, and talking to their current students. It will take time and effort, but since you will be working with this person for 5+ years, it is important to try to find the right one.
 
-#commentbox(who: [Thanh], [
+#remark-block[*Thanh*: 
   In my opinion, having a well-suited adviser is crucial for a successful PhD and research career. One effective approach to finding a suitable professor is by working with a professor during your undergraduate studies. An exemplary instance is VinAI's residency program, where residents collaborate with professors from the US for two years before applying to PhD programs. Many VinAI residents have achieved remarkable results and gained admission to prestigious US universities. Unfortunately, VinAI's resident program is limited to AI research.
 
   In other fields, e.g. Software Engineering, Vietnamese students face challenges in reaching US professors. Do you have any tips for Vietnamese students who want to connect with US professors and work as research assistants?
@@ -1988,7 +1991,7 @@ Thus they usually do not have the resources or institutional role to advise PhD 
 
 *Do not contact teaching faculty to ask about PhD or research positions in their lab*. They're usually not involved in PhD admissions, and such emails can be annoying to them.
 
-#commentbox[
+#tip-block[
   Although teaching faculty are not typically involved in PhD admissions or research, some actively mentor undergrad students in research—especially during the summer. So if you're an undergrad (@chap:research-opportunities) and want to try research, you can contact them (usually after taking their class and doing well).
 ]
 
@@ -2049,9 +2052,9 @@ Either can be a good adviser, but they have different strengths and weaknesses. 
 
 *Tenured faculty*—associate and full professors—are likely older, more well-known, and have more experience in managing students. However, they might not push you as hard and will expect you to figure things out yourself, i.e., you need to be independent. Some tenured faculty are also no longer active in research and are more involved with administrative responsibilities or their startup companies (which means they will likely not take new students).
 
-#commentbox(who: "Hung", [
+#tip-block[*Hung*: 
   I always encourage the students I admit to talk with my students and the students of other faculty in other schools who admitted them. You will unlikely hear straight-out complaints from current students in a prof's group. But sometimes what is important are things that they (current students) don't tell you. Pay attention to their "level of excitement" being in the group.
-])
+]
 
 === Faculty from Your Country <sec:prioritizing-faculty>
 
@@ -2059,7 +2062,7 @@ Understandably, many students prefer to work with faculty from their own country
 
 However, this should not be the main reason for choosing a faculty, and you should expand your search to include faculty from other countries. Research and higher education in general encourage exploration, e.g., students often go to different grad schools than their undergrad schools, and switching fields (and even advisors) is more common than you might think. It also won't be fun to be in a lab with students with similar background all speaking the same language all the time; you will not learn as much from each other.
 
-#commentbox[
+#remark-box[
   My #link("https://roars.dev")[research group] has many Vietnamese, but I also have many non-Vietnamese students, e.g., from China, Romania, Rwanda, Pakistan, and most of my undergrads are domestic US students (@chap:domestic-students). It is more fun this way—they get to learn from each other and share different perspectives, and of course get to try exotic food and learn about their history from different countries (it amazes me how knowledgeable and enthusiastic students are about food!).
 ]
 
@@ -2083,7 +2086,7 @@ On the other hand, if you want to contact a prof. to ask about _research opportu
 
 The best way to catch the prof.'s attention is to _customize your email_ for them and _make yourself stand out_ from the crowd. First, the usual advice is to read papers of the profs. you're interested in, know what they work on, and see if you are interested in their research. Many profs. explicitly state on their website how prospective students should (or should not) contact them, e.g., using specific email subjects and additional information (e.g., read specific papers).
 
-#commentbox[
+#note-block[
   On my lab #link("https://roars.dev")[website], I have a section on _Prospective Students_ that lists how to contact me and what information to include or exclude in the email. I also have an #link("https://roars.dev/phd-cs-us/advising.pdf")[advising guide] to help students understand more about my advising style and lab culture.
 
   For example, recently, I ask that they contribute a bit to one of my projects, e.g., create a pull request to fix a bug or add a feature. This shows that they have done their homework and are genuinely interested in my work. This effectively filters out those who are not serious or not interested. I do this for both graduate and undergraduate students.
@@ -2113,18 +2116,18 @@ Second, and probably more importantly, is to make yourself stand out. It is not 
 
 Finally, profs. are busy (@sec:busy), so don't take it personally if you don't get anything from them (though I would be surprised if you did all the above correctly and still don't get a reply). See @sec:kiss-of-death-emails for common mistakes in emails and @sec:interpreting-response for interpreting replies.
 
-#commentbox(who: "Xiaokuan", [
+#remark-block[*Xiaokuan*: 
   Applying for PhD and contacting a potential PhD adviser is a classic _"why me, why you"_ problem, similar to looking for a job in a company. On a high level, you need to show that you have done your _homework_ regarding the professor and the university, and clearly explain:
   1) why do you think you are a good fit in professor A's group?
   2) why do you want to be advised by professor A, not B?
   3) why do you want to apply for university X, not Y?
   
   If you don't want to spend time doing your homework, the chance of getting a reply is close to zero.
-])
+]
 
-#commentbox(who: "Deepak", [
+#note-block[*Deepak*: 
   In my view, cold emails are not welcome by most faculty members and should be avoided. However, if one is already admitted to a program in some department, by all means, email the faculty you may be interested in working with, but do mention right at the beginning that you are already admitted to the program as well as several other universities. State specific areas (preferably specific topics—ML, robotics instead of AI).
-])
+]
 
 ==== Kiss of Death in Emails <sec:kiss-of-death-emails>
 
@@ -2178,7 +2181,7 @@ However, this is _not_ why we "ghost" you and provide no response. One main reas
 
 But there's a good chance that we would respond to well-written emails (@sec:contact) that show the student has done their homework and is genuinely interested in our work. So it is worth trying, but don't take it personally if you don't get a reply.
 
-#commentbox[
+#note-block[
   I skim through _every email_ sent by students for admission and research opportunities (many of which are from undergrads and high school students). So that means I do read your emails, and they rarely go to my spam or trash folder. However, I rarely reply to them because most of them are generic and do not show any interest in my work (@sec:kiss-of-death-emails).
 ]
 
@@ -2392,7 +2395,7 @@ Moreover, unlike PhD that has multiple reviewers for each application, an MS app
 
 Finally, MS adcom can involve teaching faculty (@sec:faculty-types), who are not necessarily doing research. This is because MS programs are often geared towards working professionals and do not focus on research.
 
-#commentbox[
+#note-block[
   GMU has a large number of MS students in CS (800 MS vs 200 PhDs). In contrast, other similar size universities often have much smaller MS CS programs (or none). Location plays an important role as GMU is close to DC with many developer professionals who want to get an MS, which are often covered by their employers. Our MS program is geared towards working professionals, e.g., all of our MS courses are offered in the evening and online.
   
   GMU CS has three separate committees for MS admission: MS in CS (the traditional one, which is the largest), MS in Software Engineering (SWE), and MS in Information System. Each committee has its own chair and members. For example, I often serve in the MS SWE adcom, which has about 4 adcom members (including the chair who also does the review).
@@ -2463,7 +2466,7 @@ Many universities have programs to encourage undergraduate research. For example
 
 You can also take honor thesis or independent study courses with a professor.  This is a good way to get research experience and also get a LoR from the professor.  You can also ask your academic adviser or other faculty members for suggestions.  Finally, you can also ask your peers who are already doing research.  Use the method described in @sec:contact to contact professors
 
-#commentbox[
+#remark-block[
     I enjoy working with undergrads and actively recruit them to my research group.
     I get undergraduates through my classes, e.g., asking students who did well in my class if they are interested in research.
     Occasionally I was introduced to students by other students or faculty (though I didnot have much success with this method).
@@ -2657,7 +2660,7 @@ Reviewers mainly get to know you and evaluate your application by reading your r
 
 *Non-expert* NDSEG reviewers hold advanced degrees in STEM fields. However, NDSEG reviewers are more general and might not be in your specific field. For example, in GRFP I mostly review applications in PL, while in NDSEG it seems that I review applications in all fields of CS and even non-CS. Thus, you should make your research plan *more accessible to a general audience*.
 
-#commentbox[
+#remark-block[
 I find it a bit difficult to evaluate NDSEG applications because I do not have the full picture.  For example, a student mentioned that they have published in the topic they proposed but redacted all information about the publication, so I have no idea where they published, what the paper is about, etc.  
 It is also difficult to evaluate the academic background of the student, e.g., some student just started grad school and so their transcript is essentially blank. It is also annoying to see CVs with so many blanked out information (they might as well should just submit a blank CV).
 
@@ -2692,7 +2695,7 @@ These are some common pitfalls I see in NDSEG applications and tips to avoid the
 
 == My experience as a reviewer
 
-#commentbox[
+#remark-block[
 I find the GRFP more familiar compared to NDSEG, which redacts most applicant information as mentioned above. I also spent more time reviewing GRFP applications---mainly because NDSEG doesn't provide much info to work with.
 
 I also find GRFP applicants have stronger _research plans_. GRFP applicants often already have good research experience, with many have top tier publications. They also tend to come from well-known institutions with "fancy" LoRs. In contrast, NDSEG applicants come from a broader range of schools and backgrounds. Interestingly, I find the _personal statements_ in NDSEG applications more appealling, largely due to their personal stories and varied experiences.
@@ -2733,7 +2736,7 @@ For example, a conference paper might present a new algorithm and some initial e
 
 Many CS areas do not have journals but some do. For example, TSE (Transactions on Software Engineering) is a top journal in SE and has exceptionally high impact-factors (higher than many top conferences)---but this is a rare exception.
 
-#commentbox[
+#note-block[
   Note that some CS areas, such as PL and SE, are beginning to publish conference papers as journals, which among other reasons allow for longer papers and to be consistent with other disciplines such as math and physics. For example, papers in well-known PL conferences including POPL and OOPSLA are now published as special issues in the PACMPL (Proceedings of the ACM on Programming Languages) journal. However, despite this publishing technicality, these are still considered conferences and has the benefits of conferences such as fast review and publication process, and in-person presentation at the conference. Most researchers would treat them exactly as conference papers.
 ]
 
@@ -2830,11 +2833,11 @@ Note that these paper awards are different than Distinguished or Best Paper awar
 Note that while typically given to senior researchers, some junior faculty have received these highly prestigious awards for their work as shown in @fig:lor4junior. 
 
 #figure(
-  align(left)[#commentbox[
+  align(left)[#text(size: 0.8em)[
+    #remark-block[
     _"It is highly noteworthy that #redact[Vu] has earned two 10-year test-of-time awards for [his] papers [, including a prestigious ICSE Most Influential Paper Award]. Senior computer scientists count themselves fortunate to
     earn even one such award at some point in their careers, but it is highly unusual and commendable that #redact[Vu]
-    has earned two of these awards already, less than ten years after completing [his] PhD ..."_]]
-,
+    has earned two of these awards already, less than ten years after completing [his] PhD ..."_]]],
   caption: [LoR written by an ACM and IEEE Fellow for a junior faculty (some texts redacted for anonymity).]
 ) <fig:lor4junior>
 
@@ -2954,7 +2957,7 @@ With lab mates and colleagues, you will often work and go to lunch together, con
 With your professors, you can call them by their first name (@sec:address), disagree with them and argue (and gain respect doing so), seek their help (even on personal matters), come to their houses for parties or gathering (e.g., my lab always come to my house for #link("https://photos.app.goo.gl/LFtbqQUuznq9eiL7A")[Thanksgiving]), and give them small thoughtful gifts that they proudly put on their desks (@sec:gifts).  
 Many people maintain lifelong relationships with their professors and colleagues, staying in touch through cards, emails, and visits, even after they no longer work together.
 
-#commentbox[
+#remark-block[
   I maintain a close relationship with my former professors and mentors. When there is a new event in my life (or theirs), I often email them or call them, e.g., when I get married, have a new baby, new job, etc. I think this does not bother them a bit; they are genuinely interested in knowing and helping solve these "dramas" in my life.
 
   I also visit my former professors when I am in their area. I meet Thang Bui (my MS adviser) at least once a year when I come back to Harrisburg to visit my parents. When Steph was in DC for a meeting, I invited her to give a research talk at GMU. I have also collaborated with them after I graduated e.g., I recently got an NSF grant with Deepak.
@@ -2977,7 +2980,7 @@ _Do not use Mr., Mrs., Ms, or Miss_. This rarely happens, but I have seen  new s
 Moreover, _do not call the prof. by their first name when you first meet them or email them for the first time_. As you become more familiar with your prof and depending on their preferences, you may transition to addressing them by their first name.
 For example, I prefer that my students and colleagues call me Vu. Some students call me _Dr. Vu_, which I find a bit amusing but am totally fine with it. And, of course, don't call the prof. "dude" or #link("https://www.reddit.com/r/Professors/comments/1fzjai1/strangest_way_a_student_addressed_me/")["bro"].
 
-#commentbox[
+#remark-block[
   *Kapur:* I was amused to read this as if I recall correctly, you never called me by my first name when you were at UNM. You always called me Prof. And, many times, I would jokingly call you back as Prof.
   
   *Vu:* Yes, for some reason I enjoy calling you "Professor" (without appending a last or first name).  The use of Prof. Vu may have foreshadowed my future in academia.
@@ -3048,9 +3051,10 @@ When researching where to do a CS PhD, many students use rankings like the U.S. 
 
 #figure(
 align(left)[
-  #commentbox(["The ranking methodology \[of US News\] is flawed, for a simple reason that any computer science researcher could tell them immediately. And we did. Influential researchers in computer science pointed out the flaws directly to editors at US News; they were ignored."
+  #text(size: 0.8em)[
+    #remark-block[_"The ranking methodology \[of US News\] is flawed, for a simple reason that any computer science researcher could tell them immediately. And we did. Influential researchers in computer science pointed out the flaws directly to editors at US News; they were ignored."_
 
-  "No ranking is perfect, but this \[CSrankings\] is defensible and open."])],
+    _"No ranking is perfect, but this \[CSrankings\] is defensible and open."_]]],
 
   caption:[#link("https://www.theexclusive.org/2017/11/cs-rankings.html")[Charles Sutton (Google Deepmind).]])<fig:csrankings-quote>
 
@@ -3178,7 +3182,7 @@ Students from top schools with strong research programs and experience might alr
 My goal is thus to level the playing field by providing info that is not readily available to less privileged students.
 #emph[I hope to encourage more students with such backgrounds to apply and succeed.]
 
-#commentbox[
+#remark-block[
   I was a first-generation PhD student and was very much on my own navigating the admission process---there was no one to ask for help, no Reddit, Facebook, or resources like this book.
 
   Fun fact: I was the first PhD student in my family and my extended family. My parents were war refugees and did not finish high school (though my dad eventually got his GED). I was the first one to go to college (Penn State), and then grad school. This helps inspire my cousins, and in total our family has 15+ Nittany Lions, several MS, 2 PhDs (me in CS and the other in Finance), and 1 MD. So, be the first and create a path for others to follow!
@@ -3232,9 +3236,7 @@ This book is designed to be read in any order. So you can start with any chapter
 == Contributing and Supporting This Book <sec:contribute>
 
 This book will _always be free_ and _open source_ at
-#align(center)[
-  #box(inset: 5pt, stroke: 0.2pt + black, fill: rgb("f0f0f0"))[#mybookgithub]
-]
+#emph-block[#mybookgithub]
 
 If you spot an error, have a different experience, or want to suggest something, open an issue on the #link(mybookgithub)[GitHub repo]. Community input helps keep the book current and useful.
 
@@ -3244,7 +3246,7 @@ You can also _link to it_ from your website or social media accounts. I was very
 
 You can also: 
 - leave a review on #link("https://www.amazon.com/dp/B0F41HP6Y2")[Amazon] and #link("mailto:tvn@roars.dev")[send me] a _"Thank you"_ note and let me know how it helped you (those messages make my day!)
-- give it a star on its #link(mybookgithub)[GitHub repo],
+- give it a star ⭐ on its #link(mybookgithub)[GitHub repo],
 - share it with friends, or
 - buy the Kindle book on #link("https://www.amazon.com/dp/B0F41HP6Y2")[Amazon]---so that I can brag about having a book on Amazon (priced at \$7.77---Unix/Linux 777 permission and the open nature of the book).
 ]
@@ -3264,7 +3266,7 @@ Finally, my upbringing in the US provides a perspective aligned with American cu
 
 This book is inherently #highlight[_subjective_ and _opinionated_] based on my experience in PhD adcoms and student advising (@sec:about-me). Such a candid approach is beneficial, because overly neutral and "feel-good" advice are often useless and unrealistic in the competitive CS PhD admissions process.
 
-Moreover, since PhD admission varies significantly across institutions, there's rarely a universal "correct" way, and too many choices often lead to confusion. Clear and direct guidance---even if opinionated---can provide practical pathways to help students like yourself to navigate the PhD admissions process better.
+Moreover, since PhD admission varies significantly across institutions, there's rarely a universal "correct" way, and too many choices often lead to confusion. Clear and direct guidance---even if opinionated---can provide practical pathways to navigate the PhD admissions process better.
 
 
 = Acknowledgement 
@@ -3277,8 +3279,6 @@ Also thanks to NSF for encouraging faculty to be creative in research and educat
 
 Finally, thanks to my wife and kids for always supporting me and putting up with my long hours of work and writing.
 
-#align(right)[
-  #box(inset: 5pt, stroke: 0.2pt + black, fill: rgb("f0f0f0"))[_Last Updated: *#datetime.today().display("[year]-[month]-[day]")*_]
-]
 
+#emph-block[#align(right)[_Last Updated: *#datetime.today().display("[year]-[month]-[day]")*_]]
 
