@@ -1870,7 +1870,7 @@ For this specific reason, CSRankings and CSPicks focus on faculty who can advise
 Adcom has direct influence over admissions decisions (@sec:adcom), but they operate within a larger university hierarchy that can impact those decisions. For example, enrollment and funding levels may lead to changes in admissions criteria or the number of students accepted (e.g., TA reduction). @fig:university-hierarchy illustrates the typical hierarchy in a US university and how different entities influence CS PhD admissions.
 
 ==== Top Governance and Executive Administration
-At the very top is the *Board of Visitors* in public schools or Board of Trustees in private schools. This body is appointed (or self-perpetuating) and has the ultimate authority over the university, approving budgets, tuition levels, new colleges and schools, and presidential hires and firings.
+At the top is the *Board of Visitors* in public schools or Board of Trustees in private schools. This body is appointed (or self-perpetuating) and has the ultimate authority over the university, approving budgets, tuition levels, new colleges and schools, and presidential hires and firings.
 
 They will not decide how many PhD students a CS department admits, but their decisions---such as approving the creation of a new College of Computing or cutting budgets---can significantly change the environment you enter.
 
@@ -1928,14 +1928,14 @@ Assuming you're not familiar with any particular profs., then _first_ search for
 _After that_, you can research about that prof. by going to their website, looking at their research achievements and awards (@chap:research-achievements), checking their research lab and group, seeing if they have recent publications, and reading their papers. Sometimes they would explicitly say they are looking for students and state their expectations. In some rare cases they even have an advising guideline like #link("https://roars.dev/phd-cs-us/advising.pdf")[this] to help students understand more about their personality and advising style.
 If you find a prof. that you like, you can reach out to them (@sec:contact).
 
-#commentbox(who: [Xiaokuan], [
+#tip-block[*Xiaokuan*:
   Whether the student's research interest matches that of the adviser is very important;
   if there is a mismatch,
   either the student or the adviser has to make compromises,
   which often leads to disagreements or conflicts.
   IMO, the adviser should be the one who _guides_ students to do research while allowing students to pursue their own interests,
   instead of _dictating_ their research.
-])
+]
 
 
 Another way is taking graduate-level courses in the topics you are interested in. Many profs teach _special topics courses_ and _research seminars_, and they might be recruiting students. Do well in the class, answer questions, talk to the prof. after classes, etc---being stand out. Many profs, including myself, prefer taking in new students this way. It gives both the prof and student more time, e.g., a whole semester, to work and evaluate the relationship before making any commitment (sounds like a marriage!).
