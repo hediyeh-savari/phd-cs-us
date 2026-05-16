@@ -61,7 +61,6 @@
   body
 }
 
-
 #let simpsons(s) = quote(
     attribution: [#text(size:0.85em)[*The Simpsons* 😱]],
     block:true
@@ -70,11 +69,11 @@
   ]
 
 #import "@preview/theorion:0.6.0": *
-// #import cosmos.simple: *
-#import cosmos.fancy: *
-// #import cosmos.rainbow: *
-// #import cosmos.clouds: *
-#show: show-theorion
+//#import cosmos.simple: *
+// #import cosmos.fancy: *
+//#import cosmos.rainbow: *
+//#import cosmos.clouds: *
+//#show: show-theorion
 
 #let cb(who: none, fill: gray, icon, msg) = block(
   width: 100%,
@@ -981,12 +980,12 @@ If you think your school has a strong reputation, mention it in your SOP with co
 
 Of course, if you're interested in working with Vietnamese, consider #link("https://roars.dev/phd-cs-us/viet-cs-profs-us")[CS programs in the US that have Vietnamese professors].
 
-#commentbox[
+#tip-block[
   Sometimes PhD adcom in the US will share a document such as #link("https://github.com/dynaroars/dynaroars.github.io/wiki/Foreign-Top-Schools")[this one], which lists the top schools in several countries. We also ask other faculty and students if we think they know about the place. For example, when I was a postdoc at UMD, members of their CS PhD adcom asked me to evaluate applicants from Vietnam. During my time at UNL and now here at GMU, I have looked at Vietnamese applications (whether they are assigned to me or not) and provided input to their reviewers, e.g., X is the top tech school in Vietnam and so it should be \emph{top} instead of \emph{unknown} foreign, which makes a huge difference.
 ]
-#commentbox(who: "Deepak", [
+#tip-block[*Deepak*:
   If an applicant is anxious about their school not being known outside their country, they can provide information about their school and department, with independent sources where such information can be verified.
-])
+]
 === Grades <sec:gpa>
 
 Compared to other factors such as LoRs (@chap:lor) and research experiences (@chap:research-experience), grades generally do not matter much for CS PhD admission. In fact, many CS faculty members themselves have bad grades in undergrad courses (and some were proud of that!).
@@ -1019,7 +1018,7 @@ Should you explain bad grades in relevant courses in your SOP? If you have just 
 
 #paragraph[Below Minimum Requirement][Many universities have a minimum GPA requirement (e.g., $> 3.0$) and will automatically reject applications with GPAs below the requirement (@sec:why-rejected). This means adcom members might not even see your application if your GPA is below the minimum requirement.]
 
-#warningbox[
+#warning-block[
   GMU College of Engineering and Computing requires a minimum GPA of 3.0/4.0 for PhD applications, and will _autoreject_ applications below this threshold.
 ]
 
@@ -1038,11 +1037,11 @@ While a few schools still require taking the #link("https://www.ets.org/gre")[GR
 Thus, if you have bad GRE scores or haven't taken the GRE, then don't waste time (re)taking it. Being optional really means optional, and not taking it will not hurt your application.
 However, if you took it and have really good scores then it might be worth it to include (and perhaps talk about) them in your application, but don't expect them to make much difference. But if your scores are bad, then you should not include them in your application, which can be a #alert[red flag].
 
-#warningbox[
+#caution-block[
   I often see students asking about GRE requirements on internet forums or Facebook groups, only to get completely incorrect answers. Some people insist that you "need" to take the GRE or be in specific high range to get a chance.
-  Some of these people are from other disciplines that do require GREs, not CS (but still want to show off their knowledge of CS). Ignore these! GREs are neither required nor valuable for CS PhD admissions today. Maybe 20 years ago (e.g., when I applied in 2007), but not today---the GRE requirement has been obsolete for a long time now, e.g., many CS faculty---especially younger ones---have never taken the GRE themselves.
+  Some of these people are from other disciplines that do require GREs, not CS (but still want to show off their knowledge of CS). Ignore these! GREs are *neither required nor valuable* for CS PhD admissions today. Maybe 20 years ago (e.g., when I applied in 2007), but not today---the GRE requirement has been obsolete for a long time now, e.g., many CS faculty---especially younger ones---have never taken the GRE themselves.
 
-  Also be careful that some people are trying to talk you into paying for (their) GRE prep or "consulting" services. Don't fall for these and waste your time. There are far more important things than the GRE that you should focus on for CS PhD admission such as your LoRs (@chap:lor) and research experiences (@chap:research-experience).
+  Also be careful that some people are trying to talk you into paying for (their) GRE prep or PhD admission "consulting" services. Don't fall for these and waste your time. There are far more important things than the GRE that you should focus on for CS PhD admission such as your LoRs (@chap:lor) and research experiences (@chap:research-experience).
 ]
 
 Note that while GRE is not important for CS PhD admission, it might be required or important for MS admission (@chap:ms). This is because MS programs are more course-based and thus care more about grades and standardized tests.
@@ -1051,8 +1050,7 @@ Note that while GRE is not important for CS PhD admission, it might be required 
 
 Unless your degrees are from the US (e.g., you did your undergrad or MS in the US), or certain countries such as #link("https://www.gmu.edu/international/english-language-requirements")[these], you will likely need to take standardized English tests. On one hand you will need to show some level of English proficiency; but on the other hand, you do not need to have very good scores in these tests (many adcom members themselves were once international students and struggled with English).
 
-#commentbox[
-  You might wonder why you need to know English well when you focus on CS topics that are mainly math and programming.  
+#tip-block[You might wonder why you need to know English well when you focus on CS topics that are mainly math and programming.  
   As you will see in your PhD study, you will need to read and write a lot, and the papers you read and write will be in English.  You will also need to communicate with your adviser, collaborators, students, and other people.
   
   Also, the university often requires a certain level of English proficiency for TA (@sec:ta), as you will need to communicate with students. 
@@ -1085,7 +1083,7 @@ Most schools allow you to upload your CV with your application. The main differe
 Use your CV to summarize your achievements, e.g., publications, awards, and teaching experiences. You can also list your personal website, projects, or contributions to open-source projects (@sec:personal-website).
 Prepare your CV in such a way that allows reviewers to quickly scan to identify major achievements.
 
-#commentbox[
+#tip-block[
   Most students do not have much to put in their CVs. Thus adcom members usually do not pay much attention to CVs (and definitely do not screen applicants based on them). So do not spend too much time on your CV, just make sure it is easy to skim through (@sec:ievaluate) and well-organized around research activities and achievements.
 ]
 
@@ -1105,7 +1103,7 @@ These are _not_ required but are increasingly common. In CS, academic websites a
 You can mention your website and projects in your CV (@sec:cv) and SOP (@chap:sop).
 Having popular projects or active contributions can help you stand out (@sec:stand-out), especially if you do not have much research experience.
 
-#commentbox[
+#tip-block[
   Many students include LinkedIn (or Facebook and X/Twitter) profiles in their applications. While these might be popular when applying for jobs, they are not very useful for PhD application evaluation. Many adcom members are not familiar with LinkedIn (and might not want to go to a page that requires us to have an account and login), so it is better to have a something like personal and project websites, which are far more common and easier to access.
 ]
 
@@ -1142,7 +1140,7 @@ Do not be surprised if you get an interview invitation at the last minute. Some 
 
 Some programs _do not do interviews_ at all (@sec:no-interview). They review applications and make decisions based on them.  If you do not get an interview, it does not mean you're out.
 
-#commentbox[
+#note-block[
     At GMU, faculty are encouraged to interview candidates. While we can interview as many as we want, we typically interview those we are interested in working with. In some cases, several faculty members interview a candidate together to evaluate if they fit well in their research group. For very strong candidates, the interview is actually to recruit them.  
     In some rare cases, the adcom chair might ask specific adcom member or faculty to interview certain candidates to get more information about them for admission.
         
@@ -1185,7 +1183,7 @@ However, no interview usually means you are less likely to get an RA (@sec:ra), 
 
 
 #figure(
-  image("files/waitlist.jpg", width: 80%),
+  image("files/waitlist.jpg", width: 90%),
   caption: [Email from the University of Rochester about sending offers and waitlist.]
 ) <fig:waitlist>
 
@@ -1246,12 +1244,12 @@ If you receive offers, congratulations!  Now you're at a different game because 
 
 #paragraph[Open House][Most schools have _Open House_ or _Visit Day_ events, which are a great resource to learn about the school, department, faculty, research, living, etc.
 
-Even if you can't come in person, you should attend virtually and meet with individual faculty. During the event, you get a chance to learn more about the program, and talk to individual faculty and current students.  Take notes of faculty who make you excited, and count those taking in new students (if they meet you, likely they are considering new students!).  Talk to students about their advisers, the dept, the area, and the funding situation.  Ask about anything you want to determine that they deserve _you_.
+Even if you can't come in person, you should attend virtually and meet with individual faculty. During the event, you get a chance to learn more about the program, and talk to individual faculty and current students.  Take notes of faculty who make you excited, and count those taking in new students (if they meet you, likely they are considering new students!).  Talk to students about their advisers, the dept, the area, and the funding situation.  Ask about anything you want to determine that they deserve _you_.]
 
-#commentbox[
+#note-block[
   GMU has _Virtual Open House (VOH)_, e.g., #link("https://cs-GMU.github.io/cs-phd-voh-s23/")[here]. We invite all admitted PhD students to the VOH through Zoom to learn about the CS program, the department, GMU, and the DC area in general. Students also get opportunities to chat with professors and current students.
 ]
-]
+
 
 #paragraph[What's next?][Make a decision, accept, reject, or defer the offers (@sec:accept-postpone-decline). Ask to meet with potential advisers (e.g., through Open House or separately) and even their students. Ask about computer equipment and software, office space, and other resources; in many cases these will be provided for free by your adviser or department (@sec:buying-equipment).
 
@@ -1273,7 +1271,7 @@ Profs. are often very busy (@sec:busy), especially during admission time when th
 
 #strong[Declining an offer] If you decide to decline or reject an offer, you can say: #emph["Thank you for the offer. However, I have decided to accept another offer.  I appreciate your time and consideration.  I hope we can work together in the future."] Professors will understand and wish you luck.  If you decide to reject an offer, do so quickly.
 
-#commentbox[
+#remark-block[
   *Accepting an offer and later rejecting it*
 
   I've seen many students, especially international, face a dilemma when they #emph[commit] to a graduate offer but then receive another—potentially better—one. Advice given in online forums is often along the line that it's okay to switch, using reasons like you haven't yet had a strong relationship with the prof. or you should prioritize your personal benefit.
@@ -1303,7 +1301,7 @@ In contrast, @fig:gta-offer shows an example of a GTA offer letter from GMU. Unl
 
 It is #emph[unlikely] that you can negotiate things like stipend, as it is standard across all students. However, you might ask your prof. for computer equipments and others (@sec:negotiate).
 
-#commentbox[
+#note-block[
   You might receive "informal" offer from the prof., e.g., through email or verbally. This is typically as the profs. are excited to have you and want to give you important details such as stipend. You can "informally" accept the offer, but you will still need to sign the official offer letter to make it official.
 ]
 
@@ -1350,7 +1348,7 @@ Rejection is a common part of the PhD application process. In fact, rejection is
 
 If you do not get admitted to any schools or don't want to go to the ones that admit you, try again next year! Grad admission can involve randomness and noise. In the meantime, you can work on improving your profile, e.g., get more research experiences, publish more papers, improve your connections for stronger LoRs, etc. See rejection reasons (@sec:why-rejected) and additional advice to improve your chance (@sec:stand-out).
 
-#commentbox[
+#remark-block[
   I got rejected from 12/13 CS PhD programs in 2007. While I believe I have strong research profile with multiple publications, I did not know much about the admission process and made many mistakes. But in any case, I did get into one school: the University of New Mexico (UNM). I decided to just take UNM instead of waiting for another year. I felt that was the best decision at that time (and in retrospect, it made me who I am today).
   
   If you didn't get into your top choices but into some other schools, you can do what I did and just take it---and do really well there. You can also try again next year or go to a different school.
@@ -1379,9 +1377,8 @@ I have seen many cases where students think they have a strong profile, but they
 
 
 #figure(
-  caption: [Comment from an NLP researcher on an applicant with multiple NeurIPS papers],
-  commentbox[
-      #emph["The applicant has done some interesting work, but much of what they have done has been only on dataset creation, with almost nothing on actual modeling or tackling tasks. This has merits, but it's more of an engineering feat than a research feat."]
+  caption: [Comment from an NLP researcher on an applicant with multiple NeurIPS papers.],
+  align(left)[#remark-block[_"The applicant has done some interesting work, but much of what they have done has been only on dataset creation, with almost nothing on actual modeling or tackling tasks. This has merits, but it's more of an engineering feat than a research feat."_]
     ]  
 ) <fig:comment-neurips>
 
@@ -1425,7 +1422,7 @@ You're missing out on some serious CS PhD programs: UCSD, UW, UMD, Michigan, Pur
 
 #strong[You don't need to be top.] Top schools will open doors to more opportunities. In countries like Vietnam, there are few top schools, and if you don't get into them, you are doomed (or so you think). But that is not the case in the US. There are many good schools, and it is not a binary choice between top X or nothing. In fact, equity is emphasized in the US and "smaller" schools are often given more resources and attention to help students succeed.  
 
-#commentbox[
+#tip-block[
   Don't aim for just the moon and the stars; also try the sky, clouds, or even just the trees. You might find much happiness and success there, which can then catapult you places beyond the moon and the stars. This is the American dream, which is strongly embodied in its higher education system.
 ]
 
@@ -1442,7 +1439,7 @@ Given the high number of quality applicants and a limited number of spots, in ad
 
 There are other things you might not think are important but can make you stand out. For example, if you have a strong background in a non-CS field that can be integrated with CS, e.g., you have a degree or background in _dance_ or _music_ and want to integrate them with CS, do talk about it. If you have reported numerous bugs in Knuth's The Art of Computer Programming and received several reward checks from Knuth himself, mention them---this shows exceptional attention to detail and a good understanding of algorithms.
 
-#commentbox[
+#remark-block[
   In #link("https://matt.might.net/articles/how-to-apply-and-get-in-to-graduate-school-in-science-mathematics-engineering-or-computer-science/")[his post], Matt Might was initially unsure about an application. However, upon learning that the applicant had led a *100km hike in the Himalayas*, he decided to accept the applicant. This is a good example of _standing out_, and I would also advocate for that student as this shows they have the persistence and determination required for research.
 ]
 
@@ -1491,7 +1488,7 @@ A few notes about stipends:
 - Like most income in the US, you *must pay tax* on your stipend.
 - Private universities may offer higher stipends, but sometimes have extra or hidden fees (such as per-credit fees or activity fees).
 
-#commentbox[
+#note-block[
   At GMU, both TA and RA positions provide similar benefits: tuition waiver and health insurance. The college and department set the standard 9-month stipend for graduate assistants. TA positions (paid by the department) usually pay this standard rate, while RA positions (paid by professors) may pay more, especially for advanced students (e.g., those close to graduation, or ABD#footnote[ABD: all but dissertation.]).
   
   In GMU's CS department, TA/RA stipends are among the highest: CS is part of the College of Engineering and Computing (CEC), which already pays more than other colleges, and CS itself pays above the CEC baseline. It's also common for CS faculty to pay their RAs more than the standard TA rate.
@@ -1513,7 +1510,7 @@ TA assignments are decided by the department, so you usually do not need to worr
 
 
 
-#commentbox[
+#note-block[
   At GMU CS, admitted PhD students have 4 years of GTA guaranteed, and also receive a stipend for the first summer (@sec:summer-funding).
 ]
 
@@ -1530,7 +1527,7 @@ As an RA, you generally do not need to teach, so you can focus on research. Depe
 It is important to note that RA support is *never guaranteed* because it depends on the professor's funding situation. So you should also pay attention to TA availability, since TA is a good backup plan and usually comes with benefits similar to RA. In other words, you should check whether TA support is readily available for PhD students in the program.
 
 
-#commentbox[
+#note-block[
   If you got recruited and offered an RA by a prof., you will likely get admitted. For example, if a prof., even if not in PhD adcom, wants to fund you, adcom will likely respect that decision and admit you.
 ]
 
@@ -1549,7 +1546,7 @@ Fellowships are typically competitive and generous, giving pretty much all benef
 If you're aiming for external fellowships---whether from the U.S. government (like NSF GRFP or DoD NDSEG, see @chap:fellowships) or from major tech companies like Google, Microsoft, and Facebook---you’ll need to apply on your own.
 Such major fellowships typically require a clear and good research plan (the GRFP also requires broader impacts discussion). So it might be a good idea to wait until your second year to have research experience and even publication before applying. Remember, you're competing with the top PhD students at top universities worldwide.
 
-#commentbox[
+#note-block[
   PhD applicants at GMU are automatically eligible for a *Presidential Fellowship*.  It is at least as good as GTA but the most important thing is that as a fellowship it is truly free money (i.e., you do not depend on any prof. or TA).  Adcom members nominate applicants for this fellowship and the whole committee will decide.
 ]
 
@@ -1581,7 +1578,7 @@ If your funding source is TA (@sec:ta), you typically do not get paid over the s
 For RA (@sec:ra), your summer funding depends on your prof. and their funding.
 When writing grant proposals, profs. typically include summer funding for their students (@sec:ra-cost). However, funding is never guaranteed, e.g., the prof might not get the grant.
 
-#commentbox[
+#remark-block[
 For my students, I have been fortunate to have funding to support them over the summer. Over the 3-summer months, I typically pay them 1/3 of their 9-month stipend. I prioritize summer funding for my students because GMU has good TA resources so they never have to worry about funding during the AY.
 ]
 
