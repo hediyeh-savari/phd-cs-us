@@ -1,7 +1,7 @@
 # Collections of my writing related to Academia and PhD in Computer Science in the U.S.
 
 
-- **PhD Demystify: A book for Prospective PhD Students in Computer Science**
+- [**PhD Demystify: A book for Prospective PhD Students in Computer Science**](https://roars.dev/phd-cs-us/demystify.pdf)
 
   <!-- <p align="center">
     <a href="https://github.com/dynaroars/phd-cs-us/blob/main/demystify.pdf" title="CS PhD Demystify book">
