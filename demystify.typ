@@ -803,7 +803,7 @@ However, some cases might raise some eyebrows, e.g., if you only aim at very top
 
 
 #note-block[
-For Vietnamese students, it's worth mentioning the #link("https://vef2.org/")[VEF2.0 program], which has helped many students gain admission to top CS PhD programs in the US. VEF2.0 invites US faculty members from leading institutions to conduct rigorous interviews with VEF students and subsequently provide reference letters on their behalf. Despite the limited interaction between the interviewer and the interviewee (primarily just the interview), these reference letters are very effective and have helped many students get into good PhD programs.
+For Vietnamese students, it's worth mentioning the #link("https://vef2.org/")[VEF2.0 program], which has helped many students gain admission to good CS PhD programs in the US. VEF2.0 invites US faculty members from leading institutions to conduct rigorous interviews with VEF students and subsequently provide reference letters on their behalf. Despite the limited interaction between the interviewer and the interviewee (primarily just the interview), these reference letters are very effective and have helped many students get into good PhD programs.
 ]
 
 
