@@ -796,15 +796,15 @@ Finally, I usually submit a letter for a student in *batch*—submit to all univ
 
 ==== Will It Be Annoying If You Ask For Many Letters? <sec:many-letters>
 
-#tip-block[As mentioned in @sec:my-lor-perspective I personally do not mind writing many letters for my students *once I have agreed to write for them* (@sec:lor-writing). Profs. in general are used to writing many letters, especially during the application season. Moreover, once a letter is written, it can be reused for multiple applications, so it does not take much time to submit the letter to different universities (no more than 5 minutes per submission).
+As mentioned in @sec:my-lor-perspective I personally do not mind writing many letters for my students *once I have agreed to write for them* (@sec:lor-writing). Profs. in general are used to writing many letters, especially during the application season. Moreover, once a letter is written, it can be reused for multiple applications, so it does not take much time to submit the letter to different universities (no more than 5 minutes per submission).
 
-However, some cases might raise some eyebrows, e.g., if you only aim at very top schools that the writers believe are not a good fit for you, or if you apply to too many schools (30+?) then the writers might question your seriousness or your ability to get into these schools. In short, don't overdo it, but applying to 10–15 schools is perfectly fine and common.
+However, some cases might raise some eyebrows, e.g., if you only aim at very top schools that the writers believe are not a good fit for you, or if you apply to too many schools (30+?) then the writers might question your seriousness or your ability to get into these schools. In short, don't overdo it, but applying to 10--15 schools is perfectly fine and common.
+
+
+
+#note-block[
+For Vietnamese students, it's worth mentioning the #link("https://vef2.org/")[VEF2.0 program], which has helped many students gain admission to top CS PhD programs in the US. VEF2.0 invites US faculty members from leading institutions to conduct rigorous interviews with VEF students and subsequently provide reference letters on their behalf. Despite the limited interaction between the interviewer and the interviewee (primarily just the interview), these reference letters are very effective and have helped many students get into good PhD programs.
 ]
-
-
-// % \begin{commentbox}
-// % For Vietnamese students, it's worth mentioning the \href{https://vef2.org/}{VEF2.0 program}, which has helped many students gain admission to top CS PhD programs in the US. VEF2.0 invites US faculty members from leading institutions to conduct rigorous interviews with VEF students and subsequently provide reference letters on their behalf. Despite the limited interaction between the interviewer and the interviewee (primarily just the interview), these reference letters are generally effective and have helped many students get into good PhD programs.
-// % \end{commentbox}
 
 
 #pagebreak()
