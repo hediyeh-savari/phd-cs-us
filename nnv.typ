@@ -17,6 +17,7 @@
 
 
 #set heading(numbering: "1.1.1.1.1")
+//#set math.equation(numbering: none)
 #set math.equation(numbering: "(1)")
 #set page(numbering: "1", number-align: center)
 #set par(justify: true)
@@ -1512,16 +1513,19 @@ Global robustness is a very strong definition, and in practice, almost impossibl
 
 
 
-#exercise[
-Suppose that an network classifies an input image $x$ as digit 7.
+#problem[Robustness: Image Classification][
+Suppose that a network classifies an input image $x$ as digit 7.
 We want to ensure that if the image is slightly perturbed (e.g., brightness changed by a small amount $epsilon$),
 the network still outputs 7.
 
-// *Solution.*
-// $
-// forall x', quad ||x - x'|| <= epsilon => f(x') = f(x) = 7
-// $
+#solution[
+$
+forall x'.  ||x - x'|| <= epsilon => f(x') = f(x) = 7
+$
 ]
+]
+
+
 
 
 
@@ -1565,7 +1569,8 @@ then we should not accelerate.
 
 *Consistency* requires that a NN behaves consistently when given semantically equivalent or related inputs.
 
-*Example (Logical Consistency in LLMs).* Consider queries $q_1$, $q_2$, and $q_3$ about a person's age:
+#example[Logical Consistency in LLMs][
+Consider queries $q_1$, $q_2$, and $q_3$ about a person's age:
 
 $q_1: "How old is person X?"$
 
@@ -1574,7 +1579,7 @@ $q_2: "What year was X born if they are currently Y years old?"$
 $q_3: "Will X be Z years old in 2025?"$
 
 Thus, if the LLM outputs age $Y$ for $q_1$, then $q_2$ should output `current_year - Y`, and the answer to $q_3$ should be logically consistent with the stated age. This prevents scenarios where an LLM claims someone is 30 years old but was born in 1985 when the current year is 2024.
-
+]
 
 // % \paragraph{Example: Object Position Consistency.}
 // % Consider a neural network tracking the position of objects in a video frame. It should not report that an object is on the left in one frame and then immediately claim it is on the right in the next frame.
@@ -4291,7 +4296,7 @@ to find a counterexample.
 
 === Set Notation of Activation Patterns <sec:pattern-notation>
 
-We can use set notation to represent activation patterns more concisely by
+We can use _set notation_ to represent activation patterns more concisely by
 listing only the neurons whose activation statuses are fixed. For example, the
 activation pattern
 $
