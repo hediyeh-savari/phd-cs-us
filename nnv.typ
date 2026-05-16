@@ -1590,33 +1590,30 @@ Thus, if the LLM outputs age $Y$ for $q_1$, then $q_2$ should output `current_ye
 
 *Monotonicity* ensures that the NN maintains a consistent ordering relationship between inputs and outputs: an increase in certain input features always leads to a non-decreasing output value. This property is important in applications where domain knowledge dictates logical ordering constraints, such as fairness-aware systems, medical diagnosis, and scientific applications where physical laws impose natural ordering relationships.
 
-*Example (Fairness).*
+#example[Fairness][
 
 A network modelling the probability of admission to a university should be monotonically non-decreasing with respect to GPA and test scores, regardless of gender. Formally, for applicants with profiles $(p, s, g)$ and $(p', s', g')$ where $p, p'$ are GPAs, $s, s'$ are test scores, and $g, g'$ are gender indicators:
 
 $
-p ≤ p' ∧ s = s' ∧ g ≠ g' ⇒ f(p, s, g) ≤ f(p', s', g')
-$
-
-$
-s ≤ s' ∧ p = p' ∧ g ≠ g' ⇒ f(p, s, g) ≤ f(p, s', g')
+p <= p' ∧ s = s' ∧ g ≠ g' ⇒ f(p, s, g) <= f(p', s', g') \
+s <= s' ∧ p = p' ∧ g ≠ g' ⇒ f(p, s, g) <= f(p, s', g')
 $
 
 where $f$ is the neural network computing admission probability. Additionally, for fairness:
 
 $
-f(p, s, "male") = f(p, s, "female") " for all " p, s
+f(p, s, "male") = f(p, s, "female")  #h(1.5em) forall p, s
 $
 
 ensuring that applicants with identical academic qualifications receive the same treatment regardless of gender.
-
+]
 
 == Counterexamples <sec:properties-counterexamples>
 
 A _counterexample_ (*cex*) is a witness that falsifies the correctness property. Given the property defined in @sec:properties-def, a counterexample is an input $x$ that satisfies the precondition $P$ but produces an output $f(x)$ that violates the postcondition $Q$.
 
 
-*Example (Counterexample to Robustness Property).*
+#example[Counterexample to Robustness Property][
 
 For local robustness property (@sec:properties-robustness):
 
@@ -1625,11 +1622,11 @@ f(x) ≠ f(x') ∧ ‖x - x'‖ ≤ ε ⇒ x' " is a counterexample."
 $
 
 The goal of NNV (@sec:nnv-problem) is to either prove that a property holds---no cex exist---or find a cex that violates the property.
+]
 
 
 
-
-*Example (Counterexample: Monotonicity in Admission).*
+#example[Counterexample: Monotonicity in Admission)][
 
 A network predicts admission probability to a university. Inputs: GPA $p$ and test score $s$.
 
@@ -1651,7 +1648,7 @@ Counterexample:
 $
 3.0 ≤ 3.5 ∧ 1500 = 1500 " but " f(3.0,1500)=0.8 > f(3.5,1500)=0.6
 $
-
+]
 
 //  == The VNN-LIB  Specification Language <sec:vnnlib}
 
@@ -2196,14 +2193,13 @@ $
       }
     })
   ]
-)
+) 
 // \begin{problem <problem:mydnntwo}
 #figure(
   mydnn2(sc: 100%),
   caption: [A simple network with 2 inputs, 2 hidden ReLU neurons, and 2 outputs.],
 ) <fig:mydnntwo>
 
-#exercise[test]
 // Consider the neural network in~\autoref{fig:mydnntwo}.  Do the following:
 // \begin{enumerate}
 //     \item Write the formula $\alpha$ representing the network.
