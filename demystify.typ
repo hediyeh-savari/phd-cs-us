@@ -69,6 +69,13 @@
       #text(style:"italic", size:0.85em)[#s]
   ]
 
+#import "@preview/theorion:0.6.0": *
+// #import cosmos.simple: *
+#import cosmos.fancy: *
+// #import cosmos.rainbow: *
+// #import cosmos.clouds: *
+#show: show-theorion
+
 #let cb(who: none, fill: gray, icon, msg) = block(
   width: 100%,
   fill: fill,
@@ -82,7 +89,6 @@
   ]
   #text(size: 0.9em)[#msg]
 ]
-
 
 #let commentbox(who: none, msg) = cb(who: who, fill: gray.lighten(80%), [💬],msg)
 #let keybox(msg) = cb(fill: yellow.lighten(90%), [🔑],msg)
@@ -188,8 +194,7 @@ Moreover, you often receive additional benefits such as summer pay (@sec:summer-
 
 Full funding for CS PhD students is the norm in the US, and I'd go as far as to say that if you are not admitted with full funding, you might want to not accept the offer. The reason is that CS is in high demand and you're actively contributing to improving the reputation of the university and more generally advancing CS.
 
-#warningbox([While full funding is standard for CS PhD, always double-check the details of your offer (@sec:offer-letters) before accepting, especially for programs outside STEM or at smaller/private universities.]
-)
+#caution-block[While full funding is standard for CS PhD, always double-check the details of your offer (@sec:offer-letters) before accepting, especially for programs outside STEM or at smaller/private universities.]
 ]
 // % \paragraph{Discrimination is not tolerated} Not only is discrimination illegal, diversity and inclusion are highly valued in US universities. Many universities take great pride in their diverse student body and faculty.
 
@@ -202,12 +207,12 @@ Full funding for CS PhD students is the norm in the US, and I'd go as far as to 
 A PhD in CS is a #highlight[research degree]. Unlike undergraduate or even Master's programs (@chap:ms), which focus on breadth of knowledge through coursework, a PhD is about depth and pushing the boundary of a specific area within a CS fields, such as software verification within the field of Programming Languages or Formal Methods (@sec:fields-and-areas). You will become an expert in your area of research and contribute something new to the field that has never been done before. 
 
 
-#commentbox([This #link("https://matt.might.net/articles/phd-school-in-pictures/")[series of pictures] from #link("https://matt.might.net")[Matt Might] illustrates what a PhD means.])
+#note-block[This #link("https://matt.might.net/articles/phd-school-in-pictures/")[series of pictures] from #link("https://matt.might.net")[Matt Might] illustrates what a PhD means.]
 
 Career-wise, a CS PhD prepares you for jobs that require deep technical expertise and the ability to do independent research. Many graduates become professors or academic researchers while others pursue positions in industry research labs, advanced engineering teams, or technical leadership positions. The degree also opens doors to national labs, government agencies, and startups, where the ability to solve unknown and complex problems is necessary.
 
-#commentbox([A PhD is not just a degree, it is a *journey* that transforms you into a researcher. You will learn how to think critically, solve problems, deal with adversity, and work independently. You will also learn how to write and "sell" your work, collaborate with others, and effectively communicate your ideas. In the end, you will have a deep understanding of your chosen field and become an expert in your area of research. In fact, you will know about your research topic more than *anyone* else in the world, including, in many cases, your adviser! This is a scary thought, but it is also exciting and rewarding.]
-)
+#tip-block[A PhD is not just a degree, it is a *journey* that transforms you into a researcher. You will learn how to think critically, solve problems, deal with adversity, and work independently. You will also learn how to write and "sell" your work, collaborate with others, and effectively communicate your ideas. In the end, you will have a deep understanding of your chosen field and become an expert in your area of research. In fact, you will know about your research topic more than *anyone* else in the world, including, in many cases, your adviser! This is a scary thought, but it is also exciting and rewarding.]
+
 
 === CS Fields and Areas <sec:fields-and-areas>
 
@@ -215,12 +220,12 @@ CS is a broad academic discipline with many specialized areas of research. Under
 
 #paragraph[Disciplines][At the highest level, academic _disciplines_ are broad domains of scholarly study, such as CS, Mathematics, Physics, Biology, Economics, Law, Social Sciences, and the Humanities. Universities typically have entire departments and degree programs centered on these disciplines (e.g., a Dept. of Computer Science or of Economics).]
 
-#commentbox([_STEM fields_ collectively refer to the disciplines in the domains of:
+#note-block[_STEM fields_ collectively refer to the disciplines in the domains of:
 - *Science:* Physics, Chemistry, Biology, Geology
 - *Technology:* Computer Science, Cybersecurity, Data Science, Information Technology
 - *Engineering:* Electrical, Mechanical, Civil, Chemical, and Bioengineering
 - *Mathematics:* Pure and Applied Math, Statistics, Operations Research
-])
+]
 
 #paragraph[Fields][Within a discipline such as CS, we have _fields_---major branches that often correspond to faculty groups, conference communities, and sometimes even degree tracks. Common fields in CS include:
 
@@ -254,7 +259,7 @@ Some areas are growing so large that they are becoming fields in their own right
 
 At the finest granularity, a research _project_ or dissertation focuses on a specific question within a topic (or cross-topics and even cross-areas). For example: "How can symbolic execution be applied to generate high-coverage test cases for deep neural networks?"
 
-#commentbox([
+#note-block([
 For example, my own #link("https://roars.dev")[research profile] can be structured as:
 - *Discipline:* Computer Science
 - *Fields:* Software Engineering and Formal Methods
@@ -279,7 +284,7 @@ The first two years are typically spent taking coursework (somewhat equivalent t
 
 Within these 5--7 years, CS PhD students sometimes take a "leave of absence" for 1--2 semesters or for a summer to do internships at companies and research labs.
 
-#commentbox[
+#remark-block[
   I started my PhD with an MS, and it took me 7 years (Fall '07--Fall '14). I spent half a year doing an internship at the #link("https://www.nrl.navy.mil")[Naval Research Lab]. My PhD did take a bit longer than usual, but it allowed me to explore new research areas and topics.
 ]
 
@@ -587,7 +592,7 @@ When the writers do not know much about the applicants (e.g., just taking some c
 _This does not mean the ref writer is not good or does not care about you_, but they just do not know you well enough to write a strong letter.
 So it might be a good idea to directly ask if the prof. is willing to write a _strong_ letter for you. If not, then you should ask someone else.  For example, if a student I don't know well asks me to write a letter for them, I will explicitly tell them I don't know them that well to write much about them, and such a short, generic, and weak letter will not help their case (@sec:lor-writing).
 
-#warningbox([
+#caution-block([
   Several international students mentioned that some professors are unwilling to write letters or write weak ones because they do not want (good) students to go abroad or only go to places where they want the students to go to. If you are in this situation, you should find someone else to write for you.
 
   Sometimes students would go to great lengths just to get letters from "top" professors in their school---like department head or dean (@sec:admin-letters). But as mentioned, if these professors do not know you, their letters would likely be generic and carry little value (sometimes #alert[red flag]. Moreover, a top professor at your university might not be well-known to US faculty (see more details in @sec:admin-letters and @chap:your-school). So save the trouble and get letters from _any_ professors/supervisors who know you well and can write a good letter about _your_ research ability (@sec:famous-lor). It's better to have a good personalized letter about your own research ability from someone who is less well-known than a generic/weak letter from a well-known person.
