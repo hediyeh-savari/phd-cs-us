@@ -835,6 +835,17 @@ Publications are #highlight[never required] for PhD application. *However*, give
 If you have published papers in other fields, e.g., physics, math, or even CS but not in your research interest, you should still talk about them in your SOP (@chap:sop) and upload them as writing samples (@sec:writing-sample). Also, have your LoR writers (@sec:help-your-LOR-writers) talk about them in their letters.
 While not as strong as CS publications, they still show your research ability and experience, which is what adcom members care about.]
 
+
+#tip-block[*Thanh*:
+  Due to academic culture, professors in Vietnam usually aim for (international) journals instead of conferences. Could you give some tips on how to know whether a journal is good (CSRankings, unfortunately, only considers conferences)?
+
+  *Vu*: One way is looking at where well-known researchers publish. For example, if you are interested in a field X, you can use CSRankings (@sec:csrankings) or CSPicks (sec:cspicks) to look at active faculty in X, and then look at their websites to see where they publish at.
+]
+
+#tip-block[
+  Many international students mention Scopus Q1, which consists of various journals from IEEE, Elsevier, and many other publishers. I don't know/recognize many of the journals listed in Scopus Q1. This might be something to be mindful of, as *CS* faculty might not be too familiar with Scopus or journals listed there, so devote some part in your statement to discuss the significance of your papers.
+]
+
 === What If You Don't Have Any Publications?
 
 Many students do not have the opportunity to publish papers. Thus, other writings, even those under submission or even rejected, would still help. 
@@ -846,13 +857,8 @@ Note that local conferences and non-English journals or conferences do not carry
   GMU and many other universities allow you to upload your published papers and other writing samples (@sec:writing-sample). In many cases, even if the papers were not published at top places, we can still determine their quality by simply skimming over the paper.
 ]
 
-#commentbox[
-  Many international students mention Scopus Q1, which consists of various journals from IEEE, Elsevier, and many other publishers. I don't know/recognize many of the journals listed in Scopus Q1. This might be something to be mindful of, as *CS* faculty might not be too familiar with Scopus or journals listed there, so devote some part in your statement to discuss the significance of your papers.
-]
 
-#commentbox(who: "Thanh", [
-  Due to academic culture, professors in Vietnam usually aim for (international) journals instead of conferences. Could you give some tips on how to know whether a journal is good (CSRankings, unfortunately, only considers conferences)?
-])
+
 
 === Work Experience
 
