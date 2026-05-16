@@ -842,9 +842,9 @@ Be sure to upload these with your application (@sec:writing-sample) and mention 
 
 Note that local conferences and non-English journals or conferences do not carry as much weight since their quality is often unknown. However, if you have published in such places, you should still upload them, mention them in your statement, and explain why they are good.
 
-#commentbox(who: "Craig", [
+#tip-block[*Craig*:
   GMU and many other universities allow you to upload your published papers and other writing samples (@sec:writing-sample). In many cases, even if the papers were not published at top places, we can still determine their quality by simply skimming over the paper.
-])
+]
 
 #commentbox[
   Many international students mention Scopus Q1, which consists of various journals from IEEE, Elsevier, and many other publishers. I don't know/recognize many of the journals listed in Scopus Q1. This might be something to be mindful of, as *CS* faculty might not be too familiar with Scopus or journals listed there, so devote some part in your statement to discuss the significance of your papers.
