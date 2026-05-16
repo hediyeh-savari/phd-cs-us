@@ -2073,7 +2073,7 @@ Form the satisfiability formula (@eq-nnv2) that we need to check.
 ] <ex-prop-neg2>
 
 #problem(title: [Validity Formulation])[
-Show that $alpha =>   phi_("in") => phi_("out"))$ (@eq-nnv) is valid if and only if
+Show that the formula $alpha =>   phi_("in") => phi_("out")$ in @eq-nnv is valid if and only if
 $alpha and phi_("in") and not phi_("out")$ (@eq-nnv2) is unsatisfiable.
 
 First, do this by hand (on paper) by explicitly writing out the logical
@@ -2085,14 +2085,8 @@ that the negation of the first formula is equivalent to the second formula.
 We represent the network in @fig:dnn-b as a formula $alpha$:
 
 $
-  x_3 = "relu"(-0.5 x_1 + 0.5 x_2 + 1.0) and
-$
-
-$
-  x_4 = "relu"(0.5 x_1 - 0.5 x_2 - 1.0) and
-$
-
-$
+  x_3 = "relu"(-0.5 x_1 + 0.5 x_2 + 1.0) and \
+  x_4 = "relu"(0.5 x_1 - 0.5 x_2 - 1.0) and \
   x_5 = -x_3 + x_4 - 1.0
 $
 
@@ -2100,10 +2094,7 @@ and the property $x_5 > 0$ for any inputs
 $x_1 in [-1, 1], x_2 in [-2, 2]$ as:
 
 $
-  phi_("in") = (-1 <= x_1 <= 1) and (-2 <= x_2 <= 2)
-$
-
-$
+  phi_("in") = (-1 <= x_1 <= 1) and (-2 <= x_2 <= 2)\
   phi_("out") = (x_5 > 0)
 $
 
