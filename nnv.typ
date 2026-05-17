@@ -145,7 +145,7 @@
 
 
 #v(1fr)
-#commentbox[
+#emph-block[
     This #link(mybookgithub)[work] © #datetime.today().year() by #me and Hai Duong is licensed under CC BY-NC-ND 4.0. To view a copy of this license, visit #link("https://creativecommons.org/licenses/by-nc-nd/4.0/")[creativecommons.org].
 ]
 
@@ -9267,10 +9267,10 @@ Remember to:
 
 In addition to optimization, LP can be used for _feasibility checking_ of linear constraints: are there any values for the variables that satisfy all the constraints? This is achieved by running the LP solver with a constant objective (e.g., "minimize 0"), in which case it tries to find _any_ point in the feasible region or show that _none_ exists. This makes LP solving useful for property checking and verification.
 
-The main difference between LP feasibility and SMT satisfiability checking is the type of constraints they handle. SMT can handle richer logics involving booleans, integers, nonlinear arithmetic, and other theories, while LP feasibility is limited to linear equalities/inequalities over real numbers. For NNV problems that involve only linear real arithmetic, LP feasibility is sufficient and often more efficient.
+The main difference between LP feasibility and SMT satisfiability checking is the type of constraints they handle. SMT supports richer logics involving booleans, integers, nonlinear arithmetic, and other theories, while LP feasibility is limited to linear equalities/inequalities over real numbers. For NNV problems that involve only linear real arithmetic, LP feasibility is sufficient and often more efficient.
 
 #example[
-  For the constraints $x + y <= 4$, $x >= 0$, $y >= 0$, running an LP solver
+  For the constraints ${x + y <= 4,x >= 0,y >= 0}$, running an LP solver
   with objective $min 0$ will return a point (e.g., $x = 0, y = 0$) within the
   feasible region.
 ]
