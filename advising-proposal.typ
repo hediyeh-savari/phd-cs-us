@@ -45,3 +45,31 @@ Thus, your job is not to convince the small group of people who work in your top
 
 Most of the stated issues appear to be commonly faced problems in gen AI (e.g., only part of the media is AI generated,  updating existing detectors to handle new data etc)  and there should be many work on these; yet the proposal only briefly cite some work but didn't discuss why they fail or how the proposed work is different
 While  the zero-shot gen ai video detection section in Aim 1.1 explicitly mentioned videos are quite different than images a and proposed work specifically for video, most other aims/tasks treat them as equivalent and essentially apply the same techniques to both images and videos, which is not convincing.  
+
+
+
+= Misconceptions and Common Mistakes
+
+
+
+== Proposal from top universities or well-known researchers have a higher chance of being funded
+
+In my experience, this was *never* the case.   I do not at all pay attention to whether a proposal comes from a top university or a well-known researcher.  This is also the general feeling I have from other co-panelists. 
+
+That said, well-known researchers or those at top universities often have more experience in writing proposals (e.g., they have successful mentors who can guide them through the process) and have higher credentials (e.g., published multiple papers at good places on the proposed topics) compared to less experienced researchers or those at non-top universities. These factors---well-crafted proposals and strong prior/prelim results---can give them an advantage. 
+
+So it might appear that proposals from top universities or well-known researchers have a higher chance of being funded, but this is actually due to their proposals are simply stronger, not because of their reputation or institutional status.
+
+
+
+
+== Theoretical work has a disadvantage in proposals
+
+While at surface it might appear that theoretical work is at a disadvantage in proposals, in my experience this is often not because people prefer applied work over theoretical work.
+
+This is mainly because theoreticians or mathematicians often write proposals that are dense in technical contents (wall of formulae and theorems) and often fail to clearly communicate the motivation, problem, and proposed solution.  So when the reviewers do not understand the technical details or cannot follow the logical flow of the argument, they may dismiss the proposal without fully appreciating the theoretical contributions. 
+
+It is also true that more applied work tends to have more immediate practical and broader impacts (e.g., can be argued to solve real-world problems or have applications in industry or society). This makes it easier for reviewers to see these broader impacts and understand why the work is valuable. That said, in my experience, the main reason is stated above: it's the writing and communication of the proposal that is the issue, not the nature of the work   itself.
+
+In short, I and many other reviewers, who do not focus on theoretical work, have advocated for theoretical foundations in many panels and absolutely have no bias against theoretical work.
+In fact, after reading so many applied proposals that claim to address real-world problems or have immediate applications, I actually want to see more theoretical work. So the key is to ensure that the proposal clearly communicates the motivation, problem, and proposed solution in a way that is accessible to reviewers who may not be experts in the specific theoretical domain. 
