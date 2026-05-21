@@ -1,9 +1,8 @@
 # Vietnamese Professors In Computer Science in the US
 
 - **Goal**: for students interested in pursuing a Ph.D. in Computer
-  Science (CS) under the guidance of a Vietnamese professor. Here's a
-  [book](https://github.com/dynaroars/phd-cs-us)
-  that can help _demystify the PhD Admission process in the US_.
+  Science (CS) under the guidance of a Vietnamese professor. For additional information for CS PhD admission in the US, take a look at the 
+  ["demystify"](https://github.com/dynaroars/phd-cs-us) book.
 
 - **Inclusion Criteria**: Vietnamese; full-time faculty at a US university with a CS PhD program; tenure line
   (tenured/tenure-track); and can **solely advise Ph.D. students in CS**. Similar to the [inclusion
@@ -23,6 +22,7 @@
 | [AnHai Doan](https://scholar.google.com/citations?user=Qa_TAw4AAAAJ)        | University of Wisconsin-Madison            | Madison, Wisconsin         | Data Management                                                    |
 | [Tri Dao](https://scholar.google.com/citations?user=NQRw0bQAAAAJ)           | Princeton                                  | Princeton, New Jersey      | AI/ML                                                              |
 | [Thang N. Dinh](https://scholar.google.com/citations?user=M5W9tuUAAAAJ)     | Virginia Commonwealth University           | Richmond, Virginia         | Data Mining; Security                                              |
+| [Nghia Hoang](https://scholar.google.com.sg/citations?user=E-kZZeQAAAAJ&hl=en) | Washington State University           | Pullman, Washington          | AI                                                                 |
 | [Viet Tung Hoang](https://scholar.google.com/citations?user=ggcCMuIAAAAJ)   | Florida State University                   | Tallahassee, Florida       | Cryptography                                                       |
 | [Thang Hoang](https://scholar.google.com/citations?user=VCjqqogAAAAJ)       | Virginia Tech                              | Blacksburg, Virginia       | Security                                                           |
 | [Dung T. Huynh](https://scholar.google.com/citations?user=Phk4kUwAAAAJ)     | University of Texas at Dallas              | Dallas, Texas              | Wireless Networks                                                  |
@@ -45,7 +45,7 @@
 | [Nam Nguyen](https://scholar.google.com/citations?user=aJcBWkgAAAAJ)        | Towson University                          | Towson, Maryland           | Data Mining; Security                                              |
 | [Tam Nguyen](https://scholar.google.com/citations?user=qIaGn7YAAAAJ)        | University of Dayton                       | Dayton, Ohio               | Computer Vision; ML                                                |
 | [Thanh Hong Nguyen](https://scholar.google.com/citations?user=6fpZnQIAAAAJ) | University of Oregon                       | Eugene, Oregon             | AI                                                                 |
-| [ThanhVu Nguyen](https://scholar.google.com/citations?user=TLcVQ-MAAAAJ)    | George Mason University                    | Fairfax, Virginia          | Software Engineering; Programming Languages; Formal Methods; |
+| [ThanhVu Nguyen](https://scholar.google.com/citations?user=TLcVQ-MAAAAJ)    | George Mason University                    | Fairfax, Virginia          | Software Engineering; Programming Languages; Formal Methods        |
 | [Thien Huu Nguyen](https://scholar.google.com/citations?user=Da2FhegAAAAJ)  | University of Oregon                       | Eugene, Oregon             | ML; NLP                                                            |
 | [Thinh Nguyen](https://scholar.google.com/citations?user=9flSED8AAAAJ)      | Oregon State University                    | Corvallis, Oregon          | Systems                                                            |
 | [Thu Duc Nguyen](https://scholar.google.com/citations?user=sm9xJEkAAAAJ)    | Rutgers University                         | New Brunswick, New Jersey  | Computer Architecture                                              |
