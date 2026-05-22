@@ -1,17 +1,15 @@
 # Vietnamese Professors In Computer Science in the US
 
 - **Goal**: for students interested in pursuing a Ph.D. in Computer
-  Science (CS) under the guidance of a Vietnamese professor. For additional information for CS PhD admission in the US, take a look at the 
-  ["demystify"](https://github.com/dynaroars/phd-cs-us) book.
+  Science (CS) under the guidance of a Vietnamese professor. For additional info for CS PhD admission in the US, take a look at the 
+  ["demystify"](https://github.com/dynaroars/phd-cs-us) book and [CSPicks](https://roars.dev/cspicks) for non-Vietnamese profs.
 
 - **Inclusion Criteria**: Vietnamese; full-time faculty at a US university with a CS PhD program; tenure line
-  (tenured/tenure-track); and can **solely advise Ph.D. students in CS**. Similar to the [inclusion
+  (tenured/tenure-track); and can _solely advise Ph.D. students in CS_ (can officially advise and graduate PhD students in the CS department). Similar to the [inclusion
   criteria](https://csrankings.org/faq.html) at
   [CSRankings.org](https://csrankings.org).
 
-  - **Note**: Name and university data are mostly from CSRankings.org, which already performs a preliminary eligibility check.
-
-- To **modify** details, please create a [Github
+- To add/remove/modify details, please [email](mailto:root@roars.dev) or create a [Github
   issue](https://github.com/dynaroars/phd-cs-us/issues).
 
 | Name                                                                        | University                                 | Location                   | Research Areas                                                     |

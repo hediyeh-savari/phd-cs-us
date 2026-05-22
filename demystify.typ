@@ -3282,3 +3282,6 @@ Finally, thanks to my wife and kids for always supporting me and putting up with
 
 #emph-block[#align(right)[_Last Updated: *#datetime.today().display("[year]-[month]-[day]")*_]]
 
+
+
+//write quick def on postdoc;  adjuct has limited affiliation; write about TA policies (e.g., 1 GRA 1 GTA etc)
