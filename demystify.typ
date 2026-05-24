@@ -103,6 +103,46 @@
 #show math.equation: set math.equation(supplement: [Eq.])
 #show heading: set heading(supplement: [Sec.])
 
+#import "@preview/glossarium:0.5.10": make-glossary, register-glossary, print-glossary, gls, glspl
+#show: make-glossary
+
+#let entry-list = (
+  (key: "April15", short: "April 15", long: "April 15", description: "The deadline for most US universities to accept or decline offers of admission. Set by CGS; students are typically not required to accept offers before this date."),
+  (key: "cohort", short: "cohort", long: "cohort", description: "A group of students who start a program at the same time and often take classes together."),
+  (key: "ivy", short: "Ivy League", long: "Ivy League", description: "A group of eight private universities in the US known for academic reputation and prestige."),
+  (key: "adcom-members", short: "adcom members", long: "admission committee members", description: "Faculty members who review applications and make admission decisions."),
+  (key: "adcom-chair", short: "adcom chair", long: "admission committee chair", description: "The faculty member who leads the admission committee and oversees process fairness."),
+  (key: "adviser", short: "adviser", long: "adviser/supervisor", description: "A faculty member who guides and mentors a PhD student throughout research."),
+  (key: "r1", short: "R1", long: "Research 1 university", description: "Universities with the highest level of research activity."),
+  (key: "stipend", short: "stipend", long: "stipend", description: "A fixed regular payment to students as part of their funding package."),
+  (key: "rolling-admission", short: "rolling admission", long: "rolling admission", description: "Applications are reviewed as they arrive, with decisions released continuously."),
+  (key: "toptier", short: "top-tier venues", long: "top-tier conferences and journals", description: "Highly prestigious publication venues in a CS field."),
+  (key: "diversity-statement", short: "diversity statement", long: "diversity statement", description: "An application document describing contributions to diversity and inclusion."),
+  (key: "fields", short: "fields", long: "fields or research areas", description: "Specific areas of study within a discipline, such as ML, CV, or Software Engineering."),
+  (key: "international-domestic", short: "international vs domestic", long: "international vs. domestic students", description: "International students usually need a visa; domestic students do not."),
+  (key: "in-out-state", short: "in-state vs out-of-state", long: "in-state vs. out-of-state tuition", description: "Tuition categories based on state residency; often important for MS applicants."),
+  (key: "lab", short: "research lab", long: "research lab", description: "A group of faculty and students working in a shared research area."),
+  (key: "major", short: "major", long: "major", description: "A student's primary field of study, usually in undergraduate education."),
+  (key: "open-house", short: "Open House", long: "Open House", description: "An event where admitted students visit or attend virtually to learn about the program."),
+  (key: "AY", short: "AY", long: "Academic Year", description: "The yearly academic calendar (typically Fall and Spring; sometimes Summer/quarter systems)."),
+  (key: "Q1", short: "Q1", long: "Scopus Q1 Journals", description: "A journal quartile label; less commonly used by US CS faculty than venue-specific names."),
+  (key: "ra", short: "RA", long: "Research Assistantship", description: "A major type of PhD funding through research work with a professor."),
+  (key: "ta", short: "TA", long: "Teaching Assistantship", description: "A major type of PhD funding through teaching support duties."),
+  (key: "GRE", short: "GRE", long: "Graduate Record Examination", description: "A standardized admissions test; often optional for CS PhD programs."),
+  (key: "REU", short: "REU", long: "Research Experience for Undergraduates", description: "An NSF-funded program offering undergraduate research opportunities."),
+  (key: "SOP", short: "SOP", long: "Statement of Purpose", description: "An application essay describing your research interests, background, and goals."),
+  (key: "adcom", short: "adcom", long: "admission committee", description: "The group of faculty members who review applications and make admission decisions."),
+  (key: "phd", short: "PhD", long: "doctor of philosophy", description: "A research doctorate requiring original contributions and a dissertation."),
+  (key: "ABD", short: "ABD", long: "All But Dissertation", description: "A PhD candidate who completed coursework/exams and is finishing the dissertation."),
+  (key: "PI", short: "PI", long: "Principal Investigator", description: "Lead researcher on a grant or project."),
+  (key: "STEM", short: "STEM", long: "Science Technology Engineering and Mathematics", description: "A collective term for science, technology, engineering, and mathematics fields."),
+  (key: "NSF", short: "NSF", long: "National Science Foundation", description: "A US agency that funds research and education in science and engineering."),
+  (key: "LOR", short: "LoR", long: "Letter of Recommendation", description: "A letter evaluating your qualifications and potential for graduate study."),
+)
+
+#register-glossary(entry-list)
+
+
 
 // Title Page
 #align(center)[
@@ -144,13 +184,15 @@ Having been involved in PhD admission committees for many years, I've observed t
 // % though \emph{very} top schools could be very selective, e.g., see the \href{https://da-data.blogspot.com/2015/03/reflecting-on-cs-graduate-admissions.html}{admission process} at CMU
 So I want to share some details about the admission process and advice for those who are interested in applying for a *PhD in CS in the US*.
 Originally, this book was written for international students, but has been expanded to generalize and include specific tips for *US domestic students* (@chap:domestic-students), e.g., applying for the NSF GRFP (@sec:nsf-grfp) and DoD NDSEG (@sec:dod-ndseg) fellowships.
-Moreover, while this book aims at students interested in CS, it might be relevant to students from various STEM disciplines (@sec:fields-and-areas).
-Furthermore, although many examples are specifics for schools that I and other contributors of this book know about, the information should be generalizable to other good R1 institutions in the US.
+Moreover, while this book focuses on CS, it might be relevant to students from various STEM disciplines (@sec:fields-and-areas).
+Furthermore, although many examples are specifics for schools that I and other contributors of this book know about, the information should apply to other good #gls("r1", first: false) institutions in the US.
 
-This book can help *US faculty and admission committee* gain a better understanding of international students and their cultural differences (@chap:cultural).  By recognizing and leveraging these differences, CS programs in the US can attract larger and more competitive application pools from international students.
+This book can help *US faculty* and #gls("adcom") gain a better understanding of international students and their cultural differences (@chap:cultural).  By recognizing and leveraging these differences, CS programs in the US can attract larger and more competitive application pools from international students.
 
 I hope this book will help you understand the CS PhD admission process in the US and make informed decisions. 
 Additional information about the book can be found in @chap:about.
+
+
 
 #pagebreak()
 // \mainmatter
@@ -906,7 +948,7 @@ Finally, have your SOP reviewed by your LoR writers (@sec:help-your-LOR-writers)
 #tip-block[
   I often read LoRs and SOP first (@sec:ievaluate). If I am persuaded by them, I would skim over other factors and advocate for admission (unless I see red flags elsewhere). However, if I am not convinced, then I will likely recommend rejection (unless I see something stand out in other parts).
 
-  Do careful research on professors; don't mention *emeritus* or adjunct faculty (@sec:faculty-types). Also, be careful not to send statements to the wrong schools or provide wrong information (e.g., talking about school X but mentioning working with professors at school Y; and do not talk about George Washington when applying to George Mason). I have seen such statements more times than I should.
+  Do careful research on professors; don't mention _emeritus_ or _adjunct_ faculty (@sec:faculty-types). Also, be careful not to send statements to the wrong schools or provide wrong information (e.g., talking about school X but mentioning working with professors at school Y; and do not talk about George Washington when applying to George Mason). I have seen such statements more times than I should.
 ]
 
 === Kiss of Death in SOP <sec:kiss-of-death-sop>
@@ -1197,13 +1239,13 @@ Not much you can do other than to be patient and wait. Do not send emails asking
 
 Some universities have rolling-admission. Others have a specific date when they send out the first round of acceptance letters.]
 
-#paragraph[Response Deadlines][ Accepted students are usually given a deadline to make decisions on their offers, often around _April 15_ in the US. After this date, CS programs can gauge how many slots remain unfilled.]
+#paragraph[Response Deadlines][ Accepted students are usually given a deadline to make decisions on their offers, often around #gls("April15", first: false). After this date, CS programs can gauge how many slots remain unfilled.]
 
 #paragraph[Waitlist][Most CS programs have a limited number of slots for PhD students, and thus put many good students on a waitlist.  If accepted students decline the offer, then offers are sent to students on the waitlist. So if you see people getting accepted, that does not mean you are out yet. 
 
 Also, do not feel embarrassed or discouraged if you are on the waitlist. Many students are on the waitlist, and there is a good chance that you will get an offer later.]
 
-#paragraph[Rejection Letters][Schools typically start sending out rejection letters to remaining applicants _after they have finalized their admissions decisions_. Thus, rejection letters are often sent out late (e.g., after April 15th or even much later). 
+#paragraph[Rejection Letters][Schools typically start sending out rejection letters to remaining applicants _after they have finalized their admissions decisions_. Thus, rejection letters are often sent out late (e.g., after #gls("April15") or even much later). 
 
 Not much you can do here. You can try to contact the school to ask about your status, but they might not reply, they might say they are still reviewing applications, or give you inaccurate information (e.g., you will hear in two weeks). In short, you just have to be patient and wait, and also beware that some schools do not send out rejection letters at all.]
 
@@ -1242,7 +1284,7 @@ Not much you can do here. You can try to contact the school to ask about your st
 By around mid-March you should hear back from most PhD programs that want to admit you. 
 But you likely won't hear back from schools that do not want to admit you (@sec:late-rejection), e.g., you're on their wait list.
 
-If you receive offers, congratulations!  Now you're at a different game because the schools that have admitted you will try to get you to accept them!  Look carefully at the offer letters (@sec:offer-letters) for the terms and conditions of the offers.  Other important factors to consider include the reputation of schools (@chap:choosing-school) and professors (@chap:choosing-adviser), and funding availability (@chap:funding). You will have to make your decision (@sec:accept-postpone-decline) by a certain deadline, e.g., April 15.
+If you receive offers, congratulations!  Now you're at a different game because the schools that have admitted you will try to get you to accept them!  Look carefully at the offer letters (@sec:offer-letters) for the terms and conditions of the offers.  Other important factors to consider include the reputation of schools (@chap:choosing-school) and professors (@chap:choosing-adviser), and funding availability (@chap:funding). You will have to make your decision (@sec:accept-postpone-decline) by a certain deadline, e.g., #gls("April15").
 
 #paragraph[Open House][Most schools have _Open House_ or _Visit Day_ events, which are a great resource to learn about the school, department, faculty, research, living, etc.
 
@@ -1681,7 +1723,7 @@ You will be very surprised to learn that a school that you didn't know much abou
 
 *What matters to you?* While many find CSRankings and CSPicks useful, it is still superficial as every other ranking (@chap:rankings). You should not just look at the number of papers or the number of faculty in your area. You should also consider the quality of the faculty, e.g., how many of them are tenured, well-known in their field, and have a good publication record. You can find this information from their CVs or their homepages. You can also check their #link("https://scholar.google.com")[Google Scholar] profiles to see their h-index and i10-index. See @chap:choosing-adviser and @chap:research-achievements for more details on how to find and evaluate faculty.
 
-You should also consider other factors that matter to you. You might prefer schools that give stable funding (@chap:funding) and good stipend (@sec:ra-cost). You might like areas with a large community from your country---Northern Virginia, for example, is very diverse and has a large population of Vietnamese. You might want to be near high-tech industrial hubs like Seattle or Silicon Valley, or places with plenty of outdoor activities such as hiking and skiing. Weather can also be important---*"PhD can be depressing, so would you rather be depressed in California or New York?"*. Finally, don't forget about things like cost of living---certain areas in California and New York are way more expensive than in Nebraska. Safety is another factor; however, while some universities might be in a high-crime city, the campus itself is very safe---like John Hopkins in Baltimore.
+You should also consider other factors that matter to you. You might prefer schools that give stable funding (@chap:funding) and good stipend (@sec:ra-cost). You might like areas with a large community from your country---Northern Virginia, for example, is very diverse and has a large population of Vietnamese. You might want to be near high-tech industrial hubs like Seattle or Silicon Valley, or places with plenty of outdoor activities such as hiking and skiing. Weather can also be important---_"PhD can be depressing, so would you rather be depressed in California or New York?"_. Finally, don't forget about things like cost of living---certain areas in California and New York are way more expensive than in Nebraska. Safety is another factor; however, while some universities might be in a high-crime city, the campus itself is very safe---like John Hopkins in Baltimore.
 
 If you get admission to several places, you should consider attending Open Houses (@chap:accepted) and contact profs. that you're interested in at those places and talk to them. They would be more willing to chat with you now that you have been admitted. Ask questions about #link("https://roars.dev/phd-cs-us/advising.pdf")[their advising style], how they manage their lab, and their expectations. You can even ask to contact their students.
 
@@ -1699,7 +1741,7 @@ If you get admission to several places, you should consider attending Open House
   you need to also consider your daily life there since you will (probably) stay for at least five years.
   
   You might regret it if you did not consider this seriously before applying.
-])
+]
 
 #remark-block[When selecting schools, keep in mind that there are many good schools in the US and that the differences among them might not be that significant. For example, schools in the top 10 (@sec:csrankings) are likely in the same equivalent class, top 20 are in the same equivalent class, and so on. In addition, the lower ranked universities can have subfields that are very strong (NCState is top 40, but in Software Engineering it is easily top 5). This is in contrast with universities in other countries such as Vietnam, where there are large gaps among the top 5, 10, and so on.
 ]
@@ -1742,7 +1784,7 @@ That said, an advantage of being at a small program is that you can easily stand
 
 You *do not* need to do a PhD in CS to do research in CS. For example, in addition to a traditional CS department, GMU has IST and Cybersecurity departments, both of which have faculty with PhD in CS and work on CS topics (e.g., AI, Security, Robotics). So you still can do CS research and publish in CS-focused venues even if you're not in a traditional CS program. It is common to see faculty with PhD in CS in a non-CS department as well as faculty with non-CS PhD in a CS department.
 
-However, if your goal is a PhD in CS, then you need to be in the CS dept. *and* advised by a CS faculty. A non-CS faculty can serve in the PhD dissertation committee (common) or *co-advise* (less common, but possible), but your main PhD adviser will likely be a tenure-line faculty in CS (@sec:faculty-types).
+However, if your goal is a PhD in CS, then you need to be in the CS dept. _and_ advised by a CS faculty. A non-CS faculty can serve in the PhD dissertation committee (common) or _co-advise_ (less common, but possible) PhD students in CS, but your main PhD adviser will likely be a tenure-line faculty in CS (@sec:faculty-types).
 For example, a prof. in Stats or Math might be able to serve as a co-adviser, but not as a sole adviser of a student in a CS PhD program.
 If in doubt, check with the CS dept. for their requirements.
 
@@ -1953,7 +1995,7 @@ Ultimately, choose a prof. that fits you by communicating with them, taking thei
   In other fields, e.g. Software Engineering, Vietnamese students face challenges in reaching US professors. Do you have any tips for Vietnamese students who want to connect with US professors and work as research assistants?
 
   *Vu:* @sec:contact shows how to contact a professor for research opportunities. Many will say no (or do not reply) as they do not have the bandwidth to take on random students, but some may say yes if they see a potential fit.
-])
+]
 
 // % \subsection*{Additional Resources}
 // % \begin{itemize}
@@ -1964,9 +2006,7 @@ Ultimately, choose a prof. that fits you by communicating with them, taking thei
 
 #highlight[Not every faculty] can serve as your official PhD adviser. Understanding the different types of faculty roles such as  tenured, tenure-track, teaching, research, adjunct, and emeritus professors will help you avoid common mistakes, e.g.,  contacting the wrong person (@sec:contact) for research opportunities or listing in your SOP (@chap:sop) someone who can't actually supervise PhD students.
 
-=== Faculty Types
-
-At most research-intensive (R1) universities, faculty generally fall into two categories:
+*Faculty Types*: At most R1 universities, faculty generally fall into two categories:
 + Tenure-line faculty (tenured or tenure-track)
 + Non-tenure-line faculty (e.g., teaching, adjunct, or research faculty)
 
@@ -2001,12 +2041,14 @@ Some universities have research faculty or research scientists (e.g., postdocs a
 
 ==== Adjunct and Emeritus Faculty
 
-These faculty members are typically not involved in research or PhD advising. _Emeritus faculty_ are retired professors and are usually no longer active in research or advising. _Adjunct faculty_ are usually part-time instructors who may have a full-time job outside academia#footnote[Fun fact: Mike Pence, who was the former Vice President of the United States, is an adjunct faculty member at George Mason. ]. They are usually only affiliated with the university only for their period of teaching contract (e.g., one semester) and thus do not have the institutional role to advise PhD students.
+These faculty members are typically not involved in research or PhD advising. _Emeritus faculty_ are retired professors and are usually no longer active in research or advising. Note that emeritus _does not_ necessarily mean they are old or inactive, just that they have retired from their official faculty position.
+
+_Adjunct faculty_ are typically part-time instructors who may have a full-time job outside academia#footnote[Fun fact: Mike Pence, who was the former Vice President of the United States, is an adjunct faculty member at George Mason.]. They are usually only affiliated with the university only for their period of teaching contract (e.g., one semester) and thus do not have the institutional role to advise PhD students.
 
 Because of their limited roles, adjunct and emeritus faculty do not serve as PhD advisers. So, do not contact them to ask about research openings.
 
 #warning-block[
-  This #link("https://www.reddit.com/r/gradadmissions/comments/1iyt2k8/_/")[Reddit thread] shares an example of a student being rejected after listing emeritus professors in their SOP. This was a sign that the applicant did not do their homework and thus was not a good fit for the program. This is a common mistake, especially for international students who are not familiar with the US system.
+  This #link("https://www.reddit.com/r/gradadmissions/comments/1iyt2k8/_/")[Reddit thread] shares an example of a student being rejected after listing emeritus professors in their SOP. This is a common mistake, especially for international students who are not familiar with the US system.
 ]
 
 ==== Faculty from Other Departments
@@ -3280,8 +3322,13 @@ Also thanks to NSF for encouraging faculty to be creative in research and educat
 Finally, thanks to my wife and kids for always supporting me and putting up with my long hours of work and writing.
 
 
+
+
+//write quick def on postdoc; adjuct has limited affiliation; write about TA policies (e.g., 1 GRA 1 GTA etc)
+
+#pagebreak()
+= Glossary <chap:glossary>
+#print-glossary(entry-list)
+
+#pagebreak()
 #emph-block[#align(right)[_Last Updated: *#datetime.today().display("[year]-[month]-[day]")*_]]
-
-
-
-//write quick def on postdoc;  adjuct has limited affiliation; write about TA policies (e.g., 1 GRA 1 GTA etc)
