@@ -3328,7 +3328,7 @@ Finally, thanks to my wife and kids for always supporting me and putting up with
 
 #pagebreak()
 = Glossary <chap:glossary>
-#print-glossary(entry-list)
+#print-glossary(entry-list, show-all: true)
 
 #pagebreak()
 #emph-block[#align(right)[_Last Updated: *#datetime.today().display("[year]-[month]-[day]")*_]]
