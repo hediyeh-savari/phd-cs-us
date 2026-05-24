@@ -2016,7 +2016,7 @@ The key distinction is in their responsibilities—whether they are expected to 
 
 ==== Tenure-Line Faculty
 
-These faculty members are expected to perform research, publish in top venues, get funding (@sec:ra), and mentor PhD students. They typically teach fewer courses—often just one per semester—and are the *main group eligible to serve as primary PhD advisers*. Tenure-line faculty consist of two subcategories:
+_Tenure-line_ faculty members are expected to perform research, publish in top venues, get funding (@sec:ra), and mentor PhD students. They typically teach fewer courses—often just one per semester—and are the *main group eligible to serve as primary PhD advisers*. Tenure-line faculty consist of two subcategories:
 
 - *Tenure-track faculty* are on the path to tenure and are often actively recruiting students.
 - *Tenured faculty* have already earned permanent status and might be less active in building their research group.
@@ -2027,7 +2027,7 @@ These faculty members are expected to perform research, publish in top venues, g
 
 ==== Teaching Faculty
 
-Teaching faculty (also called instructional faculty, professors of practice, or lecturers) primarily focus on teaching. They often teach three to four courses per semester and are not typically expected to conduct research, publish papers, or apply for funding.
+_Teaching faculty_ (also called instructional faculty, professors of practice, or lecturers) primarily focus on teaching. They often teach three to four courses per semester and are _not_ expected to conduct research, publish papers, or apply for funding.
 
 Thus they usually do not have the resources or institutional role to advise PhD students, especially as the main adviser. In some universities, they may co-advise a PhD student alongside a tenure-line faculty member, but this is rare and varies by institution.
 
@@ -2039,10 +2039,10 @@ Thus they usually do not have the resources or institutional role to advise PhD 
 
 ==== Postdoc, Research Faculty and Scientists
 
-Postdocs are temporary research positions for recent PhD graduates, typically lasting 1-3 years in CS. They are typically not considered faculty and do not have the institutional role to advise PhD students. 
+_Postdocs_ are temporary research positions for recent PhD graduates, typically lasting 1-3 years in CS. They are typically not considered faculty and do not have the institutional role to advise PhD students. 
 Think of them as "super grad students" who also have an advisor/mentor (the PI) and are expected to do research and publish papers just like grad students.
 
-Some universities have research faculty or research scientists. Like postdocs, they focus almost entirely on research and often have little or no teaching duties. These faculty members can apply for grants, publish regularly, and, in some _rare_ cases, are allowed to serve as advisers for PhD students. In many cases, they are required to co-advise with a tenure-line faculty member.
+Some universities have _research faculty_ or _research scientists_. Like postdocs, they focus almost entirely on research and often have little or no teaching duties. These faculty members can apply for grants (which in many cases directly pay their salaries) and, in some _rare_ cases, can serve as advisers for PhD students. In such cases, they are often required to co-advise with a tenure-line faculty member.
 
 ==== Adjunct and Emeritus Faculty
 
