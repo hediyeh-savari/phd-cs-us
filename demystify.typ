@@ -2730,17 +2730,17 @@ These are some common pitfalls I see in NDSEG applications and tips to avoid the
 
 == Common Tips for Both Fellowships
 
-- *Use LaTeX to write your research plan and essays* (@chap:writing-latex).  This is the standard in CS and engineering and will make your application look  professional.  Moreover, do not use the default Word settings, e.g., left justification, as it is not standard in CS and engineering and difficult to read.  
+- *Use LaTeX to write your research plan and essays* (@chap:writing-latex).  This is the standard in CS and the general engineering and science disciplines,and will make your application look  professional.  Moreover, do not use the default Word settings, e.g., left justification, as it is not standard in CS and engineering and difficult to read.  
 
 - *Ask your LoR writers and adviser to look at your writing/essays* (this is very important so I keep repeating it).  You are new to the field and research writing, and your ideas might not be accurate or have already been explored. It's better that they tell you now than for you to find out later from reviewers.
 
-- *Do not BS*. I said this before (@sec:grfp-pitfalls) and I say it again. Many times students have some achievements (e.g., publications) and thought they know a lot and start BSing. Surprisingly I find this being more common with students from top schools with strong LoRs and good research experience.
+- *Do not BS*. I said this before (@sec:grfp-pitfalls) and I say it again here. Many times students have some achievements (e.g., publications) and thought they know a lot and start BSing. This will greatly annoy reviewers, especially experts in the field. Surprisingly I find this being more common with students from top schools with strong LoRs and good research experience.
 
 
 == My experience as a reviewer
 
 #remark-block[
-I find the GRFP more familiar compared to NDSEG, which redacts most applicant information as mentioned above. I also spent more time reviewing GRFP applications---mainly because NDSEG doesn't provide much info to work with.
+I enjoy reviewing the GRFP applications more than NDSEG, which redacts most applicant information as mentioned above. I can review GRFP applications more carefully because NDSEG doesn't provide much info to work with.
 
 I also find GRFP applicants have stronger _research plans_. GRFP applicants often already have good research experience, with many have top tier publications. They also tend to come from well-known institutions with "fancy" LoRs. In contrast, NDSEG applicants come from a broader range of schools and backgrounds. Interestingly, I find the _personal statements_ in NDSEG applications more appealling, largely due to their personal stories and varied experiences.
 
