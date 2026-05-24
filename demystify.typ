@@ -139,7 +139,7 @@
   (key: "NSF", short: "NSF", long: "National Science Foundation", description: "A US agency that funds research and education in science and engineering."),
   (key: "GRFP", long: "NSF Graduate Research Fellowship Program", description: "A competitive fellowship program for PhD students funded by the National Science Foundation."),
   (key: "NDSEG", long: "DoD National Defense Science and Engineering Graduate Fellowship", description: "A competitive fellowship program for PhD students funded by the US. Department of Defense."),
-  (key: "LOR", short: "LoR", long: "Letter of Recommendation", description: "A letter evaluating your qualifications and potential for graduate study."),
+  (key: "LOR", long: "Letter of Recommendation", description: "A letter evaluating your qualifications and potential for graduate study."),
 )
 
 #register-glossary(entry-list)
@@ -340,7 +340,7 @@ Even if your undergraduate degree is not in CS or a related discipline, you stil
 
 A main concern for a non-CS or non-STEM student is whether you have sufficient technical background from core CS courses. So you need to demonstrate that you have this knowledge through your coursework, projects, or research.
 
-For example, if you have taken a class on algorithms, even an online course from Coursera, you can talk about it in your SOP. If you have done a project that requires knowledge of operating systems or have a professional certification (e.g., A+) through work, you can talk about it. If you have done research that requires knowledge of discrete math, you can talk about it. You can also ask your LoR writers to discuss your technical background.
+For example, if you have taken a class on algorithms, even an online course from Coursera, you can talk about it in your SOP. If you have done a project that requires knowledge of operating systems or have a professional certification (e.g., A+) through work, you can talk about it. If you have done research that requires knowledge of discrete math, you can talk about it. You can also ask your #gls("LOR") writers to discuss your technical background.
 
 #paragraph[Core CS topics][Common CS knowledge that you should know includes:
 
@@ -595,7 +595,7 @@ The committee will look at various factors, but the most important ones are lett
   #image("files/c6.png", width: 60%)
 ]
 
-Letters of Recommendation (LoRs) are crucial for PhD because (i) they paint a picture of your research ability and potential from someone who has worked closely with you, and (ii) adcom trust the opinions of your LoR writers, who are usually faculty members or researchers who have the expertise and reputation to evaluate your research ability (@sec:lor-writers). Most PhD programs require at least _two_ LORs. 
+Letters of Recommendation (LoRs) are crucial for PhD because (i) they paint a picture of your research ability and potential from someone who has worked closely with you, and (ii) adcom trust the opinions of your #gls("LOR") writers, who are usually faculty members or researchers who have the expertise and reputation to evaluate your research ability (@sec:lor-writers). Most PhD programs require at least _two_ LORs. 
 
 #note-block[
 When reviewing applications (@sec:ievaluate), I usually read LoRs first, then the SOP (@chap:sop). If these make a strong impression, I skim through the rest of the materials; if not, I pay closer attention to other aspects before making a decision.
@@ -606,7 +606,7 @@ When reviewing applications (@sec:ievaluate), I usually read LoRs first, then th
 // \sectioninfo{LoR writers should be someone who (i) can talk in depth about your research experience and potential and (ii) have the credibility to evaluate your research ability.}
 
 
-Choose your LoR writers carefully, as they can make or break your application. LoR writers are often your research advisers and professors who have mentored you in research. A *strong* LoR is from people who meet the following two criteria:
+Choose your #gls("LOR") writers carefully, as they can make or break your application. LoR writers are often your research advisers and professors who have mentored you in research. A *strong* LoR is from people who meet the following two criteria:
 
 - *Personal knowledge:* They should know you well and have worked closely with you through research projects (much preferred) or coursework. This allows them to write a letter that is *personalized* and *specific* to you.
 - *Credibility:* They should have sufficient expertise and reputation to effectively assess and vouch for your research capabilities and potential. Ideally, your recommender should be an active researcher with a PhD or extensive research experience.
@@ -1016,7 +1016,7 @@ At a high level, a diversity statement is _not_ an ideological endorsement, but 
 
 === School
 Graduating from top universities _that adcom members recognize_ helps quite a bit.
-The emphasis here is #highlight[_"that adcom members recognize"_]. The reason is similar to LoRs from well-known researchers (@sec:famous-lor): if we know your school has a good reputation, we can trust its education and grades. Otherwise, we are uncertain about the quality of the school and the grades you received.
+The emphasis here is #highlight[_"that adcom members recognize"_]. The reason is similar to #glspl("LOR") from well-known researchers (@sec:famous-lor): if we know your school has a good reputation, we can trust its education and grades. Otherwise, we are uncertain about the quality of the school and the grades you received.
 
 For example, if you are an international student and your school is well-known, then it is considered _"top foreign"_, which is a plus. However, if we do not know much about schools in your country, then we are uncertain about the quality of your school and likely treat your school as _"unknown foreign"_, which can be a minus point.
 
@@ -2500,7 +2500,7 @@ Because of the differences between MS and PhD programs (@sec:phd-vs-ms), you sho
   image("files/phd100404s.png", width: 70%),
 )
 Research experience gives you opportunities to try out research, determine what research area you're interested in, publish papers (@chap:research-experience), connect with researchers, and get strong LoRs (@chap:lor).
-A successful research experience also greatly strengthens a PhD application (@chap:research-experience). This section provides some guidance on how to gain research experience as an undergraduate (or MS) student or student at a smaller college where research opportunities might be limited.
+A successful research experience also greatly strengthens a PhD application (@chap:research-experience). This section provides some guidance on how to gain research experience as an undergraduate (or MS) student or as a student at a smaller college where research opportunities might be limited.
 
 == Locally 
 
@@ -2509,15 +2509,16 @@ If you did well or liked a class, you can check with the professor of that class
 You can also go to the department directory and then professors' websites and see if they are looking for undergraduate researchers.
 Even if they say they are looking for graduate students, you can still contact them and ask.
 
-Many universities have programs to encourage undergraduate research. For example, GMU has the OSCAR program, UNL has UCARE, and NSF has #gls("REU")'s (for US citizens and permanent residents).
+Many universities have programs to encourage undergraduate research. For example, GMU has the OSCAR program, UNL has UCARE, and #gls("NSF") has #gls("REU")'s (for US citizens and permanent residents).
 
 You can also take honor thesis or independent study courses with a professor.  This is a good way to get research experience and also get a LoR from the professor.  You can also ask your academic adviser or other faculty members for suggestions.  Finally, you can also ask your peers who are already doing research.  Use the method described in @sec:contact to contact professors
 
 #remark-block[
-    I enjoy working with undergrads and actively recruit them to my research group.
+    I enjoy working with undergrads and actively recruit them to my #link("https://roars.dev")[research group].
     I get undergraduates through my classes, e.g., asking students who did well in my class if they are interested in research.
     Occasionally I was introduced to students by other students or faculty (though I didnot have much success with this method).
-    Sometimes I found students by accident, e.g., a student came to my office hours and we had a good conversation about research, or I see some news about a student and I reach out to them.  This has been my most successful method (e.g., Stefania came to my office for advising, I found out about KimHao because he participated in an ACM competition, and Azan created a website that aiming to replace Ratemyprofessors that got my attention).
+    
+    Sometimes I found students by accident, e.g., a student came to my office hours and we had a good conversation about research, or I see some news about a student and I reach out to them (e.g., Stefania came to my office for advising, I found out about KimHao because he participated in an ACM competition, and Azan created a website that aiming to replace RateMyProfessors that got my attention).
      
 
 While most undergrads are understandably not productive in research, some are and I have published multiple papers with them---like with Kimhao and Stefania.  
@@ -2642,7 +2643,7 @@ This is less common but several places offer virtual internships and research pr
 
 #simpsons[You mean those leagues where parents push their kids into vicious competition to compensate for their own failed dreams of glory?]
 
-Having an external and major fellowship can significantly relieve the financial burden of your PhD and improve your chances of getting into a good PhD program (@sec:fellowships). 
+Having an external and major fellowship can significantly relieve the financial burden of your PhD study and improve your chances of getting into a good program (@sec:fellowships). 
 Among the most wel-known and prestigious fellowships for CS PhD students who are US citizens or permanent residents (@chap:domestic-students) are the #gls("GRFP", first:true)  and the #gls("NDSEG", first:true). These fellowships provide multiple years of full financial support, including tuition, stipend, and health insurance.
 
 The #link("https://www.nsfgrfp.org/")[GRFP] and #link("https://www.ndsegfellowships.org/")[NDSEG] websites have detailed information on the application process and eligibility requirements. The #link("https://www.nsf.gov/funding/information/faq-frequently-asked-questions-faqs-graduate-research-fellowship")[NSF GRFP FAQ] has many useful tips and resources. 
