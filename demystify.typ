@@ -103,7 +103,7 @@
 #show math.equation: set math.equation(supplement: [Eq.])
 #show heading: set heading(supplement: [Sec.])
 
-#import "@preview/glossarium:0.5.10": make-glossary, register-glossary, print-glossary, gls, glspl
+#import "@preview/glossarium:0.5.10": make-glossary, register-glossary, print-glossary, gls, glspl, gls-long
 #show: make-glossary
 
 #let entry-list = (
@@ -129,14 +129,16 @@
   (key: "ra", short: "RA", long: "Research Assistantship", description: "A major type of PhD funding through research work with a professor."),
   (key: "ta", short: "TA", long: "Teaching Assistantship", description: "A major type of PhD funding through teaching support duties."),
   (key: "GRE", short: "GRE", long: "Graduate Record Examination", description: "A standardized admissions test; often optional for CS PhD programs."),
-  (key: "REU", short: "REU", long: "Research Experience for Undergraduates", description: "An NSF-funded program offering undergraduate research opportunities."),
-  (key: "SOP", short: "SOP", long: "Statement of Purpose", description: "An application essay describing your research interests, background, and goals."),
-  (key: "adcom", short: "adcom", long: "admission committee", description: "The group of faculty members who review applications and make admission decisions."),
+  (key: "REU", long: "Research Experience for Undergraduates", description: "An NSF-funded program offering undergraduate research opportunities."),
+  (key: "SOP", long: "Statement of Purpose", description: "An application essay describing your research interests, background, and goals."),
+  (key: "adcom", long: "admission committee", description: "The group of faculty members who review applications and make admission decisions."),
   (key: "phd", short: "PhD", long: "doctor of philosophy", description: "A research doctorate requiring original contributions and a dissertation."),
-  (key: "ABD", short: "ABD", long: "All But Dissertation", description: "A PhD candidate who completed coursework/exams and is finishing the dissertation."),
-  (key: "PI", short: "PI", long: "Principal Investigator", description: "Lead researcher on a grant or project."),
+  (key: "ABD", long: "All But Dissertation", description: "A PhD candidate who completed coursework/exams and is finishing the dissertation."),
+  (key: "PI", long: "Principal Investigator", description: "Lead researcher on a grant or project."),
   (key: "STEM", short: "STEM", long: "Science Technology Engineering and Mathematics", description: "A collective term for science, technology, engineering, and mathematics fields."),
   (key: "NSF", short: "NSF", long: "National Science Foundation", description: "A US agency that funds research and education in science and engineering."),
+  (key: "GRFP", long: "NSF Graduate Research Fellowship Program", description: "A competitive fellowship program for PhD students funded by the National Science Foundation."),
+  (key: "NDSEG", long: "DoD National Defense Science and Engineering Graduate Fellowship", description: "A competitive fellowship program for PhD students funded by the US. Department of Defense."),
   (key: "LOR", short: "LoR", long: "Letter of Recommendation", description: "A letter evaluating your qualifications and potential for graduate study."),
 )
 
@@ -414,7 +416,7 @@ text(size: 0.9em,
 
 - *Project proposal*: In many countries, you have to choose a project and adviser *during* the application process (e.g., you write a proposal to a potential adviser). But this allows you to start your research right from the beginning. In the US, you often start your PhD without an adviser or project and find them later. Usually you have two initial years to take classes, explore and find an adviser and research topic.
     
-- *Coursework*: In the US you will spend the first couple of years taking classes and exploring potential adviser and research topics. After that, you have to pass a series of exams during your PhD---qualifying exam, comprehensive exam, thesis proposal defense#footnote[ABD (all but dissertation) refers to a PhD candidate who has finished all course work and exams and only needs to write and defend their dissertation.]. In other countries, you often start your research right away and work on the research project you proposed with the adviser you chose. Moreover, you might not have exams like those in the US or only have to do a few of them.
+- *Coursework*: In the US you will spend the first couple of years taking classes and exploring potential adviser and research topics. After that, you have to pass a series of exams during your PhD---qualifying exam, comprehensive exam, thesis proposal defense (#gls("ABD")). In other countries, you often start your research right away and work on the research project you proposed with the adviser you chose. Moreover, you might not have exams like those in the US or only have to do a few of them.
     
 - *Funding*: In many countries, funding comes from the university or the government. This funding often has a fixed duration, e.g., 3 or 4 years. In the US (@chap:funding), funding such as RA comes directly from your adviser (no fixed duration). There are also fewer TA opportunities in European universities compared to the US.
     
@@ -1578,7 +1580,7 @@ It is important to note that RA support is *never guaranteed* because it depends
 ]
 
 
-*Where does RA funding come from?* Professors apply for funding to support students from various sources, such as government grants (for example NSF, NIH, or DoD), industry grants (for example Google or Microsoft), or internal university funds. For many CS professors, the most common source is NSF grants, which are often designed to support graduate students as RAs. Recently hired professors, such as new assistant professors, often also have start-up funds from the university to help them establish their research lab.
+*Where does RA funding come from?* Professors apply for funding to support students from various sources, such as government grants (for example NSF, NIH, or DoD), industry grants (for example Google or Microsoft), or internal university funds. For many CS professors, the most common source is #gls("NSF") grants, which are often designed to support graduate students as RAs. Recently hired professors, such as new assistant professors, often also have start-up funds from the university to help them establish their research lab.
 
 Typically, each grant can support one or at most two students per year, and each student can cost up to about \$70,000 per year (@sec:ra-cost). This is why professors often need multiple grants to support multiple students. It is also one reason professors may not have time to do experiments or write papers directly, and instead mentor their students to do that work. If a professor no longer has funding—which is quite common—they might not be able to support you as an RA, in which case you would become a TA while still working with the same professor.
 
@@ -1589,7 +1591,7 @@ Fellowships are typically competitive and generous, giving pretty much all benef
 
 *How to get Fellowship?*   Many schools provide fellowships to attract students. You likely will not need to do anything and adcom will recommend such fellowships to strong students. Some schools automatically offer a fellowship to all accepted students, while others only award it to a limited number of admitted students, such as the top percentile.
 
-If you're aiming for external fellowships---whether from the U.S. government (like NSF GRFP or DoD NDSEG, see @chap:fellowships) or from major tech companies like Google, Microsoft, and Facebook---you’ll need to apply on your own.
+If you're aiming for external fellowships (@chap:fellowships)---whether from the U.S. government like #gls("GRFP") or #gls("NDSEG") or from major tech companies like Google, Microsoft, and Facebook---you'll need to apply on your own.
 Such major fellowships typically require a clear and good research plan (the GRFP also requires broader impacts discussion). So it might be a good idea to wait until your second year to have research experience and even publication before applying. Remember, you're competing with the top PhD students at top universities worldwide.
 
 #note-block[
@@ -1598,7 +1600,7 @@ Such major fellowships typically require a clear and good research plan (the GRF
 
 // In addition to general fellowships that are available to all students, there are also specific fellowships, e.g., for US citizens and permanent residents (@chap:domestic-students), for underrepresented minority (URM) students (@sec:urm), and students from specific countries. There are many fellowships available, so you should look for them and apply.
 
-In general, external fellowships are highly competitive and prestigious---you will stand out if you get one.  Every PhD student has pubs, but only a few would have the NSF GRFP#footnote[#link("https://www.alexhunterlang.com/nsf-fellowship")[is a good starting place for the GRFP with lots of proposal examples.]] or Microsoft fellowships. In fact, these are so prestigious that even if you didn't get it but make it to the final round or even *"honorable mentioning"* you should put it on your CV. @chap:fellowships discusses the evaluation processes of the NSF GRFP and DoD NDSEG.
+In general, external fellowships are highly competitive and prestigious---you will stand out if you get one.  Every PhD student has pubs, but only a few would have the NSF GRFP#footnote[#link("https://www.alexhunterlang.com/nsf-fellowship")[is a good starting place for the GRFP with lots of proposal examples.]] or Microsoft fellowships. In fact, these are so prestigious that even if you didn't get it but make it to the final round or even *"honorable mentioning"* you should put it on your CV. @chap:fellowships discusses the evaluation processes of the #gls("GRFP") and #gls("NDSEG").
 
 == Funding Miscs
 
@@ -2372,9 +2374,9 @@ However, there are some differences and benefits that domestic students should b
 
 #strong[Transcripts.] You do not need to get your transcripts evaluated or translated (which can be a hassle and inaccurate). You can just send your official transcripts directly to the school you're applying to.
 
-#strong[Funding @chap:funding.] You have more opportunities for funding, e.g., through government scholarships for US citizens and permanent residents. You can also apply to specific programs #emph[before] you start your PhD, e.g., NSF Graduate Research Fellowship Program (GRFP) and Hertz Foundation Fellowship. These fellowships are very competitive (@chap:fellowships) and can significantly improve your admission chances.
+#strong[Funding @chap:funding.] You have more opportunities for funding, e.g., through government scholarships for US citizens and permanent residents. You can also apply to specific programs #emph[before] you start your PhD, e.g., NSF #gls("GRFP") and Hertz Foundation Fellowship. These fellowships are very competitive (@chap:fellowships) and can significantly improve your admission chances.
 
-#strong[Research Experience @chap:research-opportunities.] You might have many opportunities to do research as an undergraduate, e.g., through REU programs and internships at your undergrad university. Highlight such experience in your application.
+#strong[Research Experience @chap:research-opportunities.] You might have many opportunities to do research as an undergraduate, e.g., through #gls("REU") programs and internships at your undergrad university. Highlight such experience in your application.
 
 #strong[Open House @chap:accepted.] It is easier for you to attend open house events in person. This can help you make a better decision on which school to attend.
 
@@ -2504,7 +2506,7 @@ If you did well or liked a class, you can check with the professor of that class
 You can also go to the department directory and then professors' websites and see if they are looking for undergraduate researchers.
 Even if they say they are looking for graduate students, you can still contact them and ask.
 
-Many universities have programs to encourage undergraduate research. For example, GMU has the OSCAR program, UNL has UCARE, and NSF has REU's (for US citizens and permanent residents).
+Many universities have programs to encourage undergraduate research. For example, GMU has the OSCAR program, UNL has UCARE, and NSF has #gls("REU")'s (for US citizens and permanent residents).
 
 You can also take honor thesis or independent study courses with a professor.  This is a good way to get research experience and also get a LoR from the professor.  You can also ask your academic adviser or other faculty members for suggestions.  Finally, you can also ask your peers who are already doing research.  Use the method described in @sec:contact to contact professors
 
@@ -2648,7 +2650,7 @@ This chapter focuses on how your application is evaluated, what reviewers look f
 
 == NSF GRFP <sec:nsf-grfp>
 
-The NSF GRFP is a prestigious fellowship for US citizens, nationals, and permanent residents who are in the _early stages_ of their graduate study in STEM fields, including both MS and PhD students. The GRFP is highly competitive, with many applicants from top schools, with strong LoRs and research experience. In many cases, even an _"honorable mention"_---meaning you did not get the fellowship but were considered a strong candidate---can help you get into a good PhD program (so make sure to mention it in your CV and application).
+The #gls("GRFP", display: "NSF GRFP") is a prestigious fellowship for US citizens, nationals, and permanent residents who are in the _early stages_ of their graduate study in STEM fields, including both MS and PhD students. The GRFP is highly competitive, with many applicants from top schools, with strong LoRs and research experience. In many cases, even an _"honorable mention"_---meaning you did not get the fellowship but were considered a strong candidate---can help you get into a good PhD program (so make sure to mention it in your CV and application).
 
 === Evaluation
 
@@ -2692,7 +2694,7 @@ These are common pitfalls that many applicants make in their GRFP applications a
 
 == DoD NDSEG <sec:dod-ndseg>
 
-The NDSEG is another prestigious fellowship supporting *U.S. citizens* pursuing advanced degrees in STEM fields *critical to national defense* (such as CS). NDSEG has several differences from NSF GRFP, e.g., it focuses more on application to DoD and redacts more information about you and your application materials.
+The #gls("NDSEG", display: "DoD NDSEG") is another prestigious fellowship supporting *U.S. citizens* pursuing advanced degrees in STEM fields *critical to national defense* (such as CS). NDSEG has several differences from NSF GRFP, e.g., it focuses more on application to DoD and redacts more information about you and your application materials.
 
 === Evaluation
 
