@@ -1591,7 +1591,7 @@ Fellowships are typically competitive and generous, giving pretty much all benef
 
 *How to get Fellowship?*   Many schools provide fellowships to attract students. You likely will not need to do anything and adcom will recommend such fellowships to strong students. Some schools automatically offer a fellowship to all accepted students, while others only award it to a limited number of admitted students, such as the top percentile.
 
-If you're aiming for external fellowships (@chap:fellowships)---whether from the U.S. government like #gls("GRFP") or #gls("NDSEG") or from major tech companies like Google, Microsoft, and Facebook---you'll need to apply on your own.
+If you're aiming for external fellowships (@chap:fellowships)---whether from the U.S. government like #gls("GRFP", display: "NSF GRFP") or #gls("NDSEG", display: "DOD NDSEG") or from major tech companies like Google, Microsoft, and Facebook---you'll need to apply on your own.
 Such major fellowships typically require a clear and good research plan (the GRFP also requires broader impacts discussion). So it might be a good idea to wait until your second year to have research experience and even publication before applying. Remember, you're competing with the top PhD students at top universities worldwide.
 
 #note-block[
@@ -2640,7 +2640,7 @@ This is less common but several places offer virtual internships and research pr
 #simpsons[You mean those leagues where parents push their kids into vicious competition to compensate for their own failed dreams of glory?]
 
 Having an external and major fellowship can significantly relieve the financial burden of your PhD and improve your chances of getting into a good PhD program (@sec:fellowships). 
-Among the most wel-known and prestigious fellowships for CS PhD students who are US citizens or permanent residents (@chap:domestic-students) are the National Science Foundation Graduate Research Fellowship Program (NSF GRFP) and the Department of Defense National Defense Science and Engineering Graduate Fellowship (DoD NDSEG). These fellowships provide multiple years of full financial support, including tuition, stipend, and health insurance.
+Among the most wel-known and prestigious fellowships for CS PhD students who are US citizens or permanent residents (@chap:domestic-students) are the #gls("GRFP", first:true)  and the #gls("NDSEG", first:true). These fellowships provide multiple years of full financial support, including tuition, stipend, and health insurance.
 
 The #link("https://www.nsfgrfp.org/")[GRFP] and #link("https://www.ndsegfellowships.org/")[NDSEG] websites have detailed information on the application process and eligibility requirements. The #link("https://www.nsf.gov/funding/information/faq-frequently-asked-questions-faqs-graduate-research-fellowship")[NSF GRFP FAQ] has many useful tips and resources. 
 You can also find articles written by previous winners offering tips on writing a strong application (see the #link("https://code.roars.dev/phd-cs-us")[link] section on this book's website). However, keep in mind that while these writers were successful in securing the fellowship, they often have no insight into how their applications were actually evaluated or what the reviewers want to see.
