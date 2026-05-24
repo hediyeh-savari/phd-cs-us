@@ -110,8 +110,8 @@
   (key: "April15", short: "April 15", long: "April 15", description: "The deadline for most US universities to accept or decline offers of admission. Set by CGS; students are typically not required to accept offers before this date."),
   (key: "cohort", short: "cohort", long: "cohort", description: "A group of students who start a program at the same time and often take classes together."),
   (key: "ivy", short: "Ivy League", long: "Ivy League", description: "A group of eight private universities in the US known for academic reputation and prestige."),
-  (key: "adcom-members", short: "adcom members", long: "admission committee members", description: "Faculty members who review applications and make admission decisions."),
-  (key: "adcom-chair", short: "adcom chair", long: "admission committee chair", description: "The faculty member who leads the admission committee and oversees process fairness."),
+  (key: "adcom members", long: "admission committee members", description: "Faculty members who review applications and make admission decisions."),
+  (key: "adcom chair", long: "admission committee chair", description: "The faculty member who leads the admission committee and oversees process fairness."),
   (key: "adviser", short: "adviser", long: "adviser/supervisor", description: "A faculty member who guides and mentors a PhD student throughout research."),
   (key: "r1", short: "R1", long: "Research 1 university", description: "Universities with the highest level of research activity."),
   (key: "stipend", short: "stipend", long: "stipend", description: "A fixed regular payment to students as part of their funding package."),
@@ -259,7 +259,7 @@ Career-wise, a CS PhD prepares you for jobs that require deep technical expertis
 
 === CS Fields and Areas <sec:fields-and-areas>
 
-CS is a broad academic discipline with many specialized areas of research. Understanding the structure of CS can help you communicate your research interests and goals more effectively, e.g., in your SOP (@chap:sop), and also assist you in finding suitable advisers and research topics (@sec:finding-adviser).
+CS is a broad academic discipline with many specialized areas of research. Understanding the structure of CS can help you communicate your research interests and goals more effectively, e.g., in your #gls("SOP") (@chap:sop), and also assist you in finding suitable advisers and research topics (@sec:finding-adviser).
 
 #paragraph[Disciplines][At the highest level, academic _disciplines_ are broad domains of scholarly study, such as CS, Mathematics, Physics, Biology, Economics, Law, Social Sciences, and the Humanities. Universities typically have entire departments and degree programs centered on these disciplines (e.g., a Dept. of Computer Science or of Economics).]
 
@@ -340,7 +340,7 @@ Even if your undergraduate degree is not in CS or a related discipline, you stil
 
 A main concern for a non-CS or non-STEM student is whether you have sufficient technical background from core CS courses. So you need to demonstrate that you have this knowledge through your coursework, projects, or research.
 
-For example, if you have taken a class on algorithms, even an online course from Coursera, you can talk about it in your SOP. If you have done a project that requires knowledge of operating systems or have a professional certification (e.g., A+) through work, you can talk about it. If you have done research that requires knowledge of discrete math, you can talk about it. You can also ask your #gls("LOR") writers to discuss your technical background.
+For example, if you have taken a class on algorithms, even an online course from Coursera, you can talk about it in your #gls("SOP"). If you have done a project that requires knowledge of operating systems or have a professional certification (e.g., A+) through work, you can talk about it. If you have done research that requires knowledge of discrete math, you can talk about it. You can also ask your #gls("LOR") writers to discuss your technical background.
 
 #paragraph[Core CS topics][Common CS knowledge that you should know includes:
 
@@ -472,13 +472,13 @@ After screening, your application is complete and forwarded to the CS department
 === Admission Committee <sec:adcom>
 // \sectioninfo{Adcom members are faculty who evaluate your application. They consider various factors, e.g., research experience, LoRs, SOP}
 
-Your applications are reviewed by a PhD admission committee or #highlight[adcom] /*\acrfull{adcom}*/, which consists of CS faculty with diverse expertise (e.g., AI, Systems, Theory, SE, HCI). Some committees may include affiliated faculty from other disciplines.
+Your applications are reviewed by a PhD #gls("adcom", first:true), which consists of CS faculty with diverse expertise (e.g., AI, Systems, Theory, SE, HCI). Some committees may include affiliated faculty from other disciplines.
 
 The size and workload of the adcom depend on the department. At GMU, the PhD adcom has about 15--20 faculty, each reviewing ~30 applications. Large schools often have separate adcoms for MS programs (@chap:ms).
 
-PhD adcoms typically include assistant professors (@sec:faculty-types), giving junior faculty opportunities to recruit students. The adcom chair /*\gls{adcom-chair}*/ is usually a senior faculty who assigns applications to reviewers based on research interests or faculty mentioned by applicants (e.g., I review SE applicants).
+PhD adcoms typically include assistant professors (@sec:faculty-types), giving junior faculty opportunities to recruit students. The #gls("adcom chair") is usually a senior faculty who assigns applications to reviewers based on research interests or faculty mentioned by applicants (e.g., I review SE applicants).
 
-Each application is assigned to about three adcom members, who independently evaluate your profile and then reach a consensus. They consider factors such as LoRs, SOP, research experience, GPA, test scores, and interviews. (see @part:application).
+Each application is assigned to about three #gls("adcom members"), who independently evaluate your profile and then reach a consensus. They consider factors such as #glspl("LOR"), #gls("SOP"), research experience, GPA, test scores, and interviews. (see @part:application).
 
 #note-block([
   At GMU, we usually admit full-time PhD candidates with funding (@chap:funding) or reject them. In rare cases, we admit without funding if you have external support (e.g., government or fellowship). We justify our decision (@sec:ievaluate) with a summary of your application, listing strengths (e.g., well-known school) and weaknesses (e.g., generic LoRs).
@@ -489,7 +489,7 @@ Each application is assigned to about three adcom members, who independently eva
 // \sectioninfo{Adcom members only review applications assigned to them (typically matching their expertise) and rarely get involved in other applications}
 
 
-Adcom members typically can view any submitted applications. However, we only review those that are assigned to us, which are already too many. Adcom chair will assign applications to reviewers based on their expertise, e.g., if a student says they want to do SE or interested in working with me, and reviewers will only evaluate those applications. Occasionally we might look at other applications, e.g., if the student contacted me, I know that student, or they are from a school in Vietnam I am familiar with. However, even if we look at them, we usually do not get involved in their evaluation directly.
+#gls("adcom members",capitalize:true) typically can view any submitted applications. However, we only review those that are assigned to us, which are already too many. #gls("adcom chair", capitalize:true) will assign applications to reviewers based on their expertise, e.g., if a student says they want to do SE or interested in working with me, and reviewers will only evaluate those applications. Occasionally we might look at other applications, e.g., if the student contacted me, I know that student, or they are from a school in Vietnam I am familiar with. However, even if we look at them, we usually do not get involved in their evaluation directly.
 
 Note that the assigned reviewers are the main ones deciding your application, but at many schools other faculty in the department can also have access to your application and provide inputs and opinions on your profile. Thus, it helps to contact faculty (@sec:contact) and mention faculty you're interested in in your SOP (@chap:sop).
 
@@ -2458,7 +2458,7 @@ You will submit similar materials as in a PhD application, e.g., transcripts, #g
 
 - *LoRs:* Unlike PhDs, your LoRs do not need to be from professors or talk about research experience. Many MS programs do not even require LoRs.
 
-- *Test Scores:* Unlike PhDs, which often do not require GREs, MS programs often require GREs. However, some schools do make them optional, and you should check with the school you're applying to. If you have a low GPA, a high GRE score can help offset that. 
+- *Test Scores:* Unlike PhDs, which often do not require #gls("GRE"), MS programs often do. However, some schools do make them optional, and you should check with the school you're applying to. If you have a low GPA, a high GRE score can help offset that. 
 
 As with PhD, English proficiency tests (TOEFL/IELTS) are required for international students (but just passing the minimum requirement is often enough @sec:english-tests). Note that just as with PhD, English tests are waived if you did your undergrad at a US university.
 
