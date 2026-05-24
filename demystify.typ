@@ -2037,9 +2037,12 @@ Thus they usually do not have the resources or institutional role to advise PhD 
   Although teaching faculty are not typically involved in PhD admissions or research, some actively mentor undergrad students in research—especially during the summer. So if you're an undergrad (@chap:research-opportunities) and want to try research, you can contact them (usually after taking their class and doing well).
 ]
 
-==== Research Faculty and Scientists
+==== Postdoc, Research Faculty and Scientists
 
-Some universities have research faculty or research scientists (e.g., postdocs are sometimes called research faculty), who focus almost entirely on research and often have little or no teaching duties. These faculty members can apply for grants, publish regularly, and, in some rare cases, are allowed to serve as advisers for PhD students. In many cases, they are required to co-advise with a tenure-line faculty member.
+Postdocs are temporary research positions for recent PhD graduates, typically lasting 1-3 years in CS. They are typically not considered faculty and do not have the institutional role to advise PhD students. 
+Think of them as "super grad students" who also have an advisor/mentor (the PI) and are expected to do research and publish papers just like grad students.
+
+Some universities have research faculty or research scientists. Like postdocs, they focus almost entirely on research and often have little or no teaching duties. These faculty members can apply for grants, publish regularly, and, in some _rare_ cases, are allowed to serve as advisers for PhD students. In many cases, they are required to co-advise with a tenure-line faculty member.
 
 ==== Adjunct and Emeritus Faculty
 
