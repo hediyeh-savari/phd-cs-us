@@ -2450,7 +2450,7 @@ Finally, MS adcom can involve teaching faculty (@sec:faculty-types), who are not
 
 === MS Application Materials <sec:ms-application>
 
-You will submit similar materials as in a PhD application, e.g., transcripts, LoRs, SOP, and test scores. However, research experience is not required, and LoRs can be from anyone who can speak about your academic or working abilities. Moreover, your SOP should focus on your academic and work background, why you want to get an MS, and how the program fits your goals. As with PhDs, GREs are often not required. Some MS programs do not even require LoRs or SOPs.  
+You will submit similar materials as in a PhD application, e.g., transcripts, #glspl("LOR"), #gls("SOP"), and test scores. However, research experience is not required, and LoRs can be from anyone who can speak about your academic or working abilities. Moreover, your SOP should focus on your academic and work background, why you want to get an MS, and how the program fits your goals. As with PhDs, GREs are often not required. Some MS programs do not even require LoRs or SOPs.  
 
 - *Undergrad Background and GPA:* Since research is not required, your undergrad background is more important in an MS application. You should have a strong background in CS, e.g., through your undergrad degree. GPA is also important, as it is often used as a filter for MS applications.
 
