@@ -2680,16 +2680,17 @@ Writing BI is often difficult, not only for students but also new faculty.  You 
 These are common pitfalls that many applicants make in their GRFP applications and tips on how to avoid them. Many of these can be avoided and fixed by asking someone who has experience writing NSF proposals to review your application.  You should also ask your LoR writers to review your research plan and SOP.  
 
 
-- *Too Technical or Narrow.* Remember that you're writing to a general audience in CS, not experts in your field.  While NSF tries to match reviewers with your field, CS is simply too broad and you might get a reviewer in your field but not in your specific area or familiar with the research topics you're working on (see meanings of fields, areas, and topics in @sec:fields-and-areas).  For example, a person working in PL might not be familiar of all its areas, e.g., program synthesis, verification, or type inference.  
+- *Too Technical or Narrow.* Remember that you're writing to a general audience in CS.  While NSF tries to match reviewers with your field, CS is simply too broad and you might get a reviewer in your field but not in your specific area or familiar with the research topics you're working on (see meanings of fields, areas, and topics in @sec:fields-and-areas).  For example, a person working in PL might not be familiar of all its areas, e.g., program synthesis, verification, or type inference.  
+
   So avoid technical jargon, explain things in simple terms, and motivate your work well. If the reviewer cannot understand your research plan, they will likely give you a low score.
 
-- *Preliminary Work.* Your research plan should have some preliminary work to convince reviewers that you have thought about the problem and have some initial results.  It does not have to a lot, e.g., you don't need published results or an implementation, a small experiment done by hand on some small examples would suffice.  Moreover, it should be concrete and convincing, e.g., _"When being applied to the program in Fig 1. of the paper published PLDI'19 that approach X failed, my idea worked and was able to ..."_.  This will set you apart from others who just have a plan but no results.
+- *Preliminary Work.* Your research plan should have some preliminary work to convince reviewers that you have thought about the problem and have some initial results.  It does not have to a lot, e.g., you don't need published results or an implementation, a small experiment done by hand on some small examples would suffice.  Moreover, it should be concrete and convincing, e.g., _"When being applied to the program in Fig 1. of the paper published PLDI'19 that approach X failed, my proposed idea worked and was able to ..."_.  This will set you apart from others who just have a plan but no results.
 
 - *Related Work and Challenges.* Many research plans motivate the problem well but do not discuss limitations of existing work, making it questionable if the problem is important or if you are aware of the challenges.  Thus, you should do a thorough literature review and discuss what people have done and their limitations.  Your research plan should then talk about how you plan to address these limitations, i.e., fill the gap in the literature.  
 
-- *Do not BS.* Many research plans include technical details or proposed work that are vague, unrealistic, or even impossible. This is similar to a student taking an exam and write a lot of nonsense and hope for partial credits.  As mentioned, reviewers are often chosen based on their expertise in your field and can detect B.S. Again, do your homework and ask someone who knows the field, e.g., your advisor or LoR writer, to review your research plan.
+- *Do not BS.* Many research plans include technical details or proposed work that are vague, unrealistic, or even impossible. This is similar to a student taking an exam and write a lot of nonsense and hope for partial credits.  As mentioned, reviewers are often chosen based on their expertise in your field and can detect B.S. Again, do your homework and ask someone who knows the field, e.g., your advisor or LoR writer, to review your research plan. In my experience, this seems to be more common from students at top schools and have research experience, which might make think they can BS their way through the application.
 
-- *Overexaggeration Lors.* Many GRFP applicants have ref. letters from professors that are very good at writing LoRs. However, they often use flowery language and overrate their students. Reviewers can sense this overexaggeration and might not trust the LoRs. This is similar to overclaiming research contributions when writing papers---so _ask your LoR writers to tone down_ their enthusiasm and be specific with concrete examples to demonstrate why you're _"the best"_.
+- *Overexaggeration LORs.* Many GRFP applicants have ref. letters from professors that are very good at writing LoRs. However, they often use flowery language and overrate their students. Reviewers can sense this overexaggeration and might not trust the LoRs. This is similar to overclaiming research contributions when writing papers---so _ask your LoR writers to tone down_ their enthusiasm and be specific with concrete examples to demonstrate why you're _"the best"_.
 
 
 == DoD NDSEG <sec:dod-ndseg>
@@ -2700,7 +2701,7 @@ The #gls("NDSEG", display: "DoD NDSEG") is another prestigious fellowship suppor
 
 *Redacted info.* Unlike the NSF GRFP, reviewers only see *redacted versions* of your submitted materials (applicants are asked to provide full and redacted versions of your research plan, CV, and other materials). Thus, we do not know what schools you went to, where you did your internships, your publications or research experience. We also *do not* see your LoRs, i.e., we do not know who wrote them or what they wrote!
 
-Reviewers mainly get to know you and evaluate your application by reading your research plan and personal essays. This is for *fairness and avoiding bias* based on the school you went to, places you published at, your LoR writers, etc. Nonetheless, I felt I am missing too much information. However, it could be that external reviewers like myself help with the first cut based on the redacted materials, and then there are internal reviewers who make the final decision based on the full materials.
+Reviewers mainly get to know you and evaluate your application by reading your research plan and personal essays. This is for *fairness and avoiding bias* based on the school you went to, places you published at, your LoR writers, etc. Nonetheless, I felt I am missing too much information. It could be that external reviewers like myself help with the first cut based on redacted materials, and then there are internal reviewers who make the final decision based on the full materials.
 
 *Non-expert* NDSEG reviewers hold advanced degrees in STEM fields. However, NDSEG reviewers are more general and might not be in your specific field. For example, in GRFP I mostly review applications in PL, while in NDSEG it seems that I review applications in all fields of CS and even non-CS. Thus, you should make your research plan *more accessible to a general audience*.
 
@@ -2709,7 +2710,7 @@ I find it a bit difficult to evaluate NDSEG applications because I do not have t
 It is also difficult to evaluate the academic background of the student, e.g., some student just started grad school and so their transcript is essentially blank. It is also annoying to see CVs with so many blanked out information (they might as well should just submit a blank CV).
 
 In the beginning I find it surprising that I don't get to see the LoRs, but I understand the reasoning behind it and gradually think it is a good idea. As mentioned above, LoR writers for NSF GRFP (@sec:grfp-pitfalls), especially those from top schools, often overrate their students and thus can bias the evaluation. So I don't find I am missing much by not seeing the LoRs.
-]
+] <remark-ndseg>
 
 === Common Pitfalls and Tips <sec:ndseg-pitfalls>
 
@@ -2764,7 +2765,7 @@ Publications and involvement in the research community are common indicators of 
 
 === Publications in Top-Tier Venues <sec:pubs-top-tier>
 
-Publications in _top-tier_ venues are the most reliable factor to measure the productivity of a faculty. They give visibility to the faculty's work and help establish their reputation in the area. For tenure-track faculty (@sec:faculty-types), especially at top CS programs, publications at top-tier conferences and journals are often the standard for tenure and promotion. 
+Publications in _top-tier_ venues are the most reliable factor to measure the productivity of a faculty. They give visibility to the faculty's work and help establish their reputation in the area. For tenure-track faculty (@sec:faculty-types), especially at top CS programs, publications at top-tier conferences and journals are often the standard for academic tenure and promotion. 
 
 *Conferences.* Unlike many STEM disciplines like Maths and Physics (@sec:fields-and-areas) that prefer journals, most CS fields  focus on publising at _conferences_. CS is a very fast moving and journals are often too slow---taking 1--2 years to publish---by which time the results and even the problems may already be outdated.  In contrast, conferences have a much faster review process, typically taking 3--6 months from submission to publication.
 
