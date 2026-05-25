@@ -85,7 +85,7 @@
   (key: "adcom chair", long: "admission committee chair", description: "The faculty member who leads the admission committee and oversees process fairness."),
   (key: "advisor", long: "advisor/supervisor", description: "A faculty member who guides and mentors a PhD student throughout research."),
   (key: "r1", short: "R1", long: "Research 1 university", description: "Universities with the highest level of research activity."),
-  (key: "stipend", short: "stipend", long: "stipend", description: "A fixed regular payment to students as part of their funding package."),
+  (key: "stipend", description: "A fixed regular payment to students as part of their funding package."),
   (key: "rolling-admission", short: "rolling admission", long: "rolling admission", description: "Applications are reviewed as they arrive, with decisions released continuously."),
   (key: "toptier", short: "top-tier venues", long: "top-tier conferences and journals", description: "Highly prestigious publication venues in a CS field."),
   (key: "diversity-statement", short: "diversity statement", long: "diversity statement", description: "An application document describing contributions to diversity and inclusion."),
@@ -202,7 +202,7 @@ Many students, especially those from smaller countries or schools, have the *imp
 #paragraph[Funding Is Not An Issue][In most cases CS PhD students _do not_ need to worry about funding, especially at good #gls("R1") universities in the US. 
 If you are admitted, you will almost certainly receive _full funding_ (@chap:funding) to support your study. 
 
-Your funding includes tuition, health insurance, and stipend /*TODO @glossary[stipend]*/ (in STEM field in CS you get paid for your study!).
+Your funding includes tuition, health insurance, and #gls("stipend") (in STEM field in CS you get paid for your study!).
 Moreover, you often receive additional benefits such as summer pay (@sec:summer-funding), laptops (@sec:buying-equipment), and traveling to conferences and workshops. 
 
 Full funding for CS PhD students is the norm in the US, and I'd go as far as to say that if you are not admitted with full funding, you might want to not accept the offer. The reason is that CS is in high demand and you're actively contributing to improving the reputation of the university and more generally advancing CS.
@@ -537,6 +537,14 @@ This is quite different from other disciplines, where reviews, interviews, and s
 Of course, my recommendation is just one of the three or four faculty reviews of the application. The adcom chair compiles all recommendations and makes a decision based on them (@sec:adcom-discuss).
 If there are disagreements, the adcom chair asks the reviewers to discuss the application.
 Unfortunately, even if all reviewers recommend a student, they might not be admitted (@sec:why-rejected) if there are too many students or they are not a good fit for the program (e.g., no one is willing to advise them).
+
+
+=== Direct Admit vs Committee Admit <sec:direct-vs-committee>
+
+Discussions on Reddit and Discord on graduate school admissions often mention "direct admit"---a student is "directly admitted" by a faculty member vs "committee admit"---the student is admitted by the adcom committee.  Answers to these questions, often from applicants and students who are not familiar with the admission process, can be confusing and sometimes misleading, and often more complicated and makes it sound more mysterious than it actually is.
+
+The short answer is that all applications are reviewed by the adcom committee, and the decision is made by the adcom members based on their evaluation of the application. However, the decision is _heavily influenced_ by whether an individual faculty member is interested in the student and willing to advise them, but this is still part of the committee review process. So even if a student is "directly admitted" by a faculty member, their application still goes through the committee review process, and the final decision is made by the committee based on the evaluations of all reviewers ("committee admit").
+
 
 //todo write about direct admit vs committee admit, and how the decision is made in each case. For example, if a faculty member wants to directly admit a student, they can do so by contacting the adcom chair and providing justification. The adcom chair will then review the justification and decide whether to approve the direct admit. In some cases, the adcom chair might ask other faculty members for their opinions on the direct admit before making a decision. If the direct admit is approved, the student will be admitted without going through the regular committee review process. However, if the direct admit is not approved, the student will have to go through the regular committee review process like all other applicants.
 
@@ -1301,7 +1309,7 @@ Profs. are often very busy (@sec:busy), especially during admission time when th
 ) <fig:admission-letter-started-with-saying-i-am-not-happy>
 
 Your admission notification will likely come with an offer letter (in some cases it might come separately).
-This letter is essentially a contract between you and the school, and lists the terms of the offer, including stipend, tuition waiver, health insurance, and other benefits. The letter might also have some conditions, e.g., maintaining a certain GPA, etc. 
+This letter is essentially a contract between you and the school, and lists the terms of the offer, including #gls("stipend"), tuition waiver, health insurance, and other benefits. The letter might also have some conditions, e.g., maintaining a certain GPA, etc. 
 You will likely need to sign and return the letter to accept the offer, e.g., by April 15--the deadline for many schools.
 
 @fig:gra-offer shows an example of a GRA offer letter from GMU. It shows the 9-month stipend#footnote[Note RAs can get additional summer funding from their prof. (@sec:summer-funding), but this will not be shown in the offer letter as it is not guaranteed.], the funding source (i.e., the prof. who provided the RA), tuition waivers (9-credit, which is full time for grad student), and health insurance.
@@ -1567,22 +1575,12 @@ In general, external fellowships are highly competitive and prestigious---you wi
 
 == Funding Miscs
 
-=== Low Stipend? <sec:low-stipend>
-
-Students often think their stipend is too low and not enough to live on.  For example, if you look at the stipend at GMU, which is around \$30K for _9-month_, and then compare it to the cost of living in Fairfax, VA, which says you need \$70K _annually_ to live in a 1-bed apartment, then you might be in a panic.
-
-However,  in almost all cases, the stipend is enough to live on.  You might not be able to live in a 1-bed apartment by yourself, but you can live in a shared apartment or house with other students (most grad students shared apt).  You might not be able to buy a new car, but you get a good, used one (most students do this) or use public transportation.  In short, while the stipend is not high, it is not bad, and you can live comfortably with it.  
-
-In fact, it might be enough to support your spouse and kids.  Many CS PhD students have their families with them (a student of mine lives with his wife and 1 kid in a 1-bed apartment and they are doing fine with just his stipend). So don't worry too much about the stipend.  A good school would know that it has to be competitive to attract students.  For example, at GMU, every year we try to improve the benefits, and especially stipend, for our graduate students.
-
-For a full breakdown of how much a graduate student costs, see @sec:ra-cost.
-
 
 === Funding in the Summer <sec:summer-funding>
 
 Students often get confused about summer funding, e.g., if they will get paid during the summer.  This is a good question because PhD students have no classes over the summer and so are often more productive and produce good research. However, summer salary is largely depending on your funding source.
 
-First, recall that an *AY* (academic year)---consisting of Fall and Spring semesters---is typically 9 months. Thus, your stipend is for 9 months and do not cover the three summer months (and many places allow you to #emph[spread] it over 12 months, so you get paid monthly over 12 months, but the total amount is still the same).
+First, recall that an #gls("AY")---consisting of Fall and Spring semesters---is typically 9 months. Thus, your stipend is for 9 months and do not cover the three summer months (and many places allow you to #emph[spread] it over 12 months, so you get paid monthly over 12 months, but the total amount is still the same).
 
 If your funding source is TA (@sec:ta), you typically do not get paid over the summer because there are no classes to teach.  Some CS departments offer summer funding, but it is not guaranteed and might not be a lot. For example, at GMU, we offer summer funding for 1st-year PhD TA students. The amount over the 3-month summer is similar to their monthly stipend (i.e., their 9-month stipend divided by 3 for the 3 summer months).
 
@@ -1594,6 +1592,21 @@ For my students, I have been fortunate to have funding to support them over the 
 ]
 
 Finally, for fellowships (@sec:fellowships) you might get paid over the summer depending on your fellowship (@sec:fellowships). Major ones, e.g., from NSF, Google, and Microsoft, will pay you the whole year.
+
+=== Low Stipend? <sec:low-stipend>
+
+Students often think their stipend is too low and not enough to live on.  For example, if you look at the stipend at GMU, which is around \$40K (including summer), and then compare it to the #link("https://www.epi.org/resources/budget/")[living cost] of Fairfax, VA, which says you need \$75K _annually_ to live in a 1-bed apartment, then you might be in a panic.
+
+However,  in almost all cases, the stipend is enough to live on.  You might not be able to live in a 1-bed apartment by yourself, but you can live in a shared apartment or house with other students (most grad students shared apt).  You might not be able to buy a new car, but you get a good, used one (most students do this) or use public transportation.  In short, while stipend looks bad compared to living expense, you can make it work by adjusting your lifestyle and living arrangements.
+
+In fact, it might be enough to support your spouse and kids.  Many CS PhD students have their families with them (a student of mine lives with his wife, who does not work as spouse of international students typically cannot work in the US, and 1 child in a 1-bed apartment and they are doing fine with just his stipend). So don't worry too much about the stipend.  A good school would know that it has to be competitive to attract students.  For example, at GMU, every year we try to improve the benefits, and especially stipend, for our graduate students.
+
+For a full breakdown of how much a graduate student costs, see @sec:ra-cost.
+
+
+#remark-block[ The website #link("https://csstipendrankings.org/")[CS Stipend Rankings] shows stipend for various CS PhD programs. You can use it to get idea on how much you can expect to get paid. However, I would ignore about the Living Cost because it does not fit most students' lifestyle and thus makes you unnecessarily worry. For example,  it says with GMU's stipend \$40K and Fairfax's living expense \$75K, you will be in _deficit_ of \$35K annually --- which is ridiculous because all GMU PhD CS students are doing just fine with that stipend, and even enough to support their famlies.
+]
+
 
 === How much do *YOU* cost? <sec:ra-cost>
 // \subsectioninfo{Your entire PhD program costs about \$400K in total, but you \emph{do not} pay for it.}
