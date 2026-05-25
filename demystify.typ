@@ -300,7 +300,7 @@ The first two years are typically spent taking coursework (somewhat equivalent t
 Within these 5--7 years, CS PhD students sometimes take a "leave of absence" for 1--2 semesters or for a summer to do internships at companies and research labs.
 
 #remark-block[
-  I started my PhD with an MS, and it took me 7 years (Fall '07--Fall '14). I spent half a year doing an internship at the #link("https://www.nrl.navy.mil")[Naval Research Lab]. My PhD did take a bit longer than usual, but it allowed me to expLORe new research areas and topics.
+  I started my PhD with an MS, and it took me 7 years (Fall '07--Fall '14). I spent half a year doing an internship at the #link("https://www.nrl.navy.mil")[Naval Research Lab]. My PhD did take a bit longer than usual, but it allowed me to explore new research areas and topics.
 ]
 
 
@@ -386,9 +386,9 @@ text(size: 0.9em,
 
 - *MS requirement and PhD duration*: CS PhD programs in the US do not require an MS degree (@sec:time, @sec:msrequirement). In contrast, many other countries require having an MS degree before joining a PhD program. This means that US PhD programs are longer (5--7 years, 2 of which are coursework) than other countries (3--4 years, no coursework).
 
-- *Project proposal*: In many countries, you have to choose a project and advisor *during* the application process (e.g., you write a proposal to a potential advisor). But this allows you to start your research right from the beginning. In the US, you often start your PhD without an advisor or project and find them later. Usually you have two initial years to take classes, expLORe and find an advisor and research topic.
+- *Project proposal*: In many countries, you have to choose a project and advisor *during* the application process (e.g., you write a proposal to a potential advisor). But this allows you to start your research right from the beginning. In the US, you often start your PhD without an advisor or project and find them later. Usually you have two initial years to take classes, explore and find an advisor and research topic.
     
-- *Coursework*: In the US you will spend the first couple of years taking classes and expLORing potential advisor and research topics. After that, you have to pass a series of exams during your PhD---qualifying exam, comprehensive exam, thesis proposal defense (#gls("ABD")). In other countries, you often start your research right away and work on the research project you proposed with the advisor you chose. Moreover, you might not have exams like those in the US or only have to do a few of them.
+- *Coursework*: In the US you will spend the first couple of years taking classes and exploring potential advisor and research topics. After that, you have to pass a series of exams during your PhD---qualifying exam, comprehensive exam, thesis proposal defense (#gls("ABD")). In other countries, you often start your research right away and work on the research project you proposed with the advisor you chose. Moreover, you might not have exams like those in the US or only have to do a few of them.
     
 - *Funding*: In many countries, funding comes from the university or the government. This funding often has a fixed duration, e.g., 3 or 4 years. In the US (@chap:funding), funding such as RA comes directly from your advisor (no fixed duration). There are also fewer TA opportunities in European universities compared to the US.
     
@@ -526,7 +526,7 @@ For each application, our system compiles a single PDF file, which consists of a
 
 I read _strong LORs_ carefully and skim weaker ones, noting either strong letters from well-known professors/researchers that discuss research experience, or weak letters with generic content (e.g., "student was in my class"). I skim the _CV_ and look for publications, research experiences, and notable achievements. I take notes of things like "published papers in top venues" or "gold medal in an international competition."
 
-I skim weak _SOPs_ but read strong ones carefully. I note whether the SOP is exciting, research-oriented, stands out, and is taiLORed to our program (e.g., if they are familiar with the work of some faculty or have talked to them). These notes are entered into the evaluation system.
+I skim weak _SOPs_ but read strong ones carefully. I note whether the SOP is exciting, research-oriented, stands out, and is tailored to our program (e.g., if they are familiar with the work of some faculty or have talked to them). These notes are entered into the evaluation system.
 
 Finally, I enter my decision, which is usually either a rejection or an offer of admission with full funding (e.g., TA). I also recommend very strong candidates for the University Presidential Fellowship, which is a fellowship from GMU that provides funding similar to an RA (@chap:funding).
 Note that while the system has other decision options, e.g., admit without funding, provisional admission (e.g., if they need to take some courses), I do not use them, simply because we either reject or admit with funding.
@@ -871,10 +871,10 @@ Note that local conferences and non-English journals or conferences do not carry
 === Work Experience
 
 Research experience at _well-known research laboratories_, such as Microsoft Research, can strengthen your application. The emphasis here is _research_ work, not software development or non-research work. For example, working at a FAANG (Facebook, Amazon, Apple, Netflix, Google) company as a software engineer does not count as research experience. While it can be helpful for MS applications (@chap:ms), software development, even at a top company, does not demonstrate your research ability and potential for a PhD program.
- Similarly, a LOR from your supervisor for non-research experience might not count much (@sec:admin-letters). So do not spend much time talking about development job in your SOP.
+ Similarly, a LOR from your supervisor for non-research experience might not count much (@sec:admin-letters). So do not spend much time talking about development job in your #gls("SOP").
 
 
-Note that adcom reviewers might not be familiar with all research labs, especially those outside the US. For example, while VinAI is well-known in Vietnam and potentially in Asia, it might not be well-known in the US. So you or your LOR writers should explicitly say something about them in your statement or letter.  In general, if you did some good research work, then you should mention that in your SOP and ask your supervisor to write about it in their LOR (@chap:LOR).
+Note that adcom reviewers might not be familiar with all research labs, especially those outside the US. For example, while VinAI is well-known in Vietnam and potentially in Asia, it might not be well-known in the US. So you or your #gls("LOR") writers should explicitly say something about them in your statement or letter.  In general, if you did some good research work, then you should mention that in your SOP and ask your supervisor to write about it in their LOR (@chap:LOR).
 
 
 === Competitions <sec:competitions>
@@ -890,16 +890,16 @@ So do talk about them in your SOP (@chap:sop) and have your writers mention them
 #simpsons[All my life I've had one dream: to achieve my many goals.]
 
 #align(center)[
-  #image("files/c2.png", width: 80%)
+  #image("files/c2.png", width: 90%)
 ]
 
-While you might not have control over LORs (@chap:LOR) or where you go to school (@chap:your-school), you do have control over your statement of purpose (SOP) or personal statement#footnote[Few schools separate these documents and ask you to write both: SOP, which focuses on research experiences, and personal statement, which covers more personal aspects, e.g., why PhD, challenges, etc.]. A well-written SOP also demonstrates that you can communicate effectively, which is crucial in research and important for TA funding (@chap:funding). Many SOP samples for CS are #link("https://cs-sop.org/")[available here].
+While you might not have control over LORs (@chap:LOR) or where you go to school (@chap:your-school), you do have control over your #gls("SOP",first:true) or personal statement#footnote[Few schools separate these documents and ask you to write both: SOP, which focuses on research experiences, and personal statement, which covers more personal aspects, e.g., why PhD, challenges, etc.]. A well-written SOP also demonstrates that you can communicate effectively, which is crucial in research and important for TA funding (@chap:funding). Many SOP samples for CS are #link("https://cs-sop.org/")[available here].
 
 In your SOP, focus on research potential (@chap:research-experience) and convince reviewers through your experience, e.g., published papers (@sec:publications). Back up your claims with *concrete evidence*. For example, if you say you have teaching experience, show what you did, e.g., undergraduate TA or mentoring someone. If you say you worked on a research project, show some results, e.g., paper submitted (or even rejected), achieved certain performance improvement over the state of the art.
 
-You should talk about things that adcom members might not know about and that can help make you #highlight[stand out] in the application pool of thousands of applicants, e.g., your personal GitHub project with hundreds or thousands of stars or your regular contributions to well-known open-source projects (see @sec:stand-out for increasing your admission chance).
+You should talk about things that adcom members might not know about and that can help make you _#highlight[stand out]_ in the application pool of thousands of applicants, e.g., your personal GitHub project with hundreds or thousands of stars or your regular contributions to well-known open-source projects (see @sec:stand-out for increasing your admission chance).
 
-This is a simple but often overlooked task: *taiLOR your SOP to the institution you're applying for*, e.g., why apply *here*? Who do you want to work with? Provide names of professors you're interested in (if they are not already in the adcom, your application might get forwarded to them for evaluation; and they might be interested in interviewing and recruiting you). This shows that you're serious and have done homework on places you're applying to. Adcom will look for this part (@sec:why-rejected).
+This is a simple but often overlooked task: *tailor your SOP to the institution you're applying for*, e.g., why apply *here*? Who do you want to work with? Provide names of professors you're interested in (if they are not already in the adcom, your application might get forwarded to them for evaluation; and they might be interested in interviewing and recruiting you). This shows that you're serious and have done homework on places you're applying to. Adcom will look for this part (@sec:why-rejected).
 
 Finally, have your SOP reviewed by your LOR writers (@sec:help-your-LOR-writers) and professors, especially those who have served in adcom, or even postdocs or PhD students as they have been through this process.
 
@@ -936,7 +936,7 @@ Finally, have your SOP reviewed by your LOR writers (@sec:help-your-LOR-writers)
 
 - *Mentioning wrong professors:* Do not mention emeritus professors or those who have left. Teaching and adjunct faculty are often not active in mentoring PhD students (@sec:faculty-types). Do your homework and mention profs who are still active in research.
 
-- *Too Long and Fancy Format:* Keep it under 2 pages#footnote[May vary but this is my personal preference.]. Don't use too much coLORing or fancy fonts (like those in Word). Don't use left alignment (seems to be default in Word) as it is hard to read.
+- *Too Long and Fancy Format:* Keep it under 2 pages#footnote[May vary but this is my personal preference.]. Don't use too much coloring or fancy fonts (like those in Word). Don't use left alignment (seems to be default in Word) as it is hard to read.
 
 CS academics like using LaTeX (common way to write our papers and other documents), so write your SOP using LaTeX (with Times or default font, 11pt, and 1-inch margin as described in @chap:writing-latex).
 
@@ -1929,7 +1929,7 @@ In addition, a CS department has various *administrative staff* who handle day-t
 
 There is no one-size-fits-all answer to finding an #gls("advisor"). The best advisor is the one that fits you, e.g., you can work well with, and has the ability to help you succeed. But how do you find such a person?
 
-Fortunately, while some non-US programs require finding an advisor and research topic before starting the PhD (@sec:non-us-differences), CS PhD programs in the US will typically give you a couple of years to "shop" for advisors and research topics. This is especially true if you're admitted with TA (@sec:ta), which gives you time to expLORe and find an advisor.
+Fortunately, while some non-US programs require finding an advisor and research topic before starting the PhD (@sec:non-us-differences), CS PhD programs in the US will typically give you a couple of years to "shop" for advisors and research topics. This is especially true if you're admitted with TA (@sec:ta), which gives you time to explore and find an advisor.
 
 === Finding an advisor <sec:finding-advisor>
 
@@ -2159,7 +2159,7 @@ Finally, profs. are busy (@sec:busy), so don't take it personally if you don't g
 
 - *Do Not Call.* Not related to email but sometimes students get desperate and call the prof. This is a big no-no, especially for CS people who often prefer email over phone calls.
 
-- *Fancy format.* Do not use coLORs, fancy fonts, or formats, e.g., bold. While not really a kiss of death, it is very annoying, especially for people in CS (and probably many other fields) who often prefer plain email messages.
+- *Fancy format.* Do not use colors, fancy fonts, or formats, e.g., bold. While not really a kiss of death, it is very annoying, especially for people in CS (and probably many other fields) who often prefer plain email messages.
 
 ==== Interpreting Response <sec:interpreting-response>
 
@@ -2604,7 +2604,7 @@ This is less common but several places offer virtual internships and research pr
 = Fellowship Applications <chap:fellowships>
 // \chapterinfo{How fellowships such as NSF GRFP and DOD DSEG are evaluated.}
 
-#simpsons[You mean those leagues where parents push their kids into vicious competition to compensate for their own failed dreams of gLORy?]
+#simpsons[You mean those leagues where parents push their kids into vicious competition to compensate for their own failed dreams of glory?]
 
 Having an external and major fellowship can significantly relieve the financial burden of your PhD study and improve your chances of getting into a good program (@sec:fellowships). 
 Among the most wel-known and prestigious fellowships for CS PhD students who are US citizens or permanent residents (@chap:domestic-students) are the #gls("GRFP", first:true)  and the #gls("NDSEG", first:true). These fellowships provide multiple years of full financial support, including tuition, stipend, and health insurance.
@@ -2700,7 +2700,7 @@ These are some common pitfalls I see in NDSEG applications and tips to avoid the
 
 - *Use LaTeX to write your research plan and essays* (@chap:writing-latex).  This is the standard in CS and the general engineering and science disciplines,and will make your application look  professional.  Moreover, do not use the default Word settings, e.g., left justification, as it is not standard in CS and engineering and difficult to read.  
 
-- *Ask your LOR writers and advisor to look at your writing/essays* (this is very important so I keep repeating it).  You are new to the field and research writing, and your ideas might not be accurate or have already been expLORed. It's better that they tell you now than for you to find out later from reviewers.
+- *Ask your LOR writers and advisor to look at your writing/essays* (this is very important so I keep repeating it).  You are new to the field and research writing, and your ideas might not be accurate or have already been explored. It's better that they tell you now than for you to find out later from reviewers.
 
 - *Do not BS*. I said this before (@sec:grfp-pitfalls) and I say it again here. Many times students have some achievements (e.g., publications) and thought they know a lot and start BSing. This will greatly annoy reviewers, especially experts in the field. Surprisingly I find this being more common with students from top schools with strong LORs and good research experience.
 
@@ -2721,7 +2721,7 @@ A quick note on compensation: GRFP reviewers, like other NSF panelists, receive 
 Lisa Simpson: You won a Grammy.\
 Homer: I mean an award that's worth winning.]
 
-When expLORing potential advisors, students often look at faculty websites to learn about their research and achievements. Common indiciators of research productivity include publications and involvement in research community. However, beyond these, CS has several prestigious and meaningful achievements that researchers aim for, but that are not as well-known to prospective students. 
+When exploring potential advisors, students often look at faculty websites to learn about their research and achievements. Common indicators of research productivity include publications and involvement in research community. However, beyond these, CS has several prestigious and meaningful achievements that researchers aim for, but that are not as well-known to prospective students. 
 
 This chapter first looks at the common research activities and then discusses the "big" research achievements that faculty often highlight on their websites, CVs, or departmental news and awards pages (e.g., at #link("https://realgmucs.github.io/awards.html")[GMU] and #link("https://www.cs.washington.edu/people/honors-awards/")[UWash]).
 
@@ -2822,7 +2822,7 @@ These refer to awards given to more senior researchers for their outstanding con
 These can be (i) lifetime achievements in the field---such as ACM or IEEE Fellows, and (ii) specific work that were published 10+ years ago and that have made significant impact. 
 
 
-*Lifetime Achievements* 
+==== Lifetime Achievements 
 
 - #link("https://awards.acm.org/fellows")[*ACM*] and #link("https://www.ieee.org/communities-connection/awards-recognition/ieee-fellows")[*IEEE*] Fellows are prestigious honors for researchers with long-term contributions and leadership in computing fields. These are typically given to very senior researchers (e.g., full professors). Note that there are also ACM and IEEE Senior Members, which are a step below Fellows and can be self-applied (see news examples of an IEEE Fellow at #link("https://siebelschool.illinois.edu/news/elevation-to-ieee-fellow-further-proves-significance-of-hoiems-impact-in-computer-vision")[UIUC] and Senior Member at #link("https://uwaterloo.ca/computer-science/news/ian-goldberg-named-senior-member-ieee")[Waterloo]).
   
@@ -2835,7 +2835,7 @@ These can be (i) lifetime achievements in the field---such as ACM or IEEE Fellow
 ])
 
 
-*Most Influential Paper Awards* 
+==== Most Influential Paper Awards 
 
 _Test of Time, Most Influential, and Impact Awards_ are given to papers that were published 10+ years ago at a top venue and made a lasting contribution to their area of research. In other words, the work described in these papers have stood the _test of time_. Typically, these papers are highly cited and have inspired many follow-up works.
 Note that these paper awards are different than Distinguished or Best Paper awards, which are given at the conference and therefore might not be as well-known or influential.   
@@ -2910,7 +2910,7 @@ You might be using MS Word, but you should strongly consider writing your statem
 
 
 Most CS faculty are used to seeing formatting that LaTeX produces, and some might find Word's default left-aligned, uneven layout distracting.
-While reviewers will not penalize you for using Word, subtle irritations can affect how they read your writing (after reading dozens of applications, these small things add up). Given that LaTeX is free and easy to use (e.g., see #link("https://www.overleaf.com")[Overleaf]), it is worth the effort to learn. This is a small, easily fixable detail that indicates that you understand and respect the academic and technical culture you're trying to enter.
+While reviewers will not penalize you for using Word, subtle irritations can affect how they read your writing (after reading dozens of applications, these small things add up). Given that LaTeX is free and easy to use (e.g., see #link("https://www.overleaf.com")[Overleaf]), it is worth the effort to learn. 
 
 Below is a very basic example of a LaTeX document with 11pt font and 1-inch margins. You can start with this and modify it.
 
@@ -2919,12 +2919,13 @@ Below is a very basic example of a LaTeX document with 11pt font and 1-inch marg
 \usepackage[margin=1in]{geometry}
 \begin{document}
 ...
-\end{document}`),
-  caption: [A simple LaTeX document.],
+\end{document}`)
 )
 ```
 
-#paragraph[A quick word on Typst][#link("https://typst.app/")[Typst] is a new typesetting system that is gaining popularity for its ease of use and modern features, such as incremental compilation and live preview. It is not as widely used as LaTeX yet, but it is worth considering if you want to try something new (though you will likely need to learn LaTeX anyway as most publishing venues do not support Typst). For example, #link("https://code.roars.dev/phd-cs-us")[this book] is originally written in  #link("https://code.roars.dev/phd-cs-us/blob/main/demystify-old.tex")[LaTeX] but has been converted to #link("https://code.roars.dev/phd-cs-us/blob/main/demystify.typ")[Typst].]
+#paragraph[A quick word on Typst][#link("https://typst.app/")[Typst] is a new typesetting system that is gaining popularity for its ease of use and modern features, such as incremental compilation and live preview. It is not as widely used as LaTeX yet, but it is worth considering if you want to try something new (though you will likely need to learn LaTeX anyway as most publishing venues do not support Typst). 
+
+For example, #link("https://code.roars.dev/phd-cs-us")[this book] is originally written in  #link("https://code.roars.dev/phd-cs-us/blob/main/demystify-old.tex")[LaTeX] but has been converted to #link("https://code.roars.dev/phd-cs-us/blob/main/demystify.typ")[Typst].]
 
 #pagebreak()
 = Academic and Cultural Differences <chap:cultural>
@@ -2969,7 +2970,7 @@ With lab mates and colleagues, you will often work and go to lunch together, con
 With your professors, you can call them by their first name (@sec:address), disagree with them and argue (and gain respect doing so), seek their help (even on personal matters), come to their houses for parties or gathering (e.g., my lab always come to my house for #link("https://photos.app.goo.gl/LFtbqQUuznq9eiL7A")[Thanksgiving]), and give them small thoughtful gifts that they proudly put on their desks (@sec:gifts).  
 Many people maintain lifelong relationships with their professors and colleagues, staying in touch through cards, emails, and visits, even after they no longer work together.
 
-#remark-block[
+#example[
   I maintain a close relationship with my former professors and mentors. When there is a new event in my life (or theirs), I often email them or call them, e.g., when I get married, have a new baby, new job, etc. I think this does not bother them a bit; they are genuinely interested in knowing and helping solve these "dramas" in my life.
 
   I also visit my former professors when I am in their area. I meet Thang Bui (my MS advisor) at least once a year when I come back to Harrisburg to visit my parents. When Steph was in DC for a meeting, I invited her to give a research talk at GMU. I have also collaborated with them after I graduated e.g., I recently got an NSF grant with Deepak.
@@ -3022,7 +3023,7 @@ Note that even with insurance, heathcare services might still be expensive. So y
 
 #paragraph[Tipping Culture][Unlike many other countries, tipping is expected for various services, especially in restaurant. So adding an extra 15--20% to your bills is common, especially in restaurants.]
 
-You should also tip other services, e.g., Uber, taxi, haircuts, and hotel services. The minimum wage for tipped employees is lower than the standard minimum wage, so tips are an important part of their income.
+You should also tip other services, e.g., Uber, taxi, haircuts, and hotel services. The minimum wage for tipped employees is typically lower than the standard minimum wage, so tips are an important part of their income.
 
 #paragraph[Car Dependency][Most places in the US are highly car-dependent. If you do not have a car, you will need to rely on friends, Uber, or public transportation, which can be inconvenient and time-consuming. Many international students end up getting a driver's license, which is highly convenient and replaces many documents (e.g., ID, passport), and eventually buying a car.]
 
@@ -3144,7 +3145,7 @@ More details and justfication for this metric can be found in the #link("https:/
 
 == CSPicks <sec:cspicks>
 
-#link("https://roars/dev/cspicks")[CSPicks] is a new website developed by our ROARS lab that aims to help prospective students (and faculty candidate) expLORe the research strengths of CS departments and their faculty. It is _not_ a ranking system like CSRankings, but rather a tool to help students find faculty and departments that match their research interests. It allows you see trends and growths of CS departments and faculty, such as the number of publications in different areas over time.
+#link("https://roars/dev/cspicks")[CSPicks]---developed by students from my #link("https://roars.dev")[ROARS lab]---is a new website that aims to help prospective students (and faculty candidate) explore the research strengths of CS departments and their faculty. It is _not_ a ranking system like CSRankings, but rather a tool to help students find faculty and departments that match their research interests. It allows you see trends and growths of CS departments and faculty, such as the number of publications in different areas over time.
 @fig:cspicks-gmu shows an example of CSPicks showing research areas of the CS department at George Mason.
 
 
@@ -3180,7 +3181,7 @@ More details and justfication for this metric can be found in the #link("https:/
 
 I am also a member of the VietPhD group on Facebook and often browse forums like #link("https://www.reddit.com/r/gradadmissions/")[Reddit/gradadmissions] and #link("https://forum.thegradcafe.com/")[GradCafe]. I saw many questions from students about PhD programs, but most participants are students (often outside CS or outside the US), and answers are frequently inaccurate and confusing. So I thought a handbook focused on US CS PhD admissions from an insider perspective would be useful.
 
-I started writing this book in May 2023 and have updated it since then (mostly around deadline season when I procrastinate—#highlight[productive procrastination]). The book was initially intended for international students but has expanded to include advice for domestic students (e.g., @chap:domestic-students and @chap:fellowships).]
+I started writing this book in May 2023 and have updated it since then (mostly around deadline when I procrastinate—#highlight[productive procrastination]). The book was initially intended for international students but has expanded to include advice for domestic students (e.g., @chap:domestic-students and @chap:fellowships).]
 
 
 == Who Is This Book For?
@@ -3191,7 +3192,7 @@ Students from top schools with strong research programs and experience might alr
 My goal is thus to level the playing field by providing info that is not readily available to less privileged students.
 #emph[I hope to encourage more students with such backgrounds to apply and succeed.]
 
-#remark-block[
+#example[
   I was a first-generation PhD student and was very much on my own navigating the admission process---there was no one to ask for help, no Reddit, Facebook, or resources like this book.
 
   Fun fact: I was the first PhD student in my family and my extended family. My parents were war refugees and did not finish high school (though my dad eventually got his GED). I was the first one to go to college (Penn State), and then grad school. This helps inspire my cousins, and in total our family has 15+ Nittany Lions, several MS, 2 PhDs (me in CS and the other in Finance), and 1 MD. So, be the first and create a path for others to follow!
@@ -3200,10 +3201,10 @@ My goal is thus to level the playing field by providing info that is not readily
 
 == Why This Book (Instead Of Others)? <sec:why-this-book>
 
-This book aims to be a comprehensive guide to the CS PhD admission process in the US.  It is based on my and other contributors' experiences. I also try to explain _the reasons behind the admission process_.
+This book aims to be a comprehensive guide to the CS PhD admission process in the US.  It is based on my and other contributors' experiences. I try to explain _the reasons behind the admission process_.
 While there are numerous #link("https://code.roars.dev/phd-cs-us")[resources online] that tell you _"what"_ to do, few explain the _"why"_---why LORs matter so much, why you should not draft your own LOR, why you should contact professors, etc. Moreover, it aims to help _international students_ who have very different backgrounds and experiences than domestic students (e.g., asking for LORs, research experience, cultural differences, etc.)#footnote([Though of course, domestic students often face similar challenges as international students, especially those from smaller schools or underrepresented groups.]).  Understanding the reason and mindset of the adcom and profs. can help you prepare better. 
 
-This book is a also _personal project_ that I continuously update and refine, especially during the admission season. I also work on it when I procrastinate from research or other tasks---it's my way of telling myself that I am still productive!
+This book is a also _#highlight[personal project]_ that I continuously update and refine, especially during the admission season. I also work on it when I procrastinate from research or other tasks---it's my way of telling myself that I am still productive!
 Writing is a relaxing process for me, and I enjoy experimenting with new things in LaTeX and more recently Typst (@chap:writing-latex). Because of these reasons, this book is thus an ever-evolving project!
 
 Finally, this book is highly _opinionated_ and _subjective_, which is both a strength and a weakness (see @sec:disclaimer).
@@ -3276,6 +3277,8 @@ Finally, my upbringing in the US provides a perspective aligned with American cu
 This book is inherently #highlight[_subjective_ and _opinionated_] based on my experience in PhD adcoms and student advising (@sec:about-me). Such a candid approach is beneficial, because overly neutral and "feel-good" advice are often useless and unrealistic in the competitive CS PhD admissions process.
 
 Moreover, since PhD admission varies significantly across institutions, there's rarely a universal "correct" way, and too many choices often lead to confusion. Clear and direct guidance---even if opinionated---can provide practical pathways to navigate the PhD admissions process better.
+
+This #link("https://roars.dev/phd-cs-us/advising.pdf")[advising guide] is another example of a highly subjective and opinionated document that I wrote for my current and prospective PhD students.
 
 
 = Acknowledgement 
