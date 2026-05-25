@@ -109,10 +109,10 @@
 #let entry-list = (
   (key: "April15", short: "April 15", long: "April 15", description: "The deadline for most US universities to accept or decline offers of admission. Set by CGS; students are typically not required to accept offers before this date."),
   (key: "cohort", short: "cohort", long: "cohort", description: "A group of students who start a program at the same time and often take classes together."),
-  (key: "ivy", short: "Ivy League", long: "Ivy League", description: "A group of eight private universities in the US known for academic reputation and prestige."),
+  (key: "Ivy League", description: [A group of #link("https://en.wikipedia.org/wiki/Ivy_League")[eight private universities in the US] known for academic reputation and prestige.]),
   (key: "adcom members", long: "admission committee members", description: "Faculty members who review applications and make admission decisions."),
   (key: "adcom chair", long: "admission committee chair", description: "The faculty member who leads the admission committee and oversees process fairness."),
-  (key: "adviser", short: "adviser", long: "adviser/supervisor", description: "A faculty member who guides and mentors a PhD student throughout research."),
+  (key: "advisor", long: "advisor/supervisor", description: "A faculty member who guides and mentors a PhD student throughout research."),
   (key: "r1", short: "R1", long: "Research 1 university", description: "Universities with the highest level of research activity."),
   (key: "stipend", short: "stipend", long: "stipend", description: "A fixed regular payment to students as part of their funding package."),
   (key: "rolling-admission", short: "rolling admission", long: "rolling admission", description: "Applications are reviewed as they arrive, with decisions released continuously."),
@@ -220,11 +220,11 @@ This book aims to address these concerns.
   caption: [Stress caused by imposter syndrome is real. Don't let it stop you from applying to CS PhD programs in the US!]
 ) <fig:imposter>
 
-#paragraph[Not any harder than other countries][While admission to a good CS PhD program in the US is very competitive, it *should not* be any harder than admission to good CS PhD programs in other countries. It might even be more flexible since CS PhD in the US *do not* require having an MS or a research topic, proposal, or adviser in advance (@sec:non-us-differences compares CS PhD study in the US to other countries). It doesn't even require having a CS background (@sec:non-stem).
+#paragraph[Not any harder than other countries][While admission to a good CS PhD program in the US is very competitive, it *should not* be any harder than admission to good CS PhD programs in other countries. It might even be more flexible since CS PhD in the US *do not* require having an MS or a research topic, proposal, or advisor in advance (@sec:non-us-differences compares CS PhD study in the US to other countries). It doesn't even require having a CS background (@sec:non-stem).
 
 If you believe you have a chance in other countries, e.g., Australia, Canada, Japan, Germany, UK, South Korea, and Singapore, then you will surely have a chance in the US as well.]
 
-#tip-block[The most selective US schools, e.g., top 10 in CS (@chap:rankings), are extremely competitive for everyone, regardless of background. Don't be discouraged if you don't get into a "household name" university as there are many excellent CS programs (@sec:selecting-ranking-schools) in the US that are not as well-known internationally but still offer great research opportunities and training. In fact, many top CS researchers and faculty members in the US did not graduate from Ivy League or top 10 schools.
+#tip-block[The most selective US schools, e.g., top 10 in CS (@chap:rankings), are extremely competitive for everyone, regardless of background. Don't be discouraged if you don't get into a "household name" university as there are many excellent CS programs (@sec:selecting-ranking-schools) in the US that are not as well-known internationally but still offer great research opportunities and training. In fact, many top CS researchers and faculty members in the US did not graduate from #gls("Ivy League", capitalize:true, first:false) or top 10 schools.
 
 Many students, especially those from smaller countries or schools, have the *imposter syndrome*---worrying they're "not good enough", or get discouraged when competing with others with "stronger" profiles (@sec:profile-not-strong). Remember (@chap:evalapps): adcom looks for potential and evidence you'll thrive in research environment and fit well at their institution---in other words, things that usually have nothing to do with your GPA or GRE scores.
 ]
@@ -254,12 +254,12 @@ A PhD in CS is a #highlight[research degree]. Unlike undergraduate or even Maste
 
 Career-wise, a CS PhD prepares you for jobs that require deep technical expertise and the ability to do independent research. Many graduates become professors or academic researchers while others pursue positions in industry research labs, advanced engineering teams, or technical leadership positions. The degree also opens doors to national labs, government agencies, and startups, where the ability to solve unknown and complex problems is necessary.
 
-#remark-block[A PhD is not just a degree, it is a *journey* that transforms you into a researcher. You will learn how to think critically, solve problems, deal with adversity, and work independently. You will also learn how to write and "sell" your work, collaborate with others, and effectively communicate your ideas. In the end, you will have a deep understanding of your chosen field and become an expert in your area of research. In fact, you will know about your research topic more than *anyone* else in the world, including, in many cases, your adviser! This is a scary thought, but it is also exciting and rewarding.]
+#remark-block[A PhD is not just a degree, it is a *journey* that transforms you into a researcher. You will learn how to think critically, solve problems, deal with adversity, and work independently. You will also learn how to write and "sell" your work, collaborate with others, and effectively communicate your ideas. In the end, you will have a deep understanding of your chosen field and become an expert in your area of research. In fact, you will know about your research topic more than *anyone* else in the world, including, in many cases, your advisor! This is a scary thought, but it is also exciting and rewarding.]
 
 
 === CS Fields and Areas <sec:fields-and-areas>
 
-CS is a broad academic discipline with many specialized areas of research. Understanding the structure of CS can help you communicate your research interests and goals more effectively, e.g., in your #gls("SOP") (@chap:sop), and also assist you in finding suitable advisers and research topics (@sec:finding-adviser).
+CS is a broad academic discipline with many specialized areas of research. Understanding the structure of CS can help you communicate your research interests and goals more effectively, e.g., in your #gls("SOP") (@chap:sop), and also assist you in finding suitable advisors and research topics (@sec:finding-advisor).
 
 #paragraph[Disciplines][At the highest level, academic _disciplines_ are broad domains of scholarly study, such as CS, Mathematics, Physics, Biology, Economics, Law, Social Sciences, and the Humanities. Universities typically have entire departments and degree programs centered on these disciplines (e.g., a Dept. of Computer Science or of Economics).]
 
@@ -323,7 +323,7 @@ Typically it takes 5--7 years for a CS PhD in the US. This is usually longer com
   caption: [The "ambition" level of a PhD student over their years of study (they miss the 6--7th year when the ambition is _"Just let me graduate"_).],
 )
 
-The first two years are typically spent taking coursework (somewhat equivalent to MS study), finding an adviser, and learning how to do research. The next 2--3 years focus on research, forming a dissertation topic, and getting results published. The last 1--2 years are usually spent continuing to publish, writing and defending the dissertation, and looking for a job.
+The first two years are typically spent taking coursework (somewhat equivalent to MS study), finding an advisor, and learning how to do research. The next 2--3 years focus on research, forming a dissertation topic, and getting results published. The last 1--2 years are usually spent continuing to publish, writing and defending the dissertation, and looking for a job.
 
 Within these 5--7 years, CS PhD students sometimes take a "leave of absence" for 1--2 semesters or for a summer to do internships at companies and research labs.
 
@@ -379,10 +379,10 @@ Most students apply to start their PhD in the Fall. This means they submit their
 
 Fall---the start of the academic year---is the most common start time for PhD programs in the US, and many universities only accept new PhD students in the Fall. Importantly, applying for the Fall also gives you access to funding opportunities (@chap:funding) that are available only for Fall admits, such as TAships (@sec:ta) and some fellowships.
 
-However, many universities also accept PhD students in the Spring or Summer, especially when you have a specific adviser who can fund you through an RAship (@sec:ra). This is less common, and you may lose funding opportunities that are available only for Fall admits.
+However, many universities also accept PhD students in the Spring or Summer, especially when you have a specific advisor who can fund you through an RAship (@sec:ra). This is less common, and you may lose funding opportunities that are available only for Fall admits.
 
 #remark-block[
-  GMU allows PhD students to start in the Spring, but it is usually not recommended. Two of my PhD students started in the Spring because I had funding to support them right away. In general, a student can start in the Spring or even Summer only if an adviser already has RA funding for them. Students who do not start in the Fall may also lose benefits reserved for Fall admits, such as a first-summer stipend. So in short, it is possible, but I do not recommend it in general.
+  GMU allows PhD students to start in the Spring, but it is usually not recommended. Two of my PhD students started in the Spring because I had funding to support them right away. In general, a student can start in the Spring or even Summer only if an advisor already has RA funding for them. Students who do not start in the Fall may also lose benefits reserved for Fall admits, such as a first-summer stipend. So in short, it is possible, but I do not recommend it in general.
 ]
 
 
@@ -414,11 +414,11 @@ text(size: 0.9em,
 
 - *MS requirement and PhD duration*: CS PhD programs in the US do not require an MS degree (@sec:time, @sec:msrequirement). In contrast, many other countries require having an MS degree before joining a PhD program. This means that US PhD programs are longer (5--7 years, 2 of which are coursework) than other countries (3--4 years, no coursework).
 
-- *Project proposal*: In many countries, you have to choose a project and adviser *during* the application process (e.g., you write a proposal to a potential adviser). But this allows you to start your research right from the beginning. In the US, you often start your PhD without an adviser or project and find them later. Usually you have two initial years to take classes, explore and find an adviser and research topic.
+- *Project proposal*: In many countries, you have to choose a project and advisor *during* the application process (e.g., you write a proposal to a potential advisor). But this allows you to start your research right from the beginning. In the US, you often start your PhD without an advisor or project and find them later. Usually you have two initial years to take classes, explore and find an advisor and research topic.
     
-- *Coursework*: In the US you will spend the first couple of years taking classes and exploring potential adviser and research topics. After that, you have to pass a series of exams during your PhD---qualifying exam, comprehensive exam, thesis proposal defense (#gls("ABD")). In other countries, you often start your research right away and work on the research project you proposed with the adviser you chose. Moreover, you might not have exams like those in the US or only have to do a few of them.
+- *Coursework*: In the US you will spend the first couple of years taking classes and exploring potential advisor and research topics. After that, you have to pass a series of exams during your PhD---qualifying exam, comprehensive exam, thesis proposal defense (#gls("ABD")). In other countries, you often start your research right away and work on the research project you proposed with the advisor you chose. Moreover, you might not have exams like those in the US or only have to do a few of them.
     
-- *Funding*: In many countries, funding comes from the university or the government. This funding often has a fixed duration, e.g., 3 or 4 years. In the US (@chap:funding), funding such as RA comes directly from your adviser (no fixed duration). There are also fewer TA opportunities in European universities compared to the US.
+- *Funding*: In many countries, funding comes from the university or the government. This funding often has a fixed duration, e.g., 3 or 4 years. In the US (@chap:funding), funding such as RA comes directly from your advisor (no fixed duration). There are also fewer TA opportunities in European universities compared to the US.
     
 - *Academic Position after PhD*: In other countries, PhD graduates interested in academia typically apply for additional research appointments, i.e., postdocs in the US, and then consider faculty positions. In the US, PhD graduates often apply directly for faculty positions. Postdoc for US graduates is no longer a popular option as it was before. The reason is that US PhD programs are longer, so you already have enough research experience (e.g., papers) to apply for faculty positions. In contrast, in other countries, PhD students often finish their PhD earlier and need more time to gain research experience before applying for faculty positions.
     
@@ -512,7 +512,7 @@ If the student mentions a faculty in their SOP, adcom may ask that faculty to re
 
 We typically review applications independently and do not talk to each other.  This is to avoid biasing, e.g., if one reviewer says they want to accept, the other might feel pressured to accept as well.  
 
-However, when there are discrepancies in evaluations, the adcom-chair will ask reviewers to discuss the application to reach a consensus.  We might also talk to each other for interesting or strong applications, e.g., how to recruit this student or who should be the adviser. 
+However, when there are discrepancies in evaluations, the adcom-chair will ask reviewers to discuss the application to reach a consensus.  We might also talk to each other for interesting or strong applications, e.g., how to recruit this student or who should be the advisor. 
 If the student mentioned a faculty member in their SOP, we might ask that faculty if they are interested in the student. 
 
 
@@ -564,7 +564,7 @@ Unfortunately, even if all reviewers recommend a student, they might not be admi
 === Waiving Application Fee <sec:fee-waive>
 
 Some universities do waive application fees---for example, Rice and TTIC do not charge a fee for PhD applications, and many universities waive fees for domestic students (@chap:domestic-students).
-Some programs also waive the fee if applicants attend their open house or information sessions. Others may waive the fee if the applicant provides proof of financial hardship, such as a statement from a financial adviser or a bank statement.
+Some programs also waive the fee if applicants attend their open house or information sessions. Others may waive the fee if the applicant provides proof of financial hardship, such as a statement from a financial advisor or a bank statement.
 
 However, most universities do not waive the application fee, as it is typically set by the university and not the department. Individual departments and programs usually do not have the authority to waive the application fee, even if they want to.
 
@@ -606,7 +606,7 @@ When reviewing applications (@sec:ievaluate), I usually read LoRs first, then th
 // \sectioninfo{LoR writers should be someone who (i) can talk in depth about your research experience and potential and (ii) have the credibility to evaluate your research ability.}
 
 
-Choose your #gls("LOR") writers carefully, as they can make or break your application. LoR writers are often your research advisers and professors who have mentored you in research. A *strong* LoR is from people who meet the following two criteria:
+Choose your #gls("LOR") writers carefully, as they can make or break your application. LoR writers are often your research advisors and professors who have mentored you in research. A *strong* LoR is from people who meet the following two criteria:
 
 - *Personal knowledge:* They should know you well and have worked closely with you through research projects (much preferred) or coursework. This allows them to write a letter that is *personalized* and *specific* to you.
 - *Credibility:* They should have sufficient expertise and reputation to effectively assess and vouch for your research capabilities and potential. Ideally, your recommender should be an active researcher with a PhD or extensive research experience.
@@ -1097,7 +1097,7 @@ Note that while GRE is not important for CS PhD admission, it might be required 
 Unless your degrees are from the US (e.g., you did your undergrad or MS in the US), or certain countries such as #link("https://www.gmu.edu/international/english-language-requirements")[these], you will likely need to take standardized English tests. On one hand you will need to show some level of English proficiency; but on the other hand, you do not need to have very good scores in these tests (many adcom members themselves were once international students and struggled with English).
 
 #tip-block[You might wonder why you need to know English well when you focus on CS topics that are mainly math and programming.  
-  As you will see in your PhD study, you will need to read and write a lot, and the papers you read and write will be in English.  You will also need to communicate with your adviser, collaborators, students, and other people.
+  As you will see in your PhD study, you will need to read and write a lot, and the papers you read and write will be in English.  You will also need to communicate with your advisor, collaborators, students, and other people.
   
   Also, the university often requires a certain level of English proficiency for TA (@sec:ta), as you will need to communicate with students. 
 ]
@@ -1199,7 +1199,7 @@ Typically, an interview takes about 15--30 minutes, and one important aspect of 
 You might be asked to talk about your research experience and interests and to read a paper and discuss it. In some rare cases you might also be asked to solve a problem (one of my colleagues at GMU likes coding interview).
 
 
-You should treat the interview as an informal chat. Prepare an _"elevator pitch"_ about your research experience and interests. You might also want to have a 5-minute presentation about your research. If a prof. asks you to read a paper, do it and be prepared to discuss it. You should also ask if you need to prepare for coding. Finally, the interview gives you an opportunity to ask questions, e.g., about the program and the professor's research.  You should definitely ask as it shows that you're interested.  See #link("https://roars.dev/phd-cs-us/advising.pdf")[some questions] you can ask about the advisor and their advising style.
+You should treat the interview as an informal chat. Prepare an _"elevator pitch"_ about your research experience and interests. You might also want to have a 5-minute presentation about your research. If a prof. asks you to read a paper, do it and be prepared to discuss it. You should also ask if you need to prepare for coding. Finally, the interview gives you an opportunity to ask questions, e.g., about the program and the professor's research.  You should definitely ask as it shows that you're interested.  See #link("https://roars.dev/phd-cs-us/advising.pdf")[some questions] you can ask about the #gls("advisor") and their advising style.
 
 ==== After the Interview
 
@@ -1286,18 +1286,18 @@ Not much you can do here. You can try to contact the school to ask about your st
 By around mid-March you should hear back from most PhD programs that want to admit you. 
 But you likely won't hear back from schools that do not want to admit you (@sec:late-rejection), e.g., you're on their wait list.
 
-If you receive offers, congratulations!  Now you're at a different game because the schools that have admitted you will try to get you to accept them!  Look carefully at the offer letters (@sec:offer-letters) for the terms and conditions of the offers.  Other important factors to consider include the reputation of schools (@chap:choosing-school) and professors (@chap:choosing-adviser), and funding availability (@chap:funding). You will have to make your decision (@sec:accept-postpone-decline) by a certain deadline, e.g., #gls("April15").
+If you receive offers, congratulations!  Now you're at a different game because the schools that have admitted you will try to get you to accept them!  Look carefully at the offer letters (@sec:offer-letters) for the terms and conditions of the offers.  Other important factors to consider include the reputation of schools (@chap:choosing-school) and professors (@chap:choosing-advisor), and funding availability (@chap:funding). You will have to make your decision (@sec:accept-postpone-decline) by a certain deadline, e.g., #gls("April15").
 
 #paragraph[Open House][Most schools have _Open House_ or _Visit Day_ events, which are a great resource to learn about the school, department, faculty, research, living, etc.
 
-Even if you can't come in person, you should attend virtually and meet with individual faculty. During the event, you get a chance to learn more about the program, and talk to individual faculty and current students.  Take notes of faculty who make you excited, and count those taking in new students (if they meet you, likely they are considering new students!).  Talk to students about their advisers, the dept, the area, and the funding situation.  Ask about anything you want to determine that they deserve _you_.]
+Even if you can't come in person, you should attend virtually and meet with individual faculty. During the event, you get a chance to learn more about the program, and talk to individual faculty and current students.  Take notes of faculty who make you excited, and count those taking in new students (if they meet you, likely they are considering new students!).  Talk to students about their advisors, the dept, the area, and the funding situation.  Ask about anything you want to determine that they deserve _you_.]
 
 #note-block[
   GMU has _Virtual Open House (VOH)_, e.g., #link("https://cs-GMU.github.io/cs-phd-voh-s23/")[here]. We invite all admitted PhD students to the VOH through Zoom to learn about the CS program, the department, GMU, and the DC area in general. Students also get opportunities to chat with professors and current students.
 ]
 
 
-#paragraph[What's next?][Make a decision, accept, reject, or defer the offers (@sec:accept-postpone-decline). Ask to meet with potential advisers (e.g., through Open House or separately) and even their students. Ask about computer equipment and software, office space, and other resources; in many cases these will be provided for free by your adviser or department (@sec:buying-equipment).
+#paragraph[What's next?][Make a decision, accept, reject, or defer the offers (@sec:accept-postpone-decline). Ask to meet with potential advisors (e.g., through Open House or separately) and even their students. Ask about computer equipment and software, office space, and other resources; in many cases these will be provided for free by your advisor or department (@sec:buying-equipment).
 
 Also, do not forget to update and thank LoR writers and others who have supported you through this process (@sec:thank-writers).
 ]
@@ -1366,7 +1366,7 @@ It is #emph[unlikely] that you can negotiate things like stipend, as it is stand
 === Negotiating PhD offer (e.g., having multiple offers)? <sec:negotiate>
 // \sectioninfo{You will not be able to negotiate stipend, but you can ask for specific start date, TA assignment, and conference travel budget.}
 
-In CS, negotiating a TA stipend is unlikely, as it is determined by the university (@sec:ta). For RA (@sec:ra), advisers have more leeway as it is funded by their grants. However, they will likely not negotiate RA stipend as they have to be fair to other students and also have to follow departmental standards. Note that the university typically automatically increases these stipends each year by a small amount.
+In CS, negotiating a TA stipend is unlikely, as it is determined by the university (@sec:ta). For RA (@sec:ra), advisors have more leeway as it is funded by their grants. However, they will likely not negotiate RA stipend as they have to be fair to other students and also have to follow departmental standards. Note that the university typically automatically increases these stipends each year by a small amount.
 
 Typically, the most wiggle room is funding in the summer (@sec:summer-funding) where the prof. might be able to pay you more from their grants. However, they typically only do this after you have been with them for a year or so and they see your potential.
 
@@ -1547,10 +1547,10 @@ A few notes about stipends:
 
 === Teaching Assistant (TA) <sec:ta>
 
-TA is common at the beginning of a PhD, when you have not yet found an adviser who can support you as an RA. It is also common to alternate between TA and RA, for example when your professor does not have enough funding or when you want to gain teaching experience.
+TA is common at the beginning of a PhD, when you have not yet found an advisor who can support you as an RA. It is also common to alternate between TA and RA, for example when your professor does not have enough funding or when you want to gain teaching experience.
 
 As a TA, you are paid through the school or department to help with teaching. You typically work up to 20 hours per week and assist with classes, for example by grading, running labs, or leading recitations.
-During a semester, a TA might work with several courses and professors, not necessarily their adviser. TA funding is *not* typically available during the summer (@sec:summer-funding), when there are fewer courses.
+During a semester, a TA might work with several courses and professors, not necessarily their advisor. TA funding is *not* typically available during the summer (@sec:summer-funding), when there are fewer courses.
 
 *How to get TA?* Unless you have other funding such as RA or fellowships, TA is typically the default funding source for CS PhD programs. In your application, simply indicate that you need financial assistance. Typically, adcom will either admit you with TA support or reject you. We do not admit students without supporting them (@sec:ievaluate).
 
@@ -1570,7 +1570,7 @@ Even if you have other funding and do not need a TA, you should still try TA at 
 RA support is provided by a professor through their funding so that you can work on their research project.
 As an RA, you generally do not need to teach, so you can focus on research. Depending on the professor, RA support may also be available during the summer. See @sec:ra-cost for more details on RA budgeting.
 
-*How to get RA?* When a professor recruits you, they might offer you an RA immediately, so you start the program with RA support. However, a more common scenario is that you first get admitted with TA support, then after a year or two you find an adviser who can support you as an RA.
+*How to get RA?* When a professor recruits you, they might offer you an RA immediately, so you start the program with RA support. However, a more common scenario is that you first get admitted with TA support, then after a year or two you find an advisor who can support you as an RA.
 
 It is important to note that RA support is *never guaranteed* because it depends on the professor's funding situation. So you should also pay attention to TA availability, since TA is a good backup plan and usually comes with benefits similar to RA. In other words, you should check whether TA support is readily available for PhD students in the program.
 
@@ -1635,7 +1635,7 @@ Finally, for fellowships (@sec:fellowships) you might get paid over the summer d
 === How much do *YOU* cost? <sec:ra-cost>
 // \subsectioninfo{Your entire PhD program costs about \$400K in total, but you \emph{do not} pay for it.}
 
-PhD students often ask why their salary is low compared to the large grants their advisers get. They also wonder why their offer letters sometimes show that their benefits are higher than what they receive as stipend (e.g., your financial assistance says you get a package of \$60K, but your stipend is only \$30K).  The reason is that the cost of supporting a PhD student is much higher than just their stipend.  In fact, the total cost of supporting a PhD student can be around \$70K per year, which includes not only the stipend but also tuition, health insurance, and other expenses. Over the course of a 5-6 year PhD program, this can add up to around \$400K.
+PhD students often ask why their salary is low compared to the large grants their advisors get. They also wonder why their offer letters sometimes show that their benefits are higher than what they receive as stipend (e.g., your financial assistance says you get a package of \$60K, but your stipend is only \$30K).  The reason is that the cost of supporting a PhD student is much higher than just their stipend.  In fact, the total cost of supporting a PhD student can be around \$70K per year, which includes not only the stipend but also tuition, health insurance, and other expenses. Over the course of a 5-6 year PhD program, this can add up to around \$400K.
 
 #align(center)[
   #image("files/c6.png", width: 50%)
@@ -1676,7 +1676,7 @@ PhD students often ask why their salary is low compared to the large grants thei
 @tab:cost shows the budget breakdown for a GRA per year.
 These numbers are based on my experience at public universities in the US. Private universities may have different numbers.  For simplicity, I will assume the department has a 9-month stipend of \$30K and a 3-month summer of \$10K (a third of the 9-month stipend). I will also use GMU tuition rate of about \$15K/year for full-time study (which is quite cheap compared to private universities, e.g., Univ. of Chicago is a whooping \$70K) and a 58.9% rate on *indirect cost*, which is a typical rate charged for overhead or administrative costs (yes, after all, universities are businesses!).  Finally, I assume the students take two conference trips per year, one domestic and one international (conf. registration, airline tickets, taxi, meals, etc are all included).
 
-In the end, the total budget comes out to be \$73K/year to support a PhD student. The summary is that #highlight[over your 5--6 years of your PhD, you cost about \$400K], and while your stipend is X, your adviser probably pays 2X for you. But of course, the nicest thing is that you do not have to pay for any of this! You get to gain the knowledge, do research, travel, and also get paid!
+In the end, the total budget comes out to be \$73K/year to support a PhD student. The summary is that #highlight[over your 5--6 years of your PhD, you cost about \$400K], and while your stipend is X, your advisor probably pays 2X for you. But of course, the nicest thing is that you do not have to pay for any of this! You get to gain the knowledge, do research, travel, and also get paid!
 
 #pagebreak()
 = Schools and Profs. <part:schools-profs>
@@ -1688,7 +1688,7 @@ In the end, the total budget comes out to be \$73K/year to support a PhD student
 #simpsons[It's not the school you go to, it's what you do while you're there!]
 // %\myepigraphsimpsons{"The answer to life's problems aren't at the bottom of a bottle. Heh heh! They're on TV!"}
 
-Choosing a school and an adviser (@chap:choosing-adviser) is clearly among the most important and difficult tasks when you apply and especially when you get admitted. This is further complicated due to cultural differences (@chap:cultural) and the unfamiliarity of international students with the US higher education system. This section aims to mitigate some confusion and help you make informed decisions.
+Choosing a school and an advisor (@chap:choosing-advisor) is clearly among the most important and difficult tasks when you apply and especially when you get admitted. This is further complicated due to cultural differences (@chap:cultural) and the unfamiliarity of international students with the US higher education system. This section aims to mitigate some confusion and help you make informed decisions.
 
 // % \section{Choosing a University <sec:choosing-university}
 // % \sectioninfo{Select schools based on their CS program and faculty research interests.}
@@ -1723,7 +1723,7 @@ You will be very surprised to learn that a school that you didn't know much abou
 
 #note-block[*Dat*: Most Vietnamese students, including those from top schools, *do not know* about CSRankings. Maybe applicants who worked at top research places such as VinAI would know about it.]
 
-*What matters to you?* While many find CSRankings and CSPicks useful, it is still superficial as every other ranking (@chap:rankings). You should not just look at the number of papers or the number of faculty in your area. You should also consider the quality of the faculty, e.g., how many of them are tenured, well-known in their field, and have a good publication record. You can find this information from their CVs or their homepages. You can also check their #link("https://scholar.google.com")[Google Scholar] profiles to see their h-index and i10-index. See @chap:choosing-adviser and @chap:research-achievements for more details on how to find and evaluate faculty.
+*What matters to you?* While many find CSRankings and CSPicks useful, it is still superficial as every other ranking (@chap:rankings). You should not just look at the number of papers or the number of faculty in your area. You should also consider the quality of the faculty, e.g., how many of them are tenured, well-known in their field, and have a good publication record. You can find this information from their CVs or their homepages. You can also check their #link("https://scholar.google.com")[Google Scholar] profiles to see their h-index and i10-index. See @chap:choosing-advisor and @chap:research-achievements for more details on how to find and evaluate faculty.
 
 You should also consider other factors that matter to you. You might prefer schools that give stable funding (@chap:funding) and good stipend (@sec:ra-cost). You might like areas with a large community from your country---Northern Virginia, for example, is very diverse and has a large population of Vietnamese. You might want to be near high-tech industrial hubs like Seattle or Silicon Valley, or places with plenty of outdoor activities such as hiking and skiing. Weather can also be important---_"PhD can be depressing, so would you rather be depressed in California or New York?"_. Finally, don't forget about things like cost of living---certain areas in California and New York are way more expensive than in Nebraska. Safety is another factor; however, while some universities might be in a high-crime city, the campus itself is very safe---like John Hopkins in Baltimore.
 
@@ -1751,7 +1751,7 @@ If you get admission to several places, you should consider attending Open House
 
 === Large/Well-known vs. Small/Unknown Programs
 
-The "feel-good" advice is to go where it fits you and a good adviser is the most important. But, how do you know what would or would not fit you if you have never been there? Also, how do you know if a prof. is good and compatible with you or not if you have never worked with them? So while this advice sounds good, it is vague and not actionable because you do not have enough information to decide.
+The "feel-good" advice is to go where it fits you and a good advisor is the most important. But, how do you know what would or would not fit you if you have never been there? Also, how do you know if a prof. is good and compatible with you or not if you have never worked with them? So while this advice sounds good, it is vague and not actionable because you do not have enough information to decide.
 
 In addition, while @sec:selecting-ranking-schools talks about various factors (e.g., faculty interests, locations, funding), most students, especially international ones, simply do not have the information or experience to evaluate these factors properly. Even if you _think_ you know, you might be wrong. For example, many students think they want to be in California because of the weather, but they might do just fine in colder places like Wisconsin or Michigan or hotter places like Texas and Arizona.
 
@@ -1779,20 +1779,20 @@ That said, an advantage of being at a small program is that you can easily stand
 // %   When considering PhD programs, we often wonder if we should prioritize a high-ranking university or a professor with a strong reputation? Of course, both are great, but it is hard to achieve both.  I believe receiving some guidance from you  would be incredibly valuable.
 // % \end{commentbox}
 
-// % The general advice is to prioritize a strong faculty member over a high-ranked school because your success in research depends more on your adviser than the school's name. Still, a good school can provide better resources, networking opportunities, and and more competitive environment---and there's always that "household name" that makes you feel good. So ranking does matter!
+// % The general advice is to prioritize a strong faculty member over a high-ranked school because your success in research depends more on your advisor than the school's name. Still, a good school can provide better resources, networking opportunities, and and more competitive environment---and there's always that "household name" that makes you feel good. So ranking does matter!
 
 
 === PhD in other Related Fields: CE, IST, Cybersecurity <sec:related-fields>
 
 You *do not* need to do a PhD in CS to do research in CS. For example, in addition to a traditional CS department, GMU has IST and Cybersecurity departments, both of which have faculty with PhD in CS and work on CS topics (e.g., AI, Security, Robotics). So you still can do CS research and publish in CS-focused venues even if you're not in a traditional CS program. It is common to see faculty with PhD in CS in a non-CS department as well as faculty with non-CS PhD in a CS department.
 
-However, if your goal is a PhD in CS, then you need to be in the CS dept. _and_ advised by a CS faculty. A non-CS faculty can serve in the PhD dissertation committee (common) or _co-advise_ (less common, but possible) PhD students in CS, but your main PhD adviser will likely be a tenure-line faculty in CS (@sec:faculty-types).
-For example, a prof. in Stats or Math might be able to serve as a co-adviser, but not as a sole adviser of a student in a CS PhD program.
+However, if your goal is a PhD in CS, then you need to be in the CS dept. _and_ advised by a CS faculty. A non-CS faculty can serve in the PhD dissertation committee (common) or _co-advise_ (less common, but possible) PhD students in CS, but your main PhD advisor will likely be a tenure-line faculty in CS (@sec:faculty-types).
+For example, a prof. in Stats or Math might be able to serve as a co-advisor, but not as a sole advisor of a student in a CS PhD program.
 If in doubt, check with the CS dept. for their requirements.
 
-It is possible to transfer between departments (and universities). However, this can be complicated and often requires re-applying to the new department and taking additional coursework or exams required by the new place. Moreover, your advisor may not be able to supervise you in the new department (they can co-advise or serve on the committee, but unlikely are allowed by the new department to be your main adviser). Usually, transfers happen because the current advisor moves to a new department or university, and the student wants to stay with them.
+It is possible to transfer between departments (and universities). However, this can be complicated and often requires re-applying to the new department and taking additional coursework or exams required by the new place. Moreover, your advisor may not be able to supervise you in the new department (they can co-advise or serve on the committee, but unlikely are allowed by the new department to be your main advisor). Usually, transfers happen because the current advisor moves to a new department or university, and the student wants to stay with them.
 
-For this specific reason, CSRankings and CSPicks focus on faculty who can advise CS PhD students. I also have compiled a #link("https://roars.dev/phd-cs-us/viet-cs-profs-us")[list] of Vietnamese faculty who can advise PhD students. @sec:faculty-types discusses more about who can serve as your PhD adviser.
+For this specific reason, CSRankings and CSPicks focus on faculty who can advise CS PhD students. I also have compiled a #link("https://roars.dev/phd-cs-us/viet-cs-profs-us")[list] of Vietnamese faculty who can advise PhD students. @sec:faculty-types discusses more about who can serve as your PhD advisor.
 
 // %\section{Comparison Factors}
 
@@ -1953,22 +1953,22 @@ The Chair reports to the Dean and is responsible for implementing college polici
 
 While department chairs do not usually get involved in PhD admissions decisions (see how decisions are made in @sec:how-decisions), they set the overall direction and priorities that shape how many students are admitted and what resources are available to them.
 
-*Faculty and Staff*: In many cases adcom consults with faculty members who are potential advisers to get their input on applicants (@sec:applications-assigned). Thus general faculty can influence admissions by recommending students they want to advise. 
+*Faculty and Staff*: In many cases adcom consults with faculty members who are potential advisors to get their input on applicants (@sec:applications-assigned). Thus general faculty can influence admissions by recommending students they want to advise. 
 
 In addition, a CS department has various *administrative staff* who handle day-to-day operations, e.g., contacting applicants, processing applications, and managing student records. While staff do not make admissions decisions, they ensure the process runs smoothly and efficiently---a critical behind-the-scenes role.
 
 
 #pagebreak()
-== Choosing an Adviser <chap:choosing-adviser>
-// \chapterinfo{The best adviser is the one that \textbf{fits}, e.g., you can work well with, and has the ability to help you succeed. But you do not know that until you start working with them.}
+== Choosing an advisor <chap:choosing-advisor>
+// \chapterinfo{The best advisor is the one that \textbf{fits}, e.g., you can work well with, and has the ability to help you succeed. But you do not know that until you start working with them.}
 
 #simpsons[It's not easy being a mentor. But it sure is funny to watch other people screw up.]
 
-There is no one-size-fits-all answer to finding an adviser. The best adviser is the one that fits you, e.g., you can work well with, and has the ability to help you succeed. But how do you find such a person?
+There is no one-size-fits-all answer to finding an advisor. The best advisor is the one that fits you, e.g., you can work well with, and has the ability to help you succeed. But how do you find such a person?
 
-Fortunately, while some non-US programs require finding an adviser and research topic before starting the PhD (@sec:non-us-differences), CS PhD programs in the US will typically give you a couple of years to "shop" for advisers and research topics. This is especially true if you're admitted with TA (@sec:ta), which gives you time to explore and find an adviser.
+Fortunately, while some non-US programs require finding an advisor and research topic before starting the PhD (@sec:non-us-differences), CS PhD programs in the US will typically give you a couple of years to "shop" for advisors and research topics. This is especially true if you're admitted with TA (@sec:ta), which gives you time to explore and find an advisor.
 
-=== Finding an Adviser <sec:finding-adviser>
+=== Finding an advisor <sec:finding-advisor>
 
 Assuming you're not familiar with any particular profs., then _first_ search for those that share similar research interests. For example, in CSRankings and CSPicks, if you want to work with PL, you can search for those published in PL conferences. If you want to work with SE _and_ AI, you can search for faculty who work in both SE and AI.
 
@@ -1976,11 +1976,11 @@ _After that_, you can research about that prof. by going to their website, looki
 If you find a prof. that you like, you can reach out to them (@sec:contact).
 
 #tip-block[*Xiaokuan*:
-  Whether the student's research interest matches that of the adviser is very important;
+  Whether the student's research interest matches that of the advisor is very important;
   if there is a mismatch,
-  either the student or the adviser has to make compromises,
+  either the student or the advisor has to make compromises,
   which often leads to disagreements or conflicts.
-  IMO, the adviser should be the one who _guides_ students to do research while allowing students to pursue their own interests,
+  IMO, the advisor should be the one who _guides_ students to do research while allowing students to pursue their own interests,
   instead of _dictating_ their research.
 ]
 
@@ -1992,7 +1992,7 @@ You can also ask to do an independent study or research with a prof. This can be
 Ultimately, choose a prof. that fits you by communicating with them, taking their courses, meeting and asking them questions, and talking to their current students. It will take time and effort, but since you will be working with this person for 5+ years, it is important to try to find the right one.
 
 #remark-block[*Thanh*: 
-  In my opinion, having a well-suited adviser is crucial for a successful PhD and research career. One effective approach to finding a suitable professor is by working with a professor during your undergraduate studies. An exemplary instance is VinAI's residency program, where residents collaborate with professors from the US for two years before applying to PhD programs. Many VinAI residents have achieved remarkable results and gained admission to prestigious US universities. Unfortunately, VinAI's resident program is limited to AI research.
+  In my opinion, having a well-suited advisor is crucial for a successful PhD and research career. One effective approach to finding a suitable professor is by working with a professor during your undergraduate studies. An exemplary instance is VinAI's residency program, where residents collaborate with professors from the US for two years before applying to PhD programs. Many VinAI residents have achieved remarkable results and gained admission to prestigious US universities. Unfortunately, VinAI's resident program is limited to AI research.
 
   In other fields, e.g. Software Engineering, Vietnamese students face challenges in reaching US professors. Do you have any tips for Vietnamese students who want to connect with US professors and work as research assistants?
 
@@ -2001,12 +2001,12 @@ Ultimately, choose a prof. that fits you by communicating with them, taking thei
 
 // % \subsection*{Additional Resources}
 // % \begin{itemize}
-// %   \item \href{https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-Advisor.pdf}{The Definitive "what do I ask/look for" in a PhD Adviser Guide}
+// %   \item \href{https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-Advisor.pdf}{The Definitive "what do I ask/look for" in a PhD advisor Guide}
 // % \end{itemize}
 
-=== Types of Faculty: Who can serve as a PhD adviser? <sec:faculty-types>
+=== Types of Faculty: Who can serve as a PhD advisor? <sec:faculty-types>
 
-#highlight[Not every faculty] can serve as your official PhD adviser. Understanding the different types of faculty roles such as  tenured, tenure-track, teaching, research, adjunct, and emeritus professors will help you avoid common mistakes, e.g.,  contacting the wrong person (@sec:contact) for research opportunities or listing in your SOP (@chap:sop) someone who can't actually supervise PhD students.
+#highlight[Not every faculty] can serve as your official PhD advisor. Understanding the different types of faculty roles such as  tenured, tenure-track, teaching, research, adjunct, and emeritus professors will help you avoid common mistakes, e.g.,  contacting the wrong person (@sec:contact) for research opportunities or listing in your SOP (@chap:sop) someone who can't actually supervise PhD students.
 
 *Faculty Types*: At most R1 universities, faculty generally fall into two categories:
 + Tenure-line faculty (tenured or tenure-track)
@@ -2016,20 +2016,20 @@ The key distinction is in their responsibilities—whether they are expected to 
 
 ==== Tenure-Line Faculty
 
-_Tenure-line_ faculty members are expected to perform research, publish in top venues, get funding (@sec:ra), and mentor PhD students. They typically teach fewer courses—often just one per semester—and are the *main group eligible to serve as primary PhD advisers*. Tenure-line faculty consist of two subcategories:
+_Tenure-line_ faculty members are expected to perform research, publish in top venues, get funding (@sec:ra), and mentor PhD students. They typically teach fewer courses—often just one per semester—and are the *main group eligible to serve as primary PhD advisors*. Tenure-line faculty consist of two subcategories:
 
 - *Tenure-track faculty* are on the path to tenure and are often actively recruiting students.
 - *Tenured faculty* have already earned permanent status and might be less active in building their research group.
 
 #emph-block[
-  *If you're reaching out to professors about potential advising, focus on tenure-line faculty*. These are the faculty most likely to have funding, institutional authority, and the capacity to take on new PhD students. See @sec:tenure-vs-tenure-track for more on choosing between tenured and tenure-track faculty as advisers.
+  *If you're reaching out to professors about potential advising, focus on tenure-line faculty*. These are the faculty most likely to have funding, institutional authority, and the capacity to take on new PhD students. See @sec:tenure-vs-tenure-track for more on choosing between tenured and tenure-track faculty as advisors.
 ]
 
 ==== Teaching Faculty
 
 _Teaching faculty_ (also called instructional faculty, professors of practice, or lecturers) primarily focus on teaching. They often teach three to four courses per semester and are _not_ expected to conduct research, publish papers, or apply for funding.
 
-Thus they usually do not have the resources or institutional role to advise PhD students, especially as the main adviser. In some universities, they may co-advise a PhD student alongside a tenure-line faculty member, but this is rare and varies by institution.
+Thus they usually do not have the resources or institutional role to advise PhD students, especially as the main advisor. In some universities, they may co-advise a PhD student alongside a tenure-line faculty member, but this is rare and varies by institution.
 
 *Do not contact teaching faculty to ask about PhD or research positions in their lab*. They're usually not involved in PhD admissions, and such emails can be annoying to them.
 
@@ -2042,7 +2042,7 @@ Thus they usually do not have the resources or institutional role to advise PhD 
 _Postdocs_ are temporary research positions for recent PhD graduates, typically lasting 1-3 years in CS. They are typically not considered faculty and do not have the institutional role to advise PhD students. 
 Think of them as "super grad students" who also have an advisor/mentor (the PI) and are expected to do research and publish papers just like grad students.
 
-Some universities have _research faculty_ or _research scientists_. Like postdocs, they focus almost entirely on research and often have little or no teaching duties. These faculty members can apply for grants (which in many cases directly pay their salaries) and, in some _rare_ cases, can serve as advisers for PhD students. In such cases, they are often required to co-advise with a tenure-line faculty member.
+Some universities have _research faculty_ or _research scientists_. Like postdocs, they focus almost entirely on research and often have little or no teaching duties. These faculty members can apply for grants (which in many cases directly pay their salaries) and, in some _rare_ cases, can serve as advisors for PhD students. In such cases, they are often required to co-advise with a tenure-line faculty member.
 
 ==== Adjunct and Emeritus Faculty
 
@@ -2050,7 +2050,7 @@ These faculty members are typically not involved in research or PhD advising. _E
 
 _Adjunct faculty_ are typically part-time instructors who may have a full-time job outside academia#footnote[Fun fact: Mike Pence, who was the former Vice President of the United States, is an adjunct faculty member at George Mason.]. They are usually only affiliated with the university only for their period of teaching contract (e.g., one semester) and thus do not have the institutional role to advise PhD students.
 
-Because of their limited roles, adjunct and emeritus faculty do not serve as PhD advisers. So, do not contact them to ask about research openings.
+Because of their limited roles, adjunct and emeritus faculty do not serve as PhD advisors. So, do not contact them to ask about research openings.
 
 #warning-block[
   This #link("https://www.reddit.com/r/gradadmissions/comments/1iyt2k8/_/")[Reddit thread] shares an example of a student being rejected after listing emeritus professors in their SOP. This is a common mistake, especially for international students who are not familiar with the US system.
@@ -2058,7 +2058,7 @@ Because of their limited roles, adjunct and emeritus faculty do not serve as PhD
 
 ==== Faculty from Other Departments
 
-Most universities restrict who can advise PhD students based on departmental affiliation. For example, even a tenured faculty member in another department (e.g., Electrical Engineering or Math) may not be allowed to serve as the primary adviser for a CS PhD student unless they have a formal joint appointment (@sec:related-fields).
+Most universities restrict who can advise PhD students based on departmental affiliation. For example, even a tenured faculty member in another department (e.g., Electrical Engineering or Math) may not be allowed to serve as the primary advisor for a CS PhD student unless they have a formal joint appointment (@sec:related-fields).
 
 So check these carefully as this is different from one university to another.
 
@@ -2091,9 +2091,9 @@ Professors with these titles are often tenure-line faculty, and therefore can ad
   #image("files/c8.png", width: 40%)
 ]
 
-Now that you know a bit about tenured and tenure-track faculty (@sec:faculty-types), which one should you choose as your adviser? How do you know if one would fit you better than the other?
+Now that you know a bit about tenured and tenure-track faculty (@sec:faculty-types), which one should you choose as your advisor? How do you know if one would fit you better than the other?
 
-Either can be a good adviser, but they have different strengths and weaknesses. The below gives some ideas; however, the best indicator of their research productivity and impact is their publication and recognition record (@chap:research-achievements). Some profs. publicly share their advising style and expectations, like #link("https://roars.dev/phd-cs-us/advising.pdf")[this] and #link("https://jbhuang0604.github.io/advisor_guide.html")[that], to help prospective students decide.
+Either can be a good advisor, but they have different strengths and weaknesses. The below gives some ideas; however, the best indicator of their research productivity and impact is their publication and recognition record (@chap:research-achievements). Some profs. publicly share their advising style and expectations, like #link("https://roars.dev/phd-cs-us/advising.pdf")[this] and #link("https://jbhuang0604.github.io/advisor_guide.html")[that], to help prospective students decide.
 
 *Tenure-track faculty*—like assistant professors—are typically young and active in research (they have to be, to get tenure). Thus, they will devote more time to work with you and push you to do research and publish. However, you might not become too independent because they may be too hands-on with you. For example, you might not learn how to fully form research ideas, design experiments, and write papers on your own. Also, they may not have as much experience in managing students or may not yet have substantial funding.
 
@@ -2117,7 +2117,7 @@ Some students might hesitate to apply to a lab where they see the faculty has ma
 
 However, the main reason a prof. has many students from a particular country can simply be because students from that country apply more to that prof. Vietnamese students tend to apply to Vietnamese profs. more, Chinese students tend to apply to Chinese profs. more, etc. Most profs., in my experience, _do not_ have preference for students from any specific country and simply take students who are a good fit for their research group.
 
-Thus, don't worry about this too much and just apply to the profs. you think are a good fit for you (@sec:finding-adviser). In fact, this might be an advantage because profs. who have many students from their own country might want to diversify their group and take students with different backgrounds.
+Thus, don't worry about this too much and just apply to the profs. you think are a good fit for you (@sec:finding-advisor). In fact, this might be an advantage because profs. who have many students from their own country might want to diversify their group and take students with different backgrounds.
 
 === Should I Contact a Prof. Before Applying? How to Get a Positive Reply? <sec:contact>
 
@@ -2164,7 +2164,7 @@ Second, and probably more importantly, is to make yourself stand out. It is not 
 Finally, profs. are busy (@sec:busy), so don't take it personally if you don't get anything from them (though I would be surprised if you did all the above correctly and still don't get a reply). See @sec:kiss-of-death-emails for common mistakes in emails and @sec:interpreting-response for interpreting replies.
 
 #remark-block[*Xiaokuan*: 
-  Applying for PhD and contacting a potential PhD adviser is a classic _"why me, why you"_ problem, similar to looking for a job in a company. On a high level, you need to show that you have done your _homework_ regarding the professor and the university, and clearly explain:
+  Applying for PhD and contacting a potential PhD advisor is a classic _"why me, why you"_ problem, similar to looking for a job in a company. On a high level, you need to show that you have done your _homework_ regarding the professor and the university, and clearly explain:
   1) why do you think you are a good fit in professor A's group?
   2) why do you want to be advised by professor A, not B?
   3) why do you want to apply for university X, not Y?
@@ -2213,7 +2213,7 @@ Some generic responses are:
 
 - *Cannot admit you directly. Need to go through admission process.* Generic. They are not interested and refer you to the admission process.
 
-- *I am not taking students but I co-advise/can serve on your committee.* While this might sound good, it's still generic because it says _once you're admitted and have an adviser_, then contact me again.
+- *I am not taking students but I co-advise/can serve on your committee.* While this might sound good, it's still generic because it says _once you're admitted and have an advisor_, then contact me again.
 
 - *I am not taking student but Prof. X might be.* Not common as most profs. do not refer you to their colleagues. However, this is better than the previous responses. While they cannot take you, they think you are a good fit for X. So follow up with a thank you and say you'll contact X. And then contact X and say that Y referred you to them.
 
@@ -2408,7 +2408,7 @@ While both MS and PhD programs are graduate degrees, they are _very different_ i
     [Admission Req], [No research experience], [Research experience],
     [Coursework Req], [Yes], [Yes (but research is much more important)],
     [Duration], [2 years], [5--7 years],
-    [Adviser Req], [No], [Yes],
+    [advisor Req], [No], [Yes],
     [Funding], [No], [Yes],
     table.hline()
   ),
@@ -2424,7 +2424,7 @@ While both MS and PhD programs are graduate degrees, they are _very different_ i
 
 - *Duration:* an MS typically takes 2 years while a PhD takes 5--7 years (or even longer). Many students get an MS along the way to a PhD, e.g., after finishing the 2-year course work.
 
-- *Adviser:* MS students typically do not have an adviser (if you do thesis option then you will have one), while PhD students need an adviser who guides them in their research.
+- *advisor:* MS students typically do not have an advisor (if you do thesis option then you will have one), while PhD students need an advisor who guides them in their research.
 
 - *Funding:* MS is typically #emph[not funded], while PhD is (@chap:funding). See @sec:ms-funding for more details on MS funding.
 
@@ -2480,13 +2480,13 @@ Finally, if you have a strong background and can demonstrate that you can be pro
 == Selecting and Ranking Schools <sec:selecting-ranking-schools-ms>
 // \sectioninfo{How to select and rank MS programs in CS.}
 
-Because of the differences between MS and PhD programs (@sec:phd-vs-ms), you should consider different factors when selecting and ranking MS programs (see @chap:choosing-school for selecting PhD programs). For example, you might want to consider factors such as location, industry connections, and job placement instead of research areas and advisers (@chap:choosing-adviser).
+Because of the differences between MS and PhD programs (@sec:phd-vs-ms), you should consider different factors when selecting and ranking MS programs (see @chap:choosing-school for selecting PhD programs). For example, you might want to consider factors such as location, industry connections, and job placement instead of research areas and advisors (@chap:choosing-advisor).
 
 - *Location:* In addition to living in a place you like (e.g., warm weather, historical city, etc.), you should also consider the job opportunities in the area. For tech industry, consider MS programs in tech hubs like the Bay Area and Seattle. For government jobs, look at schools in the DC area. For example, many students at GMU work for the government or defense contractors in the DC area and take classes in the evening or online.
 
 - *Industry Connections:* Universities often have strong connections with local companies and can help you get internships and jobs. For example, Microsoft and Amazon look for students in the Washington area while Google and Facebook recruit those in the Bay Area. Due to its location, GMU students naturally get jobs from the government, defense contractors, and Amazon, whose 2nd HQ is in Arlington.
 
-- *Ranking:* Unlike PhD programs where the adviser and research are likely the most important factor, in MS programs the ranking of the school is typically more important. Thus, you should consider the ranking of the school in CS, especially in the specific area you're interested in. For example, if you're interested in software engineering, you might want to consider schools with strong SWE programs.
+- *Ranking:* Unlike PhD programs where the advisor and research are likely the most important factor, in MS programs the ranking of the school is typically more important. Thus, you should consider the ranking of the school in CS, especially in the specific area you're interested in. For example, if you're interested in software engineering, you might want to consider schools with strong SWE programs.
 
 - *Living Cost:* MS students are typically not funded (@sec:ms-funding), so living cost can be a big factor. You should consider the tuition and living expenses of the area. Note that sometimes living costs, e.g., renting, seem scary at first but students often find way to make it work, e.g., by sharing an apartment with other students.
 
@@ -2511,7 +2511,7 @@ Even if they say they are looking for graduate students, you can still contact t
 
 Many universities have programs to encourage undergraduate research. For example, GMU has the OSCAR program, UNL has UCARE, and #gls("NSF") has #gls("REU")'s (for US citizens and permanent residents).
 
-You can also take honor thesis or independent study courses with a professor.  This is a good way to get research experience and also get a LoR from the professor.  You can also ask your academic adviser or other faculty members for suggestions.  Finally, you can also ask your peers who are already doing research.  Use the method described in @sec:contact to contact professors
+You can also take honor thesis or independent study courses with a professor.  This is a good way to get research experience and also get a LoR from the professor.  You can also ask your academic advisor or other faculty members for suggestions.  Finally, you can also ask your peers who are already doing research.  Use the method described in @sec:contact to contact professors
 
 #remark-block[
     I enjoy working with undergrads and actively recruit them to my #link("https://roars.dev")[research group].
@@ -2549,27 +2549,27 @@ This is less common but several places offer virtual internships and research pr
 // % \section{Contributions in the Work}
 // % A  typical CS research project involves the following tasks leading to a publication:
 // % \begin{itemize}
-// %   \item \textbf{Idea}: This involves identifying a research problem, knowing the related work, and proposing a solution or approach.  For most new researchers, this part is often done by the adviser or senior researchers. For example, your mentor suggests a problem to work on and ask you to try some specific approach.  Typicaly the problem and approach are vague and you need to refine them, e.g., by reading more related work and trying out different ideas.
+// %   \item \textbf{Idea}: This involves identifying a research problem, knowing the related work, and proposing a solution or approach.  For most new researchers, this part is often done by the advisor or senior researchers. For example, your mentor suggests a problem to work on and ask you to try some specific approach.  Typicaly the problem and approach are vague and you need to refine them, e.g., by reading more related work and trying out different ideas.
 
 // %   \item \textbf{Implementation}: This involves implementing the proposed approach.  You might need to try different methods, algorithms, data structures, and optimizations to make the prototype work.  In system fields such as software, implementation involves coding and building a prototype.  In other fields, such as theory, it might involve developing mathematical models and proving theorems.  In other fields, such as HCI, it might involve user studies and qualitative analysis. Regardless, this part is often the most time-consuming and challenging part of the work.
 
-// %   The person doing the implementation understand the most about the approach and its strengths and weaknesses.  It is very rare that the mentor or adviser would get involved in the implementation as they often want to manage at a high level and give the student freedom to explore and learn.  The student would regularly update the mentor on the progress and discuss any issues.  The mentor would provide high-level guidance, e.g., suggesting different algorithms or optimizations to try, but would not do the implementation themselves.
+// %   The person doing the implementation understand the most about the approach and its strengths and weaknesses.  It is very rare that the mentor or advisor would get involved in the implementation as they often want to manage at a high level and give the student freedom to explore and learn.  The student would regularly update the mentor on the progress and discuss any issues.  The mentor would provide high-level guidance, e.g., suggesting different algorithms or optimizations to try, but would not do the implementation themselves.
 
-// %   \item \textbf{Evaluation}: Once implementation is done (often determined by the adviser), you need to design the experiments to evaluate the approach.  This involves forming research questions and hypotheses (e.g., does the approach improve performance? how does it compare to the state-of-the-art?).  These research questions then determine how the experiments are designed, e.g., what datasets to use, what baselines to compare against, what metrics to measure.
+// %   \item \textbf{Evaluation}: Once implementation is done (often determined by the advisor), you need to design the experiments to evaluate the approach.  This involves forming research questions and hypotheses (e.g., does the approach improve performance? how does it compare to the state-of-the-art?).  These research questions then determine how the experiments are designed, e.g., what datasets to use, what baselines to compare against, what metrics to measure.
 
-// %   This part is often shared by both the student and the advisor, where the adviser provides high-level guidance and the student does the details.  Moreover, this part often requires multiple iterations, e.g., the initial experiments might not work well and you need to refine the research questions and experiment design.
+// %   This part is often shared by both the student and the advisor, where the advisor provides high-level guidance and the student does the details.  Moreover, this part often requires multiple iterations, e.g., the initial experiments might not work well and you need to refine the research questions and experiment design.
 
 // %   \item \textbf{Collecting and Analyzing data}: This involves running the experiments, collecting data, and analyzing the results.  This part is often done by the student, who needs to ensure that the experiments are run correctly and the data is collected accurately.  The student also needs to analyze the data and draw conclusions from the results.
 
-// %   In most cases, the student doing the implementation would also do this part, as they understand the approach and its strengths and weaknesses the most, and can easily update the implementation and refine the experiments as needed.  Like the implementation part, the adviser does not get involved in this part but would provide high-level guidance and discuss the results with the student.  In many projects, this part also involve other people, e.g., undergraduate students, who help run the experiments and collect data.
+// %   In most cases, the student doing the implementation would also do this part, as they understand the approach and its strengths and weaknesses the most, and can easily update the implementation and refine the experiments as needed.  Like the implementation part, the advisor does not get involved in this part but would provide high-level guidance and discuss the results with the student.  In many projects, this part also involve other people, e.g., undergraduate students, who help run the experiments and collect data.
 
 
-// %   \item \textbf{Writing}: Once you get promising experimental results, your adviser would ask you to write a draft of the paper to a target conference or journal (this helps determine the format and audience of the work).
+// %   \item \textbf{Writing}: Once you get promising experimental results, your advisor would ask you to write a draft of the paper to a target conference or journal (this helps determine the format and audience of the work).
 // %   Writing is often the hardest part for new researchers as it requires a different skill set (e.g., you could be very good with technical work but not good at writing). You can learn from looking at other papers, e.g., from your own group and other papers published in the target conference or journal.
 
 // %   In most cases, the student would provide the first draft of the manuscript.  Other contributors, e.g., those who helped with the experiments, might also contribute to the writing, e.g., by writing specific sections and give feedback on the draft.
 
-// %   Once a draft is ready, the student would share it with the adviser and co-authors for feedback.  This part is often done through multiple iterations, where the student revises the draft based on feedback from the adviser and co-authors. In many cases, during the writing process the student might find issues with the approach and experiments, and need to go back to the implementation and experiment design parts to refine them.
+// %   Once a draft is ready, the student would share it with the advisor and co-authors for feedback.  This part is often done through multiple iterations, where the student revises the draft based on feedback from the advisor and co-authors. In many cases, during the writing process the student might find issues with the approach and experiments, and need to go back to the implementation and experiment design parts to refine them.
 
 
 // % \end{itemize}
@@ -2586,7 +2586,7 @@ This is less common but several places offer virtual internships and research pr
 
 // % First, in CS, the number of authors is typically small, e.g., 2--5 authors.  This is unlike some other fields, e.g., biology and medicine, where the number of authors can be very large, e.g., 10--20 authors.  Thus, in CS, authorship is a big deal and should be reserved for those who made significant contributions to the work.
 
-// % \paragraph{Order of authorship} The short version: the first author is typically the primary contributor, the last author is typically the senior author (e.g., adviser), and middle authors are ranked by level of contribution.
+// % \paragraph{Order of authorship} The short version: the first author is typically the primary contributor, the last author is typically the senior author (e.g., advisor), and middle authors are ranked by level of contribution.
 
 
 
@@ -2662,7 +2662,7 @@ The #gls("GRFP", display: "NSF GRFP") is a prestigious fellowship for US citizen
 
 - While reviewers are likely in your field, they might not be research-focused faculty members (e.g., tenure-line), they can be teaching faculty (@sec:faculty-types). In fact, I believe many reviewers are teaching faculty. So this means they may not be familiar to the latest related work or trend in the field. So make your research plan easy to understand and well-motivated (see @sec:grfp-pitfalls).
 
-- Reviewers typically try to compare applicants _within their cohort level_. This means that we do not compare an undergrad, who is still applying to grad school, to a 2nd year PhD student who already has an adviser and published multiple papers. This ensures that each applicant is evaluated fairly based on their level.
+- Reviewers typically try to compare applicants _within their #gls("cohort",first:false) level_. This means that we do not compare an undergrad, who is still applying to grad school, to a 2nd year PhD student who already has an advisor and published multiple papers. This ensures that each applicant is evaluated fairly based on their level.
 
 - Unlike CS PhD applications that focus on research potentials in which papers, research experience, and LoRs are important, NSF GRFP looks at both _research potential_ and _broader impacts_, e.g., how you can help society or mentor others. It is _not expected_ that you have published papers or have a lot of research experience (recall that students applying for MS are also eligible). Instead, you need to convince the reviewers that you have the _potential_ to be a good researcher (technical merits) and that you can help society (broader impacts). More in @sec:grfp-im-bi.
 
@@ -2737,7 +2737,7 @@ These are some common pitfalls I see in NDSEG applications and tips to avoid the
 
 - *Use LaTeX to write your research plan and essays* (@chap:writing-latex).  This is the standard in CS and the general engineering and science disciplines,and will make your application look  professional.  Moreover, do not use the default Word settings, e.g., left justification, as it is not standard in CS and engineering and difficult to read.  
 
-- *Ask your LoR writers and adviser to look at your writing/essays* (this is very important so I keep repeating it).  You are new to the field and research writing, and your ideas might not be accurate or have already been explored. It's better that they tell you now than for you to find out later from reviewers.
+- *Ask your LoR writers and advisor to look at your writing/essays* (this is very important so I keep repeating it).  You are new to the field and research writing, and your ideas might not be accurate or have already been explored. It's better that they tell you now than for you to find out later from reviewers.
 
 - *Do not BS*. I said this before (@sec:grfp-pitfalls) and I say it again here. Many times students have some achievements (e.g., publications) and thought they know a lot and start BSing. This will greatly annoy reviewers, especially experts in the field. Surprisingly I find this being more common with students from top schools with strong LoRs and good research experience.
 
@@ -2916,7 +2916,7 @@ These awards are not open to all researchers and face less competition (e.g.,  c
 // %     \item \textbf{Winning research competitions} – Many fields have benchmark competitions (e.g., SAT solvers, automated theorem provers, AI competitions). Winning or being a top contender in these suggests that the lab is leading cutting-edge research.
 // %     \item \textbf{Tools included in major software stacks} – If a tool is widely cited or included in standard toolchains (e.g., LLVM, Z3, TensorFlow), it indicates strong adoption.
 // % \end{itemize}
-// % Some departments list major research awards and influential software projects on their website. If an adviser's name appears frequently in such lists, it's a strong endorsement of their impact.
+// % Some departments list major research awards and influential software projects on their website. If an advisor's name appears frequently in such lists, it's a strong endorsement of their impact.
 
 // % \paragraph{Research Publications in Top Venues}
 // % While individual papers can be impressive, a more reliable measure of a researcher's productivity is the \textbf{sum of their publications in top-tier conferences and journals}.
@@ -2931,9 +2931,9 @@ These awards are not open to all researchers and face less competition (e.g.,  c
 // % \begin{itemize}
 // %     \item \textbf{Total external funding secured} – NSF, DoD, DARPA, NIH, and industry grants indicate strong research backing.
 // %     \item \textbf{Large collaborative grants} – Leading multi-institution projects suggests strong connections and influence.
-// %     \item \textbf{Consistency of funding} – Advisers with multiple ongoing grants can better support students with travel, equipment, and stipends.
+// %     \item \textbf{Consistency of funding} – advisors with multiple ongoing grants can better support students with travel, equipment, and stipends.
 // % \end{itemize}
-// % If an adviser has continuously secured funding over time, it suggests a stable research environment and long-term support for students.
+// % If an advisor has continuously secured funding over time, it suggests a stable research environment and long-term support for students.
 
 #pagebreak()
 = Writing in LaTeX or Typst <chap:writing-latex>
@@ -2988,7 +2988,7 @@ This is because OAI is an independent office above your prof and depatment that 
 
 == Illegal Software <sec:illegal-software>
 
- Using illegal/cracked software is very common in many countries (and even in the US). However, #highlight[do not install or use them on university computers], even those given to you by your adviser.  It is unlikely that the university will track you down, but it is the _software company_ that will.  They have very sophisticated tools to detect illegal software and will sue your university/department.  Imagine your department or adviser being sued for a large sum of money, and it is _you_ who caused it.  If you need to purchase software,  ask your adviser or the department (@sec:buying-equipment).
+ Using illegal/cracked software is very common in many countries (and even in the US). However, #highlight[do not install or use them on university computers], even those given to you by your advisor.  It is unlikely that the university will track you down, but it is the _software company_ that will.  They have very sophisticated tools to detect illegal software and will sue your university/department.  Imagine your department or advisor being sued for a large sum of money, and it is _you_ who caused it.  If you need to purchase software,  ask your advisor or the department (@sec:buying-equipment).
 
 
 == Costly Gifts <sec:gifts>
@@ -3009,9 +3009,9 @@ Many people maintain lifelong relationships with their professors and colleagues
 #remark-block[
   I maintain a close relationship with my former professors and mentors. When there is a new event in my life (or theirs), I often email them or call them, e.g., when I get married, have a new baby, new job, etc. I think this does not bother them a bit; they are genuinely interested in knowing and helping solve these "dramas" in my life.
 
-  I also visit my former professors when I am in their area. I meet Thang Bui (my MS adviser) at least once a year when I come back to Harrisburg to visit my parents. When Steph was in DC for a meeting, I invited her to give a research talk at GMU. I have also collaborated with them after I graduated e.g., I recently got an NSF grant with Deepak.
+  I also visit my former professors when I am in their area. I meet Thang Bui (my MS advisor) at least once a year when I come back to Harrisburg to visit my parents. When Steph was in DC for a meeting, I invited her to give a research talk at GMU. I have also collaborated with them after I graduated e.g., I recently got an NSF grant with Deepak.
 
-  In short, while I am a bit closer to my former advisers and mentors than most people (e.g., I still keep in touch with my middle school teacher), it is always a good idea to maintain a good relationship with people who have helped or worked well with you. A simple, short email or text once in a while (e.g., a _"Hi X, I heard you just got promoted ... Congrats!"_) would suffice. They will appreciate it, and you never know when you might need their help.
+  In short, while I am a bit closer to my former advisors and mentors than most people (e.g., I still keep in touch with my middle school teacher), it is always a good idea to maintain a good relationship with people who have helped or worked well with you. A simple, short email or text once in a while (e.g., a _"Hi X, I heard you just got promoted ... Congrats!"_) would suffice. They will appreciate it, and you never know when you might need their help.
 ]
 
 == How to Call or Address a Professor? <sec:address>
