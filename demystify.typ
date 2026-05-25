@@ -5,7 +5,7 @@
 #set text(
   //font: "Noto Serif",
   
-  //font: "TeX Gyre Pagella",
+  font: "TeX Gyre Pagella",
   size: 12pt
 )
 
@@ -31,17 +31,6 @@
   text(size: 0.85em, it)
 )
 
-
-// #set heading(numbering: (..nums) => {
-//   let vals = nums.pos()
-//   if vals.len() == 1 {
-//     // Level 1: roman numerals
-//     numbering("I.", vals.first())
-//   } else {
-//     // Level 2+: regular numbers
-//     numbering("I.1.", ..vals)
-//   }
-// })
 
 
 //#set par(first-line-indent: (amount: 1.5em, all: false))
@@ -70,29 +59,10 @@
 
 #import "@preview/theorion:0.6.0": *
 //#import cosmos.simple: *
-// #import cosmos.fancy: *
+//#import cosmos.fancy: *
 //#import cosmos.rainbow: *
 //#import cosmos.clouds: *
 //#show: show-theorion
-
-// #let cb(who: none, fill: gray, icon, msg) = block(
-//   width: 100%,
-//   fill: fill,
-//   radius: (right: 5pt),
-//   stroke: (left: 3pt + fill.darken(10%)),
-//   inset: (left: 10pt, right: 10pt, y: 10pt),
-// )[
-//   #icon #h(5pt) 
-//   #if who != none [
-//     #text(weight: "bold", size: 0.9em)[#who] — 
-//   ]
-//   #text(size: 0.9em)[#msg]
-// ]
-
-// #let commentbox(who: none, msg) = cb(who: who, fill: gray.lighten(80%), [💬],msg)
-// #let keybox(msg) = cb(fill: yellow.lighten(90%), [🔑],msg)
-// #let examplebox(msg) = cb(fill: green.lighten(95%), [💡], msg)
-// #let warningbox(msg) = cb(fill:red.lighten(80%), [🚨️], msg)
 
 #let redact(text, fill: black, height: 1em) = {
   box(rect(fill: fill, height: height)[#hide(text)])
@@ -100,7 +70,7 @@
 
 #show figure.where(kind: image): set figure(supplement: [Fig.])
 #show figure.where(kind: table): set figure(supplement: [Tab.])
-#show math.equation: set math.equation(supplement: [Eq.])
+//#show math.equation: set math.equation(supplement: [Eq.])
 #show heading: set heading(supplement: [Sec.])
 
 #import "@preview/glossarium:0.5.10": make-glossary, register-glossary, print-glossary, gls, glspl, gls-long
@@ -143,7 +113,6 @@
 )
 
 #register-glossary(entry-list)
-
 
 
 // Title Page
