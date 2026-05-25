@@ -1693,11 +1693,11 @@ Choosing a school and an advisor (@chap:choosing-advisor) is clearly among the m
 // % \section{Choosing a University <sec:choosing-university}
 // % \sectioninfo{Select schools based on their CS program and faculty research interests.}
 
-We will first discuss universities in the US that offer PhD in CS. Then we will talk about how to select them.
+// We will first discuss universities in the US that offer PhD in CS. Then we will talk about how to select them.
 
 === Schools offering PhD in CS <sec:schools-offering-phd>
 
-Most US universities have CS programs, but many do not offer a *CS PhD* program. These universities might offer just Bachelor's degrees (e.g., BS) with no graduate studies (no MS or PhD), or only MS programs (but no PhD). For example, Penn State University Park has a PhD in CS, but Penn State Harrisburg offers only BS and MS in CS, and Penn State York offers only BS in CS. Conversely, multiple University of Texas locations—Austin, Dallas, and Arlington—all have PhDs in CS.
+Most US universities have CS programs, but many _do not_ have a _CS PhD_ program. These universities might offer just Bachelor's degrees (e.g., BS) with no graduate studies (no MS or PhD), or only MS programs (but no PhD). For example, Penn State University Park has a PhD in CS, but Penn State Harrisburg offers only BS and MS in CS, and Penn State York offers only BS in CS. Conversely, multiple University of Texas locations—Austin, Dallas, and Arlington—all have PhDs in CS.
 
 Thus, if your goal is a PhD in CS, you must target only schools offering such a degree. While the large number of US universities can be confusing, a little research on each school's website will clarify what degrees are available. Schools listed in @chap:rankings all have PhD programs in CS, so you can start there.
 
@@ -1712,7 +1712,7 @@ Many students put universities into two bins: (i) top schools that they dream ab
 Many international students rank universities based on popular places they know in the US, e.g., California, Texas, and New York.
 
 #figure(
-  image("files/cspicks3.png", width: 70%),
+  image("files/cspicks3.png", width: 90%),
   caption: [Using CSPicks to compare between CMU vs UIUC.],
 ) <fig:cspicks-compare>
 
@@ -1786,13 +1786,13 @@ That said, an advantage of being at a small program is that you can easily stand
 
 You *do not* need to do a PhD in CS to do research in CS. For example, in addition to a traditional CS department, GMU has IST and Cybersecurity departments, both of which have faculty with PhD in CS and work on CS topics (e.g., AI, Security, Robotics). So you still can do CS research and publish in CS-focused venues even if you're not in a traditional CS program. It is common to see faculty with PhD in CS in a non-CS department as well as faculty with non-CS PhD in a CS department.
 
-However, if your goal is a PhD in CS, then you need to be in the CS dept. _and_ advised by a CS faculty. A non-CS faculty can serve in the PhD dissertation committee (common) or _co-advise_ (less common, but possible) PhD students in CS, but your main PhD advisor will likely be a tenure-line faculty in CS (@sec:faculty-types).
+However, if your goal is a PhD in CS, then you need to be in the CS dept. _and_ advised by a CS faculty. A non-CS faculty can serve in the PhD dissertation committee (common) or _co-advise_ (less common, but possible) PhD students in CS, but your main PhD #gls("advisor") will likely be a tenure-line faculty in CS (@sec:faculty-types).
 For example, a prof. in Stats or Math might be able to serve as a co-advisor, but not as a sole advisor of a student in a CS PhD program.
 If in doubt, check with the CS dept. for their requirements.
 
 It is possible to transfer between departments (and universities). However, this can be complicated and often requires re-applying to the new department and taking additional coursework or exams required by the new place. Moreover, your advisor may not be able to supervise you in the new department (they can co-advise or serve on the committee, but unlikely are allowed by the new department to be your main advisor). Usually, transfers happen because the current advisor moves to a new department or university, and the student wants to stay with them.
 
-For this specific reason, CSRankings and CSPicks focus on faculty who can advise CS PhD students. I also have compiled a #link("https://roars.dev/phd-cs-us/viet-cs-profs-us")[list] of Vietnamese faculty who can advise PhD students. @sec:faculty-types discusses more about who can serve as your PhD advisor.
+For this specific reason, CSRankings and CSPicks focus on faculty who can advise CS PhD students. I also have compiled a #link("https://roars.dev/phd-cs-us/viet-cs-profs-us")[list] of Vietnamese faculty who can advise PhD students. @sec:faculty-types discusses more about who can serve as your PhD #gls("advisor").
 
 // %\section{Comparison Factors}
 
@@ -1887,10 +1887,10 @@ For this specific reason, CSRankings and CSPicks focus on faculty who can advise
     node((0,3), [Graduate School Dean], name: <grad>),
     node((0,4), [Dean (Engineering / Art and Science / Computing)], name: <dean>),
     node((0,5), [CS Department Chair], name: <chair>, fill: yellow.lighten(50%)),
-    node((-0.8,6), [Adcom / Potential Advisors], name: <adcom>, fill: yellow.lighten(50%)),
-    node((0.8,6), [Faculty / Admin Staff], name: <staff>, fill: yellow.lighten(50%)),
+    node((-0.6,6), [Adcom / Potential Advisors], name: <adcom>, fill: yellow.lighten(50%)),
+    node((0.6,6), [Faculty / Admin Staff], name: <staff>, fill: yellow.lighten(50%)),
     node((0,7), [PhD Admission], name: <students>, fill: yellow.lighten(50%)),
-    node((1.5,2), [Faculty Senate], name: <senate>),
+    node((1,1), [Faculty Senate], name: <senate>),
 
     // Main chain
     edge(<board>, <president>, "->"),
@@ -1919,7 +1919,7 @@ Adcom has direct influence over admissions decisions (@sec:adcom), but they oper
 ==== Top Governance and Executive Administration
 At the top is the *Board of Visitors* in public schools or Board of Trustees in private schools. This body is appointed (or self-perpetuating) and has the ultimate authority over the university, approving budgets, tuition levels, new colleges and schools, and presidential hires and firings.
 
-They will not decide how many PhD students a CS department admits, but their decisions---such as approving the creation of a new College of Computing or cutting budgets---can significantly change the environment you enter.
+They will not decide how many PhD students a CS department admits, but their decisions---such as approving the creation of a new College of Computing or cutting budgets---can significantly change your graduate experience.
 
 The *President* (or *Chancellor*) is the "CEO" of the university and reports directly to the Board. Below them is the *Provost*, the Chief Academic Officer who oversees all colleges and deans. The Provost's office approves tenure policies, new faculty lines, and graduate school rules; all these decisions shape the direction and operations of the CS department.
 
@@ -1959,12 +1959,12 @@ In addition, a CS department has various *administrative staff* who handle day-t
 
 
 #pagebreak()
-== Choosing an advisor <chap:choosing-advisor>
+== Choosing an Advisor <chap:choosing-advisor>
 // \chapterinfo{The best advisor is the one that \textbf{fits}, e.g., you can work well with, and has the ability to help you succeed. But you do not know that until you start working with them.}
 
 #simpsons[It's not easy being a mentor. But it sure is funny to watch other people screw up.]
 
-There is no one-size-fits-all answer to finding an advisor. The best advisor is the one that fits you, e.g., you can work well with, and has the ability to help you succeed. But how do you find such a person?
+There is no one-size-fits-all answer to finding an #gls("advisor"). The best advisor is the one that fits you, e.g., you can work well with, and has the ability to help you succeed. But how do you find such a person?
 
 Fortunately, while some non-US programs require finding an advisor and research topic before starting the PhD (@sec:non-us-differences), CS PhD programs in the US will typically give you a couple of years to "shop" for advisors and research topics. This is especially true if you're admitted with TA (@sec:ta), which gives you time to explore and find an advisor.
 
