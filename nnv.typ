@@ -2105,10 +2105,10 @@ $
 
 *Satisfiability Solving.* We can check the satisfiability of
 $alpha and phi_("in") and not phi_("out")$ using constraint solving, e.g.,
-the Z3 SMT solver. A later section shows how to perform symbolic
+the Z3 SMT solver. @sec:se-smt shows how to perform symbolic
 execution and use an SMT solver to automatically generate this formula
 from a given network and property, and check its satisfiability.
-Another later section shows how to encode the problem as MILP
+ @sec:using-milp shows how to encode the problem as MILP
 constraints, solvable using a MILP solver (e.g., Gurobi).
 
 For @ex-dnn-sat, the formula is satisfiable, i.e., the property is invalid,
@@ -2282,7 +2282,7 @@ Consider the neural network in @fig:mydnntwo. Do the following:
 
 == Complexity <sec:complexity>
 
-// ReLU-based NNV is \NP{}-complete as shown in~\cite{katz2017reluplex,salzer2023reachability} by reducing the 3-SAT problem to it. This means that the problem of checking whether a given ReLu-based network satisfies a property is computationally hard, and no polynomial-time algorithm is known to solve it in the general case.
+ReLU-based NNV is NP-complete as shown in @katz2017reluplex @salzer2023reachability by reducing the 3-SAT problem to it. This means that the problem of checking whether a given ReLU-based network satisfies a property is computationally hard, and no polynomial-time algorithm is known to solve it in the general case.
 
 // %  == Challenges} %TODO
 
@@ -2316,7 +2316,8 @@ Consider the neural network in @fig:mydnntwo. Do the following:
 #pagebreak()
 = Constraint Solving <chap:constraint-solving>
 
-//  == Symbolic Execution and SMT Solving <sec:se-smt}
+== Symbolic Execution and SMT Solving <sec:se-smt>
+
 // As described in~\autoref{sec:satisfiability-and-activation-pattern-search} the Neural Network Verification (NNV) problem can be formulated as a satisfiability problem. Specifically, we encode the network as a logical formula, and use a constraint solver to check that formula satisfies the property of interest.
 
 // A straightforward and automated way to do this encoding is using \emph{symbolic execution} (SE)~\cite{baldoni2018survey,king1976symbolic}, a well-known software testing technique for finding bugs.  SE executes a program on symbolic inputs, i.e., inputs represented as symbols rather than concrete values, and tracks the reachability of program state as symbolic expressions, i.e., logical formulae over symbolic inputs. The satisfiability of these formulae is then checked using an SMT solver, and satisfying assignments represent inputs leading to the undesirable (buggy) program state.
@@ -2385,7 +2386,7 @@ Consider the neural network in @fig:mydnntwo. Do the following:
 
 // %\tvn{Hai, include some references or results, e.g., from Nguyen's, showing that SMT solvers are not scalable for DNN verification.}\hai{where can I find the results?}\tvn{Not sure, I thought Nguyen record the results/graphs in some TeX document. Could you ask him?}
 
-//  == MILP <sec:using-milp}
+== MILP <sec:using-milp>
 
 // Instead of using SMT solving, we can encode the NNV problem as a Mixed Integer Linear Programming (MILP) constraints (\autoref{sec:lp}), and then invoke an MILP solver such as Gurobi~\cite{gurobi} to check their \emph{feasibility} or satisfiability (\autoref{sec:lp-feasibility}).
 
