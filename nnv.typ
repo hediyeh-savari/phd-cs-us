@@ -2049,36 +2049,36 @@ With this, the NNV problem (@def:nnv) can be formulated as checking the validity
 
 $ 
   alpha => (phi_("in") => phi_("out")) 
-$<eq-nnv>
+$<eq:nnv>
 
-Equation @eq-nnv checks if network $N$ satisfies (implies) the property
+@eq:nnv checks if network $N$ satisfies (implies) the property
 $phi_("in") => phi_("out")$. This validity checking can be reduced to checking
 the satisfiability of the formula:
 
 
 $ 
 alpha and phi_("in") and not phi_("out") 
-$<eq-nnv2>
+$<eq:nnv2>
 
-If @eq-nnv2 is unsatisfiable, then $phi$ is a valid property of $N$.
+If @eq:nnv2 is unsatisfiable, then $phi$ is a valid property of $N$.
 Otherwise, $phi$ is not valid. Moreover, we can extract a counterexample
-for the original problem from the satisfying assignment of @eq-nnv2.
+for the original problem from the satisfying assignment of @eq:nnv2.
 
 #problem[
 Let $alpha$ represent our network and the robustness property
 $abs(x - y) <= epsilon => f(x) = f(y)$.
-Form the satisfiability formula (@eq-nnv2) that we need to check.
+Form the satisfiability formula (@eq:nnv2) that we need to check.
 ] <ex-prop-neg1>
 
 #problem[
 Let $alpha$ represent our network and the property $y > 0$ for any input
 $x_1 in [r_1, r_2], x_2 in [r_3, r_4]$.
-Form the satisfiability formula (@eq-nnv2) that we need to check.
+Form the satisfiability formula (@eq:nnv2) that we need to check.
 ] <ex-prop-neg2>
 
 #problem(title: [Validity Formulation])[
-Show that the formula $alpha =>   phi_("in") => phi_("out")$ in @eq-nnv is valid if and only if
-$alpha and phi_("in") and not phi_("out")$ (@eq-nnv2) is unsatisfiable.
+Show that the formula $alpha =>   phi_("in") => phi_("out")$ in @eq:nnv is valid if and only if
+$alpha and phi_("in") and not phi_("out")$ (@eq:nnv2) is unsatisfiable.
 
 First, do this by hand (on paper) by explicitly writing out the logical
 equivalences step by step. Then, verify your result using Z3, i.e., show
@@ -2101,32 +2101,30 @@ $
   phi_("in") = (-1 <= x_1 <= 1) and (-2 <= x_2 <= 2)\
   phi_("out") = (x_5 > 0)
 $
-
-// *Satisfiability Solving.* We can check the satisfiability of
-// $alpha and phi_("in") and not phi_("out")$ using constraint solving, e.g.,
-// the Z3 SMT solver. Section @sec-se-smt shows how to perform symbolic
-// execution and use an SMT solver to automatically generate this formula
-// from a given network and property, and check its satisfiability.
-// Section @sec-using-milp shows how to encode the problem as MILP
-// constraints, solvable using a MILP solver (e.g., Gurobi).
-
-// For @ex-dnn-sat, the formula is satisfiable, i.e., the property is invalid,
-// and the solver returns #sat. Any satisfying assignment, e.g.,
-// $x_1 = -1$ and $x_2 = 2$, is a counterexample
-// (@sec-properties-counterexamples) to the property, as it satisfies the
-// precondition $phi_("in")$ but violates the postcondition $phi_("out")$,
-// i.e., $x_5 = -3.5$, which is $< 0$.
-// 
 ] <ex-dnn-sat>
 
-// #problem[
-// Use Z3 to do @ex-dnn-sat. You might find @ex-z3-dnn useful.
-// Make sure that you also ask Z3 to find a counterexample violating the
-// property (it does not have to be the same as above).
-// ] <problem-z3-dnn>
+*Satisfiability Solving.* We can check the satisfiability of
+$alpha and phi_("in") and not phi_("out")$ using constraint solving, e.g.,
+the Z3 SMT solver. A later section shows how to perform symbolic
+execution and use an SMT solver to automatically generate this formula
+from a given network and property, and check its satisfiability.
+Another later section shows how to encode the problem as MILP
+constraints, solvable using a MILP solver (e.g., Gurobi).
+
+For @ex-dnn-sat, the formula is satisfiable, i.e., the property is invalid,
+and the solver returns #sat. Any satisfying assignment, e.g.,
+$x_1 = -1$ and $x_2 = 2$, is a counterexample
+to the property, as it satisfies the
+precondition $phi_("in")$ but violates the postcondition $phi_("out")$,
+i.e., $x_5 = -3.5$, which is $< 0$.
 
 
 
+#problem[
+Use Z3 to do @ex-dnn-sat. You might find @ex:z3-dnn useful.
+Make sure that you also ask Z3 to find a counterexample violating the
+property (it does not have to be the same as above).
+] <problem-z3-dnn>
 
 
 
@@ -2201,19 +2199,26 @@ $
     })
   ]
 ) 
-// \begin{problem <problem:mydnntwo}
+
+// \begin{problem 
+
+#problem[
+
 #figure(
   mydnn2(sc: 100%),
   caption: [A simple network with 2 inputs, 2 hidden ReLU neurons, and 2 outputs.],
 ) <fig:mydnntwo>
 
-// Consider the neural network in~\autoref{fig:mydnntwo}.  Do the following:
-// \begin{enumerate}
-//     \item Write the formula $\alpha$ representing the network.
-//     \item Create the property $\phi$ that the output $x_5 \ge x_6$ for any inputs $x_1 \in [-1,1], x_2\in[-1,1]$.
-//     \item Generate the satisfiability formula $\alpha \land \overline{\phi}$ as shown in~\autoref{eq:nnv2}.
-//     \item Use Z3 to check the satisfiability of the formula. If it is satisfiable, extract a counterexample input that violates the property.   
-// \end{enumerate}
+Consider the neural network in @fig:mydnntwo. Do the following:
+
++ Write the formula $alpha$ representing the network.
++ Create the property $phi$ that the output $x_5 >= x_6$ for any inputs $x_1 in [-1, 1]$, $x_2 in [-1, 1]$.
++ Generate the satisfiability formula $alpha and overline(phi)$ as shown in @eq:nnv2.
++ Use Z3 to check the satisfiability of the formula. If it is satisfiable, extract a counterexample input that violates the property.
+ 
+] <problem:mydnntwo>
+
+
 
 // \begin{solution}
 // \begin{enumerate}
