@@ -34,7 +34,7 @@ Thus, your job is not to convince the small group of people who work in your top
 
 === Wall of text or tons of formulae
 
-== Insufficient Evaluation Plan
+=== Insufficient Evaluation Plan
 
 
 == Generic Broader Impacts or Education Plan
@@ -47,6 +47,12 @@ Most of the stated issues appear to be commonly faced problems in gen AI (e.g., 
 While  the zero-shot gen ai video detection section in Aim 1.1 explicitly mentioned videos are quite different than images a and proposed work specifically for video, most other aims/tasks treat them as equivalent and essentially apply the same techniques to both images and videos, which is not convincing.  
 
 
+== Proposal Summary
+- Very important -- read not only by the PIs but also by the reviewers and program officers, board of visitors etc .
+- Can include things not in individual reviews but brought up during the panel discussion
+- Can be more than 5 sentences (10 sentences etc are fine too).  
+
+
 
 = Misconceptions and Common Mistakes
 
@@ -54,7 +60,7 @@ While  the zero-shot gen ai video detection section in Aim 1.1 explicitly mentio
 
 == Proposal from top universities or well-known researchers have a higher chance of being funded
 
-In my experience, this was *never* the case.   I do not at all pay attention to whether a proposal comes from a top university or a well-known researcher.  This is also the general feeling I have from other co-panelists. 
+In my experience, this was *never* the case in NSF panels.  I do not at all pay attention to whether a proposal comes from a top university or a well-known researcher.  This is also the general feeling I have from other co-panelists. 
 
 That said, well-known researchers or those at top universities often have more experience in writing proposals (e.g., they have successful mentors who can guide them through the process) and have higher credentials (e.g., published multiple papers at good places on the proposed topics) compared to less experienced researchers or those at non-top universities. These factors---well-crafted proposals and strong prior/prelim results---can give them an advantage. 
 

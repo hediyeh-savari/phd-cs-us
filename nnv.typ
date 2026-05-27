@@ -863,9 +863,11 @@ A ReLU activated neuron is said to be _active_ if its input is greater than zero
 #paragraph[Logical encoding][ 
 ReLU can be encoded using the following logical formula:
 
-$y = "relu"(x) <==> (x <= 0 and y = 0) or (x > 0 and y = x).$
+$
+y = "relu"(x) <==> (x <= 0 and y = 0) or (x > 0 and y = x)
+$
 
-In other words, if $x <= 0$, $y$ must be zero; otherwise, $y$ must equal $x$.
+In other words, if $x <= 0$, $y$ must be 0; otherwise, $y$ must equal $x$.
 ]
 
 #example[
@@ -879,19 +881,18 @@ In Z3, we can declare ReLU using `If()`
     relu(2.8)   # returns 2.8
 ```]
 
-// \paragraph{Nonlinear Property} Despite being piecewise linear, ReLU is \textbf{nonlinear} because it does not satisfy the two core properties of a linear function
+#paragraph[Nonlinear Property][
+Despite being piecewise linear, ReLU is *nonlinear* because it does not satisfy the two core properties of a linear function:
 
-//     \begin{itemize}
-//         \item \textit{Additivity:} $\relu{x + y} \ne \relu{x} + \text{ReLU}(y)$ in general,
-//         \item \textit{Homogeneity:} $\text{ReLU}(\alpha x) \ne \alpha \cdot \text{ReLU}(x)$ when $\alpha < 0$.
-//     \end{itemize}
+- _Additivity:_ $"ReLU"(x + y) != "ReLU"(x) + "ReLU"(y)$ in general.
+- _Homogeneity:_ $"ReLU"(alpha x) != alpha dot "ReLU"(x)$ when $alpha < 0$.
 
-// In simpler terms, ReLU is nonlinear because it does not form a straight line.  It has a \textbf{kink} (a sharp bend) at $x = 0$, where the slope changes abruptly from $0$ to $1$. This discontinuity in the derivative prevents the function from being globally linear.
+In simpler terms, ReLU is nonlinear because it does not form a straight line. It has a *kink*---a sharp bend--- $x = 0$, where the slope changes abruptly from $0$ to $1$. This discontinuity in the derivative prevents the function from being globally linear.
 
+This non-linearity makes NNV difficult. In fact, verifying networks with ReLU is $"NP"$-complete, as shown in @sec:complexity. We will use ReLU throughout this book as the default activation function for hidden neurons in an NN.
+]
 
-// This non-linearity makes NNV difficult. In fact, verifying networks with ReLU has the $\mathsf{NP}$-complete complexity as shown in~\autoref{sec:complexity}. We will use ReLU throughout this book as the default activation function for hidden neurons in an NN.
-
-// \subsection{Sigmoid <sec:sigmoid}
+=== Sigmoid <sec:sigmoid>
 
 
 
@@ -921,16 +922,17 @@ In Z3, we can declare ReLU using `If()`
 //     \caption{Sigmoid function. <fig:sigmoid}
 // \end{figure}
 
-// Sigmoid, shown in~\autoref{fig:sigmoid}, is a smooth---i.e., continuous and differentiable---non-linear activation function that maps any real value to the range (0,1).
-// It is continuous, meaning that small changes in the input will result in small changes in the output, and differentiable, meaning that it has a well-defined derivative at every point. Sigmoid is often used in the output layer of a binary classification problem.
+//, shown in @fig:sigmoid,  TODO
+Sigmoid is a smooth---i.e., continuous and differentiable---non-linear activation function that maps any real value to the range $(0, 1)$.
+It is continuous, meaning that small changes in the input will result in small changes in the output, and differentiable, meaning that it has a well-defined derivative at every point. Sigmoid is often used in the output layer of a binary classification problem.
 
-//     \begin{align}
-//         \sigmoid{x} = \frac{1}{1+e^{-x}}
-//     \end{align}
+$
+  "sigmoid"(x) = 1 / (1 + e^(-x))
+$
 
-// \begin{example}
-// $\sigmoid{-1.2} \approx 0.23$, $\sigmoid{0} = 0.5$, and $\sigmoid{2.8} \approx 0.94$. This means that the sigmoid function maps -1.2 to a value close to 0, 0 to 0.5, and 2.8 to a value close to 1.
-// \end{example}
+#example[
+  $"sigmoid"(-1.2) approx 0.23$, $"sigmoid"(0) = 0.5$, and $"sigmoid"(2.8) approx 0.94$. This means that the sigmoid function maps $-1.2$ to a value close to $0$, $0$ to $0.5$, and $2.8$ to a value close to $1$.
+]
 
 // \subsection{Hyperbolic Tangent (Tanh) <sec:tanh}
 
@@ -2273,7 +2275,7 @@ $
 // \end{solution}
 // \end{problem}
 
-//  == Complexity <sec:complexity}
+== Complexity <sec:complexity>
 
 // ReLU-based NNV is \NP{}-complete as shown in~\cite{katz2017reluplex,salzer2023reachability} by reducing the 3-SAT problem to it. This means that the problem of checking whether a given ReLu-based network satisfies a property is computationally hard, and no polynomial-time algorithm is known to solve it in the general case.
 
