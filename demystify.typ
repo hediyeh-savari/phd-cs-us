@@ -541,20 +541,20 @@ Unfortunately, even if all reviewers recommend a student, they might not be admi
 
 === Direct Admit vs Committee Admit <sec:direct-vs-committee>
 
-Discussions on Reddit and Discord on graduate school admissions often mention "direct admit"---a student is "directly admitted" by an individual faculty vs "committee admit"---the student is admitted by the adcom committee.  Answers to these questions, often from applicants and students who are not familiar with the admission process, can be confusing and sometimes misleading, and often more complicated and makes it sound more mysterious than it actually is.
+Discussions on Reddit and Discord on graduate admissions often mention "direct admit"---a student is "directly admitted" by an individual faculty vs "committee admit"---the student is admitted by the adcom committee.  Answers to these questions, often from applicants who are not familiar with the admission process, often make it sound more mysterious than it actually is.
 
-The short answer is that _all_ applications are reviewed by the adcom committee, and the decision is made by the adcom members based on their evaluation of the application. However, the decision is _heavily influenced_ by whether an individual faculty member is interested in the student and willing to advise them, but this is still part of the committee review process. So even if a student is "directly admitted" by a faculty member, their application still likely goes through normal committee review process (though it will be less likely be constested as someone is already taking responsibility for the student), and the final decision is made by the committee based on the evaluations of all reviewers ("committee admit").
+The short answer is that _all_ applications go through the adcom committee. However, admission decision is _heavily influenced_ by whether an individual faculty member is interested in the student and willing to advise them, but this is still part of the committee review process. So even if a student is "directly admitted" by a faculty member, their application still likely goes through normal committee review process (though it will be less likely be constested as someone is already taking responsibility for the student), and the final decision is made by the committee based on the evaluations of all reviewers ("committee admit").
 
 An analogy is that of a job application. The "official" decision to hire you can be from a higher level (e.g., HR or a hiring committee), but they don't know you and don't have the expertise to evaluate your research ability. Thus they rely on the opinions of the PhD admission committee, which similarly does not know you well enough, and thus rely on specific faculty members who can do so (those got assigned to review your application or people who interviewed you). These faculty members are not necessarily the same as the ones who will eventually advise you. However, if someone is strongly interested in working with you (e.g., even provide you with their funding or RAship), then the committee is very likely to admit you.
 
 // Thus, it comes down to who can advocate for you in the committee. This is the reason why contacting faculty (@sec:contact) and mentioning faculty in your SOP (@chap:sop) can be helpful, as it can lead to a faculty member advocating for you in the committee review process. However, even if a faculty member is interested in you, the final decision is still made by the committee.
 
 
-#remark-block[
-  For top CS PhD program, many students are "direct admits" in the sense that they contacted potential advisor before applying and thus these faculty member advocate for them in the committee review process.
+// #remark-block[
+//   For top CS PhD program, most students are "direct admits" in the sense that they contacted potential advisor before applying and thus these faculty member advocate for them in the committee review process.
 
-  There are of course also students who are "committee admits" in the sense that they did not contact any faculty before applying and thus do not have a specific advocate in the committee review process. In these cases their profile might fit well with certain faculty, who then advocate for them in the committee review process. In some rare cases, especially at smaller schools, a student might be admitted without any faculty advocate, but this is less common.
-  ]
+//   There are of course also students who are purely "committee admits" as they did not contact any faculty before applying and thus do not have a specific advocate in the committee review process.
+//   ]
 
 
 //todo write about direct admit vs committee admit, and how the decision is made in each case. For example, if a faculty member wants to directly admit a student, they can do so by contacting the adcom chair and providing justification. The adcom chair will then review the justification and decide whether to approve the direct admit. In some cases, the adcom chair might ask other faculty members for their opinions on the direct admit before making a decision. If the direct admit is approved, the student will be admitted without going through the regular committee review process. However, if the direct admit is not approved, the student will have to go through the regular committee review process like all other applicants.
