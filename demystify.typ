@@ -2850,7 +2850,7 @@ These can be (i) lifetime achievements in the field---such as ACM or IEEE Fellow
 
 - #link("https://awards.acm.org/fellows")[*ACM*] and #link("https://www.ieee.org/communities-connection/awards-recognition/ieee-fellows")[*IEEE*] Fellows are prestigious honors for researchers with long-term contributions and leadership in computing fields. These are typically given to very senior researchers (e.g., full professors). Note that there are also ACM and IEEE Senior Members, which are a step below Fellows and can be self-applied (see news examples of an IEEE Fellow at #link("https://siebelschool.illinois.edu/news/elevation-to-ieee-fellow-further-proves-significance-of-hoiems-impact-in-computer-vision")[UIUC] and Senior Member at #link("https://uwaterloo.ca/computer-science/news/ian-goldberg-named-senior-member-ieee")[Waterloo]).
   
-- *#link("https://www.macfound.org/programs/awards/fellows/")[McArthur Fellowship]* are also known as the _"Genius Grant"_ and given to individuals who have shown exceptional creativity in their work and the promise for more in the future. 
+- *#link("https://www.macfound.org/programs/awards/fellows/")[MacArthur Fellowship]* are also known as the _"Genius Grant"_ and given to individuals who have shown exceptional creativity in their work and the promise for more in the future. 
   
 - *#link("https://awards.acm.org/turing")[Turing Award]* is the _highest honor_ in CS for lifetime achievements and contributions to the computing community. It comes with a \$1M prize and is often called the _"Nobel Prize of Computing."_.
 
