@@ -2834,7 +2834,6 @@ These refer to prestigious grants and fellowships for early-career faculty such 
 
 Other awards that junior faculty can get include the _ACM Dissertation Awards_ and early career awards from the industry. 
 The ACM SIGs (Special Interest Groups) such as SIGPLAN (programming languages) and SIGARCH (architecture) have  dissertation awards for best PhD dissertation in different areas of CS. These are typically given _after_ the student has graduated and thus are given very junior faculty who recently graduated.   
-Some industry labs---like #strike[Google] and #strike[Microsoft] (used to)---have fellowship programs for early-career faculty. These are also competitive and come with funding for one or two years. 
 
 
 //%  These industrial awards are very flexible (unrestricted) and thus prof. often save them for emergencies (e.g., when they cannot get NSF funding).
@@ -2846,13 +2845,16 @@ These refer to awards given to more senior researchers for their outstanding con
 These can be (i) lifetime achievements in the field---such as ACM or IEEE Fellows, and (ii) specific work that were published 10+ years ago and that have made significant impact. 
 
 
-==== Lifetime Achievements 
+==== Lifetime Achievements  <sec:lifetime-achievements>
+
+- *#link("https://awards.acm.org/turing")[Turing Award]* is the _highest honor_ in CS for lifetime achievements and contributions to the computing community. It comes with a \$1M prize and is often called the _"Nobel Prize of Computing."_ (Computer Sciene does not have a Nobel Prize, but the Turing Award is often considered its equivalent.) Turing Award winners are often senior researchers with a long history of impactful contributions to the field. For example, the 2020 Turing Award was given to Alfred Aho and Jeffrey Ullman for their work on algorithms and programming languages,and the 2018 Turing Award was given to Yann LeCun, Geoffrey Hinton, and Yoshua Bengio for their work on deep learning.
+
+- *#link("https://www.macfound.org/programs/awards/fellows/")[MacArthur Fellowship]* are also known as the _"Genius Grant"_ and given to individuals who have shown exceptional creativity in their work and the promise for more in the future.  For example, in CS, the 2020 MacArthur Fellowship was given to Dawn Song for her work on security and privacy, and the 1998 MacArthur Fellowship was given to Tim Berners-Lee for inventing the World Wide Web.
+
 
 - #link("https://awards.acm.org/fellows")[*ACM*] and #link("https://www.ieee.org/communities-connection/awards-recognition/ieee-fellows")[*IEEE*] Fellows are prestigious honors for researchers with long-term contributions and leadership in computing fields. These are typically given to very senior researchers (e.g., full professors). Note that there are also ACM and IEEE Senior Members, which are a step below Fellows and can be self-applied (see news examples of an IEEE Fellow at #link("https://siebelschool.illinois.edu/news/elevation-to-ieee-fellow-further-proves-significance-of-hoiems-impact-in-computer-vision")[UIUC] and Senior Member at #link("https://uwaterloo.ca/computer-science/news/ian-goldberg-named-senior-member-ieee")[Waterloo]).
   
-- *#link("https://www.macfound.org/programs/awards/fellows/")[MacArthur Fellowship]* are also known as the _"Genius Grant"_ and given to individuals who have shown exceptional creativity in their work and the promise for more in the future. 
   
-- *#link("https://awards.acm.org/turing")[Turing Award]* is the _highest honor_ in CS for lifetime achievements and contributions to the computing community. It comes with a \$1M prize and is often called the _"Nobel Prize of Computing."_.
 
 #align(center, box(width: 100%)[
   CSRankings (@chap:rankings) highlights if an individual is an ACM Fellow or Turing Award winner. Note that these individuals might no longer be active in research and therefore do not have many recent publications.
@@ -2861,7 +2863,7 @@ These can be (i) lifetime achievements in the field---such as ACM or IEEE Fellow
 
 ==== Most Influential Paper Awards 
 
-_Test of Time, Most Influential, and Impact Awards_ are given to papers that were published 10+ years ago at a top venue and made a lasting contribution to their area of research. In other words, the work described in these papers have stood the _test of time_. Typically, these papers are highly cited and have inspired many follow-up works.
+_Most Influential Papers, Test of Time , and Impact Awards_ are given to papers that were published 10+ years ago at a top venue and made a lasting contribution to their area of research, e.g., creating a new research field. In other words, the work described in these papers have stood the _test of time_. Typically, these papers are highly cited and have inspired many follow-up works.
 Note that these paper awards are different than Distinguished or Best Paper awards, which are given at the conference and therefore might not be as well-known or influential.   
 
 
@@ -2874,7 +2876,7 @@ Note that while typically given to senior researchers, some junior faculty have 
     _"It is highly noteworthy that #redact[Vu] has earned two 10-year test-of-time awards for [his] papers [, including a prestigious ICSE Most Influential Paper Award]. Senior computer scientists count themselves fortunate to
     earn even one such award at some point in their careers, but it is highly unusual and commendable that #redact[Vu]
     has earned two of these awards already, less than ten years after completing [his] PhD ..."_]]],
-  caption: [LOR written by an ACM and IEEE Fellow for a junior faculty (some texts redacted for anonymity).]
+  caption: [LOR written by an ACM and IEEE Fellow (@sec:lifetime-achievements) for a junior faculty (some texts redacted for anonymity).]
 ) <fig:LOR4junior>
 
 === Industrial and Other Awards
@@ -2887,40 +2889,12 @@ CS faculty also aim to win awards from industry, which shows that their work has
 - *Google Scholar Award:* This award is given once a year for a wide range of research areas in CS. It is only for junior faculty (within X years of their PhD) and is given as a gift.
 - *NVIDIA Academic Grant:* This relatively new award typically comes with a gift of "cool" hardware including GPUs and NVIDIA "super"-computer like the DGX Station.
 
-There are also many awards from others companies and organization but only in specific areas relevant to their business, e.g., Sony, Samsung, Comcast, and Ethereum Foundation. 
+There are also awards from others companies and organization but only in specific areas relevant to their business, e.g., Sony, Samsung, Comcast, and Ethereum Foundation. Some industry labs---like #strike[Google] and #strike[Microsoft] (used to)---have fellowship programs for early-career faculty. These are also competitive and come with funding for one or two years. 
 
-Some companies have partnerships with universities and created awards only for faculty (and students) at these universities (e.g., faculty awards from Intel and Qualcomm, and Packard Fellowships). 
+
+Some companies have partnerships with universities and created awards only for faculty and students at these universities, e.g., faculty awards from Intel and Qualcomm, and Packard Fellowships. 
 These awards are not open to all researchers and face less competition (e.g.,  compared to the Amazon ARA which attracts a huge number of applicants from all over the world).
 
-// %\paragraph{Students' Achievements} 
-// %faculty proudly show achievements of their students, e.g., best paper awards, internships at top companies, and faculty positions at top universities.  Dissertation awards, GRFP , Undergrad students research awards, etc
-
-
-// % \paragraph{Development of Highly Influential Research Tools}
-// % Beyond papers, research tools that are widely used in academia or industry signify real-world impact. Some key indicators include:
-// % \begin{itemize}
-// %     \item \textbf{Tools used in major companies or open-source projects} – If a tool from their lab is integrated into industry workflows (e.g., compilers, verification tools, ML frameworks), it's a sign of practical impact.
-// %     \item \textbf{Winning research competitions} – Many fields have benchmark competitions (e.g., SAT solvers, automated theorem provers, AI competitions). Winning or being a top contender in these suggests that the lab is leading cutting-edge research.
-// %     \item \textbf{Tools included in major software stacks} – If a tool is widely cited or included in standard toolchains (e.g., LLVM, Z3, TensorFlow), it indicates strong adoption.
-// % \end{itemize}
-// % Some departments list major research awards and influential software projects on their website. If an advisor's name appears frequently in such lists, it's a strong endorsement of their impact.
-
-// % \paragraph{Research Publications in Top Venues}
-// % While individual papers can be impressive, a more reliable measure of a researcher's productivity is the \textbf{sum of their publications in top-tier conferences and journals}.
-// % \begin{itemize}
-// %     \item Look for publications in the highest-impact conferences of the field (e.g., NeurIPS, ICML, CVPR for AI/ML; PLDI, OOPSLA, POPL for programming languages; FSE, ICSE for software engineering).
-// %     \item Be cautious about citation counts—fields like AI/ML generate high citations quickly, even for unpublished papers. Instead, focus on where and how often they publish.
-// %     \item A high volume of recent publications in top venues suggests an active and productive lab.
-// % \end{itemize}
-
-// % \paragraph{External Research Grants \& Funding}
-// % The ability to secure funding is a sign of research productivity and lab stability. Some key points to consider:
-// % \begin{itemize}
-// %     \item \textbf{Total external funding secured} – NSF, DoD, DARPA, NIH, and industry grants indicate strong research backing.
-// %     \item \textbf{Large collaborative grants} – Leading multi-institution projects suggests strong connections and influence.
-// %     \item \textbf{Consistency of funding} – advisors with multiple ongoing grants can better support students with travel, equipment, and stipends.
-// % \end{itemize}
-// % If an advisor has continuously secured funding over time, it suggests a stable research environment and long-term support for students.
 
 #pagebreak()
 = Writing in LaTeX or Typst <chap:writing-latex>
@@ -2981,11 +2955,11 @@ This is because OAI is an independent office above your prof and depatment that 
 
 == Costly Gifts <sec:gifts>
 
-In many countries, it is customary to give professors costly gifts---such as fancy liquors, jewelry, or even an envelope stuff with cash during the holidays or special occastions.  It's meant to show respect and appreciation (or let's be honest, an attempt to get better grades or recommendations). Understandbly this is a cultural norm in many countries, and professors and students are used to it. That said, in the US, this is can be considered _widly inappropriate_ and strongly discouraged. Given your profs. these gifts will make them feel very uncomfortable and in many cases they are required to report them to the university.  
+In many countries, it is customary to give professors costly gifts---such as fancy liquors, jewelry, or even an envelope stuff with cash during the holidays or special occastions.  It's meant to show respect and appreciation (or let's be honest, an attempt to get better grades or recommendations). Understandbly this is a cultural norm in many countries, and professors and students are used to it. However, in the US, this is can be considered _widly inappropriate_ and strongly discouraged. Given your profs. these gifts will make them feel very uncomfortable and in many cases they are required to report them to the university.  
 
  However, that doesn't mean you can't show your appreciation. In fact, small, personal tokens, like small souvenir from your country, a fridge magnet, keychain from your hometown, or even just simple thank-you hand-written card, are very welcomed.  Some professors proudly display their gifts, which can come from students and colleagues (e.g., when they travel to their home countries or conferences). In summary, #highlight[small gifts are fine], but avoid anything that might make your professors uncomfortable.
 
-== Maintaining Good Relationships with Your Profs. <sec:maintaining-relationships>
+== Maintaining Good Relationships with Your Professors. <sec:maintaining-relationships>
 
 There's a misconception that in the US it's all business, with professors as bosses who pay students for their work and that lab mates are just work colleagues; and that doing nice things means expecting something in return.
 
@@ -3027,9 +3001,10 @@ Note that in some universities the formal title Dr. Lastname is preferred over P
 
 #paragraph[Referring to Professors You Know][When referring or talking about a prof (e.g., your mentor) that you know, you can just informally use their names if they are OK with it as mentioned above (or Dr./Prof., if you want to be formal). You can also include their institution if it makes it more precise.  For example, I can say:  _"I did my postdoc with Jeff Foster at Univ. of Maryland"_.
 
+#caution-block[
 Do not include ranking (@sec:faculty-types), e.g., Assistant, Associate, Scientist, ..., when referring to someone. I see many international students include a lengthy title of people they know, e.g., _I am advised by Asst. Prof. X, and also collaborate with Distinguished Scientist Y_.
 This is _not necessary_ and makes it look like you're trying to show off your connections. These nuances represent some cultural and academic differences in the US that you may encounter but will gradually adapt to.]
-
+]
 == Miscs <chap:cultural-misc>
   
 Here are some other common surprises for international students in the US. Note that I skip topics involving politics, religion, tax, and racism as these happen in many countries and are not unique to the US.
