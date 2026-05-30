@@ -105,7 +105,7 @@
 
   However, although I am hands-off most of the time, I do step in when it's really needed. If a student is truly stuck, facing an urgent problem, or approaching a deadline, I instantly switch into a very hands-on  (or protector) mode. This only happens a small fraction of the time, but in those moments I will work closely with the student to get through the challenge.
     
-  Also, as mentioned in @group, I highly encourage my students to talk to other lab members for help and guidance. More experienced students can help new ones with ideas and research guidance.
+  Also, as mentioned in @group, I _highly_ encourage my students to talk to other lab members for help and guidance. More experienced students can help new ones with ideas and research guidance.
 
 == How does the advisor give feedback on papers?
    For the students' first papers, I ask for drafts and revise them iteratively with the students (e.g., through Overleaf). In some cases, I rewrite large portions of early drafts, especially the Intro and Evaluation sections.  This helps the students see how papers are written. Same thing with paper rebuttals, I will work with the students and revise the writing directly.  
@@ -364,7 +364,7 @@
     
   *Lab dinner/gathering*: Usually twice a semester (e.g., #link("https://photos.google.com/share/AF1QipNMHIvnSmq5bjer6I6r1Ddb4yiBt3jgq4yrA7q5lSmo4ePHfmiXhXqhk8IhKf47lA?key=SkJhMjZtYmoyT1Q2aW1ERGpRa2VTclZrbzJVLUpR")[group gathering] at the beginning and the end of a semester and during Thanksgiving). Once a year we also hang out with other labs at Round One (bowling and arcade).  
     
-  *Department outings/events*: There are various events throughout the semester in both the SWE group and the department. I highly encourage students to attend these to have fun and know other people.
+  *Department outings/events*: There are various events throughout the semester in both the SWE group and the department. I encourage students to attend these to have fun and know other people.
 
 = Support, Conflicts & Student Well-Being
 
