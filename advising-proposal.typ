@@ -23,7 +23,6 @@ Thus, your job is not to convince the small group of people who work in your top
 #highlight[So motivate, use examples to demonstrate, and explain your work in a way that is accessible to a general audience. Better yet, have someone who is not an expert in your topic read your proposal and give you feedback on whether they understand the motivation, the problem, and the proposed solution. Usualy they just need to read the introduction to give you this feedback.
 ].
 
-
 #rect[In my experience, proposals that are a bit heavy on foundations and theories often have this problem.  This could be a cultural issue in some research communities (e.g., theoretical papers often start with some very technical theorem or definition and the reviewers are expected to understand and able to follow them).]
 
 == Lack of clear motivation or problem statement.

@@ -1,13 +1,13 @@
-#set page(numbering: "1", number-align: center)
-#set heading(numbering: "1.")
-#set par(justify: true)
-
 #set text(
   //font: "Noto Serif",
   
   font: "TeX Gyre Pagella",
   size: 12pt
 )
+
+#set page(numbering: "1", number-align: center)
+#set heading(numbering: "1.")
+#set par(justify: true)
 
 #set list(indent: 1em)
 #set enum(indent: 1em)
@@ -30,7 +30,6 @@
   width: 100%,
   text(size: 0.85em, it)
 )
-
 
 
 //#set par(first-line-indent: (amount: 1.5em, all: false))
@@ -78,27 +77,27 @@
 #show: make-glossary
 
 #let entry-list = (
-  (key: "April15", short: "April 15", long: "April 15", description: "The deadline for most US universities to accept or decline offers of admission. Set by CGS; students are typically not required to accept offers before this date."),
-  (key: "cohort", short: "cohort", long: "cohort", description: "A group of students who start a program at the same time and often take classes together."),
+  (key: "April 15", description: [The #link("https://cgsnet.org/wp-content/uploads/2024/01/CGS_April15_Resolution_Jan312024.pdf")[April 15 resolution] is deadline for most US universities to accept or decline offers of admission. Students are typically not required to accept offers before this date.]),
+  (key: "cohort", description: [A group of students who start a program at the same time and often take classes together.]),
   (key: "Ivy League", description: [A group of #link("https://en.wikipedia.org/wiki/Ivy_League")[eight private universities in the US] known for academic reputation and prestige.]),
-  (key: "adcom members", long: "admission committee members", description: "Faculty members who review applications and make admission decisions."),
-  (key: "adcom chair", long: "admission committee chair", description: "The faculty member who leads the admission committee and oversees process fairness."),
-  (key: "advisor", long: "advisor/supervisor", description: "A faculty member who guides and mentors a PhD student throughout research."),
-  (key: "r1", short: "R1", long: "Research 1 university", description: "Universities with the highest level of research activity."),
-  (key: "stipend", description: "A fixed regular payment to students as part of their funding package."),
-  (key: "rolling-admission", short: "rolling admission", long: "rolling admission", description: "Applications are reviewed as they arrive, with decisions released continuously."),
-  (key: "toptier", short: "top-tier venues", long: "top-tier conferences and journals", description: "Highly prestigious publication venues in a CS field."),
-  (key: "diversity-statement", short: "diversity statement", long: "diversity statement", description: "An application document describing contributions to diversity and inclusion."),
-  (key: "fields", short: "fields", long: "fields or research areas", description: "Specific areas of study within a discipline, such as ML, CV, or Software Engineering."),
-  (key: "international-domestic", short: "international vs domestic", long: "international vs. domestic students", description: "International students usually need a visa; domestic students do not."),
-  (key: "in-out-state", short: "in-state vs out-of-state", long: "in-state vs. out-of-state tuition", description: "Tuition categories based on state residency; often important for MS applicants."),
-  (key: "lab", short: "research lab", long: "research lab", description: "A group of faculty and students working in a shared research area."),
-  (key: "major", short: "major", long: "major", description: "A student's primary field of study, usually in undergraduate education."),
-  (key: "open-house", short: "Open House", long: "Open House", description: "An event where admitted students visit or attend virtually to learn about the program."),
-  (key: "AY", short: "AY", long: "Academic Year", description: "The yearly academic calendar (typically Fall and Spring; sometimes Summer/quarter systems)."),
-  (key: "Q1", short: "Q1", long: "Scopus Q1 Journals", description: "A journal quartile label; less commonly used by US CS faculty than venue-specific names."),
-  (key: "ra", short: "RA", long: "Research Assistantship", description: "A major type of PhD funding through research work with a professor."),
-  (key: "ta", short: "TA", long: "Teaching Assistantship", description: "A major type of PhD funding through teaching support duties."),
+  (key: "adcom members", long: "admission committee members", description: [Faculty members who review applications and make admission decisions.]),
+  (key: "adcom chair", long: "admission committee chair", description: [The faculty member who leads the admission committee and oversees process fairness.]),
+  (key: "advisor", long: "advisor/supervisor", description: [A faculty member who guides and mentors a PhD student throughout research.]),
+  (key: "r1", short: "R1", long: "Research 1 university", description: [Universities with the highest level of research activity.]),
+  (key: "stipend", description: [A fixed regular payment to students as part of their funding package.]),
+  (key: "rolling-admission", short: "rolling admission", long: "rolling admission", description: [Applications are reviewed as they arrive, with decisions released continuously.]),
+  (key: "toptier", short: "top-tier venues", long: "top-tier conferences and journals", description: [Highly prestigious publication venues in a CS field.]),
+  (key: "diversity-statement", short: "diversity statement", long: "diversity statement", description: [An application document describing contributions to diversity and inclusion.]),
+  (key: "fields", short: "fields", long: "fields or research areas", description: [Specific areas of study within a discipline, such as ML, CV, or Software Engineering.]),
+  (key: "international-domestic", short: "international vs domestic", long: "international vs. domestic students", description: [International students usually need a visa; domestic students do not.]),
+  (key: "in-out-state", short: "in-state vs out-of-state", long: "in-state vs. out-of-state tuition", description: [Tuition categories based on state residency; often important for MS applicants.]),
+  (key: "lab", short: "research lab", long: "research lab", description: [A group of faculty and students working in a shared research area.]),
+  (key: "major", short: "major", long: "major", description: [A student's primary field of study, usually in undergraduate education.]),
+  (key: "open-house", short: "Open House", long: "Open House", description: [An event where admitted students visit or attend virtually to learn about the program.]),
+  (key: "AY", short: "AY", long: "Academic Year", description: [The yearly academic calendar (typically Fall and Spring; sometimes Summer/quarter systems).]),
+  (key: "Q1", short: "Q1", long: "Scopus Q1 Journals", description: [A journal quartile label; less commonly used by US CS faculty than venue-specific names.]),
+  (key: "ra", short: "RA", long: "Research Assistantship", description: [A major type of PhD funding through research work with a professor.]),
+  (key: "ta", short: "TA", long: "Teaching Assistantship", description: [A major type of PhD funding through teaching support duties.]),
   (key: "GRE", short: "GRE", long: "Graduate Record Examination", description: "A standardized admissions test; often optional for CS PhD programs."),
   (key: "REU", long: "Research Experience for Undergraduates", description: "An NSF-funded program offering undergraduate research opportunities."),
   (key: "SOP", long: "Statement of Purpose", description: "An application essay describing your research interests, background, and goals."),
@@ -386,7 +385,7 @@ text(size: 0.9em,
 
 - *MS requirement and PhD duration*: CS PhD programs in the US do not require an MS degree (@sec:time, @sec:msrequirement). In contrast, many other countries require having an MS degree before joining a PhD program. This means that US PhD programs are longer (5--7 years, 2 of which are coursework) than other countries (3--4 years, no coursework).
 
-- *Project proposal*: In many countries, you have to choose a project and advisor *during* the application process (e.g., you write a proposal to a potential advisor). But this allows you to start your research right from the beginning. In the US, you often start your PhD without an advisor or project and find them later. Usually you have two initial years to take classes, explore and find an advisor and research topic.
+- *Project proposal*: In many countries, you have to choose a project and advisor _during_ the application process (e.g., you write a proposal to a potential advisor). But this allows you to start your research right from the beginning. In the US, you often start your PhD without an advisor or project and find them later. Usually you have two initial years to take classes, explore and find an advisor and research topic.
     
 - *Coursework*: In the US you will spend the first couple of years taking classes and exploring potential advisor and research topics. After that, you have to pass a series of exams during your PhD---qualifying exam, comprehensive exam, thesis proposal defense (#gls("ABD")). In other countries, you often start your research right away and work on the research project you proposed with the advisor you chose. Moreover, you might not have exams like those in the US or only have to do a few of them.
     
@@ -427,7 +426,7 @@ text(size: 0.9em,
 // % \caption{Application Timeline}
 // % \end{table}
 // % \section{Why the US and not other countries?}
-// % TODO
+// %
 
 === Waiving Application Fee <sec:fee-waive>
 
@@ -447,7 +446,7 @@ However, most universities do not waive the application fee, as it is typically 
 
 // \chapterinfo{Applications are evaluated by the PhD Admission (\acrshort{adcom}) committee and each application is typically reviewed by three \glslink{adcom-members}{faculty members}.}
 
-After you submit your PhD application, it will be checked for general requirements---whether you submit your transcripts and standard scores? Usually, this screening process is done through a central university system, i.e., not by CS faculty.
+After you submit your PhD application (@part:application), it will be checked for general requirements---whether you submit your transcripts and standard scores? Usually, this screening process is done through a central university system, i.e., not by CS faculty.
 
 After screening, your application is complete and forwarded to the CS department for further evaluation. If you don't pass screening,  the system will tell you what is missing and what you need to do. So pay attention to your email and check your application status regularly.
 
@@ -461,9 +460,9 @@ Your applications are reviewed by a PhD #gls("adcom", first:true), which consist
 
 The size and workload of the adcom depend on the department. At GMU, the PhD adcom has about 15--20 faculty, each reviewing ~30 applications. Large schools often have separate adcoms for MS programs (@chap:ms).
 
-PhD adcoms typically include assistant professors (@sec:faculty-types), giving junior faculty opportunities to recruit students. The #gls("adcom chair") is usually a senior faculty who assigns applications to reviewers based on research interests or faculty mentioned by applicants (e.g., I review SE applicants).
+PhD adcoms typically include assistant professors (@sec:faculty-types), giving junior faculty opportunities to recruit students. The #gls("adcom chair",first:false) is usually a senior faculty who assigns applications to reviewers based on research interests or faculty mentioned by applicants (e.g., I review SE applicants).
 
-Each application is assigned to about three #gls("adcom members"), who independently evaluate your profile and then reach a consensus. They consider factors such as #glspl("LOR"), #gls("SOP"), research experience, GPA, test scores, and interviews. (see @part:application).
+Each application is assigned to about three #gls("adcom members",first: false), who independently evaluate your profile and then reach a consensus. They consider factors such as #glspl("LOR"), #gls("SOP"), research experience, GPA, test scores, and interviews. (see @part:application).
 
 #example[
   At GMU, we usually admit full-time PhD candidates with funding (@chap:funding) or reject them. In rare cases, we admit without funding if you have external support (e.g., government or fellowship). We justify our decision (@sec:ievaluate) with a summary of your application, listing strengths (e.g., well-known school) and weaknesses (e.g., generic LORs).
@@ -550,14 +549,6 @@ The short answer is that _all_ applications go through the adcom committee. Howe
 Thus, it comes down to who can advocate for you in the committee. This is the reason why contacting faculty (@sec:contact) and mentioning faculty in your SOP (@chap:sop) can be very helpful, as it can lead to a faculty member advocating for you in the committee review process. However, even if a faculty member is interested in you, the final decision is still made by the committee.
 
 
-// #remark-block[
-//   For top CS PhD program, most students are "direct admits" in the sense that they contacted potential advisor before applying and thus these faculty member advocate for them in the committee review process.
-
-//   There are of course also students who are purely "committee admits" as they did not contact any faculty before applying and thus do not have a specific advocate in the committee review process.
-//   ]
-
-
-//todo write about direct admit vs committee admit, and how the decision is made in each case. For example, if a faculty member wants to directly admit a student, they can do so by contacting the adcom chair and providing justification. The adcom chair will then review the justification and decide whether to approve the direct admit. In some cases, the adcom chair might ask other faculty members for their opinions on the direct admit before making a decision. If the direct admit is approved, the student will be admitted without going through the regular committee review process. However, if the direct admit is not approved, the student will have to go through the regular committee review process like all other applicants.
 
 #pagebreak()
 = Application Materials <part:application>
@@ -1223,13 +1214,13 @@ Not much you can do other than to be patient and wait. Do not send emails asking
 
 Some universities have rolling-admission. Others have a specific date when they send out the first round of acceptance letters.]
 
-#paragraph[Response Deadlines][ Accepted students are usually given a deadline to make decisions on their offers, often around #gls("April15", first: false). After this date, CS programs can gauge how many slots remain unfilled.]
+#paragraph[Response Deadlines][ Accepted students are usually given a deadline to make decisions on their offers, often around #gls("April 15", first: false). After this date, CS programs can gauge how many slots remain unfilled.]
 
 #paragraph[Waitlist][Most CS programs have a limited number of slots for PhD students, and thus put many good students on a waitlist.  If accepted students decline the offer, then offers are sent to students on the waitlist. So if you see people getting accepted, that does not mean you are out yet. 
 
 Also, do not feel embarrassed or discouraged if you are on the waitlist. Many students are on the waitlist, and there is a good chance that you will get an offer later.]
 
-#paragraph[Rejection Letters][Schools typically start sending out rejection letters to remaining applicants _after they have finalized their admissions decisions_. Thus, rejection letters are often sent out late (e.g., after #gls("April15") or even much later). 
+#paragraph[Rejection Letters][Schools typically start sending out rejection letters to remaining applicants _after they have finalized their admissions decisions_. Thus, rejection letters are often sent out late (e.g., after #gls("April 15") or even much later). 
 
 Not much you can do here. You can try to contact the school to ask about your status, but they might not reply, they might say they are still reviewing applications, or give you inaccurate information (e.g., you will hear in two weeks). In short, you just have to be patient and wait, and also beware that some schools do not send out rejection letters at all.]
 
@@ -1268,7 +1259,7 @@ Not much you can do here. You can try to contact the school to ask about your st
 By around mid-March you should hear back from most PhD programs that want to admit you. 
 But you likely won't hear back from schools that do not want to admit you (@sec:late-rejection), e.g., you're on their wait list.
 
-If you receive offers, congratulations!  Now you're at a different game because the schools that have admitted you will try to get you to accept them!  Look carefully at the offer letters (@sec:offer-letters) for the terms and conditions of the offers.  Other important factors to consider include the reputation of schools (@chap:choosing-school) and professors (@chap:choosing-advisor), and funding availability (@chap:funding). You will have to make your decision (@sec:accept-postpone-decline) by a certain deadline, e.g., #gls("April15").
+If you receive offers, congratulations!  Now you're at a different game because the schools that have admitted you will try to get you to accept them!  Look carefully at the offer letters (@sec:offer-letters) for the terms and conditions of the offers.  Other important factors to consider include the reputation of schools (@chap:choosing-school) and professors (@chap:choosing-advisor), and funding availability (@chap:funding). You will have to make your decision (@sec:accept-postpone-decline) by a certain deadline, e.g., #gls("April 15").
 
 #paragraph[Open House][Most schools have _Open House_ or _Visit Day_ events, which are a great resource to learn about the school, department, faculty, research, living, etc.
 
@@ -1289,7 +1280,11 @@ Also, do not forget to update and thank LOR writers and others who have supporte
 
 Students often ask about what to do after they get an interview or an offer from a professor, e.g., if they can follow up to find out about their status, or is it OK to postpone or accept/reject offers?, and most importantly, how to do so without offending anyone. 
 
-#strong[Checking your application status and following up emails] If you have interviewed and not heard back from a professor after a few weeks or especially around the time when universities send out their admission decisions (around late Feb--mid-Mar), you can email to check.  You can follow up the interview invitation and say: #emph["Thanks for chatting with me. I am very excited about the opportunity to work with you.  Could you please let me know if you have made a decision or if you need more information from me?"]. If you have new updates, e.g., new publications or new fellowship awards, or even new offers from other professors or schools, you can also mention that.
+#strong[Checking your application status and following up emails] If you have interviewed and not heard back from a professor after a few weeks or especially around the time when universities send out their admission decisions (around late Feb--mid-Mar), you can email to check.  You can follow up the interview invitation and say: 
+
+#emph-block["Thanks for chatting with me. I am very excited about the opportunity to work with you.  Could you please let me know if you have made a decision or if you need more information from me?"] 
+
+If you have new updates, e.g., new publications or new fellowship awards, or even new offers from other professors or schools, you can also mention that.
 
 Profs. are often very busy (@sec:busy), especially during admission time when they have many reviews and interviews.  They might not have time to respond to every email.  If you do not hear back after a week, you can send another email to check again.  If you still do not hear back, you can assume that you are not selected.
 
@@ -1304,7 +1299,7 @@ Profs. are often very busy (@sec:busy), especially during admission time when th
 
   I've seen many students, especially international, face a dilemma when they #emph[commit] to a graduate offer but then receive another—potentially better—one. Advice given in online forums is often along the line that it's okay to switch, using reasons like you haven't yet had a strong relationship with the prof. or you should prioritize your personal benefit.
 
-  In my opinion, these reasons are not strong enough to justify retracting an acceptance. A more valid reason is using the #link("https://cgsnet.org/wp-content/uploads/2024/01/CGS_April15_Resolution_Jan312024.pdf")[April 15 resolution], in which many universities participate. Among various things, this resolution states that students are free to accept a new offer from a different institution until 4/15, even if they have already accepted an offer elsewhere.
+  In my opinion, these reasons are not strong enough to justify retracting an acceptance. A more valid reason is using the #gls("April 15") #link("https://cgsnet.org/wp-content/uploads/2024/01/CGS_April15_Resolution_Jan312024.pdf")[resolution], in which many universities participate. Among various things, this resolution states that students are free to accept a new offer from a different institution until 4/15, even if they have already accepted an offer elsewhere.
 
   However, in general, retracting an acceptance can have ethical implications. When you accept an offer, you are committing to work with that prof, who then might stop looking for other students. So by retracting your offer, you are breaking your commitment and also causing a great deal of inconvenience to the prof and also taking away the opportunity from other students. 
   Ultimately, this choice is personal and involves a balance between personal benefit and ethical considerations.
@@ -1408,7 +1403,7 @@ I have seen many cases where students think they have a strong profile, but they
   caption: [Comment from an NLP researcher on an applicant with multiple NeurIPS papers.],
   align(left)[
     #text(size: 0.8em)[
-      #remark-block[_"The applicant has done some interesting work, but much of what they have done has been only on dataset creation, with almost nothing on actual modeling or tackling tasks. This has merits, but it's more of an engineering feat than a research feat."_]
+      #emph-block[_"The applicant has done some interesting work, but much of what they have done has been only on dataset creation, with almost nothing on actual modeling or tackling tasks. This has merits, but it's more of an engineering feat than a research feat."_]
     ]]  
 ) <fig:comment-neurips>
 
@@ -2262,22 +2257,6 @@ But there's a good chance that we would respond to well-written emails (@sec:con
 
 
 
-
-// % \section{Having fun during a PhD?}
-// % PhD students \emph{and faculty} probably find it amusing about the notion that students, especially international ones, can genuinely enjoy their PhD studies. In fact, after reading posts after posts on VietPhD.org on how PhD students are commonly mistreated, stressed, it seems being miserable is a norm during a PhD study.
-
-// % There are many advice on surviving PhD that you can follow. But here I just list a few that works for me and what I advice my students to do.\tvn{TODO}
-
-
-
-
-// % \section{Will I be miserable during my a PhD? <sec:happy}
-// % There are many stories of how students are mistreated, stressed, and miserable. Issues including bad relationships with professors, conflicts with co-authors and lab mates, feeling discriminated against (e.g., because you're an international student), \emph{do} exist, and it is good to be aware of those.  However, in reality, there are many good mentors, supportive lab mates and departments, and so on.  So don't let social media make you feel pessimistic and deter your quest to advance knowledge.
-
-// \part{Appendices <part:appendices}
-// \appendix
-// 
-
 #pagebreak()
 
 
@@ -2872,7 +2851,7 @@ Note that while typically given to senior researchers, some junior faculty have 
 
 #figure(
   align(left)[#text(size: 0.8em)[
-    #remark-block[
+    #emph-block[
     _"It is highly noteworthy that #redact[Vu] has earned two 10-year test-of-time awards for [his] papers [, including a prestigious ICSE Most Influential Paper Award]. Senior computer scientists count themselves fortunate to
     earn even one such award at some point in their careers, but it is highly unusual and commendable that #redact[Vu]
     has earned two of these awards already, less than ten years after completing [his] PhD ..."_]]],
@@ -2881,7 +2860,7 @@ Note that while typically given to senior researchers, some junior faculty have 
 
 === Industrial and Other Awards
 
-CS faculty also aim to win awards from industry, which shows that their work has
+CS faculty also go for awards from industry, which shows that their work has
  impact on real-world applications and industry relevance. Well-known industrial awards include:
 
 - *Amazon Research Award (ARA):* Typically open twice a year for a wide range of research areas. It also comes as a gift of cash or cloud credits.  The amount is small, but is _highly competitive_ as it attracts researchers all over the world, including senior researchers and those from top institutions.
@@ -2959,7 +2938,7 @@ In many countries, it is customary to give professors costly gifts---such as fan
 
  However, that doesn't mean you can't show your appreciation. In fact, small, personal tokens, like small souvenir from your country, a fridge magnet, keychain from your hometown, or even just simple thank-you hand-written card, are very welcomed.  Some professors proudly display their gifts, which can come from students and colleagues (e.g., when they travel to their home countries or conferences). In summary, #highlight[small gifts are fine], but avoid anything that might make your professors uncomfortable.
 
-== Maintaining Good Relationships with Your Professors. <sec:maintaining-relationships>
+== Maintaining Good Relationships with Your Professors <sec:maintaining-relationships>
 
 There's a misconception that in the US it's all business, with professors as bosses who pay students for their work and that lab mates are just work colleagues; and that doing nice things means expecting something in return.
 
@@ -3064,7 +3043,7 @@ When researching where to do a CS PhD, many students use rankings like the U.S. 
 #figure(
 align(left)[
   #text(size: 0.8em)[
-    #remark-block[_"The ranking methodology \[of US News\] is flawed, for a simple reason that any computer science researcher could tell them immediately. And we did. Influential researchers in computer science pointed out the flaws directly to editors at US News; they were ignored."_
+    #emph-block[_"The ranking methodology \[of US News\] is flawed, for a simple reason that any computer science researcher could tell them immediately. And we did. Influential researchers in computer science pointed out the flaws directly to editors at US News; they were ignored."_
 
     _"No ranking is perfect, but this \[CSrankings\] is defensible and open."_]]],
 
