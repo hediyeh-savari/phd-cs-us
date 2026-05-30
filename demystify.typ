@@ -349,11 +349,11 @@ Moreover, if you have an MS, then some coursework _might_ be transferred for cou
 === Can I apply for PhD in CS for the Spring or Summer? <sec:apply-spring-summer>
 Most students apply to start their PhD in the Fall. This means they submit their application around December, receive admission decisions sometime in the Spring, and officially begin their PhD in the Fall (August or September).
 
-Fall---the start of the academic year---is the most common start time for PhD programs in the US, and many universities only accept new PhD students in the Fall. Importantly, applying for the Fall also gives you access to funding opportunities (@chap:funding) that are available only for Fall admits, such as TAships (@sec:ta) and some fellowships.
+Fall---the start of the #gls("AY")---is the most common time to begin PhD programs in the US, and many universities only accept new PhD students in the Fall. Importantly, applying for the Fall gives you access to funding opportunities (@chap:funding) that are available only for Fall admits, such as TAships (@sec:ta) and some fellowships.
 
 However, many universities also accept PhD students in the Spring or Summer, especially when you have a specific advisor who can fund you through an RAship (@sec:ra). This is less common, and you may lose funding opportunities that are available only for Fall admits.
 
-#remark-block[
+#example[
   GMU allows PhD students to start in the Spring, but it is usually not recommended. Two of my PhD students started in the Spring because I had funding to support them right away. In general, a student can start in the Spring or even Summer only if an advisor already has RA funding for them. Students who do not start in the Fall may also lose benefits reserved for Fall admits, such as a first-summer stipend. So in short, it is possible, but I do not recommend it in general.
 ]
 
@@ -481,7 +481,7 @@ Note that the assigned reviewers are the main ones deciding your application, bu
 === How are Decisions Made? <sec:how-decisions>
 // \sectioninfo{Even if all adcom reviewers recommend acceptance, the application can still be rejected. Vice versa, if all reviewers think the application is weak, the student might still be admitted.}
 
-After reviewers have evaluated an application, _adcom-chair_ will review all evaluations, look at entered notes, and ask reviewers to discuss and resolve discrepancies to reach a consensus (e.g., a reviewer wants to accept but the other wants to reject).  Typically, the decision is made entirely by the reviewers. There is _no involvement_ from the adcom chair, department chair, or others. In most cases _adcom-members_, even those reviewing the same application, make decisions independently and do not talk to each other (just a common practice to avoid biasing). In some rare cases we might
+After reviewers have evaluated an application, #gls("adcom chair") will review all evaluations, look at entered notes, and ask reviewers to discuss and resolve discrepancies to reach a consensus (e.g., a reviewer wants to accept but the other wants to reject).  Typically, the decision is made entirely by the reviewers. There is _no involvement_ from the adcom chair, department chair, or others. In most cases #gls("adcom members"), even those reviewing the same application, make decisions independently and do not talk to each other (just a common practice to avoid biasing). In some rare cases we might
 (@sec:adcom-discuss).
 
 
@@ -543,11 +543,11 @@ Unfortunately, even if all reviewers recommend a student, they might not be admi
 
 Discussions on Reddit and Discord on graduate admissions often mention "direct admit"---a student is "directly admitted" by an individual faculty vs "committee admit"---the student is admitted by the adcom committee.  Answers to these questions, often from applicants who are not familiar with the admission process, often make it sound more mysterious than it actually is.
 
-The short answer is that _all_ applications go through the adcom committee. However, admission decision is _heavily influenced_ by whether an individual faculty member is interested in the student and willing to advise them, but this is still part of the committee review process. So even if a student is "directly admitted" by a faculty member, their application still likely goes through normal committee review process (though it will be less likely be constested as someone is already taking responsibility for the student), and the final decision is made by the committee based on the evaluations of all reviewers ("committee admit").
+The short answer is that _all_ applications go through the adcom committee. However, admission decision is _heavily influenced_ by whether an individual faculty member is interested in the student and willing to advise them, but this is still part of the committee review process. So even if a student is "directly admitted" by a faculty member, their application still likely goes through normal committee review process (though it will be _much less likely_ be contested as someone is already taking responsibility for the student), and the final decision is made by the committee based on the evaluations of all reviewers ("committee admit").
 
-An analogy is that of a job application. The "official" decision to hire you can be from a higher level (e.g., HR or a hiring committee), but they don't know you and don't have the expertise to evaluate your research ability. Thus they rely on the opinions of the PhD admission committee, which similarly does not know you well enough, and thus rely on specific faculty members who can do so (those got assigned to review your application or people who interviewed you). These faculty members are not necessarily the same as the ones who will eventually advise you. However, if someone is strongly interested in working with you (e.g., even provide you with their funding or RAship), then the committee is very likely to admit you.
 
-// Thus, it comes down to who can advocate for you in the committee. This is the reason why contacting faculty (@sec:contact) and mentioning faculty in your SOP (@chap:sop) can be helpful, as it can lead to a faculty member advocating for you in the committee review process. However, even if a faculty member is interested in you, the final decision is still made by the committee.
+
+Thus, it comes down to who can advocate for you in the committee. This is the reason why contacting faculty (@sec:contact) and mentioning faculty in your SOP (@chap:sop) can be very helpful, as it can lead to a faculty member advocating for you in the committee review process. However, even if a faculty member is interested in you, the final decision is still made by the committee.
 
 
 // #remark-block[
@@ -698,11 +698,11 @@ Many students get stress asking for LORs because they worry that the writers mig
 
 - *Follow up and Stay in touch*: Follow up with your writers to make sure they have submitted the letters on time. Note that their letters might have a different due date than your application (@sec:remind-writers).
 
-After your writers have submitted all of their letters, _thank them_ (@sec:thank-writers). Let them know the outcome of your applications and stay in touch with them. This will help you build a relationship with them and you might need them to write for you again in the future.
+After your writers have submitted all of their letters, _thank them_ (@sec:thank-writers). Let them know the outcome of your applications and stay in touch. This will help you build a relationship, and you might need them to write for you again in the future.
 
 === Waiving Your Right <sec:waive-right>
 
-When you ask someone to write a letter for you, *you should always waive your right*, which is a standard practice in both school and job applications. Waiving your right shows trust in your referees and that you're not trying to influence their words. It encourages honest feedback and keeps things confidential.
+When you ask someone to write a letter for you, #highlight[you should always fwaive your right], which is a standard practice in both school and job applications. Waiving your right shows trust in your referees and that you're not trying to influence their words. It encourages honest feedback and keeps things confidential.
 
 If you do not waive your right, the letter writer may refuse or write a generic letter. Reviewers may question a letter that is not waived—if you don't trust your writers, find someone else. In short, waiving your right is standard and respectful.
 
