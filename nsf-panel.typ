@@ -39,7 +39,7 @@ After OSP submitted your proposal, it will be assigned to a program manager (PM)
 - At some point after the proposal is submitted, you can check the status of your proposal on research.gov, and it will show you the name of the PM who is handling your proposal.
 - From here on, the assigned PM will be the one who handles your proposal, e.g., they will select the reviewers, run the panel meeting, and make the funding recommendation. 
 
-#remark-block[Recently, due to shortage of PMs, proposals might be assigned to a PM who is not an expert in the topic of the proposal. However, this is still OK because the selected panelists will be experts in the topic of the proposal and just as with any proposal (even those where the PM is an expert), the PM will rely on the panelists' expertise to make the funding decision.
+#remark-block[Recently, due to shortage of PMs, a PM can take proposals in programs that are not exactly in their area of expertise. However, this is still OK because the selected panelists will be experts in the topic of the proposal and just as with any proposal (even those where the PM is an expert), the PM will rely on the panelists' expertise to make the funding decision.
 ]
 
 == Panel Selection and Review
@@ -50,13 +50,34 @@ PMs will select panelists to review your proposal.
 - *Conflict of interest* is a major factor in selecting reviewers (e.g., the reviewer should not also submit a proposal to the same program). In fact, even after the panel is selected, if any potential COI is discovered, the PM will remove the reviewer and assign another one.
 - Occasionally, if there is not sufficient expertise in the panel, the PM might reach out to an external reviewer (who is not on the panel) to review your proposal. These are *"ad hoc"* reviewers, and they typically only review one proposal and do not participate in the panel discussion.
 
-#remark-block[NSF review process is *single-blind* (i.e., the reviewers know the the PIs, but the PIs do not know the identity of the reviewers). The PIs sometimes try to guess who the reviewers are based on the comments, but this is often not accurate.
+#remark-block[NSF review process is *single-blind* (i.e., the reviewers know the the PIs, but the PIs do not know the identity of the reviewers). The PIs sometimes try to guess who the reviewers are based on the comments, but this is often not accurate and leads to unnecessary stress.
 ]
 
 == Panel Meeting and Discussion
 
 
+
+#remark-block[Due to the pandemic, panels have been held virtually, and this is likely to continue for the foreseeable future. In addition, due to recent changes in having _shorter panel summary writing_, panel is now typically held in one (long) day instead of two days.
+]
+
+=== Category of Proposals after Panel Discussion
+Typically there are three categories of proposals after the panel discussion: Highly Competitive (or HC), Competitive (or C), and Not Competitive (or NC). HC means it is likely to be funded, C means it is good but might not be funded, and NC means it is not recommended for funding. 
+-
+
+
+
+
 == After the Panel Meeting: Recommendation and Timeline
+ - C is the gray area, and this is where the PMs will make the final decision on which proposals to fund based on the panel's recommendation and the available budget. Of couse, C proposals that were ranked very high has better chance. However, if everything is equal, the PM might also consider other factors such as the proposal's topic, the PI is new and or has not been funded before, EPSCOR state, etc.  These are decisions made _after_ the panel meeting (though discussions and reviews during the panel meeting might also touch on these factors), and based on the PM's judgment and experience.
+
+- *Budget adjustment*: the PM might ask the PIs to adjust the budget of the proposal (e.g., reduce the budget if the panel thinks the proposed work can be done with less budget). This also helps the PM to fund more proposals with the available budget.
+However, this is based on the suggestion from the panel as the PM rarely decides themselves that the proposal can be done with less budget without the panel's suggestion. 
+
+
+
+
+#remark-block[While being rare, it is possible that an HC proposal is not funded, e.g., if there are too many HC proposals and the budget is not sufficient,  or if there are multiple HC proposals that are very similar and the PM can only fund one of them, etc.
+]
 
 
 = General Issues in Proposals
