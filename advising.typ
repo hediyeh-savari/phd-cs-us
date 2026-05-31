@@ -1,5 +1,3 @@
-
-
 #set page(numbering: "1", number-align: center)
 #set heading(numbering: "1.")
 #set text(lang: "en", size: 11pt)
