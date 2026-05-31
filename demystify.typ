@@ -2845,9 +2845,7 @@ These can be (i) lifetime achievements in the field---such as ACM or IEEE Fellow
 _Most Influential Papers, Test of Time , and Impact Awards_ are given to papers that were published 10+ years ago at a top venue and made a lasting contribution to their area of research, e.g., creating a new research field. In other words, the work described in these papers have stood the _test of time_. Typically, these papers are highly cited and have inspired many follow-up works.
 Note that these paper awards are different than Distinguished or Best Paper awards, which are given at the conference and therefore might not be as well-known or influential.   
 
-
-
-Note that while typically given to senior researchers, some junior faculty have received these highly prestigious awards for their work as shown in @fig:LOR4junior. 
+Note that while typically given to senior researchers (because of the 10+ years requirement), some junior faculty have received these highly prestigious awards for their work as shown in @fig:LOR4junior. 
 
 #figure(
   align(left)[#text(size: 0.8em)[
