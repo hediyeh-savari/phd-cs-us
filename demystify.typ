@@ -589,7 +589,7 @@ Choose your #gls("LOR") writers carefully, as they can make or break your applic
 
 
 
-=== LOR from Well-Known People <sec:famous-LOR> 
+==== From Well-Known People <sec:famous-LOR> 
 
 
 Having a strong letter from well-recognized researcher (@chap:research-achievements) can _significantly boost_ your application. Such letters can outweigh other weaknesses such as limited publications or low GPA. Adcom members trust people they know or have heard about and respect.  A well-known researcher is unlikely to recommend someone who is not good because it would damage their reputation.
@@ -620,7 +620,7 @@ Thus it might be a good idea to directly ask if the prof. is willing to write a 
 ])
 
 
-==== LORs from Dept Chair, Dean, or Supervisor at Work <sec:admin-letters>
+==== From Dept Chair, Dean, or Supervisor at Work <sec:admin-letters>
 
 Many students, especially international applicants, try to get LORs from high-ranking administrators in their universities such as department chair/head, dean, or director. The students never worked with these people (they might take a class or so with these profs), but mistakenly believe that these LORs are valuable due to the writer's high position in the university.
 However, as mentioned in @sec:generic-letters such a generic LOR has little value because the writer does not know you well and can talk in depth about your research ability. 
@@ -691,7 +691,7 @@ Many students get stress asking for LORs because they worry that the writers mig
 
 After your writers have submitted all of their letters, _thank them_ (@sec:thank-writers). Let them know the outcome of your applications and stay in touch. This will help you build a relationship, and you might need them to write for you again in the future.
 
-=== Waiving Your Right <sec:waive-right>
+==== Waiving Your Right <sec:waive-right>
 
 When you ask someone to write a letter for you, #highlight[you should always fwaive your right], which is a standard practice in both school and job applications. Waiving your right shows trust in your referees and that you're not trying to influence their words. It encourages honest feedback and keeps things confidential.
 
@@ -702,7 +702,7 @@ If you ask me to write a letter and do not waive your right, I will refuse. I wi
 ])
   
 
-=== Helping Your LOR Writer <sec:help-your-LOR-writers>
+==== Helping Your LOR Writer <sec:help-your-LOR-writers>
 
 As mentioned in @sec:generic-letters and @sec:self-letters, you should not write your own letter and generic letters do not provide much value. Thus, to help your writer produce a strong customized LOR, you can provide them details or unique things about yourself. For example, let them know about your GPA, research and work experience, papers (if any), or anything you want them to mention. If the GPA in your program is highly competitive (@sec:gpa) and they know that, remind them to talk about it in the LOR. 
 You can also provide them with a draft of your SOP so that they can see what you are saying about yourself and complement that with their own perspective.
@@ -712,7 +712,7 @@ Sometimes your writer will explicitly ask you for such information, but if not, 
 #tip-block[If your grading system is not US standard, or you are from a good school but is unknown outside your country, you can ask your reference writers to explain that in their letters. For example, _Bach Khoa's_ are the top universities in Vietnam for STEM studies but few people outside Vietnam know about them. So if you are from there, you should ask your reference writers to mention that.
 ]
 
-=== Reminding Your Writers <sec:remind-writers>
+==== Reminding Your Writers <sec:remind-writers>
 
 After entering your writers' information in the application system, you should tell your writers about that and let them know they will soon receive an email from the university to submit their letters. You should also tell them when you submit your application and remind them to submit their letters on time if they haven't done so.
 
@@ -782,13 +782,25 @@ Your letter of recommendation is due by *12 p.m. (Noon) EST on December 10, 20XX
 Also, many places do not begin the admission review process right after the deadline and work on application reviews in the next semester (mid-January).
 Thus while you do want to send reminders because professors can be quite busy (@sec:busy) and might forget to submit their letters, especially when there is no explicit deadline, you do not send too many reminders as that can be annoying to the writers.
 
-=== Thanking and Updating Your Writers <sec:thank-writers>
+==== Thanking and Updating Your Writers <sec:thank-writers>
 
 After your application is submitted and your writers have submitted their letters---i.e., the wait begins (@part:after-apply)---you should send quick "thank you" notes to your writers. This serves both as an acknowledgement that you know they have submitted the letters and as an appreciation for their help.
 
 You should also update them with the outcome of your application, regardless of whether you are admitted or not. In addition to being a common courtesy, this can also help maintain a good relationship with your writers (@sec:maintaining-relationships), which can be useful in the future (e.g., if you need another letter for another round of applications or for a job reference).
 
 More generally, you should do the same for anyone who has helped you during the application process, such as profs. who provided advice, mentors who guided you, and friends and family who supported you.
+
+==== Will It Be Annoying If You Ask For Many Letters? <sec:many-letters>
+
+As mentioned in @sec:my-LOR-perspective I personally do not mind writing many letters for my students *once I have agreed to write for them* (@sec:LOR-writing). Profs. in general are used to writing many letters, especially during the application season. Moreover, once a letter is written, it can be reused for multiple applications, so it does not take much time to submit the letter to different universities (no more than 5 minutes per submission).
+
+However, some cases might raise some eyebrows, e.g., if you only aim at very top schools that the writers believe are not a good fit for you, or if you apply to too many schools (30+?) then the writers might question your seriousness or your ability to get into these schools. In short, don't overdo it, but applying to 10--15 schools is perfectly fine and common.
+
+
+
+#note-block[
+For Vietnamese students, it's worth mentioning the #link("https://vef2.org/")[VEF2.0 program], which has helped many students gain admission to good CS PhD programs in the US. VEF2.0 invites US faculty members from leading institutions to conduct rigorous interviews with VEF students and subsequently provide LORs on their behalf. Despite the limited interaction between the interviewer and the interviewee (primarily just the interview), these letters are very effective and have helped many students get into good PhD programs because they are from well-known US faculty members and are personalized to the students' research interests and potential (even with limited interaction).
+]
 
 
 === My Perspective <sec:my-LOR-perspective>
@@ -810,18 +822,6 @@ I (and most profs.) often do not write a new letter or customize the letter for 
 
 Finally, I usually submit a letter for a student in *batch*—submit to all universities that student is applying to at the same time). Typically, each submission takes about 1–5 mins, depending on the application system.  I will also let the student know when I have submitted the letter, and ask if I miss any.
 ] <sec:LOR-writing>
-
-==== Will It Be Annoying If You Ask For Many Letters? <sec:many-letters>
-
-As mentioned in @sec:my-LOR-perspective I personally do not mind writing many letters for my students *once I have agreed to write for them* (@sec:LOR-writing). Profs. in general are used to writing many letters, especially during the application season. Moreover, once a letter is written, it can be reused for multiple applications, so it does not take much time to submit the letter to different universities (no more than 5 minutes per submission).
-
-However, some cases might raise some eyebrows, e.g., if you only aim at very top schools that the writers believe are not a good fit for you, or if you apply to too many schools (30+?) then the writers might question your seriousness or your ability to get into these schools. In short, don't overdo it, but applying to 10--15 schools is perfectly fine and common.
-
-
-
-#note-block[
-For Vietnamese students, it's worth mentioning the #link("https://vef2.org/")[VEF2.0 program], which has helped many students gain admission to good CS PhD programs in the US. VEF2.0 invites US faculty members from leading institutions to conduct rigorous interviews with VEF students and subsequently provide LORs on their behalf. Despite the limited interaction between the interviewer and the interviewee (primarily just the interview), these letters are very effective and have helped many students get into good PhD programs because they are from well-known US faculty members and are personalized to the students' research interests and potential (even with limited interaction).
-]
 
 
 #pagebreak()
