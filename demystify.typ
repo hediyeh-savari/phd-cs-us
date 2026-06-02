@@ -1,7 +1,7 @@
 #set text(
   //font: "Noto Serif",
   
-  font: "TeX Gyre Pagella",
+  //font: "TeX Gyre Pagella",
   size: 12pt
 )
 
@@ -195,7 +195,7 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 
 #tip-block[The most selective US schools, e.g., top 10 in CS (@chap:rankings), are extremely competitive for everyone, regardless of background. Don't be discouraged if you don't get into a "household name" university as there are many excellent CS programs (@sec:selecting-ranking-schools) in the US that are not as well-known internationally but still offer great research opportunities and training. In fact, many top CS researchers and faculty members in the US did not graduate from #gls("Ivy League", capitalize:true, first:false) or top 10 schools.
 
-Many students, especially those from smaller countries or schools, have the *imposter syndrome*---worrying they're _"not good enough"_, or get discouraged when competing with others with "stronger" profiles (@sec:profile-not-strong). Remember (@chap:evalapps): #gls("adcom") looks for potential and evidence you'll thrive in research environment and fit well at their institution---in other words, things that usually have nothing to do with your GPA or GRE scores.
+Many students, especially those from smaller countries or schools, have the *imposter syndrome*---worrying they're _"not good enough"_, or get discouraged when competing with others with "stronger" profiles (@sec:profile-not-strong). As explained in @chap:evalapps, #gls("adcom") looks for potential and evidence you'll thrive in research environment and fit well at their institution---things that usually have nothing to do with your GPA or GRE scores.
 ]
 
 #paragraph[Funding Is Not An Issue][In most cases CS PhD students _do not_ need to worry about funding, especially at good #gls("R1") universities in the US. 
@@ -874,8 +874,6 @@ Note that local conferences and non-English journals or conferences do not carry
 #tip-block[*Craig*:
   GMU and many other universities allow you to upload your published papers and other writing samples (@sec:writing-sample). In many cases, even if the papers were not published at top places, we can still determine their quality by simply skimming over the paper.
 ]
-
-
 
 
 === Work Experience
