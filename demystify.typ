@@ -1313,8 +1313,8 @@ Profs. are often very busy (@sec:busy), especially during admission time when th
 ) <fig:admission-letter-started-with-saying-i-am-not-happy>
 
 Your admission notification will likely come with an offer letter (in some cases it might come separately).
-This letter is essentially a contract between you and the school, and lists the terms of the offer, including #gls("stipend"), tuition waiver, health insurance, and other benefits. The letter might also have some conditions, e.g., maintaining a certain GPA, etc. 
-You will likely need to sign and return the letter to accept the offer, e.g., by April 15--the deadline for many schools.
+This letter is essentially a contract between you and the school, and lists the terms of the offer, including #gls("stipend"), tuition waiver, health insurance, and other benefits. The letter often also has some conditions, e.g., maintaining a satisfactory academic performance, making progress in research, etc. 
+You will need to sign and return the letter to accept the offer, e.g., by April 15--the deadline for many schools.
 
 @fig:gra-offer shows an example of a GRA offer letter from GMU. It shows the 9-month stipend#footnote[Note RAs can get additional summer funding from their prof. (@sec:summer-funding), but this will not be shown in the offer letter as it is not guaranteed.], the funding source (i.e., the prof. who provided the RA), tuition waivers (9-credit, which is full time for grad student), and health insurance.
 
