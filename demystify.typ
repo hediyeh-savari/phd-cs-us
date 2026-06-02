@@ -1208,7 +1208,7 @@ Some schools send out admission letters in batches, some do _rolling admission_/
 
 Not much you can do other than to be patient and wait. Do not send emails asking about interviews or status; unless you have interviewed specifically with someone then you can ask that person for status updates and other questions (@sec:accept-postpone-decline).  You can, though not recommended, send an email to the CS dept to ask about your status, but likely they will not reply (in addition to being busy, they do not want to give you false hope or inaccurate information), or they can send a generic reply such as "we are still reviewing applications" or "you will hear in two weeks". @fig:waitlist shows an email from the University of Rochester about their admission process.
 
-#paragraph[Acceptance Letters][ Universities prioritize sending out acceptance letters first. This allows the admitted students to make decisions and plan for their studies. Read carefully on the acceptance letter for terms and conditions, e.g., funding and other benefits (@sec:offer-letters).
+#paragraph[Acceptance Letters][ Universities often prioritize sending out acceptance letters first. This allows the admitted students to make decisions and plan for their studies. Read carefully on the acceptance letter for terms and conditions, e.g., funding and other benefits (@sec:offer-letters).
 
 Some universities have rolling-admission. Others have a specific date when they send out the first round of acceptance letters.]
 
