@@ -259,3 +259,16 @@ The following are the most common rejections I've seen. They come in pairs, more
     == How to make a reviewer unhappy
     Don't spell check. Change formatting halfway through the paper. Use really small text. Don't check your figure numbers and captions. Use equations without defining the variables. Bounce around from subject to subject. Claim you're going to do x then actually describe y. List all of your achievements and describe all of your current research and spend one page describing new work. Define 20 equations without any accompanying text. Make it really difficult to dig out the broader impact, intellectual merit, and proposed work. Ask for tons of money for lots of students to do very little work. Assume your reviewer knows your field intimately, and jump straight to the details. Cut and paste three existing proposals from different people into one proposal, and add a summary page that "glues" the result together. 
 
+
+= Reporting and Post-Award Management
+
+=== Reporting Requirements
+- _Annual reports_: typically due every year on the anniversary of the award. 
+    - Should indicate what's new since the last report, and what are the plans for the next year.
+    - Participant (what individuals have worked on the project): 
+       - _Nearest Person Month worked_:  a month is 160 hrs (40 hrs/week \* 4). If a student works for a full semester (e.g., from August --- December or January --- May), then they have worked for a bit less than 5 months (though can round to 5 months as the system doesn't allow fractional months). #highlight[However, if the student is capped at 20 hrs/week, which is often the case for PhD students,] then they have worked for 2.4 months (20 hrs/week \* 4 weeks/month \* 5 months = 400 hrs), which is then #highlight[2 months].
+
+
+- _Final report_: typically due within 90 days after the end of the award.
+    - Should indicate what's new since the last report (but of course no plans for the next year since the award is ending).
+- _Outcomes report_: typically due within 90 days after the end of the award. It is shorter (2--3 paragraphs) focuses on the outcomes and impacts of the project.  In addition, just like the _abstract_, the outcomes report is often public-facing, i.e., shown on the public NSF website for the award below the _abstract_, and so should be written for the general public.
