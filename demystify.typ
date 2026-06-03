@@ -1347,6 +1347,9 @@ Typically, the most wiggle room is funding in the summer (@sec:summer-funding) w
 
 For a specific start date or TA assignment (e.g., TA'ing a particular course), you can ask for it. Also, there is typically no moving allowance for PhD students. In short, standard things set by the university or department are unlikely negotiable. However, you can ask for things such as books and computer equipment (@sec:buying-equipment).
 
+#remark-block[
+  This is my personal opinion (as with all advice in this book): #highlight[don't try to negotiate your TA/RA offer]. You will likely not be able to get anything due to reasons mentioned above, and risk offending the prof. who made the offer. Negotiation is more common in job offers, and perhaps other graduate programs, but not in CS PhD.
+]
 
 === Buying Computer Equipment <sec:buying-equipment>
 //\sectioninfo{Ask your prof. if they can buy computer equipment and such for your research.}
