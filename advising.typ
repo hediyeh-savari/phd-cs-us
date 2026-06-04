@@ -448,9 +448,9 @@ Questions that are not categorized into the above sections but can help you unde
   ) <fig:rebuttal>
 
 == How should a student get sufficient background for their project? Do you expect them to take courses, read papers, or something else?
-I actually don't encourage my students to take courses or read many papers before they start working on their project---the same thing kids in my Chess club don't learn openings and strategies when they start---just play lots of games and study openings and endgames later.
+I actually don't encourage my students to take courses or read many papers before they start working on their project---the same thing kids in my Chess club don't learn openings and strategies _when they start_---just play lots of games and study openings and endgames later.
   
-Thus, dig right into (existing) code, make changes, and break something.  If it helps, reimplement it from scratch. I want you to get get frustrated with existing work and think of ways to improve it. Reinventing the wheel is a great way to learn and understand something deeply---and understanding something deeply is the key to doing research on it.
+I strongly believe that the student should dig right into (existing) code, make changes, and break something.  If it helps, reimplement it from scratch. I'd like you to get get frustrated with existing work and think of ways to improve it. Reinventing the wheel is a great way to learn and understand something deeply---and understanding something deeply is the key to doing research on it.
 
     Reading papers won't reveal issues or limitations with the work, and even might demotivate the students (_"too many good work already, how do I come up with something better?"_).  Every work has limitations, but if you understand the code very well (e.g., by reimplement it), you will find all the issues and think of ways to improve the work --- that's how we come up with ideas and advance the state of the art.
 
@@ -472,3 +472,5 @@ Not only this applies to engineering or tool building projects, but also to theo
 - #link("https://jbhuang0604.github.io/advisor_guide.html")[Jia-Bin Huang's answers]
 - #link("https://ideal.umd.edu/blog/Prospective-Students-FAQ")[IDEAL Lab's answers]
 - #link("https://www.qlou.org/advisor_guide.html")[Qian Lou's answers]
+- #link("https://blog.ml.cmu.edu/2020/03/02/questions-to-ask-a-prospective-ph-d-advisor-on-visit-day-with-thorough-and-forthright-explanations/")[Andrew Kuznetsov]
+- 
