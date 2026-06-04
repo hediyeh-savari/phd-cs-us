@@ -716,9 +716,7 @@ Sometimes your writer will explicitly ask you for such information, but if not, 
 
 After entering your writers' information in the application system, you should tell your writers about that and let them know they will soon receive an email from the university to submit their letters. You should also tell them when you submit your application and remind them to submit their letters on time if they haven't done so.
 
-Note that most places only have deadlines for the applicant, but are very flexible with the letter writers. In many cases your LOR writers _are not given any deadline_. @fig:LOR-invitations-no-deadline and @fig:LOR-invitations-deadline give examples of LOR invitation emails I received from various universities in the past few years.
-
-
+Note that many places only have deadlines for the applicant, but are very flexible with the letter writers. In these cases your LOR writers _might not even be given any deadline_. @fig:LOR-invitations-no-deadline and @fig:LOR-invitations-deadline give examples of LOR invitation emails I received from various universities in the past few years.
 
 
 #example[LOR invitations *with NO deadline*][
@@ -845,7 +843,7 @@ Here we look at publications and other research experiences that can strengthen 
 The most concrete evidence of research ability is having *papers in reputable international conferences or journals*.
 Having published papers, especially at top venues, is a sign that you have been successfully involved in research.
 
-Publications are #highlight[never required] for PhD application. _However_, given the competitiveness of CS admission, they can significantly strengthen your application and #highlight[are becoming the norm] for top places. Applicants admitted to top schools, especially in popular fields such as ML and NLP, often have multiple first-authored papers at top places. @fig:wu shows examples of applicants to Stanford CS PhD.
+Publications are #highlight[never required] for PhD application. _However_, given the competitiveness of CS admission, they can significantly strengthen your application and _are becoming the norm_ for top PhD programs. Applicants admitted to top schools, especially in popular fields such as ML and NLP, often have multiple first-authored papers at top places. @fig:wu shows examples of applicants to Stanford CS PhD.
 
 #paragraph[Not the First Author][Being the first author typically means you own the work and therefore know the research well. However, it's *perfectly OK to be second or third or even last*. #gls("adcom members", capitalize: true) know it is difficult to publish a good paper, and so being a co-author is still a good sign about your research experience. In any case, especially when you're not the first author, you should explain the work and your contribution. Better yet, have your #gls("LOR") writers (@sec:help-your-LOR-writers) talk about your work and contributions in their letters.]
 
