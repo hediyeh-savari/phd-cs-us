@@ -71,7 +71,7 @@ Typically there are three categories of proposals after the panel discussion: Hi
 
 
 == After the Panel Meeting: Recommendation and Timeline
- - C is the gray area, and this is where the PMs will make the final decision on which proposals to fund based on the panel's recommendation and the available budget. Of couse, C proposals that were ranked very high has better chance. However, if everything is equal, the PM might also consider other factors such as the proposal's topic, the PI is new and or has not been funded before, EPSCOR state, etc.  These are decisions made _after_ the panel meeting (though discussions and reviews during the panel meeting might also touch on these factors), and based on the PM's judgment and experience.
+ - Competitive (C) is the gray area, and this is where the PMs will make the final decision on which proposals to fund based on the panel's recommendation and the available budget. Obviously, C proposals that were ranked very high has better chance. However, if everything is equal, the PM might also consider other factors such as the proposal's topic, the PI is new and or has not been funded before, EPSCOR state, etc.  These are decisions made _after_ the panel meeting (though discussions and reviews during the panel meeting might also touch on these factors), and based on the PM's judgment and experience.
 
 - *Budget adjustment*: the PM might ask the PIs to adjust the budget of the proposal (e.g., reduce the budget if the panel thinks the proposed work can be done with less budget). This also helps the PM to fund more proposals with the available budget.
 However, this is likely based on the suggestion from the panel as the PM rarely makes this decision on their own.
