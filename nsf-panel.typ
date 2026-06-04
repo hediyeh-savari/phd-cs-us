@@ -4,6 +4,9 @@
 #set text(lang: "en", size: 11pt)
 #set list(indent: 1em)
 #set enum(indent: 1em)
+#show ref: set text(fill:blue)
+#show link: set text(fill:blue)
+#show link: underline
 #set document(
     title: "Advisor Guide: Answers to Common Questions",
     author: "ThanhVu Nguyen"
@@ -25,7 +28,7 @@
 
   
 == Submission and the role of OSP
-Your *Office of Sponsored Program* (OSP) or some equivalent office will submit your proposal to NSF (through research.gov). You will need to work with them to submit your proposal.  Several things to pay attention to:
+Your *Office of Sponsored Program* (OSP) or some equivalent unit will submit your proposal to NSF (through #link("https://research.gov")[research.gov]). You will need to work with them to submit your proposal.  Several things to pay attention to:
   - OSP often has their internal deadline, which can be a few days to a couple of weeks (for large universities with many proposal submissions) before the actual proposal deadline. In such case, OSP often ask you to submit everything to them or upload directly to research.gov by their internal deadline.
   -  During the proposal writing process, OSP mainly helps with the budget and budget justification based on your input. If the proposal is collaborative, they will also help with the sub-award budget and justification.
   - After sending materials to OSP, they check compliance with NSF's requirements (e.g., formatting, font size, page limits, required sections, etc). This is because NSF can return your proposal without review if it doesn't meet the requirements. OSP typically will not check the technical content of your proposal.
