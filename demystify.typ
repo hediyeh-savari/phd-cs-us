@@ -45,7 +45,7 @@
 #let alert(txt) = {highlight(fill:red.lighten(30%))[#txt]}
 #let paragraph(title, body) = {
   v(0.5em)
-  text(weight: "bold", style: "italic")[#highlight(fill:gray.lighten(70%))[#title] ]
+  text(weight: "bold", style: "italic")[#highlight(fill:gray.lighten(80%))[#title] ]
   body
 }
 
@@ -189,7 +189,7 @@ This book aims to address these concerns.
   caption: [Stress caused by imposter syndrome is real. Don't let it stop you from applying to CS PhD programs in the US!]
 ) <fig:imposter>
 
-#paragraph[Not any harder than other countries][While admission to a good CS PhD program in the US is very competitive, it *should not* be any harder than admission to good CS PhD programs in other countries. It might even be more flexible since CS PhD in the US *do not* require having an MS or a research topic, proposal, or advisor in advance (@sec:non-us-differences compares CS PhD study in the US to other countries). It doesn't even require having a CS background (@sec:non-stem).
+#paragraph[Not any harder than other countries][While admission to a good CS PhD program in the US is very competitive, it _should not_ be any harder than admission to good CS PhD programs in other countries. It might even be more flexible since CS PhD in the US _do not_ require having an MS or a research topic, proposal, or advisor in advance (@sec:non-us-differences compares CS PhD study in the US to other countries). It doesn't even require having a CS background (@sec:non-stem).
 
 If you believe you have a chance in other countries, e.g., Australia, Canada, Japan, Germany, UK, South Korea, and Singapore, then you will surely have a chance in the US as well.]
 
@@ -216,7 +216,7 @@ Full funding for CS PhD students is the norm in the US, and I'd go as far as to 
 //\sectioninfo{A PhD in CS is a \textbf{research} degree that transforms you into a researcher in a specific area of CS.
 // You will become an expert in a particular topic and know more about it than anyone else in the world (in many cases even your advisor).}
 
-A PhD in CS is a #highlight[research degree]. Unlike undergraduate or even Master's programs (@chap:ms), which focus on breadth of knowledge through coursework, a PhD is about depth and pushing the boundary of a specific area within a CS fields, such as software verification within the field of Programming Languages or Formal Methods (@sec:fields-and-areas). You will become an expert in your area of research and contribute something new to the field that has never been done before. 
+A PhD in CS is a #highlight[research degree]. Unlike undergraduate or even Master's programs (@chap:ms), which focus on breadth of knowledge through coursework, a PhD is about _depth_ and pushing the boundary of a specific area within a CS fields, such as software verification within the field of Programming Languages or Formal Methods (@sec:fields-and-areas). You will become an expert in your area of research and contribute something new to the field that has never been done before. 
 
 
 #note-block[This #link("https://matt.might.net/articles/phd-school-in-pictures/")[series of pictures] from #link("https://matt.might.net")[Matt Might] illustrates what a PhD means.]
@@ -246,13 +246,14 @@ CS is a broad academic discipline with many specialized areas of research. Under
 - Machine Learning (ML),
 - Software Engineering (SE),
 - Programming Languages (PL),
+- Formal Methods (FM),
 - Theory of Computation (TCS),
-- Computer Architecture,
-- Operating Systems,
+- Operating Systems (OS),
 - Security and Privacy,
 - Computer Vision (CV),
 - Natural Language Processing (NLP),
 - Human-Computer Interaction (HCI),
+- Computer Architecture,
 - Databases,
 - Networking,
 - Graphics and Visualization,
@@ -267,10 +268,10 @@ AI traditionally includes Planning, Reasoning, and Robotics (though many of thes
 Some areas are growing so large that they are becoming fields in their own right. ML, for instance, originated within AI but is now widely regarded as a standalone field.]
 
 #paragraph[Topics and Projects][Finally, we have _research topics_, which refer to concrete problems or techniques within an area. For instance,
- Model Checking, Theorem Proving in Formal Verification, and Mutation Testing, Test Prioritization, and Symbolic Execution in Software Testing.
+ Model Checking or Theorem Proving in Formal Verification, and Mutation Testing, Test Prioritization, or Symbolic Execution in Software Testing.
 
 
-At the finest granularity, a research _project_ or dissertation focuses on a specific question within a topic (or cross-topics and even cross-areas). For example: "How can symbolic execution be applied to generate high-coverage test cases for deep neural networks?"
+At the finest granularity, a research _project_ or dissertation focuses on a specific question within a topic (or cross-topics and even cross-areas). For example: _"How can symbolic execution be applied to generate high-coverage test cases for deep neural networks?"_
 ]
 
 #example[
@@ -290,7 +291,7 @@ For example, my own #link("https://roars.dev")[research profile] can be structur
 Typically it takes 5--7 years for a CS PhD in the US. This is usually longer compared to other countries (@sec:non-us-differences), which might require having an MS (@sec:phd-vs-ms).
 
 #figure(
-  image("files/c4a.png", width: 50%),
+  image("files/c4a.png", width: 60%),
   caption: [The "ambition" level of a PhD student over their years of study (they miss the 6--7th year when the ambition is _"Just let me graduate"_).],
 )
 
@@ -299,7 +300,7 @@ The first two years are typically spent taking coursework (somewhat equivalent t
 Within these 5--7 years, CS PhD students sometimes take a "leave of absence" for 1--2 semesters or for a summer to do internships at companies and research labs.
 
 #remark-block[
-  I started my PhD with an MS, and it took me 7 years (Fall '07--Fall '14). I spent half a year doing an internship at the #link("https://www.nrl.navy.mil")[Naval Research Lab]. My PhD did take a bit longer than usual, but it allowed me to explore new research areas and topics.
+  I started my PhD with an MS, and it took me 7 years (Fall '07--Fall '14). I spent 9 months doing an internship at the #link("https://www.nrl.navy.mil")[Naval Research Lab]. My PhD did take a bit longer than usual, but it allowed me to explore new research areas and topics.
 ]
 
 
@@ -309,14 +310,14 @@ Within these 5--7 years, CS PhD students sometimes take a "leave of absence" for
 
 Even if your undergraduate degree is not in CS or a related discipline, you still can apply to a PhD in CS _as long as_ you can demonstrate that you are ready for it through your background, research experience, LORs, statements, etc. You might even be able to leverage this to make your profile stand out, as mentioned in @sec:stand-out.
 
-A main concern for a non-CS or non-STEM student is whether you have sufficient technical background from core CS courses. So you need to demonstrate that you have this knowledge through your coursework, projects, or research.
+A main concern that #gls("adcom") has for a non-CS or non-STEM student is whether you have sufficient technical background from core CS courses. So you need to demonstrate that you have this knowledge through your coursework, projects, or research.
 
 For example, if you have taken a class on algorithms, even an online course from Coursera, you can talk about it in your #gls("SOP"). If you have done a project that requires knowledge of operating systems or have a professional certification (e.g., A+) through work, you can talk about it. If you have done research that requires knowledge of discrete math, you can talk about it. You can also ask your #gls("LOR") writers to discuss your technical background.
 
 #paragraph[Core CS topics][Common CS knowledge that you should know includes:
 
 - *Programming foundation:* programming concepts in modern languages such as C++ or Java.
-- *Discrete math:* logic, set theory, proof techniques.
+- *Discrete math:* logic, set theory, proof techniques. 
 - *Data structures and algorithms:* linked lists, trees, sorting, searching.
 - *Computer OS or systems:* memory management, file systems, processes.
 ]
@@ -324,7 +325,9 @@ For example, if you have taken a class on algorithms, even an online course from
 In short, you _do not need_ to formally take CS courses. You just need to show that you have this essential knowledge, for example through the ways mentioned above. Many universities are well aware that incoming graduate students might not have all the technical background, so they often have _“bridge”_ courses to help students catch up. For example, GMU has four bridge courses corresponding to the four core areas above that incoming students can take to catch up on their CS knowledge.
 
 #remark-block[
-  I would advocate for a non-STEM student who shows they have a strong drive for CS by studying core CS knowledge through various channels (e.g., self-study through online courses, projects, etc.). I have seen many students with non-CS backgrounds who are very successful in CS PhD. I have also seen many students with CS backgrounds who are not successful in a CS PhD. So it is not about your background; it is about your drive and passion for CS research.
+  I would advocate for a non-STEM student who shows they have a strong drive for CS by studying core CS knowledge through various channels (e.g., self-study through online courses and participating in open-source projects). 
+  
+  I have seen many students with non-CS backgrounds who are very successful in CS PhD. I also have  seen many students with CS backgrounds who are not successful in a CS PhD. So it is not about your background; it is about your drive and passion for CS research.
 ]
 
 
@@ -332,7 +335,7 @@ In short, you _do not need_ to formally take CS courses. You just need to show t
 === Is MS Required for CS PhD Admission? <sec:msrequirement>
 // \sectioninfo{You do not need an MS to do PhD in CS.}
 
-No, while other countries often encourage or even require an MS for PhD students in CS (@sec:non-us-differences), it is common in the US to directly apply for a PhD program after a 4-year undergraduate program (e.g., after getting a BS degree). In addition, most CS PhD programs are designed so that students can get an MS degree "along the way" to the PhD, for example after finishing the 2-year coursework. This is one of the reasons why a CS PhD in the US takes longer (5--7 years, @sec:time) than in other countries.
+No, while other countries often encourage or even require an MS for PhD students in CS (@sec:non-us-differences), it is common in the US to directly apply for a PhD program after a 4-year undergraduate program (e.g., after getting a BS degree). In addition, most CS PhD programs are designed so that students can get an MS degree "along the way" to the PhD, for example after finishing the 2-year coursework. This is one of the reasons why a CS PhD in the US takes longer (5--7 years as mentioned in @sec:time) than in other countries.
 
 However, an MS _can help_ admission if it gives research experience or is from a more well-known school than your undergraduate institution (@chap:your-school).
 Some professors prefer students with an MS since they have more experience and are more mature. But this is not a requirement, and many professors are happy to take students without an MS.
@@ -348,12 +351,12 @@ Moreover, if you have an MS, then some coursework _might_ be transferred for cou
 === Can I apply for PhD in CS for the Spring or Summer? <sec:apply-spring-summer>
 Most students apply to start their PhD in the Fall. This means they submit their application around December, receive admission decisions sometime in the Spring, and officially begin their PhD in the Fall (August or September).
 
-Fall---the start of the #gls("AY")---is the most common time to begin PhD programs in the US, and many universities only accept new PhD students in the Fall. Importantly, applying for the Fall gives you access to funding opportunities (@chap:funding) that are available only for Fall admits, such as TAships (@sec:ta) and some fellowships.
+Fall---the start of the #gls("AY")---is the most common time to begin PhD programs in the US, and many universities _only_ accept new PhD students in the Fall. Importantly, applying for the Fall gives you access to funding opportunities (@chap:funding) that are available only for Fall admits, such as TAships (@sec:ta) and some fellowships.
 
 However, many universities also accept PhD students in the Spring or Summer, especially when you have a specific advisor who can fund you through an RAship (@sec:ra). This is less common, and you may lose funding opportunities that are available only for Fall admits.
 
 #example[
-  GMU allows PhD students to start in the Spring, but it is usually not recommended. Two of my PhD students started in the Spring because I had funding to support them right away. In general, a student can start in the Spring or even Summer only if an advisor already has RA funding for them. Students who do not start in the Fall may also lose benefits reserved for Fall admits, such as a first-summer stipend. So in short, it is possible, but I do not recommend it in general.
+  GMU allows PhD students to start in the Spring, but it is usually not recommended. Two of my PhD students started in the Spring because I had funding to support them right away. In general, a student can start in the Spring or even Summer only if an advisor already has RA funding for them. Students who do not start in the Fall may also lose benefits reserved for Fall admits, such as a first-summer stipend. So, it is possible, but I do not recommend aiming for it.
 ]
 
 
@@ -389,21 +392,14 @@ text(size: 0.9em,
     
 - *Coursework*: In the US you will spend the first couple of years taking classes and exploring potential advisor and research topics. After that, you have to pass a series of exams during your PhD---qualifying exam, comprehensive exam, thesis proposal defense (#gls("ABD")). In other countries, you often start your research right away and work on the research project you proposed with the advisor you chose. Moreover, you might not have exams like those in the US or only have to do a few of them.
     
-- *Funding*: In many countries, funding comes from the university or the government. This funding often has a fixed duration, e.g., 3 or 4 years. In the US (@chap:funding), funding such as RA comes directly from your advisor (no fixed duration). There are also fewer TA opportunities in European universities compared to the US.
+- *Funding*: In many countries, funding often comes from the university or the government. This funding often has a fixed duration, e.g., 3 or 4 years. In the US (@chap:funding), funding such as RA comes directly from your advisor (no fixed duration). There are also fewer TA opportunities in European universities compared to the US.
     
-- *Academic Position after PhD*: In other countries, PhD graduates interested in academia typically apply for additional research appointments, i.e., postdocs in the US, and then consider faculty positions. In the US, PhD graduates often apply directly for faculty positions. Postdoc for US graduates is no longer a popular option as it was before. The reason is that US PhD programs are longer, so you already have enough research experience (e.g., papers) to apply for faculty positions. In contrast, in other countries, PhD students often finish their PhD earlier and need more time to gain research experience before applying for faculty positions.
+- *Academic Position after PhD*: In other countries, PhD graduates interested in academia typically go for additional research appointments, i.e., postdocs in the US, and then consider faculty positions. In the US, PhD graduates often apply directly for faculty positions. Postdoc for US graduates is no longer a popular option as it was before. The reason is that US PhD programs are longer, so you already have enough research experience (e.g., publications) to apply for faculty positions. In contrast, in other countries, PhD students often finish their PhD earlier and need more time to gain research experience before applying for faculty positions.
     
 - *Work-life Balance*: PhD students in the US are often said to be overworked compared to other countries, e.g., in Europe. This is partly due to the longer PhD program and that US PhD students are often paid through TA, which requires them to do TA in addition to their own research. In contrast, PhD students in other countries are often paid through fellowships, which might not require doing TA.
     #remark-block[
       Work-life balance is more of a personal and cultural issue (@chap:cultural) than a regulatory one. US academia is known for its intense work culture, because students themselves are fiercely competitive (after reading this book you would see how competitive it is to get into a good PhD program in the US), and opportunities for research and funding are abundant. All of these contribute to a systems that favors those who work hard and produce results, which can create a culture of long hours and high stress.
     ]
-
-// %    One of the reasons I created this document is that my colleagues at GMU are interested in recruiting Vietnamese students and are surprised when seeing very few applications in Vietnam (see \autoref{chap:ack}). Each year our CS PhD program receives 500+ PhD applications, most of which are international but only 5--6 are from Vietnam.
-// %  \end{commentbox}
-  
-
-
-
 
 
 
@@ -458,14 +454,14 @@ After screening, your application is complete and forwarded to the CS department
 
 Your applications are reviewed by a PhD #gls("adcom", first:true), which consists of CS faculty with diverse expertise (e.g., AI, Systems, Theory, SE, HCI). Some committees may include affiliated faculty from other disciplines.
 
-The size and workload of the adcom depend on the department. At GMU, the PhD adcom has about 15--20 faculty, each reviewing ~30 applications. Large schools often have separate adcoms for MS programs (@chap:ms).
+The size and workload of the adcom depend on the department. At GMU, the PhD adcom has about 15--20 faculty, each reviewing \~30 applications. Large schools often have separate adcoms for MS programs (@chap:ms).
 
 PhD adcoms typically include assistant professors (@sec:faculty-types), giving junior faculty opportunities to recruit students. The #gls("adcom chair",first:false) is usually a senior faculty who assigns applications to reviewers based on research interests or faculty mentioned by applicants (e.g., I review SE applicants).
 
 Each application is assigned to about three #gls("adcom members",first: false), who independently evaluate your profile and then reach a consensus. They consider factors such as #glspl("LOR"), #gls("SOP"), research experience, GPA, test scores, and interviews. (see @part:application).
 
 #example[
-  At GMU, we usually admit full-time PhD candidates with funding (@chap:funding) or reject them. In rare cases, we admit without funding if you have external support (e.g., government or fellowship). We justify our decision (@sec:ievaluate) with a summary of your application, listing strengths (e.g., well-known school) and weaknesses (e.g., generic LORs).
+  At GMU, we usually admit full-time PhD candidates with funding (@chap:funding) or reject them. In rare cases, we admit without funding if the student has external support (e.g., government or fellowship). We justify our decision (@sec:ievaluate) with a summary of your application, listing strengths (e.g., well-known school) and weaknesses (e.g., generic LORs).
 ]
 
 
@@ -496,14 +492,14 @@ If the student mentions a faculty in their SOP, adcom may ask that faculty to re
 
 We typically review applications independently and do not talk to each other.  This is to avoid biasing, e.g., if one reviewer says they want to accept, the other might feel pressured to accept as well.  
 
-However, when there are discrepancies in evaluations, the adcom-chair will ask reviewers to discuss the application to reach a consensus.  We might also talk to each other for interesting or strong applications, e.g., how to recruit this student or who should be the advisor. 
+However, when there are discrepancies in evaluations, #gls("adcom chair") will ask reviewers to discuss the application to reach a consensus.  We might also talk to each other for interesting or strong applications, e.g., how to recruit this student or who should be the advisor. 
 If the student mentioned a faculty member in their SOP, we might ask that faculty if they are interested in the student. 
 
 
 Note that other disciplines might have different practices. For example, adcom might select a top list of applicants and then discuss them in a meeting to determine who to interview. @fig:adcom-discuss-physics shows an example of how a PhD admission committee in Physics evaluates applications. Note that this is not common in CS, where we typically do not have a grading rubric and do not discuss applications in a meeting.
 In CS, both the reviews and interviews are often done independently (@sec:interviews).
 
-#example[From a prof. in Physics at an R1 university][ 
+#example[From a Professor in Physics at an R1 university][ 
   We have a pretty well fleshed out grading rubric for applications that has categories like grades, research, writing ability, etc. I would say our rubric is weighted about 1/2 on academics (research, LORs, grades) and 1/2 on the idea of "grit" or "resilience" (engagement, leadership, working through obstacles).
   
   The rubric helps a lot to standardize how committee members grade, and speeds things up a bit because you know what to look for. We spent what seemed like forever on the details of the grading system (e.g., what does a a score of "3" vs a "2" in writing look like?) but now it's very helpful.
@@ -516,14 +512,14 @@ In CS, both the reviews and interviews are often done independently (@sec:interv
 // \sectioninfo{It takes me about 10--15 minutes to review an application.}
 
 
-In the schools I've been at, the application deadline is in Dec, and adcom meets when school starts in mid or end of Jan. The adcom chair sends out review assignments to adcom members, about 30-ish per faculty (@sec:adcom). We usually have about 2 weeks to review all applications. As mentioned in @sec:adcom-discuss, adcom members review applications individually and independently. We only discuss when there are disagreements (the adcom chair determines which applications to discuss).
+In the schools I've been at, the application deadline is in Dec, and adcom meets when school starts in mid or end of Jan. The adcom chair sends out review assignments to adcom members, about 30-ish per faculty (@sec:adcom). We usually have about 2 weeks to review all applications. As mentioned in @sec:adcom-discuss, adcom members review applications individually and independently. We only discuss when there are disagreements (e.g., adcom chair noticed that one reviewer gave a very different score than another).
 
 I typically reserve a whole day (or two days) to review all applications.
 On average, I spend about 10--15 minutes reviewing each application (less for clear rejections and more for potential acceptances). While this seems short, it is not that difficult to tell if an application is good or bad. In fact, this is twice what other faculty spend on average; for example, Philip Guo spent #link("https://pg.ucsd.edu/PhD-application-tips.htm")[3--5 minutes] per application.
 
-For each application, our system compiles a single PDF file, which consists of a summary (degrees, GPAs, etc.), transcripts, test scores, LORs, a CV, SOP, and writing samples (@sec:writing-sample). I usually read in this order. I start with the _summary_, checking for low GPAs or test scores below the university minimum (@chap:standard-tests). I then skim the _transcripts_ for low grades in relevant courses, noting issues like "many low grades in main courses" or "unknown international school with good GPA." These are not as important as LORs or SOP, but I read them first because the review system has questions about them (e.g., "is GPA good?" "is IELTS sufficient?").
+For each application, our system compiles a single PDF file, which consists of a summary (degrees, GPAs, etc.), transcripts, test scores, LORs, a CV, SOP, and writing samples (@sec:writing-sample). I usually read in this order. I start with the _summary_, checking for low GPAs or test scores below the university minimum (@chap:standard-tests). I then skim the _transcripts_ for low grades in relevant courses, noting issues like _"many low grades in math or CS courses"_ or _"unknown international school with good GPA"_. These are not as important as LORs or SOP, but I read them first because the review system has questions about them (e.g., _"is GPA good?"_ and _"is IELTS sufficient?"_).
 
-I read _strong LORs_ carefully and skim weaker ones, noting either strong letters from well-known professors/researchers that discuss research experience, or weak letters with generic content (e.g., "student was in my class"). I skim the _CV_ and look for publications, research experiences, and notable achievements. I take notes of things like "published papers in top venues" or "gold medal in an international competition."
+I read _strong LORs_ carefully and skim weaker ones, noting either strong letters from well-known professors/researchers that discuss research experience, or weak letters with generic content (e.g., _"student was in my class"_). I skim the _CV_ and look for publications, research experiences, and notable achievements. I take notes of things like _"published papers in top venues"_ or _"gold medal in a well-known international competition."_
 
 I skim weak _SOPs_ but read strong ones carefully. I note whether the SOP is exciting, research-oriented, stands out, and is tailored to our program (e.g., if they are familiar with the work of some faculty or have talked to them). These notes are entered into the evaluation system.
 
@@ -540,13 +536,13 @@ Unfortunately, even if all reviewers recommend a student, they might not be admi
 
 === Direct Admit vs Committee Admit <sec:direct-vs-committee>
 
-Discussions on Reddit and Discord on graduate admissions often mention "direct admit"---a student is "directly admitted" by an individual faculty vs "committee admit"---the student is admitted by the adcom committee.  Answers to these questions, often from applicants who are not familiar with the admission process, often make it sound more mysterious than it actually is.
+Discussions on Reddit and Discord on graduate admissions often mention _"direct admit"_---a student is "directly admitted" by an individual faculty vs _"committee admit"_---the student is admitted by the adcom committee.  Answers to these questions---often from applicants who are not familiar with the admission process---make it sound more mysterious than it actually is.
 
 The short answer is that _all_ applications go through the adcom committee. However, admission decision is _heavily influenced_ by whether an individual faculty member is interested in the student and willing to advise them, but this is still part of the committee review process. So even if a student is "directly admitted" by a faculty member, their application still likely goes through normal committee review process (though it will be _much less likely_ be contested as someone is already taking responsibility for the student), and the final decision is made by the committee based on the evaluations of all reviewers ("committee admit").
 
 
 
-Thus, it comes down to who can advocate for you in the committee. This is the reason why contacting faculty (@sec:contact) and mentioning faculty in your SOP (@chap:sop) can be very helpful, as it can lead to a faculty member advocating for you in the committee review process. However, even if a faculty member is interested in you, the final decision is still made by the committee.
+Thus, it comes down to who can advocate for you in the review process. This is the reason why contacting faculty (@sec:contact) and mentioning faculty in your SOP (@chap:sop) can be very helpful, as it can lead to a faculty member supporting your application. However, even if a faculty member is interested in you, the final decision is still made by the committee.
 
 
 
@@ -558,7 +554,7 @@ Thus, it comes down to who can advocate for you in the committee. This is the re
 #simpsons[Son, if you really want something in this life, you have to work for it. Now quiet! They're about to announce the lottery numbers.]
 
 
-The goal of adcom is to evaluate your research experience, potential, and interest to see if you _fit into their PhD program_! The emphasis here is #highlight[_fitting_], which varies from school to school, faculty to faculty, and even from year to year.  
+The goal of #gls("adcom") is to evaluate your research experience, potential, and interest to see if you _fit into their PhD program_! The emphasis here is #highlight[_fitting_], which varies from school to school, faculty to faculty, and even from year to year.  
 The committee will look at various factors, but the most important ones are #gls("LOR", first:true),  #gls("SOP", first:true), and research background and experience, e.g., publications.
 
  
@@ -584,17 +580,17 @@ When reviewing applications (@sec:ievaluate), I usually read LORs first, then th
 
 Choose your #gls("LOR") writers carefully, as they can make or break your application. LOR writers are often your research advisors and professors who have mentored you in research. A *strong* LOR is from people who meet the following two criteria:
 
-- *Personal knowledge:* They should know you well and have worked closely with you through research projects (much preferred) or coursework. This allows them to write a letter that is *personalized* and *specific* to you.
-- *Credibility:* They should have sufficient expertise and reputation to effectively assess and vouch for your research capabilities and potential. Ideally, your recommender should be an active researcher with a PhD or extensive research experience.
++ *Personal knowledge:* They should know you well and have worked closely with you through research projects (much preferred) or coursework. This allows them to write a letter that is _personalized_ and _specific_ to you.
++ *Credibility:* They should have sufficient expertise and reputation (@chap:research-achievements) to effectively assess and vouch for your research capabilities and potential. Ideally, your recommender should be an active researcher with a PhD or extensive research experience.
 
 
 
 ==== From Well-Known People <sec:famous-LOR> 
 
 
-Having a strong letter from well-recognized researcher (@chap:research-achievements) can _significantly boost_ your application. Such letters can outweigh other weaknesses such as limited publications or low GPA. Adcom members trust people they know or have heard about and respect.  A well-known researcher is unlikely to recommend someone who is not good because it would damage their reputation.
+Having a strong letter from well-recognized researcher (@chap:research-achievements) can _significantly boost_ your application. Such letters can outweigh other weaknesses such as limited publications or low GPA. Adcom members trust people they know or have heard about and respect.  Adcom likely trusts a well-known researcher because they are unlikely to recommend someone who is not good because it would damage their reputation.
 
-However, don't worry if you haven't worked directly with well-known researchers. A strong, personalized recommendation from someone who knows you well, even if less famous, is far more valuable than a generic letter from a prominent figure who barely knows you. So again, the emphasis is on _personalized_ and _research-focused_ letters---the fame is a bonus, not a requirement. 
+However, don't worry if you haven't worked directly with well-known researchers. A strong, personalized recommendation from someone who knows you well, even if less famous, is _far more valuable_ than a generic letter (@sec:generic-letters) from a prominent figure who barely knows you. So again, the emphasis is on _personalized_ and _research-focused_ letters---the fame is a bonus, not a requirement. 
 
 #tip-block[
   It is fine to get letters from a postdoc or even a senior PhD student who has worked closely with you and can write a strong letter. An enthusiast letter from a postdoc who has mentored you in research for the past six months is much better than a generic letter (@sec:generic-letters) from a well-known person.
@@ -609,14 +605,15 @@ However, don't worry if you haven't worked directly with well-known researchers.
 ==== Generic Letters are Bad <sec:generic-letters>
 When the writers do not know much about the applicants (e.g., just taking some course with them or not making any impression to write about), they often write a _generic_ and short letter, which is not useful and also considered weak. 
 
-Note that _this does not mean the ref writer is not good or does not care about you_, but they just do not know you well enough to write meaningful things about you.
+Note that _this does not mean the ref writer is not reputable or does not care about you_, but they just do not know you well enough to write meaningful things about you.
 
 Thus it might be a good idea to directly ask if the prof. is willing to write a _strong_ LOR for you (@sec:asking-LOR). If not, then you should ask someone else.  For example, if a student I don't know well asks me to write a letter for them, I will explicitly tell them I don't know them that well to write much about them, and such a short, generic, and weak letter will not help their case (@sec:LOR-writing).
 
 #caution-block([
-  Several international students mentioned that some professors are unwilling to write letters or write weak ones because they do not want (good) students to go abroad or only go to places where they want the students to go to, e.g., where they have collaborators so you would continue to work for them. If you are in this situation, you should find someone else to write for you.
+  International students sometimes mentioned that some professors are unwilling to write letters or write weak ones because they do not want (good) students to go abroad or only go to places where they want the students to go to, e.g., where they have collaborators so you would continue to work for them. 
+  If you are in this situation, you should find someone else to write for you.
 
-  Sometimes students would go to great lengths just to get letters from "top" professors in their school---like department head or dean (@sec:admin-letters). But as mentioned, if these professors do not know you, their letters would likely be generic and carry little value (sometimes #alert[red flag]. Moreover, a top professor at your university might not be well-known internationally (see more details in @sec:admin-letters and @chap:your-school). So save the trouble and get letters from _any_ professors/supervisors who know you well and can write a good letter about _your_ research ability (@sec:famous-LOR). It's better to have a good personalized letter about your own research ability from someone who is less well-known than a generic/weak letter from a well-known person.
+  Sometimes students would go to great lengths just to get letters from "top" professors in their school---like department head or dean (@sec:admin-letters). But as mentioned, if these professors do not know you, their letters would likely be generic and carry little value (sometimes #alert[red flag]. Moreover, a top professor at your university might not be well-known internationally (see more details in @sec:admin-letters and @chap:your-school). So save the trouble and get letters from _any_ professors/supervisors who know you well and can write a good letter about _your_ research ability (@sec:famous-LOR). It's better to have a good personalized letter about your own research ability from someone who is less well-known than a generic and weak letter from a well-known person.
 ])
 
 
@@ -629,10 +626,10 @@ Moreover, while being well-known and respected in your local university, these w
 
 #warning-block[
   In my experience in reviewing applications from international students, letters from admin people are often generic and do not provide much value. 
-  In many case, the letter reads like it was written by a student (@sec:self-letters), and thus is a #alert[red flag].  So if you are in this situation, you should find someone else to write for you as mentioned in this section.
+  In many case, the letter reads like it was written by a student (@sec:self-letters), and thus is a #alert[red flag].
 ]
   
-Many students get letters from supervisors from companies where they did internships or are working.  It is OK as long as it is a research-based personalized letter. Again, the emphasis here is #highlight[_research_], i.e., the letters should describe your research experiences and potential. Letters focusing on non-research projects at a company won't carry much weight.
+Many students get letters from supervisors from companies where they did internships or are working.  This is OK as long as it is a research-based personalized letter. Again, the emphasis here is #highlight[_research_], i.e., the letters should describe your research experiences and potential. Letters focusing on non-research projects at a company won't carry much weight.
 
 Finally, despite best intentions, the writers might not have the experience to write a strong LOR or lack the ability to evaluate your research ability.
 This is unfortunate but common, and if you are in this situation, you should find someone else to write for you (see @sec:LOR-writers and @sec:famous-LOR).
@@ -648,10 +645,10 @@ Many LOR writers ask students to write their own letters---a common practice in 
  
 
 Self-written letters are _easy to spot_ because an experienced professor would write differently compared to an undergraduate student.
-For example, they can provide convincing and concrete examples based on their experience and compare you to their own students, and of course the writing style is different---imagine the difference between a letter written by a professors who has been writing letters for decades and a letter written by an undergraduate student who has never written a letter before, even if the student has subscribed to ChatGPT+ or Claude Pro (@sec:using-ai). Worse yet, if we suspect that the student wrote the letter, it is a #alert[red flag] as we will question both the student's integrity and the letter writer's credibility (because they allow this to happen).
+For example, they can provide convincing and concrete examples based on their experience and compare you to their own students, and of course the writing style is different---imagine the difference between a letter written by a professors who has been writing letters for decades and a letter written by an undergraduate student who has never written a letter before, even if the student used AI and LLMs (@sec:using-ai). Worse yet, if we suspect that the student wrote the letter, it is a #alert[red flag] as we will question both the student's integrity and the letter writer's credibility (because they allow this to happen).
 
 
-#tip-block[Well-known and well-respected profs would _not_ ask you to write your own letter (in fact, even not well-known ones wouldn't do this to students they care about). This might be a common practice at specific universities and the students do not have a choice as they need the letter.  However, think about this: if a prof. does this often, then they either don't know how to write a LOR (more common than you would think) or simply do not know or care enough about you.  In any case, such LORs are not useful and might even hurt your application.  So if you are in this situation, you should find someone else to write for you.
+#remark-block[Well-known and well-respected profs would _not_ ask you to write your own letter (in fact, even not well-known ones wouldn't do this to students they care about). This might be a common practice at specific universities and the students do not have a choice as they need the letter.  However, think about this: if a prof. does this often, then they either don't know how to write a LOR (more common than you would think) or simply do not know or care enough about you.  In any case, such LORs are not useful and might even hurt your application.  So if you are in this situation, you should find someone else to write for you.
 ]
 
 
@@ -670,7 +667,7 @@ For example, they can provide convincing and concrete examples based on their ex
 
 
 
-As mentioned in @sec:LOR-writers, LOR writers should be someone who knows you well and has the credibility to evaluate your research ability. In the US, it's common for students to explicitly ask if the writer would be willing to provide a strong letter, and the writer can also be very direct in their response. If they are not willing, then you should ask someone else (you should also be thankful that they are honest with you).
+As mentioned in @sec:LOR-writers, LOR writers should be someone who knows you well and has the credibility to evaluate your research ability. In the US, it's common for students to explicitly ask if the writer would be willing to provide a strong letter, and the writer can also be very direct in their response. If they are not willing, then you should ask someone else (and be thankful that they are honest with you).
 
 #figure(
   image("files/no-bandwidth.jpeg", width: 60%),
@@ -689,15 +686,15 @@ Many students get stress asking for LORs because they worry that the writers mig
 
 - *Follow up and Stay in touch*: Follow up with your writers to make sure they have submitted the letters on time. Note that their letters might have a different due date than your application (@sec:remind-writers).
 
-After your writers have submitted all of their letters, _thank them_ (@sec:thank-writers). Let them know the outcome of your applications and stay in touch. This will help you build a relationship, and you might need them to write for you again in the future.
+After your writers have submitted all of their letters, _thank them_ (@sec:thank-writers). Let them know the outcome of your applications and stay in touch. This will help you build a relationship (@sec:maintaining-relationships), and you might need them to write for you again in the future.
 
 ==== Waiving Your Right <sec:waive-right>
 
-When you ask someone to write a letter for you, #highlight[you should always fwaive your right], which is a standard practice in both school and job applications. Waiving your right shows trust in your referees and that you're not trying to influence their words. It encourages honest feedback and keeps things confidential.
+When you ask someone to write a letter for you, *you should always waive your right*, which is a standard practice in both school and job applications. Waiving your right shows trust in your referees and that you're not trying to influence their words. It encourages honest feedback and keeps things confidential.
 
-If you do not waive your right, the letter writer may refuse or write a generic letter. Reviewers may question a letter that is not waived—if you don't trust your writers, find someone else. In short, waiving your right is standard and respectful.
+If you do not waive your right, the letter writer may refuse or write a generic letter. Adcom reviewers may question a letter that is not waived—if you don't trust your writers, find someone else. In short, waiving your right is standard and respectful.
 
-#warning-block([
+#example([
 If you ask me to write a letter and do not waive your right, I will refuse. I will explain why you should waive your right, but if you insist, I *will not* write for you.
 ])
   
@@ -720,7 +717,7 @@ Note that many places only have deadlines for the applicant, but are very flexib
 
 
 #example[LOR invitations *with NO deadline*][
-*Sample 1 (No deadline):*
+*Sample 1 (Umas, No deadline):*
 
 .. is applying for admission into the Computer Science (Ph.D.) program in the Graduate School at the University of Massachusetts Amherst and has listed you as a reference.
 
@@ -730,7 +727,7 @@ You may submit your reference online via the Graduate Reference Center, which is
 
 A timely response is important for this applicant to be favorably considered. Please be aware that the applicant's admission could be contingent on your prompt response.
 
-*Sample 2 (No deadline):*
+*Sample 2 (UIUC, No deadline):*
 
 Dear ..
 
@@ -740,7 +737,7 @@ In an effort to make this process as easy as possible for you, we offer the abil
 
 Thank you!
 
-*Sample 3 (No deadline):*
+*Sample 3 (UNL, No deadline):*
 
 .. is applying to the University of Nebraska-Lincoln and has named you as a recommender. _This applicant has waived the right to view your recommendation._
 
@@ -752,7 +749,7 @@ Thank you.
 ] <fig:LOR-invitations-no-deadline>
 
 #example[LOR invitations *with deadline*][
-*Sample 4 (With deadline):*
+*Sample 4 (MIT, With deadline):*
 
 Dear Dr ..
 
@@ -764,7 +761,7 @@ Even though the applicant knows the link for submitting a letter, the applicant 
 
 Thank you!
 
-*Sample 5 (With deadline):*
+*Sample 5 (CMU, With deadline):*
 
 Dear Recommender,
 
@@ -778,11 +775,11 @@ Your letter of recommendation is due by *12 p.m. (Noon) EST on December 10, 20XX
 ] <fig:LOR-invitations-deadline>
 
 Also, many places do not begin the admission review process right after the deadline and work on application reviews in the next semester (mid-January).
-Thus while you do want to send reminders because professors can be quite busy (@sec:busy) and might forget to submit their letters, especially when there is no explicit deadline, you do not send too many reminders as that can be annoying to the writers.
+Thus while you do want to send reminders because professors can be quite busy (@sec:busy) and forget to submit their letters, especially when there is no explicit deadline, you should not send too many reminders as that can be annoying to the writers.
 
 ==== Thanking and Updating Your Writers <sec:thank-writers>
 
-After your application is submitted and your writers have submitted their letters---i.e., the wait begins (@part:after-apply)---you should send quick "thank you" notes to your writers. This serves both as an acknowledgement that you know they have submitted the letters and as an appreciation for their help.
+After your application is submitted and your writers have submitted their letters---i.e., the wait begins (@part:after-apply)---you should send quick _"thank you"_ notes to your writers. This serves both as an acknowledgement that you know they have submitted the letters and as an appreciation for their help.
 
 You should also update them with the outcome of your application, regardless of whether you are admitted or not. In addition to being a common courtesy, this can also help maintain a good relationship with your writers (@sec:maintaining-relationships), which can be useful in the future (e.g., if you need another letter for another round of applications or for a job reference).
 
@@ -790,7 +787,7 @@ More generally, you should do the same for anyone who has helped you during the 
 
 ==== Will It Be Annoying If You Ask For Many Letters? <sec:many-letters>
 
-As mentioned in @sec:my-LOR-perspective I personally do not mind writing many letters for my students *once I have agreed to write for them* (@sec:LOR-writing). Profs. in general are used to writing many letters, especially during the application season. Moreover, once a letter is written, it can be reused for multiple applications, so it does not take much time to submit the letter to different universities (no more than 5 minutes per submission).
+As mentioned in @sec:my-LOR-perspective I personally do not mind writing many letters for my students *once I have agreed to write for them* (@sec:LOR-writing). Profs. in general are used to writing many letters, especially during the application season. Moreover, once a letter is written, it can be _reused_ for multiple applications, so it does not take much time to submit the letter to different universities (no more than 5 minutes per submission).
 
 However, some cases might raise some eyebrows, e.g., if you only aim at very top schools that the writers believe are not a good fit for you, or if you apply to too many schools (30+?) then the writers might question your seriousness or your ability to get into these schools. In short, don't overdo it, but applying to 10--15 schools is perfectly fine and common.
 
@@ -855,11 +852,11 @@ While not as strong as CS publications, they still show your research ability an
 #tip-block[*Thanh*:
   Due to academic culture, professors in Vietnam usually aim for (international) journals instead of conferences. Could you give some tips on how to know whether a journal is good (CSRankings, unfortunately, only considers conferences)?
 
-  *Vu*: One way is looking at where well-known researchers publish. For example, if you are interested in a field X, you can use CSRankings (@sec:csrankings) or CSPicks (sec:cspicks) to look at active faculty in X, and then look at their websites to see where they publish at.
+  *Vu*: One way is looking at where well-known researchers publish. For example, if you are interested in a field X, you can use CSRankings (@sec:csrankings) or CSPicks (@sec:cspicks) to look at active faculty in X, and then look at their websites to see where they publish at.
 ]
 
 #caution-block[
-  Many international students mention Scopus Q1, which consists of various journals from IEEE, Elsevier, and many other publishers. I don't know/recognize many of the journals listed in Scopus Q1. This might be something to be mindful of, as *CS* faculty might not be too familiar with Scopus or journals listed there, so devote some part in your statement to discuss the significance of your papers.
+  International students often mention Scopus Q1, which consists of various journals from IEEE, Elsevier, and many other publishers. I don't know/recognize many of the journals listed in Scopus Q1. This might be something to be mindful of, as *CS* faculty might not be too familiar with Scopus or journals listed there, so devote some part in your statement to discuss the significance of your papers.
 ]
 
 === What If You Don't Have Any Publications?
@@ -867,7 +864,7 @@ While not as strong as CS publications, they still show your research ability an
 Many students do not have the opportunity to publish papers. Thus, other writings, even those under submission or even rejected, would still help. 
 Be sure to upload these with your application (@sec:writing-sample) and mention them in your SOP (@chap:sop). Adcom members can quickly skim over the paper and determine its quality (@sec:ievaluate).
 
-Note that local conferences and non-English journals or conferences do not carry as much weight since their quality is often unknown. However, if you have published in such places, you should still upload them, mention them in your statement, and explain why they are good.
+Note that local conferences and non-English journals or conferences do not carry as much weight since their quality is often unknown. However, if you have published in such places, you should still upload them as writing samples, mention them in your statement, and explain why they are good.
 
 #tip-block[*Craig*:
   GMU and many other universities allow you to upload your published papers and other writing samples (@sec:writing-sample). In many cases, even if the papers were not published at top places, we can still determine their quality by simply skimming over the paper.
@@ -880,7 +877,7 @@ Research experience at _well-known research laboratories_, such as Microsoft Res
  Similarly, a LOR from your supervisor for non-research experience might not count much (@sec:admin-letters). So do not spend much time talking about development job in your #gls("SOP").
 
 
-Note that adcom reviewers might not be familiar with all research labs, especially those outside the US. For example, while VinAI is well-known in Vietnam and potentially in Asia, it might not be well-known in the US. So you or your #gls("LOR") writers should explicitly say something about them in your statement or letter.  In general, if you did some good research work, then you should mention that in your SOP and ask your supervisor to write about it in their LOR (@chap:LOR).
+Note that adcom reviewers might not be familiar with all research labs, especially those outside the US. For example, while VinAI is well-known in Vietnam and potentially in Asia, it might not be well-known in the US. So you or your #gls("LOR") writers should explicitly say something about them in your statement or ref. letter.  In general, if you did good research work, then you should mention that in your SOP and ask your supervisor to write about it in their LOR (@chap:LOR).
 
 
 === Competitions <sec:competitions>
