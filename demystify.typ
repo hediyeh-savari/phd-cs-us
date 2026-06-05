@@ -158,7 +158,7 @@ Originally, this book was written for international students, but has been expan
 Moreover, while this book focuses on CS, it might be relevant to students from various STEM disciplines (@sec:fields-and-areas).
 Furthermore, although many examples are specifics for schools that I and other contributors of this book know about, the information should apply to other good #gls("r1", first: false) institutions in the US.
 
-This book can help *US faculty* and #gls("adcom") gain a better understanding of international students and their cultural differences (@chap:cultural).  By recognizing and leveraging these differences, CS programs in the US can attract larger and more competitive application pools from international students.
+This book can help *US faculty* and #gls("adcom",display: "admission committees") gain a better understanding of international students and their cultural differences (@chap:cultural).  By recognizing and leveraging these differences, CS programs in the US can attract larger and more competitive application pools from international students.
 
 I hope this book will help you understand the CS PhD admission process in the US and make informed decisions. 
 Additional information about the book can be found in @chap:about.
