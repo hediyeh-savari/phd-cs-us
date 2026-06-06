@@ -8813,16 +8813,16 @@ These steps repeat until DPLL finds a satisfying assignment and returns `sat`,
 or decides that it cannot backtrack (`dl = -1`) and returns `unsat`.
 
 
-=== Decide
+=== Decide <sec:decide>
 
 The _Decide_ step selects an unassigned variable and assigns it a truth value.
 Decision is the main source of state-space explosion in DPLL because it uses
 random choices or heuristics (e.g., VSIDS) to select the variable and truth
 value. Thus, value assignments can be _wrong_, leading to conflicts later on.
 
-Each decision creates a new _decision level_. The decision level starts at 0
+In addition, each decision creates a new _decision level_. The decision level starts at 0
 and increases by 1 with each new assignment. Decision level is used to manage
-backtracking.
+backtracking and erasing of assignments when conflicts occur.
 
 #example[Simple Decision][
   Consider the CNF:
@@ -8854,8 +8854,10 @@ and all other literals set to False. Such clauses force the remaining literal
 to be assigned True.
 
 BCP is very useful because it can determine variable assignments directly
-without guessing. For example, if we have the clause $(not x_1 or x_2)$ and
-$x_1$ is True, then $x_2$ must be True to satisfy the clause. BCP is often
+without guessing (which is Decide as described in @sec:decide). For example, if we have the clause $(not x_1 or x_2)$ and
+$x_1$ is True, then BCP forces $x_2$ to be True to satisfy the clause. 
+
+BCP is often
 invoked after each decision to propagate the consequences of the assignment.
 
 #example(title: "Single Propagation")[
@@ -8899,11 +8901,11 @@ clause is False (i.e., all its literals are False).
 ]
 
 *Conflict Analysis.* Conflict analysis explains why the conflict occurred and
-generates a _learned clause_ that prevents the solver from revisiting the same
+generates a _learned clause_ that prevents the solverfrom revisiting the same
 conflicting assignment. Most modern solvers use the 1st-UIP (Unique Implication
 Point) learning scheme.
 
-#example(title: "Simple Learned Clause")[
+#example[Simple Learned Clause][
   $
     (x_1) and (not x_1).
   $
@@ -8911,7 +8913,7 @@ Point) learning scheme.
   this is always false, the solver concludes the formula is unsatisfiable.
 ]
 
-#example(title: "UIP Conflict Analysis")[
+#example[UIP Conflict Analysis][
   Assume decision levels:
   $
     x_1 = "True" space (d l = 1), quad x_2 = "False" space (d l = 2).
@@ -8941,30 +8943,33 @@ at which the clause becomes unit.
 ]
 
 
-=== CDCL
+== CDCL <sec:cdcl>
 
 Modern DPLL solving improves the original version with Conflict-Driven Clause
-Learning (CDCL). DPLL with CDCL _learns new clauses_ to avoid past conflicts
+Learning (CDCL) @bayardo1997using, @marques1999grasp, @569607. DPLL with CDCL _learns new clauses_ to avoid past conflicts
 and backtrack more intelligently (e.g., using non-chronological backjumping).
 Due to its ability to learn new clauses, CDCL can significantly reduce the
-search space and allow SAT solvers to scale to large problems. Whenever we
+search space and allow SAT solvers to scale to large problems. 
+
+In the following, whenever we
 refer to DPLL hereafter, we mean DPLL with CDCL.
 
 
 === DPLL(T)
 
-DPLL(T) extends DPLL for propositional formulae to check SMT formulae involving
+DPLL(T) @nieuwenhuis2006solving extends DPLL for propositional formulae to check SMT formulae involving
 non-Boolean variables, e.g., real numbers and data structures such as strings,
 arrays, and lists. DPLL(T) combines DPLL with dedicated _theory solvers_ to
 analyze formulae in those
 theories.#footnote[SMT stands for Satisfiability Modulo Theories; the T in
 DPLL(T) stands for Theories.]
-
 For example, to check a formula involving linear arithmetic over the reals
 (LRA), DPLL(T) may use a theory solver that applies linear programming to check
-the constraints in the formula. Modern DPLL(T)-based SMT solvers such as Z3 and
-CVC4 include solvers supporting a wide range of theories including linear
-arithmetic, nonlinear arithmetic, strings, and arrays.
+the constraints in the formula. 
+
+Modern DPLL(T)-based SMT solvers such as Z3 @de2008z3 and
+CVC4 @barrett2011cvc4 include solvers supporting a wide range of theories including linear
+arithmetic, nonlinear arithmetic, strings, and arrays @kroening2016decision.
 
 #pagebreak()
 = Linear Programming (LP) <chap:lp>
