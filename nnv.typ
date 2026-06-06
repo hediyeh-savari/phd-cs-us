@@ -2342,23 +2342,21 @@ mydnn(sc: 100%),
 
 To create a logical formula representing the network in @fig:dnn-a, we can symbolically execute the network on symbolic inputs $x_1,x_2$ and track the values of the neurons $x_3, x_4, x_5$ as a set (conjunction) of logical formulae.  SE starts with the inputs $x_1$ and $x_2$ and computes the values of the neurons in the hidden layer, $x_3$ and $x_4$, using the affine transformations, followed by ReLUs. Finally, SE computes the output neuron $x_5$ as a linear combination of the hidden layer neurons.
 
-// \begin{equation <eq:se-dnn}
-//     \begin{split}
-// x_5 &= -x_3 + x_4 - 1.0 ~\land \\
-// x_3 &= \max(-0.5x_1 + 0.5x_2 + 1.0, 0) ~\land \\
-// x_4 &= \max(0.5x_1 - 0.5x_2 - 1.0, 0)
-//     \end{split}
-// \end{equation}
+$ 
+x_5 &= -x_3 + x_4 - 1.0 and \
+x_3 &= max(-0.5x_1 + 0.5x_2 + 1.0, 0) and \
+x_4 &= max(0.5x_1 - 0.5x_2 - 1.0, 0)
+$ <eq:se-dnn>
 ]
 
 
-// \subsection{SMT Solving <sec:smt}
-// After obtaining the symbolic representation of the network, we can use an SMT solver~\cite{barrett2010smt} to check the satisfiability of the formula $\alpha \land \phi_{in} \land \neg \phi_{out} $ as shown in~\autoref{eq:nnv2}, where $\alpha$ is the symbolic representation of the network, $\phi_{in}$ is the precondition on the inputs, and $\phi_{out}$ is the postcondition on the outputs. 
+=== SMT Solving <sec:smt>
+After obtaining the symbolic representation of the network, we can use an SMT solver @barrett2010smt to check the satisfiability of the formula $alpha and phi_("in") and not phi_("out")$ as shown in @eq:nnv2, where $alpha$ is the symbolic representation of the network, $phi_{in}$ is the precondition on the inputs, and $phi_("out")$ is the postcondition on the outputs. 
 
-// The solver checks if there exists an assignment to the symbolic inputs that satisfies the formula. If such an assignment exists, it means that the property is violated, and we can extract a counterexample from the satisfying assignment. Otherwise, if no such assignment exists, the property is valid.
+The solver checks if there exists an assignment to the symbolic inputs that satisfies the formula. If such an assignment exists, it means that the property is violated, and we can extract a counterexample from the satisfying assignment. Otherwise, if no such assignment exists, the property is valid.
 
 
-
+//STOP HERE
 // \begin{example <ex:smt-dnn}
 //     To check that the network in~\autoref{fig:dnn-a} satisfies the property $x_5 > 0$ for any inputs $x_1 \in [-1,1], x_2\in[-2,2]$ (\autoref{ex:dnn-sat}), represented as:
 // \begin{align*}
