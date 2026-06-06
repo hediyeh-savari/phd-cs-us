@@ -1417,7 +1417,7 @@ ONNX operators that cover most sequential feedforward networks include:
 
   The ONNX representation would look like:
 
-  ```
+  ```python
   ir_version: 9
   opset_import { version: 13 }
   graph example_nn {
@@ -2022,7 +2022,7 @@ $
 
 As with traditional software verification, NNV is often represented as a satisfiability problem, which can be solved using an SMT solver (e.g., Z3 @de2008z3) or a MILP solver (e.g., Gurobi @gurobi).
 
-*Formulation.* To formulate the problem, we first define a formula $alpha$ to represent the network.
+#paragraph[Formulation][To formulate the problem, we first define a formula $alpha$ to represent the network.
 Typically $alpha$ is a conjunction of constraints representing the affine transformation (@sec:affine) and activation function (@sec:activation) of each neuron in the network.
 For example, for a fully-connected neural network (@sec:ffn) with $L$ layers and $N$ ReLU neurons per layer, $alpha$ is:
 
@@ -2042,8 +2042,7 @@ $w_(i - 1, j, k)$ is the weight connecting the $k$-th neuron in layer $i - 1$
 to the $j$-th neuron in layer $i$, and $b_(i, j)$ is the bias of the
 $j$-th neuron in layer $i$. The input layer is layer $0$, i.e.,
 $v_(0, j)$ are the input variables.
-
-#parbreak()
+]
 
 With this, the NNV problem (@def:nnv) can be formulated as checking the validity of the following formula:
 
@@ -2104,7 +2103,7 @@ $
 ] <ex-dnn-sat>
 
 *Satisfiability Solving.* We can check the satisfiability of
-$alpha and phi_("in") and not phi_("out")$ using constraint solving, e.g.,
+$alpha and phi_("in") and not phi_("out")$ (@eq:nnv2) using constraint solving, e.g.,
 the Z3 SMT solver. @sec:se-smt shows how to perform symbolic
 execution and use an SMT solver to automatically generate this formula
 from a given network and property, and check its satisfiability.
@@ -2282,7 +2281,7 @@ Consider the neural network in @fig:mydnntwo. Do the following:
 
 == Complexity <sec:complexity>
 
-ReLU-based NNV is NP-complete as shown in @katz2017reluplex @salzer2023reachability by reducing the 3-SAT problem to it. This means that the problem of checking whether a given ReLU-based network satisfies a property is computationally hard, and no polynomial-time algorithm is known to solve it in the general case.
+As shown in @katz2017reluplex @salzer2023reachability ReLU-based NNV is NP-complete by reducing the 3-SAT problem to it. This means that the problem of checking whether a given ReLU-based network satisfies a property is computationally hard, and no polynomial-time algorithm is known to solve it in the general case.
 
 // %  == Challenges} %TODO
 
@@ -2318,22 +2317,30 @@ ReLU-based NNV is NP-complete as shown in @katz2017reluplex @salzer2023reachabil
 
 == Symbolic Execution and SMT Solving <sec:se-smt>
 
-// As described in~\autoref{sec:satisfiability-and-activation-pattern-search} the Neural Network Verification (NNV) problem can be formulated as a satisfiability problem. Specifically, we encode the network as a logical formula, and use a constraint solver to check that formula satisfies the property of interest.
+As described in @sec:satisfiability-and-activation-pattern-search the Neural Network Verification (NNV) problem can be formulated as a satisfiability problem. Specifically, we encode the network as a logical formula, and use a constraint solver to check that formula satisfies the property of interest.
 
-// A straightforward and automated way to do this encoding is using \emph{symbolic execution} (SE)~\cite{baldoni2018survey,king1976symbolic}, a well-known software testing technique for finding bugs.  SE executes a program on symbolic inputs, i.e., inputs represented as symbols rather than concrete values, and tracks the reachability of program state as symbolic expressions, i.e., logical formulae over symbolic inputs. The satisfiability of these formulae is then checked using an SMT solver, and satisfying assignments represent inputs leading to the undesirable (buggy) program state.
+A straightforward and automated way to do this encoding is using _symbolic execution_ (SE)@baldoni2018survey, @king1976symbolic, a well-known software testing technique for finding bugs.  SE executes a program on symbolic inputs, i.e., inputs represented as symbols rather than concrete values, and tracks the reachability of program state as symbolic expressions, i.e., logical formulae over symbolic inputs. The satisfiability of these formulae is then checked using an SMT solver, and satisfying assignments represent inputs leading to the undesirable (buggy) program state.
 
-// \subsection{Symbolic Execution <sec:se}
-// We can adapt traditional SE to our problem by treating the network as a program and neurons as variables and executing the network on symbolic inputs. Affine transformations can easily be represented as logical formulae because they are linear functions. Activation functions such as ReLUs are translated to disjunctions of linear functions or if-then-else statements, i.e., $\relu{x} ~=~ \max(x,0) ~=~ x \ge 0 \land x \lor 0 \land \neg x$.
+=== Symbolic Execution <sec:se>
+We can adapt traditional SE to our problem by treating the network as a program and neurons as variables and executing the network on symbolic inputs. Affine transformations can easily be represented as logical formulae because they are linear functions. Activation functions such as ReLUs are translated to disjunctions of linear functions or if-then-else statements:
+
+$
+  y = "relu"(x)  \
+  y = max(x, 0) \
+  y = "if" x > 0 "then" x "else" 0\
+  (x > 0 and y = x) or (x <= 0 and y = 0)
+
+$
+
+#example[
+#figure(
+mydnn(sc: 100%),
+  caption: [A simple network with two inputs $x_1,x_2$, two hidden neurons $x_3,x_4$, and one output neuron $x_5$.],
+) <fig:dnn-a>
 
 
-// \begin{example <ex:se-dnn}
-// \begin{figure}
-// \centering
-// \mydnn{1}
-// \caption{\label{fig:dnn-a}A simple network (similar to~\autoref{fig:dnn}).}
-// \end{figure}
 
-// To create a logical formula representing the network in~\autoref{fig:dnn-a}, we can symbolically execute the network on symbolic inputs $x_1,x_2$ and track the values of the neurons $x_3, x_4, x_5$ as a set (conjunction) of logical formulae.  SE starts with the inputs $x_1$ and $x_2$ and computes the values of the neurons in the hidden layer, $x_3$ and $x_4$, using the affine transformations, followed by ReLUs. Finally, SE computes the output neuron $x_5$ as a linear combination of the hidden layer neurons.
+To create a logical formula representing the network in @fig:dnn-a, we can symbolically execute the network on symbolic inputs $x_1,x_2$ and track the values of the neurons $x_3, x_4, x_5$ as a set (conjunction) of logical formulae.  SE starts with the inputs $x_1$ and $x_2$ and computes the values of the neurons in the hidden layer, $x_3$ and $x_4$, using the affine transformations, followed by ReLUs. Finally, SE computes the output neuron $x_5$ as a linear combination of the hidden layer neurons.
 
 // \begin{equation <eq:se-dnn}
 //     \begin{split}
@@ -2342,8 +2349,8 @@ ReLU-based NNV is NP-complete as shown in @katz2017reluplex @salzer2023reachabil
 // x_4 &= \max(0.5x_1 - 0.5x_2 - 1.0, 0)
 //     \end{split}
 // \end{equation}
+]
 
-// \end{example}
 
 // \subsection{SMT Solving <sec:smt}
 // After obtaining the symbolic representation of the network, we can use an SMT solver~\cite{barrett2010smt} to check the satisfiability of the formula $\alpha \land \phi_{in} \land \neg \phi_{out} $ as shown in~\autoref{eq:nnv2}, where $\alpha$ is the symbolic representation of the network, $\phi_{in}$ is the precondition on the inputs, and $\phi_{out}$ is the postcondition on the outputs. 
