@@ -887,7 +887,7 @@ Despite being piecewise linear, ReLU is *nonlinear* because it does not satisfy 
 - _Additivity:_ $"ReLU"(x + y) != "ReLU"(x) + "ReLU"(y)$ in general.
 - _Homogeneity:_ $"ReLU"(alpha x) != alpha dot "ReLU"(x)$ when $alpha < 0$.
 
-In simpler terms, ReLU is nonlinear because it does not form a straight line. It has a *kink*---a sharp bend--- $x = 0$, where the slope changes abruptly from $0$ to $1$. This discontinuity in the derivative prevents the function from being globally linear.
+In simpler terms, ReLU is nonlinear because it does not form a straight line. It has a *kink*---a sharp bend---when $x = 0$, where the slope changes abruptly from $0$ to $1$. This discontinuity in the derivative prevents the function from being globally linear.
 
 This non-linearity makes NNV difficult. In fact, verifying networks with ReLU is $"NP"$-complete, as shown in @sec:complexity. We will use ReLU throughout this book as the default activation function for hidden neurons in an NN.
 ]
@@ -8955,7 +8955,7 @@ In the following, whenever we
 refer to DPLL hereafter, we mean DPLL with CDCL.
 
 
-=== DPLL(T)
+== DPLL(T) <sec:dpll-t>
 
 DPLL(T) @nieuwenhuis2006solving extends DPLL for propositional formulae to check SMT formulae involving
 non-Boolean variables, e.g., real numbers and data structures such as strings,
