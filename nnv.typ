@@ -8790,13 +8790,17 @@ solve(x > 2, y < 10, x + 2*y = 7)
   What does Z3 return?
 ]
 
+#pagebreak()
 = SAT Solving Algorithms <chap:sat-solving-algorithms>
 
 == DPLL <sec:dpll>
 
-*Figure:* _(See figure/dpll.pdf for the classical DPLL algorithm diagram.)_
+#figure(
+  image("figure/dpll.pdf", width: 70%),
+  caption: [The DPLL algorithm for SAT solving.]
+) <fig:dpll>
 
-*DPLL* is a SAT solving technique introduced in 1961 by Davis, Putnam,
+@fig:dpll gives an overview of the *DPLL* algorithm---a SAT solving technique introduced in 1961 by Davis, Putnam,
 Logemann, and Loveland. DPLL is an iterative algorithm that takes as input a
 propositional formula and (i) decides an unassigned variable and assigns it a
 truth value, (ii) performs Boolean constraint propagation (BCP, also called
@@ -8820,7 +8824,7 @@ Each decision creates a new _decision level_. The decision level starts at 0
 and increases by 1 with each new assignment. Decision level is used to manage
 backtracking.
 
-#example(title: "Simple Decision")[
+#example[Simple Decision][
   Consider the CNF:
   $
     phi = (x_1 or x_2) and (not x_1 or x_3).
@@ -9318,56 +9322,6 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // ]
 
 
-
-//  == Z3 SMT Solver <sec:z3>
-
-// Z3~\cite{de2008z3} is a well-known SMT solver developed by Microsoft Research. Here we'll show how to use it to check propositional formulae and SMT formulae involving linear arithmetic constraints.
-
-// \paragraph{Installing} You can install Z3 using your package manager, for example
-
-// \begin{lstlisting}
-//     brew install z3        # using homebrew
-//     pip install z3-solver   # using pip
-//     apt install z3 python3-z3 # using apt (on Debian-based Linux systems)
-//     conda install z3solver # using conda
-// \end{lstlisting}
-
-
-// Then try its Python interface:
-
-// \begin{lstlisting}
-//     from z3 import *
-//     x = Int(`x')
-//     y = Int(`y')
-//     solve(x > 2, y < 10, x + 2*y = 7)
-// \end{lstlisting}
-
-
-
-// \begin{example}[Propositional Logic]\label{ex:z3-propositional}
-
-// We use Z3 to check satisfiability of propositional formulae and generate counterexamples.
-
-// \begin{lstlisting}
-// from z3 import *
-
-// x, y = Bools(`x y')
-// formula = And(Or(x, y), Or(Not(x), y))
-// s = Solver()
-// s.add(formula)
-// print(s.check())   #output: sat
-// print(s.model())   #a possible model is {x=True, y=True}
-// \end{lstlisting}
-// \end{example}
-
-// \begin{problem <prob:z3-0}
-// Modify the code in~\autoref{ex:z3-propositional} to check
-
-// \[
-// (x \land \lnot x).
-// \]
-// Confirm that the result is \texttt{unsat}.
-// \end{problem}
 
 
 
