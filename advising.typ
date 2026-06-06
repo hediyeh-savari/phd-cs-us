@@ -4,26 +4,21 @@
 // #set link(style: text.with(fill: blue))
 #set list(indent: 1em)
 #set enum(indent: 1em)
-#set document(
-    title: "Advisor Guide: Answers to Common Questions",
-    author: "ThanhVu Nguyen"
-)
-#set par(justify: true)
-#show ref: set text(fill:blue)
-#show link: set text(fill:blue)
-#show link: underline
 
-//#show quote: set pad(left: 1.5em)
+#set par(justify: true)
+#show link: it => text(fill:blue, underline(it))
+#show ref: set text(fill:blue)
+
+
 #show quote: set text(style: "italic")
 
 #show heading: set block(above: 1.4em, below: 1em)
 
-#show title:set text(size: 17pt)
 #show title: set align(center)
 #title[Advisor Guide: Answers to Common Questions]
 #align(center)[
     #v(1em)
-    ThanhVu Nguyen\
+    #link("https://tvn.roars.dev")[ThanhVu Nguyen]\
     #link("https://roars.dev")[Roars Lab] · George Mason University
     #line(length: 60%, stroke: 0.5pt + luma(150))
     #v(1em)
@@ -31,7 +26,7 @@
 
 #block(stroke:green, inset:1em)[
 
-    This document, adapted from #link("https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-Advisor.pdf")[these questions], aims to help current and future students in my #link("https://roars.dev")[Roars Lab] 
+    This document, adapted from #link("https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-Advisor.pdf")[these questions], aims to help current and future students in my #link("https://roars.dev")[lab] 
     understand my advising style, expectations, and practices. If you're interested in working with me, you can read this guide to see if my lab would be a #highlight[good fit], which is crucial for a successful PhD advising. More general PhD admission advice can be found in the
     #link("https://code.roars.dev/phd-cs-us/")[PhD Admission Demystify] book.
 ]

@@ -8966,7 +8966,7 @@ the constraints in the formula. Modern DPLL(T)-based SMT solvers such as Z3 and
 CVC4 include solvers supporting a wide range of theories including linear
 arithmetic, nonlinear arithmetic, strings, and arrays.
 
-
+#pagebreak()
 = Linear Programming (LP) <chap:lp>
 
 Linear Programming (LP) and its generalization Mixed-Integer Linear Programming
