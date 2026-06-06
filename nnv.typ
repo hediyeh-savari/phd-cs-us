@@ -2100,7 +2100,7 @@ $
   phi_("in") = (-1 <= x_1 <= 1) and (-2 <= x_2 <= 2)\
   phi_("out") = (x_5 > 0)
 $
-] <ex-dnn-sat>
+] <ex:dnn-sat>
 
 *Satisfiability Solving.* We can check the satisfiability of
 $alpha and phi_("in") and not phi_("out")$ (@eq:nnv2) using constraint solving, e.g.,
@@ -2110,7 +2110,7 @@ from a given network and property, and check its satisfiability.
  @sec:using-milp shows how to encode the problem as MILP
 constraints, solvable using a MILP solver (e.g., Gurobi).
 
-For @ex-dnn-sat, the formula is satisfiable, i.e., the property is invalid,
+For @ex:dnn-sat, the formula is satisfiable, i.e., the property is invalid,
 and the solver returns #sat. Any satisfying assignment, e.g.,
 $x_1 = -1$ and $x_2 = 2$, is a counterexample
 to the property, as it satisfies the
@@ -2120,7 +2120,7 @@ i.e., $x_5 = -3.5$, which is $< 0$.
 
 
 #problem[
-Use Z3 to do @ex-dnn-sat. You might find @ex:z3-dnn useful.
+Use Z3 to do @ex:dnn-sat. You might find @ex:z3-dnn useful.
 Make sure that you also ask Z3 to find a counterexample violating the
 property (it does not have to be the same as above).
 ] <problem-z3-dnn>
@@ -2357,8 +2357,8 @@ The solver checks if there exists an assignment to the symbolic inputs that sati
 
 
 //STOP HERE
-// \begin{example <ex:smt-dnn}
-//     To check that the network in~\autoref{fig:dnn-a} satisfies the property $x_5 > 0$ for any inputs $x_1 \in [-1,1], x_2\in[-2,2]$ (\autoref{ex:dnn-sat}), represented as:
+#example[ 
+  To check that the network in @fig:dnn-a satisfies the property $x_5 > 0$ for any inputs $x_1 in [-1,1], x_2 in [-2,2]$ (@ex:dnn-sat), represented as:
 // \begin{align*}
 // \phi_{in} = (x_1 \ge -1) \land (x_1 \le 1) \land (x_2 \ge -2) \land (x_2 \le 2); \quad \phi_{out} = (x_5 > 0)
 // \end{align*}
@@ -2374,7 +2374,7 @@ The solver checks if there exists an assignment to the symbolic inputs that sati
 // \end{align*}
 
 // In this case, the SMT solver returns \sat{} and a satisfying assignment, e.g., $x_1=-1$ and $x_2=2$, which is a counterexample to the property. This means that for these inputs, the output $x_5 = -3.5$ violates the property $x_5 > 0$.
-// \end{example}
+]<ex:smt-dnn>
 
 // \subsection{Limitations <sec:smt-limitations}
 
