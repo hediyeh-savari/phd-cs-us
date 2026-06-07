@@ -426,10 +426,12 @@ text(size: 0.9em,
 
 === Waiving Application Fee <sec:fee-waive>
 
-Some universities waive application fees, e.g., Rice and TTIC do not charge a fee for PhD applications, and many universities waive fees for domestic students (@chap:domestic-students).
-Some programs also waive the fee if applicants attend their open house or information sessions. Others may waive the fee if the applicant provides proof of financial hardship, such as a statement from a financial advisor or a bank statement.
+Most PhD programs do not waive the application fee, which is typically set by the university and not the department. Individual departments and programs usually do not have the authority to waive the application fee, even if they want to.
 
-However, most universities do not waive the application fee, as it is typically set by the university and not the department. Individual departments and programs usually do not have the authority to waive the application fee, even if they want to.
+However, some universities _do_ waive the fee, e.g., Rice and TTIC do not charge a fee for PhD applications, and many universities waive fees for domestic students (@chap:domestic-students).
+Some programs also waive the fee if applicants attend their open house or information sessions. Others may waive the fee if the applicant provides proof of _financial hardship_, such as a statement from a financial advisor or a bank statement.
+
+
 
 #note-block[
   Requiring an application fee helps ensure that applicants are serious, as it discourages non-serious candidates. Most CS programs already receive _far too many applications_ and would be overwhelmed if the process were free---_"hey, it's free, so I can just apply to as many schools as I want to increase my chances."_ Even with an application fee, competition is already very tough; imagine if the application were free and the number of applications tripled or quadrupled.

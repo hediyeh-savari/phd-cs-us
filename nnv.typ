@@ -2388,7 +2388,7 @@ For these reasons, SMT solving is mostly used on toy examples, e.g., in a classr
 
 == MILP <sec:using-milp>
 //STOP HERE
-Instead of using SMT solving, we can encode the NNV problem as a Mixed Integer Linear Programming (MILP) constraints (@sec:lp), and then invoke an MILP solver such as Gurobi @gurobi to check their _feasibility_ or satisfiability (@sec:lp-feasibility).
+Instead of using SMT solving, we can encode the NNV problem as a Mixed Integer Linear Programming (MILP) constraints (@sec:lp), and then invoke an MILP solver such as Gurobi @gurobi to check their satisfiability or _feasibility_ (@sec:lp-feasibility).
 
 
 // % The fundamental difference between SMT and MILP solving is that SMT solvers aims to find satisfying assignments that make a given logical formula true. In contrast, MILP solvers aim to find the best solution (according to some objective function) that satisfy a given set of \emph{linear} constraints.
@@ -2437,7 +2437,7 @@ $
 These constraints enforce $hat(z) = z$ when $a = 1$ (active) and $hat(z) = 0$ when $a = 0$ (inactive), which captures the two possible ReLU outputs ($0$ or $z$).
 Note that constraints are linear and involve both continuous variable $hat(z)$ and binary variable $a$.
 
-// \subsection{Computing Concrete Bounds <sec:pre-relu-bounds}
+=== Computing Concrete Bounds <sec:pre-relu-bounds>
 
 // The mentioned lower and upper bounds (\autoref{sec:relu-encoding})---\emph{concrete} values $l$ and $u$ such that $l \leq z \leq u$ over the input $z$ to ReLU--- are critical for ensuring that the binary indicator $a$ can only take on values that are \emph{valid} given the possible range of $z$. For example, if $u < 0$, then $z$ is always negative, so the active phase ($a=1$) is infeasible, and thus can be eliminated.  Similarly, if $l \geq 0$, then $z$ is always active.
 
