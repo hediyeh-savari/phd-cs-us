@@ -30,8 +30,7 @@
 #show heading: set block(below: 1.5em, above: 1.5em)
 
 #show ref: set text(fill:blue)
-#show link: set text(fill:blue)
-#show link: underline
+#show link: it => text(fill:blue, underline(it))
 #show figure.caption: set text(size: 0.9em)
 
 // Inline code
@@ -63,7 +62,7 @@
 // })
 
 
-#set par(first-line-indent: (amount: 1.5em, all: false))
+//#set par(first-line-indent: (amount: 1.5em, all: false))
 
 #let mytitle = "Neural Network Verification"
 #let mysubtitle = "A Guide for Researchers and Practitioners"
@@ -2355,7 +2354,7 @@ After obtaining the symbolic representation of the network, we can use an SMT so
 
 The solver checks if there exists an assignment to the symbolic inputs that satisfies the formula. If such an assignment exists, it means that the property is violated, and we can extract a counterexample from the satisfying assignment. Otherwise, if no such assignment exists, the property is valid.
 
-//STOP HERE
+
 #example[ 
   To check that the network in @fig:dnn-a satisfies the property $x_5 > 0$ for any inputs $x_1 in [-1,1], x_2 in [-2,2]$ (@ex:dnn-sat), represented as:
   $
@@ -2388,8 +2387,8 @@ For these reasons, SMT solving is mostly used on toy examples, e.g., in a classr
 // %\tvn{Hai, include some references or results, e.g., from Nguyen's, showing that SMT solvers are not scalable for DNN verification.}\hai{where can I find the results?}\tvn{Not sure, I thought Nguyen record the results/graphs in some TeX document. Could you ask him?}
 
 == MILP <sec:using-milp>
-
-// Instead of using SMT solving, we can encode the NNV problem as a Mixed Integer Linear Programming (MILP) constraints (\autoref{sec:lp}), and then invoke an MILP solver such as Gurobi~\cite{gurobi} to check their \emph{feasibility} or satisfiability (\autoref{sec:lp-feasibility}).
+//STOP HERE
+Instead of using SMT solving, we can encode the NNV problem as a Mixed Integer Linear Programming (MILP) constraints (@sec:lp), and then invoke an MILP solver such as Gurobi @gurobi to check their _feasibility_ or satisfiability (@sec:lp-feasibility).
 
 
 // % The fundamental difference between SMT and MILP solving is that SMT solvers aims to find satisfying assignments that make a given logical formula true. In contrast, MILP solvers aim to find the best solution (according to some objective function) that satisfy a given set of \emph{linear} constraints.
@@ -2411,29 +2410,32 @@ For these reasons, SMT solving is mostly used on toy examples, e.g., in a classr
 // %\paragraph{MILP} Mixed Integer Linear Programming (MILP) is an optimization technique that solves problems involving both continuous variables (real numbers) and integer variables (including binary 0/1 variables), subject to linear constraints. Unlike SMT solvers that handle complex logical formulae with disjunctions, MILP solvers are specifically designed for linear constraints and can leverage decades of optimization research to solve large-scale problems efficiently.
 
 
-// \subsection{ReLU Encoding <sec:relu-encoding}
+=== ReLU Encoding <sec:relu-encoding>
 
-// We first encode non-linear activation functions like ReLU using \emph {binary indicator} variables and linear constraints. For each neuron, we introduce a binary variable (\autoref{sec:milp-binary}) that indicates whether the neuron is ``active'' (output equals input) or ``inactive'' (output is zero). This transforms the non-linear $\max(z,0)$ operation into a set of linear inequalities controlled by the binary variable.
-// We define
+We first encode non-linear activation functions like ReLU using _binary indicator_ variables and linear constraints. For each neuron, we introduce a binary variable (@sec:milp-binary) that indicates whether the neuron is "active" (output equals input) or "inactive" (output is zero). This transforms the non-linear `max(z,0)` operation into a set of linear inequalities controlled by the binary variable.
 
-// \begin{itemize}
-//     \item $z$: the pre-activation value, i.e., the value that goes into ReLU
-//     \item $\hat{z}$: the post-activation value, i.e., the output of ReLU
-//     \item $a \in \{0,1\}$: a binary indicator variable encoding whether the neuron is active ($z \ge 0$) or inactive ($z < 0$)
-//     \item $l, u$: lower and upper bounds on $z$ ($l \leq z \leq u$).
-// \end{itemize}
 
-// The MILP encoding of $\hat{z} = \max(z, 0)$ is then (\autoref{ex:relu_milp} shows a simpler example that does not involve bounds):
-// \begin{align*}
-//     &\hat{z} \geq z \\
-//     &\hat{z} \geq 0 \\
-//     &\hat{z} \leq a \cdot u \\
-//     &\hat{z} \leq z - l(1-a) \\
-//     &a \in \{0,1\}
-// \end{align*}
+#paragraph[Definition][We define
+  - $z$: the pre-activation value, i.e., the value that goes into ReLU
+  - $hat(z)$: the post-activation value, i.e., the output of ReLU
+  - $a in {0,1}$: a binary indicator variable encoding whether the neuron is active ($z >= 0$) or inactive ($z < 0$)
+  - $l, u$: lower and upper bounds on $z$ ($l <= z <=u$).
+]
 
-// These constraints enforce $\hat{z} = z$ when $a = 1$ (active) and $\hat{z} = 0$ when $a = 0$ (inactive), which captures the two possible ReLU outputs ($0$ or $z$).
-// Note that constraints are linear and involve both continuous variable $\hat{z}$ and binary variable $a$.
+#paragraph[Encoding][The MILP encoding of $hat(z) = "max"(z, 0)$ is then (@ex:relu_milp shows a simpler example that does not involve bounds):
+
+$
+    &hat(z) >= z \
+    &hat(z) >= 0 \
+    &hat(z) <= a dot u \
+    &hat(z) <= z - l(1-a) \
+    &a in {0,1}
+$
+]
+
+
+These constraints enforce $hat(z) = z$ when $a = 1$ (active) and $hat(z) = 0$ when $a = 0$ (inactive), which captures the two possible ReLU outputs ($0$ or $z$).
+Note that constraints are linear and involve both continuous variable $hat(z)$ and binary variable $a$.
 
 // \subsection{Computing Concrete Bounds <sec:pre-relu-bounds}
 
