@@ -5,8 +5,9 @@
 #set list(indent: 1em)
 #set enum(indent: 1em)
 #show ref: set text(fill:blue)
-#show link: set text(fill:blue)
-#show link: underline
+#show link: it => text(fill:blue, underline(it))
+#show heading: set block(above: 1.4em, below: 1em)
+
 #set document(
     title: "Advisor Guide: Answers to Common Questions",
     author: "ThanhVu Nguyen"
@@ -21,7 +22,7 @@
 #show: show-theorion
 
 
-#rect[These notes are accumulated from my experience and reflections. I usually work on it when I am writing my own proposal or reviewing other proposals, and just want to write down my thoughts as they are still fresh in my mind.]
+#emph-block[These notes are accumulated from my experience and reflections. I usually work on it when I am writing my own proposal or reviewing other proposals, and just want to write down my thoughts as they are still fresh in my mind.]
 
 
 = Submission Process and Timeline 
@@ -42,25 +43,25 @@ After OSP submitted your proposal, it will be assigned to a program manager (PM)
 - At some point after the proposal is submitted, you can check the status of your proposal on research.gov, and it will show you the name of the PM who is handling your proposal.
 - From here on, the assigned PM will be the one who handles your proposal, e.g., they will select the reviewers, run the panel meeting, and make the funding recommendation. 
 
-#remark-block[Recently, due to shortage of PMs, a PM can take proposals in programs that are not exactly in their area of expertise. However, this is still OK because the selected panelists will be experts in the topic of the proposal and just as with any proposal (even those where the PM is an expert), the PM will rely on the panelists' expertise to make the funding decision.
+#note-block[Recently, due to shortage of PMs, a PM can take proposals in programs that are not exactly in their area of expertise. However, this is still OK because the selected panelists will be experts in the topic of the proposal and just as with any proposal (even those where the PM is an expert), the PM will rely on the panelists' expertise to make the funding decision.
 ]
 
-== Panel Selection and Review
+
+= Panel Selection and Review
 
 PMs will select panelists to review your proposal. 
 - The size of the panel vary, e.g., most standard CISE panels have under 10 panelists, but specific ones like the GRFP panel can have 50+ panelists. However, in general, each proposal is reviewed by *3 panelists*.
-- PM selects reviewers based on various factors, including technical expertise, diversity (e.g., mix of junior and senior researchers, R1 and R2 institutions, different geographic locations, etc), etc.
-- *Conflict of interest* is a major factor in selecting reviewers (e.g., the reviewer should not also submit a proposal to the same program). In fact, even after the panel is selected, if any potential COI is discovered, the PM will remove the reviewer and assign another one.
+- PM selects reviewers based on various factors, including technical expertise and diversity (e.g., mix of junior and senior researchers, R1 and R2 institutions, different geographic locations).
+- *Conflict of interest (COI)* is a major factor in selecting reviewers (e.g., the reviewer should not also submit a proposal to the same program). In fact, even after the panel is selected, if any potential COI is discovered, the PM will remove the reviewer and assign another one.
 - Occasionally, if there is not sufficient expertise in the panel, the PM might reach out to an external reviewer (who is not on the panel) to review your proposal. These are *"ad hoc"* reviewers, and they typically only review one proposal and do not participate in the panel discussion.
 
-#remark-block[NSF review process is *single-blind* (i.e., the reviewers know the the PIs, but the PIs do not know the identity of the reviewers). The PIs sometimes try to guess who the reviewers are based on the comments, but this is often not accurate and leads to unnecessary stress.
+#note-block[NSF review process is *single-blind* (i.e., the reviewers know the the PIs, but the PIs do not know the identity of the reviewers). The PIs sometimes try to guess who the reviewers are based on the comments, but this is often not accurate and leads to unnecessary stress.
 ]
 
-== Panel Meeting and Discussion
+= Panel Meeting and Discussion
 
 
-
-#remark-block[Due to the pandemic, panels have been held virtually, and this is likely to continue for the foreseeable future. In addition, due to recent changes in having _shorter panel summary writing_, panel is now typically held in one (long) day instead of two days.
+#note-block[Due to the pandemic, panels have been held virtually, and this is likely to continue for the foreseeable future. In addition, due to recent changes in having _shorter panel summary writing_, panel is now typically held in one (long) day instead of two days.
 ]
 
 === Category of Proposals after Panel Discussion
@@ -70,7 +71,7 @@ Typically there are three categories of proposals after the panel discussion: Hi
 
 
 
-== After the Panel Meeting: Recommendation and Timeline
+= After the Panel Meeting: Recommendation and Timeline
  - Competitive (C) is the gray area, and this is where the PMs will make the final decision on which proposals to fund based on the panel's recommendation and the available budget. Obviously, C proposals that were ranked very high has better chance. However, if everything is equal, the PM might also consider other factors such as the proposal's topic, the PI is new and or has not been funded before, EPSCOR state, etc.  These are decisions made _after_ the panel meeting (though discussions and reviews during the panel meeting might also touch on these factors), and based on the PM's judgment and experience.
 
 - *Budget adjustment*: the PM might ask the PIs to adjust the budget of the proposal (e.g., reduce the budget if the panel thinks the proposed work can be done with less budget). This also helps the PM to fund more proposals with the available budget.
