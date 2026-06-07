@@ -2355,39 +2355,35 @@ After obtaining the symbolic representation of the network, we can use an SMT so
 
 The solver checks if there exists an assignment to the symbolic inputs that satisfies the formula. If such an assignment exists, it means that the property is violated, and we can extract a counterexample from the satisfying assignment. Otherwise, if no such assignment exists, the property is valid.
 
-
 //STOP HERE
 #example[ 
   To check that the network in @fig:dnn-a satisfies the property $x_5 > 0$ for any inputs $x_1 in [-1,1], x_2 in [-2,2]$ (@ex:dnn-sat), represented as:
-// \begin{align*}
-// \phi_{in} = (x_1 \ge -1) \land (x_1 \le 1) \land (x_2 \ge -2) \land (x_2 \le 2); \quad \phi_{out} = (x_5 > 0)
-// \end{align*}
-// We check the satisfiability of $\alpha \land \phi_{in} \land \neg \phi_{out}$:
-// \begin{align*}
-// \begin{split}
-// x_5 &= -x_3 + x_4 - 1.0 ~\land \\
-// x_3 &= \max(-0.5x_1 + 0.5x_2 + 1.0, 0) ~\land \\
-// x_4 &= \max(0.5x_1 - 0.5x_2 - 1.0, 0) ~\land \\
-//     &(x_1 \ge -1) \land (x_1 \le 1) \land (x_2 \ge -2) \land (x_2 \le 2) \quad \land
-//     (x_5 \le 0) \\
-//     \end{split}
-// \end{align*}
-
-// In this case, the SMT solver returns \sat{} and a satisfying assignment, e.g., $x_1=-1$ and $x_2=2$, which is a counterexample to the property. This means that for these inputs, the output $x_5 = -3.5$ violates the property $x_5 > 0$.
+  $
+  phi_("in") = (x_1 >= -1) and (x_1 <= 1) and (x_2 >= -2) and (x_2 <= 2)\
+  phi_("out") = (x_5 > 0)
+  $
+We check the satisfiability of $alpha and phi_("in") and not phi_("out")$:
+$
+x_5 &= -x_3 + x_4 - 1.0 and \
+x_3 &= "max"(-0.5x_1 + 0.5x_2 + 1.0, 0) and \
+x_4 &= "max"(0.5x_1 - 0.5x_2 - 1.0, 0) and \
+     &(x_1 >= -1) and (x_1 <= 1) and (x_2 >= -2) and (x_2 <= 2) and (x_5 <= 0) \
+    
+$
+In this case, the SMT solver returns `sat` and a satisfying assignment, e.g., $x_1=-1$ and $x_2=2$, which is a counterexample to the property. This means that for these inputs, the output $x_5 = -3.5$ violates the property $x_5 > 0$.
 ]<ex:smt-dnn>
 
-// \subsection{Limitations <sec:smt-limitations}
+=== Limitations <sec:smt-limitations>
 
-// While using symbolic execution and SMT solving is a straightforward way to verify networks, it has several practical limitations:
-// \begin{itemize}
-//     \item \textbf{Path Explosion and Scalability}: the number of paths that the solver has to analyze can grow exponentially with the number of ReLU-based neurons and layers as each ReLU, represented as a disjunction of linear functions, has two possible outputs for any input (i.e., the input value itself or 0).  This leads to the notorious \emph{path explosion} problem and becoming intractable for large networks. Programming assignment 1 (\autoref{sec:pa1}) demonstrates this issue.
+While using symbolic execution and SMT solving is a straightforward way to verify networks, it has several practical limitations:
 
-//     \item \textbf{Non-linearity:} Other non-linear activation functions (\autoref{sec:activation}), such as Sigmoid or Tanh, might not be easily representable as disjunctions of linear functions as ReLU. This can lead to complex formulae that are hard to reason about and/or result in a large search space for the SMT solver.
+  - *Path Explosion and Scalability*: the number of paths that the solver has to analyze can grow exponentially with the number of ReLU-based neurons and layers as each ReLU, represented as a disjunction of linear functions, has two possible outputs for any input (i.e., the input value itself or 0).  This leads to the notorious _path explosion_ problem and becoming intractable for large networks. Programming assignment 1 (@sec:pa1) demonstrates this issue.
 
-//     \item \textbf{Precision Issues:} SMT solvers may struggle with precision issues when dealing with floating-point arithmetic, which is common in neural networks. This can lead to incorrect results or false positives/negatives in the verification process.
-// \end{itemize}
+  - *Non-linearity:* Other non-linear activation functions (@sec:activation), such as Sigmoid or Tanh, might not be easily representable as disjunctions of linear functions as ReLU. This can lead to complex formulae that are hard to reason about and/or result in a large search space for the SMT solver.
 
-// For these reasons, SMT solving is mostly used on toy examples, e.g., in a classroom setting.  Modern NNV tools do not use SMT solving, and instead, rely on more efficient techniques such as abstraction (\autoref{chap:abstractions}).
+  - *Precision Issues:* SMT solvers may struggle with precision when dealing with floating-point arithmetic, which is common in neural networks. This can lead to incorrect results or false positives/negatives in the verification process.
+
+For these reasons, SMT solving is mostly used on toy examples, e.g., in a classroom setting.  Modern NNV tools do not use SMT solving, and instead, rely on more efficient techniques such as abstraction (@chap:abstractions).
 
 // %\tvn{Hai, include some references or results, e.g., from Nguyen's, showing that SMT solvers are not scalable for DNN verification.}\hai{where can I find the results?}\tvn{Not sure, I thought Nguyen record the results/graphs in some TeX document. Could you ask him?}
 
@@ -11227,8 +11223,9 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // \renewcommand{\appendixname}{Assignments}
 // \appendix
 
-// = Programming Assignments <chap:pa}
+= Programming Assignments <chap:pa>
 
+== PA1 <sec:pa1>
 // \input{pa/pa1.tex}
 // \input{pa/pa2.tex}
 // \input{pa/pa3.tex}
