@@ -64,7 +64,7 @@ PMs will select panelists to review your proposal.
 #note-block[Due to the pandemic, panels have been held virtually, and this is likely to continue for the foreseeable future. In addition, due to recent changes in having _shorter panel summary writing_, panel is now typically held in one (long) day instead of two days.
 ]
 
-=== Category of Proposals after Panel Discussion
+== Category of Proposals after Panel Discussion
 Typically there are three categories of proposals after the panel discussion: Highly Competitive (or HC), Competitive (or C), and Not Competitive (or NC). HC means it is likely to be funded, C means it is good but might not be funded, and NC means it is not recommended for funding. 
 -
 
