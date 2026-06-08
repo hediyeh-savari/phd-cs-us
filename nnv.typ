@@ -2334,10 +2334,8 @@ $
 #example[
 #figure(
 mydnn(sc: 100%),
-  caption: [A simple network with two inputs $x_1,x_2$, two hidden neurons $x_3,x_4$, and one output neuron $x_5$.],
+  caption: [A simple network with two inputs $x_1,x_2$, two hidden neurons $x_3,x_4$, and one output neuron $x_5$.]
 ) <fig:dnn-a>
-
-
 
 To create a logical formula representing the network in @fig:dnn-a, we can symbolically execute the network on symbolic inputs $x_1,x_2$ and track the values of the neurons $x_3, x_4, x_5$ as a set (conjunction) of logical formulae.  SE starts with the inputs $x_1$ and $x_2$ and computes the values of the neurons in the hidden layer, $x_3$ and $x_4$, using the affine transformations, followed by ReLUs. Finally, SE computes the output neuron $x_5$ as a linear combination of the hidden layer neurons.
 
@@ -2387,7 +2385,7 @@ For these reasons, SMT solving is mostly used on toy examples, e.g., in a classr
 // %\tvn{Hai, include some references or results, e.g., from Nguyen's, showing that SMT solvers are not scalable for DNN verification.}\hai{where can I find the results?}\tvn{Not sure, I thought Nguyen record the results/graphs in some TeX document. Could you ask him?}
 
 == MILP <sec:using-milp>
-//STOP HERE
+
 Instead of using SMT solving, we can encode the NNV problem as a Mixed Integer Linear Programming (MILP) constraints (@sec:lp), and then invoke an MILP solver such as Gurobi @gurobi to check their satisfiability or _feasibility_ (@sec:lp-feasibility).
 
 
@@ -2439,68 +2437,64 @@ Note that constraints are linear and involve both continuous variable $hat(z)$ a
 
 === Computing Concrete Bounds <sec:pre-relu-bounds>
 
-// The mentioned lower and upper bounds (\autoref{sec:relu-encoding})---\emph{concrete} values $l$ and $u$ such that $l \leq z \leq u$ over the input $z$ to ReLU--- are critical for ensuring that the binary indicator $a$ can only take on values that are \emph{valid} given the possible range of $z$. For example, if $u < 0$, then $z$ is always negative, so the active phase ($a=1$) is infeasible, and thus can be eliminated.  Similarly, if $l \geq 0$, then $z$ is always active.
+The mentioned lower and upper bounds (@sec:relu-encoding)---_concrete_ values $l$ and $u$ such that $l <= z <= u$ over the input $z$ to ReLU--- are critical for ensuring that the binary indicator $a$ can only take on values that are _valid_ given the possible range of $z$. For example, if $u < 0$, then $z$ is always negative, so the active phase ($a=1$) is infeasible, and thus can be eliminated.  Similarly, if $l >= 0$, then $z$ is always active.
 
 
-// Either of these cases indicates the neuron is \emph{stable}---always active or always inactive---and thus significantly simplifies the MILP problem because ReLU can be replaced with a linear function (identity or constant 0). Of course, if $l < 0 < u$, then both active and inactive phases are possible, and the MILP solver has to consider both cases. \autoref{chap:abstractions} discusses abstraction techniques to approximate ReLU outputs.
+Either of these cases indicates the neuron is _stable_---always active or always inactive---and thus significantly simplifies the MILP problem because ReLU can be replaced with a linear function (identity or constant 0). Of course, if $l < 0 < u$, then both active and inactive phases are possible, and the MILP solver has to consider both cases. @chap:abstractions discusses abstraction techniques to approximate ReLU outputs.
 
 
 // %In general, the tightness of the bounds $l$ and $u$ is crucial for the efficiency of the MILP solver and a major focus of DNN reasoning is developing techniques to capture these bounds more precisely (\autoref{chap:abstractions}).
 
-// \paragraph{Computing Bounds $l \le e \le u$}  Given a linear expression $e$
-// \[
-//  e = a_1 x_1 + a_2 x_2 + \ldots + b,
-// \]
-// where each variable $x_i$ ranges over $[l_i, u_i]$, a simple way to compute the bounds $l \le e \le u$ is using \emph{interval} arithmetic (\autoref{sec:interval-abstraction}):
+*Computing Bounds $l <= e <= u$*: Given a linear expression $e$
+$
+e = a_1 x_1 + a_2 x_2 + dots + b,
+$
+where each variable $x_i$ ranges over $[l_i, u_i]$, a simple way to compute the bounds $l <= e <= u$ is using _interval_ arithmetic (@sec:interval-abstraction):
 
-// \begin{itemize}
-//     \item \textbf{For the lower bound} ($l_3$):
-//     For each $x_i$, use its upper bound $u_i$ if $a_i < 0$, and use its lower bound $l_i$ if $a_i \geq 0$.
-//     \item \textbf{For the upper bound} ($u_3$):
-//     For each $x_i$, use $l_i$ if $a_i < 0$, and use $u_i$ if $a_i \geq 0$.
-// \end{itemize}
 
-// This guarantees that the extreme values of $e$ are achieved at some corner of the input box.
+- *For the lower bound* ($l_3$): For each $x_i$, use its upper bound $u_i$ if $a_i < 0$, and use its lower bound $l_i$ if $a_i >= 0$.
+- *For the upper bound* ($u_3$): For each $x_i$, use $l_i$ if $a_i < 0$, and use $u_i$ if $a_i \geq 0$.
+
+This guarantees that the extreme values of $e$ are achieved at some corner of the input box.
 
 
 
 
-// \begin{example <ex:relu_milp1}
+#example[ 
 
-// \begin{figure}
-// \centering
-// \mydnn{1}
-// \caption{\label{fig:dnn-c}A simple network (similar to~\autoref{fig:dnn}).}
-// \end{figure}
+#figure(
+mydnn(sc: 100%),
+caption: [A simple network (similar to @fig:dnn.]
+)<fig:dnn-c>
 
-//     Consider neuron $x_3$ in the network in~\autoref{fig:dnn-c}.
-//     We have $x_3 = -0.5x_1 + 0.5x_2 + 1.0$ as the pre-activation value of $x_3$. The upper $u_3$ and lower $l_3$ bounds on $x_3$ over the input region $x_1 \in [-1,1]$ and $x_2\in[-2,2]$ are:
-// \begin{align*}
-//     & z_3 = -0.5x_1 + 0.5x_2 + 1.0 \\
-//     & l_3 = -0.5(1) + 0.5(-2) + 1.0 = -0.5 \\
-//     & u_3 = -0.5(-1) + 0.5(2) + 1.0 = 2.5 \\
-// \end{align*}
-
-// Notice that we use different pairs of values to compute the lower (1,-2) and upper (-1,2) bounds.
+Consider neuron $x_3$ in the network in @fig:dnn-c.
+We have $x_3 = -0.5x_1 + 0.5x_2 + 1.0$ as the pre-activation value of $x_3$. The upper $u_3$ and lower $l_3$ bounds on $x_3$ over the input region $x_1 \in [-1,1]$ and $x_2 in [-2,2]$ are:
+$
+    z_3 &= -0.5x_1 + 0.5x_2 + 1.0 \
+    l_3 &= -0.5(1) + 0.5(-2) + 1.0 = -0.5 \
+    u_3 &= -0.5(-1) + 0.5(2) + 1.0 = 2.5 \
+$
+Notice that we use different pairs of values to compute the lower (1,-2) and upper (-1,2) bounds.
 
 
-// With the computed bounds, we encode the ReLU output of $x_3$:
-// \begin{align*}
-//     &\hat{x}_3 \geq x_3 \\
-//     &\hat{x}_3 \geq 0 \\
-//     &\hat{x}_3 \leq a_3 \cdot u_3 \\
-// \implies  &\hat{x}_3 \leq a_3 \cdot 2.5 \\
-//     &\hat{x}_3 \leq x_3 - l_3(1-a_3) \\
-// \implies  &\hat{x}_3 \leq x_3 - (-0.5)(1-a_3) \\
-// \implies  &\hat{x}_3 \leq x_3 + 0.5(1-a_3) \\
-//     &a_3 \in \{0,1\}
-// \end{align*}
+With the computed bounds, we encode the ReLU output of $x_3$:
+$
+    &hat(x)_3 >= x_3 \
+    &hat(x)_3 >= 0 \
+    &hat(x)_3 <= a_3 dot u_3 \
+  =>&hat(x)_3 <= a_3 dot 2.5 \
+    &hat(x)_3 <= x_3 - l_3(1-a_3) \
+  =>  &hat(x)_3 <= x_3 - (-0.5)(1-a_3) \
+=>  &hat(x)_3 <= x_3 + 0.5(1-a_3) \
+    &a_3 in {0,1}
+$
 
-// Note that because $l_3 = -0.5$ and $u_3 = 2.5$, $a_3$ can be either 0 or 1, depending on the value of $x_3$. If we had different bounds, e.g., $l_3 = 0.1$, then $a_3$ would be forced to be 1, as $x_3$ can never be less than 0.1 (i.e., $x_3$ is a stable neuron because it is always active). Stable neurons replaces ReLU with either 0 or identity function, which significantly simplifies the problem.
-// \end{example}
+Note that because $l_3 = -0.5$ and $u_3 = 2.5$, $a_3$ can be either 0 or 1, depending on the value of $x_3$. If we had different bounds, e.g., $l_3 = 0.1$, then $a_3$ would be 1, as $x_3$ can never be less than 0.1 (i.e., $x_3$ is a stable neuron because it is always active). Stable neurons replaces ReLU with either 0 or identity function, which significantly simplifies the problem.
+]<ex:relu_milp1>
 
 
-// \subsection{Neural Network Encoding} We can encode a neural network as a set of MILP linear constraints as follows:
+=== Neural Network Encoding
+We can encode a neural network as a set of MILP linear constraints as follows:
 
 // \begin{equation <eq:mip}
 //     \begin{aligned}
