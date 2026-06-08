@@ -9137,9 +9137,9 @@ $
 
 === Encoding Binary Variables <sec:milp-binary>
 
-MILP problems often involve conditions where the answer depends on some
-condition. We can encode such conditions using binary variables ($z in {0,1}$)
-and a large constant $M$ (e.g., $infinity$) to encode logical implications.
+MILP problems often involve conditions where the answer _depends_ on some
+condition. We can encode such logical implications using _binary variables_ ($z in {0,1}$)
+and a _large constant_ $M$ (e.g., $infinity$).
 
 #example[
   To encode "if $z = 1$ then $x >= 5$", use:
@@ -9193,7 +9193,7 @@ and a large constant $M$ (e.g., $infinity$) to encode logical implications.
 == Using Z3 to Solve LP and MILP
 
 We can use Z3's optimization capabilities to solve both LP and MILP problems.
-In practice, dedicated solvers such as Gurobi or CPLEX are used for large
+In practice, dedicated solvers such as Gurobi or CPLEX are preferred for large
 problems, but Z3 is effective for demonstration purposes.
 
 #example[
@@ -11397,7 +11397,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 
 #pagebreak()
 #bibliography("nnv.bib", style:"ieee")
-#set page(numbering: "1")
+//.#set page(numbering: "1")
 
 
 
