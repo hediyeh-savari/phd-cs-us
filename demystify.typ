@@ -2102,9 +2102,9 @@ Thus, don't worry about this too much and just apply to the profs. you think are
 
 === Should I Contact a Prof. Before Applying? How to Get a Positive Reply? <sec:contact>
 
-*Caveat:* Faculty members _cannot directly admit_ a student: so do not email and ask if you have a chance. However, faculty can _advocate_ for a student with adcom and therefore increase their admission chance: so contact and introduce yourself.
+//Faculty members _cannot directly admit_ a student: so do not email and ask if you have a chance. However, faculty can _advocate_ for a student with adcom and therefore increase their admission chance: so contact and introduce yourself.
 
-Faculty often receive "cold" emails from prospective students. Most of the time, we #highlight[just ignore these emails] (@sec:busy), but on some rare occasions, we do answer them. _So how to write an email that gets our attention?_
+Faculty often receive "cold" emails from prospective students. Most of the time, we #highlight[just ignore such emails] (@sec:busy), but on some rare occasions, we do answer them. _So how to write an email that gets our attention?_
 
 First, if you want to contact a prof. to _ask about your admission chance_, please *don't*. We don't know and can't answer because, as explained in @chap:evalapps, we don't make individual decisions and might not even be assigned to evaluate your application. It is the same as sending a paper draft to a journal editor or program chair and asking them if your paper has a chance.
 
@@ -2129,9 +2129,9 @@ Below is a good example:
 
   I am writing to inquire about potential research opportunities as a GRA in your group at GMU. Currently, I am an undergraduate student in Computer Science at UNIV and plan to graduate in May 2023.
 
-  [a very strong version and customized specifically for me] I have followed your instructions on your website and created a PR to fix the Github issue X in your project Y. I also notice that the project might be beneficial with some additional features, e.g., Z, and I am working on a PR for it.
+  _[a very strong version and customized specifically for me]_ I have followed your instructions on your website and created a PR to fix the Github issue X in your project Y. I also notice that the project might be beneficial with some additional features, e.g., Z, and I am working on a PR for it.
 
-  [also strong, but more conventional and a bit boring] I have read your TSE'21 paper on numerical invariant generation, and I am interested in this line of dynamic invariant research. I have worked (optional: with prof. Y at Z) on static program analysis and I think it could be used to tackle the spurious issues mentioned in your paper. I have a short paper at conference/workshop C and a project on symbolic execution (Github repo G).
+  _[also strong, but more conventional and a bit boring]_ I have read your TSE'21 paper on numerical invariant generation, and I am interested in this line of dynamic invariant research. I have worked (optional: with prof. Y at Z) on static program analysis and I think it could be used to tackle the spurious issues mentioned in your paper. I have a short paper at conference/workshop C and a project on symbolic execution (Github repo G).
 
   [something more personal and will catch my attention] I also have read your advising guide emphasizing independence and result-oriented research, and I think this is a good fit because ...
 
@@ -2140,7 +2140,13 @@ Below is a good example:
   This is a good example because it is written just for me. It shows that the student has done their homework, followed my instructions, and knows my work well.
 ]
 
-Second, and probably more importantly, is to make yourself stand out. It is not difficult to do the first part (customize the email), thus the very few students that do this will get our attention. Standing out varies from person to person and can range from the classic ways of having good publications in top conferences and having strong recommendations from well-known profs (e.g., people I know) to having strong technical skills (e.g., winning well-known competitions such as IMO and developing significant start-ups or popular open-source projects). In fact, most CS research groups develop open-source software and having contributions (e.g., finding and fixing bugs, creating pull requests, etc) to these projects is a great way to stand out.
+Second, and probably more importantly, is to make yourself _stand out_. It is not difficult to customize the email, thus the very few students that both customize _and_ stand out will get our attention. Standing out (@sec:stand-out) varies from person to person and can range from the classic ways of having good publications in top conferences and having strong recommendations from well-known profs (e.g., people I know) to having strong technical skills (e.g., winning well-known competitions such as IMO and developing significant start-ups or popular open-source projects). In fact, most CS research groups develop open-source software and having contributions (e.g., finding and fixing bugs, creating pull requests, etc) to these projects is a great way to stand out. @fig:email shows an example of being stand out by solving a problem that the prof. has.
+
+#figure(
+  image("files/email.png", width: 80%),
+  caption: [Example of a good way to contact a professor: by solving a problem they have!],
+) <fig:email>
+
 
 Finally, profs. are busy (@sec:busy), so don't take it personally if you don't get anything from them (though I would be surprised if you did all the above correctly and still don't get a reply). See @sec:kiss-of-death-emails for common mistakes in emails and @sec:interpreting-response for interpreting replies.
 
