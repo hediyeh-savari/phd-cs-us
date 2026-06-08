@@ -2187,14 +2187,13 @@ Finally, profs. are busy (@sec:busy), so don't take it personally if you don't g
 
 ==== Interpreting Response <sec:interpreting-response>
 
-Even if you avoid the kiss of death emails (@sec:kiss-of-death-emails), you might still not get a reply. There are many reasons why you might not get a reply, e.g., the prof. is not interested, they are too busy (@sec:busy), they are not taking students, they are on vacation, etc. Here are some common responses and what they mean:
+Even if you avoid the kiss of death emails (@sec:kiss-of-death-emails), you might still not get a reply. There are many reasons why you might not get a positive reply, e.g., the prof. is not interested, they are too busy (@sec:busy), they are not taking students, they are on vacation, etc. Here are some common responses and what they mean:
 
-Some generic responses are:
-- *No reply.* This is by far the most common response (see why in @sec:busy). It means they are not interested. You might try again in a few weeks or months, but don't expect a reply. And after a couple of tries, you should move on. It simply means they are not interested.
+- *No reply.* This is by far the most common response (see why in @sec:busy). It means they are not interested. You might try again in a few weeks or months, but don't expect a reply. And after a couple of tries, you should move on.
 
-- *Not taking students but encourage you to apply.* Polite way of saying not interested and referring you to the admission process. Note that this does not in any way mean that they think you have a good chance of getting admitted.
+- *Not taking students but encourage you to apply.* Polite way of saying not interested and referring you to the admission process. Note that this _does not_ in any way mean that they think you have a good chance of getting admitted.
 
-- *Not taking students this year (but encourage you to apply next year).* Polite but generic response. And like the previous one, encouragement to apply does not mean they think you have a good chance of getting admitted.
+- *Not taking students this year (but encourage you to apply next year).* Polite but generic response. Like the previous one, encouragement to apply does not mean they think you have a good chance of getting admitted.
 
 - *Come talk to me after you're admitted.* Generic. Refer you to the admission process. But if you get admitted then you can reply to them and say you're admitted and would like to talk.
 
@@ -2202,18 +2201,19 @@ Some generic responses are:
 
 - *I am not taking students but I co-advise/can serve on your committee.* While this might sound good, it's still generic because it says _once you're admitted and have an advisor_, then contact me again.
 
-- *I am not taking student but Prof. X might be.* Not common as most profs. do not refer you to their colleagues. However, this is better than the previous responses. While they cannot take you, they think you are a good fit for X. So follow up with a thank you and say you'll contact X. And then contact X and say that Y referred you to them.
+- *I am not taking student but Prof. X might be.* Not common as most profs. do not refer you to their colleagues (to avoid misunderstandings @sec:busy and to avoid being responsible for the referral).
+However, if this happens, it is better than the previous responses. While they cannot take you, they think you are a good fit for X. So follow up with a thank you and say you'll contact X,   then contact X and say that Y referred you to them.
 
-In short, all of these replies mean the prof. is not interested. The best positive response is that they want more information from you, e.g., your CV, transcript, paper, or a chat, which is like an interview (@sec:interviews).
+In short, all of these replies mean the prof. is not interested. The best positive response is that they want more information from you, e.g., your CV, transcript, paper, or a chat, which is an interview (@sec:interviews).
 
 ==== Are Profs. So Busy That They Completely Ignore Emails? <sec:busy>
 
 Profs. are busy. We have many deadlines, meetings, and emails, many of which are from prospective students looking for research opportunities or asking for application results. We also often underestimate how busy we are, thus making us even busier.
 We also have a life outside of work, e.g., family, hobbies, etc.
 
-However, this is _not_ why we "ghost" you and provide no response. One main reason is because we want to avoid misunderstandings. A response---no matter how clear we think it is---might be misinterpreted by the student (see some common responses in @sec:interpreting-response). For example, if we say we are not taking students but still encourage to apply, then the student might take it as a positive sign of admission. If we say we are not interested, the student might take it as a personal rejection and not apply at all. So it is not because we are too busy to reply, but because we do not want misunderstandings and have to deal with them later.
+However, this is _not_ why we "ghost" you and provide no response. One main reason is because we want to *avoid misunderstandings*. A response---no matter how clear we think it is---might be misinterpreted by the student (see some common responses in @sec:interpreting-response). For example, if we say we are not taking students but still encourage to apply, then the student might take it as a positive sign of admission (@sec:interpreting-response). If we say we are not interested, the student might interpret it as a personal rejection and not apply at all. So it is not because we are too busy to reply, but because we do not want misunderstandings and have to deal with them later.
 
-But there's a good chance that we would respond to well-written emails (@sec:contact) that show the student has done their homework and is genuinely interested in our work. So it is worth trying, but don't take it personally if you don't get a reply.
+But there's a good chance that we would respond to well-written emails (@sec:contact) that show the student has done their homework and is genuinely interested in our work. So (cold) emails are worth trying, but don't take it personally if you don't get a reply.
 
 #note-block[
   I skim through _every email_ sent by students for admission and research opportunities (many of which are from undergrads and high school students). So that means I do read your emails, and they rarely go to my spam or trash folder. However, I rarely reply to them because most of them are generic and do not show any interest in my work (@sec:kiss-of-death-emails).
