@@ -113,7 +113,7 @@
 )
 
 #register-glossary(entry-list)
-
+#set page(numbering: none)
 
 // Title Page
 #align(center)[
@@ -122,7 +122,7 @@
     inset: 1in
   )[
     #v(0.5fr)
-    #text(size: 22pt, weight: "bold")[#mytitle]
+    #text(size: 24pt, weight: "bold")[#mytitle]
     #v(1em)
     #text(size: 16pt, weight: "bold")[#mysubtitle]
     #v(1fr)
@@ -136,6 +136,8 @@
 
 #pagebreak()
 
+#set page(numbering: "1")
+#counter(page).update(2)
 
 #v(1fr)
 #emph-block[
