@@ -2503,16 +2503,15 @@ $
 &(e)} quad hat(z)_j^{i} <= {a}_j^{(i)} {u}_j^{i}; hat(z)_j^{i} <= {z}_j^{i} - {l}_j^{i}(1 - {a}_j^{i});
 $ <eq:mip>
 
-// \end{equation}
-// where $x$ is input, $y$ is output, and $z^{(i)}$, $\hat{z}^{(i)}$, $W^{(i)}$, and $b^{(i)}$ are the pre-activation, post-activation, weight, and bias vectors for layer $i$.
-// \begin{enumerate}[label=(\alph*)]
-//     \item defines the affine transformation computing the pre-activation value for a neuron in terms of outputs in the preceding layer;
-//     \item defines the inputs and outputs in terms of the adjacent hidden layers;
-//     \item asserts that post-activation values are non-negative and no less than pre-activation values;
-//     \item defines that the neuron activation status indicator variables that are either 0 or 1; and
-//     \item defines constraints on the upper, $u_j^{(i)}$, and lower, $l_j^{(i)}$, bounds of the pre-activation value of the $j$th neuron in the $i$th layer.
-// \end{enumerate}
-// Deactivating a neuron, $a_j^{(i)} = 0$, simplifies the first of the (e) constraints to $\hat{z}_j^{(i)} <= 0$, and activating a neuron simplifies the second to $\hat{z}_j^{(i)} <= z_j^{(i)}$, which is consistent with the semantics of $\hat{z}_j^{(i)} = max(z_j^{(i)},0)$.
+where $x$ is input, $y$ is output, and $z^i$, $hat(z)^i$, $W^i$, and $b^i$ are the pre-activation, post-activation, weight, and bias vectors for layer $i$.
+
++ defines the affine transformation computing the pre-activation value for a neuron in terms of outputs in the preceding layer;
++ defines the inputs and outputs in terms of the adjacent hidden layers;
++ asserts that post-activation values are non-negative and no less than pre-activation values;
++ defines that the neuron activation status indicator variables that are either 0 or 1; and
++ defines constraints on the upper, $u_j^{(i)}$, and lower, $l_j^{(i)}$, bounds of the pre-activation value of the $j$th neuron in the $i$th layer.
+
+Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints to $hat(z)_j^i <= 0$, and activating a neuron simplifies the second to $hat(z)_j^i <= z_j^i$, which is consistent with the semantics of $hat(z)_j^i = max(z_j^i,0)$.
 
 
 
