@@ -2494,16 +2494,15 @@ Note that because $l_3 = -0.5$ and $u_3 = 2.5$, $a_3$ can be either 0 or 1, depe
 === Neural Network Encoding
 We can encode a neural network as a set of MILP linear constraints as follows:
 
-#tvn[typo $hat(z)^(i-i)?$]
 $
-&(a)} quad z^{i} = W^{i} hat(z)^{i-i} + b^{(i)}; \
+&(a)} quad z^i = W^i hat(z)^((i-1)) + b^i; \
 &(b)} quad y = z^{L};  x = hat(z)^{0}; \
-&(c)} quad hat(z)_j^{i} >= {z}_j^{i}; hat(z)_j^{i} >= 0; \
-&(d)} quad a_j^{i} \in \{ 0, 1\} ;\
-&(e)} quad hat(z)_j^{i} <= {a}_j^{(i)} {u}_j^{i}; hat(z)_j^{i} <= {z}_j^{i} - {l}_j^{i}(1 - {a}_j^{i});
+&(c)} quad hat(z)_j^i >= {z}_j^i; quad hat(z)_j^i >= 0; \
+&(d)} quad a_j^i in { 0, 1} ;\
+&(e)} quad hat(z)_j^i <= {a}_j^i u_j^i; quad hat(z)_j^i <= z_j^i - l_j^i (1 - a_j^i);
 $ <eq:mip>
 
-where $x$ is input, $y$ is output, and $z^i$, $hat(z)^i$, $W^i$, and $b^i$ are the pre-activation, post-activation, weight, and bias vectors for layer $i$.
+where $x$ is input, $y$ is output, and $z^i$, $hat(z)^i$, $W^i$, and $b^i$ are the pre-activation, post-activation, weight, and bias vectors for layer $i$ ($j$ is the neuron index in layer $i$). 
 
 + defines the affine transformation computing the pre-activation value for a neuron in terms of outputs in the preceding layer;
 + defines the inputs and outputs in terms of the adjacent hidden layers;
