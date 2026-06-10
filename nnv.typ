@@ -4352,8 +4352,8 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
   $
     & hat(x)_3 = -0.5x_1 + 0.5x_2 + 1.0 \
     & hat(x)_4 = 0.5x_1 - 0.5x_2 - 1.0 \
-    & x_3 = "ReLU"(hat(x)_3) \
-    & x_4 = "ReLU"(hat(x)_4) \
+    & x_3 = "relu"(hat(x)_3) \
+    & x_4 = "relu"(hat(x)_4) \
     & x_5 = -x_3 + x_4 - 1.0,
   $
   where $hat(x)_3$ and $hat(x)_4$ are the pre-activation values of the ReLU
