@@ -31,8 +31,11 @@
   text(size: 0.85em, it)
 )
 
+#let paragraph(title, body) = {
+  v(0.5em)
+  par(first-line-indent: 0em)[#text[_*#title*_] #h(0.5em) #body]
+}
 
-//#set par(first-line-indent: (amount: 1.5em, all: false))
 
 #let mytitle = "Demystifying PhD Admissions in Computer Science"
 #let mysubtitle = "A Handbook for Navigating CS PhD Admissions in the U.S."
@@ -302,7 +305,7 @@ The first two years are typically spent taking coursework (somewhat equivalent t
 Within these 5--7 years, CS PhD students sometimes take a "leave of absence" for 1--2 semesters or for a summer to do internships at companies and research labs.
 
 #remark-block[
-  I started my PhD with an MS, and it took me 7 years (Fall '07--Fall '14). I spent 9 months doing an internship at the #link("https://www.nrl.navy.mil")[Naval Research Lab]. My PhD did take a bit longer than usual, but it allowed me to explore new research areas and topics.
+  I started my PhD with an MS, and it took me 7 years (Fall '07--Fall '14). I spent 9 months doing an internship at the #link("https://www.nrl.navy.mil")[Naval Research Lab]. My PhD did take a bit longer than usual, but it allowed me to explore new research areas and topics (and I had quite a bit of fun, including meeting my future wife).
 ]
 
 
@@ -324,7 +327,7 @@ For example, if you have taken a class on algorithms, even an online course from
 - *Computer OS or systems:* memory management, file systems, processes.
 ]
 
-In short, you _do not need_ to formally take CS courses. You just need to show that you have this essential knowledge, for example through the ways mentioned above. Many universities are well aware that incoming graduate students might not have all the technical background, so they often have _“bridge”_ courses to help students catch up. For example, GMU has four bridge courses corresponding to the four core areas above that incoming students can take to catch up on their CS knowledge.
+In short, you _do not need_ to have CS or STEM degree or even have taken formal CS courses to apply for a CS PhD. You just need to show that you have this essential knowledge, for example through the ways mentioned above. Many universities are well aware that incoming graduate students might not have all the technical background, so they often have _“bridge”_ courses to help students catch up. For example, GMU has four bridge courses corresponding to the four core areas above that incoming students can take to catch up on their CS knowledge.
 
 #remark-block[
   I would advocate for a non-STEM student who shows they have a strong drive for CS by studying core CS knowledge through various channels (e.g., self-study through online courses and participating in open-source projects). 
