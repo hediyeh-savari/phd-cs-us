@@ -13,8 +13,8 @@
   //inherited-from: heading,
   render: lemma-box.with(),  // reuse definition's render/style
 )
-//#show: show-exercise
 
+#import "@preview/lovelace:0.3.1": *
 
 #set heading(numbering: "1.1.1.1.1")
 //#set math.equation(numbering: none)
@@ -4409,139 +4409,29 @@ Many modern NNV tools adopt the Branch-and-Bound (BaB) approach to explore the s
 
 Note that because BaB splits ReLU neurons into active/inactive cases, it is also called _"neuron-splitting"_, which contrasts with _"input-splitting"_ techniques (@sec:input-splitting) that partition the input space.
 
-// \SetKwData{nextlayer}{layer$_{i+1}$}
-// \SetKwData{status}{status}
-// \SetKwData{minimum}{objval}
+#figure(
+  placement: top,
+  kind: "algorithm",
+  supplement: [Algorithm],
+  caption: [Branch and Bound Algorithm],
+pseudocode-list(hooks:0.5em)[
+  + *Input*: network $cal(N)$, property $phi_"in" => phi_"out"$
+  + *Output*: $"unsat"$ if property is valid, otherwise ($"sat"$, $"cex"$)
+  - \
+  + $"ActPatterns" <- {emptyset}$ \//initialize verification problem  #line-label(<line:babinit>)
+  
+  + *while* $"ActPatterns" !=  emptyset$ #line-label(<line:babstart>)
+    + $sigma_i <- "Select"( "ActPatterns" )$ \// process problem $i^"th"$ #line-label(<line:babselect>) 
+    + *if* $"Deduce"(cal(N), phi_"in" => phi_"out", sigma_i)$ \// check satisfiability #line-label(<line:babdeduce>) 
+      + *if* (found a valid $"cex"$)
+        + *return* ($"sat"$, $"cex"$) #line-label(<line:babsat>)
+      + $v_i <- "Decide"(cal(N), sigma_i)$ #line-label(<line:babdecide>)
+      - \// create new activation pattern
+      + $"ActPatterns" <- "ActPatterns" union {sigma_i union {v_i}; sigma_i union {not v_i}}$ #line-label(<line:babadd>) 
+    + \  #line-label(<line:babend>)
+  + *return* "unsat" #line-label(<line:babunsat>)
+]) <alg:bab>
 
-// \SetKwFunction{InputMILP}{AddInputConstrs}
-// \SetKwFunction{GetUnstableNeurons}{GetUnstableNeurons}
-// \SetKwFunction{PiecewiseLinearMILP}{AddConstrsPWL}
-// \SetKwFunction{LinearMILP}{AddConstrsLinear}
-// \SetKwFunction{Maximize}{Maximize}
-// \SetKwFunction{Minimize}{Minimize}
-// \SetKwFunction{Feasible}{CheckFeasibility}
-// \SetKwFunction{Optimize}{Optimize}
-// \SetKwFunction{isPiecewiseLinear}{isPiecewiseLinear}
-// \SetKwFunction{CreateStabilizedMILP}{CreateStabilizedMILP}
-// \SetKwFunction{GetLeafNodes}{GetLeafNodes}
-// \SetKwFunction{AddConstrs}{AddConstrs}
-// \SetKwFunction{RemoveConstrs}{RemoveConstrs}
-// \SetKwFunction{AddObjective}{AddObjectives}
-// \SetKwFunction{ShortenSplitConstrs}{ShortenSplitConstrs}
-// \SetKwFunction{RemoveLeafNodes}{RemoveLeaves}
-// \SetKwFunction{StoppingConditions}{StoppingConditions}
-// \SetKwFunction{RepOK}{RepOK}
-// \SetKwFunction{RaiseError}{RaiseError}
-// \SetKwInOut{Input}{input}
-// \SetKwInOut{Output}{output}
-// \SetKw{Break}{break}
-// \SetKw{Continue}{continue}
-// \SetKwFunction{Backtrack}{Backtrack}
-// \SetKwFunction{Select}{Select}
-// \SetKwFunction{Decide}{Decide}
-// \SetKwFunction{BCP}{BCP}
-// \SetKwFunction{Deduce}{Deduce}
-// \SetKwFunction{AnalyzeConflict}{AnalyzeConflict}
-// \SetKwFunction{BooleanAbstraction}{BooleanAbstraction}
-// \SetKwFunction{AddClause}{AddClause}
-// \SetKwFunction{isTotal}{isTotal}
-// \SetKwFunction{randomattack}{RandomAttack}
-// \SetKwFunction{pgd}{PGDAttack}
-
-// \SetKwFunction{DPLLT}{DPLLT}
-// \SetKwFunction{isValid}{isValid}
-// \SetKwFunction{isEmpty}{isEmpty}
-// \SetKwFunction{LPSolver}{LPSolver}
-// \SetKwFunction{Solve}{Solve}
-// \SetKwFunction{FindLayerNodes}{FindLayerNodes}
-// \SetKwFunction{TightenInputBounds}{TightenInputBounds}
-// \SetKwFunction{Abstract}{Abstract}
-// \SetKwFunction{Check}{Check}
-// \SetKwFunction{Decide}{Decide}
-// \SetKwFunction{Imply}{Imply}
-// \SetKwFunction{Lower}{LowerBound}
-// \SetKwFunction{Upper}{UpperBound}
-// \SetKwFunction{GetInputBounds}{GetInputBounds}
-// \SetKwFunction{GetInputs}{GetInputs}
-// \SetKwFunction{GetNumInputs}{GetNumInputs}
-// \SetKwFunction{CurrentConflictClause}{CurrentConflictClause}
-// \SetKwFunction{StopCriterion}{StopCriterion}
-// \SetKwFunction{LastAssignedLiteral}{LastLiteral}
-// \SetKwFunction{LiteralToVariable}{LiteralToVariable}
-// \SetKwFunction{Antecedent}{Antecedent}
-// \SetKwFunction{BinRes}{BinRes}
-// \SetKwFunction{BacktrackLevel}{BacktrackLevel}
-// \SetKwFunction{AddClause}{AddClause}
-// \SetKwFunction{ActivationStatus}{ActivationStatus}
-// \SetKwFunction{Backjump}{Backjump}
-// \SetKwFunction{EstimateBounds}{EstimateBounds}
-// \SetKwFunction{LP}{LP}
-
-// \SetKwData{implicationgraph}{igraph}
-// \SetKwData{literal}{lit}
-// \SetKwData{variable}{var}
-// \SetKwData{antecedent}{ante}
-// \SetKwData{conflict}{conflict}
-// \SetKwData{none}{none}
-// \SetKwData{layerid}{lid}
-// \SetKwData{hiddenbounds}{hidden\_bounds}
-// \SetKwData{inputs}{inputs}
-// \SetKwData{inputbounds}{input\_bounds}
-// \SetKwData{outputbounds}{output\_bounds}
-// \SetKwData{infeasible}{INFEASIBLE}
-// \SetKwData{unreachable}{UNREACHABLE}
-// \SetKwData{maxinputs}{MAX\_NUM\_INPUT}
-// \SetKwData{assignment}{$\sigma$}
-// \SetKwData{dl}{dl}
-// \SetKwData{lpmodel}{solver}
-// \SetKwData{clauses}{clauses}
-// \SetKwData{conflict}{conflict}
-// \SetKwData{clause}{clause}
-// \SetKwData{igraph}{igraph}
-// \SetKwData{cex}{cex}
-// \SetKwData{mysat}{sat}
-// \SetKwData{myunsat}{unsat}
-
-
-// \SetKwData{submodel}{sub\_model}
-
-// \SetKwData{true}{true}
-// \SetKwData{false}{false}
-
-// \SetKwFunction{Restart}{Restart}
-
-// \SetKwData{counterexample}{cex}
-// \SetKwData{conflictclause}{conflict\_clause}
-// \SetKwData{isconflict}{is\_conflict}
-
-
-// \SetKwData{problems}{ActPatterns}
-// \begin{algorithm}[t]
-//     \small
-//      in put{Network $\mathcal{N}$, property $phi_"in" \Rightarrow phi_"out"$}
-//     \Output{$\myunsat$ if property is valid, otherwise ($\mysat, \counterexample$)}
-//     \BlankLine
-
-//     $\problems <=ftarrow \{ \emptyset \}$ \tcp{initialize verification problems <line:babinit}
-
-
-//     \While(\tcp*[h]{main loop}){$\problems$}{\label{line:babstart}
-//         $\sigma_i >=ts \Select(\problems)$ \tcp{process problem $i$-th <line:babselect}
-//             \If{\Deduce{$\mathcal{N}, phi_"in", phi_"out", \sigma_i$}}{\label{line:babdeduce}
-//                 $\counterexample <=ftarrow \LP(\mathcal{N}, phi_"in", phi_"out", \sigma_i)$ \tcp{check satisfiability <line:bablp}
-//                 \If(\tcp*[h]{found a valid cex}){$\counterexample$}{
-//                     \Return{$(\mysat, \counterexample)$ <line:babsat}
-//                 }
-//                 $v_i <=ftarrow \Decide(\mathcal{N}, \sigma_i)$\label{line:babdecide}\\
-//                 \tcp{create new activation patterns}
-//                 $\problems <=ftarrow \problems \cup \{ \sigma_i \cup \{v_i\} ~;~ \sigma_i \land \{\overline{v_i}\} \}$
-//             }
-
-//      <line:babend}
-//     \Return{\myunsat <line:babunsat}
-
-//     \caption{The \bab{} algorithm. <alg:bab}
-// \end{algorithm}
 
 
 // \paragraph{Reference Alg} \autoref{alg:bab} shows \bab{}, a reference~\cite{nakagawa2014consolidating} BaB architecture for NNV. \bab{} takes as input a ReLU-based network $\mathcal{N}$ and a formulae $phi_"in"\Rightarrow phi_"out"$ representing the property of interest.
@@ -4642,17 +4532,17 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 // \end{example}
 
 
-// \begin{problem <prob:bab-detailed}
+// \begin{problem <prob:bab-detailed>
 // Do~\autoref{ex:bab} but come up with concrete values for each step, e.g., what are the bounds computed by \Deduce, what does \mycode{LP} return, etc to illustrate the process in more detail.
 // \end{problem}
 
 
-// \begin{problem <prob:bab-counterexample}
+// \begin{problem <prob:bab-counterexample>
 // Do~\autoref{ex:bab} again but make the property is invalid and find a counterexample. It is also OK to change the problem, e.g., the input bounds or the property itself, to make it invalid.
 // \end{problem}
 
 
-// \begin{problem <prob:bab-interval}
+// \begin{problem <prob:bab-interval>
 // \begin{figure}
 // \centering
 // \mydnn{1}
