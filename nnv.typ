@@ -236,7 +236,7 @@
 // \usepackage{pdfpages}
 // \usepackage{wrapfig}
 // \usepackage{subcaption}
-// \setlength\intextsep{0pt} % remove extra space above and below in-line float
+// \setlength in textsep{0pt} % remove extra space above and below in-line float
 // %\usepackage{cleveref}
 // \usepackage{booktabs}
 // \usepackage{tikz}
@@ -324,7 +324,7 @@
 // \newcommand{\mybookaddress}{\href{https://roars.dev/book_nnv/book.pdf}{https://roars.dev/book_nnv/book.pdf}}
 // \newcommand{\mybookgithub}{https://code.roars.dev/book_nnv}
 // \newcommand{\me}{}
-// \newcommand{\institute}{George Mason University}
+// \newcommand{ in stitute}{George Mason University}
 
 // \newtcolorbox{mybox}{
 //   enhanced,
@@ -376,7 +376,7 @@
 // \newcommand{\prooflang}{\texttt{BaB$_{\text{ProofLang}}$}}
 // \newcommand{\proofcheck}{\texttt{BaB$_{\text{ProofCheck}}$}}
 // \newcommand{\veristable}{\texttt{VeriStable}}
-// \newcommand{\crown}{\texttt{$\alpha\beta$-CROWN}}
+// \newcommand{\crown}{\texttt{$alpha\beta$-CROWN}}
 // \newcommand{\nnenum}{\texttt{nnenum}}
 // \newcommand{\sobolbox}{\texttt{SobolBox}}
 // \newcommand{\marabou}{\texttt{Marabou}}
@@ -397,7 +397,7 @@
 // \newcommand{\pyrat}{\texttt{PyRAT}}
 // \newcommand{\cora}{\texttt{CORA}}
 // \newcommand{\mipverify}{\texttt{MIPVerify}}
-// \newcommand{\crowndefault}{\texttt{$\alpha\beta$-CROWN} (default)}
+// \newcommand{\crowndefault}{\texttt{$alpha\beta$-CROWN} (default)}
 
 // \newcommand{\myrelu}{\mathrm{ReLU}}
 // \newcommand{\relu}[1]{\mathrm{ReLU}<=ft(#1\right)}
@@ -544,7 +544,7 @@
 
 // % \begin{figure}[h]
 // %     \centering
-// %     \includegraphics[scale=0.1]{files/IMG_0785.jpeg}
+// %      in cludegraphics[scale=0.1]{files/IMG_0785.jpeg}
 // %     \caption{Two of my angels. They are breeding and laying eggs. <fig:angelfish}
 // %   \end{figure}
 
@@ -1170,7 +1170,7 @@ Widely used feedforward architectures include fully connected, convolutional, an
 //     \centering
 //     \begin{tikzpicture}[scale=0.8, transform shape]
 //     % Parameters
-//     \def\inpN{4}
+//     \def in pN{4}
 //     \def\hidN{3}
 //     \def\outN{3}
 //     \def\dy{1.5}
@@ -1268,8 +1268,8 @@ Widely used feedforward architectures include fully connected, convolutional, an
 
 // \[
 // \begin{aligned}
-//     h_1 = \relu{x + 1} &\quad h_2 = \relu{2h_1 + x - 1} \\
-//     h_3 = \relu{-h_2 + 0.5} &\quad y  = 0.5h_3 + h_2 + 2
+//     h_1 = \relu{x + 1} &quad h_2 = \relu{2h_1 + x - 1} \\
+//     h_3 = \relu{-h_2 + 0.5} &quad y  = 0.5h_3 + h_2 + 2
 // \end{aligned}
 // \]
 
@@ -1326,7 +1326,7 @@ Currently, most NNV work tackles RNNs by _unrolling_ them into an equivalent fee
 // % --- Unrolled RNN (right diagram) ---
 // \begin{scope}[xshift=8cm]
 // % Parameters for vertical node spacing
-// \def\inpN{4}
+// \def in pN{4}
 // \def\hidN{4}
 // \def\outN{4}
 // \def\dy{2.0}
@@ -1334,12 +1334,12 @@ Currently, most NNV work tackles RNNs by _unrolling_ them into an equivalent fee
 // \def\xHidden{3.2}
 // \def\xOutput{6.4}
 // % Layer labels
-// \node at (\xInput,{\inpN/2*\dy+0.8}) {\textbf{Input}};
-// \node at (\xHidden,{\inpN/2*\dy+0.8}) {\textbf{Hidden}};
-// \node at (\xOutput,{\inpN/2*\dy+0.8}) {\textbf{Output}};
+// \node at (\xInput,{ in pN/2*\dy+0.8}) {\textbf{Input}};
+// \node at (\xHidden,{ in pN/2*\dy+0.8}) {\textbf{Hidden}};
+// \node at (\xOutput,{ in pN/2*\dy+0.8}) {\textbf{Output}};
 // % Input nodes (left column)
-// \foreach \i in {1,...,\inpN} {
-//     \node[circle, draw=black, fill=white, minimum size=0.4in, label=center:{$x_{\i}$}] (I\i) at (\xInput, {(\inpN-1)*0.5*\dy - (\i-1)*\dy}) {};
+// \foreach \i in {1,..., in pN} {
+//     \node[circle, draw=black, fill=white, minimum size=0.4in, label=center:{$x_{\i}$}] (I\i) at (\xInput, {( in pN-1)*0.5*\dy - (\i-1)*\dy}) {};
 // }
 // % Hidden nodes (centered) (as many as input)
 // \foreach \i in {1,...,\hidN} {
@@ -1586,8 +1586,8 @@ Thus, if the LLM outputs age $Y$ for $q_1$, then $q_2$ should output `current_ye
 // % \paragraph{Formal Specification:}
 // % \[
 // % \{ \text{frame } t, \text{ frame } t+1 \}
-// % \quad r_1 >=ts f(x_t), \quad r_2 >=ts f(x_{t+1})
-// % \quad \{ \text{consistent}(r_1, r_2) \}
+// % quad r_1 >=ts f(x_t), quad r_2 >=ts f(x_{t+1})
+// % quad \{ \text{consistent}(r_1, r_2) \}
 // % \]
 
 ==== Monotonicity
@@ -1675,7 +1675,7 @@ $
 // \paragraph{Formal Specification}
 // Let $\nu: D^{n_1 \times \dots \times n_h} \to D^{m_1 \times \dots \times m_k}$ be a neural network, and $x$ and $y$ its input and output tensors. A property is expressed as:
 // \[
-// \forall x \in \Pi \rightarrow \nu(x) \in \Sigma
+// \forall x in \Pi \rightarrow \nu(x) in \Sigma
 // \]
 // This includes:
 // \begin{itemize}
@@ -1689,10 +1689,10 @@ $
 // \begin{example}
 // A typical ACAS XU network (\autoref{sec:acasxu}) maps 5D input to 5D output via 6 layers of 50 ReLU neurons. A property is of the network is
 // \[
-// -\varepsilon_i <=q x_i <=q \varepsilon_i \quad (0 <=q i < 5)
+// -\varepsilon_i <=q x_i <=q \varepsilon_i quad (0 <=q i < 5)
 // \]
 // \[
-// y_0 <=q y_1, \quad y_0 <=q y_2, \quad y_0 <=q y_3, \quad y_0 <=q y_4,
+// y_0 <=q y_1, quad y_0 <=q y_2, quad y_0 <=q y_3, quad y_0 <=q y_4,
 // \]
 // where $x_i$ are the input variables, $y_i$ are the output variables, and $\varepsilon_i$ are small perturbation bounds for each input dimension. This property states that if the inputs are perturbed within the bounds $\varepsilon_i$, then the first output neuron $y_0$ is less than or equal to all other output neurons $y_1, y_2, y_3, y_4$.
 
@@ -1745,10 +1745,10 @@ $
 
 // % A robustness property around a sample $\hat{x}$ classified as class 9:
 // % \[
-// % \forall i \in [0, 783] : \hat{x}_i - \varepsilon <=q x_i <=q \hat{x}_i + \varepsilon
+// % \forall i in [0, 783] : \hat{x}_i - \varepsilon <=q x_i <=q \hat{x}_i + \varepsilon
 // % \]
 // % \[
-// % \forall j \in [0,8] : y_j - y_9 <=q 0
+// % \forall j in [0,8] : y_j - y_9 <=q 0
 // % \]
 
 
@@ -1795,12 +1795,12 @@ $
 // \begin{solution}
 // Robustness:
 // \[
-// \forall w, w', d, \quad |w-w'|<=q 1 \implies f(w,d) = f(w',d)
+// \forall w, w', d, quad |w-w'|<=q 1 \implies f(w,d) = f(w',d)
 // \]
 
 // Safety:
 // \[
-// \forall w, d, \quad d < 5 \implies f(w,d) <=q 2
+// \forall w, d, quad d < 5 \implies f(w,d) <=q 2
 // \]
 // \end{solution}
 // \end{problem}
@@ -1814,7 +1814,7 @@ $
 
 // \begin{solution}
 // \[
-// \forall t_C, \quad f(Q2, t_C \times 1.8 + 32) = 1.8 \cdot f(Q1,t_C) + 32
+// \forall t_C, quad f(Q2, t_C \times 1.8 + 32) = 1.8 \cdot f(Q1,t_C) + 32
 // \]
 // \end{solution}
 // \end{problem}
@@ -1845,7 +1845,7 @@ $
 
 // % \begin{solution}
 // % \[
-// % \forall t, \quad (HR_t > 180 \land HR_{t+1} > 180 \land HR_{t+2} > 180) \implies f(HR_{t+3}) = 1
+// % \forall t, quad (HR_t > 180 \land HR_{t+1} > 180 \land HR_{t+2} > 180) \implies f(HR_{t+3}) = 1
 // % \]
 // % \end{solution}
 // % \end{problem}
@@ -1857,7 +1857,7 @@ $
 
 // % \begin{solution}
 // % \[
-// % \forall x', \quad \|x - x'\| <=q \epsilon \implies f(x') = f(x)
+// % \forall x', quad \|x - x'\| <=q \epsilon \implies f(x') = f(x)
 // % \]
 // % \end{solution}
 // % \end{problem}
@@ -1897,7 +1897,7 @@ $
 // % s <=q s' \land p = p' \land g \neq g' \implies f(p,s,g) <=q f(p,s',g')
 // % \]
 // % \[
-// % f(p,s,\text{male}) = f(p,s,\text{female}) \quad \forall p,s
+// % f(p,s,\text{male}) = f(p,s,\text{female}) quad \forall p,s
 // % \]
 // % \end{solution}
 // % \end{problem}
@@ -1910,12 +1910,12 @@ $
 // \begin{solution}
 // Safety requirement:
 // \[
-// \forall d, a, \quad d < 10 \implies a <=q 0
+// \forall d, a, quad d < 10 \implies a <=q 0
 // \]
 
 // Counterexample:
 // \[
-// d=5, \quad f(d)=a=+2 \quad \text{violates property.}
+// d=5, quad f(d)=a=+2 quad \text{violates property.}
 // \]
 // \end{solution}
 // \end{problem}
@@ -2218,7 +2218,7 @@ Consider the neural network in @fig:mydnntwo. Do the following:
 
 // \begin{solution}
 // \begin{enumerate}
-//     \item The formula $\alpha$ representing the network in~\autoref{fig:mydnntwo} is:
+//     \item The formula $alpha$ representing the network in~\autoref{fig:mydnntwo} is:
 //     \begin{align*}
 //     & x_3 = \max(-0.7x_1 + 0.3x_2 + 0.8, 0) ~\land \\
 //     & x_4 = \max(1.2x_1 - 0.5x_2 - 2.0, 0) ~\land \\
@@ -2226,13 +2226,13 @@ Consider the neural network in @fig:mydnntwo. Do the following:
 //     & x_6 = -1.8x_3 + 0.7x_4 - 0.3
 //     \end{align*}
 
-//     \item The property $\phi$ that the output $x_5 >= x_6$ for any inputs $x_1 \in [-1,1], x_2\in[-1,1]$ is:
+//     \item The property $phi$ that the output $x_5 >= x_6$ for any inputs $x_1 in [-1,1], x_2 in [-1,1]$ is:
 //     \begin{align*}
-//     \phi_{in} &= (-1 <= x_1 <= 1) \land (-1 <= x_2 <= 1) \\
-//     \phi_{out} &= (x_5 >= x_6)
+//     phi_"in" &= (-1 <= x_1 <= 1) \land (-1 <= x_2 <= 1) \\
+//     phi_"out" &= (x_5 >= x_6)
 //     \end{align*}
 
-//     \item The satisfiability formula $\alpha \land \phi_{in} \land \neg \phi_{out}$ (see~\autoref{eq:nnv2}) is:
+//     \item The satisfiability formula $alpha \land phi_"in" \land not phi_"out"$ (see~\autoref{eq:nnv2}) is:
 //     \begin{align*}
 //     & x_3 = \max(-0.7x_1 + 0.3x_2 + 0.8, 0) ~\land \\
 //     & x_4 = \max(1.2x_1 - 0.5x_2 - 2.0, 0) ~\land \\
@@ -2346,7 +2346,7 @@ $ <eq:se-dnn>
 
 
 === SMT Solving <sec:smt>
-After obtaining the symbolic representation of the network, we can use an SMT solver @barrett2010smt to check the satisfiability of the formula $alpha and phi_("in") and not phi_("out")$ as shown in @eq:nnv2, where $alpha$ is the symbolic representation of the network, $phi_{in}$ is the precondition on the inputs, and $phi_("out")$ is the postcondition on the outputs. 
+After obtaining the symbolic representation of the network, we can use an SMT solver @barrett2010smt to check the satisfiability of the formula $alpha and phi_("in") and not phi_("out")$ as shown in @eq:nnv2, where $alpha$ is the symbolic representation of the network, $phi_"in"$ is the precondition on the inputs, and $phi_("out")$ is the postcondition on the outputs. 
 
 The solver checks if there exists an assignment to the symbolic inputs that satisfies the formula. If such an assignment exists, it means that the property is violated, and we can extract a counterexample from the satisfying assignment. Otherwise, if no such assignment exists, the property is valid.
 
@@ -2466,7 +2466,7 @@ caption: [A simple network (similar to @fig:dnn.]
 )<fig:dnn-c>
 
 Consider neuron $x_3$ in the network in @fig:dnn-c.
-We have $x_3 = -0.5x_1 + 0.5x_2 + 1.0$ as the pre-activation value of $x_3$. The upper $u_3$ and lower $l_3$ bounds on $x_3$ over the input region $x_1 \in [-1,1]$ and $x_2 in [-2,2]$ are:
+We have $x_3 = -0.5x_1 + 0.5x_2 + 1.0$ as the pre-activation value of $x_3$. The upper $u_3$ and lower $l_3$ bounds on $x_3$ over the input region $x_1 in [-1,1]$ and $x_2 in [-2,2]$ are:
 $
     z_3 &= -0.5x_1 + 0.5x_2 + 1.0 \
     l_3 &= -0.5(1) + 0.5(-2) + 1.0 = -0.5 \
@@ -2514,27 +2514,27 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 
 
 
-// \begin{example}[Full example]\label{ex:milp-dnn}
+#example[Full example][ 
 
-//     We use MILP to formulate and check if the network in~\autoref{fig:dnn-c} satisfies the property $x_5 > 0$ for any inputs $x_1 \in [-1,1], x_2\in[-2,2]$. We do this by checking the feasibility of the MILP constraints encoding $\alpha \land \phi_{in} \land \neg \phi_{out}$, where $\alpha$ is the MILP encoding of the network, $\phi_{in}$ is the precondition on the inputs, and $\phi_{out}$ is the postcondition on the outputs.  We do this in several steps:
+
+We use MILP to formulate and check if the network in @fig:dnn-c satisfies the property $x_5 > 0$ for any inputs $x_1 in [-1,1], x_2 in [-2,2]$. We do this by checking the feasibility of the MILP constraints encoding $alpha and phi_"in" and not phi_"out"$, where $alpha$ is the MILP encoding of the network, $phi_"in"$ is the precondition on the inputs, and $phi_"out"$ is the postcondition on the outputs.  We do this in several steps:
 
 
 // \begin{enumerate}
-// \item Encoding precondition $\phi_{in}$ representing input bounds and the postcondition $\neg \phi_{out}$ representing the negation of the postcondition:
-// \begin{align*}
-// \phi_{in} &: -1 <= x_1 <= 1;\quad -2 <= x_2 <= 2 \\
-// \neg \phi_{out} &: x_5 <= 0
-// \end{align*}
-
-// \item Encoding the hidden layer (pre- and post-activation):
++ Encoding precondition $phi_"in"$ representing input bounds and the postcondition $not phi_"out"$ representing the negation of the postcondition:
+  $
+  phi_"in" &: -1 <= x_1 <= 1;quad -2 <= x_2 <= 2 \
+  not phi_"out" &: x_5 <= 0
+  $
++ Encoding the hidden layer (pre- and post-activation):
 // \begin{align*}
 // z_3 &= -0.5x_1 + 0.5x_2 + 1.0 \\
 // z_4 &= 0.5x_1 - 0.5x_2 - 1.0 \\
-// \hat{z}_3 &>= z_3, \quad \hat{z}_3 >= 0 \\
-// \hat{z}_4 &>= z_4, \quad \hat{z}_4 >= 0 \\
-// a_3, a_4 &\in \{0, 1\} \\
-// \hat{z}_3 &<= a_3 \cdot u_3, \quad \hat{z}_3 <= z_3 - l_3(1 - a_3) \\
-// \hat{z}_4 &<= a_4 \cdot u_4, \quad \hat{z}_4 <= z_4 - l_4(1 - a_4)
+// \hat{z}_3 &>= z_3, quad \hat{z}_3 >= 0 \\
+// \hat{z}_4 &>= z_4, quad \hat{z}_4 >= 0 \\
+// a_3, a_4 &in \{0, 1\} \\
+// \hat{z}_3 &<= a_3 \cdot u_3, quad \hat{z}_3 <= z_3 - l_3(1 - a_3) \\
+// \hat{z}_4 &<= a_4 \cdot u_4, quad \hat{z}_4 <= z_4 - l_4(1 - a_4)
 // \end{align*}
 
 // Output layer:
@@ -2543,48 +2543,48 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 // \end{align*}
 
 
-// \item Computing upper and lower bounds over given input ranges. Here, with $x_1 \in [-1,1]$ and $x_2 \in [-2,2]$, we have:
++ Computing upper and lower bounds over given input ranges. Here, with $x_1 in [-1,1]$ and $x_2 in [-2,2]$, we have:
 // \begin{align*}
-// z_3 &\in [-0.5 \cdot 1 + 0.5 \cdot (-2) + 1, -0.5 \cdot (-1) + 0.5 \cdot 2 + 1] = [-0.5, 2.5] \\
-// z_4 &\in [0.5 \cdot (-1) - 0.5 \cdot 2 - 1, 0.5 \cdot 1 - 0.5 \cdot (-2) - 1] = [-2.5, 0.5]
+// z_3 &in [-0.5 \cdot 1 + 0.5 \cdot (-2) + 1, -0.5 \cdot (-1) + 0.5 \cdot 2 + 1] = [-0.5, 2.5] \\
+// z_4 &in [0.5 \cdot (-1) - 0.5 \cdot 2 - 1, 0.5 \cdot 1 - 0.5 \cdot (-2) - 1] = [-2.5, 0.5]
 // \end{align*}
 
 // So we set $l_3 = -0.5, u_3 = 2.5$, and $l_4 = -2.5, u_4 = 0.5$.
 
-// \item \textbf{Substituting bounds into the constraints:}
++ *Substituting bounds into the constraints:*
 // \begin{align*}
-// \hat{z}_3 &<= a_3 \cdot 2.5, \quad \hat{z}_3 <= z_3 - (-0.5)(1 - a_3) = z_3 + 0.5(1 - a_3) \\
-// \hat{z}_4 &<= a_4 \cdot 0.5, \quad \hat{z}_4 <= z_4 - (-2.5)(1 - a_4) = z_4 + 2.5(1 - a_4)
+// \hat{z}_3 &<= a_3 \cdot 2.5, quad \hat{z}_3 <= z_3 - (-0.5)(1 - a_3) = z_3 + 0.5(1 - a_3) \\
+// \hat{z}_4 &<= a_4 \cdot 0.5, quad \hat{z}_4 <= z_4 - (-2.5)(1 - a_4) = z_4 + 2.5(1 - a_4)
 // \end{align*}
-
-// \item \textbf{The final MILP encoding:}
++ *The final MILP encoding:*
 // \begin{align*}
-// & -1 <= x_1 <= 1; \quad -2 <= x_2 <= 2; \\
+// & -1 <= x_1 <= 1; quad -2 <= x_2 <= 2; \\
 // & z_3 = -0.5x_1 + 0.5x_2 + 1.0; \\
 // & z_4 = 0.5x_1 - 0.5x_2 - 1.0; \\
-// & \hat{z}_3 >= z_3, \quad \hat{z}_3 >= 0; \\
-// & \hat{z}_4 >= z_4, \quad \hat{z}_4 >= 0; \\
-// & a_3, a_4 \in \{0, 1\}; \\
-// & \hat{z}_3 <= a_3 \cdot 2.5, \quad \hat{z}_3 <= z_3 + 0.5(1 - a_3); \\
-// & \hat{z}_4 <= a_4 \cdot 0.5, \quad \hat{z}_4 <= z_4 + 2.5(1 - a_4); \\
+// & \hat{z}_3 >= z_3, quad \hat{z}_3 >= 0; \\
+// & \hat{z}_4 >= z_4, quad \hat{z}_4 >= 0; \\
+// & a_3, a_4 in \{0, 1\}; \\
+// & \hat{z}_3 <= a_3 \cdot 2.5, quad \hat{z}_3 <= z_3 + 0.5(1 - a_3); \\
+// & \hat{z}_4 <= a_4 \cdot 0.5, quad \hat{z}_4 <= z_4 + 2.5(1 - a_4); \\
 // & x_5 = -\hat{z}_3 + \hat{z}_4 - 1.0; \\
 // & x_5 <= 0; \\
-// & \text{where } z_3 \in [-0.5, 2.5], z_4 \in [-2.5, 0.5], \hat{z}_3 \in [0, 2.5], \hat{z}_4 \in [0, 0.5].
+// & \text{where } z_3 in [-0.5, 2.5], z_4 in [-2.5, 0.5], \hat{z}_3 in [0, 2.5], \hat{z}_4 in [0, 0.5].
 // \end{align*}
 
-// %\tvn{Do we need to specify the ranges (e.g., $z_3 \in [-0.5, 2.5]$) at the end or they are redundant?}
+// %\tvn{Do we need to specify the ranges (e.g., $z_3 in [-0.5, 2.5]$) at the end or they are redundant?}
 
-// \item \textbf{Solving} From the MILP formulation, the MILP solver attempts to find a feasible (\autoref{sec:lp-feasibility}) or satisfying assignment representing a counterexample violating the property.  In this example, it might find $x_1 = -1, x_2 = 2$, which leads to:
++ *Solving* From the MILP formulation, the MILP solver attempts to find a feasible (\autoref{sec:lp-feasibility}) or satisfying assignment representing a counterexample violating the property.  In this example, it might find $x_1 = -1, x_2 = 2$, which leads to:
 // \begin{align*}
 // z_3 &= -0.5(-1) + 0.5(2) + 1.0 = 2.5 \\
 // z_4 &= 0.5(-1) - 0.5(2) - 1.0 = -2.5 \\
-// a_3 &= 1, \hat{z}_3 = 2.5 \quad \text{(neuron active)} \\
-// a_4 &= 0, \hat{z}_4 = 0 \quad \text{(neuron inactive)} \\
+// a_3 &= 1, \hat{z}_3 = 2.5 quad \text{(neuron active)} \\
+// a_4 &= 0, \hat{z}_4 = 0 quad \text{(neuron inactive)} \\
 // x_5 &= -2.5 + 0 - 1.0 = -3.5
 // \end{align*}
 // Since $x_5 = -3.5 <= 0$, this assignment satisfies our search for $x_5 <= 0$ and  thus is a counterexample.
 // \end{enumerate}
 // \end{example}
+]<ex:milp-dnn>
 
 
 // \begin{problem <prob:milp-dnn}
@@ -2594,13 +2594,13 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 // \caption{\label{fig:dnn-d}A simple network (similar to~\autoref{fig:mydnntwo}).}
 // \end{figure}
 
-// Use MILP encoding and solving to check if the network in~\autoref{fig:dnn-d} satisfies the property $\phi$ that the output $x_5 >= x_6$ for any inputs $x_1 \in [-1,1], x_2\in[-1,1]$. Specificaly, do the following steps:
+// Use MILP encoding and solving to check if the network in~\autoref{fig:dnn-d} satisfies the property $phi$ that the output $x_5 >= x_6$ for any inputs $x_1 in [-1,1], x_2 in [-1,1]$. Specificaly, do the following steps:
 // \begin{enumerate}
-//     \item Write down the precondition $\phi_{in}$ and postcondition $\phi_{out}$ representing the property $\phi$.
+//     \item Write down the precondition $phi_"in"$ and postcondition $phi_"out"$ representing the property $phi$.
 //     \item Write down the MILP encoding of the network.
 //     \item Compute the upper and lower bounds of the pre-activation values of the neurons in the hidden layer.
 //     \item Substitute the bounds into the MILP encoding.
-//     \item Write down the final MILP encoding of $\alpha \land \phi_{in} \land \neg{\phi_{out}}$.
+//     \item Write down the final MILP encoding of $alpha \land phi_"in" \land not{phi_"out"}$.
 //     \item Check the feasibility of the MILP encoding (e.g., using Z3) and report the result.
 // \end{enumerate}
 // \end{problem}
@@ -2614,7 +2614,7 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 // \end{problem}
 
 // % \tvn{So far we talk about bounds for pre-ReLU values, right? is that the same as post-ReLU?  In other words, when we talk about abstraction for ReLU, are we talking about these pre-ReLU bounds, which currently use intervals?  or the abstraction for ReLU refer to something else and not these pre-ReLU bounds?}
-// % \hd{no, we are referring to post-ReLU bounds. For example, a pre-ReLU interval is  $z_3 \in [-0.5, 2.5]$ --- indicating an unstable neuron, and we will abstraction to compute bounds for the post-ReLU e.g., $\hat{z}_3$.}\tvn{I am still confused, see example~\autoref{ex:relu_milp} .. I am computing the upper and lower bounds of $x_3$, not $\hat{x}_3$. The bounds of $\hat{x}_3$ is always $[0, u_3]$.}
+// % \hd{no, we are referring to post-ReLU bounds. For example, a pre-ReLU interval is  $z_3 in [-0.5, 2.5]$ --- indicating an unstable neuron, and we will abstraction to compute bounds for the post-ReLU e.g., $\hat{z}_3$.}\tvn{I am still confused, see example~\autoref{ex:relu_milp} .. I am computing the upper and lower bounds of $x_3$, not $\hat{x}_3$. The bounds of $\hat{x}_3$ is always $[0, u_3]$.}
 
 // \subsection{Limitations <sec:milp-limitations}
 
@@ -2675,7 +2675,7 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 
 // %We want to compute the bounds to be as tight as possible, i.e., they should be the largest lower and lowest upper values that $\hat{z}$ can take given the bounds on $z$. This computation is called \emph{abstraction} and is crucial for DNN verification, as it allows us to reason about the behavior of the network without having to enumerate all possible values of the neurons. There are several abstraction techniques that can be used to compute these bounds, each with its own trade-offs in terms of precision and computational complexity.
 
-// \newcommand{\intervalabstraction}[1]{
+// \newcommand{ in tervalabstraction}[1]{
 //     \begin{tikzpicture}[scale=#1]
 //         % Colors
 //         \def\lx{-1.0}
@@ -2752,7 +2752,7 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 //     % First row
 //     \begin{subfigure}{0.3\linewidth}
 //         \centering
-//         \intervalabstraction{1.5}
+//          in tervalabstraction{1.5}
 //         \caption{Interval}
 //         \label{fig:relu-interval-abstraction}
 //     \end{subfigure}
@@ -2771,7 +2771,7 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 //         \caption{Polytope (lower flat)}
 //         \label{fig:relu-polytope-abstraction}
 //     \end{subfigure}
-//     \caption{Abstractions of $\myrelu(x) = \max(0,x)$ over $x \in [l_x, u_x]$ using (a) interval, (b) zonotope, (c) polytope abstractions.}
+//     \caption{Abstractions of $\myrelu(x) = \max(0,x)$ over $x in [l_x, u_x]$ using (a) interval, (b) zonotope, (c) polytope abstractions.}
 //     \label{fig:relu-all-abstractions}
 // \end{figure}
 
@@ -2779,7 +2779,7 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 // We use ReLU to illustrate different abstractions.
 // Our goal is to approximate the bounds of the post-ReLU value of a neuron given the bounds of its pre-ReLU value. For example, for a ReLU neuron $y = \max(0, x)$, we want to compute the bounds $[l_y(x), u_y(x)]$ of $y$ given the bounds $[l_x, u_x]$ of $x$.
 
-// \autoref{fig:relu-all-abstractions} illustrates common abstractions (or \emph{over-approximations}) for the ReLU function $y = \max(0, x)$, where $x \in [l_x, u_x]$ and $y \in [l_y(x), u_y(x)]$. The values of ReLU are shown as points on the \colorbox{myred}{red line}, which is non-convex and consists of two linear segments: one for $x < 0$ (where $y = 0$) and another for $x >= 0$ (where $y = x$).
+// \autoref{fig:relu-all-abstractions} illustrates common abstractions (or \emph{over-approximations}) for the ReLU function $y = \max(0, x)$, where $x in [l_x, u_x]$ and $y in [l_y(x), u_y(x)]$. The values of ReLU are shown as points on the \colorbox{myred}{red line}, which is non-convex and consists of two linear segments: one for $x < 0$ (where $y = 0$) and another for $x >= 0$ (where $y = x$).
 // To compute the bounds $l_y(x)$ and $u_y(x)$, we can use different abstractions:
 
 // \begin{itemize}
@@ -2787,7 +2787,7 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 
 //     In~\autoref{fig:relu-interval-abstraction}, the \colorbox{yellowfill}{yellow rectangle} (box) represents the interval abstraction in the 2D space of $(x, y)$. As can be seen, this box is too large of an over-approximation (too coarse or loose), as it includes many points that are not achievable by ReLU, e.g., the point $(0.5, 0.0)$ is not on the red line.
 
-//     \item \textbf{Zonotope Abstraction:} Zonotopes, commonly represented using center and generators, can capture linear relationships between variables more effectively. %We can represent ReLU as a zonotope that includes the linear segments.  The lower bound $l_y(x)$ is $y = \lambda x$ and the upper bound $u_y(x)$ is $y = \lambda x + u_x(1 - \lambda)$ for some slope $\lambda \in [0, \frac{u_x}{u_x - l_x}]$. If we set $\lambda = 0$, the zonotope is a rectangle, which is the same as the interval abstraction. If we set $\lambda = \frac{u_x}{u_x - l_x}$, the zonotope's is upper bound is the same as polytope's upper bound in~\autoref{fig:relu-polytope-abstraction}.
+//     \item \textbf{Zonotope Abstraction:} Zonotopes, commonly represented using center and generators, can capture linear relationships between variables more effectively. %We can represent ReLU as a zonotope that includes the linear segments.  The lower bound $l_y(x)$ is $y = \lambda x$ and the upper bound $u_y(x)$ is $y = \lambda x + u_x(1 - \lambda)$ for some slope $\lambda in [0, \frac{u_x}{u_x - l_x}]$. If we set $\lambda = 0$, the zonotope is a rectangle, which is the same as the interval abstraction. If we set $\lambda = \frac{u_x}{u_x - l_x}$, the zonotope's is upper bound is the same as polytope's upper bound in~\autoref{fig:relu-polytope-abstraction}.
 //     In~\autoref{fig:relu-zonotope-abstraction}, the \colorbox{yellowfill}{a parallelogram}---a zonotope in 2D---is arguably tighter than the interval in~\autoref{fig:relu-interval-abstraction}.  It captures the linear relationship between $x$ and $y$ and excludes points that are not achievable by ReLU, e.g., the point $(0.5, 0.0)$ that was included in the interval abstraction is not included in the zonotope. However, it still includes non-ReLU points and is also not strictly better than interval, e.g., the point $(0.5, -0.5)$ is included in the zonotope but not in the interval abstraction (or ReLU).
 
 //     %too technical here
@@ -2832,7 +2832,7 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 // %         % Origin
 // %         \node[below right] at (0,0) {$0$};
 // %     \end{tikzpicture}
-// %     \caption{Interval abstraction for ReLU: $y = \max(0, x)$, with $x \in [l_x, u_x]$ and $y \in [l_y(x), u_y(x)]$.}
+// %     \caption{Interval abstraction for ReLU: $y = \max(0, x)$, with $x in [l_x, u_x]$ and $y in [l_y(x), u_y(x)]$.}
 // %     \label{fig:relu-interval-abstraction}
 // % \end{figure}
 
@@ -2909,7 +2909,7 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 // %         \end{tikzpicture}
 // %     \end{subfigure}
 
-// %     \caption{Zonotope abstraction for ReLU: $y = \max(0,x)$, with $x \in [l_x, u_x]$ and $y \in [l_y(x), u_y(x)]$.}
+// %     \caption{Zonotope abstraction for ReLU: $y = \max(0,x)$, with $x in [l_x, u_x]$ and $y in [l_y(x), u_y(x)]$.}
 // %     \label{fig:relu-zonotope-abstraction2}
 // % \end{figure}
 
@@ -2996,7 +2996,7 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 // %         \end{tikzpicture}
 // %     \end{subfigure}
 
-// %     \caption{Polytop abstraction for ReLU: $y = \max(0,x)$, with $x \in [l_x, u_x]$ and $y \in [l_y(x), u_y(x)]$.}
+// %     \caption{Polytop abstraction for ReLU: $y = \max(0,x)$, with $x in [l_x, u_x]$ and $y in [l_y(x), u_y(x)]$.}
 // %     \label{fig:relu-polytope-abstraction2}
 // % \end{figure}
 
@@ -3069,7 +3069,7 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 // \begin{example <ex:interval-zonotope}
 //   An interval for a single variable is simply a line segment defined by its \emph{two} endpoints (corners)---the lower and upper bounds. Equivalently, it can be represented using a zonotope with a center point and a single generator vector that points in both directions (left and right) from the center:
 //   \[
-//     [l, u] = \{ c + \epsilon g \mid \epsilon \in [-1, 1] \}
+//     [l, u] = \{ c + \epsilon g \mid \epsilon in [-1, 1] \}
 //   \]
 //     where \(c = \frac{l + u}{2}\) is the center, \(g = \frac{u - l}{2}\) is the generator, and \(\epsilon\) controls how far we move along the generator.
 // \end{example}
@@ -3078,7 +3078,7 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 
 //     Consider the interval:
 //     \[
-//     x \in [-2, 3].
+//     x in [-2, 3].
 //     \]
 //     We can express this interval using a single generator as shown in~\autoref{fig:interval-zonotope}.
 
@@ -3103,35 +3103,35 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 
 //     % epsilon arrows
 //     \draw[<->, orange!80!black, thick] (-2,0.25) -- (3,0.25);
-//     \node[orange!70!black] at (0.5,0.7) {\small $\epsilon \in [-1,1]$ moves along $g=2.5$};
+//     \node[orange!70!black] at (0.5,0.7) {\small $\epsilon in [-1,1]$ moves along $g=2.5$};
 
 //     \end{tikzpicture}
-//     \caption{An interval $[-2,3]$ is a 1D zonotope with center $c=0.5$, generator $g=2.5$, and parameter $\epsilon\in[-1,1]$. Varying $\epsilon$ covers the entire interval.}
+//     \caption{An interval $[-2,3]$ is a 1D zonotope with center $c=0.5$, generator $g=2.5$, and parameter $\epsilon in [-1,1]$. Varying $\epsilon$ covers the entire interval.}
 //     \label{fig:interval-zonotope}
 //     \end{figure}
 
 
 //     \begin{equation}
 //     \begin{aligned}
-//     c = \frac{-2 + 3}{2} = 0.5, & \quad\text{the midpoint of the interval}\\
-//     \quad g = \frac{3 - (-2)}{2} = 2.5, &  \quad\text{the half-width (distance from the center to each end)}\\
-//     \epsilon \in [-1, 1], & \quad\text{acts as a knob to move along the generator}
+//     c = \frac{-2 + 3}{2} = 0.5, & quad\text{the midpoint of the interval}\\
+//     quad g = \frac{3 - (-2)}{2} = 2.5, &  quad\text{the half-width (distance from the center to each end)}\\
+//     \epsilon in [-1, 1], & quad\text{acts as a knob to move along the generator}
 //     \end{aligned}
 //     \end{equation}
 
 //     Thus, any point \(x\) in this interval can be written as:
 //     \[
 //     x = c + \epsilon g \text{ or } x = 0.5 + \epsilon \cdot 2.5,
-//     \quad \text{where} \quad \epsilon \in [-1, 1].
+//     quad \text{where} quad \epsilon in [-1, 1].
 //     \]
 
 
 //     For example:
 //     \[
 //     \epsilon = -1 \Rightarrow x = -2,
-//     \quad
+//     quad
 //     \epsilon = 0 \Rightarrow x = 0.5,
-//     \quad
+//     quad
 //     \epsilon = +1 \Rightarrow x = 3.
 //     \]
 
@@ -3149,14 +3149,14 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 
 // \subsubsection{Abstraction Functions} In abstraction interpretation, we have the \emph{abstraction function}
 // \[
-// \alpha : D \to D^a,
+// alpha : D \to D^a,
 // \]
 // which maps a concrete value from the domain $D$ to an element in a finite or simpler abstract domain $D^a$.
 
 // \begin{example}[Odd/Even]
 //     The \texttt{odd/even} or parity abstraction is defined as:
 // \[
-// \alpha_{\texttt{parity}}(x \in \mathbb{Z}) =
+// alpha_{\texttt{parity}}(x in \mathbb{Z}) =
 // \begin{cases}
 // \texttt{even} & \text{if } x \bmod 2 = 0 \\
 // \texttt{odd}  & \text{if } x \bmod 2 = 1
@@ -3178,19 +3178,19 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 //  \begin{itemize}
 // \item \textbf{Odd/Even abstraction}:  $D^a = \{\texttt{odd}, \texttt{even}\}$. Then:
 // \[
-// f^a(\texttt{odd}) = \texttt{even}, \quad
+// f^a(\texttt{odd}) = \texttt{even}, quad
 // f^a(\texttt{even}) = \texttt{odd}
 // \]
 
 // \item \textbf{Sign abstraction}: $D^a = \{\texttt{neg}, \texttt{zero}, \texttt{pos}\}$. Then:
 // \[
-// f^a(\texttt{neg}) = \{\texttt{neg}, \texttt{zero}\}, \quad
-// f^a(\texttt{zero}) = \texttt{pos}, \quad
+// f^a(\texttt{neg}) = \{\texttt{neg}, \texttt{zero}\}, quad
+// f^a(\texttt{zero}) = \texttt{pos}, quad
 // f^a(\texttt{pos}) = \texttt{pos}
 // \]
 
 
-// \item \textbf{Interval abstraction}: $D^a = \{ [a, b] \mid a <=q b \in \mathbb{Z} \cup \{-\infty, +\infty\} \}$. Then:
+// \item \textbf{Interval abstraction}: $D^a = \{ [a, b] \mid a <=q b in \mathbb{Z} \cup \{- in fty, + in fty\} \}$. Then:
 // \[
 // f^a([a, b]) = [a+1, b+1]
 // \]
@@ -3214,13 +3214,13 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 // \paragraph{Definition}
 // The interval for one variable \(v\) is defined as:
 // \[
-// v \in [l, u] = \{v \in \mathbb{R} \mid l <= v <= u\}
+// v in [l, u] = \{v in \mathbb{R} \mid l <= v <= u\}
 // \]
 
 
 // For $n$ variables, the interval becomes a box (like a rectangle in 2D, a cupoid in 3D, or a hyperrectangle in $n$D):
 // \[
-// [v_1, v_2, \ldots, v_n] \in [l_1, u_1] \times [l_2, u_2] \times \cdots \times [l_n, u_n]
+// [v_1, v_2, \ldots, v_n] in [l_1, u_1] \times [l_2, u_2] \times \cdots \times [l_n, u_n]
 // \]
 
 
@@ -3244,7 +3244,7 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 // \caption{\label{fig:dnn-abs}A simple network (similar to~\autoref{fig:dnn}).}
 // \end{figure}
 
-// Consider the network in~\autoref{fig:dnn-abs} with inputs \(x_1 \in [1, 2]\) and \(x_2 \in [-1, 3]\). The affine function for the neuron \(x_3\) is:
+// Consider the network in~\autoref{fig:dnn-abs} with inputs \(x_1 in [1, 2]\) and \(x_2 in [-1, 3]\). The affine function for the neuron \(x_3\) is:
 // \[
 // f(x_1,x_2) = -0.5\,x_1 + 0.5\,x_2 + 1.0
 // \]
@@ -3367,7 +3367,7 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 // \end{example}
 
 // \begin{problem <prob:int-abs}
-//   Apply interval abstraction to the network in~\autoref{fig:dnn-abs} with inputs \(x_1 \in [1, 2]\) and \(x_2 \in [-1, 3]\). Compute the bounds for all neurons.  Clearly indicate the steps (e.g., results after affine and ReLU transformers).
+//   Apply interval abstraction to the network in~\autoref{fig:dnn-abs} with inputs \(x_1 in [1, 2]\) and \(x_2 in [-1, 3]\). Compute the bounds for all neurons.  Clearly indicate the steps (e.g., results after affine and ReLU transformers).
 // \end{problem}
 
 // \subsubsection{Efficiency and Precision}
@@ -3376,17 +3376,17 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 
 // \begin{example <ex:interval-overapproximation}
 
-// Suppose we have $v_1 \in [0, 1]$, $v_2 = -v_1$, and $z = v_1 + v_2$.
-// The concrete value of $z$ would be always 0, but interval abstraction gives $z \in [-1, 1]$, which is a very loose over-approximation.
+// Suppose we have $v_1 in [0, 1]$, $v_2 = -v_1$, and $z = v_1 + v_2$.
+// The concrete value of $z$ would be always 0, but interval abstraction gives $z in [-1, 1]$, which is a very loose over-approximation.
 // Moreover, if we apply ReLU, then the output would be $\myrelu(z) = \myrelu(0) = 0$, but the interval gives $\myrelu^a([-1, 1]) = [0, 1]$, which is again a loose over-approximation.
 // \end{example}
 
-// Interval overapproximation grows quickly as we propagate through many layers of a large network, i.e., it keeps ``inflating'' the bounds, leading to a loose approximation of the output and becoming unable to verify valid properties.  For example, $z <=q 0$ is a valid property for~\autoref{ex:interval-overapproximation}, but the interval abstractions gives $z \in [0,1]$, which is not tight (precise) enough to show this property.
+// Interval overapproximation grows quickly as we propagate through many layers of a large network, i.e., it keeps ``inflating'' the bounds, leading to a loose approximation of the output and becoming unable to verify valid properties.  For example, $z <=q 0$ is a valid property for~\autoref{ex:interval-overapproximation}, but the interval abstractions gives $z in [0,1]$, which is not tight (precise) enough to show this property.
 
-// Nonetheless, interval domain remains popular due to its simplicity and efficiency. In some cases, despite being imprecise, it can still successfully verify properties of neural networks, e.g., for~\autoref{ex:interval-overapproximation} if we want to verify that $z <= 2$, then the interval $z\in [0, 1]$ would suffice.
+// Nonetheless, interval domain remains popular due to its simplicity and efficiency. In some cases, despite being imprecise, it can still successfully verify properties of neural networks, e.g., for~\autoref{ex:interval-overapproximation} if we want to verify that $z <= 2$, then the interval $zin [0, 1]$ would suffice.
 
 // \begin{problem <prob:correct-abs}
-//     Suppose $y$ can take values from 0 to 3. Student A computes an interval abstraction $y \in [-2,4]$, while student B computes $y \in [1,2]$.
+//     Suppose $y$ can take values from 0 to 3. Student A computes an interval abstraction $y in [-2,4]$, while student B computes $y in [1,2]$.
 //     \begin{enumerate}
 //         \item Which student's abstraction is correct?  If both are correct, which is more precise? Explain your answer.
 //         \item Using the correct abstraction (if both are correct, use the more precise one), can we use it verify the property $y <=q 3$? How about $y <= 5$? Explain your answers.
@@ -3397,7 +3397,7 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 == Zonotope <sec:zonotope-abstraction>
 
 
-// Interval abstraction (\autoref{sec:interval-abstraction}) treats each variable independently. For example, if \(x_1 \in [1,2]\) and \(x_2 \in [3,4]\), interval assumes any combination of \(x_1\) and \(x_2\) is possible. But variables can correlate: e.g., when \(x_1\) increases, \(x_2\) also increases\tvn{but this doesn't happens in neural networks, so why do we need zonotope? does it help with ReLU abstraction?}.  Zonotopes can capture such correlations and therefore  provide a tighter abstraction.
+// Interval abstraction (\autoref{sec:interval-abstraction}) treats each variable independently. For example, if \(x_1 in [1,2]\) and \(x_2 in [3,4]\), interval assumes any combination of \(x_1\) and \(x_2\) is possible. But variables can correlate: e.g., when \(x_1\) increases, \(x_2\) also increases\tvn{but this doesn't happens in neural networks, so why do we need zonotope? does it help with ReLU abstraction?}.  Zonotopes can capture such correlations and therefore  provide a tighter abstraction.
 
 
 
@@ -3410,14 +3410,14 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 
 // Formally, a \textbf{zonotope} \(\mathcal{Z}\) in \(\mathbb{R}^n\) is defined as:
 // \[
-// % \mathcal{Z} = <=ft\{ c + \sum_{i=1}^{m} \epsilon_i g_i \mid \epsilon_i \in [-1, 1] \right\}
-// \mathcal{Z} = <=ft\{ c + \sum_{i=1}^{n} \epsilon_i g_i \mid \epsilon_i \in [-1, 1] \right\}
+// % \mathcal{Z} = <=ft\{ c + \sum_{i=1}^{m} \epsilon_i g_i \mid \epsilon_i in [-1, 1] \right\}
+// \mathcal{Z} = <=ft\{ c + \sum_{i=1}^{n} \epsilon_i g_i \mid \epsilon_i in [-1, 1] \right\}
 // \]
 // where:
 // \begin{itemize}
-// \item \(c \in \mathbb{R}^n\) is the \textit{center} (analogous to the midpoint of an interval),
-// \item \(g_i \in \mathbb{R}^n\) are \textit{generator vectors} (directions of variability), and
-// \item \(\epsilon_i \in [-1,1]\) are independent coefficients that determine how much we move along each generator.
+// \item \(c in \mathbb{R}^n\) is the \textit{center} (analogous to the midpoint of an interval),
+// \item \(g_i in \mathbb{R}^n\) are \textit{generator vectors} (directions of variability), and
+// \item \(\epsilon_i in [-1,1]\) are independent coefficients that determine how much we move along each generator.
 // For example, \(\epsilon_i = -1\) moves in the negative direction, \(\epsilon_i = 0\) stays at the center, and \(\epsilon_i = +1\) moves in the positive direction.
 // \end{itemize}
 
@@ -3457,7 +3457,7 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 // \begin{example}
 //     A common zonotope in 2D is a parallelogram. It can be defined by its center point and two generator vectors that define its sides. For instance, parallelogram on the right side of~\autoref{fig:zonotope-correlated-generators} has the center \(c = (1, 1)\) and the generators \(g_1 = (1, 0.25)\) and \(g_2 = (0.5, 1)\). This zonotope represents all points that can be reached by moving along these generators within the range \([-1, 1]\):
 //   \[
-//     \mathcal{Z} = <=ft\{ (1, 1) + \epsilon_1 (1, 0.25) + \epsilon_2 (0.5, 1) \mid \epsilon_1, \epsilon_2 \in [-1, 1] \right\}
+//     \mathcal{Z} = <=ft\{ (1, 1) + \epsilon_1 (1, 0.25) + \epsilon_2 (0.5, 1) \mid \epsilon_1, \epsilon_2 in [-1, 1] \right\}
 //   \]
 //   This zonotope includes points like:
 //     \[
@@ -3479,16 +3479,16 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 
 // For each coordinate (dimension) of the zonotope, we compute its lower and upper bounds as follows:
 // \[
-// % l_j = \min_{\epsilon_i \in [-1,1]} <=ft(c_j + \sum_{i=1}^{m} \epsilon_i g_{i,j}\right),
-// l_j = \min_{\epsilon_i \in [-1,1]} <=ft(c_j + \sum_{i=1}^{n} \epsilon_i g_{i,j}\right),
-// \quad
-// % u_j = \max_{\epsilon_i \in [-1,1]} <=ft(c_j + \sum_{i=1}^{m} \epsilon_i g_{i,j}\right),
-// u_j = \max_{\epsilon_i \in [-1,1]} <=ft(c_j + \sum_{i=1}^{n} \epsilon_i g_{i,j}\right),
+// % l_j = \min_{\epsilon_i in [-1,1]} <=ft(c_j + \sum_{i=1}^{m} \epsilon_i g_{i,j}\right),
+// l_j = \min_{\epsilon_i in [-1,1]} <=ft(c_j + \sum_{i=1}^{n} \epsilon_i g_{i,j}\right),
+// quad
+// % u_j = \max_{\epsilon_i in [-1,1]} <=ft(c_j + \sum_{i=1}^{m} \epsilon_i g_{i,j}\right),
+// u_j = \max_{\epsilon_i in [-1,1]} <=ft(c_j + \sum_{i=1}^{n} \epsilon_i g_{i,j}\right),
 // \]
 // where \(c_j\) is the \(j\)-th component of the center and \(g_{i,j}\) is the \(j\)-th component of the \(i\)-th generator.
 
 // \paragraph{A simpler way.}
-// Since each \(\epsilon_i \in [-1,1]\), each term \(\epsilon_i g_{i,j}\) can vary between \(-|g_{i,j}|\) and \(+|g_{i,j}|\).
+// Since each \(\epsilon_i in [-1,1]\), each term \(\epsilon_i g_{i,j}\) can vary between \(-|g_{i,j}|\) and \(+|g_{i,j}|\).
 // Hence:
 // \[
 // \boxed{
@@ -3501,7 +3501,7 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 
 // \paragraph{Example (1D).} Given the interval zonotope:
 // \[
-// x = 3 + \epsilon_1(2), \quad \epsilon_1 \in [-1,1],
+// x = 3 + \epsilon_1(2), quad \epsilon_1 in [-1,1],
 // \]
 // the bounds are computed as:
 // \[
@@ -3517,7 +3517,7 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 // \begin{bmatrix} 0.5 \\ 1.0 \end{bmatrix}
 // + \epsilon_2
 // \begin{bmatrix} -0.3 \\ 0.2 \end{bmatrix},
-// \quad \epsilon_1, \epsilon_2 \in [-1,1]
+// quad \epsilon_1, \epsilon_2 in [-1,1]
 // \right\}.
 // \]
 // Then for each coordinate:
@@ -3624,8 +3624,8 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 
 // More formally, given a zonotope
 // \[
-// % \mathcal{Z} = <=ft\{ c + \sum_{j=1}^{m} \epsilon_j g_j \mid \epsilon_j \in [-1, 1] \right\},
-// \mathcal{Z} = <=ft\{ c + \sum_{j=1}^{m} \epsilon_j g_j \mid \epsilon_j \in [-1, 1] \right\},
+// % \mathcal{Z} = <=ft\{ c + \sum_{j=1}^{m} \epsilon_j g_j \mid \epsilon_j in [-1, 1] \right\},
+// \mathcal{Z} = <=ft\{ c + \sum_{j=1}^{m} \epsilon_j g_j \mid \epsilon_j in [-1, 1] \right\},
 // \]
 
 // % For simplicity, we use notation $v = c + \sum_{j=1}^{m} \epsilon_j g_j$ to represent a zonotope.
@@ -3642,8 +3642,8 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 
 // % \(f^a\) 
 // % \[
-// % % f^a(\mathcal{Z}) = <=ft\{ f(c) + \sum_{j=1}^{m} \epsilon_j f(g_j) \mid \epsilon_j \in [-1, 1] \right\}
-// % f^a(\mathcal{Z}) = <=ft\{ f(c) + \sum_{j=1}^{n} \epsilon_j f(g_j) \mid \epsilon_j \in [-1, 1] \right\}
+// % % f^a(\mathcal{Z}) = <=ft\{ f(c) + \sum_{j=1}^{m} \epsilon_j f(g_j) \mid \epsilon_j in [-1, 1] \right\}
+// % f^a(\mathcal{Z}) = <=ft\{ f(c) + \sum_{j=1}^{n} \epsilon_j f(g_j) \mid \epsilon_j in [-1, 1] \right\}
 // % \]
 
 // That is, the new zonotope has:
@@ -3658,8 +3658,8 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 
 // % \(f^a\) 
 // \[
-// % f^a(\mathcal{Z}) = <=ft\{ f(c) + \sum_{j=1}^{m} \epsilon_j f(g_j) \mid \epsilon_j \in [-1, 1] \right\}
-// f^a(\mathcal{Z}) = <=ft\{ f^c(c) + \sum_{j=1}^{m} \epsilon_j f^g(g_j) \mid \epsilon_j \in [-1, 1] \right\}
+// % f^a(\mathcal{Z}) = <=ft\{ f(c) + \sum_{j=1}^{m} \epsilon_j f(g_j) \mid \epsilon_j in [-1, 1] \right\}
+// f^a(\mathcal{Z}) = <=ft\{ f^c(c) + \sum_{j=1}^{m} \epsilon_j f^g(g_j) \mid \epsilon_j in [-1, 1] \right\}
 // \]
 
 // % For the affine function \(f\) in~\autoref{sec:affine}
@@ -3676,31 +3676,31 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 // % Imagine a tilted box in space, then an affine transformation just stretches, rotates, and shifts it---the result is still a tilted box.
 
 // \begin{example <ex:zonotope_linear_example}
-// Consider the network in~\autoref{fig:dnn-abs} with inputs \(x_1 \in [1, 2]\) and \(x_2 \in [-1, 3]\).
+// Consider the network in~\autoref{fig:dnn-abs} with inputs \(x_1 in [1, 2]\) and \(x_2 in [-1, 3]\).
 // The affine function for neuron \(x_3\) is:
 // \[
 // f(x_1, x_2) = -0.5\,x_1 + 0.5\,x_2 + 1.0
 // \]
 // We want to compute the bounds for \(x_3\) using zonotope abstraction.
-// %\mathcal{Z} = <=ft\{ c + \sum_{i=1}^{m} \epsilon_i g_i \mid \epsilon_i \in [-1, 1] \right\}
+// %\mathcal{Z} = <=ft\{ c + \sum_{i=1}^{m} \epsilon_i g_i \mid \epsilon_i in [-1, 1] \right\}
 // \paragraph{Represent the input as a zonotope}
-// % We represent the input intervals \(x_1 \in [1, 2]\) and \(x_2 \in [-1, 3]\) as a zonotope $\{ c + \sum_{i=1}^{m} \epsilon_i g_i \mid \epsilon_i \in [-1,1] \}$.
-// We represent the input intervals \(x_1 \in [1, 2]\) and \(x_2 \in [-1, 3]\) as a zonotope $\{ c + \sum_{i=1}^{n} \epsilon_i g_i \mid \epsilon_i \in [-1,1] \}$.
+// % We represent the input intervals \(x_1 in [1, 2]\) and \(x_2 in [-1, 3]\) as a zonotope $\{ c + \sum_{i=1}^{m} \epsilon_i g_i \mid \epsilon_i in [-1,1] \}$.
+// We represent the input intervals \(x_1 in [1, 2]\) and \(x_2 in [-1, 3]\) as a zonotope $\{ c + \sum_{i=1}^{n} \epsilon_i g_i \mid \epsilon_i in [-1,1] \}$.
 
 // The center $c_i$ represents the midpoint of each input interval:
 // \[
-// c_1 = \frac{1 + 2}{2} = 1.5, \quad c_2 = \frac{-1 + 3}{2} = 1.0,
+// c_1 = \frac{1 + 2}{2} = 1.5, quad c_2 = \frac{-1 + 3}{2} = 1.0,
 // \]
 // and the generator \(g_i\) captures the half-width of each interval:
 // \[
-// g_1 = \frac{2 - 1}{2} = 0.5, \quad g_2 = \frac{3 - (-1)}{2} = 2.0
+// g_1 = \frac{2 - 1}{2} = 0.5, quad g_2 = \frac{3 - (-1)}{2} = 2.0
 // \]
 
 
 // Thus, the input zonotope is
 // {\small
 // \[
-// \mathcal{Z} = \{(1.5, 1.0) + \epsilon_1(0.5, 0) + \epsilon_2(0, 2.0), \quad \epsilon_1, \epsilon_2 \in [-1,1]\}.
+// \mathcal{Z} = \{(1.5, 1.0) + \epsilon_1(0.5, 0) + \epsilon_2(0, 2.0), quad \epsilon_1, \epsilon_2 in [-1,1]\}.
 // \]
 // }
 
@@ -3726,7 +3726,7 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 // Hence, the output zonotope for \(x_3\) is
 // {\small
 // \[
-// \{0.75 + \epsilon_1(-0.25) + \epsilon_2(1.0), \quad \epsilon_1, \epsilon_2 \in [-1,1]\}.
+// \{0.75 + \epsilon_1(-0.25) + \epsilon_2(1.0), quad \epsilon_1, \epsilon_2 in [-1,1]\}.
 // \]
 // }
 // \paragraph{Compute output bounds} From the output zonotope, we can compute the lower and upperbounds for \(x_3\) by subtracting and adding the absolute values of the generator coefficients:
@@ -3748,7 +3748,7 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 // \end{example}
 
 // \begin{problem <prob:zonotope_linear_example_x4}
-//      Compute the bounds for \(x_4\) in~\autoref{fig:dnn-abs} using zonotope abstraction, with inputs \(x_1 \in [1, 2]\) and \(x_2 \in [-1, 3]\), and the affine function for \(x_4\) is:
+//      Compute the bounds for \(x_4\) in~\autoref{fig:dnn-abs} using zonotope abstraction, with inputs \(x_1 in [1, 2]\) and \(x_2 in [-1, 3]\), and the affine function for \(x_4\) is:
 // \[
 // f(x_1,x_2) = 0.5x_1 -0.5x_2 - 1
 // \]
@@ -3756,7 +3756,7 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 // \begin{solution}
 // \section*{Problem 5.2.3: Zonotope Abstraction for $x_4$}
 
-// Given inputs $x_1 \in [1, 2]$ and $x_2 \in [-1, 3]$, and the affine function:
+// Given inputs $x_1 in [1, 2]$ and $x_2 in [-1, 3]$, and the affine function:
 // \[
 // f(x_1, x_2) = 0.5x_1 - 0.5x_2 + 1
 // \]
@@ -3774,7 +3774,7 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 
 // Thus, the input zonotope is:
 // \[
-// Z = <=ft\{(1.5,\ 1.0) + \epsilon_1(0.5,\ 0) + \epsilon_2(0,\ 2.0) \;\middle|\; \epsilon_1, \epsilon_2 \in [-1, 1]\right\}
+// Z = <=ft\{(1.5,\ 1.0) + \epsilon_1(0.5,\ 0) + \epsilon_2(0,\ 2.0) \;\middle|\; \epsilon_1, \epsilon_2 in [-1, 1]\right\}
 // \]
 
 // \subsection*{Step 2: Apply the Affine Transformation}
@@ -3801,7 +3801,7 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 
 // Hence, the output zonotope for $x_4$ is:
 // \[
-// <=ft\{1.25 + \epsilon_1(0.25) + \epsilon_2(-1.0) \;\middle|\; \epsilon_1, \epsilon_2 \in [-1, 1]\right\}
+// <=ft\{1.25 + \epsilon_1(0.25) + \epsilon_2(-1.0) \;\middle|\; \epsilon_1, \epsilon_2 in [-1, 1]\right\}
 // \]
 // \subsection*{Step 3: Compute Output Bounds}
 
@@ -3840,12 +3840,12 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 // \end{itemize}
 
 // \paragraph{Building parallelogram}
-// % Given the input zonotope  $x = \{(c + \sum_{i=1}^m \epsilon_i g_i) \mid \epsilon_i \in [-1,1]\}$ with $x$ ranging over \([l, u]\) where \(l < 0 < u\) (i.e., the unstable case), we construct a parallelogram that bounds the ReLU function over this interval. We capture the parallelogram using two linear constraints representing its upper and lower edges as shown in~\autoref{fig:relu-parallelogram}.
-// Given the input zonotope  $x = \{(c + \sum_{i=1}^n \epsilon_i g_i) \mid \epsilon_i \in [-1,1]\}$ with $x$ ranging over \([l, u]\) where \(l < 0 < u\) (i.e., the unstable case), we construct a parallelogram that bounds  ReLU over this interval. We construct the parallelogram using two linear constraints representing its upper and lower edges as shown in~\autoref{fig:relu-parallelogram}.
+// % Given the input zonotope  $x = \{(c + \sum_{i=1}^m \epsilon_i g_i) \mid \epsilon_i in [-1,1]\}$ with $x$ ranging over \([l, u]\) where \(l < 0 < u\) (i.e., the unstable case), we construct a parallelogram that bounds the ReLU function over this interval. We capture the parallelogram using two linear constraints representing its upper and lower edges as shown in~\autoref{fig:relu-parallelogram}.
+// Given the input zonotope  $x = \{(c + \sum_{i=1}^n \epsilon_i g_i) \mid \epsilon_i in [-1,1]\}$ with $x$ ranging over \([l, u]\) where \(l < 0 < u\) (i.e., the unstable case), we construct a parallelogram that bounds  ReLU over this interval. We construct the parallelogram using two linear constraints representing its upper and lower edges as shown in~\autoref{fig:relu-parallelogram}.
 
 // \begin{figure}
 //     \centering
-//     \includegraphics[width=\linewidth]{zonotope_bounds.png}
+//      in cludegraphics[width=\linewidth]{zonotope_bounds.png}
 //     \caption{Lower and upper bounds computation for a zonotope input. <fig:relu-parallelogram}
 // \end{figure}
 
@@ -3857,22 +3857,22 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 
 // Merging these two constraints, we get the following equation describing all points \((x, y)\) within the parallelogram:
 // \begin{align*}
-//     \lambda x <=q \quad &y \quad <=q \lambda x - \lambda l \\
-//     <=ftrightarrow \quad &y = \lambda x - \alpha \lambda l, \quad \alpha \in [0, 1]
+//     \lambda x <=q quad &y quad <=q \lambda x - \lambda l \\
+//     <=ftrightarrow quad &y = \lambda x - alpha \lambda l, quad alpha in [0, 1]
 // \end{align*}
-// The parameter \(\alpha\) interpolates between the lower and upper bounds of the parallelogram.
-// When \(\alpha = 0\), we are on the lower bound \(y = \lambda x\); when \(\alpha = 1\), we are on the upper bound \(y = \lambda x - \lambda l\).
+// The parameter \(alpha\) interpolates between the lower and upper bounds of the parallelogram.
+// When \(alpha = 0\), we are on the lower bound \(y = \lambda x\); when \(alpha = 1\), we are on the upper bound \(y = \lambda x - \lambda l\).
 
-// Our zonotope requires $\epsilon_i \in [-1,1]$, thus we substitute:
+// Our zonotope requires $\epsilon_i in [-1,1]$, thus we substitute:
 // \[
-// \alpha = \frac{1 + \epsilon_{new}}{2}, \quad \epsilon_{new} \in [-1, 1]
+// alpha = \frac{1 + \epsilon_{new}}{2}, quad \epsilon_{new} in [-1, 1]
 // \]
 
-// For example, when \(\epsilon_{new} = -1\), we have \(\alpha = 0\) (lower bound); when \(\epsilon_{new} = 1\), we have \(\alpha = 1\) (upper bound).
+// For example, when \(\epsilon_{new} = -1\), we have \(alpha = 0\) (lower bound); when \(\epsilon_{new} = 1\), we have \(alpha = 1\) (upper bound).
 
 // The output zonotope after ReLU transformation is then:
 // \begin{align*}
-//     y  & = \lambda x - \alpha \lambda l \\
+//     y  & = \lambda x - alpha \lambda l \\
 //     &= \lambda x - \frac{1 + \epsilon_{new}}{2} \lambda l\\
 //       &= \lambda \underbrace{<=ft(c + \sum_{i=1}^m \epsilon_i g_i\right)}_{x} - \epsilon_{new} \frac{\lambda l }{2} - \frac{\lambda l }{2}  \\
 //       &= \underbrace{<=ft(\lambda c -  \frac{\lambda l }{2}\right)}_{\text{new center}} +  \underbrace{\sum_{i=1}^m \epsilon_i (\lambda g_i) - \epsilon_{new} \frac{\lambda l }{2}}_{\text{new generator}}
@@ -3884,7 +3884,7 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 // Continuing from~\autoref{ex:zonotope_linear_example}, applying ReLU to the zonotope output of \(x_3\)
 
 // \[
-// x_3 = 0.75 + \epsilon_1(-0.25) + \epsilon_2(1.0), \quad \epsilon_1, \epsilon_2 \in [-1,1].
+// x_3 = 0.75 + \epsilon_1(-0.25) + \epsilon_2(1.0), quad \epsilon_1, \epsilon_2 in [-1,1].
 // \]
 
 // \textbf{Determine the bounds of the input zonotope} As shown in~\autoref{ex:zonotope_linear_example}, the output zonotope (before ReLU) has bounds \([-0.5, 2.0]\).   So the input zonotope to ReLU has bounds \([-0.5, 2.0]\). Since \(l = -0.5 < 0 < 2.0 = u\), this is an unstable neuron requiring over-approximation.
@@ -3917,7 +3917,7 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 // \textbf{Result:} The output zonotope is
 
 // \[
-// 0.8 + \epsilon_1(-0.2) + \epsilon_2(0.8) + \epsilon_3(0.2), \quad \epsilon_i \in [-1,1].
+// 0.8 + \epsilon_1(-0.2) + \epsilon_2(0.8) + \epsilon_3(0.2), quad \epsilon_i in [-1,1].
 // \]
 // with concrete bounds:
 // %\((0.8, [-0.2, 0.8, 0.2])\) with concrete bounds:
@@ -3930,7 +3930,7 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 
 // \end{example}
 
-// \input{longtable_interval_zonotope_simple.tex}
+//  in put{longtable_interval_zonotope_simple.tex}
 
 
 
@@ -3944,25 +3944,25 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 // % Ax <=q b
 // % \]
 
-// % where \(A \in \mathbb{R}^{m \times n}\) and \(b \in \mathbb{R}^m\) for some \(m\), specifying \(m\) half-spaces whose intersection forms the polyhedron.
+// % where \(A in \mathbb{R}^{m \times n}\) and \(b in \mathbb{R}^m\) for some \(m\), specifying \(m\) half-spaces whose intersection forms the polyhedron.
 
 // % Using a set of convex polyhedra, we can more precisely approximate activation functions like ReLU. For instance, to approximate ReLU, we can describe the tightest convex over-approximation by the following constraints:
 
 // % \[
-// % x <=q y, \quad 0 <=q y, \quad y <=q \lambda x + \mu
+// % x <=q y, quad 0 <=q y, quad y <=q \lambda x + \mu
 // % \]
 
 // % where \(\lambda\) and \(\mu\) are parameters chosen based on the bounds of \(x\).
 
 // % \begin{figure}[h]
 // %     \centering
-// %     \includegraphics[width=0.5\linewidth]{figure/3-lines-polytope.png}
+// %      in cludegraphics[width=0.5\linewidth]{figure/3-lines-polytope.png}
 // %     \caption{The tightest Convex Polyhedral Approximation of ReLU.}
 // %     \label{fig:enter-label}
 // % \end{figure}
 // % % \begin{figure}
 // % %     \centering
-// % %     \includegraphics[width=0.5\linewidth]{3-lines-polytope.png}
+// % %      in cludegraphics[width=0.5\linewidth]{3-lines-polytope.png}
 // % %     \caption{Enter Caption}
 // % %     \label{fig:enter-label}
 // % % \end{figure}
@@ -3989,7 +3989,7 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 // % The key idea is to approximate the graph of the non-linear function by a convex polyhedron that covers all possible cases. For ReLU, the previously mentioned three constraints:
 
 // % \begin{equation <minimum_polyhedron}
-// % x <=q y, \quad 0 <=q y, \quad y <=q \lambda x + \mu
+// % x <=q y, quad 0 <=q y, quad y <=q \lambda x + \mu
 // % \end{equation}
 
 
@@ -4043,7 +4043,7 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 // % \begin{itemize}
 // %     \item If \(l_i >= 0\): ReLU is linear, so
 // %     \[
-// %     l_j(x) = l_i(x), \quad u_j(x) = u_i(x)
+// %     l_j(x) = l_i(x), quad u_j(x) = u_i(x)
 // %     \]
 
 // %     \item If \(u_i <=q 0\): ReLU is constant 0, so
@@ -4067,7 +4067,7 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 
 // % The decision is made based on which convex region has smaller area to achieve a tighter abstraction, following the principle:
 // % \[
-// % \text{Choose constraint with smaller area:} \quad 0.5 \cdot u_i \cdot (u_i - l_i) \quad \text{vs} \quad 0.5 \cdot (-l_i) \cdot (u_i - l_i)
+// % \text{Choose constraint with smaller area:} quad 0.5 \cdot u_i \cdot (u_i - l_i) quad \text{vs} quad 0.5 \cdot (-l_i) \cdot (u_i - l_i)
 // % \]
 
 
@@ -4079,7 +4079,7 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 
 // % \subsection{Example}
 
-// % Consider again the DNN in~\autoref{fig:dnn}. Suppose the input set is defined by box constraints \(x_1 \in [-1,1]\) and \(x_2 \in [-2,2]\). These can be represented initially by 4 inequalities.
+// % Consider again the DNN in~\autoref{fig:dnn}. Suppose the input set is defined by box constraints \(x_1 in [-1,1]\) and \(x_2 in [-2,2]\). These can be represented initially by 4 inequalities.
 
 // % Applying the affine transformation for the hidden layer, we obtain a new set of inequalities describing the hidden layer nodes. Upon applying ReLU, we would use the convex polyhedral relaxation as depicted in~\autoref{fig:3_lines_polytope}. The output layer similarly results from affine operations on the polyhedra describing the hidden layer.
 
@@ -4117,7 +4117,7 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 // % \begin{example}[Full Example of Interval Abstraction]\label{ex:interval-abstraction-full}
 // % \begin{figure}[h]
 // %     \centering
-// %     \includegraphics[width=1.2\linewidth]{figure/2_layers_example.png}
+// %      in cludegraphics[width=1.2\linewidth]{figure/2_layers_example.png}
 // %     \caption{Feed-forward neural network with 6 layers and 2 neurons per layer.}
 // %     \label{fig:interval-network}
 // % \end{figure}
@@ -4125,7 +4125,7 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 
 // % Suppose the inputs \(x_1\) and \(x_2\) satisfy:
 // % \[
-// % x_1 \in [-1, 1], \quad x_2 \in [-1, 2]
+// % x_1 in [-1, 1], quad x_2 in [-1, 2]
 // % \]
 
 // % Let an affine neuron (e.g., \(x_3\)) compute:
@@ -4136,7 +4136,7 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 // % Then we apply the affine abstract transformer:
 // % \begin{equation}
 // % \begin{aligned}
-// %   x_3 \in & ~[\min(1\times-1, 1\times1) + \min(1\times-1, 1\times3) + 2, \\
+// %   x_3 in & ~[\min(1\times-1, 1\times1) + \min(1\times-1, 1\times3) + 2, \\
 // %           & ~\max(1\times-1, 1\times-1) + \max(-1\times-1, -1\times3) + 2] = \\
 // %           & [0,6]
 // % \end{aligned}
@@ -4144,7 +4144,7 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 
 // % So we over-approximate \(x_3\) as:
 // % \[
-// % x_3 \in [0, 6]
+// % x_3 in [0, 6]
 // % \]
 
 // % This process is repeated for each layer until we reach the output layer.
@@ -4415,9 +4415,9 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 
 // Thus, the NNV problem (\autoref{def:nnv}) reduces to checking that none of these linear regions contains a counterexample. More specifically, we can rewrite the satisfiability formulation in~\autoref{eq:nnv2} as a disjunction:
 // $
-//   \bigvee_{p \in P} <=ft( \alpha_p \land \phi_{in} \land \neg \phi_{out} \right)
+//   \bigvee_{p in P} <=ft( alpha_p \land phi_"in" \land not phi_"out" \right)
 // $ <eq:nnv3>
-// where $P$ is the set of all possible \emph{activation patterns}---boolean assignments of activation statuses of all neurons-- of the network, and $\alpha_p$ is the formula $\alpha$ restricted to the linear region defined by the activation pattern $p$. This means that $\alpha_p$ includes additional constraints that fix the activation status of each neuron according to $p$. For example, if $p$ specifies that neuron $n_i$ is active, then $\alpha_p$ includes the constraint $z_i >= 0$, indicating that the pre-activation value $z_i$ of neuron $n_i$ is non-negative. Similarly, if $n_i$ is inactive, then $\alpha_p$ includes $z_i < 0$.
+// where $P$ is the set of all possible \emph{activation patterns}---boolean assignments of activation statuses of all neurons-- of the network, and $alpha_p$ is the formula $alpha$ restricted to the linear region defined by the activation pattern $p$. This means that $alpha_p$ includes additional constraints that fix the activation status of each neuron according to $p$. For example, if $p$ specifies that neuron $n_i$ is active, then $alpha_p$ includes the constraint $z_i >= 0$, indicating that the pre-activation value $z_i$ of neuron $n_i$ is non-negative. Similarly, if $n_i$ is inactive, then $alpha_p$ includes $z_i < 0$.
 
 // As long as one of the disjuncts in~\autoref{eq:nnv3} is satisfiable, i.e., a counterexample exists in one of the linear regions, the entire formula is satisfiable, indicating that the property is invalid. Conversely, if all disjuncts are unsatisfiable, the property is valid because no counterexample exists.
 
@@ -4434,7 +4434,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // \begin{definition}[Complete Activation Pattern]\label{def:complete-pattern}
 // A \emph{complete activation pattern} assigns an activation status to \emph{every} neuron in the network:
 // \[
-// p = \langle b_1, b_2, \dots, b_m \rangle \in \{\texttt{true},\texttt{false}\}^m .
+// p = \langle b_1, b_2, \dots, b_m \rangle in \{\texttt{true},\texttt{false}\}^m .
 // \]
 // \end{definition}
 
@@ -4442,7 +4442,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // \begin{definition}[Partial Activation Pattern]\label{def:partial-pattern}
 // A \emph{partial activation pattern} assigns activation statuses to only a \emph{subset} of the neurons.
 // \[
-// q = \langle b_1, b_2, *, b_4, *, \dots, b_m \rangle \in \{\texttt{true},\texttt{false},*\}^m ,
+// q = \langle b_1, b_2, *, b_4, *, \dots, b_m \rangle in \{\texttt{true},\texttt{false},*\}^m ,
 // \]
 // where $*$ means ``undetermined'' or ``don't care''. Each partial activation pattern represents multiple complete activation patterns.
 // \end{definition}
@@ -4472,7 +4472,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // \begin{definition}[Empty Activation Pattern]\label{def:empty-pattern}
 // An \emph{empty} activation pattern is a partial pattern that assigns \emph{no} activation statuses to any neurons:
 // \[
-// p = \langle *, *, \dots, * \rangle \in \{\texttt{true},\texttt{false},*\}^m .
+// p = \langle *, *, \dots, * \rangle in \{\texttt{true},\texttt{false},*\}^m .
 // \]
 // It thus represents all $2^m$ complete activation patterns.
 // \end{definition}
@@ -4531,17 +4531,17 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 
 
 // === State Space Reduction <sec:pattern-reduction>
-// Once having an activation pattern $p$, we can simplify the formula $\alpha$ representing the network by replacing each ReLU function with a linear constraint according to the activation status specified in $p$. For example, if $p$ specifies that neuron $n_i$ is active, we replace $\relu{z_i}$ with the constraint $z_i >= 0$, i.e., the pre-activation value $z_i$ must be non-negative. Otherwise, if $n_i$ is inactive, we replace $\relu{z_i}$ with $z_i < 0$.
-// This gives us the formula $\alpha_p$ corresponding to the linear region defined by $p$.
+// Once having an activation pattern $p$, we can simplify the formula $alpha$ representing the network by replacing each ReLU function with a linear constraint according to the activation status specified in $p$. For example, if $p$ specifies that neuron $n_i$ is active, we replace $\relu{z_i}$ with the constraint $z_i >= 0$, i.e., the pre-activation value $z_i$ must be non-negative. Otherwise, if $n_i$ is inactive, we replace $\relu{z_i}$ with $z_i < 0$.
+// This gives us the formula $alpha_p$ corresponding to the linear region defined by $p$.
 
-// A complete activation pattern $p$ defines a unique linear region of the network. This is because with a complete pattern $p$, $\alpha_p$ becomes a purely linear formula.
-// In contrast, a partial activation pattern $q$ defines multiple linear regions, one for each complete pattern it represents.  With $q$, $\alpha_q$ may still contain some ReLU functions that are not fixed by $q$.  However, since $q$ fixes the status of some neurons, we can simplify $\alpha$ by replacing the ReLU functions of those neurons with linear constraints.
+// A complete activation pattern $p$ defines a unique linear region of the network. This is because with a complete pattern $p$, $alpha_p$ becomes a purely linear formula.
+// In contrast, a partial activation pattern $q$ defines multiple linear regions, one for each complete pattern it represents.  With $q$, $alpha_q$ may still contain some ReLU functions that are not fixed by $q$.  However, since $q$ fixes the status of some neurons, we can simplify $alpha$ by replacing the ReLU functions of those neurons with linear constraints.
 
-// In any case, given an activation pattern, we can reduce the complexity of the satisfiability check by fixing the activation status of some neurons. Thus, checking the satisfiability of $\alpha_p \land \phi_{in} \land \neg \phi_{out}$ is easier than checking that of $\alpha \land \phi_{in} \land \neg \phi_{out}$.
+// In any case, given an activation pattern, we can reduce the complexity of the satisfiability check by fixing the activation status of some neurons. Thus, checking the satisfiability of $alpha_p \land phi_"in" \land not phi_"out"$ is easier than checking that of $alpha \land phi_"in" \land not phi_"out"$.
 
 
 // \begin{example}
-// Recall the network from~\autoref{fig:dnn-b} can be represented as the formula $\alpha$:
+// Recall the network from~\autoref{fig:dnn-b} can be represented as the formula $alpha$:
 // \[
 // \begin{aligned}
 // & \hat{x}_3 = -0.5x_1 + 0.5x_2 + 1.0 ~\land\\
@@ -4553,7 +4553,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // \]
 
 // Here $\hat{x}_3$ and $\hat{x}_4$ are the pre-activation values of the ReLU neurons $x_3$ and $x_4$, respectively.
-// Thus, if we fix the activation status of $x_3$ and $x_4$, we can simplify $\alpha$ by replacing the ReLUs with linear constraints.
+// Thus, if we fix the activation status of $x_3$ and $x_4$, we can simplify $alpha$ by replacing the ReLUs with linear constraints.
 
 
 // \begin{itemize}
@@ -4564,7 +4564,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 //   p = \{x_3, \overline{x_4}\}
 //   \]
 //   means that $x_3$ is active while $x_4$ is inactive; that is, $\hat{x}_3 >= 0$ (so $x_3 = \hat{x}_3$) while $\hat{x}_4 < 0$ (so $x_4 = 0$).
-//   In this case, $\alpha$ reduces to a single linear constraint (region):
+//   In this case, $alpha$ reduces to a single linear constraint (region):
 //   \[
 //   x_5 = -(-0.5x_1 + 0.5x_2 + 1.0) + 0 - 1.0 = 0.5x_1 - 0.5x_2 - 2.0 .
 //   \]
@@ -4577,7 +4577,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 //   \[
 //   q = \{x_3\}
 //   \]
-//   means $\hat{x}_3 >= 0$ but places no restriction on $\hat{x}_4$.  Here, $\alpha$ reduces to
+//   means $\hat{x}_3 >= 0$ but places no restriction on $\hat{x}_4$.  Here, $alpha$ reduces to
 // \[
 // \begin{aligned}
 // & \hat{x}_4 = 0.5x_1 - 0.5x_2 - 1.0 ~\land\\
@@ -4586,7 +4586,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // \end{aligned}
 // \]
 
-// Because $q$ does not fix the status of $x_4$, we cannot simplify the ReLU for $x_4$. Thus, the formula still contains a ReLU function which splits $x_4$ into two linear regions corresponding to the two possible activation statuses of $x_4$.  Note that this is still simpler than the original formula $\alpha$ because we have simplified the ReLU for $x_3$.
+// Because $q$ does not fix the status of $x_4$, we cannot simplify the ReLU for $x_4$. Thus, the formula still contains a ReLU function which splits $x_4$ into two linear regions corresponding to the two possible activation statuses of $x_4$.  Note that this is still simpler than the original formula $alpha$ because we have simplified the ReLU for $x_3$.
 // \end{itemize}
 // \end{example}
 
@@ -4596,8 +4596,8 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // Consider the network in \autoref{fig:dnn-b}. Suppose we fix the activation pattern $p=\{x_3, x_4\}$.
 
 // \begin{enumerate}
-//   \item Provide the constraints $\alpha$ induced by $p$.
-//   \item Consider an invalid property $x_5 > 0$ for inputs $x_1 \in [-1,1], x_2 \in [-2,2]$. Find an activation pattern that satisfies the formula $\alpha_p \land \phi_{in} \land \neg \phi_{out}$. In other words, find a pattern that contains a counterexample to the property.
+//   \item Provide the constraints $alpha$ induced by $p$.
+//   \item Consider an invalid property $x_5 > 0$ for inputs $x_1 in [-1,1], x_2 in [-2,2]$. Find an activation pattern that satisfies the formula $alpha_p \land phi_"in" \land not phi_"out"$. In other words, find a pattern that contains a counterexample to the property.
 // \end{enumerate}
 
 // % \textbf{Solution Sketch:}
@@ -4612,10 +4612,10 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // % \begin{problem}[Satisfiability via Partial Patterns]
 // % Let $N$ be a DNN with ReLU neurons $n_1,\dots,n_4$. Suppose we want to verify the property
 // % \[
-// % x_1 \in [-1,1],\;x_2 \in [-1,1] \implies y >= 0.
+// % x_1 in [-1,1],\;x_2 in [-1,1] \implies y >= 0.
 // % \]
 // % \begin{enumerate}
-// %   \item Explain how partial activation patterns can be used to prune the search space when checking satisfiability of $\alpha \land \phi_{in} \land (y < 0)$.
+// %   \item Explain how partial activation patterns can be used to prune the search space when checking satisfiability of $alpha \land phi_"in" \land (y < 0)$.
 // %   \item For each partial pattern that fixes $n_1,n_2$ only, describe how you would test whether it is feasible (i.e., corresponds to a non-empty input region).
 // %   \item Argue why infeasible partial patterns can be safely discarded in verification search.
 // % \end{enumerate}
@@ -4757,7 +4757,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // \SetKwData{problems}{ActPatterns}
 // \begin{algorithm}[t]
 //     \small
-//     \Input{Network $\mathcal{N}$, property $\phi_{in} \Rightarrow \phi_{out}$}
+//      in put{Network $\mathcal{N}$, property $phi_"in" \Rightarrow phi_"out"$}
 //     \Output{$\myunsat$ if property is valid, otherwise ($\mysat, \counterexample$)}
 //     \BlankLine
 
@@ -4766,8 +4766,8 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 
 //     \While(\tcp*[h]{main loop}){$\problems$}{\label{line:babstart}
 //         $\sigma_i >=ts \Select(\problems)$ \tcp{process problem $i$-th <line:babselect}
-//             \If{\Deduce{$\mathcal{N}, \phi_{in}, \phi_{out}, \sigma_i$}}{\label{line:babdeduce}
-//                 $\counterexample <=ftarrow \LP(\mathcal{N}, \phi_{in}, \phi_{out}, \sigma_i)$ \tcp{check satisfiability <line:bablp}
+//             \If{\Deduce{$\mathcal{N}, phi_"in", phi_"out", \sigma_i$}}{\label{line:babdeduce}
+//                 $\counterexample <=ftarrow \LP(\mathcal{N}, phi_"in", phi_"out", \sigma_i)$ \tcp{check satisfiability <line:bablp}
 //                 \If(\tcp*[h]{found a valid cex}){$\counterexample$}{
 //                     \Return{$(\mysat, \counterexample)$ <line:babsat}
 //                 }
@@ -4783,7 +4783,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // \end{algorithm}
 
 
-// \paragraph{Reference Alg} \autoref{alg:bab} shows \bab{}, a reference~\cite{nakagawa2014consolidating} BaB architecture for NNV. \bab{} takes as input a ReLU-based network $\mathcal{N}$ and a formulae $\phi_{in}\Rightarrow \phi_{out}$ representing the property of interest.
+// \paragraph{Reference Alg} \autoref{alg:bab} shows \bab{}, a reference~\cite{nakagawa2014consolidating} BaB architecture for NNV. \bab{} takes as input a ReLU-based network $\mathcal{N}$ and a formulae $phi_"in"\Rightarrow phi_"out"$ representing the property of interest.
 // \bab{} maintains a set of activation patterns (\problems) that represent the current activation pattern of the network. Initially, \problems is initialized with an empty activation pattern (\autoref{line:babinit}).
 
 
@@ -4828,7 +4828,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // \begin{example <ex:bab}
 // \autoref{fig:bab-example}a illustrates a network and how \bab{} verifies that this network has the property
 // \[
-// (x_1, x_2) \in [-2.0, 2.0] \times [-1.0, 1,0] \Rightarrow (y_1 > y_2),
+// (x_1, x_2) in [-2.0, 2.0] \times [-1.0, 1,0] \Rightarrow (y_1 > y_2),
 // \]
 // by showing that no counterexample exists, i.e., no inputs $(x_1,x_2)$ in the given input range such that $y_1 <= y_2$.
 
@@ -4842,7 +4842,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 //         \end{minipage}
 //         \begin{minipage}[t]{0.45\textwidth}
 //             \centering
-//             \includegraphics[width=\linewidth]{figure/proof_tree.pdf}
+//              in cludegraphics[width=\linewidth]{figure/proof_tree.pdf}
 //             \caption*{(b)}
 //         \end{minipage}
 //         \caption{(a) A simple network  (similar to~\autoref{fig:proofnet}), and (b) BaB search tree. White nodes correspond to \bab{} neuron splitting. Red nodes correspond to leaf nodes where \bab{}determines infeasibility and prunes the branch.}
@@ -4898,7 +4898,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // \caption{\label{fig:dnn-bab}A simple network (similar to~\autoref{fig:dnn}).}
 // \end{figure}
 
-// Apply BaB on the network in \autoref{fig:dnn-bab} to verify the property $x_5 > 0$ for any inputs $x_1 \in [-1,1], x_2\in[-2,2]$.  Use interval abstraction to compute bounds. For LP solving, you can use any LP solver or solve it manually. Show all steps, e.g., iterations, activation patterns, bounds computed, LP results, etc.
+// Apply BaB on the network in \autoref{fig:dnn-bab} to verify the property $x_5 > 0$ for any inputs $x_1 in [-1,1], x_2 in [-2,2]$.  Use interval abstraction to compute bounds. For LP solving, you can use any LP solver or solve it manually. Show all steps, e.g., iterations, activation patterns, bounds computed, LP results, etc.
 
 // \end{problem}
 
@@ -4940,7 +4940,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // \begin{example <ex:random-search}
 // Suppose the network input ranges are:
 // \[
-// -1 <=q x_1 <=q 1,\quad -2 <=q x_2 <=q 2
+// -1 <=q x_1 <=q 1,quad -2 <=q x_2 <=q 2
 // \]
 // and the network output is:
 // \[
@@ -4967,7 +4967,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // \begin{problem}
 // Consider the input ranges
 // \[
-// -1 <= x_1 <= 1, \quad -1 <= x_2 <= 1,
+// -1 <= x_1 <= 1, quad -1 <= x_2 <= 1,
 // \]
 // and network output
 // \[
@@ -5077,7 +5077,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // \]
 // Here, $x_1^{(1)} = -2.0$ is outside the allowed range $[-1, 1]$, so we \emph{clip} it:
 // \[
-// x_1^{(1)} = -1 \quad (\text{projected to boundary})
+// x_1^{(1)} = -1 quad (\text{projected to boundary})
 // \]
 // Meanwhile, $x_2^{(1)} = 1.5$ is within $[-2, 2]$, so it remains unchanged.
 
@@ -5139,7 +5139,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // \begin{problem <prob:pgd-iterations}
 // Let
 // \[
-// y = 2x_1 - 3x_2 + 1, \quad -1 <= x_1, x_2 <= 1.
+// y = 2x_1 - 3x_2 + 1, quad -1 <= x_1, x_2 <= 1.
 // \]
 // Starting from $(x_1^{(0)}, x_2^{(0)}) = (0, 0)$ with some step size $\eta > 0$, use PGD to minimize $y$ so that it violates the property $y > 0$. Show all steps (e.g., computing gradient, updating point, clipping, etc) until a counterexample is found.
 
@@ -5182,8 +5182,8 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 
 // \textit{Clip to valid range $[-1,1]$:}
 // \begin{align*}
-// x_1^{(1)} &= \max(-1,\,\min(-1,\,1)) = -1 \quad \text{(already in range)}, \\
-// x_2^{(1)} &= \max(-1,\,\min(1.5,\,1)) = 1 \quad \text{(clipped to boundary)}.
+// x_1^{(1)} &= \max(-1,\,\min(-1,\,1)) = -1 quad \text{(already in range)}, \\
+// x_2^{(1)} &= \max(-1,\,\min(1.5,\,1)) = 1 quad \text{(clipped to boundary)}.
 // \end{align*}
 // Projected input: $(-1,\; 1)$.
 
@@ -5251,7 +5251,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // \begin{algorithm}
 //     \small
 
-//     \Input{NN $\mathcal{N}$, property $\phi_{in} \Rightarrow \phi_{out}$}
+//      in put{NN $\mathcal{N}$, property $phi_"in" \Rightarrow phi_"out"$}
 //     \Output{($\unsat, \blue{\prooftree}$) if property is valid, otherwise ($\sat, \counterexample$)}
 //     \BlankLine
 
@@ -5261,9 +5261,9 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 
 //     \While(\tcp*[h]{main loop}){$\problems$}{
 //         $\sigma_i >=ts \Select(\problems)$ \tcp{process problem $i$-th}
-//         % \Parfor(\tcp*[h]{process in parallel}){$\sigma_i ~\In~ \problems$}{ \label{line:parfor}
-//             \If{\Deduce{$\mathcal{N}, \phi_{in}, \phi_{out}, \sigma_i$}}{
-// $\counterexample <=ftarrow \LP(\mathcal{N}, \phi_{in}, \phi_{out}, \sigma_i)$ \tcp{check satisfiability}
+//         % \Parfor(\tcp*[h]{process in parallel}){$\sigma_i ~ in ~ \problems$}{ \label{line:parfor}
+//             \If{\Deduce{$\mathcal{N}, phi_"in", phi_"out", \sigma_i$}}{
+// $\counterexample <=ftarrow \LP(\mathcal{N}, phi_"in", phi_"out", \sigma_i)$ \tcp{check satisfiability}
 //                 \If(\tcp*[h]{found a valid cex}){$\counterexample$}{
 //                     \Return{$(\mysat, \counterexample)$}
 //                 }
@@ -5300,7 +5300,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 //         \end{minipage}
 //         \begin{minipage}[t]{0.45\textwidth}
 //             \centering
-//             \includegraphics[width=\linewidth]{figure/proof_tree.pdf}
+//              in cludegraphics[width=\linewidth]{figure/proof_tree.pdf}
 //             \caption*{(b)}
 //         \end{minipage}
 //         \caption{(a) A simple network  (similar to~\autoref{fig:proofnet}), and (b) A proof tree produced by \proofgen{}. White nodes correspond to \bab{} neuron splitting. Red nodes correspond to leaf nodes where \bab{} determines infeasibility and prunes the branch.}
@@ -5309,7 +5309,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // \end{figure}
 
 
-// We reuse the example in~\autoref{ex:bab} to illustrate \proofgen{}. Recall the goal is to verify that the network in~\autoref{fig:proof-example}(a) has the property $(x_1, x_2) \in [-2.0, 2.0] \times [-1.0, 1,0] \Rightarrow (y_1 > y_2)$.
+// We reuse the example in~\autoref{ex:bab} to illustrate \proofgen{}. Recall the goal is to verify that the network in~\autoref{fig:proof-example}(a) has the property $(x_1, x_2) in [-2.0, 2.0] \times [-1.0, 1,0] \Rightarrow (y_1 > y_2)$.
 
 // For this problem \proofgen{} generates the proof tree in~\autoref{fig:proof-example}(b) to show unsatisfiability, i.e., the property is valid. \proofgen{} first splits neuron $v_4$, creating two subproblems: one with $v_4$ active and the other with $v_4$ inactive (split node 1). The inactive $v_4$ subproblem is determined to be unsatisfiable (leaf node 3). The active $v_4$ subproblem is further split on $v_2$ (split node 2). The inactive $v_2$ subproblem is determined to be unsatisfiable (leaf node 5). The active $v_2$ subproblem is further split on $v_1$ (split node 4). Both the active and inactive $v_1$ subproblems are determined to be unsatisfiable (leaf nodes 6 and 7). Since all branches lead to unsatisfiability, the property is valid.
 
@@ -5329,7 +5329,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 
 // The input region is
 // \[
-// (x_1, x_2) \in [-1,1] \times [-1,1],
+// (x_1, x_2) in [-1,1] \times [-1,1],
 // \]
 // and the property to verify is:
 // \[
@@ -5383,8 +5383,8 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 //     \lra{proof}         &::= \lra{declarations} \ \lra{assertions} \\
 //     \lra{declarations}  &::= \lra{declaration} \ | \ \lra{declaration} \ \lra{declarations} \\
 //     \lra{declaration}   &::= (\textbf{declare-const} \ \lra{input-vars} \ \textbf{Real}) \\
-//                         & \quad ~| \ (\textbf{declare-const} \ \lra{output-vars} \ \textbf{Real}) \\
-//                         & \quad ~| \ (\textbf{declare-pwl} \ \lra{hidden-vars} \ \lra{activation}) \\
+//                         & quad ~| \ (\textbf{declare-const} \ \lra{output-vars} \ \textbf{Real}) \\
+//                         & quad ~| \ (\textbf{declare-pwl} \ \lra{hidden-vars} \ \lra{activation}) \\
 //     \lra{input-vars}    &::= \lra{input-var} \ | \ \lra{input-var} \ \lra{input-vars} \\
 //     \lra{output-vars}    &::= \lra{output-var} \ | \ \lra{output-var} \ \lra{output-vars} \\
 //     \lra{hidden-vars}    &::= \lra{hidden-var} \ | \ \lra{hidden-var} \ \lra{hidden-vars} \\
@@ -5392,12 +5392,12 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 //     \lra{assertions}    &::= \lra{assertion} \ | \ \lra{assertion} \ \lra{assertions} \\
 //     \lra{assertion}     &::= (\textbf{assert} \ \lra{formula}) \\
 //     \lra{formula}       &::= (\lra{operator} \ \lra{term} \ \lra{term}) \\
-//                         & \quad ~| \ (\textbf{and} \ \lra{formula}+) \ | \ (\textbf{or} \ \lra{formula}+) \\
-//                         % & \quad ~| \ (\textbf{and} \ \lra{formula} \ \lra{formula}) \\
-//                         % & \quad ~| \ (\textbf{or} \ \lra{formula}+) \\
-//                         % & \quad ~| \ (\textbf{or} \ \lra{formula} \ \lra{formula}) \\
+//                         & quad ~| \ (\textbf{and} \ \lra{formula}+) \ | \ (\textbf{or} \ \lra{formula}+) \\
+//                         % & quad ~| \ (\textbf{and} \ \lra{formula} \ \lra{formula}) \\
+//                         % & quad ~| \ (\textbf{or} \ \lra{formula}+) \\
+//                         % & quad ~| \ (\textbf{or} \ \lra{formula} \ \lra{formula}) \\
 //     \lra{term}          &::= \lra{input-var} \ | \ \lra{output-var} \\
-//                         & \quad ~| \ \lra{hidden-var} \ | \ \lra{constant} \\
+//                         & quad ~| \ \lra{hidden-var} \ | \ \lra{constant} \\
 //     \lra{operator}      &::= ~ < \ | \ <=q \ | \ > \ | \ >= \\
 //     \lra{input-var}     &::= ~\text{X\_}\lra{constant} \\
 //     \lra{output-var}    &::= ~\text{Y\_}\lra{constant} \\
@@ -5485,16 +5485,16 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // \begin{algorithm}[t]
 //     \small
 
-//     \Input{Network $\mathcal{N}$, property $\phi_{in} \Rightarrow \phi_{out}$, $\prooftree$}
+//      in put{Network $\mathcal{N}$, property $phi_"in" \Rightarrow phi_"out"$, $\prooftree$}
 //     \Output{\certified if proof is valid, otherwise \uncertified}
 //     \BlankLine
 
-//     \If{$\neg$ \RepOK(\prooftree)}{
+//     \If{$not$ \RepOK(\prooftree)}{
 //         \RaiseError{Invalid proof tree}
 //     }
 
 //     \tcp{initialize MILP model with inputs}
-//     $\model <=ftarrow \CreateStabilizedMILP(\mathcal{N}, \phi_{in}, \phi_{out})$ \label{line:build_model}
+//     $\model <=ftarrow \CreateStabilizedMILP(\mathcal{N}, phi_"in", phi_"out")$ \label{line:build_model}
 
 
 //     $<=af >=ts \mynull$ \tcp{initialize current processing node}
@@ -5506,7 +5506,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 //         $<=af >=ts \Select(\prooftree, <=af)$ \tcp{get next node to check} \label{line:select} \label{line:get_leaf}
 
 //         % \tcp{Process $k$ nodes in parallel}
-//         % \Parfor{$<=af_i ~\In~ [<=af_1, ..., <=af_k]$}{ \label{line:parfor}
+//         % \Parfor{$<=af_i ~ in ~ [<=af_1, ..., <=af_k]$}{ \label{line:parfor}
 
 //         $\model >=ts \AddConstrs(\model, <=af)$  \tcp{add constraints} \label{line:add_proof_leaf_constrs}
 
@@ -5545,7 +5545,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // \end{algorithm}
 
 
-// \autoref{fig:algorithm} shows a minimal (core)  \proofcheck{} algorithm, which takes as input a network $\mathcal{N}$, a property $\phi_{in} \Rightarrow \phi_{out}$, a proof tree $\prooftree$, and returns \certified if the proof tree is valid and \uncertified otherwise.
+// \autoref{fig:algorithm} shows a minimal (core)  \proofcheck{} algorithm, which takes as input a network $\mathcal{N}$, a property $phi_"in" \Rightarrow phi_"out"$, a proof tree $\prooftree$, and returns \certified if the proof tree is valid and \uncertified otherwise.
 // \proofcheck{} first checks the validity of the proof tree (\autoref{line:build_model}), i.e., the input must represent a proper \prooflang{} proof tree (\autoref{sec:prooflang}).
 // If the proof tree is invalid, \proofcheck{} raises an error.
 // \proofcheck{} next creates a MILP model (\autoref{line:build_model}) representing the input. % (\autoref{sec:neuron-stabelization}).
@@ -5566,11 +5566,11 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // % \proofcheck{} formulates MILP problems~\cite{tjeng2019evaluating} and check for feasible solutions using off-the-shelf LP solving. Formally, the MILP problem is defined as:
 // % \begin{equation}
 // %     \begin{aligned}
-// %         &\mbox{(a)}\quad z^{(i)} = W^{(i)} \hat{z}^{(i-i)} + b^{(i)};\\
-// %         &\mbox{(b)}\quad y = z^{(L)};  x = \hat{z}^{(0)}; \\
-// %         &\mbox{(c)}\quad \hat{z}_j^{(i)} >= {z}_j^{(i)}; \hat{z}_j^{(i)} >= 0; \\
-// %         &\mbox{(d)}\quad a_j^{(i)} \in \{ 0, 1\} ;\\
-// %         &\mbox{(e)}\quad \hat{z}_j^{(i)} <= {a}_j^{(i)} {u}_j^{(i)}; \hat{z}_j^{(i)} <= {z}_j^{(i)} - {l}_j^{(i)}(1 - {a}_j^{(i)}); \\
+// %         &\mbox{(a)}quad z^{(i)} = W^{(i)} \hat{z}^{(i-i)} + b^{(i)};\\
+// %         &\mbox{(b)}quad y = z^{(L)};  x = \hat{z}^{(0)}; \\
+// %         &\mbox{(c)}quad \hat{z}_j^{(i)} >= {z}_j^{(i)}; \hat{z}_j^{(i)} >= 0; \\
+// %         &\mbox{(d)}quad a_j^{(i)} in \{ 0, 1\} ;\\
+// %         &\mbox{(e)}quad \hat{z}_j^{(i)} <= {a}_j^{(i)} {u}_j^{(i)}; \hat{z}_j^{(i)} <= {z}_j^{(i)} - {l}_j^{(i)}(1 - {a}_j^{(i)}); \\
 // %     \end{aligned}
 // %     \label{eq:mip2}
 // % \end{equation}
@@ -5602,22 +5602,22 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // % \begin{algorithm}
 // %     \small
 
-// %     \Input{DNN $\mathcal{N}$, property $\phi_{in} \Rightarrow \phi_{out}$, parallel factor $k$}
+// %      in put{DNN $\mathcal{N}$, property $phi_"in" \Rightarrow phi_"out"$, parallel factor $k$}
 // %     \Output{MILP $\model$}
 // %     \BlankLine
 
 
-// %     $\model <=ftarrow \InputMILP(\phi_{in})$  \tcp{input property}    \label{line:create_input}
+// %     $\model <=ftarrow  in putMILP(phi_"in")$  \tcp{input property}    \label{line:create_input}
 
 // %     \tcp{Add MILP constraints for each layer of network}
-// %     \For{$\layer ~\In ~\mathcal{N}$}{
+// %     \For{$\layer ~in ~\mathcal{N}$}{
 // %         \If{$\isPiecewiseLinear(\layer)$}{
 // %             \tcp{add constraints~\autoref{eq:mip2} (c), (d), (e)}
-// %             $\model <=ftarrow \PiecewiseLinearMILP(\layer, \phi_{in}, \phi_{out})$ \\ \label{line:create_pwl_layer}
+// %             $\model <=ftarrow \PiecewiseLinearMILP(\layer, phi_"in", phi_"out")$ \\ \label{line:create_pwl_layer}
 // %         }
 // %         \Else(\tcp*[h]{this layer is linear}){
 // %             \tcp{add constraints~\autoref{eq:mip2} (a), (b)}
-// %             $\model <=ftarrow \LinearMILP(\layer, \phi_{in}, \phi_{out})$ \\ \label{line:create_linear_layer}
+// %             $\model <=ftarrow \LinearMILP(\layer, phi_"in", phi_"out")$ \\ \label{line:create_linear_layer}
 
 // %             \tcp{estimate upper and lower bounds}
 // %             $\layerbounds >=ts \EstimateBounds(\layer)$ \\ \label{line:estimate_bounds}
@@ -5626,7 +5626,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // %             $[v_1, ..., v_k] <=ftarrow >=tUnstableNeurons(\layerbounds)$ \\ \label{line:find_unstable}
 
 // %             \tcp{stabilize selected neurons in parallel}
-// %             \Parfor{$v_i ~\In~[v_1, ..., v_k]$}{ \label{line:parallel_stabilize}
+// %             \Parfor{$v_i ~ in ~[v_1, ..., v_k]$}{ \label{line:parallel_stabilize}
 // %                 % \tcp{lower is closer to 0 than upper}
 // %                 \tcp{optimize lower first}
 // %                 \If{$(v_i.lower + v_i.upper) >= 0$}{
@@ -5647,7 +5647,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // %         }
 // %     }
 
-// %     $\model >=ts \AddObjective(\model, \phi_{out})$ \tcp{output property}
+// %     $\model >=ts \AddObjective(\model, phi_"out")$ \tcp{output property}
 
 // %     \Return{$\model$}
 
@@ -5859,21 +5859,21 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // %     \centering
 // %     \begin{minipage}[t]{0.4\textwidth}
 // %         \centering
-// %         \includegraphics[width=\linewidth]{figure/fnn.pdf}
+// %          in cludegraphics[width=\linewidth]{figure/fnn.pdf}
 // %     \end{minipage}
 // %     \begin{minipage}[t]{0.4\textwidth}
 // %         \centering
-// %         \includegraphics[width=\linewidth]{figure/cnn.pdf}
+// %          in cludegraphics[width=\linewidth]{figure/cnn.pdf}
 // %     \end{minipage}
 
 // %     % \begin{minipage}[t]{0.45\textwidth}
 // %     %     \centering
-// %     %     \includegraphics[width=\linewidth]{figure/MNIST_CNN_SMALL.pdf}
+// %     %      in cludegraphics[width=\linewidth]{figure/MNIST_CNN_SMALL.pdf}
 // %     % \end{minipage}
 // %     % \hfill
 // %     % \begin{minipage}[t]{0.45\textwidth}
 // %     %     \centering
-// %     %     \includegraphics[width=\linewidth]{figure/MNIST_CNN_MEDIUM.pdf}
+// %     %      in cludegraphics[width=\linewidth]{figure/MNIST_CNN_MEDIUM.pdf}
 // %     % \end{minipage}
 // %     \caption{Cactus-plots for verifiers and proof checkers of FNN (top) and CNN (bottom) benchmarks.}
 // %     \label{fig:cactus-plots}
@@ -5954,12 +5954,12 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // %     %
 // %     \begin{minipage}[t]{0.75\textwidth}
 // %         \centering
-// %         \includegraphics[width=\linewidth]{figure/SUB_PROOFS_NONE.pdf}
+// %          in cludegraphics[width=\linewidth]{figure/SUB_PROOFS_NONE.pdf}
 // %     \end{minipage}
 // %     %
 // %     \begin{minipage}[t]{0.235\textwidth}
 // %         \centering
-// %         \includegraphics[width=\linewidth]{figure/SUB_PROOFS_SX.pdf}
+// %          in cludegraphics[width=\linewidth]{figure/SUB_PROOFS_SX.pdf}
 // %     \end{minipage}
 // %     \caption{Number of sub-proofs per problem with (right) and without (left) \proofcheck{} optimizations.}
 // %     \label{fig:sub-proofs-plots}
@@ -5970,11 +5970,11 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // %     %
 // %     \begin{minipage}[t]{0.5\textwidth}
 // %         \centering
-// %         \includegraphics[width=\linewidth]{figure/MILP_COMPLEXITY_NONE.pdf}
+// %          in cludegraphics[width=\linewidth]{figure/MILP_COMPLEXITY_NONE.pdf}
 // %     \end{minipage}%
 // %     \begin{minipage}[t]{0.5\textwidth}
 // %         \centering
-// %         \includegraphics[width=\linewidth]{figure/MILP_COMPLEXITY_SX.pdf}
+// %          in cludegraphics[width=\linewidth]{figure/MILP_COMPLEXITY_SX.pdf}
 // %     \end{minipage}
 
 // %     \caption{Number of constraints of a given complexity per problem with (right) and without (left) \proofcheck{} optimizations.}
@@ -6087,7 +6087,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // % %~\autoref{tab:sizestats}.
 // % \begin{figure}[t]
 // %     \centering
-// %     \includegraphics[width=0.8\linewidth]{figure/ablation.pdf}
+// %      in cludegraphics[width=0.8\linewidth]{figure/ablation.pdf}
 // %     \caption{\proofcheck{} performance with different verification algorithms.}
 // %     \label{fig:algvariation}
 // % \end{figure}
@@ -6173,11 +6173,11 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 
 
 // \begin{example}
-// Given a problem with input region $\{x_1 \in [-1,1] , x_2 \in [-2,2]\}$, input splitting splits the input region into four subregions:
-// $\{x_1 \in [-1,0] , x_2 \in [-2,0]\}$,
-// $\{x_1 \in [-1,0] , x_2 \in [0,2]\}$ ,
-// $\{x_1 \in [0,1] , x_2 \in [-2,0]\}$, and
-// $\{x_1 \in [0,1], x_2 \in [0,2]\}$.
+// Given a problem with input region $\{x_1 in [-1,1] , x_2 in [-2,2]\}$, input splitting splits the input region into four subregions:
+// $\{x_1 in [-1,0] , x_2 in [-2,0]\}$,
+// $\{x_1 in [-1,0] , x_2 in [0,2]\}$ ,
+// $\{x_1 in [0,1] , x_2 in [-2,0]\}$, and
+// $\{x_1 in [0,1], x_2 in [0,2]\}$.
 // The verifier then checks if the network produces the desired output from each of these subregions.
 
 // Note that the formula $-1 <= x_1 <= 1 \land -2 <= x_2 <= 2$ representing the original input region is equivalent to the formula $(-1 <= x_1 <= 0 \lor 0 <= x <= 1) \land (-2 <= x_2 <= 0 \lor 0 <= x_2 <= 2)$ representing the combination of the created subregions.
@@ -6206,7 +6206,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // & x_5 = -x_3 + x_4 - 1.0,
 // \end{aligned}
 // \]
-// and input property $\phi_{in}$
+// and input property $phi_"in"$
 // \(
 // -1 <= x_1 <= 1 \land -2 <= x_2 <= 2
 // \)
@@ -6225,7 +6225,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // For example, to tighten the upper bounds of $x_1$, we can create an optimization problem as follows:
 // \begin{equation}
 // \begin{aligned}
-// \text{maximize~} &x_1 \quad \text{s.t.} \\
+// \text{maximize~} &x_1 quad \text{s.t.} \\
 // & -0.5x_1 + 0.5x_2 + 1.0 <= 0 \\
 // & -1 <= x_1 <= 1 \\
 // & -2 <= x_2 <= 2
@@ -6257,7 +6257,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 
 // \begin{equation}
 // \begin{aligned}
-// \text{maximize~} &x_4 \quad \text{s.t.} \\
+// \text{maximize~} &x_4 quad \text{s.t.} \\
 // & 0.5x_1 - 0.5x_2 + 1.0 <= 0 \\
 // & -1 <= x_1 <= 1 \\
 // & -2 <= x_2 <= 2
@@ -6275,7 +6275,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 
 // %(line~\ref{line:abstraction},~\autoref{alg:deduction})
 // % After tightening input bounds DNN verification tools apply abstraction to approximate the output bounds, which can be more precise with better input bounds.
-// % For networks with large number of inputs, we obtain input bounds from the input property $\phi_{in}$.\tvn{Vu: to rewrite}
+// % For networks with large number of inputs, we obtain input bounds from the input property $phi_"in"$.\tvn{Vu: to rewrite}
 
 
 // % \ignore{
@@ -6293,18 +6293,18 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 //  == Batch Processing} \label{sec:batchprocessing}
 // % \tvn{Do we still use this?  or we use the Parallel DPLL(T) in~\autoref{sec:parallel-search} instead?}
 // % For networks with small inputs, \tool{} uses a simple approach to create and solve subproblems in parallel.
-// % Given a verification problem $N_{orig} = (\alpha, \phi_{in}, \phi_{out})$, where $\alpha$ is the DNN and $\phi_{in} \Rightarrow \phi_{out}$ is the desired property, \tool{} creates subproblems $N_i = (\alpha, \phi_{{in}_i}, \phi_{out})$, where $\phi_{{in}_i}$ is the $i$-th subregion of the input region specified by $\phi_{in}$.
-// % Intuitively, each subproblem checks if the DNN produces the output $\phi_{out}$  from a smaller input region $\phi_{{in}_i}$.
-// % The combination of these subproperties $\bigwedge \phi_{{in}_i} \Rightarrow \phi_{out}$ is logically equivalent to the original property $\phi_{in} \Rightarrow \phi_{out}$.
+// % Given a verification problem $N_{orig} = (alpha, phi_"in", phi_"out")$, where $alpha$ is the DNN and $phi_"in" \Rightarrow phi_"out"$ is the desired property, \tool{} creates subproblems $N_i = (alpha, phi_{{in}_i}, phi_"out")$, where $phi_{{in}_i}$ is the $i$-th subregion of the input region specified by $phi_"in"$.
+// % Intuitively, each subproblem checks if the DNN produces the output $phi_"out"$  from a smaller input region $phi_{{in}_i}$.
+// % The combination of these subproperties $\bigwedge phi_{{in}_i} \Rightarrow phi_"out"$ is logically equivalent to the original property $phi_"in" \Rightarrow phi_"out"$.
 
 
 // % Given $k$ available threads, \tool{} splits the original input region to obtain subproblems as described and and runs DPLL(T) on $k$ subproblems in parallel. % and iteratively splits any subproblem which cannot be solved within pre-defined amount of time, e.g., 2 seconds.
 // % \tool{} returns \texttt{unsat} if it verifies all subproblems and \texttt{sat} if it found a counterexample in any subproblem. %In the current implementation, \tool{} uses the number of available threads to determine the number of created subproblems.
-// % For example, we split the input region $\{x_1 \in [-1,1] , x_2 \in [-2,2]\}$ into four subregions
-// % $\{x_1 \in [-1,0] , x_2 \in [-2,0]\}$,
-// % $\{x_1 \in [-1,0] , x_2 \in [0,2]\}$ ,
-// % $\{x_1 \in [0,1] , x_2 \in [-2,0]\}$, and
-// % $\{x_1 \in [0,1], x_2 \in [0,2]\}$.
+// % For example, we split the input region $\{x_1 in [-1,1] , x_2 in [-2,2]\}$ into four subregions
+// % $\{x_1 in [-1,0] , x_2 in [-2,0]\}$,
+// % $\{x_1 in [-1,0] , x_2 in [0,2]\}$ ,
+// % $\{x_1 in [0,1] , x_2 in [-2,0]\}$, and
+// % $\{x_1 in [0,1], x_2 in [0,2]\}$.
 // % Note that the formula $-1 <= x_1 <= 1 \land -2 <= x_2 <= 2$ representing the original input region is equivalent to the formula $(-1 <= x_1 <= 0 \lor 0 <= x <= 1) \land (-2 <= x_2 <= 0 \lor 0 <= x_2 <= 2)$ representing the combination of the created subregions.
 
 
@@ -6338,7 +6338,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 //     W^- = [\min(-0.5, 0), \min(0.5, 0)] = [-0.5, 0]
 //     \]
 
-//     For inputs $x_1 \in [1, 2]$ and $x_2 \in [-1, 3]$, the lower vector $\mathbf{l} = [1, -1]$ and the upper vector $\mathbf{u} = [2, 3]$:
+//     For inputs $x_1 in [1, 2]$ and $x_2 in [-1, 3]$, the lower vector $\mathbf{l} = [1, -1]$ and the upper vector $\mathbf{u} = [2, 3]$:
 //     \[
 //     \begin{aligned}
 //     f^a_L &= W^+ \cdot \mathbf{l} + W^- \cdot \mathbf{u} + b\\
@@ -6365,15 +6365,15 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // This is particularly useful when splitting input regions into multiple subproblems and computing abstraction in parallel.
 
 // Consider an input region that needs to be split for improving abstraction precision.
-// For example, we can split the input region $\{x_1 \in [-1,1], x_2 \in [-2,2]\}$ along the first dimension into two subproblems:
+// For example, we can split the input region $\{x_1 in [-1,1], x_2 in [-2,2]\}$ along the first dimension into two subproblems:
 // \begin{enumerate}
-// \item Subproblem 1: $\{x_1 \in [-1,0], x_2 \in [-2,2]\}$
-// \item Subproblem 2: $\{x_1 \in [0,1], x_2 \in [-2,2]\}$
+// \item Subproblem 1: $\{x_1 in [-1,0], x_2 in [-2,2]\}$
+// \item Subproblem 2: $\{x_1 in [0,1], x_2 in [-2,2]\}$
 // \end{enumerate}
 
 // Using the matrix form in~\autoref{ex:matrix-form-equivalence}, we can process both subproblems simultaneously by stacking the bounds into matrices:
 // \[
-// \mathbf{L} = \begin{bmatrix} -1 & -2 \\ 0 & -2 \end{bmatrix}, \quad
+// \mathbf{L} = \begin{bmatrix} -1 & -2 \\ 0 & -2 \end{bmatrix}, quad
 // \mathbf{U} = \begin{bmatrix} 0 & 2 \\ 1 & 2 \end{bmatrix}
 // \]
 // where each row represents the lower and upper bounds for one subproblem.
@@ -6388,7 +6388,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // where $\mathbf{1}$ is a vector of ones with appropriate dimension and $\otimes$ denotes the outer product.
 
 // \begin{example <ex:batch-processing}
-// Consider the network from~\autoref{ex:transformer-affine1} with weight $W = [-0.5, 0.5]$ and bias $b = 1.0$. We split the input region $\{x_1 \in [-1,1], x_2 \in [-2,2]\}$ into two subproblems as described above.
+// Consider the network from~\autoref{ex:transformer-affine1} with weight $W = [-0.5, 0.5]$ and bias $b = 1.0$. We split the input region $\{x_1 in [-1,1], x_2 in [-2,2]\}$ into two subproblems as described above.
 
 // First, we decompose the weight:
 // \[W^+ = [0, 0.5] \qquad W^- = [-0.5, 0] \qquad \mathbf{b} = [1.0, 1.0]\]
@@ -6421,8 +6421,8 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 
 // Therefore:
 // \begin{itemize}
-// \item Subproblem 1: $x_3 \in [0.0, 2.5]$
-// \item Subproblem 2: $x_3 \in [-0.5, 2.0]$
+// \item Subproblem 1: $x_3 in [0.0, 2.5]$
+// \item Subproblem 2: $x_3 in [-0.5, 2.0]$
 // \end{itemize}
 
 // We can verify these results by computing each subproblem individually using the original formulation, which yields identical results.
@@ -6439,7 +6439,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 
 // \begin{figure}[t]
 //     \centering
-//     \includegraphics[width=0.7\linewidth]{figure/gpu-benchmarking.png}
+//      in cludegraphics[width=0.7\linewidth]{figure/gpu-benchmarking.png}
 //     \caption{GPU Benchmarking Results. <fig:gpu-benchmarking}
 // \end{figure}
 
@@ -6473,8 +6473,8 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 
 // %% can be split into the subproblems  $-1 <= x_1 <= 1 \land -2 <= x_2 <= 2  \Rightarrow x_5 <= 0$
 
-// %% \tvn{hm .. if you have multiple inputs, how do you create regions from those?  e.g., if $\phi = 5<= x_2 <= 10 \land 10 <= i_2 <= 20$, then what is $\phi_k$?}
-// %% \hd{Split each input at a time, e.g., split $x_2$ from $5<= x_2 <= 10$ to $(5<= x_2 <= 8) \lor (8<= x_2 <= 10)$. Now original problem is $\phi = [(5<= x_2 <= 8) \lor (8<= x_2 <= 10)] \land (10 <= i_2 <= 20)$, or we could rewrite that formula in DNF form like $\phi = [(5<= x_2 <= 8) \land (10 <= i_2 <= 20)] \lor [(8<= x_2 <= 10) \land (10 <= i_2 <= 20)]$}\tvn{so if for i1 you make k1 splits,  i2 you make k2 splits,  .., then the number of sub probs is k1*k2*...kn?}\hd{yes, this thing is very trivial, I did it when I had no idea to optimize during that time}
+// %% \tvn{hm .. if you have multiple inputs, how do you create regions from those?  e.g., if $phi = 5<= x_2 <= 10 \land 10 <= i_2 <= 20$, then what is $phi_k$?}
+// %% \hd{Split each input at a time, e.g., split $x_2$ from $5<= x_2 <= 10$ to $(5<= x_2 <= 8) \lor (8<= x_2 <= 10)$. Now original problem is $phi = [(5<= x_2 <= 8) \lor (8<= x_2 <= 10)] \land (10 <= i_2 <= 20)$, or we could rewrite that formula in DNF form like $phi = [(5<= x_2 <= 8) \land (10 <= i_2 <= 20)] \lor [(8<= x_2 <= 10) \land (10 <= i_2 <= 20)]$}\tvn{so if for i1 you make k1 splits,  i2 you make k2 splits,  .., then the number of sub probs is k1*k2*...kn?}\hd{yes, this thing is very trivial, I did it when I had no idea to optimize during that time}
 // %% After that, \tool{} creates multiple CDCL verification instances, and each of them will solve a subproblem independently\tvn{how do you determine the number of subregions? is it automatically based on the number of avail threads?} \hd{I did split based on number of threads for now.}
 
 
@@ -6498,7 +6498,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 //  == Overview <sec:neuralsat:overview}
 // \begin{figure}[h]
 //     \centering
-//     \includegraphics[width=0.4\linewidth]{figure/arch.pdf}
+//      in cludegraphics[width=0.4\linewidth]{figure/arch.pdf}
 //     \caption{\label{fig:overview} The \neuralsat{} DPLL(T) Algorithm.}
 // \end{figure}
 
@@ -6523,8 +6523,8 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 //  == Illustration}
 
 // \begin{example <ex:neuralsat}
-// We use \neuralsat{} to prove that for inputs $x_1 \in [-1, 1], x_2 \in [-2,2]$ the network in~\autoref{fig:dnn} produces the output $x_5 <= 0$.
-// \neuralsat{} takes as input the formula $\alpha$ representing the network:
+// We use \neuralsat{} to prove that for inputs $x_1 in [-1, 1], x_2 in [-2,2]$ the network in~\autoref{fig:dnn} produces the output $x_5 <= 0$.
+// \neuralsat{} takes as input the formula $alpha$ representing the network:
 
 // \begin{equation*}%\label{eq:ex}
 // \begin{aligned}
@@ -6533,18 +6533,18 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 //   x_5 &= -x_3 + x_4 - 1.0
 // \end{aligned}
 // \end{equation*}
-// and the formula $\phi$ representing the property:
+// and the formula $phi$ representing the property:
 
 // \begin{equation* <eq:valid_prop}
-//     \phi : -1<= x_1 <= 1 \land -2 <= x_2 <= 2 \quad\Rightarrow\quad x_5 <= 0.
+//     phi : -1<= x_1 <= 1 \land -2 <= x_2 <= 2 quad\Rightarrowquad x_5 <= 0.
 // \end{equation*}
 
-// To prove $\alpha \Rightarrow \phi$, \neuralsat{} needs to show  that \emph{no} values of $x_1,x_2$ satisfying the input properties would result in $x_5 > 0$. In other words, \neuralsat{} needs to return \texttt{unsat} for:
+// To prove $alpha \Rightarrow phi$, \neuralsat{} needs to show  that \emph{no} values of $x_1,x_2$ satisfying the input properties would result in $x_5 > 0$. In other words, \neuralsat{} needs to return \texttt{unsat} for:
 // \begin{equation <eq:negprop}
-//   \alpha\; \land\; -1 <= x_1 <= 1     \;\land\; -2 <= x_2 <= 2   \;\land\; x_5 > 0.
+//   alpha\; \land\; -1 <= x_1 <= 1     \;\land\; -2 <= x_2 <= 2   \;\land\; x_5 > 0.
 // \end{equation}
 
-// \textbf{Notation:} In the following, we write $x \mapsto v$ to denote that the variable $x$ is assigned with a truth value $v \in \{T,F\}$. This assignment can be either decided by \texttt{Decide} or inferred by \texttt{BCP}. We also write $x@dl$ and  $\overline{x}@dl$ to indicate the respective assignments $x \mapsto T$ and $x \mapsto F$  at decision level $dl$.
+// \textbf{Notation:} In the following, we write $x \mapsto v$ to denote that the variable $x$ is assigned with a truth value $v in \{T,F\}$. This assignment can be either decided by \texttt{Decide} or inferred by \texttt{BCP}. We also write $x@dl$ and  $\overline{x}@dl$ to indicate the respective assignments $x \mapsto T$ and $x \mapsto F$  at decision level $dl$.
 
 // \paragraph{Boolean Abstraction} First, \neuralsat{} creates two Boolean variables $v_3$ and $v_4$ to represent the
 // %(pre-ReLU)
@@ -6554,7 +6554,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // %Now, \neuralsat{} searches for truth assignments for activation variables to satisfy the clauses. %(and later check that they also satisfy the constraints of DNN implied by these variables and the properties to be proved).
 // %We summarize the five iterations \neuralsat{} uses to determine that no such assignment exists (i.e., \texttt{unsat}).
 
-// %We show how \neuralsat{} proves that network in~\autoref{fig:dnn} has property in ~\autoref{eq:valid_prop}, i.e., for any inputs $x_1 \in [-1, 1], x_2 \in [-2,2]$, the network produces the output $x_5 <= 0$.
+// %We show how \neuralsat{} proves that network in~\autoref{fig:dnn} has property in ~\autoref{eq:valid_prop}, i.e., for any inputs $x_1 in [-1, 1], x_2 in [-2,2]$, the network produces the output $x_5 <= 0$.
 
 // % \textbf{SAT formulation} \neuralsat{} first encodes the verification task into an SMT checking problem as described in \S\ref{sec:nnverif} by representing the network in~\autoref{fig:dnn}b as the formula:
 
@@ -6571,7 +6571,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 
 // % \begin{figure}
 // %   \centering
-// %   \includegraphics[width=0.7\linewidth]{figure/example-b.pdf}
+// %    in cludegraphics[width=0.7\linewidth]{figure/example-b.pdf}
 // %   \caption{Simple FNN with ReLU activation.} \label{fig:ex}
 // % \end{figure}
 
@@ -6753,15 +6753,15 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 //     \centering
 //         \begin{minipage}[t]{0.495\textwidth}
 //             \centering
-//             \includegraphics[width=\linewidth]{figure/cdcl-tree-clause.png}
-//             % \includegraphics[width=\linewidth]{figure/cdcl-tree-clause.pdf}
+//              in cludegraphics[width=\linewidth]{figure/cdcl-tree-clause.png}
+//             %  in cludegraphics[width=\linewidth]{figure/cdcl-tree-clause.pdf}
 //             \caption*{(a) \tool{}}
 //         \end{minipage}
 //         % \hspace{0.5cm}
 //         \hfill
 //         \begin{minipage}[t]{0.44\textwidth}
 //             \centering
-//             \includegraphics[width=\linewidth]{figure/none-cdcl-tree.pdf}
+//              in cludegraphics[width=\linewidth]{figure/none-cdcl-tree.pdf}
 //             \caption*{(b) Others}
 //         \end{minipage}
 //         % \hfill
@@ -6875,7 +6875,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 
 // % \begin{figure}
 // % \centering
-// % \includegraphics[width=0.5\linewidth]{reluplexA.pdf}
+// %  in cludegraphics[width=0.5\linewidth]{reluplexA.pdf}
 // % \caption{A DNN example <fig:reluplex}
 // % \end{figure}
 
@@ -6884,8 +6884,8 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 //   We demonstrate \reluplex{} using the network in~\autoref{fig:dnn-replux}. This network can be represented by the following equations:
 
 // \begin{gather*}%\label{eq:reluplex1}
-//     x_3 = x_1 - x_2,\quad \hat{x_3} = \relu{x_3},\\
-//     x_4 = x_1 + x_2, \quad \hat{x_4} = \relu{x_4},\\
+//     x_3 = x_1 - x_2,quad \hat{x_3} = \relu{x_3},\\
+//     x_4 = x_1 + x_2, quad \hat{x_4} = \relu{x_4},\\
 //     x_5 = 0.5\hat{x_3} - 0.2\hat{x_4}
 // \end{gather*}
 
@@ -6922,7 +6922,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // %This \reluplex{} iterative updating process can be demonstrated through a sequence of \emph{configuration updates} over the variables.
 
 // \autoref{tab:reluplex1} shows the initial configuration with all values assigned to 0.
-// The lower (LB) and upper (UB) bounds of the inputs $x_1, x_2$ and output $x_5$ are specified in ~\autoref{eq:negprop1}. The LBs of $\hat{n}_i$'s representing ReLUs are 0s, and the other hidden variables are unbounded (i.e., $-\infty$ to $\infty$).
+// The lower (LB) and upper (UB) bounds of the inputs $x_1, x_2$ and output $x_5$ are specified in ~\autoref{eq:negprop1}. The LBs of $\hat{n}_i$'s representing ReLUs are 0s, and the other hidden variables are unbounded (i.e., $- in fty$ to $ in fty$).
 
 // \begin{table}[h]
 //     \caption{Configuration \#1 <tab:reluplex1}
@@ -6931,9 +6931,9 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // \begin{tabular}{ccccccccccc}
 //      & $x_1$ & $x_2$ & $x_3$ & $\hat{x}_3$ & $x_4$ & $\hat{x}_4$ & $x_5$ &$a_1$&$a_2$&$a_3$ \\
 //     \midrule
-//     LB & 0 & -2 & $-\infty$&0&$-\infty$& 0 & 0 & 0 & 0 &0\\
+//     LB & 0 & -2 & $- in fty$&0&$- in fty$& 0 & 0 & 0 & 0 &0\\
 //     Val& 0 & \textbf{\red{0}} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
-//     UB & 0.5 & -1 &$\infty$&$\infty$&$\infty$&$\infty$&0.5& 0 & 0 & 0
+//     UB & 0.5 & -1 &$ in fty$&$ in fty$&$ in fty$&$ in fty$&0.5& 0 & 0 & 0
 // \end{tabular}
 // \end{table}
 
@@ -6956,9 +6956,9 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // \begin{tabular}{ccccccccccc}
 //      & $x_1$ & $x_2$ & $x_3$ & $\hat{x}_3$ & $x_4$ & $\hat{x}_4$ & $x_5$ &$a_1$&$a_2$&$a_3$ \\
 //     \midrule
-//     LB & 0 & -2 & $-\infty$&0&$-\infty$& 0 & 0 & 0 & 0 &0\\
+//     LB & 0 & -2 & $- in fty$&0&$- in fty$& 0 & 0 & 0 & 0 &0\\
 //     Val& 0 & \textbf{\red{-1}} & 0 & 0 & 0 & 0 & 0 & \textbf{\red{1}} & \textbf{\red{-1}} & 0\\
-//     UB & 0.5 & -1 &$\infty$&$\infty$&$\infty$&$\infty$&0.5& 0 & 0 & 0\\\
+//     UB & 0.5 & -1 &$ in fty$&$ in fty$&$ in fty$&$ in fty$&0.5& 0 & 0 & 0\\\
 // \end{tabular}
 // \end{table}
 
@@ -6975,9 +6975,9 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // \begin{tabular}{ccccccccccc}
 //      & $x_1$ & $x_2$ & $x_3$ & $\hat{x}_3$ & $x_4$ & $\hat{x}_4$ & $\hat{x}_5$ &$a_1$&$a_2$&$a_3$ \\
 //     \midrule
-//     LB & 0 & -2 & $-\infty$&0&$-\infty$& 0 & 0 & 0 & 0 &0\\
+//     LB & 0 & -2 & $- in fty$&0&$- in fty$& 0 & 0 & 0 & 0 &0\\
 //     Val& 0 & -1 & \textbf{\red{1}} & 0 & 0 & 0 & 0 & \textbf{\red{0}} & -1 & 0\\
-//     UB & 0.5 & -1 &$\infty$&$\infty$&$\infty$&$\infty$&0.5& 0 & 0 & 0\\\
+//     UB & 0.5 & -1 &$ in fty$&$ in fty$&$ in fty$&$ in fty$&0.5& 0 & 0 & 0\\\
 // \end{tabular}
 
 // \end{table}
@@ -6996,9 +6996,9 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // \begin{tabular}{ccccccccccc}
 //      & $x_1$ & $x_2$ & $x_3$ & $\hat{x}_3$ & $x_4$ & $\hat{x}_4$ & $x_5$ &$a_1$&$a_2$&$a_3$ \\
 //     \midrule
-//     LB & 0 & -2 & $-\infty$&0&$-\infty$& 0 & 0 & 0 & 0 &0\\
+//     LB & 0 & -2 & $- in fty$&0&$- in fty$& 0 & 0 & 0 & 0 &0\\
 //     Val& 0 & -1 & 1 & 0 & \textbf{\red{-1}} & 0 & 0 & 0 & \textbf{\red{0}} & 0\\
-//     UB & 0.5 & -1 &$\infty$&$\infty$&$\infty$&$\infty$&0.5& 0 & 0 & 0\\\
+//     UB & 0.5 & -1 &$ in fty$&$ in fty$&$ in fty$&$ in fty$&0.5& 0 & 0 & 0\\\
 // \end{tabular}
 
 // \end{table}
@@ -7017,9 +7017,9 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // \begin{tabular}{ccccccccccc}
 //      & $x_1$ & $x_2$ & $x_3$ & $\hat{x}_3$ & $x_4$ & $\hat{x}_4$ & $x_5$ &$a_1$&$a_2$&$a_3$ \\
 //     \midrule
-//     LB & 0 & -2 & $-\infty$&0&$-\infty$& 0 & 0 & 0 & 0 &0\\
+//     LB & 0 & -2 & $- in fty$&0&$- in fty$& 0 & 0 & 0 & 0 &0\\
 //     Val& 0 & -1 & 1 & \textbf{\red{1}} & -1 & 0 & 0 & 0 & 0 & \textbf{\red{0.5}}\\
-//     UB & 0.5 & -1 &$\infty$&$\infty$&$\infty$&$\infty$&0.5& 0 & 0 & 0\\\
+//     UB & 0.5 & -1 &$ in fty$&$ in fty$&$ in fty$&$ in fty$&0.5& 0 & 0 & 0\\\
 // \end{tabular}
 
 // \end{table}
@@ -7039,9 +7039,9 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // \begin{tabular}{ccccccccccc}
 //      & $x_1$ & $x_2$ & $x_3$ & $\hat{x}_3$ & $x_4$ & $\hat{x}_4$ & $x_5$ &$a_1$&$a_2$&$a_3$ \\
 //     \midrule
-//     LB & 0 & -2 & $-\infty$&0&$-\infty$& 0 & 0 & 0 & 0 &0\\
+//     LB & 0 & -2 & $- in fty$&0&$- in fty$& 0 & 0 & 0 & 0 &0\\
 //     Val& 0 & -1 & 1 & \textbf{\red{1}} & -1 & 0 & \textbf{\red{0.5}} & 0 & 0 & \textbf{\red{0}}\\
-//     UB & 0.5 & -1 &$\infty$&$\infty$&$\infty$&$\infty$&0.5& 0 & 0 & 0\\\
+//     UB & 0.5 & -1 &$ in fty$&$ in fty$&$ in fty$&$ in fty$&0.5& 0 & 0 & 0\\\
 // \end{tabular}
 
 // \end{table}
@@ -7162,9 +7162,9 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 
 // % \paragraph*{Motivation} This benchmark combines two convolutional CIFAR10 networks from last year's VNN-COMP 2020 with a new, larger network with the goal to evaluate the progress made by the whole field of Neural Network verification.
 
-// % \paragraph*{Networks} The two ReLU networks \texttt{cifar\_10\_2\_255} and \texttt{cifar\_10\_8\_255} with two convolutional and two fully-connected layers were trained for $\ell_\infty$ perturbations of $\epsilon = \frac{2}{255}$ and $\frac{8}{255}$, respectively, using COLT \cite{balunovic:20}  and the larger \texttt{ConvBig} with four convolutional and three fully-connected networks, was trained using adversarial training \cite{madry:17} and $\epsilon = \frac{2}{255}$.
+// % \paragraph*{Networks} The two ReLU networks \texttt{cifar\_10\_2\_255} and \texttt{cifar\_10\_8\_255} with two convolutional and two fully-connected layers were trained for $\ell_ in fty$ perturbations of $\epsilon = \frac{2}{255}$ and $\frac{8}{255}$, respectively, using COLT \cite{balunovic:20}  and the larger \texttt{ConvBig} with four convolutional and three fully-connected networks, was trained using adversarial training \cite{madry:17} and $\epsilon = \frac{2}{255}$.
 
-// % \paragraph*{Specifications} We draw the first 100 images from the CIFAR10 test set and for every network reject incorrectly classified ones. For the remaining images, the specifications describe a correct classification under an $\ell_\infty$-norm perturbation of at most $\frac{2}{255}$ and $\frac{8}{255}$ for \texttt{cifar\_10\_2\_255} and \texttt{ConvBig} and \texttt{cifar\_10\_8\_255}, respectively and allow a per sample timeout of 5 minutes.
+// % \paragraph*{Specifications} We draw the first 100 images from the CIFAR10 test set and for every network reject incorrectly classified ones. For the remaining images, the specifications describe a correct classification under an $\ell_ in fty$-norm perturbation of at most $\frac{2}{255}$ and $\frac{8}{255}$ for \texttt{cifar\_10\_2\_255} and \texttt{ConvBig} and \texttt{cifar\_10\_8\_255}, respectively and allow a per sample timeout of 5 minutes.
 
 
 // % \subsection{VGGNET16}
@@ -7254,7 +7254,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 
 // % \pagebreak
 // % \subsection{NN4Sys}
-// % \paragraph*{Proposed by} the $\alpha,\!\beta$-CROWN team with collaborations with Cheng Tan, Haoyu He and Shuyi Lin at Northeastern University.
+// % \paragraph*{Proposed by} the $alpha,\!\beta$-CROWN team with collaborations with Cheng Tan, Haoyu He and Shuyi Lin at Northeastern University.
 // % \paragraph*{Application}
 // % The benchmark contains networks for database learned index, video streaming learned adaptive bitrate, and learned cardinality
 // % estimation which map inputs from various dimensions to 1-dimension outputs.
@@ -7326,7 +7326,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // % \paragraph*{Networks} The neural network controller we used in this benchmark is an image-based controller for an Autonomous Aircraft Taxiing System whose goal is to control an aircraft's taxiing at a steady speed on a taxiway. This network was introduced  in the paper "Verification of Image-based Neural Network Controllers Using Generative Models"~\cite{katz2021veri}. The neural network integrates a concatenation of the cGAN (conditional GAN) and controller, resulting in a unified neural network controller with low-dimensional state inputs. In this problem, the inputs to the neural network consist of two state variables and two latent variables. The aircraft's state is determined by its crosstrack position (p) and heading angle error ($\theta$) with respect to the taxiway center line. Two latent variables with a range of -0.8 to 0.8 are introduced to account for environmental changes.
 
 // % Because in this case the output spec depends on both the input and output and considering the VNN-LIB limitation, we added a skip-connection layer to the neural network to have the input values present in the output space. We also added one linear layer after that to create a linear equation for each local model.
-// % \paragraph*{Specifications} As mentioned earlier, the aim of this benchmark is to examine whether the neural network output stays within the range defined by the linear model's output, including a margin for uncertainty.Given input $x \in X$ and output $Y = f_{NN}(x)$, the query is of the form: $A_{mat}\times X + b + U_{lb} <=q Y <=q A_{mat}\times X + b + U_{ub}$ for each linear model in its abstraction region.
+// % \paragraph*{Specifications} As mentioned earlier, the aim of this benchmark is to examine whether the neural network output stays within the range defined by the linear model's output, including a margin for uncertainty.Given input $x in X$ and output $Y = f_{NN}(x)$, the query is of the form: $A_{mat}\times X + b + U_{lb} <=q Y <=q A_{mat}\times X + b + U_{ub}$ for each linear model in its abstraction region.
 // % \paragraph*{Link} \url{https://github.com/aliabigdeli/LinearizeNN_benchmark2024}
 
 // % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
@@ -7339,7 +7339,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 
 // % % \paragraph*{Networks} For each image to be verified, a separate bias field transform network is created~\cite{Henriksen+21} which consists of the FC transform layer followed by the Cifar CNN. The Cifar CNN consists of 8 convolutional layers followed by ReLUs. Each bias field transform network has 363k parameters and 45k nodes.
 
-// % % \paragraph*{Specifications} The specification considers bias field perturbations of the input. The task is reduced to a standard $\ell_\infty$ specification by encoding bias field the bias field transformation into fully connected layers which are prepended to the network under consideration. The bias field perturbations used $\epsilon = 0.06$ (as described in~\cite{Henriksen+21}) and a timeout of 5 minutes.
+// % % \paragraph*{Specifications} The specification considers bias field perturbations of the input. The task is reduced to a standard $\ell_ in fty$ specification by encoding bias field the bias field transformation into fully connected layers which are prepended to the network under consideration. The bias field perturbations used $\epsilon = 0.06$ (as described in~\cite{Henriksen+21}) and a timeout of 5 minutes.
 
 
 // % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -7374,7 +7374,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // % %%%% sec: ViT %%
 // % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 // % \subsection{ViT}
-// % \paragraph*{Proposed by} the $\alpha,\!\beta$-CROWN team.
+// % \paragraph*{Proposed by} the $alpha,\!\beta$-CROWN team.
 // % \paragraph*{Motivation}
 // % Transformers~\cite{vaswani2017attention} based on the self-attention mechanism have much more complicated architectures and contain more kinds of nonlinerities, compared to simple feedforward networks with relatively simple activation functions.
 // % It makes verifying Transformers challenging. We aim to encourage the development of verification techniques for Transformer-based models, and we also aim to benchmark neural network verifiers on relatively complicated neural network architectures and more general nonlinearities. Therefore, we propose a new benchmark with Vision Transformers (ViTs)~\cite{dosovitskiy2020image}. This benchmark is developed based on our work on neural network verification for models with general nonlinearities~\cite{shi2024genbab}.
@@ -7404,7 +7404,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // % \end{table}
 
 // % \paragraph*{Specifications}
-// % The specifications are generated from the robustness verification problem with $\ell_\infty$ perturbation.
+// % The specifications are generated from the robustness verification problem with $\ell_ in fty$ perturbation.
 // % We use the CIFAR-10 dataset with perturbation size $\epsilon=\frac{1}{255}$ at test time.
 // % We have filtered the CIFAR-10 test set to exclude instances where either adversarial examples can be found (by PGD attack~\cite{madry2017towards} with 100 steps and 1000 restarts) or the vanilla CROWN-like method~\cite{zhang2018efficient,shi2019robustness} can already easily verify.
 // % We randomly keep 100 instances for each model, with a timeout threshold of 100 seconds.
@@ -7415,7 +7415,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 
 // % \subsection{LSNC}
 
-// % \paragraph*{Proposed by} the $\alpha,\!\beta$-CROWN team.
+// % \paragraph*{Proposed by} the $alpha,\!\beta$-CROWN team.
 // % \paragraph*{Motivation}
 // % We develop a benchmark for the problem of verifying the Lyapunov stability of NN controllers in nonlinear dynamical systems within a region-of-intrest and a region-of-attraction. This is important for providing stability guarantees that are essential for safety-critical applications with NN controllers. It is also a useful application of neural network verification as recently demonstrated in \cite{yang2024lyapunov,shi2024certified}, and we refer readers to those works for more details on the problem.
 // % \paragraph*{Networks and Specifications}
@@ -7456,21 +7456,21 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 
 // % \begin{figure}[h]
 // %   \centering
-// %     \includegraphics[width=0.7\textwidth]{figure/AccEfficientGTSRBBelgium.png}
+// %      in cludegraphics[width=0.7\textwidth]{figure/AccEfficientGTSRBBelgium.png}
 // %     \caption{Accuracy Efficient Architecture for GTSRB and Belgium dataset}
 // %     \label{fig:Acc-Efficient-Arch-GTSRB-Belgium}
 // % \end{figure}
 
 // % \begin{figure}[h]
 // %   \centering
-// %     \includegraphics[width=0.7\textwidth]{figure/AccEfficientArchChinese.png}
+// %      in cludegraphics[width=0.7\textwidth]{figure/AccEfficientArchChinese.png}
 // %     \caption{Accuracy Efficient Architecture for Chinese dataset}
 // %     \label{fig:Acc-Efficient-Arch-Chinese}
 // % \end{figure}
 
 // % \begin{figure}[h]
 // %   \centering
-// %     \includegraphics[width=0.3\textwidth]{figure/XNORQConv.png}
+// %      in cludegraphics[width=0.3\textwidth]{figure/XNORQConv.png}
 // %     \caption{XNOR(QConv) architecture}
 // %     \label{fig:XNOR(QConv)-arch}
 // % \end{figure}
@@ -7499,7 +7499,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 
 // % \subsection{CIFAR100}
 
-// % \paragraph*{Proposed by} the $\alpha,\!\beta$-CROWN team.
+// % \paragraph*{Proposed by} the $alpha,\!\beta$-CROWN team.
 // % \paragraph*{Motivation} This benchmark is reused from VNN-COMP 2022 with a reduced complexity (only two out of the four models with medium sizes are retained).
 // % See details in Section 4.5 of the report of VNN-COMP 2022~\cite{muller2022vnncomp}.
 
@@ -7519,7 +7519,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 
 // % \subsection{TinyImagenet}
 
-// % \paragraph*{Proposed by} the $\alpha,\!\beta$-CROWN team.
+// % \paragraph*{Proposed by} the $alpha,\!\beta$-CROWN team.
 // % \paragraph*{Motivation} This benchmark is reused from VNN-COMP 2022. See details in Section 4.5 of the report of VNN-COMP 2022~\cite{muller2022vnncomp}.
 
 // % \paragraph*{Networks} We provide a ResNet for TinyImageNet (input dimension $64 \times 64 \times 3$, 200 classes):
@@ -7557,7 +7557,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 
 // % \begin{figure}[htbp]
 // %     \centering
-// %     \includegraphics[width=0.9\columnwidth]{./figure/NLP-Flow.png}
+// %      in cludegraphics[width=0.9\columnwidth]{./figure/NLP-Flow.png}
 // %     \caption{\small\emph{Generic approach to generating the NLP verification pipelines~\cite{casadio2023antonio,casadio2024nlp} deployed to obtain the safeNLP benchmark.}}
 // %    \label{fig:antonio}
 // % \end{figure}
@@ -7756,9 +7756,9 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 //     \end{tabular}
 // \end{minipage}
 // \begin{minipage}{0.72\linewidth}
-//     \centerline{\includegraphics[width=\textwidth]{figure/all_scored.pdf}}
+//     \centerline{ in cludegraphics[width=\textwidth]{figure/all_scored.pdf}}
 // \end{minipage}
-// \caption{VNN-COMP'25 results~\cite{kaulen20256thinternationalverificationneural}\tvn{keep the $\alpha\beta$ instead of AB} <fig:vnn-comp25}    
+// \caption{VNN-COMP'25 results~\cite{kaulen20256thinternationalverificationneural}\tvn{keep the $alpha\beta$ instead of AB} <fig:vnn-comp25}    
 // \end{figure}
 
 
@@ -9357,7 +9357,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // \begin{problem <prob:z3-1}
 // Use Z3 to check whether the constraints
 // \[
-// x+y=5, \quad x >= 0, \quad y >= 0
+// x+y=5, quad x >= 0, quad y >= 0
 // \]
 // are satisfiable, and if so, ask Z3 for a model.
 // \end{problem}
@@ -9404,7 +9404,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 
 // \begin{figure}
 //     \centering
-//   \includegraphics[width=0.7\linewidth]{figure/dpll.pdf}
+//    in cludegraphics[width=0.7\linewidth]{figure/dpll.pdf}
 //   \caption{\label{fig:dpll} The classicial DPLL Algorithm.}
 // \end{figure}
 
@@ -9694,7 +9694,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // c_1x_1 + c_2x_2 + \cdots + c_nx_n <=q b,
 // \]
 
-// where $c_i, b \in \mathbb{R}$. These constraints limit the feasible values that the variables $x_i$ can take.
+// where $c_i, b in \mathbb{R}$. These constraints limit the feasible values that the variables $x_i$ can take.
 // The set of points satisfying all constraints is called the \emph{feasible region}.
 
 
@@ -9721,7 +9721,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // z(x_1, x_2, \ldots, x_n) = c_1x_1 + c_2x_2 + \cdots + c_nx_n,
 // \]
 
-// where $c_i \in \mathbb{R}$ are coefficients, and $x_i \in \mathbb{R}$ are decision variables.
+// where $c_i in \mathbb{R}$ are coefficients, and $x_i in \mathbb{R}$ are decision variables.
 
 
 // \paragraph{Optimizing Goals}
@@ -9895,14 +9895,14 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // \[
 // c_1x_1 + c_2x_2 + \cdots + c_nx_n + d_1y_1 + d_2y_2 + \cdots + d_my_m <=q b,
 // \]
-// where $x_i \in \mathbb{R}$ are continuous variables, $y_j \in \mathbb{Z}$ are integer variables, and $c_i, d_j, b \in \mathbb{R}$.
+// where $x_i in \mathbb{R}$ are continuous variables, $y_j in \mathbb{Z}$ are integer variables, and $c_i, d_j, b in \mathbb{R}$.
 
 // \paragraph{Objective Function}
 // A linear objective function $z$ in MILP can be expressed as:
 // \[
 // z(x_1, \ldots, x_n, y_1, \ldots, y_m) = c_1x_1 + c_2x_2 + \cdots + c_nx_n + d_1y_1 + d_2y_2 + \cdots + d_my_m,
 // \]
-// where $x_i \in \mathbb{R}$ are continuous variables, $y_j \in \mathbb{Z}$ are integer variables, and $c_i, d_j \in \mathbb{R}$.
+// where $x_i in \mathbb{R}$ are continuous variables, $y_j in \mathbb{Z}$ are integer variables, and $c_i, d_j in \mathbb{R}$.
 
 // \paragraph{Optimizing Goals}
 // In MILP, the goal is to find the optimal values of the decision variables $x$ and $y$ that maximize or minimize the objective function $z$, while satisfying all linear constraints.
@@ -9991,19 +9991,19 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 
 
 // \subsection{Encoding Binary Variables <sec:milp-binary}
-// MILP problems often involve condition where the answer depends on some condition.  We can encode such condition using binary variables (0-1 integers), e.g., using  $z \in \{0,1\}$ to indicate whether a certain condition is met.  Moreover, we can use a ``trick'' with a large constant $M$, e.g., $\infty$, to encode logical implications.
+// MILP problems often involve condition where the answer depends on some condition.  We can encode such condition using binary variables (0-1 integers), e.g., using  $z in \{0,1\}$ to indicate whether a certain condition is met.  Moreover, we can use a ``trick'' with a large constant $M$, e.g., $ in fty$, to encode logical implications.
 
 // \begin{example}
 // To encode ``if $z = 1$ then $x >= 5$'', use:
 // \[
-// x ~ >=~ 5 - M(1-z), \quad z \in \{0,1\}
+// x ~ >=~ 5 - M(1-z), quad z in \{0,1\}
 // \]
 
 
 // This works because
 // \begin{itemize}
 //  \item $z=1 \implies x ~>=~ 5 - M(0) \implies x >= 5$.
-//  \item $z=0 \implies x ~>=~ 5 - M \implies x >= -\infty$ (when $M$ is large this is vacuously true and can be discarded).
+//  \item $z=0 \implies x ~>=~ 5 - M \implies x >= - in fty$ (when $M$ is large this is vacuously true and can be discarded).
 // \end{itemize}
 
 // \end{example}
@@ -10031,7 +10031,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // & y >= 0, \\
 // & y <=q x + M(1-z), \\
 // & y <=q Mz,\\
-// & z \in \{0,1\}.\\
+// & z in \{0,1\}.\\
 // \end{aligned}
 // \end{equation}
 
@@ -10053,7 +10053,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // & y >= x, \\
 // & y >= 0, \\
 // & y <=q x + (U-x)(1-z), \\
-// & y <=q Uz, \quad z \in \{0,1\}, \\
+// & y <=q Uz, quad z in \{0,1\}, \\
 // & L <=q x <=q U.
 // \end{aligned}
 // \]
@@ -10122,7 +10122,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // & x + 2y >= 3, \\
 // & 3x + y >= 3, \\
 // & x, y >= 0, \\
-// & x,y \in \mathbb{R}.
+// & x,y in \mathbb{R}.
 // \end{aligned}
 // \]
 
@@ -10193,7 +10193,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 
 // For the constraints in~\autoref{ex:lp-constraints}:
 // \begin{align}
-// x+y <= 4,\quad x>= 0,\quad y>= 0
+// x+y <= 4,quad x>= 0,quad y>= 0
 // \end{align}
 
 // Running an LP solver with objective $\min 0$ will return a point, e.g., (x=0,y=0), within the feasible region.
@@ -10391,7 +10391,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // % \SetKwData{unreachable}{UNREACHABLE}
 // % \SetKwData{maxinputs}{MAX\_NUM\_INPUT}
 // % \SetKwData{assignment}{$\sigma$}
-// % \SetKwData{network}{$\alpha$}
+// % \SetKwData{network}{$alpha$}
 // % \SetKwData{dl}{dl}
 // % \SetKwData{lpmodel}{solver}
 // % \SetKwData{clauses}{clauses}
@@ -10413,11 +10413,11 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // %     \small
 
 
-// %     \Input{DNN $\alpha$, property $\phi_{in} \Rightarrow \phi_{out}$}
+// %      in put{DNN $alpha$, property $phi_"in" \Rightarrow phi_"out"$}
 // %     \Output{\texttt{unsat} if the property is valid and \texttt{sat} otherwise}
 // %     \BlankLine
 
-// %     $\clauses <=ftarrow \BooleanAbstraction(\alpha)$\;\label{line:Booleanabstraction}
+// %     $\clauses <=ftarrow \BooleanAbstraction(alpha)$\;\label{line:Booleanabstraction}
 
 // %     \While{\true}{
 // %         $\sigma <=ftarrow \emptyset$ \tcp{initial assignment <line:varsa}
@@ -10427,8 +10427,8 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // %             $\isconflict <=ftarrow \true$ \;
 
 // %             \If{$\BCP(\clauses, \sigma, \dl, \igraph)$}{\label{line:bcp}
-// %                 \If{$\Deduction(\sigma, \dl, \alpha, \phi_{in}, \phi_{out})$}{ \label{line:deduction}
-// %                     $\issat, v_i <=ftarrow \Decide(\alpha, \phi_{in}, \phi_{out}, \dl, \sigma)$ \tcp{decision heuristic} \label{line:decide}
+// %                 \If{$\Deduction(\sigma, \dl, alpha, phi_"in", phi_"out")$}{ \label{line:deduction}
+// %                     $\issat, v_i <=ftarrow \Decide(alpha, phi_"in", phi_"out", \dl, \sigma)$ \tcp{decision heuristic} \label{line:decide}
 // %                     \lIf(\tcp*[h]{total assignment}){\issat}{
 // %                         \Return{$\sat$} \label{line:returnsat}
 // %                     }
@@ -10456,12 +10456,12 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // % \end{algorithm}
 
 
-// % \autoref{fig:alg} shows the \tool{} algorithm, which takes as input the formula $\alpha$ representing the ReLU-based DNN $N$ and the formulae $\phi_{in}\Rightarrow \phi_{out}$ representing the property $\phi$ to be proved.
+// % \autoref{fig:alg} shows the \tool{} algorithm, which takes as input the formula $alpha$ representing the ReLU-based DNN $N$ and the formulae $phi_"in"\Rightarrow phi_"out"$ representing the property $phi$ to be proved.
 // % Internally, \tool{} checks the satisfiability of the formula given in~\autoref{eq:nnv2}
 // % \begin{equation*}
-// %   \alpha \land \phi_{in} \land \lnot{\phi_{out}}.
+// %   alpha \land phi_"in" \land \lnot{phi_"out"}.
 // % \end{equation*}
-// % \tool{} returns \texttt{unsat} if the formula unsatisfiable, indicating  that $\phi$ is a valid property of $N$, and \texttt{sat} if it is satisfiable, indicating the $N$ is not a valid property.
+// % \tool{} returns \texttt{unsat} if the formula unsatisfiable, indicating  that $phi$ is a valid property of $N$, and \texttt{sat} if it is satisfiable, indicating the $N$ is not a valid property.
 
 // % \tool{} uses a  DPLL(T)-based algorithm to check unsatisfiability.
 // % First, the input formula in~\autoref{eq:nnv2} is abstracted to a propositional formula
@@ -10585,7 +10585,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // %     \end{minipage}
 // %     \begin{minipage}[c]{0.40\textwidth}
 // %         \centering
-// %         \includegraphics[width=1\linewidth]{figure/implication_graph.pdf}
+// %          in cludegraphics[width=1\linewidth]{figure/implication_graph.pdf}
 // %         \caption*{(b)}
 // %     \end{minipage}
 // %     \begin{minipage}[c]{0.33\textwidth}
@@ -10654,11 +10654,11 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // % \vspace{-0.2in}
 // % \begin{algorithm}[H]
 // %     \small
-// %     \Input{implication graph \implicationgraph}
+// %      in put{implication graph \implicationgraph}
 // %     \Output{\clause}
 // %     \BlankLine
 // %     $\clause >=ts \CurrentConflictClause(\implicationgraph)$\;\label{line:conflict}
-// %     \While{$\neg \StopCriterion(\clause)$}{\label{line:loopstart}
+// %     \While{$not \StopCriterion(\clause)$}{\label{line:loopstart}
 // %       $\literal >=ts \LastAssignedLiteral(\implicationgraph, \clause)$\;\label{line:lit}
 // %       $\variable >=ts \LiteralToVariable(\literal)$\;\label{line:var}
 // %       $\antecedent >=ts \Antecedent(\implicationgraph,\literal)$\;\label{line:ante}
@@ -10675,9 +10675,9 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 
 // % \paragraph{Resolution.} We use the standard \emph{binary resolution rule} to learn a new clause implied by two (\emph{resolving}) clauses $a_1 \lor ... \lor a_n \lor \beta$ and $b_1 \lor ... \lor b_m \lor \overline{\beta}$ containing complementary literals involving the (\emph{resolution}) variable $\beta$:
 // % \begin{equation} \label{eq:binary-resolution}
-// %     \frac{(a_1 \lor ... \lor a_n \lor \beta) \quad \quad (b_1 \lor ... \lor b_m \lor \overline{\beta})}{(a_1 \lor ... \lor a_n \lor b_1 \lor ... \lor b_m)} \quad  (\textsc{Binary-Resolution})
+// %     \frac{(a_1 \lor ... \lor a_n \lor \beta) quad quad (b_1 \lor ... \lor b_m \lor \overline{\beta})}{(a_1 \lor ... \lor a_n \lor b_1 \lor ... \lor b_m)} quad  (\textsc{Binary-Resolution})
 // % \end{equation}
-// % The resulting (\emph{resolvant}) clause $a_1 \lor ... \lor a_n \lor b_1 \lor ... \lor b_m$ contains all the literals that do not have complements $\beta$ and $\neg{\beta}$.
+// % The resulting (\emph{resolvant}) clause $a_1 \lor ... \lor a_n \lor b_1 \lor ... \lor b_m$ contains all the literals that do not have complements $\beta$ and $not{\beta}$.
 // % %A well-known result obtained by Robinson \cite{robinson1965machine} shows that a deductive system based on the \textbf{binary resolution} rule as its single inference rule is \textbf{sound} and \textbf{complete}.
 // % %In other words, a CNF formula is unsatisfiable if and only if there exists a finite series of binary resolution steps ending with the empty clause.
 
@@ -10752,7 +10752,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // % Intuitively, by backtracking to the second most recent level, which means erasing assignments made \emph{after} that level, this strategy encourages trying new assignments for more recently decided variables.
 // % %\hd{Other backtracking scheme in Chaff~\cite{moskewicz2001chaff}: always stop clause learning at the first UIP --- This form of clause learning, and associated backtracking procedure, is referred to as first UIP clause learning. Existing results indicate that the first UIP clause learning procedure may end up doing more backtracking than the original clause learning of GRASP~\cite{zhang2001efficient}. However, Chaff creates significantly fewer clauses and is significantly more effective at backtracking. As a result, the first UIP learning scheme is now commonly used by the majority of CDCL SAT solvers.}
 
-// % %\tvn{Intuitively this is because} \hd{Intuitively, backtracking to 2nd most recent $dl$ in $cl$ to flip the assignment of the most recent decided literal (True to False or False to True). For example, \{$\neg x_5@3, x_1@6$\} causes the conflict, the most recent decided literal is $x_1$, then we need to flip $x_1$ from True to False. But now $x_1$ is associated with decision level 3 (dl 3 is decision level of $x_5$ --- the literal which has 2nd most recent decision level in the learned conflict clause.)}.
+// % %\tvn{Intuitively this is because} \hd{Intuitively, backtracking to 2nd most recent $dl$ in $cl$ to flip the assignment of the most recent decided literal (True to False or False to True). For example, \{$not x_5@3, x_1@6$\} causes the conflict, the most recent decided literal is $x_1$, then we need to flip $x_1$ from True to False. But now $x_1$ is associated with decision level 3 (dl 3 is decision level of $x_5$ --- the literal which has 2nd most recent decision level in the learned conflict clause.)}.
 
 
 
@@ -10820,32 +10820,32 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // % \begin{algorithm}[t]
 // %     \small
 
-// %     \Input{ DNN $\network$, input property $\phi_{in}$, output property $\phi_{out}$, decision level $dl$ and current assignment $\assignment$}
+// %      in put{ DNN $\network$, input property $phi_"in"$, output property $phi_"out"$, decision level $dl$ and current assignment $\assignment$}
 // %     \Output{{\false} if infeasibility occurs, {\true} otherwise}
 
 // %     \BlankLine
 
-// %     $\lpmodel <=ftarrow \LPSolver(\assignment, \network \land \phi_{in} \land \overline{\phi_{out}})$\;\label{line:lpsolver}
-// %     \lIf{$\Solve(\lpmodel) \equiv \infeasible$}{\Return {\false} <line:solve}
+// %     $\lpmodel <=ftarrow \LPSolver(\assignment, \network \land phi_"in" \land \overline{phi_"out"})$\;\label{line:lpsolver}
+// %     \lIf{$\Solve(\lpmodel) \equiv  in feasible$}{\Return {\false} <line:solve}
 // %     \lIf(\tcp*[h]{orig prob (~\autoref{eq:nnv2}) is satisfiable}){$\isTotal(\assignment)$}{\Return {\true}  <line:full}
-// %     %$\inputs = >=tInputs(\phi_{in})$
+// %     %$ in puts = >=tInputs(phi_"in")$
 // %     % $\ninputs <=ftarrow >=tNumInputs(\network)$
 // %     % $\layernodes = \FindLayerNodes(\assignment)$\;
 
-// %     % \If{$|\inputs| <= \maxinputs$}{
-// %     %     $\inputbounds = \TightenBounds(\lpmodel, \inputs)$\;\label{line:tighteninpsb}
+// %     % \If{$| in puts| <= \maxinputs$}{
+// %     %     $ in putbounds = \TightenBounds(\lpmodel,  in puts)$\;\label{line:tighteninpsb}
 // %     % }
-// %     % \Else{$\inputbounds = >=tInputBounds(\phi_{in})$\;\label{line:inputbounds}
+// %     % \Else{$ in putbounds = >=tInputBounds(phi_"in")$\;\label{line:inputbounds}
 // %     % }
 
-// %     $\inputbounds <=ftarrow \TightenInputBounds(\lpmodel, \phi_{in})$\;\label{line:absstart}
-// %     $\outputbounds, \hiddenbounds <=ftarrow \Abstract(\network, \assignment, \inputbounds$)\;\label{line:abstraction}
+// %     $ in putbounds <=ftarrow \TightenInputBounds(\lpmodel, phi_"in")$\;\label{line:absstart}
+// %     $\outputbounds, \hiddenbounds <=ftarrow \Abstract(\network, \assignment,  in putbounds$)\;\label{line:abstraction}
 
-// %     \lIf{$\Check(\outputbounds, \overline{\phi_{out}}) \equiv \infeasible$}{\Return {\false} <line:checkfeasibility}
+// %     \lIf{$\Check(\outputbounds, \overline{phi_"out"}) \equiv  in feasible$}{\Return {\false} <line:checkfeasibility}
 
-// %     \For{$v \in \hiddenbounds$} {\label{line:infera}
+// %     \For{$v in \hiddenbounds$} {\label{line:infera}
 // %       $x <=ftarrow \ActivationStatus(v)$\;
-// %       \lIf{$x \in \sigma \lor \neg{x} \in \sigma$}{\Continue}
+// %       \lIf{$x in \sigma \lor not{x} in \sigma$}{\Continue}
 // %       \lIf{$\Lower(v) > 0$}{$\assignment <=ftarrow \assignment \cup x@dl$}
 // %         <=lseIf{$\Upper(v) <= 0$}{$\assignment <=ftarrow \assignment \cup \overline{x}@dl$ <line:inferb}
 // %     }
@@ -10862,10 +10862,10 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 
 
 // % \autoref{alg:deduction} describes \texttt{Deduction}, which returns \texttt{False} if infeasibility occurs and  \texttt{True} otherwise.
-// % %\textsc{Deduce} is a theory solver that takes the arguments including: the current assignment $\sigma$, neural network $\alpha$, precondition $\phi_{in}$ over inputs and postcondition $\phi_{out}$ over outputs.
-// % First, it creates a linear constraint system from the input assignment $\sigma$ and $\alpha \land \phi_{in} \land \overline{\phi_{out}}$, i.e., the formula in ~\autoref{eq:nnv2} representing the original problem  (line~\ref{line:lpsolver}).
+// % %\textsc{Deduce} is a theory solver that takes the arguments including: the current assignment $\sigma$, neural network $alpha$, precondition $phi_"in"$ over inputs and postcondition $phi_"out"$ over outputs.
+// % First, it creates a linear constraint system from the input assignment $\sigma$ and $alpha \land phi_"in" \land \overline{phi_"out"}$, i.e., the formula in ~\autoref{eq:nnv2} representing the original problem  (line~\ref{line:lpsolver}).
 // % The key idea is that we can remove ReLU activation for hidden neurons whose activation status have been decided.
-// % For constraints in $\alpha$ associated with variables that are not in the $\sigma$,  we ignore them and just consider the cutting planes introduced by the partial assignment.
+// % For constraints in $alpha$ associated with variables that are not in the $\sigma$,  we ignore them and just consider the cutting planes introduced by the partial assignment.
 // % %FixUB preceding sentence based on answer.}
 // % %\hd{Yes, you're correct. We ignore constraints generated by unassigned variables and only consider the cutting planes introduced by the partial assignment}
 // % For example, for the assignment $v_3\mapsto T, v_4 \mapsto F$, the non-linear ReLU constraints $x_3=ReLU(-0.5x_1+0.5x_2+1)$ and  $x_4=ReLU(x_1+x_2-1)$ for the DNN in~\autoref{fig:dnn} become linear constraints $x_3=-0.5x_1+0.5x_2$ and $x_4=0$, respectively.
@@ -10881,24 +10881,24 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // %     \begin{minipage}[b]{1\linewidth}
 // %         \centering
 // %         \begin{minipage}[c]{0.24\linewidth}
-// %             \includegraphics[width=\linewidth]{figure/interval-3.pdf}
+// %              in cludegraphics[width=\linewidth]{figure/interval-3.pdf}
 // %             \vspace*{-10mm}
 // %             \caption*{(a) interval}
 // %         \end{minipage}
 // %         % \hspace{0.05\textwidth}%
 // %         \begin{minipage}[c]{0.24\linewidth}
-// %             \includegraphics[width=\linewidth]{figure/zonotope-3.pdf}
+// %              in cludegraphics[width=\linewidth]{figure/zonotope-3.pdf}
 // %             \vspace*{-10mm}
 // %             \caption*{(b) zonotope}
 // %         \end{minipage}
 // %         % \hspace{0.05\textwidth}%
 // %         \begin{minipage}[c]{0.24\linewidth}
-// %             \includegraphics[width=\linewidth]{figure/polytope-3.pdf}
+// %              in cludegraphics[width=\linewidth]{figure/polytope-3.pdf}
 // %             \vspace*{-10mm}
 // %             \caption*{(c) DeepPoly}
 // %         \end{minipage}
 // %         \begin{minipage}[c]{0.24\linewidth}
-// %             \includegraphics[width=\linewidth]{figure/lirpa-3.pdf}
+// %              in cludegraphics[width=\linewidth]{figure/lirpa-3.pdf}
 // %             \vspace*{-10mm}
 // %             \caption*{(d) LiRPA}
 // %         \end{minipage}
@@ -10938,14 +10938,14 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 
 // % The key idea in using neuron stability is that if we can determine that a neuron is stable,  we can assign the exact truth value for the corresponding Boolean variable instead of having to guess. This has a similar effect as \mycode{BCP}---reducing mistaken assignments by \Decide---but it operates at the theory level instead of the propositional Boolean level.
 
-// % %First, the T-solver creates a linear constraint system from the input assignment $\sigma$ and $\alpha \land \phi_{in} \land \overline{\phi_{out}}$, i.e., the formula in ~\autoref{eq:nnv2} representing the original problem  (line~\ref{line:lpsolver}).
+// % %First, the T-solver creates a linear constraint system from the input assignment $\sigma$ and $alpha \land phi_"in" \land \overline{phi_"out"}$, i.e., the formula in ~\autoref{eq:nnv2} representing the original problem  (line~\ref{line:lpsolver}).
 // % %First, the T-solver creates a set of linear constraints representing ReLU activation for hidden neurons whose activation status have been decided.
 // % %Next, those constraints are used in \textsc{Stabilize} for inferring status of neurons that are unassigned, \textsc{Deduce} then applies the polytope abstraction to check satisfiability.
 // % %If the abstraction confirms the infeasibility, \textsc{Deduce} returns \texttt{False} so that \textsc{AnalyzeConflict} can analyze the assignment and and learn the conflict clause.
 // % %Otherwise, the current assignment might be feasible and \textsc{Decide} continues to split more hidden neurons.
 
 
-// % %\texttt{Stabilize} (\autoref{fig:alg} line~\ref{line:stabilize}) first creates linear constraints consisting of the DNN $\alpha$, the input \tvn{fillin} and output \tvn{fillin} conditions, and the current assignment $\sigma$. Next, it uses these constraints to generate a Mixed Integer Linear Programming (MILP) problem (~\autoref{eq:mip}), whose objective is compute a tighter lower and upper bounds for unstable neurons based on the current search state (i.e., the current assignment $\sigma$).
+// % %\texttt{Stabilize} (\autoref{fig:alg} line~\ref{line:stabilize}) first creates linear constraints consisting of the DNN $alpha$, the input \tvn{fillin} and output \tvn{fillin} conditions, and the current assignment $\sigma$. Next, it uses these constraints to generate a Mixed Integer Linear Programming (MILP) problem (~\autoref{eq:mip}), whose objective is compute a tighter lower and upper bounds for unstable neurons based on the current search state (i.e., the current assignment $\sigma$).
 
 // % %the considered property into a set of constraints for
 // % %The main goal of this process is to
@@ -10970,11 +10970,11 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // % Stabilization involves the solution of a mixed integer linear program (MILP) system~\cite{tjeng2019evaluating}:
 // % \begin{equation}
 // %     \begin{aligned}
-// %         &\mbox{(a)}\quad z^{(i)} = W^{(i)} \hat{z}^{(i-i)} + b^{(i)}; \\
-// %         &\mbox{(b)}\quad y = z^{(L)};  x = \hat{z}^{(0)}; \\
-// %         &\mbox{(c)}\quad \hat{z}_j^{(i)} >= {z}_j^{(i)}; \hat{z}_j^{(i)} >= 0; \\
-// %         &\mbox{(d)}\quad a_j^{(i)} \in \{ 0, 1\} ;\\
-// %         &\mbox{(e)}\quad \hat{z}_j^{(i)} <= {a}_j^{(i)} {u}_j^{(i)}; \hat{z}_j^{(i)} <= {z}_j^{(i)} - {l}_j^{(i)}(1 - {a}_j^{(i)}); \\
+// %         &\mbox{(a)}quad z^{(i)} = W^{(i)} \hat{z}^{(i-i)} + b^{(i)}; \\
+// %         &\mbox{(b)}quad y = z^{(L)};  x = \hat{z}^{(0)}; \\
+// %         &\mbox{(c)}quad \hat{z}_j^{(i)} >= {z}_j^{(i)}; \hat{z}_j^{(i)} >= 0; \\
+// %         &\mbox{(d)}quad a_j^{(i)} in \{ 0, 1\} ;\\
+// %         &\mbox{(e)}quad \hat{z}_j^{(i)} <= {a}_j^{(i)} {u}_j^{(i)}; \hat{z}_j^{(i)} <= {z}_j^{(i)} - {l}_j^{(i)}(1 - {a}_j^{(i)}); \\
 // %     \end{aligned}
 // %     \label{eq:mip1}
 // % \end{equation}
@@ -10997,12 +10997,12 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // % \begin{algorithm}
 // %     \small
 
-// %     \Input{DNN $\alpha$, property $\phi_{in} \Rightarrow \phi_{out}$, current assignment $\sigma$, number of neurons for stabilization $k$}
+// %      in put{DNN $alpha$, property $phi_"in" \Rightarrow phi_"out"$, current assignment $\sigma$, number of neurons for stabilization $k$}
 // %     \Output{Tighten bounds for variables \textbf{not} in $\sigma$ (unassigned variables)}
 // %     \BlankLine
 
 // %     % \tcp{create an MILP solver based on ~\autoref{eq:mip}}
-// %     $\model <=ftarrow \MIP(\alpha, \phi_{in}, \phi_{out}, \sigma)$ \tcp{create model (~\autoref{eq:mip1}) with  current assignment}
+// %     $\model <=ftarrow \MIP(alpha, phi_"in", phi_"out", \sigma)$ \tcp{create model (~\autoref{eq:mip1}) with  current assignment}
 
 // %     $[v_1, ..., v_m] <=ftarrow >=tUnassignedVariable(\sigma)$ \tcp{get all $m$ current unassigned variables} \label{line:find}
 
@@ -11111,7 +11111,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // % % \begin{algorithm}
 // % %     \small
 
-// % %     \Input{TBD}
+// % %      in put{TBD}
 // % %     \Output{TBD}
 // % %     \BlankLine
 
@@ -11120,7 +11120,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // % %     $\maxremaining <=ftarrow 30000$ \tcp{predefined maximum number of remaining nodes}
 
 // %     % \tcp{create an MILP solver based on ~\autoref{eq:mip}}
-// %     % $\model <=ftarrow \MIP(\alpha, \phi_{in}, \phi_{out}, \sigma)$ \tcp{create model (~\autoref{eq:mip}) with  current assignment}
+// %     % $\model <=ftarrow \MIP(alpha, phi_"in", phi_"out", \sigma)$ \tcp{create model (~\autoref{eq:mip}) with  current assignment}
 
 // %     % $[v_1, ..., v_m] <=ftarrow >=tUnassignedVariable(\sigma)$ \tcp{get all $m$ current unassigned variables} \label{line:find}
 
@@ -11174,13 +11174,13 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // % %reason
 // % %with trade-offs between computational complexity and precision.
 
-// % %\tvn{Describe how ABstractDomain works, e.g., are hidden\_bounds the bounds of values of hidden neurons? Also, how does CheckReachability work? why does it require $\phi_{in}$?}
+// % %\tvn{Describe how ABstractDomain works, e.g., are hidden\_bounds the bounds of values of hidden neurons? Also, how does CheckReachability work? why does it require $phi_"in"$?}
 
 // % %in which we know that the original problem is satisfiable and return (and \tool{} will return \texttt{sat}).
 // % %The second case is when the assignment was not full, i.e., we
 
 // % %% For every assignment $x\mapsto $
-// % %% Base on the current assignment $\alpha$, first step is to build linear equations for each status variable over the input variables using back substitution.
+// % %% Base on the current assignment $alpha$, first step is to build linear equations for each status variable over the input variables using back substitution.
 // % %% The key idea here is that we could be able to remove the ReLU activation at layer $i$ if the pre-activation variables in the layer $i$ are fully assigned.
 // % %% The ReLU function originally is non-linear (e.g., $y = max(0, x)$), but it becomes a linear function when we know about the value of its input (base on the value of assigned nodes, we could have the pre-activation values either greater or less than 0).
 
@@ -11206,7 +11206,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // % %Otherwise, the process continues with checking the reachability of the current assignment bases on the abstraction, described in Sec~\ref{sec:theory_abstraction}.
 // % %Without this step, the Theory Deduce is unable to quickly decide an assignment is unreachable.
 // % %Thus, this step uses an over-approximation technique to estimate the possible output ranges w.r.t the given input ranges and the current assignment.
-// % %Two well-known abstraction techniques are adapted/adopted in our \tool{}, which are \textbf{DeepPoly} in ERAN verifier \cite{singh2019abstract} and \textbf{LiRPA} in $\alpha$-$\beta$-CROWN verifier\cite{wang2021beta} (Line 7).
+// % %Two well-known abstraction techniques are adapted/adopted in our \tool{}, which are \textbf{DeepPoly} in ERAN verifier \cite{singh2019abstract} and \textbf{LiRPA} in $alpha$-$\beta$-CROWN verifier\cite{wang2021beta} (Line 7).
 // % %\hd{when does \tool{} use DeepPoly/LiRPA? Small number of inputs (<50), use LP to tighten input ranges then apply DeepPoly. Otherwise, jointly optimize hidden bounds and output bounds using LiRPA (same as ab-crown) --- Actually, in small number of inputs cases, it's reimplementation of DeepPoly with adaptation of learnable \textit{slopes} as in ab-crown. Depend on the input ranges, the abstraction will compute output ranges directly use original version or use optimized slopes version of DeepPoly to get better bounds.}
 // % %The estimated output ranges could be used to check the reachability, as shown in Sec~\ref{sec:unsat}.
 // % %If the output property is unreachable, the Theory Deduce will raise ``conflict'' status, otherwise, the output property might be reachable, we could not decide the reachability status of the current assignment.
@@ -11219,10 +11219,10 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 = Programming Assignments <chap:pa>
 
 == PA1 <sec:pa1>
-// \input{pa/pa1.tex}
-// \input{pa/pa2.tex}
-// \input{pa/pa3.tex}
-// % \input{pa/pa4.tex}
+//  in put{pa/pa1.tex}
+//  in put{pa/pa2.tex}
+//  in put{pa/pa3.tex}
+// %  in put{pa/pa4.tex}
 
 // = Schedule <chap:schedule}
 
