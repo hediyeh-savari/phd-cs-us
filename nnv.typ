@@ -1645,36 +1645,31 @@ $
 $
 ]
 
-//  == The VNN-LIB  Specification Language <sec:vnnlib}
+== The VNN-LIB  Specification Language <sec:vnnlib>
 
 
-// The VNN-LIB standard~\cite{demarchi2023supporting,vnnlib} defines a format to describe neural networks and properties. Such a standard format enables the sharing of benchmarks across different tools and platforms, facilitating evaluations and comparisons of their performance. VNN-COMP~\cite{brix2024fifth} uses VNN-LIB to evaluate different neural network verification tools.
+The VNN-LIB specification @demarchi2023supporting, @vnnlib defines a standard format to describe neural networks and their properties. This enables the sharing of benchmarks across different tools and platforms, facilitating evaluations and comparisons of their performance. VNN-COMPs @brix2024fifth uses VNN-LIB to evaluate different neural network verification tools.
 
 
-// Specifically, VNN-LIB defines a common format for the following components:
-// \begin{itemize}
-//     \item \textbf{Neural Network (or model) representation} in the ONNX format~\cite{onnx}.
-//     \item \textbf{Property specification} in SMT-LIB format~\cite{barrett2010smt}.
-// \end{itemize}
+Specifically, VNN-LIB defines a common format for the following components:
+  + *Neural Network (or model) representation* in the ONNX format @onnx.
+  + *Property specification* in SMT-LIB format @barrett2010smt.
 
+=== VNN-LIB: Property Specification Language
 
+Verification tasks involve proving that the output of a network remains within some desired post-condition $sigma$, given inputs within a bounded set $Pi$.
 
-// \subsection{VNN-LIB: Property Specification Language}
+#paragraph[Formal Specification][Let $nu: D^(n_1 times dots times n_h) -> D^(m_1 times dots times m_k)$ be a neural network, and $x$ and $y$ its input and output tensors. A property is expressed as:
+$
+forall x in Pi -> nu(x) in sigma
+$
 
-// Verification tasks involve proving that the output of a network remains within some desired post-condition $sigma$, given inputs within a bounded set $\Pi$.
+This includes:
+- *Precondition* $Pi$: constraints on inputs.
+- *Postcondition* $sigma$: required properties of outputs.
+]
 
-// \paragraph{Formal Specification}
-// Let $\nu: D^{n_1 \times \dots \times n_h} \to D^{m_1 \times \dots \times m_k}$ be a neural network, and $x$ and $y$ its input and output tensors. A property is expressed as:
-// \[
-// \forall x in \Pi \rightarrow \nu(x) in sigma
-// \]
-// This includes:
-// \begin{itemize}
-//     \item \textbf{Precondition} $\Pi$: constraints on inputs.
-//     \item \textbf{Postcondition} $sigma$: required properties of outputs.
-// \end{itemize}
-
-// Properties are encoded in \textbf{SMT-LIB2}, referencing input/output variable names consistent with ONNX.
+Properties are encoded in *SMT-LIB2*, referencing input/output variable names consistent with ONNX.
 
 
 // \begin{example}
