@@ -724,13 +724,13 @@ mydnn(sc: 100%),
 
 
 - The hidden neurons compute:
-  $ x_3 = "relu"(-0.5 x_1 + 0.5 x_2 + 1.0), x_4 = "relu"(0.5 x_1 - 0.5 x_2 - 1.0), $
-  where $"relu"(x) = "max"(x, 0)$ is the ReLU activation function.
+  $ x_3 =  "relu"(-0.5 x_1 + 0.5 x_2 + 1.0), x_4 =  "relu"(0.5 x_1 - 0.5 x_2 - 1.0), $
+  where $ "relu"(x) = "max"(x, 0)$ is the ReLU activation function.
 - The output neuron computes:
   $ x_5 = -1.0 dot x_3 + 1.0 dot x_4 - 1.0. $
 
 Thus, this NN computes a function $f: RR^2 -> RR$ where:
-$ f(x_1, x_2) = -"relu"(-0.5 x_1 + 0.5 x_2 + 1.0) + "relu"(0.5 x_1 - 0.5 x_2 - 1.0) - 1.0. $
+$ f(x_1, x_2) = - "relu"(-0.5 x_1 + 0.5 x_2 + 1.0) +  "relu"(0.5 x_1 - 0.5 x_2 - 1.0) - 1.0. $
 ] <ex:dnn>
 
 == Affine Transformation <sec:affine>
@@ -829,7 +829,7 @@ ReLU is a widely used activation function in neural networks. It is defined as:
 
 
 $
-"relu"(x) = max(0, x) = cases(
+ "relu"(x) = max(0, x) = cases(
 0 & "if " x <= 0,
 x & "if " x > 0
 )
@@ -861,7 +861,7 @@ A ReLU activated neuron is said to be _active_ if its input is greater than zero
 ReLU can be encoded using the following logical formula:
 
 $
-y = "relu"(x) <==> (x <= 0 and y = 0) or (x > 0 and y = x)
+y =  "relu"(x) <==> (x <= 0 and y = 0) or (x > 0 and y = x)
 $
 
 In other words, if $x <= 0$, $y$ must be 0; otherwise, $y$ must equal $x$.
@@ -881,8 +881,8 @@ In Z3, we can declare ReLU using `If()`
 #paragraph[Nonlinear Property][
 Despite being piecewise linear, ReLU is *nonlinear* because it does not satisfy the two core properties of a linear function:
 
-- _Additivity:_ $"ReLU"(x + y) != "ReLU"(x) + "ReLU"(y)$ in general.
-- _Homogeneity:_ $"ReLU"(alpha x) != alpha dot "ReLU"(x)$ when $alpha < 0$.
+- _Additivity:_ $ "relu"(x + y) !=  "relu"(x) +  "relu"(y)$ in general.
+- _Homogeneity:_ $ "relu"(alpha x) != alpha dot  "relu"(x)$ when $alpha < 0$.
 
 In simpler terms, ReLU is nonlinear because it does not form a straight line. It has a *kink*---a sharp bend---when $x = 0$, where the slope changes abruptly from $0$ to $1$. This discontinuity in the derivative prevents the function from being globally linear.
 
@@ -1409,7 +1409,7 @@ ONNX operators that cover most sequential feedforward networks include:
   For the network in @fig:dnn, the ONNX representation would include:
 
   - Input: $x_1, x_2$.
-  - Hidden layer: $x_3 = "relu"(-0.5x_1 + 0.5x_2 + 1.0)$, $x_4 = "relu"(0.5x_1 - 0.5x_2 + 1.0)$.
+  - Hidden layer: $x_3 =  "relu"(-0.5x_1 + 0.5x_2 + 1.0)$, $x_4 =  "relu"(0.5x_1 - 0.5x_2 + 1.0)$.
   - Output: $x_5 = -x_3 + x_4 - 1$.
 
   The ONNX representation would look like:
@@ -1422,10 +1422,10 @@ ONNX operators that cover most sequential feedforward networks include:
     output: "x5"
 
     node { op_type: "Gemm" input: "x" input: "W1" input: "b1" output: "h1" }   # -0.5*x1+0.5*x2+1
-    node { op_type: "Relu" input: "h1" output: "x3" }
+    node { op_type:  "relu" input: "h1" output: "x3" }
 
     node { op_type: "Gemm" input: "x" input: "W2" input: "b2" output: "h2" }   # 0.5*x1-0.5*x2+1
-    node { op_type: "Relu" input: "h2" output: "x4" }
+    node { op_type:  "relu" input: "h2" output: "x4" }
 
     node { op_type: "Neg" input: "x3" output: "nx3" }
     node { op_type: "Add" input: "nx3" input: "x4" output: "s1" }
@@ -1743,9 +1743,9 @@ $
 // %     \item Input: $1 \times 28 \times 28$; Output: 10-class classification.
 // % \end{itemize}
 
-// % A robustness property around a sample $\hat{x}$ classified as class 9:
+// % A robustness property around a sample $ hat(x)$ classified as class 9:
 // % \[
-// % \forall i in [0, 783] : \hat{x}_i - \varepsilon <=q x_i <=q \hat{x}_i + \varepsilon
+// % \forall i in [0, 783] :  hat(x)_i - \varepsilon <=q x_i <=q  hat(x)_i + \varepsilon
 // % \]
 // % \[
 // % \forall j in [0,8] : y_j - y_9 <=q 0
@@ -2026,7 +2026,7 @@ For example, for a fully-connected neural network (@sec:ffn) with $L$ layers and
 $ 
 alpha =    and.big (i in [1, L], j in [1, N])
     v_(i, j) =
-    "relu"(
+     "relu"(
       sum_(k in [1, N])
       (w_(i - 1, j, k) dot v_(i - 1, k))
       + b_(i, j)
@@ -2085,8 +2085,8 @@ that the negation of the first formula is equivalent to the second formula.
 We represent the network in @fig:dnn-b as a formula $alpha$:
 
 $
-  x_3 = "relu"(-0.5 x_1 + 0.5 x_2 + 1.0) and \
-  x_4 = "relu"(0.5 x_1 - 0.5 x_2 - 1.0) and \
+  x_3 =  "relu"(-0.5 x_1 + 0.5 x_2 + 1.0) and \
+  x_4 =  "relu"(0.5 x_1 - 0.5 x_2 - 1.0) and \
   x_5 = -x_3 + x_4 - 1.0
 $
 
@@ -2322,7 +2322,7 @@ A straightforward and automated way to do this encoding is using _symbolic execu
 We can adapt traditional SE to our problem by treating the network as a program and neurons as variables and executing the network on symbolic inputs. Affine transformations can easily be represented as logical formulae because they are linear functions. Activation functions such as ReLUs are translated to disjunctions of linear functions or if-then-else statements:
 
 $
-  y = "relu"(x)  \
+  y =  "relu"(x)  \
   y = max(x, 0) \
   y = "if" x > 0 "then" x "else" 0\
   (x > 0 and y = x) or (x <= 0 and y = 0)
@@ -2530,16 +2530,16 @@ We use MILP to formulate and check if the network in @fig:dnn-c satisfies the pr
 // \begin{align*}
 // z_3 &= -0.5x_1 + 0.5x_2 + 1.0 \\
 // z_4 &= 0.5x_1 - 0.5x_2 - 1.0 \\
-// \hat{z}_3 &>= z_3, quad \hat{z}_3 >= 0 \\
-// \hat{z}_4 &>= z_4, quad \hat{z}_4 >= 0 \\
+//  hat(z)_3 &>= z_3, quad  hat(z)_3 >= 0 \\
+//  hat(z)_4 &>= z_4, quad  hat(z)_4 >= 0 \\
 // a_3, a_4 &in \{0, 1\} \\
-// \hat{z}_3 &<= a_3 \cdot u_3, quad \hat{z}_3 <= z_3 - l_3(1 - a_3) \\
-// \hat{z}_4 &<= a_4 \cdot u_4, quad \hat{z}_4 <= z_4 - l_4(1 - a_4)
+//  hat(z)_3 &<= a_3 \cdot u_3, quad  hat(z)_3 <= z_3 - l_3(1 - a_3) \\
+//  hat(z)_4 &<= a_4 \cdot u_4, quad  hat(z)_4 <= z_4 - l_4(1 - a_4)
 // \end{align*}
 
 // Output layer:
 // \begin{align*}
-// x_5 &= -\hat{z}_3 + \hat{z}_4 - 1.0
+// x_5 &= - hat(z)_3 +  hat(z)_4 - 1.0
 // \end{align*}
 
 
@@ -2553,22 +2553,22 @@ We use MILP to formulate and check if the network in @fig:dnn-c satisfies the pr
 
 + *Substituting bounds into the constraints:*
 // \begin{align*}
-// \hat{z}_3 &<= a_3 \cdot 2.5, quad \hat{z}_3 <= z_3 - (-0.5)(1 - a_3) = z_3 + 0.5(1 - a_3) \\
-// \hat{z}_4 &<= a_4 \cdot 0.5, quad \hat{z}_4 <= z_4 - (-2.5)(1 - a_4) = z_4 + 2.5(1 - a_4)
+//  hat(z)_3 &<= a_3 \cdot 2.5, quad  hat(z)_3 <= z_3 - (-0.5)(1 - a_3) = z_3 + 0.5(1 - a_3) \\
+//  hat(z)_4 &<= a_4 \cdot 0.5, quad  hat(z)_4 <= z_4 - (-2.5)(1 - a_4) = z_4 + 2.5(1 - a_4)
 // \end{align*}
 + *The final MILP encoding:*
 // \begin{align*}
 // & -1 <= x_1 <= 1; quad -2 <= x_2 <= 2; \\
 // & z_3 = -0.5x_1 + 0.5x_2 + 1.0; \\
 // & z_4 = 0.5x_1 - 0.5x_2 - 1.0; \\
-// & \hat{z}_3 >= z_3, quad \hat{z}_3 >= 0; \\
-// & \hat{z}_4 >= z_4, quad \hat{z}_4 >= 0; \\
+// &  hat(z)_3 >= z_3, quad  hat(z)_3 >= 0; \\
+// &  hat(z)_4 >= z_4, quad  hat(z)_4 >= 0; \\
 // & a_3, a_4 in \{0, 1\}; \\
-// & \hat{z}_3 <= a_3 \cdot 2.5, quad \hat{z}_3 <= z_3 + 0.5(1 - a_3); \\
-// & \hat{z}_4 <= a_4 \cdot 0.5, quad \hat{z}_4 <= z_4 + 2.5(1 - a_4); \\
-// & x_5 = -\hat{z}_3 + \hat{z}_4 - 1.0; \\
+// &  hat(z)_3 <= a_3 \cdot 2.5, quad  hat(z)_3 <= z_3 + 0.5(1 - a_3); \\
+// &  hat(z)_4 <= a_4 \cdot 0.5, quad  hat(z)_4 <= z_4 + 2.5(1 - a_4); \\
+// & x_5 = - hat(z)_3 +  hat(z)_4 - 1.0; \\
 // & x_5 <= 0; \\
-// & \text{where } z_3 in [-0.5, 2.5], z_4 in [-2.5, 0.5], \hat{z}_3 in [0, 2.5], \hat{z}_4 in [0, 0.5].
+// & \text{where } z_3 in [-0.5, 2.5], z_4 in [-2.5, 0.5],  hat(z)_3 in [0, 2.5],  hat(z)_4 in [0, 0.5].
 // \end{align*}
 
 // %\tvn{Do we need to specify the ranges (e.g., $z_3 in [-0.5, 2.5]$) at the end or they are redundant?}
@@ -2577,8 +2577,8 @@ We use MILP to formulate and check if the network in @fig:dnn-c satisfies the pr
 // \begin{align*}
 // z_3 &= -0.5(-1) + 0.5(2) + 1.0 = 2.5 \\
 // z_4 &= 0.5(-1) - 0.5(2) - 1.0 = -2.5 \\
-// a_3 &= 1, \hat{z}_3 = 2.5 quad \text{(neuron active)} \\
-// a_4 &= 0, \hat{z}_4 = 0 quad \text{(neuron inactive)} \\
+// a_3 &= 1,  hat(z)_3 = 2.5 quad \text{(neuron active)} \\
+// a_4 &= 0,  hat(z)_4 = 0 quad \text{(neuron inactive)} \\
 // x_5 &= -2.5 + 0 - 1.0 = -3.5
 // \end{align*}
 // Since $x_5 = -3.5 <= 0$, this assignment satisfies our search for $x_5 <= 0$ and  thus is a counterexample.
@@ -2614,7 +2614,7 @@ We use MILP to formulate and check if the network in @fig:dnn-c satisfies the pr
 // \end{problem}
 
 // % \tvn{So far we talk about bounds for pre-ReLU values, right? is that the same as post-ReLU?  In other words, when we talk about abstraction for ReLU, are we talking about these pre-ReLU bounds, which currently use intervals?  or the abstraction for ReLU refer to something else and not these pre-ReLU bounds?}
-// % \hd{no, we are referring to post-ReLU bounds. For example, a pre-ReLU interval is  $z_3 in [-0.5, 2.5]$ --- indicating an unstable neuron, and we will abstraction to compute bounds for the post-ReLU e.g., $\hat{z}_3$.}\tvn{I am still confused, see example~\autoref{ex:relu_milp} .. I am computing the upper and lower bounds of $x_3$, not $\hat{x}_3$. The bounds of $\hat{x}_3$ is always $[0, u_3]$.}
+// % \hd{no, we are referring to post-ReLU bounds. For example, a pre-ReLU interval is  $z_3 in [-0.5, 2.5]$ --- indicating an unstable neuron, and we will abstraction to compute bounds for the post-ReLU e.g., $ hat(z)_3$.}\tvn{I am still confused, see example~\autoref{ex:relu_milp} .. I am computing the upper and lower bounds of $x_3$, not $ hat(x)_3$. The bounds of $ hat(x)_3$ is always $[0, u_3]$.}
 
 // \subsection{Limitations <sec:milp-limitations}
 
@@ -2664,7 +2664,7 @@ We use MILP to formulate and check if the network in @fig:dnn-c satisfies the pr
 
 //  == Overview and Background}
 
-// %We will focus on ReLU (\autoref{sec:relu}) activation functions, which are the most common in DNNs. The goal is to compute the bounds of a post-ReLU neuron $\hat{z}$ given the bounds of its pre-ReLU value $z$ over the input region. For example, for a ReLU neuron $y = \max(0, x)$, we want to compute the bounds $[l_y(x), u_y(x)]$ of $y$ given the bounds $[l_x, u_x]$ on $x$.\tvn{is the pre-Relu bounds always computed like what was described in~\autoref{sec:pre-relu-bounds}? Is that computation considered interval too? Can that bound computation be obtained using other abstractions?}
+// %We will focus on ReLU (\autoref{sec:relu}) activation functions, which are the most common in DNNs. The goal is to compute the bounds of a post-ReLU neuron $ hat(z)$ given the bounds of its pre-ReLU value $z$ over the input region. For example, for a ReLU neuron $y = \max(0, x)$, we want to compute the bounds $[l_y(x), u_y(x)]$ of $y$ given the bounds $[l_x, u_x]$ on $x$.\tvn{is the pre-Relu bounds always computed like what was described in~\autoref{sec:pre-relu-bounds}? Is that computation considered interval too? Can that bound computation be obtained using other abstractions?}
 // %\hd{yes, concrete bounds will always be computed like what was described in~\autoref{sec:pre-relu-bounds} IF the bounds of a neurons are presented as linear equations. In other words, abstractions differ in the way they construct the linear equations, concretization step will be the same.}
 
 // %\hd{Zonotope uses a different approach to represent the abstraction, using center and generators, so concretization step will be different. But if we construct the lower and upper equations for a zonotope, the concretization step will be the same.}
@@ -2673,7 +2673,7 @@ We use MILP to formulate and check if the network in @fig:dnn-c satisfies the pr
 // %\[f_L(x_1, ..., x_n) <= e <= f_U(x_1, ..., x_n)\]
 // %So to compute the concrete bounds, $e_L = min(f_L(x_1, ..., x_n))$ and $e_U = max(f_U(x_1, ..., x_n))$, where $min(f_L(x_1, ..., x_n))$ and $max(f_U(x_1, ..., x_n))$ are the concretization steps.}
 
-// %We want to compute the bounds to be as tight as possible, i.e., they should be the largest lower and lowest upper values that $\hat{z}$ can take given the bounds on $z$. This computation is called \emph{abstraction} and is crucial for DNN verification, as it allows us to reason about the behavior of the network without having to enumerate all possible values of the neurons. There are several abstraction techniques that can be used to compute these bounds, each with its own trade-offs in terms of precision and computational complexity.
+// %We want to compute the bounds to be as tight as possible, i.e., they should be the largest lower and lowest upper values that $ hat(z)$ can take given the bounds on $z$. This computation is called \emph{abstraction} and is crucial for DNN verification, as it allows us to reason about the behavior of the network without having to enumerate all possible values of the neurons. There are several abstraction techniques that can be used to compute these bounds, each with its own trade-offs in terms of precision and computational complexity.
 
 // \newcommand{ in tervalabstraction}[1]{
 //     \begin{tikzpicture}[scale=#1]
@@ -4328,8 +4328,8 @@ if it is an empty set $emptyset$, it is the empty pattern as in
 Once having an activation pattern $p$, we can simplify the formula $alpha$
 representing the network by replacing each ReLU function with a linear
 constraint according to the activation status specified in $p$. For example,
-if $p$ specifies that neuron $n_i$ is active, we replace $"ReLU"(z_i)$ with
-$z_i >= 0$. Otherwise, if $n_i$ is inactive, we replace $"ReLU"(z_i)$ with
+if $p$ specifies that neuron $n_i$ is active, we replace $ "relu"(z_i)$ with
+$z_i >= 0$. Otherwise, if $n_i$ is inactive, we replace $ "relu"(z_i)$ with
 $z_i < 0$. This gives us the formula $alpha_p$ corresponding to the linear
 region defined by $p$.
 
@@ -4347,51 +4347,49 @@ checking the satisfiability of $alpha_p and phi_"in" and not phi_"out"$ is
 easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 
 #example[
-  //TODO fig:dnn-b
   Recall the network from @fig:dnn-b can be represented as the formula $alpha$
   $
     & hat(x)_3 = -0.5x_1 + 0.5x_2 + 1.0 \
     & hat(x)_4 = 0.5x_1 - 0.5x_2 - 1.0 \
-    & x_3 = "relu"(hat(x)_3) \
-    & x_4 = "relu"(hat(x)_4) \
+    & x_3 =  "relu"(hat(x)_3) \
+    & x_4 =  "relu"(hat(x)_4) \
     & x_5 = -x_3 + x_4 - 1.0,
   $
   where $hat(x)_3$ and $hat(x)_4$ are the pre-activation values of the ReLU
   neurons $x_3$ and $x_4$, respectively. Thus, if we fix the the activation status of $x_3$
   and $x_4$, we can simplify $alpha$ by replacing the ReLUs with linear constraints.
 
-  As an example, a _complete_ activation pattern specifies the
-  status of both ReLU neurons. For instance,
-  $
-    p = {x_3, overline(x_4)}
-  $
-  means $x_3$ is active while $x_4$ is inactive; that is, $hat(x)_3 >= 0$ (so
-  $x_3 = hat(x)_3$) while $hat(x)_4 < 0$ (so $x_4 = 0$). In this case,
-  $alpha$ reduces to a single linear constraint:
-  $
-    x_5 = -(-0.5x_1 + 0.5x_2 + 1.0) + 0 - 1.0 = 0.5x_1 - 0.5x_2 - 2.0.
-  $
-  This reduction significantly simplifies the satisfiability check: we no
-  longer have to reason about the non-linearity of ReLU, and can directly check
-  whether the linear constraint is satisfiable with the input and output
-  constraints.
+  - A *complete* activation pattern specifies the status of both ReLU neurons. For instance,
+    $
+      p = {x_3, overline(x_4)}
+    $
+    means $x_3$ is active while $x_4$ is inactive; that is, $hat(x)_3 >= 0$ (so
+    $x_3 = hat(x)_3$) while $hat(x)_4 < 0$ (so $x_4 = 0$). In this case,
+    $alpha$ reduces to a single linear constraint:
+    $
+      x_5 = -(-0.5x_1 + 0.5x_2 + 1.0) + 0 - 1.0 = 0.5x_1 - 0.5x_2 - 2.0.
+    $
   
-  As another example, a _partial_ pattern specifies only some
-  activation statuses. For example,
-  $
-    q = {x_3}
-  $
-  means $hat(x)_3 >= 0$ but places no restriction on $hat(x)_4$. Here,
-  $alpha$ reduces to:
-  $
-    & hat(x)_4 = 0.5x_1 - 0.5x_2 - 1.0 \
-    & x_4 = "ReLU"(hat(x)_4) \
-    & x_5 = -(-0.5x_1 + 0.5x_2 + 1.0) + x_4 - 1.0.
-  $
-  Because $q$ does not fix the status of $x_4$, we cannot simplify the ReLU
-  for $x_4$. Thus, the formula still contains a ReLU which splits $x_4$ into
-  two linear regions. Note that this is still simpler than the original $alpha$
-  because we have simplified the ReLU for $x_3$.
+    This reduction significantly simplifies the satisfiability check: we no
+    longer have to reason about the non-linearity of ReLU, and can directly check
+    whether the linear constraint is satisfiable with the input and output
+    constraints.
+  
+  - A *partial* pattern specifies only some activation statuses. For example,
+    $
+      q = {x_3}
+    $
+    means $hat(x)_3 >= 0$ but places no restriction on $hat(x)_4$. Here,
+    $alpha$ reduces to:
+    $
+      & hat(x)_4 = 0.5x_1 - 0.5x_2 - 1.0 \
+      & x_4 =  "relu"(hat(x)_4) \
+      & x_5 = -(-0.5x_1 + 0.5x_2 + 1.0) + x_4 - 1.0.
+    $
+    Because $q$ does not fix the status of $x_4$, we cannot simplify the ReLU
+    for $x_4$. Thus, the formula still contains a ReLU which splits $x_4$ into
+    two linear regions. Note that this is still simpler than the original $alpha$
+    because we have simplified the ReLU for $x_3$.
 ]
 
 #problem[
@@ -4544,15 +4542,15 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // Recall the network from~\autoref{fig:dnn-b} can be represented as the formula $alpha$:
 // \[
 // \begin{aligned}
-// & \hat{x}_3 = -0.5x_1 + 0.5x_2 + 1.0 ~\land\\
-// & \hat{x}_4 = 0.5x_1 - 0.5x_2 - 1.0 ~\land\\
-// & x_3 = \relu{\hat{x}_3} ~\land \\
-// & x_4 = \relu{\hat{x}_4} ~\land \\
+// &  hat(x)_3 = -0.5x_1 + 0.5x_2 + 1.0 ~\land\\
+// &  hat(x)_4 = 0.5x_1 - 0.5x_2 - 1.0 ~\land\\
+// & x_3 = \relu{ hat(x)_3} ~\land \\
+// & x_4 = \relu{ hat(x)_4} ~\land \\
 // & x_5 = -x_3 + x_4 - 1.0,
 // \end{aligned}
 // \]
 
-// Here $\hat{x}_3$ and $\hat{x}_4$ are the pre-activation values of the ReLU neurons $x_3$ and $x_4$, respectively.
+// Here $ hat(x)_3$ and $ hat(x)_4$ are the pre-activation values of the ReLU neurons $x_3$ and $x_4$, respectively.
 // Thus, if we fix the activation status of $x_3$ and $x_4$, we can simplify $alpha$ by replacing the ReLUs with linear constraints.
 
 
@@ -4563,7 +4561,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 //   \[
 //   p = \{x_3, \overline{x_4}\}
 //   \]
-//   means that $x_3$ is active while $x_4$ is inactive; that is, $\hat{x}_3 >= 0$ (so $x_3 = \hat{x}_3$) while $\hat{x}_4 < 0$ (so $x_4 = 0$).
+//   means that $x_3$ is active while $x_4$ is inactive; that is, $ hat(x)_3 >= 0$ (so $x_3 =  hat(x)_3$) while $ hat(x)_4 < 0$ (so $x_4 = 0$).
 //   In this case, $alpha$ reduces to a single linear constraint (region):
 //   \[
 //   x_5 = -(-0.5x_1 + 0.5x_2 + 1.0) + 0 - 1.0 = 0.5x_1 - 0.5x_2 - 2.0 .
@@ -4577,11 +4575,11 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 //   \[
 //   q = \{x_3\}
 //   \]
-//   means $\hat{x}_3 >= 0$ but places no restriction on $\hat{x}_4$.  Here, $alpha$ reduces to
+//   means $ hat(x)_3 >= 0$ but places no restriction on $ hat(x)_4$.  Here, $alpha$ reduces to
 // \[
 // \begin{aligned}
-// & \hat{x}_4 = 0.5x_1 - 0.5x_2 - 1.0 ~\land\\
-// & x_4 = \relu{\hat{x}_4} ~\land \\
+// &  hat(x)_4 = 0.5x_1 - 0.5x_2 - 1.0 ~\land\\
+// & x_4 = \relu{ hat(x)_4} ~\land \\
 // & x_5 = -(-0.5x_1 + 0.5x_2 + 1.0) + x_4 - 1.0,
 // \end{aligned}
 // \]
@@ -4642,11 +4640,11 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // %\tvn{may need to add some trees}
 
 
-//  == The Branch and Bound Algorithm <sec:bab-alg}
+== The Branch and Bound Algorithm <sec:bab-alg>
 
-// Many modern NNV tools adopt the Branch-and-Bound (BaB) approach to explore the space of possible neuron activation patterns (\autoref{sec:activation-patterns}). BaB splits (\emph{branch}) the verification problem into smaller subproblems by fixing activation statuses of neurons, and uses abstraction (\emph{bound}) techniques to compute upper and lower bounds on the output values for these subproblems. If the bounds, computed using abstraction (\autoref{chap:abstractions}), indicate infeasible (cannot contain a counterexample), the subproblem is pruned from the search space. This process continues until either a counterexample is found or all subproblems are exhausted, proving the property holds.
+Many modern NNV tools adopt the Branch-and-Bound (BaB) approach to explore the space of possible neuron activation patterns (@sec:activation-patterns). BaB splits (_branch_) the verification problem into smaller subproblems by fixing activation statuses of neurons, and uses abstraction (_bound_) techniques to compute upper and lower bounds on the output values for these subproblems. If the bounds, computed using abstraction (@chap:abstractions), indicate infeasible (cannot contain a counterexample), the subproblem is pruned from the search space. This process continues until either a counterexample is found or all subproblems are exhausted, proving the property holds.
 
-// Note that because BaB splits ReLU neurons into active/inactive cases, it is also called \emph{``neuron-splitting''}, which contrasts with \emph{``input-splitting''} techniques (\autoref{sec:input-splitting}) that partition the input space.
+Note that because BaB splits ReLU neurons into active/inactive cases, it is also called _"neuron-splitting"_, which contrasts with _"input-splitting"_ techniques (@sec:input-splitting) that partition the input space.
 
 // \SetKwData{nextlayer}{layer$_{i+1}$}
 // \SetKwData{status}{status}
@@ -4807,8 +4805,8 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // \end{itemize}
 
 
-// \paragraph{\textbf{Deduce vs. LP}} The difference between \Deduce and \mycode{LP} is that the former uses abstraction to compute over-approximated bounds to determine feasibility, while the latter uses an LP solver to check exact satisfiability.
-// Abstraction is (very) quick but may yield false positives (declaring feasible when it is not), while LP is precise but more computationally expensive.  Their combination allows \bab{} to efficiently prune infeasible branches while accurately checking for counterexamples.
+#paragraph[Deduce vs. LP][The difference between #smallcaps[Deduce] and #smallcaps[LP] is that the former uses abstraction to compute over-approximated bounds to determine feasibility, while the latter uses an LP solver to check exact satisfiability.
+Abstraction is (very) quick but may yield false positives (declaring feasible when it is not), while LP is precise but more computationally expensive.  Their combination allows #smallcaps[BaB] to efficiently prune infeasible branches while accurately checking for counterexamples.]
 
 
 // %\tvn{shows that \bab{} often does not exhaust all activation patterns, but rather prunes the search space by deducing infeasibility of some activation patterns.  May be use a tree example to illustrate this?}
@@ -4924,8 +4922,8 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 
 
 
-
-// = Adversarial Attacks <chap:adversarial-attacks}
+#pagebreak()
+= Adversarial Attacks <chap:adversarial-attacks>
 
 
 // A full branch and bound (BaB) search (\autoref{chap:bab}) is typically expensive and slow on large networks. Thus most NNV tools implement optimizations to improve performance. A common optimization is to use \emph{adversarial attack} techniques to find counterexamples before running BaB.
@@ -5319,10 +5317,10 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // Consider the following toy network:
 // \[
 // \begin{aligned}
-// \hat{x}_3 &= x_1 - 2x_2 + 1,\\
-// x_3 &= \relu{\hat{x}_3},\\
-// \hat{x}_4 &= -x_1 + x_3 + 0.5,\\
-// x_4 &= \relu{\hat{x}_4},\\
+//  hat(x)_3 &= x_1 - 2x_2 + 1,\\
+// x_3 &= \relu{ hat(x)_3},\\
+//  hat(x)_4 &= -x_1 + x_3 + 0.5,\\
+// x_4 &= \relu{ hat(x)_4},\\
 // y &= -x_3 + 2x_4.
 // \end{aligned}
 // \]
@@ -5356,7 +5354,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 
 //     \item For each split, explain:
 //     \begin{itemize}
-//         \item which constraints are added (e.g., $\hat{x}_3 >= 0$, $\hat{x}_4 <= 0$),
+//         \item which constraints are added (e.g., $ hat(x)_3 >= 0$, $ hat(x)_4 <= 0$),
 //         \item how the equations simplify under these constraints,
 //         \item why the resulting subproblem is \unsat{}.
 //     \end{itemize}
@@ -5555,7 +5553,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 
 
 // \begin{example}
-//     For the \prooflang{} proof in~\autoref{fig:proof_example}, we check that the four leaf nodes 3, 5, 6, and 7 of the proof tree in~\autoref{fig:proof-example}b are unsatisfiability. Assume \proofcheck{} first selects node 3, it forms the MILP problem for leaf node 3 by conjoining the constraint representing $0.6v_1 + 0.9v_2 - 0.1 <= 0$ (i.e., $\overline{v_4}$) %\tvn{Hai check}\hd{by setting $a_1^{(2)}=0$ representing that $\hat{z}_1^{(2)} <= 0$ (see~\autoref{eq:mip}e) or \emph{implicitly} conjoining the inequality $0.6\hat{z}^{(1)}_0 + 0.9\hat{z}^{(1)}_1 - 0.1 <= 0$ (or ${z}_1^{(2)} <= 0$), where $\hat{z}^{(1)}_0$, $\hat{z}^{(1)}_1$ represent the outputs of $v_1$ and $v_2$, respectively.}
+//     For the \prooflang{} proof in~\autoref{fig:proof_example}, we check that the four leaf nodes 3, 5, 6, and 7 of the proof tree in~\autoref{fig:proof-example}b are unsatisfiability. Assume \proofcheck{} first selects node 3, it forms the MILP problem for leaf node 3 by conjoining the constraint representing $0.6v_1 + 0.9v_2 - 0.1 <= 0$ (i.e., $\overline{v_4}$) %\tvn{Hai check}\hd{by setting $a_1^{(2)}=0$ representing that $ hat(z)_1^{(2)} <= 0$ (see~\autoref{eq:mip}e) or \emph{implicitly} conjoining the inequality $0.6 hat(z)^{(1)}_0 + 0.9 hat(z)^{(1)}_1 - 0.1 <= 0$ (or ${z}_1^{(2)} <= 0$), where $ hat(z)^{(1)}_0$, $ hat(z)^{(1)}_1$ represent the outputs of $v_1$ and $v_2$, respectively.}
 // with the constraints in~\autoref{eq:nnv2} representing the input ranges and the network with the objective of optimizing the output. \proofcheck{} then invokes an LP solver, which determines that this MILP is infeasible, i.e., leaf node 3 indeed leads to unsatisfiability.
 
 // \proofcheck{} continues this process for the other three leaf nodes and returns \certified as all leaf nodes are unsatisfiable.
@@ -5566,23 +5564,23 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // % \proofcheck{} formulates MILP problems~\cite{tjeng2019evaluating} and check for feasible solutions using off-the-shelf LP solving. Formally, the MILP problem is defined as:
 // % \begin{equation}
 // %     \begin{aligned}
-// %         &\mbox{(a)}quad z^{(i)} = W^{(i)} \hat{z}^{(i-i)} + b^{(i)};\\
-// %         &\mbox{(b)}quad y = z^{(L)};  x = \hat{z}^{(0)}; \\
-// %         &\mbox{(c)}quad \hat{z}_j^{(i)} >= {z}_j^{(i)}; \hat{z}_j^{(i)} >= 0; \\
+// %         &\mbox{(a)}quad z^{(i)} = W^{(i)}  hat(z)^{(i-i)} + b^{(i)};\\
+// %         &\mbox{(b)}quad y = z^{(L)};  x =  hat(z)^{(0)}; \\
+// %         &\mbox{(c)}quad  hat(z)_j^{(i)} >= {z}_j^{(i)};  hat(z)_j^{(i)} >= 0; \\
 // %         &\mbox{(d)}quad a_j^{(i)} in \{ 0, 1\} ;\\
-// %         &\mbox{(e)}quad \hat{z}_j^{(i)} <= {a}_j^{(i)} {u}_j^{(i)}; \hat{z}_j^{(i)} <= {z}_j^{(i)} - {l}_j^{(i)}(1 - {a}_j^{(i)}); \\
+// %         &\mbox{(e)}quad  hat(z)_j^{(i)} <= {a}_j^{(i)} {u}_j^{(i)};  hat(z)_j^{(i)} <= {z}_j^{(i)} - {l}_j^{(i)}(1 - {a}_j^{(i)}); \\
 // %     \end{aligned}
 // %     \label{eq:mip2}
 // % \end{equation}
 
-// % \noindent where $x$ is input, $y$ is output, and $z^{(i)}$, $\hat{z}^{(i)}$, $W^{(i)}$, and $b^{(i)}$ are the pre-activation, post-activation, weight, and bias vectors for layer $i$, respectively.
+// % \noindent where $x$ is input, $y$ is output, and $z^{(i)}$, $ hat(z)^{(i)}$, $W^{(i)}$, and $b^{(i)}$ are the pre-activation, post-activation, weight, and bias vectors for layer $i$, respectively.
 // % This encodes the semantics of a ReLU-based DNN:
 // % (a) the affine transformation computing the pre-activation value for a neuron in terms of outputs in the preceding layer;
 // % (b) the inputs and outputs in terms of the adjacent hidden layers;
 // % (c) assertion that post-activation values are non-negative and no less than pre-activation values;
 // % (d) neuron activation status indicator variables that are either 0 or 1; and
 // % (e) constraints on the upper, $u_j^{(i)}$, and lower, $l_j^{(i)}$, bounds of the pre-activation value of the $j$th neuron in the $i$th layer.
-// % Deactivating a neuron, $a_j^{(i)} = 0$, simplifies the first of the (e) constraints to $\hat{z}_j^{(i)} <= 0$, and activating a neuron simplifies the second to $\hat{z}_j^{(i)} <= z_j^{(i)}$, which is consistent with the semantics of $\hat{z}_j^{(i)} = max(z_j^{(i)},0)$.
+// % Deactivating a neuron, $a_j^{(i)} = 0$, simplifies the first of the (e) constraints to $ hat(z)_j^{(i)} <= 0$, and activating a neuron simplifies the second to $ hat(z)_j^{(i)} <= z_j^{(i)}$, which is consistent with the semantics of $ hat(z)_j^{(i)} = max(z_j^{(i)},0)$.
 
 
 // % \subsubsection{Correctness <sec:checker-core-correctness}
@@ -6157,12 +6155,12 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // % the vast majority of those arising from the benchmarks.
 // % \end{tcolorbox}
 
+#pagebreak()
+= Common Engineerings and Optimizations <chap:common-engineering>
 
-// = Common Engineerings and Optimizations <chap:common-engineering}
+In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often employ a range of optimizations and engineering techniques to improve performance. This chapter discusses some of those common techniques.
 
-// In addition to adversarial attacks (\autoref{chap:adversarial-attacks}), NNV tools often employ a range of optimizations and engineering techniques to improve performance. This chapter discusses some of those common techniques.
-
-//  == Input Splitting <sec:input-splitting}
+== Input Splitting <sec:input-splitting>
 
 // Many verifiers, e.g.,~\cite{katz2019marabou,wang2018formal,wang2021beta,duong2025neuralsat}, use a technique called \emph{input splitting} to quickly deal with networks with verification problems involving low-dimensional networks, such as those in the ACAS Xu benchmark where the networks have a small number of inputs (e.g., $<= 50$).
 // %~\autoref{sec:acasxu}
@@ -6188,7 +6186,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 
 // \subsection{Input Bounds Tightening <sec:inputboundstigthten}
 
-// When the verifier splits on a neuron (e.g., $\hat{x}_i <= 0$ or $\hat{x}_i > 0$),
+// When the verifier splits on a neuron (e.g., $ hat(x)_i <= 0$ or $ hat(x)_i > 0$),
 // it adds new linear constraints that further restrict the feasible input region.
 // As a result, the original input bounds (e.g., $-1 <= x_1 <= 1$) may no longer  reflect the true range of values that satisfy all current constraints.
 // \textbf{Input Bound tightening} recomputes the smallest possible ranges for each input variable  under these constraints.
@@ -6199,10 +6197,10 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // Recall the network from~\autoref{fig:dnn-b} can be represented as:
 // \[
 // \begin{aligned}
-// & \hat{x}_3 = -0.5x_1 + 0.5x_2 + 1.0 ~\land\\
-// & \hat{x}_4 = 0.5x_1 - 0.5x_2 + 1.0 ~\land\\
-// & x_3 = \relu{\hat{x}_3} ~\land \\
-// & x_4 = \relu{\hat{x}_4} ~\land \\
+// &  hat(x)_3 = -0.5x_1 + 0.5x_2 + 1.0 ~\land\\
+// &  hat(x)_4 = 0.5x_1 - 0.5x_2 + 1.0 ~\land\\
+// & x_3 = \relu{ hat(x)_3} ~\land \\
+// & x_4 = \relu{ hat(x)_4} ~\land \\
 // & x_5 = -x_3 + x_4 - 1.0,
 // \end{aligned}
 // \]
@@ -6811,10 +6809,10 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 
 
 // \reluplex{} extends the classical simplex method to handle the
-// non-linear ReLU constraints $\hat{x} = \max(x,0)$.
+// non-linear ReLU constraints $ hat(x) = \max(x,0)$.
 // Like simplex, \reluplex{} maintains a set of \emph{basic} variables whose values are determined by other (non-basic) variables, and updates them through pivot operations.
 
-// \textbf{Initialization}~ The constraints representing the network are first rewritten into a basic form by introducing basic or \emph{slack} variables.  \reluplex{} also forms the lower and upper bounds for each variable based the input constraints and semantics ReLU, e.g., for a ReLU variable $\hat{x}_i$, the lower bound is 0.
+// \textbf{Initialization}~ The constraints representing the network are first rewritten into a basic form by introducing basic or \emph{slack} variables.  \reluplex{} also forms the lower and upper bounds for each variable based the input constraints and semantics ReLU, e.g., for a ReLU variable $ hat(x)_i$, the lower bound is 0.
 
 // All variable values are then initially set to some guess, such as $0$, even if these values violate bounds.  This initial configuration acts as the starting point for \reluplex{} to iteratively refine the variable values to satisfy all constraints.
 
@@ -6827,8 +6825,8 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // After pivoting, the out-of-bounds variable becomes non-basic and can then be directly fixed.
 
 // \textbf{Handling ReLU violations}~
-// When all variable bounds are satisfied, \reluplex{} next checks the ReLU relations $\hat{x}_i = \max(x_i,0)$.
-// If a pair $(x_i,\hat{x}_i)$ is inconsistent (e.g., $x_i>0$ but $\hat{x}_i=0$), then the algorithm repairs it in the same way:
+// When all variable bounds are satisfied, \reluplex{} next checks the ReLU relations $ hat(x)_i = \max(x_i,0)$.
+// If a pair $(x_i, hat(x)_i)$ is inconsistent (e.g., $x_i>0$ but $ hat(x)_i=0$), then the algorithm repairs it in the same way:
 // if the violated variable is non-basic, it is simply updated; if it is basic, a pivot is performed so it can be updated.
 
 // \textbf{Termination}~
@@ -6909,7 +6907,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // \begin{gather}
 //   a_1 = x_1 - x_2 - x_3\label{eq:reluplex2a},\\
 //   a_2 = x_1 + x_2 - x_4\label{eq:reluplex2b},\\
-//   a_3 = 0.5\hat{x}_3 -0.2 \hat{x}_4 - x_5\label{eq:reluplex2c}
+//   a_3 = 0.5 hat(x)_3 -0.2  hat(x)_4 - x_5\label{eq:reluplex2c}
 // \end{gather}
 
 // These basic variables are used to maintain the relationships between the variables in the constraints and are updated during the search process.
@@ -6929,7 +6927,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 //     \centering
 //     \small
 // \begin{tabular}{ccccccccccc}
-//      & $x_1$ & $x_2$ & $x_3$ & $\hat{x}_3$ & $x_4$ & $\hat{x}_4$ & $x_5$ &$a_1$&$a_2$&$a_3$ \\
+//      & $x_1$ & $x_2$ & $x_3$ & $ hat(x)_3$ & $x_4$ & $ hat(x)_4$ & $x_5$ &$a_1$&$a_2$&$a_3$ \\
 //     \midrule
 //     LB & 0 & -2 & $- in fty$&0&$- in fty$& 0 & 0 & 0 & 0 &0\\
 //     Val& 0 & \textbf{\red{0}} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
@@ -6954,7 +6952,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 //     \centering
 // \small
 // \begin{tabular}{ccccccccccc}
-//      & $x_1$ & $x_2$ & $x_3$ & $\hat{x}_3$ & $x_4$ & $\hat{x}_4$ & $x_5$ &$a_1$&$a_2$&$a_3$ \\
+//      & $x_1$ & $x_2$ & $x_3$ & $ hat(x)_3$ & $x_4$ & $ hat(x)_4$ & $x_5$ &$a_1$&$a_2$&$a_3$ \\
 //     \midrule
 //     LB & 0 & -2 & $- in fty$&0&$- in fty$& 0 & 0 & 0 & 0 &0\\
 //     Val& 0 & \textbf{\red{-1}} & 0 & 0 & 0 & 0 & 0 & \textbf{\red{1}} & \textbf{\red{-1}} & 0\\
@@ -6973,7 +6971,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 //     \centering
 //     \small
 // \begin{tabular}{ccccccccccc}
-//      & $x_1$ & $x_2$ & $x_3$ & $\hat{x}_3$ & $x_4$ & $\hat{x}_4$ & $\hat{x}_5$ &$a_1$&$a_2$&$a_3$ \\
+//      & $x_1$ & $x_2$ & $x_3$ & $ hat(x)_3$ & $x_4$ & $ hat(x)_4$ & $ hat(x)_5$ &$a_1$&$a_2$&$a_3$ \\
 //     \midrule
 //     LB & 0 & -2 & $- in fty$&0&$- in fty$& 0 & 0 & 0 & 0 &0\\
 //     Val& 0 & -1 & \textbf{\red{1}} & 0 & 0 & 0 & 0 & \textbf{\red{0}} & -1 & 0\\
@@ -6994,7 +6992,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 //     \centering
 //     \small
 // \begin{tabular}{ccccccccccc}
-//      & $x_1$ & $x_2$ & $x_3$ & $\hat{x}_3$ & $x_4$ & $\hat{x}_4$ & $x_5$ &$a_1$&$a_2$&$a_3$ \\
+//      & $x_1$ & $x_2$ & $x_3$ & $ hat(x)_3$ & $x_4$ & $ hat(x)_4$ & $x_5$ &$a_1$&$a_2$&$a_3$ \\
 //     \midrule
 //     LB & 0 & -2 & $- in fty$&0&$- in fty$& 0 & 0 & 0 & 0 &0\\
 //     Val& 0 & -1 & 1 & 0 & \textbf{\red{-1}} & 0 & 0 & 0 & \textbf{\red{0}} & 0\\
@@ -7004,9 +7002,9 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // \end{table}
 
 // \autoref{tab:reluplex4} shows the new configuration.
-// At this point, we no longer have out-of-bound variables, but have inconsistent values for the pair of RELU variables $x_3, \hat{x}_3$. This is because $\hat{x}_3 = \max(x_3,0)$ but  we have $x_3=1$ thus $\max(1,0)=1$, which is not $\hat{x}_3=0$.  Thus, \reluplex{} needs to fix either $\hat{x}_3$ or $x_3$.
+// At this point, we no longer have out-of-bound variables, but have inconsistent values for the pair of RELU variables $x_3,  hat(x)_3$. This is because $ hat(x)_3 = \max(x_3,0)$ but  we have $x_3=1$ thus $\max(1,0)=1$, which is not $ hat(x)_3=0$.  Thus, \reluplex{} needs to fix either $ hat(x)_3$ or $x_3$.
 
-// Assume \reluplex{} picks $\hat{x}_3$. Because $\hat{x}_3$ is non-basic, we simply update it, i.e.,  $\hat{x}_3 = \text{+} 1 = 1$.  As $a_3$ depends on $\hat{x}_4$, i.e., $ a_3 = 0.5\hat{x}_3 -0.2 \hat{x}_4 - x_5$, \reluplex{} also makes the change $a_3+= 0.5\times 1.0=0.5$.
+// Assume \reluplex{} picks $ hat(x)_3$. Because $ hat(x)_3$ is non-basic, we simply update it, i.e.,  $ hat(x)_3 = \text{+} 1 = 1$.  As $a_3$ depends on $ hat(x)_4$, i.e., $ a_3 = 0.5 hat(x)_3 -0.2  hat(x)_4 - x_5$, \reluplex{} also makes the change $a_3+= 0.5\times 1.0=0.5$.
 
 
 
@@ -7015,7 +7013,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 //     \centering
 //     \small
 // \begin{tabular}{ccccccccccc}
-//      & $x_1$ & $x_2$ & $x_3$ & $\hat{x}_3$ & $x_4$ & $\hat{x}_4$ & $x_5$ &$a_1$&$a_2$&$a_3$ \\
+//      & $x_1$ & $x_2$ & $x_3$ & $ hat(x)_3$ & $x_4$ & $ hat(x)_4$ & $x_5$ &$a_1$&$a_2$&$a_3$ \\
 //     \midrule
 //     LB & 0 & -2 & $- in fty$&0&$- in fty$& 0 & 0 & 0 & 0 &0\\
 //     Val& 0 & -1 & 1 & \textbf{\red{1}} & -1 & 0 & 0 & 0 & 0 & \textbf{\red{0.5}}\\
@@ -7025,9 +7023,9 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 // \end{table}
 
 // ~\autoref{tab:reluplex5} shows the new configuration.
-// In the new configuration, $a_3$ is out-of-bound. To fix this basic variable, we pivot $a_3$ with one of the variables $\hat{x}_3, \hat{x}_4, x_5$ because of the constraint $a_3 = 0.5\hat{x}_3 -0.2 \hat{x}_4 - x_5$ in ~\autoref{eq:reluplex2c}. Assume we pivot $a_3$ with $x_5$, we get
+// In the new configuration, $a_3$ is out-of-bound. To fix this basic variable, we pivot $a_3$ with one of the variables $ hat(x)_3,  hat(x)_4, x_5$ because of the constraint $a_3 = 0.5 hat(x)_3 -0.2  hat(x)_4 - x_5$ in ~\autoref{eq:reluplex2c}. Assume we pivot $a_3$ with $x_5$, we get
 // \begin{equation <eq:reluplex7}
-//   x_5 = 0.5\hat{x}_3 -0.2 \hat{x}_4 - a_3
+//   x_5 = 0.5 hat(x)_3 -0.2  hat(x)_4 - a_3
 // \end{equation}
 
 // Now, $a_3$ becomes non-basic and we update it to 0 through $a_3+=-0.5=0$.  As $x_5$ depends on $a_3$ as shown in Eq~\ref{eq:reluplex7}, we make the change $x_5 += 0.5=0.5$.
@@ -7037,7 +7035,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 //     \centering
 //     \small
 // \begin{tabular}{ccccccccccc}
-//      & $x_1$ & $x_2$ & $x_3$ & $\hat{x}_3$ & $x_4$ & $\hat{x}_4$ & $x_5$ &$a_1$&$a_2$&$a_3$ \\
+//      & $x_1$ & $x_2$ & $x_3$ & $ hat(x)_3$ & $x_4$ & $ hat(x)_4$ & $x_5$ &$a_1$&$a_2$&$a_3$ \\
 //     \midrule
 //     LB & 0 & -2 & $- in fty$&0&$- in fty$& 0 & 0 & 0 & 0 &0\\
 //     Val& 0 & -1 & 1 & \textbf{\red{1}} & -1 & 0 & \textbf{\red{0.5}} & 0 & 0 & \textbf{\red{0}}\\
@@ -10970,22 +10968,22 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // % Stabilization involves the solution of a mixed integer linear program (MILP) system~\cite{tjeng2019evaluating}:
 // % \begin{equation}
 // %     \begin{aligned}
-// %         &\mbox{(a)}quad z^{(i)} = W^{(i)} \hat{z}^{(i-i)} + b^{(i)}; \\
-// %         &\mbox{(b)}quad y = z^{(L)};  x = \hat{z}^{(0)}; \\
-// %         &\mbox{(c)}quad \hat{z}_j^{(i)} >= {z}_j^{(i)}; \hat{z}_j^{(i)} >= 0; \\
+// %         &\mbox{(a)}quad z^{(i)} = W^{(i)}  hat(z)^{(i-i)} + b^{(i)}; \\
+// %         &\mbox{(b)}quad y = z^{(L)};  x =  hat(z)^{(0)}; \\
+// %         &\mbox{(c)}quad  hat(z)_j^{(i)} >= {z}_j^{(i)};  hat(z)_j^{(i)} >= 0; \\
 // %         &\mbox{(d)}quad a_j^{(i)} in \{ 0, 1\} ;\\
-// %         &\mbox{(e)}quad \hat{z}_j^{(i)} <= {a}_j^{(i)} {u}_j^{(i)}; \hat{z}_j^{(i)} <= {z}_j^{(i)} - {l}_j^{(i)}(1 - {a}_j^{(i)}); \\
+// %         &\mbox{(e)}quad  hat(z)_j^{(i)} <= {a}_j^{(i)} {u}_j^{(i)};  hat(z)_j^{(i)} <= {z}_j^{(i)} - {l}_j^{(i)}(1 - {a}_j^{(i)}); \\
 // %     \end{aligned}
 // %     \label{eq:mip1}
 // % \end{equation}
-// % where $x$ is input, $y$ is output, and $z^{(i)}$, $\hat{z}^{(i)}$, $W^{(i)}$, and $b^{(i)}$ are the pre-activation, post-activation, weight, and bias vectors for layer $i$.
+// % where $x$ is input, $y$ is output, and $z^{(i)}$, $ hat(z)^{(i)}$, $W^{(i)}$, and $b^{(i)}$ are the pre-activation, post-activation, weight, and bias vectors for layer $i$.
 // % The equations encode the semantics of a DNN as follows:
 // % (a) defines the affine transformation computing the pre-activation value for a neuron in terms of outputs in the preceding layer;
 // % (b) defines the inputs and outputs in terms of the adjacent hidden layers;
 // % (c) asserts that post-activation values are non-negative and no less than pre-activation values;
 // % (d) defines that the neuron activation status indicator variables that are either 0 or 1; and
 // % (e) defines constraints on the upper, $u_j^{(i)}$, and lower, $l_j^{(i)}$, bounds of the pre-activation value of the $j$th neuron in the $i$th layer.
-// % Deactivating a neuron, $a_j^{(i)} = 0$, simplifies the first of the (e) constraints to $\hat{z}_j^{(i)} <= 0$, and activating a neuron simplifies the second to $\hat{z}_j^{(i)} <= z_j^{(i)}$, which is consistent with the semantics of $\hat{z}_j^{(i)} = max(z_j^{(i)},0)$.
+// % Deactivating a neuron, $a_j^{(i)} = 0$, simplifies the first of the (e) constraints to $ hat(z)_j^{(i)} <= 0$, and activating a neuron simplifies the second to $ hat(z)_j^{(i)} <= z_j^{(i)}$, which is consistent with the semantics of $ hat(z)_j^{(i)} = max(z_j^{(i)},0)$.
 
 // % %Even if \mycode{Stabilize} fails to stabilize, \tool{} still can solve problem by other components, e.g., parallel DPLL(T) search.
 
