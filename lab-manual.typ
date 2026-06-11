@@ -172,11 +172,11 @@ published at `OOPSLA'21`.
 
 == Sending Me Drafts
 
-When you have a draft ready, share it with me. I will read it and provide feedback. Several things to keep in mind when sharing drafts with me:
+When you have a draft ready, share it with me and I'll provide feedback. Several things to keep in mind when sharing drafts with me:
 + Use *Github* for sharing drafts. If you use Overleaf then make sure you link it to a Github repo that I have write access to. This is because I often make edits off-line and using an external editor (e.g., `VSCode` or `Emacs`).
 + *Do not* have too many `TODO` or `FIXME` or `CITE` in the draft. I don't need everything to be perfect but when there are just too many of these, it greatly disrupts my reading flow and makes it hard for me to understand the paper.
 + Do not send me very incomplete drafts. If there are incomplete sections, I will likely just skip them and not read them. If you don't have a complete draft, but some sections are complete, then you can share those sections with me and I can provide feedback on those sections.
-+ The most important sections to have complete are the *Overview* and *Experimental* sections. The most important section is  *Overview* as it helps me---who reads as a reviewer---understand the approach and the main ideas of the paper.  *Experimental* is also important because it shows the results and the analysis. This allows me to suggest improvements to the experiments and results, which can take a lot of time and effort to improve.
++ Make sure your draft has _complete_ *Overview* and *Experimental* sections.  *Overview*, which includes an illustration of the technique, is the most important as it helps me---who reads as a reviewer---understand the approach and the main ideas of the paper.  *Experimental* is also important because it shows the results and the analysis. This allows me to suggest improvements to the experiments and results, which can take a lot of time and effort to improve.
   - It is also helpful if you have the *Introduction* section complete as well, and if it is available then I will start with the Introduction because it gives me a good overview of the paper and helps me understand the motivation and contributions.
 
 
