@@ -168,7 +168,17 @@ published at `OOPSLA'21`.
     - The proposed approach of this paper: how does it address the limitations of existing
       work listed above? What other benefits does it have?
       - Results: briefly summarize the results.
-        
+
+
+== Sending Me Drafts
+
+When you have a draft ready, share it with me. I will read it and provide feedback. Several things to keep in mind when sharing drafts with me:
++ Use *Github* for sharing drafts. If you use Overleaf then make sure you link it to a Github repo that I have write access to. This is because I often make edits off-line and using an external editor (e.g., `VSCode` or `Emacs`).
++ *Do not* have too many `TODO` or `FIXME` or `CITE` in the draft. I don't need everything to be perfect but when there are just too many of these, it greatly disrupts my reading flow and makes it hard for me to understand the paper.
++ Do not send me very incomplete drafts. If there are incomplete sections, I will likely just skip them and not read them. If you don't have a complete draft, but some sections are complete, then you can share those sections with me and I can provide feedback on those sections. 
+
+
+
 #pagebreak()
 
 
