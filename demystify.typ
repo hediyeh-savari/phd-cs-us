@@ -264,7 +264,7 @@ CS is a broad academic discipline with many specialized areas of research. Under
 - Graphics and Visualization,
 - Computational Biology
 
-Most faculty have a _home_ field with which they are primarily associated, but may also publish in related fields. For example, SE researchers often work in PL and Formal Methods; Security researchers may also work in Systems and Theory.
+Most faculty have a _home_ field with which they are primarily associated, but may also publish in related fields. For example, many SE researchers also work in Programming Languages and Formal Methods; Security researchers may also work in Systems and Theory.
 ]
 
 #paragraph[Areas][Within a field, we have _areas_---narrower subfields where people specialize. For example, PL includes Type Systems, Formal Verification, Program Synthesis; SE includes Testing, Program Repair, Empirical SE, and AI4SE (a new and fast-growing area); and
@@ -315,7 +315,7 @@ Within these 5--7 years, CS PhD students sometimes take a "leave of absence" for
 
 Even if your undergraduate degree is not in CS or a related discipline, you still can apply to a PhD in CS _as long as_ you can demonstrate that you are ready for it through your background, research experience, LORs, statements, etc. You might even be able to leverage this to make your profile stand out, as mentioned in @sec:stand-out.
 
-A main concern that #gls("adcom") has for a non-CS or non-STEM student is whether you have sufficient technical background from core CS courses. So you need to demonstrate that you have this knowledge through your coursework, projects, or research.
+A main concern that #gls("adcom") has for a non-CS or non-STEM student is whether they have sufficient technical background from core CS courses. So you need to demonstrate that you have this knowledge through your coursework, projects, or research.
 
 For example, if you have taken a class on algorithms, even an online course from Coursera, you can talk about it in your #gls("SOP"). If you have done a project that requires knowledge of operating systems or have a professional certification (e.g., A+) through work, you can talk about it. If you have done research that requires knowledge of discrete math, you can talk about it. You can also ask your #gls("LOR") writers to discuss your technical background.
 
@@ -327,7 +327,7 @@ For example, if you have taken a class on algorithms, even an online course from
 - *Computer OS or systems:* memory management, file systems, processes.
 ]
 
-In short, you _do not need_ to have CS or STEM degree or even have taken formal CS courses to apply for a CS PhD. You just need to show that you have this essential knowledge, for example through the ways mentioned above. Many universities are well aware that incoming graduate students might not have all the technical background, so they often have _“bridge”_ courses to help students catch up. For example, GMU has four bridge courses corresponding to the four core areas above that incoming students can take to catch up on their CS knowledge.
+In summary, you _do not need_ to have CS or STEM degree or even have taken formal CS courses to apply for a CS PhD. You just need to show that you have this essential knowledge, for example through the ways mentioned above. Many universities are well aware that incoming graduate students might not have all the technical background, so they often have _“bridge”_ courses to help students catch up. For example, GMU has four bridge courses corresponding to the four core areas above that incoming students can take to catch up on their CS knowledge.
 
 #remark-block[
   I would advocate for a non-STEM student who shows they have a strong drive for CS by studying core CS knowledge through various channels (e.g., self-study through online courses and participating in open-source projects). 
@@ -354,7 +354,7 @@ Moreover, if you have an MS, then some coursework _might_ be transferred for cou
 
 
 === Can I apply for PhD in CS for the Spring or Summer? <sec:apply-spring-summer>
-Most students apply to start their PhD in the Fall. This means they submit their application around December, receive admission decisions sometime in the Spring, and officially begin their PhD in the Fall (August or September).
+Most students apply to start their PhD in the Fall. This means they submit their application around December, receive admission decisions (@chap:accepted) sometime in the Spring, and officially begin their PhD in the Fall (usually late August).
 
 Fall---the start of the #gls("AY")---is the most common time to begin PhD programs in the US, and many universities _only_ accept new PhD students in the Fall. Importantly, applying for the Fall gives you access to funding opportunities (@chap:funding) that are available only for Fall admits, such as TAships (@sec:ta) and some fellowships.
 
