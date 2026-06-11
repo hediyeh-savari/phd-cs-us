@@ -109,6 +109,8 @@
 #let tvn(msg) = comment("TVN", red, msg)
 #let hd(msg) = comment("HD", blue, msg)
 
+#let bab = [#smallcaps[BaB]]
+#let tool = [#smallcaps[NeuralSAT]]
 
 #show figure.where(kind: image): set figure(supplement: [Fig.])
 #show figure.where(kind: table): set figure(supplement: [Tab.])
@@ -369,7 +371,7 @@
 // \renewcommand{\appendixautorefname}{\textsection\@gobble}
 
 // \newcommand{\exampleautorefname}{Ex.}
-// \newcommand{\problemautorefname}{Prob.}
+// \newcommand{$"ActPatterns"$autorefname}{Prob.}
 
 // \makeatother
 // \newcommand{\proofgen}{\texttt{BaB$_{\text{ProofGen}}$}}
@@ -1670,17 +1672,17 @@ $
 
 // \subsection{VNN-LIB: Property Specification Language}
 
-// Verification tasks involve proving that the output of a network remains within some desired post-condition $\Sigma$, given inputs within a bounded set $\Pi$.
+// Verification tasks involve proving that the output of a network remains within some desired post-condition $sigma$, given inputs within a bounded set $\Pi$.
 
 // \paragraph{Formal Specification}
 // Let $\nu: D^{n_1 \times \dots \times n_h} \to D^{m_1 \times \dots \times m_k}$ be a neural network, and $x$ and $y$ its input and output tensors. A property is expressed as:
 // \[
-// \forall x in \Pi \rightarrow \nu(x) in \Sigma
+// \forall x in \Pi \rightarrow \nu(x) in sigma
 // \]
 // This includes:
 // \begin{itemize}
 //     \item \textbf{Precondition} $\Pi$: constraints on inputs.
-//     \item \textbf{Postcondition} $\Sigma$: required properties of outputs.
+//     \item \textbf{Postcondition} $sigma$: required properties of outputs.
 // \end{itemize}
 
 // Properties are encoded in \textbf{SMT-LIB2}, referencing input/output variable names consistent with ONNX.
@@ -4413,7 +4415,7 @@ Note that because BaB splits ReLU neurons into active/inactive cases, it is also
   placement: top,
   kind: "algorithm",
   supplement: [Algorithm],
-  caption: [Branch and Bound Algorithm],
+  caption: [Branch and Bound (#bab) Algorithm for Neural Network Verification],
 pseudocode-list(hooks:0.5em)[
   + *Input*: network $cal(N)$, property $phi_"in" => phi_"out"$
   + *Output*: $"unsat"$ if property is valid, otherwise ($"sat"$, $"cex"$)
@@ -4434,27 +4436,27 @@ pseudocode-list(hooks:0.5em)[
 
 
 
-// \paragraph{Reference Alg} \autoref{alg:bab} shows \bab{}, a reference~\cite{nakagawa2014consolidating} BaB architecture for NNV. \bab{} takes as input a ReLU-based network $\mathcal{N}$ and a formulae $phi_"in"\Rightarrow phi_"out"$ representing the property of interest.
-// \bab{} maintains a set of activation patterns (\problems) that represent the current activation pattern of the network. Initially, \problems is initialized with an empty activation pattern (\autoref{line:babinit}).
+#paragraph[Reference BaB Algorithm][@alg:bab shows #bab, a reference @
+ BaB architecture for NNV. #bab takes as input a ReLU-based network $cal(N)$ and a formulae $phi_"in" => phi_"out"$ representing the property of interest.
+#bab maintains a set of activaion patterns ($"ActPatterns"$) that represent the current activation pattern of the network. Initially, $"ActPatterns"$ is initialized with an empty activation pattern (@line:babinit).
+]
 
-
-// In each BaB iteration $i$ (\autoref{line:babstart}), the algorithm selects and removes an activation pattern $\sigma_i$ from \problems (\autoref{line:babselect}).
-// It then calls \Deduce to \emph{quickly} determine if the current problem, i.e., the original satisfiability problem with  activation pattern $\sigma_i$,
-// is feasible. For example, it can use interval abstraction (\autoref{chap:abstractions}) to quickly computes the bounds of the output values with respect to $\sigma_i$, e.g., by replacing ReLU functions according to the activation statuses specified in $\sigma_i$ (\autoref{sec:pattern-reduction}).
+In each BaB iteration $i$ (@line:babstart), the algorithm selects and removes an activation pattern $sigma_i$ from $"ActPatterns"$s (@line:babselect).
+It then calls $"Deduce"$ to _quickly_ determine if the current problem, i.e., the original satisfiability problem with  activation pattern $sigma_i$, is feasible. For example, it can use interval abstraction (@chap:abstractions) to quickly computes the bounds of the output values with respect to $sigma_i$, e.g., by replacing ReLU functions according to the activation statuses specified in $sigma_i$ (@sec:pattern-reduction).
 
 // If the computed bounds indicate that no counterexample can exist, e.g., the lower bound of the output is greater than 0 when checking $y < 0$, then the problem is \emph{infeasible}. Otherwise, the problem is \emph{potentially feasible} (because the bounds are over-approximations).
 
 // (Note that we do this even on the empty activation pattern, which is the initial state of the search, because the problem might be trivially infeasible, in which case we can exit and return \unsat{} immediately (\autoref{line:babunsat}).)
 // \begin{itemize}
 
-// \item If \Deduce determines that the problem is infeasible, \bab{} discards the current processing activation pattern and loops back (to~\autoref{line:babstart}) to process the next activation pattern. In other words, it prunes the current search branch with activation pattern $\sigma_i$.
+// \item If \Deduce determines that the problem is infeasible, \bab{} discards the current processing activation pattern and loops back (to~\autoref{line:babstart}) to process the next activation pattern. In other words, it prunes the current search branch with activation pattern $sigma_i$.
 // When there are no more activation patterns to process, \bab{} returns \unsat{} (\autoref{line:babunsat}), indicating that it cannot find counterexamples and the property is valid.
 
 
 // \item If \Deduce determines that the problem is feasible, \bab{} checks the satisfiability of the problem using an LP solver (\autoref{line:bablp})\footnote{The problem is formulated as a MILP problem as described in~\autoref{sec:using-milp} and checked using an LP solver. Note that we use LP and MILP interchangeably here for simplicity. In practice, most LP solvers such as Gurobi handles MILP problems as well. Just like SMT solvers handle both SAT and SMT problems.}. If the solver finds a satisfying assignment, it returns \sat{} and the counterexample represented by the satisfying assignment (\autoref{line:babsat}), indicating that the property is invalid.
 // Otherwise, \mycode{LP} returns unsatisfiable, and \bab{} calls \Decide to select a neuron $v_i$ to split, i.e., to fix the activation status of $v_i$ as either active or inactive (\autoref{line:babdecide}).  This means the problem is split into two independent subproblems: one with $v_i$ (active) and the other with $\overline{v_i}$ (inactive).
 // By splitting (or fixing the neuron status), we create two \emph{simpler} subproblems (less neurons to abstract) that are easier to solve. Thus, this step \emph{refines} the precision of abstract interpretation.
-// \bab{} then adds the two new activation patterns $\sigma_i \land v_i$ and $\sigma_i \land \overline{v_i}$ to \problems. \bab{} then loops back to~\autoref{line:babstart} to process the next activation pattern.
+// \bab{} then adds the two new activation patterns $sigma_i \land v_i$ and $sigma_i \land \overline{v_i}$ to $"ActPatterns"$s. \bab{} then loops back to~\autoref{line:babstart} to process the next activation pattern.
 // \end{itemize}
 
 
@@ -4502,17 +4504,17 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 // \end{figure}
 
 
-// First, \bab{} initializes \problems{}\footnote{\mycode{Queue} is often used to implement the problems set \problems.} with an empty activation pattern $\emptyset$ (i.e., no neurons fixed).
+// First, \bab{} initializes $"ActPatterns"$s{}\footnote{\mycode{Queue} is often used to implement the problems set $"ActPatterns"$s.} with an empty activation pattern $\emptyset$ (i.e., no neurons fixed).
 // Then \bab{} enters its main loop.
 
 // \begin{enumerate}
-// \item \textbf{First iteration.}~\bab{} selects the only available activation pattern $\emptyset$, i.e., $\sigma_i = \emptyset$,
-// and  calls \Deduce to check the feasibility of the problem based $\sigma_i$.
+// \item \textbf{First iteration.}~\bab{} selects the only available activation pattern $\emptyset$, i.e., $sigma_i = \emptyset$,
+// and  calls \Deduce to check the feasibility of the problem based $sigma_i$.
 
 // Here, \Deduce determines that the problem is feasible, e.g., the computed bounds of $y_1$ and $y_2$ indicate that $y_1 <= y_2$ can be satisfied. Next, \bab{} calls \mycode{LP} to check the satisfiability of the problem using an LP solver. The LP solver returns \texttt{unknown}--likely because the problem is too complex to solve without fixing any neuron status. Thus we need to make search smaller by \emph{splitting} a neuron (i.e., fixing its activation status).
 
 // \bab{} then randomly selects a neuron to split (\Decide). Assume that it chooses $v_4$ to split, i.e., the problem spawns two independent subproblems: one with $v_4$ active and the other with $v_4$ inactive.
-// It does so by unioning $\{v_4\}$ and $\{\overline{v_4}\}$ with $\sigma_i$ and adds both new activation patterns to \problems. 
+// It does so by unioning $\{v_4\}$ and $\{\overline{v_4}\}$ with $sigma_i$ and adds both new activation patterns to $"ActPatterns"$s. 
 // Next, \bab{} loops back to process the next activation pattern.
 // Thus, each of the two new subproblem is simpler than the original one because we have fixed the status of one neuron ($v_4$), which hopefully makes \Deduce{} and \mycode{LP} more precise and efficient in the next iterations.
 
@@ -4521,11 +4523,11 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 // so it selects $v_2$ to split by adding $\{v_4, v_2\}$ and $\{v_4, \overline{v_2}\}$ to \texttt{ActPatterns}.
 // For the other subproblem with $\overline{v_4}$ inactive, \Deduce determines infeasibility and thus discards this subproblem.
 
-// \item \textbf{Third iteration.}~\bab{} has two subproblems corresponding to activation patterns $\{v_4, v_2\}$ and $\{v_4, \overline{v_2}\}$. For the first subproblem, \bab{} selects $v_1$ to split by unioning $v_1$ and then $\overline{v_1}$ to the current activation pattern $v_4 \land v_2$ and adds them to \problems. For the second subproblem, \Deduce determines infeasibility and \bab{} discards this subproblem.
+// \item \textbf{Third iteration.}~\bab{} has two subproblems corresponding to activation patterns $\{v_4, v_2\}$ and $\{v_4, \overline{v_2}\}$. For the first subproblem, \bab{} selects $v_1$ to split by unioning $v_1$ and then $\overline{v_1}$ to the current activation pattern $v_4 \land v_2$ and adds them to $"ActPatterns"$s. For the second subproblem, \Deduce determines infeasibility and \bab{} discards this subproblem.
 
 // \item \textbf{Fourth iteration.}~\bab{} has two subproblems corresponding to activation patterns $\{v_4, v_2, v_1\}$ and $\{v_4, v_2, \overline{v_1}\}$, both which are then determined infeasible and discarded.
 
-// \item \textbf{Fifth iteration.}~Finally, \bab{} has no more activation patterns in \problems, stops the search, and returns \unsat{}, indicating that the property is valid.
+// \item \textbf{Fifth iteration.}~Finally, \bab{} has no more activation patterns in $"ActPatterns"$s, stops the search, and returns \unsat{}, indicating that the property is valid.
 // \end{enumerate}
 
 // \autoref{fig:bab-example}b illustrates the BaB search tree corresponding to the above process. Each white node represents a branching decision where \bab{} splits a neuron, while each red node represents a leaf node where \Deduce determines infeasibility and prunes the branch. Notice that not all activation patterns are explored because some branches are pruned early due to infeasibility. In other words, while there are $2^4=16$ possible complete activation patterns for the three ReLU neurons, \bab{} only explores 6 of them in this example.
@@ -4902,28 +4904,28 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 // \begin{algorithm}
 //     \small
 
-//      in put{NN $\mathcal{N}$, property $phi_"in" \Rightarrow phi_"out"$}
+//      in put{NN $cal(N)$, property $phi_"in" \Rightarrow phi_"out"$}
 //     \Output{($\unsat, \blue{\prooftree}$) if property is valid, otherwise ($\sat, \counterexample$)}
 //     \BlankLine
 
 
-//     $\problems <=ftarrow \{ \emptyset \}$ \tcp{initialize verification problems}
+//     $$"ActPatterns"$s <=ftarrow \{ \emptyset \}$ \tcp{initialize verification problems}
 //     $\blue{\prooftree >=ts \{ ~ \}}$ \tcp{initialize proof tree <line:prooftree}
 
-//     \While(\tcp*[h]{main loop}){$\problems$}{
-//         $\sigma_i >=ts \Select(\problems)$ \tcp{process problem $i$-th}
-//         % \Parfor(\tcp*[h]{process in parallel}){$\sigma_i ~ in ~ \problems$}{ \label{line:parfor}
-//             \If{\Deduce{$\mathcal{N}, phi_"in", phi_"out", \sigma_i$}}{
-// $\counterexample <=ftarrow \LP(\mathcal{N}, phi_"in", phi_"out", \sigma_i)$ \tcp{check satisfiability}
+//     \While(\tcp*[h]{main loop}){$$"ActPatterns"$s$}{
+//         $sigma_i >=ts \Select($"ActPatterns"$s)$ \tcp{process problem $i$-th}
+//         % \Parfor(\tcp*[h]{process in parallel}){$sigma_i ~ in ~ $"ActPatterns"$s$}{ \label{line:parfor}
+//             \If{\Deduce{$cal(N), phi_"in", phi_"out", sigma_i$}}{
+// $\counterexample <=ftarrow \LP(cal(N), phi_"in", phi_"out", sigma_i)$ \tcp{check satisfiability}
 //                 \If(\tcp*[h]{found a valid cex}){$\counterexample$}{
 //                     \Return{$(\mysat, \counterexample)$}
 //                 }
-//                 $v_i <=ftarrow \Decide(\mathcal{N}, \sigma_i)$\\
+//                 $v_i <=ftarrow \Decide(cal(N), sigma_i)$\\
 //                 \tcp{create new activation patterns}
-//                 $\problems <=ftarrow \problems \cup \{ \sigma_i \cup \{v_i\} ~;~ \sigma_i \land \{\overline{v_i}\} \}$
+//                 $$"ActPatterns"$s <=ftarrow $"ActPatterns"$s \cup \{ sigma_i \cup \{v_i\} ~;~ sigma_i \land \{\overline{v_i}\} \}$
 //             }
 //             \Else(\tcp*[h]{detect infeasibility}){
-//                 $\blue{\prooftree <=ftarrow \prooftree \cup \{ \sigma_i \}}$ \tcp{build proof tree <line:record_proof}
+//                 $\blue{\prooftree <=ftarrow \prooftree \cup \{ sigma_i \}}$ \tcp{build proof tree <line:record_proof}
 //             }
 //     }
 //     \Return{$(\unsat, \blue{\prooftree})$}
@@ -5136,7 +5138,7 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 // \begin{algorithm}[t]
 //     \small
 
-//      in put{Network $\mathcal{N}$, property $phi_"in" \Rightarrow phi_"out"$, $\prooftree$}
+//      in put{Network $cal(N)$, property $phi_"in" \Rightarrow phi_"out"$, $\prooftree$}
 //     \Output{\certified if proof is valid, otherwise \uncertified}
 //     \BlankLine
 
@@ -5145,7 +5147,7 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 //     }
 
 //     \tcp{initialize MILP model with inputs}
-//     $\model <=ftarrow \CreateStabilizedMILP(\mathcal{N}, phi_"in", phi_"out")$ \label{line:build_model}
+//     $\model <=ftarrow \CreateStabilizedMILP(cal(N), phi_"in", phi_"out")$ \label{line:build_model}
 
 
 //     $<=af >=ts \mynull$ \tcp{initialize current processing node}
@@ -5196,7 +5198,7 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 // \end{algorithm}
 
 
-// \autoref{fig:algorithm} shows a minimal (core)  \proofcheck{} algorithm, which takes as input a network $\mathcal{N}$, a property $phi_"in" \Rightarrow phi_"out"$, a proof tree $\prooftree$, and returns \certified if the proof tree is valid and \uncertified otherwise.
+// \autoref{fig:algorithm} shows a minimal (core)  \proofcheck{} algorithm, which takes as input a network $cal(N)$, a property $phi_"in" \Rightarrow phi_"out"$, a proof tree $\prooftree$, and returns \certified if the proof tree is valid and \uncertified otherwise.
 // \proofcheck{} first checks the validity of the proof tree (\autoref{line:build_model}), i.e., the input must represent a proper \prooflang{} proof tree (\autoref{sec:prooflang}).
 // If the proof tree is invalid, \proofcheck{} raises an error.
 // \proofcheck{} next creates a MILP model (\autoref{line:build_model}) representing the input. % (\autoref{sec:neuron-stabelization}).
@@ -5253,7 +5255,7 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 // % \begin{algorithm}
 // %     \small
 
-// %      in put{DNN $\mathcal{N}$, property $phi_"in" \Rightarrow phi_"out"$, parallel factor $k$}
+// %      in put{DNN $cal(N)$, property $phi_"in" \Rightarrow phi_"out"$, parallel factor $k$}
 // %     \Output{MILP $\model$}
 // %     \BlankLine
 
@@ -5261,7 +5263,7 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 // %     $\model <=ftarrow  in putMILP(phi_"in")$  \tcp{input property}    \label{line:create_input}
 
 // %     \tcp{Add MILP constraints for each layer of network}
-// %     \For{$\layer ~in ~\mathcal{N}$}{
+// %     \For{$\layer ~in ~cal(N)$}{
 // %         \If{$\isPiecewiseLinear(\layer)$}{
 // %             \tcp{add constraints~\autoref{eq:mip2} (c), (d), (e)}
 // %             $\model <=ftarrow \PiecewiseLinearMILP(\layer, phi_"in", phi_"out")$ \\ \label{line:create_pwl_layer}
@@ -9100,7 +9102,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // \end{example}
 
 
-// % \paragraph{Assignments} A partial assignment $\sigma$ maps variables to truth values (\texttt{True} or \texttt{False}). For example, $\sigma = \{x_1=\text{True}, x_2=\text{False}\}$ assigns $x_1$ to True and $x_2$ to False, leaving other variables unassigned.
+// % \paragraph{Assignments} A partial assignment $sigma$ maps variables to truth values (\texttt{True} or \texttt{False}). For example, $sigma = \{x_1=\text{True}, x_2=\text{False}\}$ assigns $x_1$ to True and $x_2$ to False, leaving other variables unassigned.
 // % A complete assignment maps all variables to truth values.
 
 // \subsection{Boolean Constraint Propagation (BCP) <sec:bcp}
@@ -9165,7 +9167,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // \subsection{Conflict Analysis and Backtracking <sec:conflict-analysis}
 
 
-// A \emph{conflict} occurs the formula is False under the current assignment $\sigma$. More specifically, since the formula is in CNF, a conflict arises when at least one clause is False (i.e., all its literals are False).
+// A \emph{conflict} occurs the formula is False under the current assignment $sigma$. More specifically, since the formula is in CNF, a conflict arises when at least one clause is False (i.e., all its literals are False).
 
 // \begin{example}
 // \[
@@ -10041,7 +10043,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // % \SetKwData{infeasible}{INFEASIBLE}
 // % \SetKwData{unreachable}{UNREACHABLE}
 // % \SetKwData{maxinputs}{MAX\_NUM\_INPUT}
-// % \SetKwData{assignment}{$\sigma$}
+// % \SetKwData{assignment}{$sigma$}
 // % \SetKwData{network}{$alpha$}
 // % \SetKwData{dl}{dl}
 // % \SetKwData{lpmodel}{solver}
@@ -10071,19 +10073,19 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // %     $\clauses <=ftarrow \BooleanAbstraction(alpha)$\;\label{line:Booleanabstraction}
 
 // %     \While{\true}{
-// %         $\sigma <=ftarrow \emptyset$ \tcp{initial assignment <line:varsa}
+// %         $sigma <=ftarrow \emptyset$ \tcp{initial assignment <line:varsa}
 // %         $\dl <=ftarrow 0$ \tcp{initial decision level}
 // %         $\igraph <=ftarrow \emptyset$ \tcp{initial implication graph <line:varsb}
 // %         \While{\true}{\label{line:dpllstart}
 // %             $\isconflict <=ftarrow \true$ \;
 
-// %             \If{$\BCP(\clauses, \sigma, \dl, \igraph)$}{\label{line:bcp}
-// %                 \If{$\Deduction(\sigma, \dl, alpha, phi_"in", phi_"out")$}{ \label{line:deduction}
-// %                     $\issat, v_i <=ftarrow \Decide(alpha, phi_"in", phi_"out", \dl, \sigma)$ \tcp{decision heuristic} \label{line:decide}
+// %             \If{$\BCP(\clauses, sigma, \dl, \igraph)$}{\label{line:bcp}
+// %                 \If{$\Deduction(sigma, \dl, alpha, phi_"in", phi_"out")$}{ \label{line:deduction}
+// %                     $\issat, v_i <=ftarrow \Decide(alpha, phi_"in", phi_"out", \dl, sigma)$ \tcp{decision heuristic} \label{line:decide}
 // %                     \lIf(\tcp*[h]{total assignment}){\issat}{
 // %                         \Return{$\sat$} \label{line:returnsat}
 // %                     }
-// %                     $\sigma <=ftarrow \sigma \land v_i$\;% \tcp{decide new variable}
+// %                     $sigma <=ftarrow sigma \land v_i$\;% \tcp{decide new variable}
 // %                     $\dl <=ftarrow \dl + 1$\;% \tcp{increase decision level by 1}
 // %                     $\isconflict <=ftarrow \false$ \tcp{mark as no conflict}
 // %                 }
@@ -10093,7 +10095,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // %                     \Return{\unsat}  \label{line:unsat}
 // %                 }
 // %                 $\clause <=ftarrow \AnalyzeConflict(\igraph)$\;
-// %                 $\dl <=ftarrow \Backtrack(\sigma, \clause)$ \;\label{line:backtrack}
+// %                 $\dl <=ftarrow \Backtrack(sigma, \clause)$ \;\label{line:backtrack}
 // %                 $\clauses <=ftarrow \clauses \cup \{\clause\}$ \tcp{learn conflict clauses} \label{line:learn}
 // %             }
 
@@ -10169,7 +10171,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // % % \tvn{something is wrong with the line ?? here} \hd{fixed}
 // % \tool{} combines  DPLL components (e.g., \texttt{Decide}, \texttt{BCP}, \texttt{AnalyzeConflict}, \texttt{Backtrack} and \texttt{Restart}) to assign truth values with a theory solver (\S\ref{sec:deduction}), consisting of abstraction and linear programming solving, to check the feasibility of the constraints implied by the assignment with respect to the network and property of interest.
 
-// % \tool{} maintains several variables (\autoref{fig:alg}, lines~\ref{line:Booleanabstraction}--~\ref{line:varsb}). These include $\clauses$, a set of \emph{clauses} consisting of the initial activation clauses and learned clauses;   $\sigma$, a \emph{truth assignment} mapping status variables to truth values; $igraph$, an \emph{implication graph} used for analyzing conflicts; and  $dl$, a non-zero \emph{decision level} used for assignment and backtracking.
+// % \tool{} maintains several variables (\autoref{fig:alg}, lines~\ref{line:Booleanabstraction}--~\ref{line:varsb}). These include $\clauses$, a set of \emph{clauses} consisting of the initial activation clauses and learned clauses;   $sigma$, a \emph{truth assignment} mapping status variables to truth values; $igraph$, an \emph{implication graph} used for analyzing conflicts; and  $dl$, a non-zero \emph{decision level} used for assignment and backtracking.
 
 
 // % %needs to analyze both \emph{Boolean constraints} (i.e., clauses involving status variables) and \emph{non-Boolean constraints} involving the nonlinear representation of the activation function and linear constraints encoding the network and status variables,  e.g., $v_3=\texttt{F}$ means $x_3'=\texttt{off}=0.5x_1-0.5x_2-1.0 <= 0$.
@@ -10496,7 +10498,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 
 // %     \For{$v in \hiddenbounds$} {\label{line:infera}
 // %       $x <=ftarrow \ActivationStatus(v)$\;
-// %       \lIf{$x in \sigma \lor not{x} in \sigma$}{\Continue}
+// %       \lIf{$x in sigma \lor not{x} in sigma$}{\Continue}
 // %       \lIf{$\Lower(v) > 0$}{$\assignment <=ftarrow \assignment \cup x@dl$}
 // %         <=lseIf{$\Upper(v) <= 0$}{$\assignment <=ftarrow \assignment \cup \overline{x}@dl$ <line:inferb}
 // %     }
@@ -10513,10 +10515,10 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 
 
 // % \autoref{alg:deduction} describes \texttt{Deduction}, which returns \texttt{False} if infeasibility occurs and  \texttt{True} otherwise.
-// % %\textsc{Deduce} is a theory solver that takes the arguments including: the current assignment $\sigma$, neural network $alpha$, precondition $phi_"in"$ over inputs and postcondition $phi_"out"$ over outputs.
-// % First, it creates a linear constraint system from the input assignment $\sigma$ and $alpha \land phi_"in" \land \overline{phi_"out"}$, i.e., the formula in ~\autoref{eq:nnv2} representing the original problem  (line~\ref{line:lpsolver}).
+// % %\textsc{Deduce} is a theory solver that takes the arguments including: the current assignment $sigma$, neural network $alpha$, precondition $phi_"in"$ over inputs and postcondition $phi_"out"$ over outputs.
+// % First, it creates a linear constraint system from the input assignment $sigma$ and $alpha \land phi_"in" \land \overline{phi_"out"}$, i.e., the formula in ~\autoref{eq:nnv2} representing the original problem  (line~\ref{line:lpsolver}).
 // % The key idea is that we can remove ReLU activation for hidden neurons whose activation status have been decided.
-// % For constraints in $alpha$ associated with variables that are not in the $\sigma$,  we ignore them and just consider the cutting planes introduced by the partial assignment.
+// % For constraints in $alpha$ associated with variables that are not in the $sigma$,  we ignore them and just consider the cutting planes introduced by the partial assignment.
 // % %FixUB preceding sentence based on answer.}
 // % %\hd{Yes, you're correct. We ignore constraints generated by unassigned variables and only consider the cutting planes introduced by the partial assignment}
 // % For example, for the assignment $v_3\mapsto T, v_4 \mapsto F$, the non-linear ReLU constraints $x_3=ReLU(-0.5x_1+0.5x_2+1)$ and  $x_4=ReLU(x_1+x_2-1)$ for the DNN in~\autoref{fig:dnn} become linear constraints $x_3=-0.5x_1+0.5x_2$ and $x_4=0$, respectively.
@@ -10564,7 +10566,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 
 // % %\hd{remove this sentence?}
 
-// % \paragraph{Inference} If abstraction results in feasible constraints, \texttt{Deduction} next attempts to infer implied literals (lines~\ref{line:infera}--~\ref{line:inferb}). To obtain the bounds of the output neurons, abstraction also needs to compute the bounds of hidden neurons, including those with undecided activation status (i.e., not yet in $\sigma$).
+// % \paragraph{Inference} If abstraction results in feasible constraints, \texttt{Deduction} next attempts to infer implied literals (lines~\ref{line:infera}--~\ref{line:inferb}). To obtain the bounds of the output neurons, abstraction also needs to compute the bounds of hidden neurons, including those with undecided activation status (i.e., not yet in $sigma$).
 // % This allows us to assign the activation variable of a hidden neuron the value
 // % \texttt{True} if the lowerbound of that neuron is greater than 0 (the neuron is active) and
 // % \texttt{False} otherwise.
@@ -10573,7 +10575,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // % %\mbd{forward pointer to data on this in evaluation section.}
 // % %\hd{Maximum overhead is about 39\% of runtime, all cases which have overhead > 30\% belong to CIFAR networks from CIFAR2020 benchmark which are large (cifar10\_2\_255, convBigRELU\_PGD), average overhead is about 4\%, apply median filter and average will be 2\%}
 
-// % \begin{example} For the illustrative example in~\autoref{ex:neuralsat}, in iteration 3, the current assignment $\sigma$ is  $\{v_4=1\}$, corresponding to a constraint $x_1 + x_2 - 1 > 0$. With the new constraint, we optimize the input bounds and compute the new bounds for hidden neurons $0.5 <= x_3 <= 2.5$, $0 < x_4 <= 2.0$ and output neuron  $x_5 <= 0.5$ (and use this to determine that the postcondition $x_5 > 0$ might be feasible). We also infer $v_3=1$ because of the positive lower bound $0.5 <= x_3$.
+// % \begin{example} For the illustrative example in~\autoref{ex:neuralsat}, in iteration 3, the current assignment $sigma$ is  $\{v_4=1\}$, corresponding to a constraint $x_1 + x_2 - 1 > 0$. With the new constraint, we optimize the input bounds and compute the new bounds for hidden neurons $0.5 <= x_3 <= 2.5$, $0 < x_4 <= 2.0$ and output neuron  $x_5 <= 0.5$ (and use this to determine that the postcondition $x_5 > 0$ might be feasible). We also infer $v_3=1$ because of the positive lower bound $0.5 <= x_3$.
 // % \end{example}
 
 
@@ -10589,14 +10591,14 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 
 // % The key idea in using neuron stability is that if we can determine that a neuron is stable,  we can assign the exact truth value for the corresponding Boolean variable instead of having to guess. This has a similar effect as \mycode{BCP}---reducing mistaken assignments by \Decide---but it operates at the theory level instead of the propositional Boolean level.
 
-// % %First, the T-solver creates a linear constraint system from the input assignment $\sigma$ and $alpha \land phi_"in" \land \overline{phi_"out"}$, i.e., the formula in ~\autoref{eq:nnv2} representing the original problem  (line~\ref{line:lpsolver}).
+// % %First, the T-solver creates a linear constraint system from the input assignment $sigma$ and $alpha \land phi_"in" \land \overline{phi_"out"}$, i.e., the formula in ~\autoref{eq:nnv2} representing the original problem  (line~\ref{line:lpsolver}).
 // % %First, the T-solver creates a set of linear constraints representing ReLU activation for hidden neurons whose activation status have been decided.
 // % %Next, those constraints are used in \textsc{Stabilize} for inferring status of neurons that are unassigned, \textsc{Deduce} then applies the polytope abstraction to check satisfiability.
 // % %If the abstraction confirms the infeasibility, \textsc{Deduce} returns \texttt{False} so that \textsc{AnalyzeConflict} can analyze the assignment and and learn the conflict clause.
 // % %Otherwise, the current assignment might be feasible and \textsc{Decide} continues to split more hidden neurons.
 
 
-// % %\texttt{Stabilize} (\autoref{fig:alg} line~\ref{line:stabilize}) first creates linear constraints consisting of the DNN $alpha$, the input \tvn{fillin} and output \tvn{fillin} conditions, and the current assignment $\sigma$. Next, it uses these constraints to generate a Mixed Integer Linear Programming (MILP) problem (~\autoref{eq:mip}), whose objective is compute a tighter lower and upper bounds for unstable neurons based on the current search state (i.e., the current assignment $\sigma$).
+// % %\texttt{Stabilize} (\autoref{fig:alg} line~\ref{line:stabilize}) first creates linear constraints consisting of the DNN $alpha$, the input \tvn{fillin} and output \tvn{fillin} conditions, and the current assignment $sigma$. Next, it uses these constraints to generate a Mixed Integer Linear Programming (MILP) problem (~\autoref{eq:mip}), whose objective is compute a tighter lower and upper bounds for unstable neurons based on the current search state (i.e., the current assignment $sigma$).
 
 // % %the considered property into a set of constraints for
 // % %The main goal of this process is to
@@ -10648,14 +10650,14 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // % \begin{algorithm}
 // %     \small
 
-// %      in put{DNN $alpha$, property $phi_"in" \Rightarrow phi_"out"$, current assignment $\sigma$, number of neurons for stabilization $k$}
-// %     \Output{Tighten bounds for variables \textbf{not} in $\sigma$ (unassigned variables)}
+// %      in put{DNN $alpha$, property $phi_"in" \Rightarrow phi_"out"$, current assignment $sigma$, number of neurons for stabilization $k$}
+// %     \Output{Tighten bounds for variables \textbf{not} in $sigma$ (unassigned variables)}
 // %     \BlankLine
 
 // %     % \tcp{create an MILP solver based on ~\autoref{eq:mip}}
-// %     $\model <=ftarrow \MIP(alpha, phi_"in", phi_"out", \sigma)$ \tcp{create model (~\autoref{eq:mip1}) with  current assignment}
+// %     $\model <=ftarrow \MIP(alpha, phi_"in", phi_"out", sigma)$ \tcp{create model (~\autoref{eq:mip1}) with  current assignment}
 
-// %     $[v_1, ..., v_m] <=ftarrow >=tUnassignedVariable(\sigma)$ \tcp{get all $m$ current unassigned variables} \label{line:find}
+// %     $[v_1, ..., v_m] <=ftarrow >=tUnassignedVariable(sigma)$ \tcp{get all $m$ current unassigned variables} \label{line:find}
 
 
 // %     $[v_1', ..., v_m'] <=ftarrow \Sort([v_1, ..., v_m])$ \tcp{prioritize tightening order} \label{line:sort}
@@ -10771,9 +10773,9 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // % %     $\maxremaining <=ftarrow 30000$ \tcp{predefined maximum number of remaining nodes}
 
 // %     % \tcp{create an MILP solver based on ~\autoref{eq:mip}}
-// %     % $\model <=ftarrow \MIP(alpha, phi_"in", phi_"out", \sigma)$ \tcp{create model (~\autoref{eq:mip}) with  current assignment}
+// %     % $\model <=ftarrow \MIP(alpha, phi_"in", phi_"out", sigma)$ \tcp{create model (~\autoref{eq:mip}) with  current assignment}
 
-// %     % $[v_1, ..., v_m] <=ftarrow >=tUnassignedVariable(\sigma)$ \tcp{get all $m$ current unassigned variables} \label{line:find}
+// %     % $[v_1, ..., v_m] <=ftarrow >=tUnassignedVariable(sigma)$ \tcp{get all $m$ current unassigned variables} \label{line:find}
 
 
 // %     % $[v_1', ..., v_m'] <=ftarrow \Sort([v_1, ..., v_m])$ \tcp{prioritize tightening order} \label{line:sort}
