@@ -50,19 +50,8 @@
 #let sat = smallcaps[sat]
 #let unsat = smallcaps[unsat]
 
-// #set heading(numbering: (..nums) => {
-//   let vals = nums.pos()
-//   if vals.len() = 1 {
-//     // Level 1: roman numerals
-//     numbering("I.", vals.first())
-//   } else {
-//     // Level 2+: regular numbers
-//     numbering("I.1.", ..vals)
-//   }
-// })
 
-
-//#set par(first-line-indent: (amount: 1.5em, all: false))
+#set par(first-line-indent: (amount: 1.5em, all: false))
 
 #let mytitle = "Neural Network Verification"
 #let mysubtitle = "A Guide for Researchers and Practitioners"
@@ -4297,7 +4286,6 @@ to find a counterexample.
 
 
 
-
 === Set Notation of Activation Patterns <sec:pattern-notation>
 
 We can use _set notation_ to represent activation patterns more concisely by
@@ -4395,7 +4383,7 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 ]
 
 #problem[
-  Consider the network above. Suppose we fix the activation pattern
+  Consider the network in @fig:dnn-b. Suppose we fix the activation pattern
   $p = {x_3, x_4}$.
 
   + Provide the constraints $alpha$ induced by $p$.
@@ -4407,9 +4395,9 @@ easier than checking that of $alpha and phi_"in" and not phi_"out"$.
 
 == The Branch and Bound Algorithm <sec:bab-alg>
 
-Many modern NNV tools adopt the Branch-and-Bound (BaB) approach to explore the space of possible neuron activation patterns (@sec:activation-patterns). BaB splits (_branch_) the verification problem into smaller subproblems by fixing activation statuses of neurons, and uses abstraction (_bound_) techniques to compute upper and lower bounds on the output values for these subproblems. If the bounds, computed using abstraction (@chap:abstractions), indicate infeasible (cannot contain a counterexample), the subproblem is pruned from the search space. This process continues until either a counterexample is found or all subproblems are exhausted, proving the property holds.
+Many modern NNV tools adopt the Branch-and-Bound (#bab) approach to explore the space of possible neuron activation patterns (@sec:activation-patterns). #bab splits (_branch_) the verification problem into smaller subproblems by fixing activation statuses of neurons, and uses abstraction (_bound_) techniques to compute upper and lower bounds on the output values for these subproblems. If the bounds, computed using abstraction (@chap:abstractions), indicate infeasible (cannot contain a counterexample), the subproblem is pruned from the search space. This process continues until either a counterexample is found or all subproblems are exhausted, proving the property holds.
 
-Note that because BaB splits ReLU neurons into active/inactive cases, it is also called _"neuron-splitting"_, which contrasts with _"input-splitting"_ techniques (@sec:input-splitting) that partition the input space.
+Note that because #bab splits ReLU neurons into active and inactive cases, it is also called _"neuron-splitting"_, which contrasts with _"input-splitting"_ techniques (@sec:input-splitting) that partition the input space.
 
 #figure(
   placement: top,
@@ -4436,12 +4424,12 @@ pseudocode-list(hooks:0.5em)[
 
 
 
-#paragraph[Reference BaB Algorithm][@alg:bab shows #bab, a reference @
- BaB architecture for NNV. #bab takes as input a ReLU-based network $cal(N)$ and a formulae $phi_"in" => phi_"out"$ representing the property of interest.
+#paragraph[Reference BaB Algorithm][@alg:bab shows #bab, a reference @nakagawa2014consolidating
+ Branch and Bound architecture for NNV. #bab takes as input a ReLU-based network $cal(N)$ and a formulae $phi_"in" => phi_"out"$ representing the property of interest.
 #bab maintains a set of activaion patterns ($"ActPatterns"$) that represent the current activation pattern of the network. Initially, $"ActPatterns"$ is initialized with an empty activation pattern (@line:babinit).
 ]
 
-In each BaB iteration $i$ (@line:babstart), the algorithm selects and removes an activation pattern $sigma_i$ from $"ActPatterns"$s (@line:babselect).
+In each #bab iteration $i$ (@line:babstart), the algorithm selects and removes an activation pattern $sigma_i$ from $"ActPatterns"$s (@line:babselect).
 It then calls $"Deduce"$ to _quickly_ determine if the current problem, i.e., the original satisfiability problem with  activation pattern $sigma_i$, is feasible. For example, it can use interval abstraction (@chap:abstractions) to quickly computes the bounds of the output values with respect to $sigma_i$, e.g., by replacing ReLU functions according to the activation statuses specified in $sigma_i$ (@sec:pattern-reduction).
 
 // If the computed bounds indicate that no counterexample can exist, e.g., the lower bound of the output is greater than 0 when checking $y < 0$, then the problem is \emph{infeasible}. Otherwise, the problem is \emph{potentially feasible} (because the bounds are over-approximations).
