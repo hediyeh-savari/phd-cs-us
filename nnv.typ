@@ -28,6 +28,7 @@
 #set list(indent: 1em)
 #set enum(indent: 1em)
 #show heading: set block(below: 1.5em, above: 1.5em)
+#show math.equation: set text(size: 0.9em)
 
 #show ref: set text(fill:blue)
 #show link: it => text(fill:blue, underline(it))
@@ -738,7 +739,7 @@ In @fig:dnn, neuron $x_3$ receives inputs $x_1$ and $x_2$ with weights $-0.5$, $
 // % \paragraph{Matrix Form} AF can also be represented in matrix form.
 // % \begin{equation}
 // % f(v_1, v_2, \dots,v_n) = \begin{pmatrix}
-// % w_1 & w_2 & \cdots & w_n
+// % w_1 & w_2 & dots & w_n
 // % \end{pmatrix}
 // % \begin{pmatrix}
 // % v_1 \\
@@ -1576,9 +1577,9 @@ Thus, if the LLM outputs age $Y$ for $q_1$, then $q_2$ should output `current_ye
 
 // % \paragraph{Formal Specification:}
 // % \[
-// % \{ \text{frame } t, \text{ frame } t+1 \}
+// %  { \text{frame } t, \text{ frame } t+1  }
 // % quad r_1 >=ts f(x_t), quad r_2 >=ts f(x_{t+1})
-// % quad \{ \text{consistent}(r_1, r_2) \}
+// % quad  { \text{consistent}(r_1, r_2)  }
 // % \]
 
 ==== Monotonicity
@@ -1653,7 +1654,7 @@ The VNN-LIB specification @demarchi2023supporting, @vnnlib defines a standard fo
 
 Specifically, VNN-LIB defines a common format for the following components:
   + *Neural Network (or model) representation* in the ONNX format @onnx.
-  + *Property specification* in SMT-LIB format @barrett2010smt.
+  + *Property specification* in SMT-LIB format @barrett2010smt (@sec:onnx).
 
 === VNN-LIB: Property Specification Language
 
@@ -1800,7 +1801,7 @@ Properties are encoded in *SMT-LIB2*, referencing input/output variable names co
 
 // \begin{solution}
 // \[
-// \forall t_C, quad f(Q2, t_C \times 1.8 + 32) = 1.8 \cdot f(Q1,t_C) + 32
+// \forall t_C, quad f(Q2, t_C \times 1.8 + 32) = 1.8 dot f(Q1,t_C) + 32
 // \]
 // \end{solution}
 // \end{problem}
@@ -2499,74 +2500,59 @@ where $x$ is input, $y$ is output, and $z^i$, $hat(z)^i$, $W^i$, and $b^i$ are t
 Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints to $hat(z)_j^i <= 0$, and activating a neuron simplifies the second to $hat(z)_j^i <= z_j^i$, which is consistent with the semantics of $hat(z)_j^i = max(z_j^i,0)$.
 
 
-
 #example[Full example][ 
+We use MILP to formulate and check if the network in @fig:dnn-c satisfies the property $x_5 > 0$ for any inputs $x_1 in [-1,1], x_2 in [-2,2]$. We do this by checking the feasibility of the MILP constraints encoding $alpha and phi_"in" and not phi_"out"$, where $alpha$ is the MILP encoding of the network, $phi_"in"$ is the precondition, and $phi_"out"$ is the postcondition.  We do this in several steps:
 
-
-We use MILP to formulate and check if the network in @fig:dnn-c satisfies the property $x_5 > 0$ for any inputs $x_1 in [-1,1], x_2 in [-2,2]$. We do this by checking the feasibility of the MILP constraints encoding $alpha and phi_"in" and not phi_"out"$, where $alpha$ is the MILP encoding of the network, $phi_"in"$ is the precondition on the inputs, and $phi_"out"$ is the postcondition on the outputs.  We do this in several steps:
-
-
-// \begin{enumerate}
-+ Encoding precondition $phi_"in"$ representing input bounds and the postcondition $not phi_"out"$ representing the negation of the postcondition:
++ Encoding precondition $phi_"in"$ and postcondition $not phi_"out"$:
   $
-  phi_"in" &: -1 <= x_1 <= 1;quad -2 <= x_2 <= 2 \
-  not phi_"out" &: x_5 <= 0
+  phi_"in" &: -1 <= x_1 <= 1;quad -2 <= x_2 <= 2, quad not phi_"out" &: x_5 <= 0
   $
 + Encoding the hidden layer (pre- and post-activation):
-// \begin{align*}
-// z_3 &= -0.5x_1 + 0.5x_2 + 1.0 \\
-// z_4 &= 0.5x_1 - 0.5x_2 - 1.0 \\
-//  hat(z)_3 &>= z_3, quad  hat(z)_3 >= 0 \\
-//  hat(z)_4 &>= z_4, quad  hat(z)_4 >= 0 \\
-// a_3, a_4 &in \{0, 1\} \\
-//  hat(z)_3 &<= a_3 \cdot u_3, quad  hat(z)_3 <= z_3 - l_3(1 - a_3) \\
-//  hat(z)_4 &<= a_4 \cdot u_4, quad  hat(z)_4 <= z_4 - l_4(1 - a_4)
-// \end{align*}
+  $
+  z_3 &= -0.5x_1 + 0.5x_2 + 1.0, quad z_4 = 0.5x_1 - 0.5x_2 - 1.0 \
+  hat(z)_3 &>= z_3, quad  hat(z)_3 >= 0, quad  hat(z)_4 >= z_4, quad  hat(z)_4 >= 0 \
+  a_3&, a_4 in {0, 1} \
+  hat(z)_3 &<= a_3 dot u_3, quad  hat(z)_3 <= z_3 - l_3(1 - a_3), quad hat(z)_4 <= a_4 dot u_4, quad  hat(z)_4 <= z_4 - l_4(1 - a_4)
+  $
 
-// Output layer:
-// \begin{align*}
-// x_5 &= - hat(z)_3 +  hat(z)_4 - 1.0
-// \end{align*}
+  Output layer:
+  $
+  x_5 &= - hat(z)_3 +  hat(z)_4 - 1.0
+  $
 
++ Computing upper and lower bounds over input ranges $x_1 in [-1,1]$ and $x_2 in [-2,2]$:
+  $
+  z_3 &in [-0.5 dot 1 + 0.5 dot (-2) + 1, -0.5 dot (-1) + 0.5 dot 2 + 1] = [-0.5, 2.5] \
+  z_4 &in [0.5 dot (-1) - 0.5 dot 2 - 1, 0.5 dot 1 - 0.5 dot (-2) - 1] = [-2.5, 0.5]
+  $
 
-+ Computing upper and lower bounds over given input ranges. Here, with $x_1 in [-1,1]$ and $x_2 in [-2,2]$, we have:
-// \begin{align*}
-// z_3 &in [-0.5 \cdot 1 + 0.5 \cdot (-2) + 1, -0.5 \cdot (-1) + 0.5 \cdot 2 + 1] = [-0.5, 2.5] \\
-// z_4 &in [0.5 \cdot (-1) - 0.5 \cdot 2 - 1, 0.5 \cdot 1 - 0.5 \cdot (-2) - 1] = [-2.5, 0.5]
-// \end{align*}
-
-// So we set $l_3 = -0.5, u_3 = 2.5$, and $l_4 = -2.5, u_4 = 0.5$.
+  So we set $l_3 = -0.5, u_3 = 2.5$, and $l_4 = -2.5, u_4 = 0.5$.
 
 + *Substituting bounds into the constraints:*
-// \begin{align*}
-//  hat(z)_3 &<= a_3 \cdot 2.5, quad  hat(z)_3 <= z_3 - (-0.5)(1 - a_3) = z_3 + 0.5(1 - a_3) \\
-//  hat(z)_4 &<= a_4 \cdot 0.5, quad  hat(z)_4 <= z_4 - (-2.5)(1 - a_4) = z_4 + 2.5(1 - a_4)
-// \end{align*}
-+ *The final MILP encoding:*
-// \begin{align*}
-// & -1 <= x_1 <= 1; quad -2 <= x_2 <= 2; \\
-// & z_3 = -0.5x_1 + 0.5x_2 + 1.0; \\
-// & z_4 = 0.5x_1 - 0.5x_2 - 1.0; \\
-// &  hat(z)_3 >= z_3, quad  hat(z)_3 >= 0; \\
-// &  hat(z)_4 >= z_4, quad  hat(z)_4 >= 0; \\
-// & a_3, a_4 in \{0, 1\}; \\
-// &  hat(z)_3 <= a_3 \cdot 2.5, quad  hat(z)_3 <= z_3 + 0.5(1 - a_3); \\
-// &  hat(z)_4 <= a_4 \cdot 0.5, quad  hat(z)_4 <= z_4 + 2.5(1 - a_4); \\
-// & x_5 = - hat(z)_3 +  hat(z)_4 - 1.0; \\
-// & x_5 <= 0; \\
-// & \text{where } z_3 in [-0.5, 2.5], z_4 in [-2.5, 0.5],  hat(z)_3 in [0, 2.5],  hat(z)_4 in [0, 0.5].
-// \end{align*}
+  $
+  hat(z)_3 &<= a_3 dot 2.5, quad  hat(z)_3 <= z_3 - (-0.5)(1 - a_3) = z_3 + 0.5(1 - a_3) \
+  hat(z)_4 &<= a_4 dot 0.5, quad  hat(z)_4 <= z_4 - (-2.5)(1 - a_4) = z_4 + 2.5(1 - a_4)
+  $
 
++ *The final MILP encoding:*
+$
+& -1 <= x_1 <= 1; quad -2 <= x_2 <= 2\
+& z_3 = -0.5x_1 + 0.5x_2 + 1.0, quad z_4 = 0.5x_1 - 0.5x_2 - 1.0 \
+&  hat(z)_3 >= z_3, quad  hat(z)_3 >= 0, quad hat(z)_4 >= z_4, quad  hat(z)_4 >= 0 \
+& a_3, a_4 in  {0, 1 } \
+&  hat(z)_3 <= a_3 dot 2.5, quad  hat(z)_3 <= z_3 + 0.5(1 - a_3) quad hat(z)_4 <= a_4 dot 0.5, quad  hat(z)_4 <= z_4 + 2.5(1 - a_4) \
+& x_5 = - hat(z)_3 +  hat(z)_4 - 1.0, quad x_5 <= 0 \
+& "where" z_3 in [-0.5, 2.5], z_4 in [-2.5, 0.5],  hat(z)_3 in [0, 2.5],  hat(z)_4 in [0, 0.5].
+$
 // %\tvn{Do we need to specify the ranges (e.g., $z_3 in [-0.5, 2.5]$) at the end or they are redundant?}
 
-+ *Solving* From the MILP formulation, the MILP solver attempts to find a feasible (\autoref{sec:lp-feasibility}) or satisfying assignment representing a counterexample violating the property.  In this example, it might find $x_1 = -1, x_2 = 2$, which leads to:
-// \begin{align*}
-// z_3 &= -0.5(-1) + 0.5(2) + 1.0 = 2.5 \\
-// z_4 &= 0.5(-1) - 0.5(2) - 1.0 = -2.5 \\
-// a_3 &= 1,  hat(z)_3 = 2.5 quad \text{(neuron active)} \\
-// a_4 &= 0,  hat(z)_4 = 0 quad \text{(neuron inactive)} \\
-// x_5 &= -2.5 + 0 - 1.0 = -3.5
-// \end{align*}
++ *Solving* From this formulation, the MILP solver attempts to find a feasible (@sec:lp-feasibility) or satisfying assignment representing a counterexample violating the property.  In this example, it might find $x_1 = -1, x_2 = 2$, which leads to:
+
+$
+z_3 &= -0.5(-1) + 0.5(2) + 1.0 = 2.5, quad z_4 = 0.5(-1) - 0.5(2) - 1.0 = -2.5 \
+a_3 &= 1,  hat(z)_3 = 2.5 quad ("neuron active"), quad a_4 = 0,  hat(z)_4 = 0 quad ("neuron inactive") \
+x_5 &= -2.5 + 0 - 1.0 = -3.5
+$
 // Since $x_5 = -3.5 <= 0$, this assignment satisfies our search for $x_5 <= 0$ and  thus is a counterexample.
 // \end{enumerate}
 // \end{example}
@@ -3055,7 +3041,7 @@ We use MILP to formulate and check if the network in @fig:dnn-c satisfies the pr
 // \begin{example <ex:interval-zonotope}
 //   An interval for a single variable is simply a line segment defined by its \emph{two} endpoints (corners)---the lower and upper bounds. Equivalently, it can be represented using a zonotope with a center point and a single generator vector that points in both directions (left and right) from the center:
 //   \[
-//     [l, u] = \{ c + \epsilon g \mid \epsilon in [-1, 1] \}
+//     [l, u] =  { c + \epsilon g \mid \epsilon in [-1, 1]  }
 //   \]
 //     where \(c = \frac{l + u}{2}\) is the center, \(g = \frac{u - l}{2}\) is the generator, and \(\epsilon\) controls how far we move along the generator.
 // \end{example}
@@ -3107,7 +3093,7 @@ We use MILP to formulate and check if the network in @fig:dnn-c satisfies the pr
 
 //     Thus, any point \(x\) in this interval can be written as:
 //     \[
-//     x = c + \epsilon g \text{ or } x = 0.5 + \epsilon \cdot 2.5,
+//     x = c + \epsilon g \text{ or } x = 0.5 + \epsilon dot 2.5,
 //     quad \text{where} quad \epsilon in [-1, 1].
 //     \]
 
@@ -3148,7 +3134,7 @@ We use MILP to formulate and check if the network in @fig:dnn-c satisfies the pr
 // \texttt{odd}  & \text{if } x \bmod 2 = 1
 // \end{cases}
 // \]
-// Even though $\mathbb{Z}$ is infinite, this abstraction maps all integers to a finite set $\{\texttt{odd}, \texttt{even}\}$.
+// Even though $\mathbb{Z}$ is infinite, this abstraction maps all integers to a finite set $ {\texttt{odd}, \texttt{even} }$.
 // \end{example}
 
 // \subsubsection{Transformer Functions} Once we have values in the abstract domains, we often define an \emph{abstract transformer function}
@@ -3162,21 +3148,21 @@ We use MILP to formulate and check if the network in @fig:dnn-c satisfies the pr
 //  Consider the function $f(x) = x + 1$. We define the abstract transformers $f^a$ for different abstract domains $D^a$:
 
 //  \begin{itemize}
-// \item \textbf{Odd/Even abstraction}:  $D^a = \{\texttt{odd}, \texttt{even}\}$. Then:
+// \item \textbf{Odd/Even abstraction}:  $D^a =  {\texttt{odd}, \texttt{even} }$. Then:
 // \[
 // f^a(\texttt{odd}) = \texttt{even}, quad
 // f^a(\texttt{even}) = \texttt{odd}
 // \]
 
-// \item \textbf{Sign abstraction}: $D^a = \{\texttt{neg}, \texttt{zero}, \texttt{pos}\}$. Then:
+// \item \textbf{Sign abstraction}: $D^a =  {\texttt{neg}, \texttt{zero}, \texttt{pos} }$. Then:
 // \[
-// f^a(\texttt{neg}) = \{\texttt{neg}, \texttt{zero}\}, quad
+// f^a(\texttt{neg}) =  {\texttt{neg}, \texttt{zero} }, quad
 // f^a(\texttt{zero}) = \texttt{pos}, quad
 // f^a(\texttt{pos}) = \texttt{pos}
 // \]
 
 
-// \item \textbf{Interval abstraction}: $D^a = \{ [a, b] \mid a <=q b in \mathbb{Z} \cup \{- in fty, + in fty\} \}$. Then:
+// \item \textbf{Interval abstraction}: $D^a =  { [a, b] \mid a <=q b in \mathbb{Z} \cup  {- in fty, + in fty }  }$. Then:
 // \[
 // f^a([a, b]) = [a+1, b+1]
 // \]
@@ -3195,18 +3181,18 @@ We use MILP to formulate and check if the network in @fig:dnn-c satisfies the pr
 == Interval <sec:interval-abstraction>
 
 // Interval is a very simple abstraction which represents the possible values of a variable as an interval $[l, u]$, where $l$ is the lower bound and $u$ is the upper bound.
-// For example, the set of values $\{-2.5, -8.2, -10.7, 2, 4.7, 5.1\}$ can be represented as $[-10.7, 5.1]$.
+// For example, the set of values $ {-2.5, -8.2, -10.7, 2, 4.7, 5.1 }$ can be represented as $[-10.7, 5.1]$.
 
 // \paragraph{Definition}
 // The interval for one variable \(v\) is defined as:
 // \[
-// v in [l, u] = \{v in \mathbb{R} \mid l <= v <= u\}
+// v in [l, u] =  {v in \mathbb{R} \mid l <= v <= u }
 // \]
 
 
 // For $n$ variables, the interval becomes a box (like a rectangle in 2D, a cupoid in 3D, or a hyperrectangle in $n$D):
 // \[
-// [v_1, v_2, \ldots, v_n] in [l_1, u_1] \times [l_2, u_2] \times \cdots \times [l_n, u_n]
+// [v_1, v_2, \ldots, v_n] in [l_1, u_1] \times [l_2, u_2] \times dots \times [l_n, u_n]
 // \]
 
 
@@ -3239,8 +3225,8 @@ We use MILP to formulate and check if the network in @fig:dnn-c satisfies the pr
 // \small{
 // \[
 // \begin{aligned}
-// f^a([1,2],[-1,3]) = & \Bigg[ 1 + \min(-0.5 \cdot 1,~ -0.5 \cdot 2) + \min(0.5 \cdot -1,~ 0.5 \cdot 3),\\
-// & ~~1 + \max(-0.5 \cdot 1,~ -0.5 \cdot 2) + \max(0.5 \cdot -1,~ 0.5 \cdot 3)\Bigg]\\
+// f^a([1,2],[-1,3]) = & \Bigg[ 1 + \min(-0.5 dot 1,~ -0.5 dot 2) + \min(0.5 dot -1,~ 0.5 dot 3),\\
+// & ~~1 + \max(-0.5 dot 1,~ -0.5 dot 2) + \max(0.5 dot -1,~ 0.5 dot 3)\Bigg]\\
 // = & [1 - 1.0 - 0.5,~ 1 - 0.5 + 1.5]\\
 // = & [-0.5,~ 2.0]
 // \end{aligned}
@@ -3396,8 +3382,8 @@ We use MILP to formulate and check if the network in @fig:dnn-c satisfies the pr
 
 // Formally, a \textbf{zonotope} \(\mathcal{Z}\) in \(\mathbb{R}^n\) is defined as:
 // \[
-// % \mathcal{Z} = <=ft\{ c + \sum_{i=1}^{m} \epsilon_i g_i \mid \epsilon_i in [-1, 1] \right\}
-// \mathcal{Z} = <=ft\{ c + \sum_{i=1}^{n} \epsilon_i g_i \mid \epsilon_i in [-1, 1] \right\}
+// % \mathcal{Z} = <=ft { c + \sum_{i=1}^{m} \epsilon_i g_i \mid \epsilon_i in [-1, 1] \right }
+// \mathcal{Z} = <=ft { c + \sum_{i=1}^{n} \epsilon_i g_i \mid \epsilon_i in [-1, 1] \right }
 // \]
 // where:
 // \begin{itemize}
@@ -3443,7 +3429,7 @@ We use MILP to formulate and check if the network in @fig:dnn-c satisfies the pr
 // \begin{example}
 //     A common zonotope in 2D is a parallelogram. It can be defined by its center point and two generator vectors that define its sides. For instance, parallelogram on the right side of~\autoref{fig:zonotope-correlated-generators} has the center \(c = (1, 1)\) and the generators \(g_1 = (1, 0.25)\) and \(g_2 = (0.5, 1)\). This zonotope represents all points that can be reached by moving along these generators within the range \([-1, 1]\):
 //   \[
-//     \mathcal{Z} = <=ft\{ (1, 1) + \epsilon_1 (1, 0.25) + \epsilon_2 (0.5, 1) \mid \epsilon_1, \epsilon_2 in [-1, 1] \right\}
+//     \mathcal{Z} = <=ft { (1, 1) + \epsilon_1 (1, 0.25) + \epsilon_2 (0.5, 1) \mid \epsilon_1, \epsilon_2 in [-1, 1] \right }
 //   \]
 //   This zonotope includes points like:
 //     \[
@@ -3497,14 +3483,14 @@ We use MILP to formulate and check if the network in @fig:dnn-c satisfies the pr
 // \paragraph{Example (2D).}
 // \[
 // \mathcal{Z} =
-// <=ft\{
+// <=ft {
 // \begin{bmatrix} 1 \\ 2 \end{bmatrix}
 // + \epsilon_1
 // \begin{bmatrix} 0.5 \\ 1.0 \end{bmatrix}
 // + \epsilon_2
 // \begin{bmatrix} -0.3 \\ 0.2 \end{bmatrix},
 // quad \epsilon_1, \epsilon_2 in [-1,1]
-// \right\}.
+// \right }.
 // \]
 // Then for each coordinate:
 // \[
@@ -3610,8 +3596,8 @@ We use MILP to formulate and check if the network in @fig:dnn-c satisfies the pr
 
 // More formally, given a zonotope
 // \[
-// % \mathcal{Z} = <=ft\{ c + \sum_{j=1}^{m} \epsilon_j g_j \mid \epsilon_j in [-1, 1] \right\},
-// \mathcal{Z} = <=ft\{ c + \sum_{j=1}^{m} \epsilon_j g_j \mid \epsilon_j in [-1, 1] \right\},
+// % \mathcal{Z} = <=ft { c + \sum_{j=1}^{m} \epsilon_j g_j \mid \epsilon_j in [-1, 1] \right },
+// \mathcal{Z} = <=ft { c + \sum_{j=1}^{m} \epsilon_j g_j \mid \epsilon_j in [-1, 1] \right },
 // \]
 
 // % For simplicity, we use notation $v = c + \sum_{j=1}^{m} \epsilon_j g_j$ to represent a zonotope.
@@ -3628,8 +3614,8 @@ We use MILP to formulate and check if the network in @fig:dnn-c satisfies the pr
 
 // % \(f^a\) 
 // % \[
-// % % f^a(\mathcal{Z}) = <=ft\{ f(c) + \sum_{j=1}^{m} \epsilon_j f(g_j) \mid \epsilon_j in [-1, 1] \right\}
-// % f^a(\mathcal{Z}) = <=ft\{ f(c) + \sum_{j=1}^{n} \epsilon_j f(g_j) \mid \epsilon_j in [-1, 1] \right\}
+// % % f^a(\mathcal{Z}) = <=ft { f(c) + \sum_{j=1}^{m} \epsilon_j f(g_j) \mid \epsilon_j in [-1, 1] \right }
+// % f^a(\mathcal{Z}) = <=ft { f(c) + \sum_{j=1}^{n} \epsilon_j f(g_j) \mid \epsilon_j in [-1, 1] \right }
 // % \]
 
 // That is, the new zonotope has:
@@ -3644,8 +3630,8 @@ We use MILP to formulate and check if the network in @fig:dnn-c satisfies the pr
 
 // % \(f^a\) 
 // \[
-// % f^a(\mathcal{Z}) = <=ft\{ f(c) + \sum_{j=1}^{m} \epsilon_j f(g_j) \mid \epsilon_j in [-1, 1] \right\}
-// f^a(\mathcal{Z}) = <=ft\{ f^c(c) + \sum_{j=1}^{m} \epsilon_j f^g(g_j) \mid \epsilon_j in [-1, 1] \right\}
+// % f^a(\mathcal{Z}) = <=ft { f(c) + \sum_{j=1}^{m} \epsilon_j f(g_j) \mid \epsilon_j in [-1, 1] \right }
+// f^a(\mathcal{Z}) = <=ft { f^c(c) + \sum_{j=1}^{m} \epsilon_j f^g(g_j) \mid \epsilon_j in [-1, 1] \right }
 // \]
 
 // % For the affine function \(f\) in~\autoref{sec:affine}
@@ -3668,10 +3654,10 @@ We use MILP to formulate and check if the network in @fig:dnn-c satisfies the pr
 // f(x_1, x_2) = -0.5\,x_1 + 0.5\,x_2 + 1.0
 // \]
 // We want to compute the bounds for \(x_3\) using zonotope abstraction.
-// %\mathcal{Z} = <=ft\{ c + \sum_{i=1}^{m} \epsilon_i g_i \mid \epsilon_i in [-1, 1] \right\}
+// %\mathcal{Z} = <=ft { c + \sum_{i=1}^{m} \epsilon_i g_i \mid \epsilon_i in [-1, 1] \right }
 // \paragraph{Represent the input as a zonotope}
-// % We represent the input intervals \(x_1 in [1, 2]\) and \(x_2 in [-1, 3]\) as a zonotope $\{ c + \sum_{i=1}^{m} \epsilon_i g_i \mid \epsilon_i in [-1,1] \}$.
-// We represent the input intervals \(x_1 in [1, 2]\) and \(x_2 in [-1, 3]\) as a zonotope $\{ c + \sum_{i=1}^{n} \epsilon_i g_i \mid \epsilon_i in [-1,1] \}$.
+// % We represent the input intervals \(x_1 in [1, 2]\) and \(x_2 in [-1, 3]\) as a zonotope $ { c + \sum_{i=1}^{m} \epsilon_i g_i \mid \epsilon_i in [-1,1]  }$.
+// We represent the input intervals \(x_1 in [1, 2]\) and \(x_2 in [-1, 3]\) as a zonotope $ { c + \sum_{i=1}^{n} \epsilon_i g_i \mid \epsilon_i in [-1,1]  }$.
 
 // The center $c_i$ represents the midpoint of each input interval:
 // \[
@@ -3686,7 +3672,7 @@ We use MILP to formulate and check if the network in @fig:dnn-c satisfies the pr
 // Thus, the input zonotope is
 // {\small
 // \[
-// \mathcal{Z} = \{(1.5, 1.0) + \epsilon_1(0.5, 0) + \epsilon_2(0, 2.0), quad \epsilon_1, \epsilon_2 in [-1,1]\}.
+// \mathcal{Z} =  {(1.5, 1.0) + \epsilon_1(0.5, 0) + \epsilon_2(0, 2.0), quad \epsilon_1, \epsilon_2 in [-1,1] }.
 // \]
 // }
 
@@ -3712,7 +3698,7 @@ We use MILP to formulate and check if the network in @fig:dnn-c satisfies the pr
 // Hence, the output zonotope for \(x_3\) is
 // {\small
 // \[
-// \{0.75 + \epsilon_1(-0.25) + \epsilon_2(1.0), quad \epsilon_1, \epsilon_2 in [-1,1]\}.
+//  {0.75 + \epsilon_1(-0.25) + \epsilon_2(1.0), quad \epsilon_1, \epsilon_2 in [-1,1] }.
 // \]
 // }
 // \paragraph{Compute output bounds} From the output zonotope, we can compute the lower and upperbounds for \(x_3\) by subtracting and adding the absolute values of the generator coefficients:
@@ -3760,7 +3746,7 @@ We use MILP to formulate and check if the network in @fig:dnn-c satisfies the pr
 
 // Thus, the input zonotope is:
 // \[
-// Z = <=ft\{(1.5,\ 1.0) + \epsilon_1(0.5,\ 0) + \epsilon_2(0,\ 2.0) \;\middle|\; \epsilon_1, \epsilon_2 in [-1, 1]\right\}
+// Z = <=ft {(1.5,\ 1.0) + \epsilon_1(0.5,\ 0) + \epsilon_2(0,\ 2.0) \;\middle|\; \epsilon_1, \epsilon_2 in [-1, 1]\right }
 // \]
 
 // \subsection*{Step 2: Apply the Affine Transformation}
@@ -3787,7 +3773,7 @@ We use MILP to formulate and check if the network in @fig:dnn-c satisfies the pr
 
 // Hence, the output zonotope for $x_4$ is:
 // \[
-// <=ft\{1.25 + \epsilon_1(0.25) + \epsilon_2(-1.0) \;\middle|\; \epsilon_1, \epsilon_2 in [-1, 1]\right\}
+// <=ft {1.25 + \epsilon_1(0.25) + \epsilon_2(-1.0) \;\middle|\; \epsilon_1, \epsilon_2 in [-1, 1]\right }
 // \]
 // \subsection*{Step 3: Compute Output Bounds}
 
@@ -3818,7 +3804,7 @@ We use MILP to formulate and check if the network in @fig:dnn-c satisfies the pr
 
 
 //     \item \textbf{Inactive case} (\(u <=q 0\)):
-//     All values are negative, so \(\text{ReLU}^a(x) = \{0\}\), i.e., the output zonotope is a single point at zero.
+//     All values are negative, so \(\text{ReLU}^a(x) =  {0 }\), i.e., the output zonotope is a single point at zero.
 
 
 //     \item \textbf{Unstable case} (\(l < 0 < u\)):
@@ -3826,8 +3812,8 @@ We use MILP to formulate and check if the network in @fig:dnn-c satisfies the pr
 // \end{itemize}
 
 // \paragraph{Building parallelogram}
-// % Given the input zonotope  $x = \{(c + \sum_{i=1}^m \epsilon_i g_i) \mid \epsilon_i in [-1,1]\}$ with $x$ ranging over \([l, u]\) where \(l < 0 < u\) (i.e., the unstable case), we construct a parallelogram that bounds the ReLU function over this interval. We capture the parallelogram using two linear constraints representing its upper and lower edges as shown in~\autoref{fig:relu-parallelogram}.
-// Given the input zonotope  $x = \{(c + \sum_{i=1}^n \epsilon_i g_i) \mid \epsilon_i in [-1,1]\}$ with $x$ ranging over \([l, u]\) where \(l < 0 < u\) (i.e., the unstable case), we construct a parallelogram that bounds  ReLU over this interval. We construct the parallelogram using two linear constraints representing its upper and lower edges as shown in~\autoref{fig:relu-parallelogram}.
+// % Given the input zonotope  $x =  {(c + \sum_{i=1}^m \epsilon_i g_i) \mid \epsilon_i in [-1,1] }$ with $x$ ranging over \([l, u]\) where \(l < 0 < u\) (i.e., the unstable case), we construct a parallelogram that bounds the ReLU function over this interval. We capture the parallelogram using two linear constraints representing its upper and lower edges as shown in~\autoref{fig:relu-parallelogram}.
+// Given the input zonotope  $x =  {(c + \sum_{i=1}^n \epsilon_i g_i) \mid \epsilon_i in [-1,1] }$ with $x$ ranging over \([l, u]\) where \(l < 0 < u\) (i.e., the unstable case), we construct a parallelogram that bounds  ReLU over this interval. We construct the parallelogram using two linear constraints representing its upper and lower edges as shown in~\autoref{fig:relu-parallelogram}.
 
 // \begin{figure}
 //     \centering
@@ -3885,19 +3871,19 @@ We use MILP to formulate and check if the network in @fig:dnn-c satisfies the pr
 // \textbf{Transform zonotope}
 // The new center becomes:
 // \[
-// c' = \lambda c - \frac{\lambda l }{2} = 0.8 \cdot 0.75 - \frac{0.8 \cdot (-0.5) }{2} = 0.6 + 0.2 = 0.8
+// c' = \lambda c - \frac{\lambda l }{2} = 0.8 dot 0.75 - \frac{0.8 dot (-0.5) }{2} = 0.6 + 0.2 = 0.8
 // \]
 
 // Existing generators are scaled by \(\lambda\):
 // \begin{align*}
-// g'_1 &= \lambda g_1 = 0.8 \cdot (-0.25) = -0.2, \\
-// g'_2 &= \lambda g_2 = 0.8 \cdot 1.0 = 0.8
+// g'_1 &= \lambda g_1 = 0.8 dot (-0.25) = -0.2, \\
+// g'_2 &= \lambda g_2 = 0.8 dot 1.0 = 0.8
 // \end{align*}
 
 // \textbf{Create new generator for approximation error}
 // A new generator is introduced to capture the ReLU approximation error:
 // \[
-// g'_3 = -\frac{\lambda l }{2} = -\frac{0.8 \cdot (-0.5) }{2} = 0.2
+// g'_3 = -\frac{\lambda l }{2} = -\frac{0.8 dot (-0.5) }{2} = 0.2
 // \]
 
 // \textbf{Result:} The output zonotope is
@@ -3958,10 +3944,10 @@ We use MILP to formulate and check if the network in @fig:dnn-c satisfies the pr
 // % \subsection{Affine Functions}
 
 // % Affine transformations map convex polyhedra to convex polyhedra.
-// % Given an affine transformation \(f(x) = Wx + b\), where \(W\) is a matrix and \(b\) is a bias vector, we can transform a polyhedron \(\{x \mid A x <=q b\}\) through \(f\) by substitution:
+// % Given an affine transformation \(f(x) = Wx + b\), where \(W\) is a matrix and \(b\) is a bias vector, we can transform a polyhedron \( {x \mid A x <=q b }\) through \(f\) by substitution:
 
 // % \[
-// % \{x \mid A (W^{-1}(x - b)) <=q b\}
+// %  {x \mid A (W^{-1}(x - b)) <=q b }
 // % \]
 
 // % if \(W\) is invertible. More commonly in practice, when applying affine transformations in neural networks (layer-wise), we modify the constraints accordingly by propagating through the weights and biases.
@@ -3988,7 +3974,7 @@ We use MILP to formulate and check if the network in @fig:dnn-c satisfies the pr
 
 // % More specifically,  DeepPoly only allows for one lower bound in \ref{minimum_polyhedron}, the selection of which lower constraint depends on which constraint provides the tighter approximation.
 
-// % Returning to our example, the area of the approximation in Fig.~4(b) is given by \( 0.5 \cdot u \cdot (u - l) \), while the area in Fig.~4(c) is given by \( 0.5 \cdot (-l_i) \cdot (u_i - l_i) \). To achieve a tighter relaxation, we select the approximation with the smaller area. Specifically, when \( u <=q -l \), we apply the constraints and bounds derived from \(x <=q y\).
+// % Returning to our example, the area of the approximation in Fig.~4(b) is given by \( 0.5 dot u dot (u - l) \), while the area in Fig.~4(c) is given by \( 0.5 dot (-l_i) dot (u_i - l_i) \). To achieve a tighter relaxation, we select the approximation with the smaller area. Specifically, when \( u <=q -l \), we apply the constraints and bounds derived from \(x <=q y\).
 // % In addition, each neuron \(x_j\) is bounded above and below by affine expressions of the input neurons:
 
 // % \[
@@ -4016,8 +4002,8 @@ We use MILP to formulate and check if the network in @fig:dnn-c satisfies the pr
 
 // % we define the transformation of the bounds by propagating the affine expressions directly:
 // % \begin{align*}
-// % l_j^{(l+1)}(x) &= \sum_i w_{ji}^+ \cdot l_i^{(l)}(x) + w_{ji}^- \cdot u_i^{(l)}(x) + b_j \\
-// % u_j^{(l+1)}(x) &= \sum_i w_{ji}^+ \cdot u_i^{(l)}(x) + w_{ji}^- \cdot l_i^{(l)}(x) + b_j
+// % l_j^{(l+1)}(x) &= \sum_i w_{ji}^+ dot l_i^{(l)}(x) + w_{ji}^- dot u_i^{(l)}(x) + b_j \\
+// % u_j^{(l+1)}(x) &= \sum_i w_{ji}^+ dot u_i^{(l)}(x) + w_{ji}^- dot l_i^{(l)}(x) + b_j
 // % \end{align*}
 
 // % Here, \(w^+_{ji} = \max(w_{ji}, 0)\), and \(w^-_{ji} = \min(w_{ji}, 0)\), ensuring correct handling of sign-dependent propagation.
@@ -4039,7 +4025,7 @@ We use MILP to formulate and check if the network in @fig:dnn-c satisfies the pr
 
 // %     \item If \(l_i < 0 < u_i\): ReLU is approximated with:
 // %     \[
-// %     u_j(x) = \frac{u_i}{u_i - l_i} \cdot (x_i - l_i)
+// %     u_j(x) = \frac{u_i}{u_i - l_i} dot (x_i - l_i)
 // %     \]
 // %     and only one lower bound is selected:
 // %     \[
@@ -4053,7 +4039,7 @@ We use MILP to formulate and check if the network in @fig:dnn-c satisfies the pr
 
 // % The decision is made based on which convex region has smaller area to achieve a tighter abstraction, following the principle:
 // % \[
-// % \text{Choose constraint with smaller area:} quad 0.5 \cdot u_i \cdot (u_i - l_i) quad \text{vs} quad 0.5 \cdot (-l_i) \cdot (u_i - l_i)
+// % \text{Choose constraint with smaller area:} quad 0.5 dot u_i dot (u_i - l_i) quad \text{vs} quad 0.5 dot (-l_i) dot (u_i - l_i)
 // % \]
 
 
@@ -4497,18 +4483,18 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 // Here, \Deduce determines that the problem is feasible, e.g., the computed bounds of $y_1$ and $y_2$ indicate that $y_1 <= y_2$ can be satisfied. Next, \bab{} calls \mycode{LP} to check the satisfiability of the problem using an LP solver. The LP solver returns \texttt{unknown}--likely because the problem is too complex to solve without fixing any neuron status. Thus we need to make search smaller by \emph{splitting} a neuron (i.e., fixing its activation status).
 
 // \bab{} then randomly selects a neuron to split (\Decide). Assume that it chooses $v_4$ to split, i.e., the problem spawns two independent subproblems: one with $v_4$ active and the other with $v_4$ inactive.
-// It does so by unioning $\{v_4\}$ and $\{\overline{v_4}\}$ with $sigma_i$ and adds both new activation patterns to $"ActPatterns"$s. 
+// It does so by unioning $ {v_4 }$ and $ {\overline{v_4} }$ with $sigma_i$ and adds both new activation patterns to $"ActPatterns"$s. 
 // Next, \bab{} loops back to process the next activation pattern.
 // Thus, each of the two new subproblem is simpler than the original one because we have fixed the status of one neuron ($v_4$), which hopefully makes \Deduce{} and \mycode{LP} more precise and efficient in the next iterations.
 
 
-// \item \textbf{Second iteration.}~\bab{} has two subproblems. For the subproblem with activation pattern $\{v_4\}$, \Deduce decides feasibility but \mycode{LP} returns unsatisfiable (or unknown),
-// so it selects $v_2$ to split by adding $\{v_4, v_2\}$ and $\{v_4, \overline{v_2}\}$ to \texttt{ActPatterns}.
+// \item \textbf{Second iteration.}~\bab{} has two subproblems. For the subproblem with activation pattern $ {v_4 }$, \Deduce decides feasibility but \mycode{LP} returns unsatisfiable (or unknown),
+// so it selects $v_2$ to split by adding $ {v_4, v_2 }$ and $ {v_4, \overline{v_2} }$ to \texttt{ActPatterns}.
 // For the other subproblem with $\overline{v_4}$ inactive, \Deduce determines infeasibility and thus discards this subproblem.
 
-// \item \textbf{Third iteration.}~\bab{} has two subproblems corresponding to activation patterns $\{v_4, v_2\}$ and $\{v_4, \overline{v_2}\}$. For the first subproblem, \bab{} selects $v_1$ to split by unioning $v_1$ and then $\overline{v_1}$ to the current activation pattern $v_4 \land v_2$ and adds them to $"ActPatterns"$s. For the second subproblem, \Deduce determines infeasibility and \bab{} discards this subproblem.
+// \item \textbf{Third iteration.}~\bab{} has two subproblems corresponding to activation patterns $ {v_4, v_2 }$ and $ {v_4, \overline{v_2} }$. For the first subproblem, \bab{} selects $v_1$ to split by unioning $v_1$ and then $\overline{v_1}$ to the current activation pattern $v_4 \land v_2$ and adds them to $"ActPatterns"$s. For the second subproblem, \Deduce determines infeasibility and \bab{} discards this subproblem.
 
-// \item \textbf{Fourth iteration.}~\bab{} has two subproblems corresponding to activation patterns $\{v_4, v_2, v_1\}$ and $\{v_4, v_2, \overline{v_1}\}$, both which are then determined infeasible and discarded.
+// \item \textbf{Fourth iteration.}~\bab{} has two subproblems corresponding to activation patterns $ {v_4, v_2, v_1 }$ and $ {v_4, v_2, \overline{v_1} }$, both which are then determined infeasible and discarded.
 
 // \item \textbf{Fifth iteration.}~Finally, \bab{} has no more activation patterns in $"ActPatterns"$s, stops the search, and returns \unsat{}, indicating that the property is valid.
 // \end{enumerate}
@@ -4667,8 +4653,8 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 //         \item \textbf{Gradient update}
 //         Move a small distance $\eta$ (called the \emph{step size} or \emph{learning rate}) in the negative gradient direction:
 //         \[
-//         x_1^{(t+1)} = x_1^{(t)} - \eta \cdot 2, \qquad
-//         x_2^{(t+1)} = x_2^{(t)} - \eta \cdot (-1.5)
+//         x_1^{(t+1)} = x_1^{(t)} - \eta dot 2, \qquad
+//         x_2^{(t+1)} = x_2^{(t)} - \eta dot (-1.5)
 //         \]
 //         This decreases $y$ as quickly as possible.
 
@@ -4811,8 +4797,8 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 
 // \textit{Gradient update:}
 // \begin{align*}
-// x_1^{(1)} &= x_1^{(0)} - \eta_1 \cdot 2 = 0 - 0.5(2) = -1, \\
-// x_2^{(1)} &= x_2^{(0)} - \eta_1 \cdot (-3) = 0 - 0.5(-3) = 1.5.
+// x_1^{(1)} &= x_1^{(0)} - \eta_1 dot 2 = 0 - 0.5(2) = -1, \\
+// x_2^{(1)} &= x_2^{(0)} - \eta_1 dot (-3) = 0 - 0.5(-3) = 1.5.
 // \end{align*}
 // Candidate input: $(-1,\; 1.5)$.
 
@@ -4892,8 +4878,8 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 //     \BlankLine
 
 
-//     $$"ActPatterns"$s <=ftarrow \{ \emptyset \}$ \tcp{initialize verification problems}
-//     $\blue{\prooftree >=ts \{ ~ \}}$ \tcp{initialize proof tree <line:prooftree}
+//     $$"ActPatterns"$s <=ftarrow  { \emptyset  }$ \tcp{initialize verification problems}
+//     $\blue{\prooftree >=ts  { ~  }}$ \tcp{initialize proof tree <line:prooftree}
 
 //     \While(\tcp*[h]{main loop}){$$"ActPatterns"$s$}{
 //         $sigma_i >=ts \Select($"ActPatterns"$s)$ \tcp{process problem $i$-th}
@@ -4905,10 +4891,10 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 //                 }
 //                 $v_i <=ftarrow \Decide(cal(N), sigma_i)$\\
 //                 \tcp{create new activation patterns}
-//                 $$"ActPatterns"$s <=ftarrow $"ActPatterns"$s \cup \{ sigma_i \cup \{v_i\} ~;~ sigma_i \land \{\overline{v_i}\} \}$
+//                 $$"ActPatterns"$s <=ftarrow $"ActPatterns"$s \cup  { sigma_i \cup  {v_i } ~;~ sigma_i \land  {\overline{v_i} }  }$
 //             }
 //             \Else(\tcp*[h]{detect infeasibility}){
-//                 $\blue{\prooftree <=ftarrow \prooftree \cup \{ sigma_i \}}$ \tcp{build proof tree <line:record_proof}
+//                 $\blue{\prooftree <=ftarrow \prooftree \cup  { sigma_i  }}$ \tcp{build proof tree <line:record_proof}
 //             }
 //     }
 //     \Return{$(\unsat, \blue{\prooftree})$}
@@ -5202,11 +5188,11 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 // % \proofcheck{} formulates MILP problems~\cite{tjeng2019evaluating} and check for feasible solutions using off-the-shelf LP solving. Formally, the MILP problem is defined as:
 // % \begin{equation}
 // %     \begin{aligned}
-// %         &\mbox{(a)}quad z^{(i)} = W^{(i)}  hat(z)^{(i-i)} + b^{(i)};\\
-// %         &\mbox{(b)}quad y = z^{(L)};  x =  hat(z)^{(0)}; \\
-// %         &\mbox{(c)}quad  hat(z)_j^{(i)} >= {z}_j^{(i)};  hat(z)_j^{(i)} >= 0; \\
-// %         &\mbox{(d)}quad a_j^{(i)} in \{ 0, 1\} ;\\
-// %         &\mbox{(e)}quad  hat(z)_j^{(i)} <= {a}_j^{(i)} {u}_j^{(i)};  hat(z)_j^{(i)} <= {z}_j^{(i)} - {l}_j^{(i)}(1 - {a}_j^{(i)}); \\
+// %         &\mbox{(a)}quad z^{(i)} = W^{(i)}  hat(z)^{(i-i)} + b^{(i)} \
+// %         &\mbox{(b)}quad y = z^{(L)};  x =  hat(z)^{(0)} \
+// %         &\mbox{(c)}quad  hat(z)_j^{(i)} >= {z}_j^{(i)};  hat(z)_j^{(i)} >= 0 \
+// %         &\mbox{(d)}quad a_j^{(i)} in  { 0, 1 } ;\\
+// %         &\mbox{(e)}quad  hat(z)_j^{(i)} <= {a}_j^{(i)} {u}_j^{(i)};  hat(z)_j^{(i)} <= {z}_j^{(i)} - {l}_j^{(i)}(1 - {a}_j^{(i)}) \
 // %     \end{aligned}
 // %     \label{eq:mip2}
 // % \end{equation}
@@ -5329,7 +5315,7 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 // % We can keep backing up until it cannot prove anymore, however, after N times, each time half the length of an activation pattern, an activation pattern is shortened to $1 / 2^{N}$ (e.g., if $N=2$, after 2 times of backing up, an activation pattern is shortened to 1/4 of its length).
 // % This is when the pruned leaves by those proved interiors are getting overlapped (due to parallelization, we backjump on multiple leaves), so more backjumps might not helpful.
 // % Instead, we start over with a new iteration with remaining leaves.
-// % I experienced with $N = \{1, 2, 3, 4, 5\}$ and I settled down $N=2$ for all experiments (fixed N) which seems to be good enough in our experiments.
+// % I experienced with $N =  {1, 2, 3, 4, 5 }$ and I settled down $N=2$ for all experiments (fixed N) which seems to be good enough in our experiments.
 // % Increasing $N$ does not improve the performances but hurts especially when dealing with CNNs.
 // % }
 // % \matt{I think my main point is ``How much of this is important to \proofcheck{}?'' whatever is important needs to be described.  You don't need to describe all of the discarded alternatives.  If we settled on a particular strategy, then define that strategy and say why it works well, e.g., balances cost of failing to prove unsat for parents with ability to prune sub-trees.  Right now we just say "simple backtracking mechanism", but your description makes seem like it is not all that simple.}
@@ -5809,11 +5795,11 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 
 
 // \begin{example}
-// Given a problem with input region $\{x_1 in [-1,1] , x_2 in [-2,2]\}$, input splitting splits the input region into four subregions:
-// $\{x_1 in [-1,0] , x_2 in [-2,0]\}$,
-// $\{x_1 in [-1,0] , x_2 in [0,2]\}$ ,
-// $\{x_1 in [0,1] , x_2 in [-2,0]\}$, and
-// $\{x_1 in [0,1], x_2 in [0,2]\}$.
+// Given a problem with input region $ {x_1 in [-1,1] , x_2 in [-2,2] }$, input splitting splits the input region into four subregions:
+// $ {x_1 in [-1,0] , x_2 in [-2,0] }$,
+// $ {x_1 in [-1,0] , x_2 in [0,2] }$ ,
+// $ {x_1 in [0,1] , x_2 in [-2,0] }$, and
+// $ {x_1 in [0,1], x_2 in [0,2] }$.
 // The verifier then checks if the network produces the desired output from each of these subregions.
 
 // Note that the formula $-1 <= x_1 <= 1 \land -2 <= x_2 <= 2$ representing the original input region is equivalent to the formula $(-1 <= x_1 <= 0 \lor 0 <= x <= 1) \land (-2 <= x_2 <= 0 \lor 0 <= x_2 <= 2)$ representing the combination of the created subregions.
@@ -5936,11 +5922,11 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 
 // % Given $k$ available threads, \tool{} splits the original input region to obtain subproblems as described and and runs DPLL(T) on $k$ subproblems in parallel. % and iteratively splits any subproblem which cannot be solved within pre-defined amount of time, e.g., 2 seconds.
 // % \tool{} returns \texttt{unsat} if it verifies all subproblems and \texttt{sat} if it found a counterexample in any subproblem. %In the current implementation, \tool{} uses the number of available threads to determine the number of created subproblems.
-// % For example, we split the input region $\{x_1 in [-1,1] , x_2 in [-2,2]\}$ into four subregions
-// % $\{x_1 in [-1,0] , x_2 in [-2,0]\}$,
-// % $\{x_1 in [-1,0] , x_2 in [0,2]\}$ ,
-// % $\{x_1 in [0,1] , x_2 in [-2,0]\}$, and
-// % $\{x_1 in [0,1], x_2 in [0,2]\}$.
+// % For example, we split the input region $ {x_1 in [-1,1] , x_2 in [-2,2] }$ into four subregions
+// % $ {x_1 in [-1,0] , x_2 in [-2,0] }$,
+// % $ {x_1 in [-1,0] , x_2 in [0,2] }$ ,
+// % $ {x_1 in [0,1] , x_2 in [-2,0] }$, and
+// % $ {x_1 in [0,1], x_2 in [0,2] }$.
 // % Note that the formula $-1 <= x_1 <= 1 \land -2 <= x_2 <= 2$ representing the original input region is equivalent to the formula $(-1 <= x_1 <= 0 \lor 0 <= x <= 1) \land (-2 <= x_2 <= 0 \lor 0 <= x_2 <= 2)$ representing the combination of the created subregions.
 
 
@@ -5956,8 +5942,8 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 // Then the interval bounds can be computed as:
 // \[
 // \begin{aligned}
-// f^a_L &= W^+ \cdot \mathbf{l} + W^- \cdot \mathbf{u} + \mathbf{b}\\
-// f^a_U &= W^+ \cdot \mathbf{u} + W^- \cdot \mathbf{l} + \mathbf{b}
+// f^a_L &= W^+ dot \mathbf{l} + W^- dot \mathbf{u} + \mathbf{b}\\
+// f^a_U &= W^+ dot \mathbf{u} + W^- dot \mathbf{l} + \mathbf{b}
 // \end{aligned}
 // \]
 // where $\mathbf{l} = [l_1, l_2, \ldots, l_n]^T$ and $\mathbf{u} = [u_1, u_2, \ldots, u_n]^T$ are the vectors of lower and upper bounds.
@@ -5977,18 +5963,18 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 //     For inputs $x_1 in [1, 2]$ and $x_2 in [-1, 3]$, the lower vector $\mathbf{l} = [1, -1]$ and the upper vector $\mathbf{u} = [2, 3]$:
 //     \[
 //     \begin{aligned}
-//     f^a_L &= W^+ \cdot \mathbf{l} + W^- \cdot \mathbf{u} + b\\
-//     &= [0, 0.5] \cdot [1, -1] + [-0.5, 0] \cdot [2, 3] + 1\\
-//     &= 0 \cdot 1 + 0.5 \cdot (-1) + (-0.5) \cdot 2 + 0 \cdot 3 + 1\\
+//     f^a_L &= W^+ dot \mathbf{l} + W^- dot \mathbf{u} + b\\
+//     &= [0, 0.5] dot [1, -1] + [-0.5, 0] dot [2, 3] + 1\\
+//     &= 0 dot 1 + 0.5 dot (-1) + (-0.5) dot 2 + 0 dot 3 + 1\\
 //     &= 0 - 0.5 - 1.0 + 0 + 1 = -0.5
 //     \end{aligned}
 //     \]
 
 //     \[
 //     \begin{aligned}
-//     f^a_U &= W^+ \cdot \mathbf{u} + W^- \cdot \mathbf{l} + b\\
-//     &= [0, 0.5] \cdot [2, 3] + [-0.5, 0] \cdot [1, -1] + 1\\
-//     &= 0 \cdot 2 + 0.5 \cdot 3 + (-0.5) \cdot 1 + 0 \cdot (-1) + 1\\
+//     f^a_U &= W^+ dot \mathbf{u} + W^- dot \mathbf{l} + b\\
+//     &= [0, 0.5] dot [2, 3] + [-0.5, 0] dot [1, -1] + 1\\
+//     &= 0 dot 2 + 0.5 dot 3 + (-0.5) dot 1 + 0 dot (-1) + 1\\
 //     &= 0 + 1.5 - 0.5 + 0 + 1 = 2.0
 //     \end{aligned}
 //     \]
@@ -6001,10 +5987,10 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 // This is particularly useful when splitting input regions into multiple subproblems and computing abstraction in parallel.
 
 // Consider an input region that needs to be split for improving abstraction precision.
-// For example, we can split the input region $\{x_1 in [-1,1], x_2 in [-2,2]\}$ along the first dimension into two subproblems:
+// For example, we can split the input region $ {x_1 in [-1,1], x_2 in [-2,2] }$ along the first dimension into two subproblems:
 // \begin{enumerate}
-// \item Subproblem 1: $\{x_1 in [-1,0], x_2 in [-2,2]\}$
-// \item Subproblem 2: $\{x_1 in [0,1], x_2 in [-2,2]\}$
+// \item Subproblem 1: $ {x_1 in [-1,0], x_2 in [-2,2] }$
+// \item Subproblem 2: $ {x_1 in [0,1], x_2 in [-2,2] }$
 // \end{enumerate}
 
 // Using the matrix form in~\autoref{ex:matrix-form-equivalence}, we can process both subproblems simultaneously by stacking the bounds into matrices:
@@ -6017,25 +6003,25 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 // Next, for a linear layer with weight matrix $W$ and bias vector $\mathbf{b}$, we can compute the bounds for all subproblems simultaneously:
 // \[
 // \begin{aligned}
-// \mathbf{O}_L &= \mathbf{L} \cdot (W^+)^T + \mathbf{U} \cdot (W^-)^T + \mathbf{b}\\
-// \mathbf{O}_U &= \mathbf{U} \cdot (W^+)^T + \mathbf{L} \cdot (W^-)^T + \mathbf{b}
+// \mathbf{O}_L &= \mathbf{L} dot (W^+)^T + \mathbf{U} dot (W^-)^T + \mathbf{b}\\
+// \mathbf{O}_U &= \mathbf{U} dot (W^+)^T + \mathbf{L} dot (W^-)^T + \mathbf{b}
 // \end{aligned}
 // \]
 // where $\mathbf{1}$ is a vector of ones with appropriate dimension and $\otimes$ denotes the outer product.
 
 // \begin{example <ex:batch-processing}
-// Consider the network from~\autoref{ex:transformer-affine1} with weight $W = [-0.5, 0.5]$ and bias $b = 1.0$. We split the input region $\{x_1 in [-1,1], x_2 in [-2,2]\}$ into two subproblems as described above.
+// Consider the network from~\autoref{ex:transformer-affine1} with weight $W = [-0.5, 0.5]$ and bias $b = 1.0$. We split the input region $ {x_1 in [-1,1], x_2 in [-2,2] }$ into two subproblems as described above.
 
 // First, we decompose the weight:
 // \[W^+ = [0, 0.5] \qquad W^- = [-0.5, 0] \qquad \mathbf{b} = [1.0, 1.0]\]
 // The bias vector is the same for both subproblems, thus, just duplicate it for each subproblem.
 // Then we compute bounds for both subproblems:
 // \[
-// \mathbf{L} \cdot (W^+)^T = \begin{bmatrix} -1 & -2 \\ 0 & -2 \end{bmatrix} \begin{bmatrix} 0 \\ 0.5 \end{bmatrix} = \begin{bmatrix} -1.0 \\ -1.0 \end{bmatrix}
+// \mathbf{L} dot (W^+)^T = \begin{bmatrix} -1 & -2 \\ 0 & -2 \end{bmatrix} \begin{bmatrix} 0 \\ 0.5 \end{bmatrix} = \begin{bmatrix} -1.0 \\ -1.0 \end{bmatrix}
 // \]
 
 // \[
-// \mathbf{U} \cdot (W^-)^T = \begin{bmatrix} 0 & 2 \\ 1 & 2 \end{bmatrix} \begin{bmatrix} -0.5 \\ 0 \end{bmatrix} = \begin{bmatrix} 0.0 \\ -0.5 \end{bmatrix}
+// \mathbf{U} dot (W^-)^T = \begin{bmatrix} 0 & 2 \\ 1 & 2 \end{bmatrix} \begin{bmatrix} -0.5 \\ 0 \end{bmatrix} = \begin{bmatrix} 0.0 \\ -0.5 \end{bmatrix}
 // \]
 
 // \[
@@ -6044,11 +6030,11 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 
 // Similarly for upper bounds:
 // \[
-// \mathbf{U} \cdot (W^+)^T = \begin{bmatrix} 0 & 2 \\ 1 & 2 \end{bmatrix} \begin{bmatrix} 0 \\ 0.5 \end{bmatrix} = \begin{bmatrix} 1.0 \\ 1.0 \end{bmatrix}
+// \mathbf{U} dot (W^+)^T = \begin{bmatrix} 0 & 2 \\ 1 & 2 \end{bmatrix} \begin{bmatrix} 0 \\ 0.5 \end{bmatrix} = \begin{bmatrix} 1.0 \\ 1.0 \end{bmatrix}
 // \]
 
 // \[
-// \mathbf{L} \cdot (W^-)^T = \begin{bmatrix} -1 & -2 \\ 0 & -2 \end{bmatrix} \begin{bmatrix} -0.5 \\ 0 \end{bmatrix} = \begin{bmatrix} 0.5 \\ 0.0 \end{bmatrix}
+// \mathbf{L} dot (W^-)^T = \begin{bmatrix} -1 & -2 \\ 0 & -2 \end{bmatrix} \begin{bmatrix} -0.5 \\ 0 \end{bmatrix} = \begin{bmatrix} 0.5 \\ 0.0 \end{bmatrix}
 // \]
 
 // \[
@@ -6180,11 +6166,11 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 //   alpha\; \land\; -1 <= x_1 <= 1     \;\land\; -2 <= x_2 <= 2   \;\land\; x_5 > 0.
 // \end{equation}
 
-// \textbf{Notation:} In the following, we write $x \mapsto v$ to denote that the variable $x$ is assigned with a truth value $v in \{T,F\}$. This assignment can be either decided by \texttt{Decide} or inferred by \texttt{BCP}. We also write $x@dl$ and  $\overline{x}@dl$ to indicate the respective assignments $x \mapsto T$ and $x \mapsto F$  at decision level $dl$.
+// \textbf{Notation:} In the following, we write $x \mapsto v$ to denote that the variable $x$ is assigned with a truth value $v in  {T,F }$. This assignment can be either decided by \texttt{Decide} or inferred by \texttt{BCP}. We also write $x@dl$ and  $\overline{x}@dl$ to indicate the respective assignments $x \mapsto T$ and $x \mapsto F$  at decision level $dl$.
 
 // \paragraph{Boolean Abstraction} First, \neuralsat{} creates two Boolean variables $v_3$ and $v_4$ to represent the
 // %(pre-ReLU)
-// activation status of the hidden neurons $x_3$ and $x_4$, respectively. For example, $v_3=T$ means $x_3$ is \texttt{active} and thus gives the constraint $-0.5x_1 + 0.5x_2 + 1 > 0$. Similarly, $v_3=F$ means $x_3$ is \texttt{inactive} and therefore gives $-0.5x_1 + 0.5x_2 + 1<= 0$. Next, \neuralsat{} forms two clauses  $\{v_3 \lor \overline{v_3} \;;\; v_4 \lor \overline{v_4}\}$ ensuring that these variables are either \texttt{active} or \texttt{inactive}.
+// activation status of the hidden neurons $x_3$ and $x_4$, respectively. For example, $v_3=T$ means $x_3$ is \texttt{active} and thus gives the constraint $-0.5x_1 + 0.5x_2 + 1 > 0$. Similarly, $v_3=F$ means $x_3$ is \texttt{inactive} and therefore gives $-0.5x_1 + 0.5x_2 + 1<= 0$. Next, \neuralsat{} forms two clauses  $ {v_3 \lor \overline{v_3} \;;\; v_4 \lor \overline{v_4} }$ ensuring that these variables are either \texttt{active} or \texttt{inactive}.
 
 
 // %Now, \neuralsat{} searches for truth assignments for activation variables to satisfy the clauses. %(and later check that they also satisfy the constraints of DNN implied by these variables and the properties to be proved).
@@ -6246,15 +6232,15 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 // %     Iter & \textbf{BCP} & \multicolumn{2}{c|}{\textbf{DEDUCTION}}& \textbf{DECIDE} & \multicolumn{2}{c}{\textbf{ANALYZE-CONFLICT}} \\
 // %       &&Constraints&Bounds&&Backtrack&Learned Clauses\\
 // %       \midrule
-// %       Init &-& $I = -1 <= x_1 <= 1; -2 <= x_2 <= 2$ & $-1 <= x_1 <= 1; -2 <= x_2<= 2$ & - &-&$C = \{v_3 \lor \overline{v_3};\; v_4 \lor \overline{v_4}\}$\\
+// %       Init &-& $I = -1 <= x_1 <= 1; -2 <= x_2 <= 2$ & $-1 <= x_1 <= 1; -2 <= x_2<= 2$ & - &-&$C =  {v_3 \lor \overline{v_3};\; v_4 \lor \overline{v_4} }$\\
 
 // %       1 &-&$I$ & $ x_5 <= 1 $& $\overline{v_4}@1$&-&-\\
 
-// %       2 &-&$I; x_4=\texttt{off}$&$ x_5 <= -1$& - & 0 &  $C = C \cup \{v_4\}$\\
+// %       2 &-&$I; x_4=\texttt{off}$&$ x_5 <= -1$& - & 0 &  $C = C \cup  {v_4 }$\\
 
 // %       3 &$v_4@0$&$I; x_4=\texttt{on} $&$ x_3 >= 0.5; x_5 <= 0.5$ & $v_3@0$&-&-\\
 
-// %       4 &-&$I; x_3=\texttt{on}; x_4=\texttt{on}$&-&- & \bf{-1} & $C = C\cup \{\overline{v_4}\}$\\
+// %       4 &-&$I; x_3=\texttt{on}; x_4=\texttt{on}$&-&- & \bf{-1} & $C = C\cup  {\overline{v_4} }$\\
 
 // %       % 5 &$v_4@0$&$I; x_3=\texttt{on}; x_4=\texttt{on}$&-&- & \bf{-1}& $C = C \cup \overline{v_3}\lor \overline{v_4}$\\
 
@@ -6277,15 +6263,15 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 //       Iter & \textbf{BCP} & \multicolumn{2}{c}{\textbf{DEDUCTION}}& \textbf{DECIDE} & \multicolumn{2}{c}{\textbf{ANALYZE-CONFLICT}} \\
 //         &&Constraints&Bounds&&Bt&Learned Clauses\\
 //         \midrule
-//         Init &-& $I = -1 <= x_1 <= 1; $& $-1 <= x_1 <= 1;$  & - &-&$C = \{v_3 \lor \overline{v_3};\; v_4 \lor \overline{v_4}\}$\\
+//         Init &-& $I = -1 <= x_1 <= 1; $& $-1 <= x_1 <= 1;$  & - &-&$C =  {v_3 \lor \overline{v_3};\; v_4 \lor \overline{v_4} }$\\
 //         && $-2 <= x_2 <= 2$ & $-2 <= x_2<= 2$& & & \\
 //         1 &-&$I$ & $ x_5 <= 1 $& $\overline{v_4}@1$&-&-\\
 
-//         2 &-&$I; x_4=\texttt{off}$&$ x_5 <= -1$& - & 0 &  $C = C \cup \{v_4\}$\\
+//         2 &-&$I; x_4=\texttt{off}$&$ x_5 <= -1$& - & 0 &  $C = C \cup  {v_4 }$\\
 
 //         3 &$v_4@0$&$I; x_4=\texttt{on} $&$ x_3 >= 0.5; x_5 <= 0.5$ & $v_3@0$&-&-\\
 
-//         4 &-&$I; x_3=\texttt{on}; x_4=\texttt{on}$&-&- & \bf{-1} & $C = C\cup \{\overline{v_4}\}$\\
+//         4 &-&$I; x_3=\texttt{on}; x_4=\texttt{on}$&-&- & \bf{-1} & $C = C\cup  {\overline{v_4} }$\\
 
 //         % 5 &$v_4@0$&$I; x_3=\texttt{on}; x_4=\texttt{on}$&-&- & \bf{-1}& $C = C \cup \overline{v_3}\lor \overline{v_4}$\\
 
@@ -6312,14 +6298,14 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 // This new assignment inference from the T-solver is known as \emph{theory propagation} in DPLL(T).
 
 // In \emph{iteration 4}, \texttt{BCP} has no effects because we have no new unit clauses.  In \texttt{Deduction}, \neuralsat{} determines that the current set of constraints, which contains the new constraint $-0.5x_1+0.5x_2+1 > 0$ (due to $v_3 \mapsto T$), is \emph{infeasible}. Thus, \neuralsat{} enters \texttt{AnalyzeConflict} and determines that $v_4$, which was set at $dl=0$ (by \texttt{BCP} in iteration 3), causes the conflict.
-// \neuralsat{} then learns a clause $\overline{v_4}$ (the conflict occurs due to the assignment $\{v_3 \mapsto T; v_4 \mapsto T\}$, but $v_3$ was implied and thus making $v_4$ the conflict).
+// \neuralsat{} then learns a clause $\overline{v_4}$ (the conflict occurs due to the assignment $ {v_3 \mapsto T; v_4 \mapsto T }$, but $v_3$ was implied and thus making $v_4$ the conflict).
 // However, because $v_4$ was assigned at decision level 0, \neuralsat{} can no longer backtrack and thus sets $dl=-1$ and returns \unsat{}, i.e , the property is valid.
 
 
 // % Note that because we backtrack to $dl=0$, we do not erase the assignment $v_3=T$ because it was decided at $dl=0$ (by BCP in iteration 3).
 
 // % In \emph{iteration 5}, because of the new clause $\overline{v_3} \lor v4$ and $v_3$ is already set to $T$, BCD infers $v_4=T$ at dl=0.  In DEDUCTION, \neuralsat{} determines that set of constraints, which contains $-0.5x_1+x_2+1> 0$ for $x_4'=\texttt{on}$ (because $v_4=T$), is infeasible. In ANALYZE-CONFLICT, \neuralsat{} determines $v_4$ causes the conflict  and learns the new clause $\overline{v3} \lor \overline{v4}$ (because the current assignment $v_3=1;v_4=1$ cause the conflict).
-// % \neuralsat{} then sets $dl=-1$ (because $v_4=T$ was decided at level 0) and realizes that it can no longer backtrack, and thus returns \texttt{unsat}.  Note that we can also see that the learned clauses $\{v_3, \overline{v_3} \lor v_4, \overline{v_3} \lor \overline{v_4}\}$ are not satisfiable.
+// % \neuralsat{} then sets $dl=-1$ (because $v_4=T$ was decided at level 0) and realizes that it can no longer backtrack, and thus returns \texttt{unsat}.  Note that we can also see that the learned clauses $ {v_3, \overline{v_3} \lor v_4, \overline{v_3} \lor \overline{v_4} }$ are not satisfiable.
 
 // %\tvn{do we use restart for this example?}\hd{we do not, it would be very long as in FSE paper.}
 
@@ -6359,7 +6345,7 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 
 // %%     \subsection{Difference between of \tool{} and BaB-based verifiers}
 
-// %%     For example, the network has 5 neurons corresponding to 5 variables, e.g., $\{v_1, v_2, v_3, v_4, v_5\}$.
+// %%     For example, the network has 5 neurons corresponding to 5 variables, e.g., $ {v_1, v_2, v_3, v_4, v_5 }$.
 // %%     Also, \tool{} already assigned $v_1@0, v_2@0, v_3@0$, and suppose that it has generated a conflict clause $c = \overline{v_2} \lor v_4 \lor v_5$.
 // %%     If \tool{} continue to split an unsigned neurons (e.g., $v_4$ or $v_5$), e.g., \tool{} chooses $v_4$.
 // %%     If $v_4@1$, there will be 2 cases for $v_5$, e.g., $v_5@2$ and $\overline{v_5}@2$.
@@ -6404,7 +6390,7 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 //         \vspace{-0.1in}
 //         \caption{Search tree explored by \tool{} (a) and other verifiers (b) during a verification run.
 //         \tvn{Hai, instead of other verifiers can we say this search tree is for a native/general BaB approach?}
-//         The notation $\{...\}$ indicates learned clauses; red is  infeasibility; white is feasibility; yellow is BCP application; and blue is current consideration.
+//         The notation $ {... }$ indicates learned clauses; red is  infeasibility; white is feasibility; yellow is BCP application; and blue is current consideration.
 //         The search tree of \tool{} is smaller than the tree of the other techniques because \tool{} was able to prune various branches, e.g., through BCPs (e.g., ${v_3}$ and $\overline{v_5}$) and non-chronological backtracks (e.g., $\overline{v_3}$).}
 //         % \hd{missing a paragraph writing about this figure.}\tvn{yes, may be in the overview or intro if appropriate}\hd{still thinking of incorporating learned clauses.}
 //         \label{fig:tree}
@@ -7127,7 +7113,7 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 // % 30px $\times$ 30px          & Figure \ref{fig:XNOR(QConv)-arch}                  & \multicolumn{1}{c|}{81.54}  & \multicolumn{1}{c|}{N/A}   & N/A     & \multicolumn{1}{c|}{1005584} & \multicolumn{1}{c|}{0}    & 1005584 \\ \hline
 // % \end{tabular}
 // % \end{table}
-// % \paragraph*{Specifications} To evaluate the \emph{adversarial robustness} of the networks above, we assessed perturbations within the infinity norm around zero, with the radius denoted as $\epsilon = \{1, 3, 5, 10, 15\}$. This involved randomly selecting three distinct images from the GTSRB dataset's test set for each model and generating \textsc{VNNLIB} files for each epsilon in the set. In total, we created 45 \textsc{VNNLIB} files. Due to a 6-hour total timeout constraint for solving all instances, each instance had a maximum timeout of 480 seconds. To review the generated \textsc{VNNLIB} specification files submitted to VNNCOMP 2023, as well as to generate new ones, please refer to \url{https://github.com/apostovan21/vnncomp2023}.
+// % \paragraph*{Specifications} To evaluate the \emph{adversarial robustness} of the networks above, we assessed perturbations within the infinity norm around zero, with the radius denoted as $\epsilon =  {1, 3, 5, 10, 15 }$. This involved randomly selecting three distinct images from the GTSRB dataset's test set for each model and generating \textsc{VNNLIB} files for each epsilon in the set. In total, we created 45 \textsc{VNNLIB} files. Due to a 6-hour total timeout constraint for solving all instances, each instance had a maximum timeout of 480 seconds. To review the generated \textsc{VNNLIB} specification files submitted to VNNCOMP 2023, as well as to generate new ones, please refer to \url{https://github.com/apostovan21/vnncomp2023}.
 
 // % \paragraph*{Link} \url{https://github.com/apostovan21/vnncomp2023}
 
@@ -9085,7 +9071,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // \end{example}
 
 
-// % \paragraph{Assignments} A partial assignment $sigma$ maps variables to truth values (\texttt{True} or \texttt{False}). For example, $sigma = \{x_1=\text{True}, x_2=\text{False}\}$ assigns $x_1$ to True and $x_2$ to False, leaving other variables unassigned.
+// % \paragraph{Assignments} A partial assignment $sigma$ maps variables to truth values (\texttt{True} or \texttt{False}). For example, $sigma =  {x_1=\text{True}, x_2=\text{False} }$ assigns $x_1$ to True and $x_2$ to False, leaving other variables unassigned.
 // % A complete assignment maps all variables to truth values.
 
 // \subsection{Boolean Constraint Propagation (BCP) <sec:bcp}
@@ -9327,7 +9313,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 
 // Linear constraints are inequalities that involve linear combinations of variables.  A linear inequality has the general form
 // \[
-// c_1x_1 + c_2x_2 + \cdots + c_nx_n <=q b,
+// c_1x_1 + c_2x_2 + dots + c_nx_n <=q b,
 // \]
 
 // where $c_i, b in \mathbb{R}$. These constraints limit the feasible values that the variables $x_i$ can take.
@@ -9354,7 +9340,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // \paragraph{Linear Objective Functions}
 // A linear objective function $z$ has the general form
 // \[
-// z(x_1, x_2, \ldots, x_n) = c_1x_1 + c_2x_2 + \cdots + c_nx_n,
+// z(x_1, x_2, \ldots, x_n) = c_1x_1 + c_2x_2 + dots + c_nx_n,
 // \]
 
 // where $c_i in \mathbb{R}$ are coefficients, and $x_i in \mathbb{R}$ are decision variables.
@@ -9366,7 +9352,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // \begin{aligned}
 // & \text{maximize } z \\
 // & \text{subject to } \\
-// & \{c_1x_1 + c_2x_2 + \cdots + c_nx_n <=q b, \ldots    \}
+// &  {c_1x_1 + c_2x_2 + dots + c_nx_n <=q b, \ldots     }
 // \end{aligned}
 // \]
 
@@ -9376,7 +9362,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // 1.5x+2y
 // \] subject to:
 // \[
-// \{x+y <=q 4, x >= 0, y >= 0\}.
+//  {x+y <=q 4, x >= 0, y >= 0 }.
 // \]
 
 // First, we can solve for the intersection points of the constraints:
@@ -9468,7 +9454,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // \]
 // subject to:
 // \[
-// \{2x + y >= 3,\; x + 2y >= 4,\; x >= 0,\; y >= 0\}.
+//  {2x + y >= 3,\; x + 2y >= 4,\; x >= 0,\; y >= 0 }.
 // \]
 
 // First, we solve for the intersection points of the boundary lines of the constraints:
@@ -9512,7 +9498,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 
 
 // \begin{problem <ex:lp-problem2}
-//     Maximize $z=4x+5y$ subject to $\{x+y <= 20, \; 2x+4y <=q 72\}$.
+//     Maximize $z=4x+5y$ subject to $ {x+y <= 20, \; 2x+4y <=q 72 }$.
 
 //     \begin{enumerate}
 //         \item Identify the corner points.
@@ -9529,14 +9515,14 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // \paragraph{Linear Constraints}
 // In MILP, a linear constraint can involve both integer and continuous decision variables, and have the general form
 // \[
-// c_1x_1 + c_2x_2 + \cdots + c_nx_n + d_1y_1 + d_2y_2 + \cdots + d_my_m <=q b,
+// c_1x_1 + c_2x_2 + dots + c_nx_n + d_1y_1 + d_2y_2 + dots + d_my_m <=q b,
 // \]
 // where $x_i in \mathbb{R}$ are continuous variables, $y_j in \mathbb{Z}$ are integer variables, and $c_i, d_j, b in \mathbb{R}$.
 
 // \paragraph{Objective Function}
 // A linear objective function $z$ in MILP can be expressed as:
 // \[
-// z(x_1, \ldots, x_n, y_1, \ldots, y_m) = c_1x_1 + c_2x_2 + \cdots + c_nx_n + d_1y_1 + d_2y_2 + \cdots + d_my_m,
+// z(x_1, \ldots, x_n, y_1, \ldots, y_m) = c_1x_1 + c_2x_2 + dots + c_nx_n + d_1y_1 + d_2y_2 + dots + d_my_m,
 // \]
 // where $x_i in \mathbb{R}$ are continuous variables, $y_j in \mathbb{Z}$ are integer variables, and $c_i, d_j in \mathbb{R}$.
 
@@ -9547,7 +9533,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // \begin{aligned}
 // & \text{maximize } z(x_1, \ldots, x_n, y_1, \ldots, y_m) \\
 // & \text{subject to } \\
-// & \{c_1x_1 + c_2x_2 + \cdots + c_nx_n + d_1y_1 + d_2y_2 + \cdots + d_my_m <=q b\}
+// &  {c_1x_1 + c_2x_2 + dots + c_nx_n + d_1y_1 + d_2y_2 + dots + d_my_m <=q b }
 // \end{aligned}
 // \]
 
@@ -9627,12 +9613,12 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 
 
 // \subsection{Encoding Binary Variables <sec:milp-binary}
-// MILP problems often involve condition where the answer depends on some condition.  We can encode such condition using binary variables (0-1 integers), e.g., using  $z in \{0,1\}$ to indicate whether a certain condition is met.  Moreover, we can use a ``trick'' with a large constant $M$, e.g., $ in fty$, to encode logical implications.
+// MILP problems often involve condition where the answer depends on some condition.  We can encode such condition using binary variables (0-1 integers), e.g., using  $z in  {0,1 }$ to indicate whether a certain condition is met.  Moreover, we can use a ``trick'' with a large constant $M$, e.g., $ in fty$, to encode logical implications.
 
 // \begin{example}
 // To encode ``if $z = 1$ then $x >= 5$'', use:
 // \[
-// x ~ >=~ 5 - M(1-z), quad z in \{0,1\}
+// x ~ >=~ 5 - M(1-z), quad z in  {0,1 }
 // \]
 
 
@@ -9667,7 +9653,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // & y >= 0, \\
 // & y <=q x + M(1-z), \\
 // & y <=q Mz,\\
-// & z in \{0,1\}.\\
+// & z in  {0,1 }.\\
 // \end{aligned}
 // \end{equation}
 
@@ -9689,7 +9675,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // & y >= x, \\
 // & y >= 0, \\
 // & y <=q x + (U-x)(1-z), \\
-// & y <=q Uz, quad z in \{0,1\}, \\
+// & y <=q Uz, quad z in  {0,1 }, \\
 // & L <=q x <=q U.
 // \end{aligned}
 // \]
@@ -10079,7 +10065,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // %                 }
 // %                 $\clause <=ftarrow \AnalyzeConflict(\igraph)$\;
 // %                 $\dl <=ftarrow \Backtrack(sigma, \clause)$ \;\label{line:backtrack}
-// %                 $\clauses <=ftarrow \clauses \cup \{\clause\}$ \tcp{learn conflict clauses} \label{line:learn}
+// %                 $\clauses <=ftarrow \clauses \cup  {\clause }$ \tcp{learn conflict clauses} \label{line:learn}
 // %             }
 
 // %             \lIf(\tcp*[h]{restart heuristic}){$\Restart{}$}{\label{line:restart}
@@ -10118,7 +10104,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 
 
 // % \begin{example}
-// % For the DNN in~\autoref{fig:dnn}, \tool{} creates two status variables $v_3,v_4$ for neurons $x_3,x_4$, respectively, and two initial clauses $v_3\lor \lnot{v_3}$ and $v_4 \lor \lnot{v_4}$. The assignment $\{x_3=T, x_4=F \}$ creates the constraint $0.5x_1-0.5x_2-1>0 \land x_1 + x_2 -2 <= 0$.
+// % For the DNN in~\autoref{fig:dnn}, \tool{} creates two status variables $v_3,v_4$ for neurons $x_3,x_4$, respectively, and two initial clauses $v_3\lor \lnot{v_3}$ and $v_4 \lor \lnot{v_4}$. The assignment $ {x_3=T, x_4=F  }$ creates the constraint $0.5x_1-0.5x_2-1>0 \land x_1 + x_2 -2 <= 0$.
 // % \end{example}
 
 
@@ -10126,7 +10112,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // % % To do this, we encode each hidden node $h_i$ of the network correspond to one variable $v_i$ of the decidability problem.
 // % % The number of variables for each hidden layer is equal to number of neurons that feed into the ReLU activation (because we want to decide the status of each ReLU node).
 // % % In particular, in case of the linear layer, the number of hidden nodes is the hidden size $H$ of the layer itself.
-// % % Therefore, $H$ hidden nodes are encoded as $\{v_i, v_{i+1}, ..., v_{i+H-1} \}$.
+// % % Therefore, $H$ hidden nodes are encoded as $ {v_i, v_{i+1}, ..., v_{i+H-1}  }$.
 // % % In case of the 2-D convolution layer with input shape of $(N, C_{in}, H_{in}, W_{in})$, and output shape $(N, C_{out}, H_{out}, W_{out})$, where $N$ is the batch size, number of variables for this layer is:
 // % % \begin{equation*}
 // % %     H = C_{out} \times H_{out} \times W_{out}
@@ -10388,7 +10374,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // % Intuitively, by backtracking to the second most recent level, which means erasing assignments made \emph{after} that level, this strategy encourages trying new assignments for more recently decided variables.
 // % %\hd{Other backtracking scheme in Chaff~\cite{moskewicz2001chaff}: always stop clause learning at the first UIP --- This form of clause learning, and associated backtracking procedure, is referred to as first UIP clause learning. Existing results indicate that the first UIP clause learning procedure may end up doing more backtracking than the original clause learning of GRASP~\cite{zhang2001efficient}. However, Chaff creates significantly fewer clauses and is significantly more effective at backtracking. As a result, the first UIP learning scheme is now commonly used by the majority of CDCL SAT solvers.}
 
-// % %\tvn{Intuitively this is because} \hd{Intuitively, backtracking to 2nd most recent $dl$ in $cl$ to flip the assignment of the most recent decided literal (True to False or False to True). For example, \{$not x_5@3, x_1@6$\} causes the conflict, the most recent decided literal is $x_1$, then we need to flip $x_1$ from True to False. But now $x_1$ is associated with decision level 3 (dl 3 is decision level of $x_5$ --- the literal which has 2nd most recent decision level in the learned conflict clause.)}.
+// % %\tvn{Intuitively this is because} \hd{Intuitively, backtracking to 2nd most recent $dl$ in $cl$ to flip the assignment of the most recent decided literal (True to False or False to True). For example,  {$not x_5@3, x_1@6$ } causes the conflict, the most recent decided literal is $x_1$, then we need to flip $x_1$ from True to False. But now $x_1$ is associated with decision level 3 (dl 3 is decision level of $x_5$ --- the literal which has 2nd most recent decision level in the learned conflict clause.)}.
 
 
 
@@ -10558,7 +10544,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // % %\mbd{forward pointer to data on this in evaluation section.}
 // % %\hd{Maximum overhead is about 39\% of runtime, all cases which have overhead > 30\% belong to CIFAR networks from CIFAR2020 benchmark which are large (cifar10\_2\_255, convBigRELU\_PGD), average overhead is about 4\%, apply median filter and average will be 2\%}
 
-// % \begin{example} For the illustrative example in~\autoref{ex:neuralsat}, in iteration 3, the current assignment $sigma$ is  $\{v_4=1\}$, corresponding to a constraint $x_1 + x_2 - 1 > 0$. With the new constraint, we optimize the input bounds and compute the new bounds for hidden neurons $0.5 <= x_3 <= 2.5$, $0 < x_4 <= 2.0$ and output neuron  $x_5 <= 0.5$ (and use this to determine that the postcondition $x_5 > 0$ might be feasible). We also infer $v_3=1$ because of the positive lower bound $0.5 <= x_3$.
+// % \begin{example} For the illustrative example in~\autoref{ex:neuralsat}, in iteration 3, the current assignment $sigma$ is  $ {v_4=1 }$, corresponding to a constraint $x_1 + x_2 - 1 > 0$. With the new constraint, we optimize the input bounds and compute the new bounds for hidden neurons $0.5 <= x_3 <= 2.5$, $0 < x_4 <= 2.0$ and output neuron  $x_5 <= 0.5$ (and use this to determine that the postcondition $x_5 > 0$ might be feasible). We also infer $v_3=1$ because of the positive lower bound $0.5 <= x_3$.
 // % \end{example}
 
 
@@ -10609,7 +10595,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // %         &\mbox{(a)}quad z^{(i)} = W^{(i)}  hat(z)^{(i-i)} + b^{(i)}; \\
 // %         &\mbox{(b)}quad y = z^{(L)};  x =  hat(z)^{(0)}; \\
 // %         &\mbox{(c)}quad  hat(z)_j^{(i)} >= {z}_j^{(i)};  hat(z)_j^{(i)} >= 0; \\
-// %         &\mbox{(d)}quad a_j^{(i)} in \{ 0, 1\} ;\\
+// %         &\mbox{(d)}quad a_j^{(i)} in  { 0, 1 } ;\\
 // %         &\mbox{(e)}quad  hat(z)_j^{(i)} <= {a}_j^{(i)} {u}_j^{(i)};  hat(z)_j^{(i)} <= {z}_j^{(i)} - {l}_j^{(i)}(1 - {a}_j^{(i)}); \\
 // %     \end{aligned}
 // %     \label{eq:mip1}
