@@ -55,7 +55,7 @@
 #let unsat = smallcaps[unsat]
 
 
-#set par(first-line-indent: (amount: 1.5em, all: false))
+//#set par(first-line-indent: (amount: 1.5em, all: false))
 
 #let mytitle = "Neural Network Verification"
 #let mysubtitle = "A Guide for Researchers and Practitioners"
@@ -2041,14 +2041,15 @@ $<eq:nnv>
 $phi_("in") => phi_("out")$. This validity checking can be reduced to checking
 the satisfiability of the formula:
 
-
+#emph-block[
 $ 
 alpha and phi_("in") and not phi_("out") 
 $<eq:nnv2>
+]
 
 If @eq:nnv2 is unsatisfiable, then $phi$ is a valid property of $N$.
 Otherwise, $phi$ is not valid. Moreover, we can extract a counterexample
-for the original problem from the satisfying assignment of @eq:nnv2.
+for the original problem from the satisfying assignment of @eq:nnv2. This formulation is commonly used by NNV tools, as it allows us to leverage powerful SMT/MILP solvers to automatically check properties and find counterexamples.
 
 #problem[
 Let $alpha$ represent our network and the robustness property
@@ -2089,21 +2090,21 @@ $
 $
 ] <ex:dnn-sat>
 
-*Satisfiability Solving.* We can check the satisfiability of
+#paragraph[Satisfiability Solving][We can check the satisfiability of
 $alpha and phi_("in") and not phi_("out")$ (@eq:nnv2) using constraint solving, e.g.,
 the Z3 SMT solver. @sec:se-smt shows how to perform symbolic
 execution and use an SMT solver to automatically generate this formula
 from a given network and property, and check its satisfiability.
  @sec:using-milp shows how to encode the problem as MILP
-constraints, solvable using a MILP solver (e.g., Gurobi).
+constraints, solvable using a MILP solver (e.g., Gurobi).]
 
-For @ex:dnn-sat, the formula is satisfiable, i.e., the property is invalid,
+#example[For @ex:dnn-sat, the formula is satisfiable, i.e., the property is invalid,
 and the solver returns #sat. Any satisfying assignment, e.g.,
 $x_1 = -1$ and $x_2 = 2$, is a counterexample
 to the property, as it satisfies the
 precondition $phi_("in")$ but violates the postcondition $phi_("out")$,
 i.e., $x_5 = -3.5$, which is $< 0$.
-
+]
 
 
 #problem[
@@ -2316,7 +2317,6 @@ $
   y = max(x, 0) \
   y = "if" x > 0 "then" x "else" 0\
   (x > 0 and y = x) or (x <= 0 and y = 0)
-
 $
 
 #example[
@@ -2401,7 +2401,7 @@ Instead of using SMT solving, we can encode the NNV problem as a Mixed Integer L
 We first encode non-linear activation functions like ReLU using _binary indicator_ variables and linear constraints. For each neuron, we introduce a binary variable (@sec:milp-binary) that indicates whether the neuron is "active" (output equals input) or "inactive" (output is zero). This transforms the non-linear `max(z,0)` operation into a set of linear inequalities controlled by the binary variable.
 
 
-#paragraph[Definition][We define
+#definition[We define
   - $z$: the pre-activation value, i.e., the value that goes into ReLU
   - $hat(z)$: the post-activation value, i.e., the output of ReLU
   - $a in {0,1}$: a binary indicator variable encoding whether the neuron is active ($z >= 0$) or inactive ($z < 0$)
@@ -2494,11 +2494,13 @@ $ <eq:mip>
 
 where $x$ is input, $y$ is output, and $z^i$, $hat(z)^i$, $W^i$, and $b^i$ are the pre-activation, post-activation, weight, and bias vectors for layer $i$ ($j$ is the neuron index in layer $i$). 
 
-+ defines the affine transformation computing the pre-activation value for a neuron in terms of outputs in the preceding layer;
-+ defines the inputs and outputs in terms of the adjacent hidden layers;
-+ asserts that post-activation values are non-negative and no less than pre-activation values;
-+ defines that the neuron activation status indicator variables that are either 0 or 1; and
-+ defines constraints on the upper, $u_j^{(i)}$, and lower, $l_j^{(i)}$, bounds of the pre-activation value of the $j$th neuron in the $i$th layer.
+Thus, we can encode a neural network as a set of linear constraints by:
+
++ Define the affine transformation computing the pre-activation value for a neuron in terms of outputs in the preceding layer;
++ Define the inputs and outputs in terms of the adjacent hidden layers;
++ Assert that post-activation values are non-negative and no less than pre-activation values;
++ Define that the neuron activation status indicator variables that are either 0 or 1; and
++ Define constraints on the upper, $u_j^{(i)}$, and lower, $l_j^{(i)}$, bounds of the pre-activation value of the $j$th neuron in the $i$th layer.
 
 Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints to $hat(z)_j^i <= 0$, and activating a neuron simplifies the second to $hat(z)_j^i <= z_j^i$, which is consistent with the semantics of $hat(z)_j^i = max(z_j^i,0)$.
 
