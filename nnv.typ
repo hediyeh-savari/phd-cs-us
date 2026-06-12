@@ -2503,11 +2503,12 @@ Deactivating a neuron, $a_j^i = 0$, simplifies the first of the (5) constraints 
 #example[Full example][ 
 We use MILP to formulate and check if the network in @fig:dnn-c satisfies the property $x_5 > 0$ for any inputs $x_1 in [-1,1], x_2 in [-2,2]$. We do this by checking the feasibility of the MILP constraints encoding $alpha and phi_"in" and not phi_"out"$, where $alpha$ is the MILP encoding of the network, $phi_"in"$ is the precondition, and $phi_"out"$ is the postcondition.  We do this in several steps:
 
-+ Encoding precondition $phi_"in"$ and postcondition $not phi_"out"$:
++ *Encoding*: *precondition* $phi_"in"$ and *postcondition* $not phi_"out"$:
   $
   phi_"in" &: -1 <= x_1 <= 1;quad -2 <= x_2 <= 2, quad not phi_"out" &: x_5 <= 0
   $
-+ Encoding the hidden layer (pre- and post-activation):
+  
+  *Hidden layer* (pre- and post-activation):
   $
   z_3 &= -0.5x_1 + 0.5x_2 + 1.0, quad z_4 = 0.5x_1 - 0.5x_2 - 1.0 \
   hat(z)_3 &>= z_3, quad  hat(z)_3 >= 0, quad  hat(z)_4 >= z_4, quad  hat(z)_4 >= 0 \
@@ -2515,12 +2516,12 @@ We use MILP to formulate and check if the network in @fig:dnn-c satisfies the pr
   hat(z)_3 &<= a_3 dot u_3, quad  hat(z)_3 <= z_3 - l_3(1 - a_3), quad hat(z)_4 <= a_4 dot u_4, quad  hat(z)_4 <= z_4 - l_4(1 - a_4)
   $
 
-  Output layer:
+  *Output layer*:
   $
   x_5 &= - hat(z)_3 +  hat(z)_4 - 1.0
   $
 
-+ Computing upper and lower bounds over input ranges $x_1 in [-1,1]$ and $x_2 in [-2,2]$:
++ *Computing* upper and lower bounds over input ranges $x_1 in [-1,1], x_2 in [-2,2]$:
   $
   z_3 &in [-0.5 dot 1 + 0.5 dot (-2) + 1, -0.5 dot (-1) + 0.5 dot 2 + 1] = [-0.5, 2.5] \
   z_4 &in [0.5 dot (-1) - 0.5 dot 2 - 1, 0.5 dot 1 - 0.5 dot (-2) - 1] = [-2.5, 0.5]
@@ -2528,7 +2529,7 @@ We use MILP to formulate and check if the network in @fig:dnn-c satisfies the pr
 
   So we set $l_3 = -0.5, u_3 = 2.5$, and $l_4 = -2.5, u_4 = 0.5$.
 
-+ *Substituting bounds into the constraints:*
++ *Substituting bounds* into the constraints:
   $
   hat(z)_3 &<= a_3 dot 2.5, quad  hat(z)_3 <= z_3 - (-0.5)(1 - a_3) = z_3 + 0.5(1 - a_3) \
   hat(z)_4 &<= a_4 dot 0.5, quad  hat(z)_4 <= z_4 - (-2.5)(1 - a_4) = z_4 + 2.5(1 - a_4)
@@ -2546,7 +2547,7 @@ $
 $
 // %\tvn{Do we need to specify the ranges (e.g., $z_3 in [-0.5, 2.5]$) at the end or they are redundant?}
 
-+ *Solving* From this formulation, the MILP solver attempts to find a feasible (@sec:lp-feasibility) or satisfying assignment representing a counterexample violating the property.  In this example, it might find $x_1 = -1, x_2 = 2$, which leads to:
++ *Solving* The MILP solver attempts to find a feasible (@sec:lp-feasibility) or satisfying assignment representing a counterexample violating the property.  In this example, it might find $x_1 = -1, x_2 = 2$, which leads to:
 
 $
 z_3 &= -0.5(-1) + 0.5(2) + 1.0 = 2.5, quad z_4 = 0.5(-1) - 0.5(2) - 1.0 = -2.5 \
