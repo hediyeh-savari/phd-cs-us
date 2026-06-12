@@ -32,7 +32,7 @@
 #set enum(indent: 1em)
 #show heading: set block(below: 1.5em, above: 1.5em)
 #show math.equation: set text(size: 0.9em)
-
+#show figure.caption: set align(left)
 #show ref: set text(fill:blue)
 #show link: it => text(fill:blue, underline(it))
 #show figure.caption: set text(size: 0.9em)
@@ -2625,11 +2625,11 @@ As shown in @ex:relu_milp1, the upper and lower bounds of neuron $x_3$ of the ne
 = Abstractions <chap:abstractions>
 
 
-// As mentioned in~\autoref{sec:relu-encoding} the computation of upper and lower bounds of the neuron values help determine neuron stability and therefore can help scale NNV. Modern NNV tools explore different \emph{abstraction} techniques to compute these bounds more precisely while balancing computational efficiency.
+As mentioned in @sec:relu-encoding the computation of upper and lower bounds of the neuron values help determine neuron stability and therefore can help scale NNV. Modern NNV tools explore different _abstraction_ techniques to compute these bounds more precisely while balancing computational efficiency.
 
-// This chapter discusses the interval, zonotope, and polytope abstract domains commonly used in NNV. Each domain provides a different way to represent and compute the bounds of neurons, with its own trade-offs in terms of precision and computational complexity.
+This chapter discusses the interval, zonotope, and polytope abstract domains commonly used in NNV. Each domain provides a different way to represent and compute the bounds of neurons, with its own trade-offs in terms of precision and computational complexity.
 
-//  == Overview and Background}
+== Overview and Background
 
 // %We will focus on ReLU (\autoref{sec:relu}) activation functions, which are the most common in DNNs. The goal is to compute the bounds of a post-ReLU neuron $ hat(z)$ given the bounds of its pre-ReLU value $z$ over the input region. For example, for a ReLU neuron $y = \max(0, x)$, we want to compute the bounds $[l_y(x), u_y(x)]$ of $y$ given the bounds $[l_x, u_x]$ on $x$.\tvn{is the pre-Relu bounds always computed like what was described in~\autoref{sec:pre-relu-bounds}? Is that computation considered interval too? Can that bound computation be obtained using other abstractions?}
 // %\hd{yes, concrete bounds will always be computed like what was described in~\autoref{sec:pre-relu-bounds} IF the bounds of a neurons are presented as linear equations. In other words, abstractions differ in the way they construct the linear equations, concretization step will be the same.}
@@ -2742,9 +2742,141 @@ As shown in @ex:relu_milp1, the upper and lower bounds of neuron $x_3$ of the ne
 //     \label{fig:relu-all-abstractions}
 // \end{figure}
 
-// \paragraph{Abstractions for ReLU}
-// We use ReLU to illustrate different abstractions.
-// Our goal is to approximate the bounds of the post-ReLU value of a neuron given the bounds of its pre-ReLU value. For example, for a ReLU neuron $y = \max(0, x)$, we want to compute the bounds $[l_y(x), u_y(x)]$ of $y$ given the bounds $[l_x, u_x]$ of $x$.
+
+
+
+// TikZ line widths: thick = 0.8pt, ultra thick = 1.6pt
+#let thick = 0.8pt
+#let ultra-thick = 1.6pt
+
+// ============ \intervalabstraction{scale} ============
+#let interval-abstraction(scale: 1.0) = canvas(length: scale * 1cm, {
+  import draw: *
+  let (lx, ux) = (-1.0, 1.0)
+  let (ly, uy) = (0.0, 1.0)
+
+  // Fill region
+  rect((lx, ly), (ux, uy), fill: yellow.lighten(50%), stroke: none)
+
+  // Axes
+  line((lx - 0.2, 0), (ux + 0.3, 0), stroke: thick, mark: (end: "stealth", fill: black))
+  content((ux + 0.3, 0), $x$, anchor: "west", padding: 2pt)
+  line((0, ly - 0.3), (0, uy + 0.3), stroke: thick, mark: (end: "stealth", fill: black))
+  content((0, uy + 0.3), $y$, anchor: "south", padding: 2pt)
+
+  // Dashed bounds
+  line((lx, ly - 0.1), (lx, uy + 0.2), stroke: (dash: "dashed"))
+  line((ux, ly - 0.1), (ux, uy + 0.2), stroke: (dash: "dashed"))
+  line((lx, uy), (ux, uy), stroke: (dash: "dashed"))
+
+  // ReLU line
+  line((lx, ly), (0, ly), (ux, uy), stroke: (paint: red, thickness: ultra-thick))
+
+  // Labels
+  content((lx, 0), $l_x$, anchor: "north", padding: 2pt)
+  content((ux, -0.05), $u_x$, anchor: "north", padding: 2pt)
+  content((-0.1, ly - 0.2), $l_y (x)$, anchor: "east", padding: 2pt)
+  content((ux - 0.5, uy), $u_y (x)$, anchor: "south", padding: 2pt)
+  content((0, 0), $0$, anchor: "north-west", padding: 2pt)
+})
+
+// ============ \zonotopeabstraction{scale} ============
+#let zonotope-abstraction(scale: 1.0) = canvas(length: scale * 1cm, {
+  import draw: *
+  let (lx, ux, d) = (-1.0, 1.0, 0.5)
+
+  // Coordinates
+  let A = (lx, d * lx + 0.1)
+  let B = (lx, 0.2)
+  let E = (ux, ux + 0.01)
+  let F = (ux, ux - d * ux - 0.1)
+
+  // Fill region (closed polygon)
+  line(A, B, E, F, close: true, fill: yellow.lighten(50%), stroke: none)
+
+  // Axes
+  line((lx - 0.2, 0), (ux + 0.3, 0), stroke: thick, mark: (end: "stealth", fill: black))
+  content((ux + 0.3, 0), $x$, anchor: "west", padding: 2pt)
+  line((0, -0.6), (0, ux + 0.2), stroke: thick, mark: (end: "stealth", fill: black))
+  content((0, ux + 0.2), $y$, anchor: "south", padding: 2pt)
+
+  // Dashed bounds
+  line((lx, -0.6), (lx, ux + 0.1), stroke: (dash: "dashed"))
+  line((ux, -0.6), (ux, ux + 0.1), stroke: (dash: "dashed"))
+  line((lx, 0.2), (ux, ux + 0.01), stroke: (dash: "dashed"))
+  line((lx, d * lx + 0.1), (ux, ux - d * ux - 0.1), stroke: (dash: "dashed"))
+
+  // ReLU line
+  line((lx, 0), (0, 0), (ux, ux), stroke: (paint: red, thickness: ultra-thick))
+
+  // Labels
+  content((lx - 0.1, 0), $l_x$, anchor: "north", padding: 2pt)
+  content((ux + 0.12, -0.05), $u_x$, anchor: "north", padding: 2pt)
+  content((lx / 2, -0.3), $l_y (x)$, anchor: "north", padding: 2pt)
+  content((ux / 2, ux / 2 + 0.3), $u_y (x)$, anchor: "south", padding: 2pt)
+  content((0, 0), $0$, anchor: "north-west", padding: 2pt)
+})
+
+// ============ \polytopeabstraction{scale} ============
+#let polytope-abstraction(scale: 1.0) = canvas(length: scale * 1cm, {
+  import draw: *
+  let (lx, ux, d) = (-1.0, 1.0, 0.5)
+
+  // Coordinates
+  let A = (lx, 0)
+  let B = (lx, 0.01)
+  let E = (ux, ux + 0.01)
+  let F = (ux, 0)
+
+  // Fill region (closed polygon)
+  line(A, B, E, F, close: true, fill: yellow.lighten(50%), stroke: none)
+
+  // Axes
+  line((lx - 0.2, 0), (ux + 0.3, 0), stroke: thick, mark: (end: "stealth", fill: black))
+  content((ux + 0.3, 0), $x$, anchor: "west", padding: 2pt)
+  line((0, -0.4), (0, ux + 0.2), stroke: thick, mark: (end: "stealth", fill: black))
+  content((0, ux + 0.2), $y$, anchor: "south", padding: 2pt)
+
+  // Dashed bounds
+  line((lx, -0.3), (lx, ux + 0.1), stroke: (dash: "dashed"))
+  line((ux, -0.3), (ux, ux + 0.1), stroke: (dash: "dashed"))
+  line((lx, 0), (ux, ux + 0.01), stroke: (dash: "dashed"))
+  line((lx, 0), (ux, 0), stroke: (dash: "dashed"))
+
+  // ReLU line
+  line((lx, 0), (0, 0), (ux, ux), stroke: (paint: red, thickness: ultra-thick))
+
+  // Labels
+  content((lx - 0.1, 0), $l_x$, anchor: "north", padding: 2pt)
+  content((ux + 0.12, -0.05), $u_x$, anchor: "north", padding: 2pt)
+  content((lx / 2, -0.01), $l_y (x)$, anchor: "north", padding: 2pt)
+  content((ux / 2, ux / 2 + 0.3), $u_y (x)$, anchor: "south", padding: 2pt)
+  content((0, 0), $0$, anchor: "north-west", padding: 2pt)
+})
+
+// ============ Usage example ============
+#figure(
+  placement: top,
+  grid(
+    columns: 3,
+    //gutter: 1.5cm,
+    row-gutter:0.7em,
+    column-gutter:2.5em,
+    align:center,
+    interval-abstraction(scale: 1.5),
+    zonotope-abstraction(scale: 1.5),
+    polytope-abstraction(scale: 1.5),
+    [(a) Interval], [(b) Zonotope], [(c) Polytope]
+  ),
+  caption: [Abstractions of $"relu"(x) = max(0,x)$ over $x in [l_x, u_x]$ using (a) interval, (b) zonotope, (c) polytope abstractions.]
+)
+
+#paragraph[Abstractions for ReLU][
+We use ReLU to illustrate different abstractions.
+Our goal is to approximate the bounds of the post-ReLU value of a neuron given the bounds of its pre-ReLU value. For example, for a ReLU neuron $y = max(0, x)$, we want to compute the bounds $[l_y(x), u_y(x)]$ of $y$ given the bounds $[l_x, u_x]$ of $x$.
+]
+
+
 
 // \autoref{fig:relu-all-abstractions} illustrates common abstractions (or \emph{over-approximations}) for the ReLU function $y = \max(0, x)$, where $x in [l_x, u_x]$ and $y in [l_y(x), u_y(x)]$. The values of ReLU are shown as points on the \colorbox{myred}{red line}, which is non-convex and consists of two linear segments: one for $x < 0$ (where $y = 0$) and another for $x >= 0$ (where $y = x$).
 // To compute the bounds $l_y(x)$ and $u_y(x)$, we can use different abstractions:
