@@ -2,7 +2,10 @@
 #import "@preview/cetz:0.3.4": canvas, draw
 
 #import "@preview/theorion:0.6.0": *
+//#import cosmos.simple: *
 #import cosmos.fancy: *
+//#import cosmos.rainbow: *
+//#import cosmos.clouds: *
 #show: show-theorion
 #set-inherited-levels(3)
 
@@ -2482,11 +2485,11 @@ Note that because $l_3 = -0.5$ and $u_3 = 2.5$, $a_3$ can be either 0 or 1, depe
 We can encode a neural network as a set of MILP linear constraints as follows:
 
 $
-&(a)} quad z^i = W^i hat(z)^((i-1)) + b^i; \
-&(b)} quad y = z^{L};  x = hat(z)^{0}; \
-&(c)} quad hat(z)_j^i >= {z}_j^i; quad hat(z)_j^i >= 0; \
-&(d)} quad a_j^i in { 0, 1} ;\
-&(e)} quad hat(z)_j^i <= {a}_j^i u_j^i; quad hat(z)_j^i <= z_j^i - l_j^i (1 - a_j^i);
+&(a) quad z^i = W^i hat(z)^((i-1)) + b^i; \
+&(b) quad y = z^{L};  x = hat(z)^{0}; \
+&(c) quad hat(z)_j^i >= {z}_j^i; quad hat(z)_j^i >= 0; \
+&(d) quad a_j^i in { 0, 1} ;\
+&(e) quad hat(z)_j^i <= {a}_j^i u_j^i; quad hat(z)_j^i <= z_j^i - l_j^i (1 - a_j^i);
 $ <eq:mip>
 
 where $x$ is input, $y$ is output, and $z^i$, $hat(z)^i$, $W^i$, and $b^i$ are the pre-activation, post-activation, weight, and bias vectors for layer $i$ ($j$ is the neuron index in layer $i$). 
@@ -2516,10 +2519,7 @@ We use MILP to formulate and check if the network in @fig:dnn-c satisfies the pr
   hat(z)_3 &<= a_3 dot u_3, quad  hat(z)_3 <= z_3 - l_3(1 - a_3), quad hat(z)_4 <= a_4 dot u_4, quad  hat(z)_4 <= z_4 - l_4(1 - a_4)
   $
 
-  *Output layer*:
-  $
-  x_5 &= - hat(z)_3 +  hat(z)_4 - 1.0
-  $
+  *Output layer*: $x_5 &= - hat(z)_3 +  hat(z)_4 - 1.0$
 
 + *Computing* upper and lower bounds over input ranges $x_1 in [-1,1], x_2 in [-2,2]$:
   $
@@ -2554,59 +2554,51 @@ z_3 &= -0.5(-1) + 0.5(2) + 1.0 = 2.5, quad z_4 = 0.5(-1) - 0.5(2) - 1.0 = -2.5 \
 a_3 &= 1,  hat(z)_3 = 2.5 quad ("neuron active"), quad a_4 = 0,  hat(z)_4 = 0 quad ("neuron inactive") \
 x_5 &= -2.5 + 0 - 1.0 = -3.5
 $
-// Since $x_5 = -3.5 <= 0$, this assignment satisfies our search for $x_5 <= 0$ and  thus is a counterexample.
-// \end{enumerate}
-// \end{example}
+Since $x_5 = -3.5$, this satisfies our search for $x_5 <= 0$ and  thus is a counterexample.
+
 ]<ex:milp-dnn>
 
 
-// \begin{problem <prob:milp-dnn}
-// \begin{figure}
-// \centering
-// \mydnntwo{1.0}
-// \caption{\label{fig:dnn-d}A simple network (similar to~\autoref{fig:mydnntwo}).}
-// \end{figure}
+#problem[
+#figure(
+    [#mydnn(sc:100%)],
+    caption: [A simple network (similar to @fig:dnn).],
+  ) <fig:dnn-d>
+Use MILP encoding and solving to check if the network @fig:dnn-d satisfies the property $x_5 >= x_6$ for any inputs $x_1 in [-1,1], x_2 in [-1,1]$. Specificaly, do the following steps:
 
-// Use MILP encoding and solving to check if the network in~\autoref{fig:dnn-d} satisfies the property $phi$ that the output $x_5 >= x_6$ for any inputs $x_1 in [-1,1], x_2 in [-1,1]$. Specificaly, do the following steps:
-// \begin{enumerate}
-//     \item Write down the precondition $phi_"in"$ and postcondition $phi_"out"$ representing the property $phi$.
-//     \item Write down the MILP encoding of the network.
-//     \item Compute the upper and lower bounds of the pre-activation values of the neurons in the hidden layer.
-//     \item Substitute the bounds into the MILP encoding.
-//     \item Write down the final MILP encoding of $alpha \land phi_"in" \land not{phi_"out"}$.
-//     \item Check the feasibility of the MILP encoding (e.g., using Z3) and report the result.
-// \end{enumerate}
-// \end{problem}
++ Write down the precondition $phi_"in"$ and postcondition $phi_"out"$.
++ Write down the MILP encoding of the network.
++ Compute the upper and lower bounds of the pre-activation values of the neurons in the hidden layer.
++ Substitute the bounds into the MILP encoding.
++ Write down the final MILP encoding of $alpha \land phi_"in" \land not{phi_"out"}$.
++ Check the feasibility of the MILP encoding (e.g., using Z3) and report the result.
+]<prob:milp-dnn>
 
-// \begin{problem <prob:stable-neuron}
-// As shown in~\autoref{ex:relu_milp1}, the upper and lower bounds of neuron $x_3$ of the network in~\autoref{fig:dnn-c} are $u_3 = 2.5$ and $l_3 = -0.5$.
-// \begin{itemize}
-// \item Compute the upper and lower bounds of $x_4$ in the same example.
-// \item Change the weights and/or biases of the network in~\autoref{fig:dnn-c}, but keep the input ranges $-1 <= x_1 <= 1$ and $-2 <= x_2 <= 2$, such that $x_3$ becomes a stable neuron (always active or always inactive).  Show the new weights and/or biases, and compute the new upper and lower bounds of $x_3$.
-// \end{itemize}
-// \end{problem}
+
+#problem[
+As shown in @ex:relu_milp1, the upper and lower bounds of neuron $x_3$ of the network in @fig:dnn-c are $u_3 = 2.5$ and $l_3 = -0.5$.
+
++ Compute the upper and lower bounds of $x_4$ in the same example.
++ Change the weights and/or biases of the network in @fig:dnn-c, but keep the input ranges $-1 <= x_1 <= 1$ and $-2 <= x_2 <= 2$, such that $x_3$ becomes a stable neuron (always active or always inactive).  Show the new weights and/or biases, and compute the new upper and lower bounds of $x_3$.
+] <prob:stable-neuron>
 
 // % \tvn{So far we talk about bounds for pre-ReLU values, right? is that the same as post-ReLU?  In other words, when we talk about abstraction for ReLU, are we talking about these pre-ReLU bounds, which currently use intervals?  or the abstraction for ReLU refer to something else and not these pre-ReLU bounds?}
 // % \hd{no, we are referring to post-ReLU bounds. For example, a pre-ReLU interval is  $z_3 in [-0.5, 2.5]$ --- indicating an unstable neuron, and we will abstraction to compute bounds for the post-ReLU e.g., $ hat(z)_3$.}\tvn{I am still confused, see example~\autoref{ex:relu_milp} .. I am computing the upper and lower bounds of $x_3$, not $ hat(x)_3$. The bounds of $ hat(x)_3$ is always $[0, u_3]$.}
 
-// \subsection{Limitations <sec:milp-limitations}
+=== Limitations <sec:milp-limitations>
+
+- *Scalability*: While MILP is efficient in dealing with linear constraints, it still cannot be applied directly to real-world neural networks due to the large search space. Each ReLU application to an unstable neuron introduces a binary variable (@sec:relu-encoding), leading to exponential number of possible branches, and real-world networks can have millions of such ReLUs, making the search space intractable.
+
+- *Limited exploitation of network structure and modern hardware*: Off-the-shelf MILP solvers are designed for arbitrary MILP problems and do not exploit specific structures of neural networks and concepts such as activation patterns (@sec:activation-patterns) to prune the search space. Moreover, MILP solvers, even industrial-strength ones such as Gurobi @gurobi, are primarily CPU-based and do not leverage the massive parallelism provided by modern GPUs to improve scalability.
 
 
-// \begin{itemize}
-//     \item \textbf{Scalability:} While MILP is efficient in dealing with linear constraints, it still cannot be applied directly to real-world neural networks due to the large search space. Each ReLU application to an unstable neuron introduces a binary variable (\autoref{sec:relu-encoding}), leading to exponential number of possible branches, and real-world networks can have millions of such ReLUs, making the search space intractable.
+- *Advanced Abstraction and Heuristics*: Interval analysis is efficient and commonly used for computing neuron bounds, but cannot capture dependencies between neurons, leading to precision loss in deeper networks. SOTA NNV tools use more advanced abstract domains such as zonotopes  and polytopes to improve precision (@chap:abstractions).
 
-//     \item \textbf{Limited exploitation of network structure and modern hardware} Off-the-shelf MILP solvers are designed for arbitrary MILP problems and do not exploit specific structures of neural networks and concepts such as activation patterns (\autoref{sec:activation-patterns}) to prune the search space.
-//     Moreover, MILP solvers, even industrial-strength ones such as Gurobi~\cite{gurobi}, are primarily CPU-based and does not leverage the massive parallelism provided by modern GPUs to speed up computation.
-
-//     %\item \textbf{Generic branch-and-bound algorithms:} While MILP solvers employ branch-and-bound (BaB) algorithms, these are generic and not tailored to DNNs. In contrast, specialized DNN verification algorithms leverage DNN-specific BaB strategies, such as layer-wise branching, abstract domain propagation, and neuron-specific heuristics, enabling greater efficiency.
-
-//     \item \textbf{Advanced Abstraction and Heuristics} Interval analysis is efficient and commonly used for computing neuron bounds, but cannot capture dependencies between neurons, leading to precision loss in deeper networks. SOTA NNV tools use more advanced abstract domains such as zonotopes  and polytopes to improve precision (\autoref{chap:abstractions}).
-
-//     Modern NNV tools also employ heuristics to decide which neurons to branch on and to determine stable neurons to avoid unnecessary branching. These heuristics are not available in general MILP solvers.
-// \end{itemize}
+  Modern NNV tools also employ heuristics to decide which neurons to branch on and to determine stable neurons to avoid unnecessary branching. These heuristics are not available in general MILP solvers.
 
 
-// %\tvn{Hai, above you mention MILP also employs BaB algorithm, could you write a paragraph or so about how MILP solvers use BaB and briefly show how that would apply to example 4.2.2 (just briefly, no need a full step by step demonstration). Is this BaB algorithm used by MILP very similar to the one used by DNN verification tools (minus the DNN specific optimizations and heuristics)? like the BaB algorithm described in~\autoref{alg:bab} }
+
+//%\tvn{Hai, above you mention MILP also employs BaB algorithm, could you write a paragraph or so about how MILP solvers use BaB and briefly show how that would apply to example 4.2.2 (just briefly, no need a full step by step demonstration). Is this BaB algorithm used by MILP very similar to the one used by DNN verification tools (minus the DNN specific optimizations and heuristics)? like the BaB algorithm described in~\autoref{alg:bab} }
 // % ---
 
 // % Let me know if you want this condensed further or expanded into sub-items for even more clarity!
