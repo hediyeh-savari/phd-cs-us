@@ -1020,38 +1020,6 @@ $tanh(-1.2) approx -0.83$, $tanh(0) = 0$, and $tanh(2.8) approx 0.99$. This mean
 === Softmax <sec:softmax>
 
 
-// \begin{figure}[htp]
-//     \centering
-//     \begin{tikzpicture}
-//         \begin{axis}[
-//             width=1.7in, height=1.7in,
-//             axis x line=middle, axis y line=middle,
-//             % axis equal,
-//             xlabel={}, ylabel={},
-//             xtick={-4, -2, 0, 2, 4},
-//             ytick={0, 0.5, 1},
-//             xmin=-4.5, xmax=4.5, ymin=-0.1, ymax=1.1,
-//             enlargelimits=false,
-//             samples=200,
-//             domain=-4.5:4.5,
-//             axis line style={-latex},
-//             tick label style={font=\small},
-//             tick align=outside,
-//             minor tick num=0,
-//             legend style={at={(0.5,1.03)},anchor=south,legend columns=2,draw=none, font=\footnotesize},
-//         ]
-//         % softmax_1 curve
-//         \addplot[line width=1.5pt, red!80!black, domain=-4.5:4.5] {exp(x)/(exp(x)+1)};
-//         % softmax_2 curve
-//         \addplot[line width=1.5pt, blue!80!black, domain=-4.5:4.5, dashed] {1/(exp(x)+1)};
-//         % Add legends
-//         \addlegendentry{$\mathrm{softmax}_1(x)$}
-//         \addlegendentry{$\mathrm{softmax}_2(x)$}
-//       \end{axis}
-//     \end{tikzpicture}
-//     \caption{Softmax function for 2 classes. <fig:softmax}
-// \end{figure}
-
 #figure(
   canvas(length: 1cm, {
     import draw: *
@@ -1113,7 +1081,7 @@ $tanh(-1.2) approx -0.83$, $tanh(0) = 0$, and $tanh(2.8) approx 0.99$. This mean
   caption: [Softmax function for 2 classes.]
 ) <fig:softmax>
 
-// Softmax, shown in~\autoref{fig:softmax}, is a generalization of sigmoid (\autoref{sec:sigmoid}) that maps any real value to the range (0,1) and ensures that the sum of the output values is 1. It is often used in the output layer of a multi-class classification problem.
+Softmax, shown in @fig:softmax, is a generalization of sigmoid (@sec:sigmoid) that maps any real value to the range (0,1) and ensures that the sum of the output values is 1. It is often used in the output layer of a multi-class classification problem.
 // \begin{align}
 // \softmax{x}_i = \frac{e^{x_i}}{\sum_{j=1}^{n}e^{x_j}}
 // \end{align}
@@ -1216,7 +1184,7 @@ Widely used feedforward architectures include fully connected, convolutional, an
 
 // TODO
 // \begin{example}
-// \autoref{fig:dnn} earlier is an FCN with two inputs and one hidden layer with two neurons, and one output neuron.~\autoref{fig:ffn} below shows an FCN with four inputs, two hidden layers with five neurons each, and three output neurons (weights and biases not shown for simplicity).
+// @fig:dnn earlier is an FCN with two inputs and one hidden layer with two neurons, and one output neuron.~@fig:ffn below shows an FCN with four inputs, two hidden layers with five neurons each, and three output neurons (weights and biases not shown for simplicity).
 
 // \begin{figure}[htp]
 //     \centering
@@ -1263,11 +1231,10 @@ Widely used feedforward architectures include fully connected, convolutional, an
 // \end{figure}
 // \end{example}
 
-#import "@preview/cetz:0.3.4"
 
 #figure(
-  cetz.canvas(length: 1cm, {
-    import cetz.draw: *
+  canvas(length: 1cm, {
+    import draw: *
 
     let r = 0.3   // node radius (= minimum size 0.6cm / 2)
 
@@ -1368,11 +1335,9 @@ Widely used feedforward architectures include fully connected, convolutional, an
 //     \caption{1-dimensional CNN <fig:cnn}
 // \end{figure}
 
-#import "@preview/cetz:0.3.4"
-
 #figure(
-  cetz.canvas(length: 1cm, {
-    import cetz.draw: *
+  canvas(length: 1cm, {
+    import draw: *
 
     let r = 0.5   // node radius (~ 0.4in diameter)
 
@@ -1428,7 +1393,7 @@ Widely used feedforward architectures include fully connected, convolutional, an
 
 
 // \begin{example}
-//    ~\autoref{fig:cnn} shows a simple CNN with four inputs, three hidden neurons, and three outputs. %The first hidden neuron computes a weighted sum of its inputs, applies the ReLU activation function, and produces an output. The second and third hidden neurons compute their outputs similarly. The outputs are computed by taking the outputs of the hidden neurons and applying a linear transformation (without activation) to produce the final output values.
+//    ~@fig:cnn shows a simple CNN with four inputs, three hidden neurons, and three outputs. %The first hidden neuron computes a weighted sum of its inputs, applies the ReLU activation function, and produces an output. The second and third hidden neurons compute their outputs similarly. The outputs are computed by taking the outputs of the hidden neurons and applying a linear transformation (without activation) to produce the final output values.
 // Given an input vector $\mathbf{x} = [x_1, x_2, x_3, x_4]$, the computation of the first output proceeds as follows.
 // The first hidden unit forms a linear combination of its inputs as $h_1 = 2x_1 - x_2 + 0.5$.
 // This value is then passed through the ReLU activation function, resulting in $\hat{h}_1 = \relu{h_1} = \max(0, 2x_1 - x_2 + 0.5)$.
@@ -1537,7 +1502,7 @@ Widely used feedforward architectures include fully connected, convolutional, an
   ]
 ) <fig:resnet>
 
-// \autoref{fig:resnet}  shows an example of a Resnet.
+// @fig:resnet  shows an example of a Resnet.
 // Assume the input $x$ and each node applies the ReLU activation. With the weights and biases shown in the diagram, the outputs are computed as follows:
 
 // \[
@@ -1734,7 +1699,7 @@ Currently, most NNV work tackles RNNs by _unrolling_ them into an equivalent fee
   ]
 ) <fig:rnn>
 
-// \autoref{fig:rnn} shows a simple RNN cell. Assume the input sequence is $\mathbf{x} = [x_1, x_2, x_3, x_4]$, and the initial hidden state is $h_0$.
+// @fig:rnn shows a simple RNN cell. Assume the input sequence is $\mathbf{x} = [x_1, x_2, x_3, x_4]$, and the initial hidden state is $h_0$.
 // For the first time step, the hidden state is computed as $h_1 = \relu{2x_1 - h_0 + 0.5}$, and the output is $y_1 = h_1 - 0.5$.
 // For the second time step, the hidden state is $h_2 = \relu{2x_2 - h_1 + 0.5}$, and the output is $y_2 = h_2 - 0.5$.
 // % For the third time step, the hidden state is $h_3 = ReLU(2x_3 - h_2 + 0.5)$, and the output is $y_3 = h_3 - 0.5$.
@@ -2134,7 +2099,7 @@ Properties are encoded in *SMT-LIB2*, referencing input/output variable names co
 
 
 // \begin{example}
-// A typical ACAS XU network (\autoref{sec:acasxu}) maps 5D input to 5D output via 6 layers of 50 ReLU neurons. A property is of the network is
+// A typical ACAS XU network (@sec:acasxu) maps 5D input to 5D output via 6 layers of 50 ReLU neurons. A property is of the network is
 // \[
 // -\varepsilon_i <=q x_i <=q \varepsilon_i quad (0 <=q i < 5)
 // \]
@@ -2378,7 +2343,7 @@ Properties are encoded in *SMT-LIB2*, referencing input/output variable names co
 
 
 
-// Consider the neural network in~\autoref{fig:proofnet}. Recall that in this network the hidden neurons ($v_1 \ldots v_4$) use ReLU activation, but the output neurons ($y_1,y_2$) does not.
+// Consider the neural network in~@fig:proofnet. Recall that in this network the hidden neurons ($v_1 \ldots v_4$) use ReLU activation, but the output neurons ($y_1,y_2$) does not.
 
 
 // \begin{itemize}
@@ -2386,9 +2351,9 @@ Properties are encoded in *SMT-LIB2*, referencing input/output variable names co
 //     \begin{itemize}
 //         \item Try to use Z3 to evaluate the network on various inputs.
 //     \end{itemize}
-// \item Come up with \emph{three} properties that this network \emph{does not} have.  Recall that a property often has the form shown in~\autoref{sec:properties-def}.
+// \item Come up with \emph{three} properties that this network \emph{does not} have.  Recall that a property often has the form shown in~@sec:properties-def.
 // \begin{itemize}
-//     \item Argue why each property does not hold by providing a counterexample (\autoref{sec:properties-counterexamples}).
+//     \item Argue why each property does not hold by providing a counterexample (@sec:properties-counterexamples).
 //     \item (Optional, Easy) Try to use Z3 to show that the properties you came up with do not hold by asking Z3 to find counterexamples (one for each property).
 // \end{itemize}
 // \item Come up with \emph{three} properties that that this network has (i.e., as long as the precondition holds, the postcondition holds).
@@ -2403,7 +2368,7 @@ Properties are encoded in *SMT-LIB2*, referencing input/output variable names co
 // = Verification of Neural Networks <sec:verification}
 
 // This chapter discusses the problem of verifying neural networks, i.e., checking if a given property holds for a neural network.
-// We define the NN verification problem in~\autoref{sec:nnv-problem} and its satisfiability formulation, which is commonly used by NNV tools.
+// We define the NN verification problem in~@sec:nnv-problem and its satisfiability formulation, which is commonly used by NNV tools.
 
 #pagebreak()
 = The Neural Network Verification (NNV) Problem <sec:nnv-problem>
@@ -2666,7 +2631,7 @@ Consider the neural network in @fig:mydnntwo. Do the following:
 
 // \begin{solution}
 // \begin{enumerate}
-//     \item The formula $alpha$ representing the network in~\autoref{fig:mydnntwo} is:
+//     \item The formula $alpha$ representing the network in~@fig:mydnntwo is:
 //     \begin{align*}
 //     & x_3 = \max(-0.7x_1 + 0.3x_2 + 0.8, 0) ~\land \\
 //     & x_4 = \max(1.2x_1 - 0.5x_2 - 2.0, 0) ~\land \\
@@ -2680,7 +2645,7 @@ Consider the neural network in @fig:mydnntwo. Do the following:
 //     phi_"out" &= (x_5 >= x_6)
 //     \end{align*}
 
-//     \item The satisfiability formula $alpha \land phi_"in" \land not phi_"out"$ (see~\autoref{eq:nnv2}) is:
+//     \item The satisfiability formula $alpha \land phi_"in" \land not phi_"out"$ (see~@eq:nnv2) is:
 //     \begin{align*}
 //     & x_3 = \max(-0.7x_1 + 0.3x_2 + 0.8, 0) ~\land \\
 //     & x_4 = \max(1.2x_1 - 0.5x_2 - 2.0, 0) ~\land \\
@@ -2733,7 +2698,7 @@ As shown in @katz2017reluplex @salzer2023reachability ReLU-based NNV is NP-compl
 // % \subsection{Scalability} Neural networks can be very large, with millions of parameters. This makes it difficult to verify their correctness, as the number of possible inputs grows exponentially with the size of the network.
 
 // % %TODO: put somewhere else
-// % For DNN verification, AF is straightforward to reason about because it is a linear function. However, AFs are often followed by non-linear activation functions, described next in~\autoref{sec:activation}, which make the verification problem more challenging.
+// % For DNN verification, AF is straightforward to reason about because it is a linear function. However, AFs are often followed by non-linear activation functions, described next in~@sec:activation, which make the verification problem more challenging.
 
 // % %TODO: put somewhere else
 // % For DNN verification, these non-linear activation functions make verification difficult because it introduces multiple possible outcomes for any input, making it hard to reason about the output of the network. For example, ReLU has two possible outputs for any input: 0 if the input is less than zero, and the input itself otherwise, and Sigmoid has a smooth curve with infinite possible outputs for any input.
@@ -2835,9 +2800,9 @@ Instead of using SMT solving, we can encode the NNV problem as a Mixed Integer L
 
 
 // % The fundamental difference between SMT and MILP solving is that SMT solvers aims to find satisfying assignments that make a given logical formula true. In contrast, MILP solvers aim to find the best solution (according to some objective function) that satisfy a given set of \emph{linear} constraints.
-// % Thus, we need to encode the DNN as a set of linear constraints, and use binary indicator variables (\autoref{sec:milp-binary}) to represent the non-linear activation functions such as ReLU.  This creates an MILP problem solvable using a MILP solver.
+// % Thus, we need to encode the DNN as a set of linear constraints, and use binary indicator variables (@sec:milp-binary) to represent the non-linear activation functions such as ReLU.  This creates an MILP problem solvable using a MILP solver.
 
-// % Due to scalability issues with SMT solvers (\autoref{sec:smt-limitations}), modern DNN verification techniques ~\cite{wang2018efficient,tjeng2019evaluating,duong2024harnessing} often rely on Mixed Integer Linear Programming (MILP) solving, which is specialized for linear constraints and more efficient for DNN reasoning. %Many state-of-the-art DNN verification tools use the industrial-strength MILP solver Gurobi~\cite{gurobi}.
+// % Due to scalability issues with SMT solvers (@sec:smt-limitations), modern DNN verification techniques ~\cite{wang2018efficient,tjeng2019evaluating,duong2024harnessing} often rely on Mixed Integer Linear Programming (MILP) solving, which is specialized for linear constraints and more efficient for DNN reasoning. %Many state-of-the-art DNN verification tools use the industrial-strength MILP solver Gurobi~\cite{gurobi}.
 
 // % The fundamental distinction between SMT and MILP solving lies in their problem formulation and solution approach.
 // % SMT solvers address satisfiability problems: determining whether there exist variable assignments that make a given logical formula true.
@@ -2888,7 +2853,7 @@ The mentioned lower and upper bounds (@sec:relu-encoding)---_concrete_ values $l
 Either of these cases indicates the neuron is _stable_---always active or always inactive---and thus significantly simplifies the MILP problem because ReLU can be replaced with a linear function (identity or constant 0). Of course, if $l < 0 < u$, then both active and inactive phases are possible, and the MILP solver has to consider both cases. @chap:abstractions discusses abstraction techniques to approximate ReLU outputs.
 
 
-// %In general, the tightness of the bounds $l$ and $u$ is crucial for the efficiency of the MILP solver and a major focus of DNN reasoning is developing techniques to capture these bounds more precisely (\autoref{chap:abstractions}).
+// %In general, the tightness of the bounds $l$ and $u$ is crucial for the efficiency of the MILP solver and a major focus of DNN reasoning is developing techniques to capture these bounds more precisely (@chap:abstractions).
 
 *Computing Bounds $l <= e <= u$*: Given a linear expression $e$
 $
@@ -3042,7 +3007,7 @@ As shown in @ex:relu_milp1, the upper and lower bounds of neuron $x_3$ of the ne
 ] <prob:stable-neuron>
 
 // % \tvn{So far we talk about bounds for pre-ReLU values, right? is that the same as post-ReLU?  In other words, when we talk about abstraction for ReLU, are we talking about these pre-ReLU bounds, which currently use intervals?  or the abstraction for ReLU refer to something else and not these pre-ReLU bounds?}
-// % \hd{no, we are referring to post-ReLU bounds. For example, a pre-ReLU interval is  $z_3 in [-0.5, 2.5]$ --- indicating an unstable neuron, and we will abstraction to compute bounds for the post-ReLU e.g., $ hat(z)_3$.}\tvn{I am still confused, see example~\autoref{ex:relu_milp} .. I am computing the upper and lower bounds of $x_3$, not $ hat(x)_3$. The bounds of $ hat(x)_3$ is always $[0, u_3]$.}
+// % \hd{no, we are referring to post-ReLU bounds. For example, a pre-ReLU interval is  $z_3 in [-0.5, 2.5]$ --- indicating an unstable neuron, and we will abstraction to compute bounds for the post-ReLU e.g., $ hat(z)_3$.}\tvn{I am still confused, see example~@ex:relu_milp .. I am computing the upper and lower bounds of $x_3$, not $ hat(x)_3$. The bounds of $ hat(x)_3$ is always $[0, u_3]$.}
 
 === Limitations <sec:milp-limitations>
 
@@ -3057,7 +3022,7 @@ As shown in @ex:relu_milp1, the upper and lower bounds of neuron $x_3$ of the ne
 
 
 
-//%\tvn{Hai, above you mention MILP also employs BaB algorithm, could you write a paragraph or so about how MILP solvers use BaB and briefly show how that would apply to example 4.2.2 (just briefly, no need a full step by step demonstration). Is this BaB algorithm used by MILP very similar to the one used by DNN verification tools (minus the DNN specific optimizations and heuristics)? like the BaB algorithm described in~\autoref{alg:bab} }
+//%\tvn{Hai, above you mention MILP also employs BaB algorithm, could you write a paragraph or so about how MILP solvers use BaB and briefly show how that would apply to example 4.2.2 (just briefly, no need a full step by step demonstration). Is this BaB algorithm used by MILP very similar to the one used by DNN verification tools (minus the DNN specific optimizations and heuristics)? like the BaB algorithm described in~@alg:bab }
 // % ---
 
 // % Let me know if you want this condensed further or expanded into sub-items for even more clarity!
@@ -3088,8 +3053,8 @@ This chapter discusses the interval, zonotope, and polytope abstract domains com
 
 == Overview and Background
 
-// %We will focus on ReLU (\autoref{sec:relu}) activation functions, which are the most common in DNNs. The goal is to compute the bounds of a post-ReLU neuron $ hat(z)$ given the bounds of its pre-ReLU value $z$ over the input region. For example, for a ReLU neuron $y = \max(0, x)$, we want to compute the bounds $[l_y(x), u_y(x)]$ of $y$ given the bounds $[l_x, u_x]$ on $x$.\tvn{is the pre-Relu bounds always computed like what was described in~\autoref{sec:pre-relu-bounds}? Is that computation considered interval too? Can that bound computation be obtained using other abstractions?}
-// %\hd{yes, concrete bounds will always be computed like what was described in~\autoref{sec:pre-relu-bounds} IF the bounds of a neurons are presented as linear equations. In other words, abstractions differ in the way they construct the linear equations, concretization step will be the same.}
+// %We will focus on ReLU (@sec:relu) activation functions, which are the most common in DNNs. The goal is to compute the bounds of a post-ReLU neuron $ hat(z)$ given the bounds of its pre-ReLU value $z$ over the input region. For example, for a ReLU neuron $y = \max(0, x)$, we want to compute the bounds $[l_y(x), u_y(x)]$ of $y$ given the bounds $[l_x, u_x]$ on $x$.\tvn{is the pre-Relu bounds always computed like what was described in~@sec:pre-relu-bounds? Is that computation considered interval too? Can that bound computation be obtained using other abstractions?}
+// %\hd{yes, concrete bounds will always be computed like what was described in~@sec:pre-relu-bounds IF the bounds of a neurons are presented as linear equations. In other words, abstractions differ in the way they construct the linear equations, concretization step will be the same.}
 
 // %\hd{Zonotope uses a different approach to represent the abstraction, using center and generators, so concretization step will be different. But if we construct the lower and upper equations for a zonotope, the concretization step will be the same.}
 
@@ -3511,7 +3476,7 @@ Our abstract domains, e.g., interval, zonotope, and polytopes, are all geometric
 //     \[
 //     x in [-2, 3].
 //     \]
-//     We can express this interval using a single generator as shown in~\autoref{fig:interval-zonotope}.
+//     We can express this interval using a single generator as shown in~@fig:interval-zonotope.
 
 
 
@@ -3638,7 +3603,7 @@ Our abstract domains, e.g., interval, zonotope, and polytopes, are all geometric
 
 // We now introduce several abstract domains that are commonly used in NNV. Each domain has its own abstract transformer functions  to compute the bounds of neurons.
 
-// Note that the input to the transformer functions (\autoref{sec:transformer-functions}) are the abstract values and the output is also an abstract value.  For example, for interval transformers, the input is an interval $[l, u]$ and the output is also an interval $[l', u']$. Similarly for zonotope transformers, the input is a zonotope defined by center and generators, and the output is also a zonotope.
+// Note that the input to the transformer functions (@sec:transformer-functions) are the abstract values and the output is also an abstract value.  For example, for interval transformers, the input is an interval $[l, u]$ and the output is also an interval $[l', u']$. Similarly for zonotope transformers, the input is a zonotope defined by center and generators, and the output is also a zonotope.
 == Interval <sec:interval-abstraction>
 
 // Interval is a very simple abstraction which represents the possible values of a variable as an interval $[l, u]$, where $l$ is the lower bound and $u$ is the upper bound.
@@ -3659,7 +3624,7 @@ Our abstract domains, e.g., interval, zonotope, and polytopes, are all geometric
 
 // \subsubsection{Affine Transformer <sec:interval-affine-transformer}
 
-// For the linear or affine function \(f\) in~\autoref{sec:affine}
+// For the linear or affine function \(f\) in~@sec:affine
 // \[f(v_1, v_2, ...,v_n) = \sum_{i=1}^{n} w_i v_i + b\]
 // where $w_i$ is the weight for the input \(v_i\), $n$ is the number of output nodes from the previous layer and \(b\) is the bias term, the abstract transformer \(f^a\) is:
 // \[
@@ -3674,10 +3639,10 @@ Our abstract domains, e.g., interval, zonotope, and polytopes, are all geometric
 // \begin{figure}
 // \centering
 // \mydnn{1}
-// \caption{\label{fig:dnn-abs}A simple network (similar to~\autoref{fig:dnn}).}
+// \caption{\label{fig:dnn-abs}A simple network (similar to~@fig:dnn).}
 // \end{figure}
 
-// Consider the network in~\autoref{fig:dnn-abs} with inputs \(x_1 in [1, 2]\) and \(x_2 in [-1, 3]\). The affine function for the neuron \(x_3\) is:
+// Consider the network in~@fig:dnn-abs with inputs \(x_1 in [1, 2]\) and \(x_2 in [-1, 3]\). The affine function for the neuron \(x_3\) is:
 // \[
 // f(x_1,x_2) = -0.5\,x_1 + 0.5\,x_2 + 1.0
 // \]
@@ -3701,7 +3666,7 @@ Our abstract domains, e.g., interval, zonotope, and polytopes, are all geometric
 // \myrelu^a([l, u]) = [ \myrelu(l), \myrelu(u)] = [\max(0, l), \max(0, u)]
 // \]
 
-// This is equivalent to three cases shown in \autoref{fig:relu-interval-cases}:
+// This is equivalent to three cases shown in @fig:relu-interval-cases:
 // \begin{enumerate}
 // \item If $u < 0$, then $\myrelu^a([l, u]) = [0, 0]$.  If inputs are negative, the output is also negative.
 // \item If $l >= 0$, then $\myrelu^a([l, u]) = [l, u]$. If inputs are positive, the output is exactly the same.
@@ -3860,7 +3825,7 @@ Our abstract domains, e.g., interval, zonotope, and polytopes, are all geometric
 ) <fig:relu-interval-cases>
 
 // \begin{example}
-// For~\autoref{ex:transformer-affine1}, applying ReLU$^a$ to neuron $x_3$ gives:
+// For~@ex:transformer-affine1, applying ReLU$^a$ to neuron $x_3$ gives:
 
 // \[
 // \myrelu^a([-0.5, 2.0]) = [\myrelu(-0.5), \myrelu(2.0)]
@@ -3869,7 +3834,7 @@ Our abstract domains, e.g., interval, zonotope, and polytopes, are all geometric
 // \end{example}
 
 // \begin{problem <prob:int-abs}
-//   Apply interval abstraction to the network in~\autoref{fig:dnn-abs} with inputs \(x_1 in [1, 2]\) and \(x_2 in [-1, 3]\). Compute the bounds for all neurons.  Clearly indicate the steps (e.g., results after affine and ReLU transformers).
+//   Apply interval abstraction to the network in~@fig:dnn-abs with inputs \(x_1 in [1, 2]\) and \(x_2 in [-1, 3]\). Compute the bounds for all neurons.  Clearly indicate the steps (e.g., results after affine and ReLU transformers).
 // \end{problem}
 
 // \subsubsection{Efficiency and Precision}
@@ -3883,9 +3848,9 @@ Our abstract domains, e.g., interval, zonotope, and polytopes, are all geometric
 // Moreover, if we apply ReLU, then the output would be $\myrelu(z) = \myrelu(0) = 0$, but the interval gives $\myrelu^a([-1, 1]) = [0, 1]$, which is again a loose over-approximation.
 // \end{example}
 
-// Interval overapproximation grows quickly as we propagate through many layers of a large network, i.e., it keeps ``inflating'' the bounds, leading to a loose approximation of the output and becoming unable to verify valid properties.  For example, $z <=q 0$ is a valid property for~\autoref{ex:interval-overapproximation}, but the interval abstractions gives $z in [0,1]$, which is not tight (precise) enough to show this property.
+// Interval overapproximation grows quickly as we propagate through many layers of a large network, i.e., it keeps ``inflating'' the bounds, leading to a loose approximation of the output and becoming unable to verify valid properties.  For example, $z <=q 0$ is a valid property for~@ex:interval-overapproximation, but the interval abstractions gives $z in [0,1]$, which is not tight (precise) enough to show this property.
 
-// Nonetheless, interval domain remains popular due to its simplicity and efficiency. In some cases, despite being imprecise, it can still successfully verify properties of neural networks, e.g., for~\autoref{ex:interval-overapproximation} if we want to verify that $z <= 2$, then the interval $zin [0, 1]$ would suffice.
+// Nonetheless, interval domain remains popular due to its simplicity and efficiency. In some cases, despite being imprecise, it can still successfully verify properties of neural networks, e.g., for~@ex:interval-overapproximation if we want to verify that $z <= 2$, then the interval $zin [0, 1]$ would suffice.
 
 // \begin{problem <prob:correct-abs}
 //     Suppose $y$ can take values from 0 to 3. Student A computes an interval abstraction $y in [-2,4]$, while student B computes $y in [1,2]$.
@@ -3899,16 +3864,16 @@ Our abstract domains, e.g., interval, zonotope, and polytopes, are all geometric
 == Zonotope <sec:zonotope-abstraction>
 
 
-// Interval abstraction (\autoref{sec:interval-abstraction}) treats each variable independently. For example, if \(x_1 in [1,2]\) and \(x_2 in [3,4]\), interval assumes any combination of \(x_1\) and \(x_2\) is possible. But variables can correlate: e.g., when \(x_1\) increases, \(x_2\) also increases\tvn{but this doesn't happens in neural networks, so why do we need zonotope? does it help with ReLU abstraction?}.  Zonotopes can capture such correlations and therefore  provide a tighter abstraction.
+// Interval abstraction (@sec:interval-abstraction) treats each variable independently. For example, if \(x_1 in [1,2]\) and \(x_2 in [3,4]\), interval assumes any combination of \(x_1\) and \(x_2\) is possible. But variables can correlate: e.g., when \(x_1\) increases, \(x_2\) also increases\tvn{but this doesn't happens in neural networks, so why do we need zonotope? does it help with ReLU abstraction?}.  Zonotopes can capture such correlations and therefore  provide a tighter abstraction.
 
 
 
 // \paragraph{Definition}
 
-// A zonotope is often represented using a generator-based representation as illustrated in~\autoref{sec:geometric-representations}.
+// A zonotope is often represented using a generator-based representation as illustrated in~@sec:geometric-representations.
 // It is built by starting from a center point and then stretching along several directions defined by generator vectors.
 // Each generator can move forward or backward within a certain range, and together these movements sweep out the entire shape.
-// Zonotope generalizes the idea of an interval, which itself is a zonotope (e.g., see \autoref{ex:interval-zonotope}).
+// Zonotope generalizes the idea of an interval, which itself is a zonotope (e.g., see @ex:interval-zonotope).
 
 // Formally, a \textbf{zonotope} \(\mathcal{Z}\) in \(\mathbb{R}^n\) is defined as:
 // \[
@@ -4017,7 +3982,7 @@ Our abstract domains, e.g., interval, zonotope, and polytopes, are all geometric
 
 
 // \begin{example}
-//     A common zonotope in 2D is a parallelogram. It can be defined by its center point and two generator vectors that define its sides. For instance, parallelogram on the right side of~\autoref{fig:zonotope-correlated-generators} has the center \(c = (1, 1)\) and the generators \(g_1 = (1, 0.25)\) and \(g_2 = (0.5, 1)\). This zonotope represents all points that can be reached by moving along these generators within the range \([-1, 1]\):
+//     A common zonotope in 2D is a parallelogram. It can be defined by its center point and two generator vectors that define its sides. For instance, parallelogram on the right side of~@fig:zonotope-correlated-generators has the center \(c = (1, 1)\) and the generators \(g_1 = (1, 0.25)\) and \(g_2 = (0.5, 1)\). This zonotope represents all points that can be reached by moving along these generators within the range \([-1, 1]\):
 //   \[
 //     \mathcal{Z} = <=ft { (1, 1) + \epsilon_1 (1, 0.25) + \epsilon_2 (0.5, 1) \mid \epsilon_1, \epsilon_2 in [-1, 1] \right }
 //   \]
@@ -4032,7 +3997,7 @@ Our abstract domains, e.g., interval, zonotope, and polytopes, are all geometric
 
 
 // \begin{example}
-// In~\autoref{fig:zonotope-correlated-generators} the parallelogram zonotope on the right of captures   points with correlated \(x_1\) and \(x_2\) values, e.g., increasing \(x_1\) by moving along \(g_1\) also increases \(x_2\) due to the non-zero second component of \(g_1\).
+// In~@fig:zonotope-correlated-generators the parallelogram zonotope on the right of captures   points with correlated \(x_1\) and \(x_2\) values, e.g., increasing \(x_1\) by moving along \(g_1\) also increases \(x_2\) due to the non-zero second component of \(g_1\).
 // In contrast, the rectangle zonotope on the left, which represents an interval abstraction, has independent generators, i.e., changing \(x_1\) does not affect \(x_2\), and therefore cannot capture the correlation.
 // \end{example}
 
@@ -4144,7 +4109,7 @@ Our abstract domains, e.g., interval, zonotope, and polytopes, are all geometric
 
 // % \paragraph{Zonotope vs Box (Interval)}
 
-// % \autoref{fig:zonotope-vs-box} illustrates the difference between zonotopes and boxes (intervals) in 2D.
+// % @fig:zonotope-vs-box illustrates the difference between zonotopes and boxes (intervals) in 2D.
 // % The blue box represents an interval abstraction, which is axis-aligned and cannot capture correlations between variables.
 // % The orange parallelogram represents a zonotope, which can tilt and better fit the shape of correlated variables.
 
@@ -4177,7 +4142,7 @@ Our abstract domains, e.g., interval, zonotope, and polytopes, are all geometric
 
 // \subsubsection{Affine Transformer}
 
-// Recall that the affine function \(f\) in~\autoref{sec:affine} is
+// Recall that the affine function \(f\) in~@sec:affine is
 // \[
 // f(v_1, v_2, \ldots, v_n) = \sum_{i=1}^{n} w_i v_i + b, 
 // \]
@@ -4224,7 +4189,7 @@ Our abstract domains, e.g., interval, zonotope, and polytopes, are all geometric
 // f^a(\mathcal{Z}) = <=ft { f^c(c) + \sum_{j=1}^{m} \epsilon_j f^g(g_j) \mid \epsilon_j in [-1, 1] \right }
 // \]
 
-// % For the affine function \(f\) in~\autoref{sec:affine}
+// % For the affine function \(f\) in~@sec:affine
 // % \[
 // % f(x) = Wx + b
 // % \]
@@ -4238,7 +4203,7 @@ Our abstract domains, e.g., interval, zonotope, and polytopes, are all geometric
 // % Imagine a tilted box in space, then an affine transformation just stretches, rotates, and shifts it---the result is still a tilted box.
 
 // \begin{example <ex:zonotope_linear_example}
-// Consider the network in~\autoref{fig:dnn-abs} with inputs \(x_1 in [1, 2]\) and \(x_2 in [-1, 3]\).
+// Consider the network in~@fig:dnn-abs with inputs \(x_1 in [1, 2]\) and \(x_2 in [-1, 3]\).
 // The affine function for neuron \(x_3\) is:
 // \[
 // f(x_1, x_2) = -0.5\,x_1 + 0.5\,x_2 + 1.0
@@ -4303,14 +4268,14 @@ Our abstract domains, e.g., interval, zonotope, and polytopes, are all geometric
 // Thus, the output range of $x_3$ is \([-0.5, 2.0]\).
 
 
-// Note that the reason for computing the bounds from the zonotope representation is to determine \emph{stable neurons} as described in~\autoref{sec:pre-relu-bounds}. If the lower bound is non-negative, ReLU will be active; if the upper bound is non-positive,  ReLU will be inactive. In these cases, ReLU can be simplified to either the identity function or zero, respectively, which helps reduce overapproximation in subsequent layers.
+// Note that the reason for computing the bounds from the zonotope representation is to determine \emph{stable neurons} as described in~@sec:pre-relu-bounds. If the lower bound is non-negative, ReLU will be active; if the upper bound is non-positive,  ReLU will be inactive. In these cases, ReLU can be simplified to either the identity function or zero, respectively, which helps reduce overapproximation in subsequent layers.
 
-// For this simple example, both interval (\autoref{sec:interval-affine-transformer}) and zonotope abstractions yield identical bounds \([-0.5, 2.0]\).
+// For this simple example, both interval (@sec:interval-affine-transformer) and zonotope abstractions yield identical bounds \([-0.5, 2.0]\).
 // The benefit of zonotopes becomes clear in deeper layers, where they preserve linear correlations that interval abstractions lose.
 // \end{example}
 
 // \begin{problem <prob:zonotope_linear_example_x4}
-//      Compute the bounds for \(x_4\) in~\autoref{fig:dnn-abs} using zonotope abstraction, with inputs \(x_1 in [1, 2]\) and \(x_2 in [-1, 3]\), and the affine function for \(x_4\) is:
+//      Compute the bounds for \(x_4\) in~@fig:dnn-abs using zonotope abstraction, with inputs \(x_1 in [1, 2]\) and \(x_2 in [-1, 3]\), and the affine function for \(x_4\) is:
 // \[
 // f(x_1,x_2) = 0.5x_1 -0.5x_2 - 1
 // \]
@@ -4402,8 +4367,8 @@ Our abstract domains, e.g., interval, zonotope, and polytopes, are all geometric
 // \end{itemize}
 
 // \paragraph{Building parallelogram}
-// % Given the input zonotope  $x =  {(c + \sum_{i=1}^m \epsilon_i g_i) \mid \epsilon_i in [-1,1] }$ with $x$ ranging over \([l, u]\) where \(l < 0 < u\) (i.e., the unstable case), we construct a parallelogram that bounds the ReLU function over this interval. We capture the parallelogram using two linear constraints representing its upper and lower edges as shown in~\autoref{fig:relu-parallelogram}.
-// Given the input zonotope  $x =  {(c + \sum_{i=1}^n \epsilon_i g_i) \mid \epsilon_i in [-1,1] }$ with $x$ ranging over \([l, u]\) where \(l < 0 < u\) (i.e., the unstable case), we construct a parallelogram that bounds  ReLU over this interval. We construct the parallelogram using two linear constraints representing its upper and lower edges as shown in~\autoref{fig:relu-parallelogram}.
+// % Given the input zonotope  $x =  {(c + \sum_{i=1}^m \epsilon_i g_i) \mid \epsilon_i in [-1,1] }$ with $x$ ranging over \([l, u]\) where \(l < 0 < u\) (i.e., the unstable case), we construct a parallelogram that bounds the ReLU function over this interval. We capture the parallelogram using two linear constraints representing its upper and lower edges as shown in~@fig:relu-parallelogram.
+// Given the input zonotope  $x =  {(c + \sum_{i=1}^n \epsilon_i g_i) \mid \epsilon_i in [-1,1] }$ with $x$ ranging over \([l, u]\) where \(l < 0 < u\) (i.e., the unstable case), we construct a parallelogram that bounds  ReLU over this interval. We construct the parallelogram using two linear constraints representing its upper and lower edges as shown in~@fig:relu-parallelogram.
 
 // \begin{figure}
 //     \centering
@@ -4443,13 +4408,13 @@ Our abstract domains, e.g., interval, zonotope, and polytopes, are all geometric
 
 
 // \begin{example}[ReLU on zonotope]\label{ex:zonotope_relu_example}
-// Continuing from~\autoref{ex:zonotope_linear_example}, applying ReLU to the zonotope output of \(x_3\)
+// Continuing from~@ex:zonotope_linear_example, applying ReLU to the zonotope output of \(x_3\)
 
 // \[
 // x_3 = 0.75 + \epsilon_1(-0.25) + \epsilon_2(1.0), quad \epsilon_1, \epsilon_2 in [-1,1].
 // \]
 
-// \textbf{Determine the bounds of the input zonotope} As shown in~\autoref{ex:zonotope_linear_example}, the output zonotope (before ReLU) has bounds \([-0.5, 2.0]\).   So the input zonotope to ReLU has bounds \([-0.5, 2.0]\). Since \(l = -0.5 < 0 < 2.0 = u\), this is an unstable neuron requiring over-approximation.
+// \textbf{Determine the bounds of the input zonotope} As shown in~@ex:zonotope_linear_example, the output zonotope (before ReLU) has bounds \([-0.5, 2.0]\).   So the input zonotope to ReLU has bounds \([-0.5, 2.0]\). Since \(l = -0.5 < 0 < 2.0 = u\), this is an unstable neuron requiring over-approximation.
 
 // \textbf{Approximate Slope}
 // We compute the slope of the upper bound line of the parallelogram (which connects points \((-0.5, 0)\) and \((2.0, 2.0)\)):
@@ -4641,9 +4606,9 @@ Our abstract domains, e.g., interval, zonotope, and polytopes, are all geometric
 
 // % \subsection{Example}
 
-// % Consider again the DNN in~\autoref{fig:dnn}. Suppose the input set is defined by box constraints \(x_1 in [-1,1]\) and \(x_2 in [-2,2]\). These can be represented initially by 4 inequalities.
+// % Consider again the DNN in~@fig:dnn. Suppose the input set is defined by box constraints \(x_1 in [-1,1]\) and \(x_2 in [-2,2]\). These can be represented initially by 4 inequalities.
 
-// % Applying the affine transformation for the hidden layer, we obtain a new set of inequalities describing the hidden layer nodes. Upon applying ReLU, we would use the convex polyhedral relaxation as depicted in~\autoref{fig:3_lines_polytope}. The output layer similarly results from affine operations on the polyhedra describing the hidden layer.
+// % Applying the affine transformation for the hidden layer, we obtain a new set of inequalities describing the hidden layer nodes. Upon applying ReLU, we would use the convex polyhedral relaxation as depicted in~@fig:3_lines_polytope. The output layer similarly results from affine operations on the polyhedra describing the hidden layer.
 
 // % In a DeepPoly setting, instead of carrying full inequalities, we track only the lower and upper affine bounds per neuron, leading to an efficient verification process.
 
@@ -4683,7 +4648,7 @@ Our abstract domains, e.g., interval, zonotope, and polytopes, are all geometric
 // %     \caption{Feed-forward neural network with 6 layers and 2 neurons per layer.}
 // %     \label{fig:interval-network}
 // % \end{figure}
-// % In~\autoref{fig:interval-network}, we aim to verify whether \(x_{11}\ >=\ x_{12}\) given a bounded input range on \(x_1\) and \(x_2\). To do this using interval abstraction, we propagate intervals layer by layer.
+// % In~@fig:interval-network, we aim to verify whether \(x_{11}\ >=\ x_{12}\) given a bounded input range on \(x_1\) and \(x_2\). To do this using interval abstraction, we propagate intervals layer by layer.
 
 // % Suppose the inputs \(x_1\) and \(x_2\) satisfy:
 // % \[
@@ -5005,17 +4970,17 @@ It then calls $"Deduce"$ to _quickly_ determine if the current problem, i.e., th
 
 // If the computed bounds indicate that no counterexample can exist, e.g., the lower bound of the output is greater than 0 when checking $y < 0$, then the problem is \emph{infeasible}. Otherwise, the problem is \emph{potentially feasible} (because the bounds are over-approximations).
 
-// (Note that we do this even on the empty activation pattern, which is the initial state of the search, because the problem might be trivially infeasible, in which case we can exit and return \unsat{} immediately (\autoref{line:babunsat}).)
+// (Note that we do this even on the empty activation pattern, which is the initial state of the search, because the problem might be trivially infeasible, in which case we can exit and return \unsat{} immediately (@line:babunsat).)
 // \begin{itemize}
 
-// \item If \Deduce determines that the problem is infeasible, \bab{} discards the current processing activation pattern and loops back (to~\autoref{line:babstart}) to process the next activation pattern. In other words, it prunes the current search branch with activation pattern $sigma_i$.
-// When there are no more activation patterns to process, \bab{} returns \unsat{} (\autoref{line:babunsat}), indicating that it cannot find counterexamples and the property is valid.
+// \item If \Deduce determines that the problem is infeasible, \bab{} discards the current processing activation pattern and loops back (to~@line:babstart) to process the next activation pattern. In other words, it prunes the current search branch with activation pattern $sigma_i$.
+// When there are no more activation patterns to process, \bab{} returns \unsat{} (@line:babunsat), indicating that it cannot find counterexamples and the property is valid.
 
 
-// \item If \Deduce determines that the problem is feasible, \bab{} checks the satisfiability of the problem using an LP solver (\autoref{line:bablp})\footnote{The problem is formulated as a MILP problem as described in~\autoref{sec:using-milp} and checked using an LP solver. Note that we use LP and MILP interchangeably here for simplicity. In practice, most LP solvers such as Gurobi handles MILP problems as well. Just like SMT solvers handle both SAT and SMT problems.}. If the solver finds a satisfying assignment, it returns \sat{} and the counterexample represented by the satisfying assignment (\autoref{line:babsat}), indicating that the property is invalid.
-// Otherwise, \mycode{LP} returns unsatisfiable, and \bab{} calls \Decide to select a neuron $v_i$ to split, i.e., to fix the activation status of $v_i$ as either active or inactive (\autoref{line:babdecide}).  This means the problem is split into two independent subproblems: one with $v_i$ (active) and the other with $\overline{v_i}$ (inactive).
+// \item If \Deduce determines that the problem is feasible, \bab{} checks the satisfiability of the problem using an LP solver (@line:bablp)\footnote{The problem is formulated as a MILP problem as described in~@sec:using-milp and checked using an LP solver. Note that we use LP and MILP interchangeably here for simplicity. In practice, most LP solvers such as Gurobi handles MILP problems as well. Just like SMT solvers handle both SAT and SMT problems.}. If the solver finds a satisfying assignment, it returns \sat{} and the counterexample represented by the satisfying assignment (@line:babsat), indicating that the property is invalid.
+// Otherwise, \mycode{LP} returns unsatisfiable, and \bab{} calls \Decide to select a neuron $v_i$ to split, i.e., to fix the activation status of $v_i$ as either active or inactive (@line:babdecide).  This means the problem is split into two independent subproblems: one with $v_i$ (active) and the other with $\overline{v_i}$ (inactive).
 // By splitting (or fixing the neuron status), we create two \emph{simpler} subproblems (less neurons to abstract) that are easier to solve. Thus, this step \emph{refines} the precision of abstract interpretation.
-// \bab{} then adds the two new activation patterns $sigma_i \land v_i$ and $sigma_i \land \overline{v_i}$ to $"ActPatterns"$s. \bab{} then loops back to~\autoref{line:babstart} to process the next activation pattern.
+// \bab{} then adds the two new activation patterns $sigma_i \land v_i$ and $sigma_i \land \overline{v_i}$ to $"ActPatterns"$s. \bab{} then loops back to~@line:babstart to process the next activation pattern.
 // \end{itemize}
 
 
@@ -5031,14 +4996,14 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 
 
 
-// %To add proof generation capability, \bab{} is instrumented with a proof tree (\texttt{proof}) variable (\autoref{line:prooftree}) to record these branching decisions. The proof is represented as a binary tree structure, where each node represents a neuron and its left and right edges represent its activation decision (active or inactive). %The proof tree is then used to generate a proof in the \prooflang{} format (\autoref{sec:proof-format}).
+// %To add proof generation capability, \bab{} is instrumented with a proof tree (\texttt{proof}) variable (@line:prooftree) to record these branching decisions. The proof is represented as a binary tree structure, where each node represents a neuron and its left and right edges represent its activation decision (active or inactive). %The proof tree is then used to generate a proof in the \prooflang{} format (@sec:proof-format).
 
 
 
 
 
 // \begin{example <ex:bab}
-// \autoref{fig:bab-example}a illustrates a network and how \bab{} verifies that this network has the property
+// @fig:bab-examplea illustrates a network and how \bab{} verifies that this network has the property
 // \[
 // (x_1, x_2) in [-2.0, 2.0] \times [-1.0, 1,0] \Rightarrow (y_1 > y_2),
 // \]
@@ -5057,7 +5022,7 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 //              in cludegraphics[width=\linewidth]{figure/proof_tree.pdf}
 //             \caption*{(b)}
 //         \end{minipage}
-//         \caption{(a) A simple network  (similar to~\autoref{fig:proofnet}), and (b) BaB search tree. White nodes correspond to \bab{} neuron splitting. Red nodes correspond to leaf nodes where \bab{}determines infeasibility and prunes the branch.}
+//         \caption{(a) A simple network  (similar to~@fig:proofnet), and (b) BaB search tree. White nodes correspond to \bab{} neuron splitting. Red nodes correspond to leaf nodes where \bab{}determines infeasibility and prunes the branch.}
 //         \label{fig:bab-example}
 //     \end{minipage}
 // \end{figure}
@@ -5089,17 +5054,17 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 // \item \textbf{Fifth iteration.}~Finally, \bab{} has no more activation patterns in $"ActPatterns"$s, stops the search, and returns \unsat{}, indicating that the property is valid.
 // \end{enumerate}
 
-// \autoref{fig:bab-example}b illustrates the BaB search tree corresponding to the above process. Each white node represents a branching decision where \bab{} splits a neuron, while each red node represents a leaf node where \Deduce determines infeasibility and prunes the branch. Notice that not all activation patterns are explored because some branches are pruned early due to infeasibility. In other words, while there are $2^4=16$ possible complete activation patterns for the three ReLU neurons, \bab{} only explores 6 of them in this example.
+// @fig:bab-exampleb illustrates the BaB search tree corresponding to the above process. Each white node represents a branching decision where \bab{} splits a neuron, while each red node represents a leaf node where \Deduce determines infeasibility and prunes the branch. Notice that not all activation patterns are explored because some branches are pruned early due to infeasibility. In other words, while there are $2^4=16$ possible complete activation patterns for the three ReLU neurons, \bab{} only explores 6 of them in this example.
 // \end{example}
 
 
 // \begin{problem <prob:bab-detailed>
-// Do~\autoref{ex:bab} but come up with concrete values for each step, e.g., what are the bounds computed by \Deduce, what does \mycode{LP} return, etc to illustrate the process in more detail.
+// Do~@ex:bab but come up with concrete values for each step, e.g., what are the bounds computed by \Deduce, what does \mycode{LP} return, etc to illustrate the process in more detail.
 // \end{problem}
 
 
 // \begin{problem <prob:bab-counterexample>
-// Do~\autoref{ex:bab} again but make the property is invalid and find a counterexample. It is also OK to change the problem, e.g., the input bounds or the property itself, to make it invalid.
+// Do~@ex:bab again but make the property is invalid and find a counterexample. It is also OK to change the problem, e.g., the input bounds or the property itself, to make it invalid.
 // \end{problem}
 
 
@@ -5107,10 +5072,10 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 // \begin{figure}
 // \centering
 // \mydnn{1}
-// \caption{\label{fig:dnn-bab}A simple network (similar to~\autoref{fig:dnn}).}
+// \caption{\label{fig:dnn-bab}A simple network (similar to~@fig:dnn).}
 // \end{figure}
 
-// Apply BaB on the network in \autoref{fig:dnn-bab} to verify the property $x_5 > 0$ for any inputs $x_1 in [-1,1], x_2 in [-2,2]$.  Use interval abstraction to compute bounds. For LP solving, you can use any LP solver or solve it manually. Show all steps, e.g., iterations, activation patterns, bounds computed, LP results, etc.
+// Apply BaB on the network in @fig:dnn-bab to verify the property $x_5 > 0$ for any inputs $x_1 in [-1,1], x_2 in [-2,2]$.  Use interval abstraction to compute bounds. For LP solving, you can use any LP solver or solve it manually. Show all steps, e.g., iterations, activation patterns, bounds computed, LP results, etc.
 
 // \end{problem}
 
@@ -5119,19 +5084,19 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 // Test your understanding of BaB and activation patterns by answering the following questions:
 // \begin{enumerate}
 
-//   \item In \autoref{alg:bab}, what happens if \Deduce always returns infeasible?
+//   \item In @alg:bab, what happens if \Deduce always returns infeasible?
 //   \item What happens if \Deduce always returns feasible but \mycode{LP} always returns satisfiable?
 //   \item What is the maximum number of activation patterns that \bab{} may need to explore in the worst case for a network with $m$ ReLU neurons?
 //   \item What is the minimum number of activation patterns that \bab{} may need to explore in the best case for a network with $m$ ReLU neurons? What are these patterns?
 // \end{enumerate}
 // \end{problem}
 
-// \subsection{Beyond the Basic} What described above is the basic and minimal BaB algorithm. Modern NNV tools implement many optimizations and strategies to improve the performance of the search. For example, they apply various engineering tricks to eliminate easy cases or find easy counterexamples (\autoref{chap:adversarial-attacks}) before running the full BaB search.
+// \subsection{Beyond the Basic} What described above is the basic and minimal BaB algorithm. Modern NNV tools implement many optimizations and strategies to improve the performance of the search. For example, they apply various engineering tricks to eliminate easy cases or find easy counterexamples (@chap:adversarial-attacks) before running the full BaB search.
 
 
-// Even the BaB search itself is optimized to avoid exploring the entire search space. For example, if \Deduce step determines infeasibility, a smarter \bab{} variant (e.g., the \neuralsat{} tool) can analyze the conflict and add a new clause to the set of clauses (\texttt{clauses}) to prevent the same activation pattern from being selected again. This is similar to conflict-driven clause learning (CDCL) in modern SAT solvers and is implemented in the \neuralsat{} NNV tool~\cite{duong2025neuralsat}. In addition, heuristics are also used to select, e.g., which neuron to split next (\Decide). We explore these optimizations and strategies in later chapters (e.g.,~\autoref{chap:neuralsat}).
+// Even the BaB search itself is optimized to avoid exploring the entire search space. For example, if \Deduce step determines infeasibility, a smarter \bab{} variant (e.g., the \neuralsat{} tool) can analyze the conflict and add a new clause to the set of clauses (\texttt{clauses}) to prevent the same activation pattern from being selected again. This is similar to conflict-driven clause learning (CDCL) in modern SAT solvers and is implemented in the \neuralsat{} NNV tool~\cite{duong2025neuralsat}. In addition, heuristics are also used to select, e.g., which neuron to split next (\Decide). We explore these optimizations and strategies in later chapters (e.g.,~@chap:neuralsat).
 
-// % \tvn{TODO: this basic BaB is also used to create a proof tree, which is used to generate a proof in the \prooflang{} format. We will discuss this in~\autoref{chapter:proof-gen-check}.}
+// % \tvn{TODO: this basic BaB is also used to create a proof tree, which is used to generate a proof in the \prooflang{} format. We will discuss this in~@chapter:proof-gen-check.}
 
 
 
@@ -5140,10 +5105,10 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 = Adversarial Attacks <chap:adversarial-attacks>
 
 
-// A full branch and bound (BaB) search (\autoref{chap:bab}) is typically expensive and slow on large networks. Thus most NNV tools implement optimizations to improve performance. A common optimization is to use \emph{adversarial attack} techniques to find counterexamples before running BaB.
-// Examples of such techniques include randomized attacks~\cite{das2021fast} and gradient-based attacks~\cite{madry2017towards}, described in \autoref{chap:adversarial-attacks}.
+// A full branch and bound (BaB) search (@chap:bab) is typically expensive and slow on large networks. Thus most NNV tools implement optimizations to improve performance. A common optimization is to use \emph{adversarial attack} techniques to find counterexamples before running BaB.
+// Examples of such techniques include randomized attacks~\cite{das2021fast} and gradient-based attacks~\cite{madry2017towards}, described in @chap:adversarial-attacks.
 
-// Thus, modern verification tools have two phases: (i) attempt to \emph{falsify} the property with adversarial attacks, and (ii) if no counterexample is found, attempt to \emph{verify} the property using search algorithms such as \bab{} (\autoref{chap:bab}). Of course, during the verification phase, the verifier may also discover counterexamples that the falsify phase misses.
+// Thus, modern verification tools have two phases: (i) attempt to \emph{falsify} the property with adversarial attacks, and (ii) if no counterexample is found, attempt to \emph{verify} the property using search algorithms such as \bab{} (@chap:bab). Of course, during the verification phase, the verifier may also discover counterexamples that the falsify phase misses.
 
 
 //  == Random Search Attack}
@@ -5201,7 +5166,7 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 
 // Specifically, at each step PGD computes the gradient of the network output with respect to the input and takes a small gradient-descent step that pushes the input toward a stronger property violation. Next, PGD \emph{projects} (clips) the updated input back into the allowed domain if the step goes outside the input bounds.
 
-// We will reuse~\autoref{ex:random-search} to illustrate PGD. Here,  the network input ranges are $-1 <=q x_1 <=q 1,~-2 <=q x_2 <=q 2$, and the output is $y = 2x_1 - 1.5x_2 + 1$, and the goal is to find a counterexample that satisfies the input ranges and produces $y <=q 0$.
+// We will reuse~@ex:random-search to illustrate PGD. Here,  the network input ranges are $-1 <=q x_1 <=q 1,~-2 <=q x_2 <=q 2$, and the output is $y = 2x_1 - 1.5x_2 + 1$, and the goal is to find a counterexample that satisfies the input ranges and produces $y <=q 0$.
 
 
 // \begin{enumerate}
@@ -5491,9 +5456,9 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 //     \caption{The \proofgen{} NNV tool with proof generation. <alg:bab-proof}
 // \end{algorithm}
 
-// Recall that the BaB algorithm, shown in~~\autoref{alg:bab}, splits the problem into smaller subproblems and use abstraction to compute bounds to prune the search space. This structure allows us to bring proof generation capabilities with minimal overhead to existing NNV tools that use BaB.
+// Recall that the BaB algorithm, shown in~~@alg:bab, splits the problem into smaller subproblems and use abstraction to compute bounds to prune the search space. This structure allows us to bring proof generation capabilities with minimal overhead to existing NNV tools that use BaB.
 
-// \autoref{alg:bab-proof} extends~\autoref{alg:bab} to show \proofgen, a BaB-based NNV algorithm with proof generation capability. The key idea is to introduce a \textbf{proof tree} (\autoref{line:prooftree}) and recording the branching decisions to it (\autoref{line:record_proof}).
+// @alg:bab-proof extends~@alg:bab to show \proofgen, a BaB-based NNV algorithm with proof generation capability. The key idea is to introduce a \textbf{proof tree} (@line:prooftree) and recording the branching decisions to it (@line:record_proof).
 // Thus, the proof tree has a binary structure, where each node represents a neuron and its left and right edges represent its activation decision (active or inactive).
 // At the end of the verification process, the proof tree is returned as the proof of \unsat{} result.
 
@@ -5515,15 +5480,15 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 //              in cludegraphics[width=\linewidth]{figure/proof_tree.pdf}
 //             \caption*{(b)}
 //         \end{minipage}
-//         \caption{(a) A simple network  (similar to~\autoref{fig:proofnet}), and (b) A proof tree produced by \proofgen{}. White nodes correspond to \bab{} neuron splitting. Red nodes correspond to leaf nodes where \bab{} determines infeasibility and prunes the branch.}
+//         \caption{(a) A simple network  (similar to~@fig:proofnet), and (b) A proof tree produced by \proofgen{}. White nodes correspond to \bab{} neuron splitting. Red nodes correspond to leaf nodes where \bab{} determines infeasibility and prunes the branch.}
 //         \label{fig:proof-example}
 //     \end{minipage}
 // \end{figure}
 
 
-// We reuse the example in~\autoref{ex:bab} to illustrate \proofgen{}. Recall the goal is to verify that the network in~\autoref{fig:proof-example}(a) has the property $(x_1, x_2) in [-2.0, 2.0] \times [-1.0, 1,0] \Rightarrow (y_1 > y_2)$.
+// We reuse the example in~@ex:bab to illustrate \proofgen{}. Recall the goal is to verify that the network in~@fig:proof-example(a) has the property $(x_1, x_2) in [-2.0, 2.0] \times [-1.0, 1,0] \Rightarrow (y_1 > y_2)$.
 
-// For this problem \proofgen{} generates the proof tree in~\autoref{fig:proof-example}(b) to show unsatisfiability, i.e., the property is valid. \proofgen{} first splits neuron $v_4$, creating two subproblems: one with $v_4$ active and the other with $v_4$ inactive (split node 1). The inactive $v_4$ subproblem is determined to be unsatisfiable (leaf node 3). The active $v_4$ subproblem is further split on $v_2$ (split node 2). The inactive $v_2$ subproblem is determined to be unsatisfiable (leaf node 5). The active $v_2$ subproblem is further split on $v_1$ (split node 4). Both the active and inactive $v_1$ subproblems are determined to be unsatisfiable (leaf nodes 6 and 7). Since all branches lead to unsatisfiability, the property is valid.
+// For this problem \proofgen{} generates the proof tree in~@fig:proof-example(b) to show unsatisfiability, i.e., the property is valid. \proofgen{} first splits neuron $v_4$, creating two subproblems: one with $v_4$ active and the other with $v_4$ inactive (split node 1). The inactive $v_4$ subproblem is determined to be unsatisfiable (leaf node 3). The active $v_4$ subproblem is further split on $v_2$ (split node 2). The inactive $v_2$ subproblem is determined to be unsatisfiable (leaf node 5). The active $v_2$ subproblem is further split on $v_1$ (split node 4). Both the active and inactive $v_1$ subproblems are determined to be unsatisfiable (leaf nodes 6 and 7). Since all branches lead to unsatisfiability, the property is valid.
 
 // \end{example}
 
@@ -5564,7 +5529,7 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 
 // \paragraph{Do the following:}
 // \begin{enumerate}
-//     \item Draw the \emph{proof tree} for this verification process, labeling each split node with the neuron being split (e.g., $x_3$ or $x_4$), etc like in \autoref{fig:proof-example}(b).
+//     \item Draw the \emph{proof tree} for this verification process, labeling each split node with the neuron being split (e.g., $x_3$ or $x_4$), etc like in @fig:proof-example(b).
 
 //     \item For each split, explain:
 //     \begin{itemize}
@@ -5648,7 +5613,7 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 //         (>= N_4 0)
 //     )))
 // \end{lstlisting}
-// \caption{\prooflang{} example format of the proof tree in~\autoref{fig:proof-example}b.
+// \caption{\prooflang{} example format of the proof tree in~@fig:proof-exampleb.
 // }
 // \label{fig:proof_example}
 // \end{minipage}
@@ -5660,28 +5625,28 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 // be efficiently and independently processed by proof checkers.
 
 // The proof language \prooflang{} is designed to meet these requirements.
-// \prooflang{} is inspired by the SMTLIB format~\cite{barrett2010smt} used for SMT solving, which has also been adopted by the  VNNLIB language~\cite{vnnlib} to specify neural networks and their properties for verification (see~\autoref{sec:vnnlib} for examples).
+// \prooflang{} is inspired by the SMTLIB format~\cite{barrett2010smt} used for SMT solving, which has also been adopted by the  VNNLIB language~\cite{vnnlib} to specify neural networks and their properties for verification (see~@sec:vnnlib for examples).
 
-// %accepted by our proof check algorithm (\autoref{sec:proof-checker}
+// %accepted by our proof check algorithm (@sec:proof-checker
 
-// \autoref{fig:grammar} outlines the \prooflang{} syntax and grammar, represented as production rules.
+// @fig:grammar outlines the \prooflang{} syntax and grammar, represented as production rules.
 // A proof is composed of \textit{declarations} and \textit{assertions}. Declarations define the variables and their types within the proof. Specifically, \textit{input variables} (prefixed with \mycode{X}) and \textit{output variables} (prefixed with \mycode{Y}) are declared as real numbers, representing the inputs and outputs of the neural network, respectively. Additionally, \textit{hidden variables}, which correspond to internal nodes of the neural network, are declared with specific piece-wise linear (PWL) activation functions, such as ReLU or Leaky ReLU.
 // Assertions are logical statements that specify the conditions or properties that must hold within the proof. Assertions over input variables are \emph{preconditions} and those over output variables are \emph{post-conditions}. %Each assertion is composed of a \textit{formula}, which can involve terms and logical operators. Formulas include simple comparisons between terms (e.g., less than, greater than) or more complex logical combinations using \mycode{and} and \mycode{or} operators. The terms used in these formulas can be input variables, output variables, hidden variables, or constants.
 
 // %\begin{figure}
 // %\end{figure}
 
-// %\autoref{fig:proof_example} shows an example of a proof in \prooflang{} using the network in~\autoref{fig:example}a.
+// %@fig:proof_example shows an example of a proof in \prooflang{} using the network in~@fig:examplea.
 
 // The \texttt{declare-*} statements declare input, output, and hidden variables, while the \texttt{assert} statements specify the constraints on these variables (i.e., the pre and postcondition of the desired property).
 // The hidden constraints represent the activation patterns of the hidden neurons in the network (i.e., the proof tree). Each \texttt{and} statement represents a tree path that represents an activation pattern.
 
 // \begin{example}
-//     The proof in~\autoref{fig:proof_example} corresponds to the proof tree in~\autoref{fig:proof-example}b. The statement \texttt{(and (< N\_4 0))} corresponds to the rightmost path of the tree with $\overline{v_4}$ decision (leaf 3).  The statement \texttt{(and (< N\_2 0) (>= N\_4 0))} corresponds to the path with $v_4 \land \overline{v_2}$ (leaf 5).
+//     The proof in~@fig:proof_example corresponds to the proof tree in~@fig:proof-exampleb. The statement \texttt{(and (< N\_4 0))} corresponds to the rightmost path of the tree with $\overline{v_4}$ decision (leaf 3).  The statement \texttt{(and (< N\_2 0) (>= N\_4 0))} corresponds to the path with $v_4 \land \overline{v_2}$ (leaf 5).
 // \end{example}
 
 // The \prooflang{} language is intentionally designed to (a) not explicitly include weights/bias terms to minimize size of the proof structure, and (b) explicitly reflect a DNF structure to enable easy parallelization.
-// The network weights and bias terms are readily available in the standard ONNX~\cite{onnx} format, which is typically used to represent the network input to a \proofgen{}-based NNV tool and can be accessed by any \prooflang{} checker like the one described next in~\autoref{sec:proofchecking}.
+// The network weights and bias terms are readily available in the standard ONNX~\cite{onnx} format, which is typically used to represent the network input to a \proofgen{}-based NNV tool and can be accessed by any \prooflang{} checker like the one described next in~@sec:proofchecking.
 
 
 //  == Proof Checker <sec:proofchecking}
@@ -5692,7 +5657,7 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 // \subsection{The Core \proofcheck{} Algorithm}
 
 // The goal of \proofcheck{} is to verify that the \prooflang{} tree generated by an NNV tool is correct (i.e., the proof tree is a proof of unsatisfiability of the NNV problem).
-// \proofcheck{} thus must verify that the constraint represented by each \emph{leaf} node in the proof tree is unsatisfiable. To check each node, \proofcheck{} forms an MILP problem (\autoref{sec:using-milp}) consisting of the constraint in~\autoref{eq:nnv2} (the network, the input condition, and the negation of the output) with the constraints representing the activation pattern encoded by the tree path to the leaf node. \proofcheck{} then invokes an LP solver to check that the MILP problem is infeasible, which indicates unsatisfiability of the leaf node.
+// \proofcheck{} thus must verify that the constraint represented by each \emph{leaf} node in the proof tree is unsatisfiable. To check each node, \proofcheck{} forms an MILP problem (@sec:using-milp) consisting of the constraint in~@eq:nnv2 (the network, the input condition, and the negation of the output) with the constraints representing the activation pattern encoded by the tree path to the leaf node. \proofcheck{} then invokes an LP solver to check that the MILP problem is infeasible, which indicates unsatisfiability of the leaf node.
 
 // \begin{algorithm}[t]
 //     \small
@@ -5757,18 +5722,18 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 // \end{algorithm}
 
 
-// \autoref{fig:algorithm} shows a minimal (core)  \proofcheck{} algorithm, which takes as input a network $cal(N)$, a property $phi_"in" \Rightarrow phi_"out"$, a proof tree $\prooftree$, and returns \certified if the proof tree is valid and \uncertified otherwise.
-// \proofcheck{} first checks the validity of the proof tree (\autoref{line:build_model}), i.e., the input must represent a proper \prooflang{} proof tree (\autoref{sec:prooflang}).
+// @fig:algorithm shows a minimal (core)  \proofcheck{} algorithm, which takes as input a network $cal(N)$, a property $phi_"in" \Rightarrow phi_"out"$, a proof tree $\prooftree$, and returns \certified if the proof tree is valid and \uncertified otherwise.
+// \proofcheck{} first checks the validity of the proof tree (@line:build_model), i.e., the input must represent a proper \prooflang{} proof tree (@sec:prooflang).
 // If the proof tree is invalid, \proofcheck{} raises an error.
-// \proofcheck{} next creates a MILP model (\autoref{line:build_model}) representing the input. % (\autoref{sec:neuron-stabelization}).
-// \proofcheck{} then enters a loop (\autoref{line:proof_loop}) that selects a (random) leaf node from the proof tree (\autoref{line:select}) and adds its MILP constraint to the model (\autoref{line:add_proof_leaf_constrs}). It then checks the model using an LP solver to determine whether the leaf node is unsatisfiable. If the LP solver returns feasibility, \proofcheck{} returns \uncertified, i.e., it cannot verify the input proof tree.
+// \proofcheck{} next creates a MILP model (@line:build_model) representing the input. % (@sec:neuron-stabelization).
+// \proofcheck{} then enters a loop (@line:proof_loop) that selects a (random) leaf node from the proof tree (@line:select) and adds its MILP constraint to the model (@line:add_proof_leaf_constrs). It then checks the model using an LP solver to determine whether the leaf node is unsatisfiable. If the LP solver returns feasibility, \proofcheck{} returns \uncertified, i.e., it cannot verify the input proof tree.
 // \proofcheck{} continues until all leaf nodes are checked and returns \certified, indicating the proof tree is valid.
 
 
 
 // \begin{example}
-//     For the \prooflang{} proof in~\autoref{fig:proof_example}, we check that the four leaf nodes 3, 5, 6, and 7 of the proof tree in~\autoref{fig:proof-example}b are unsatisfiability. Assume \proofcheck{} first selects node 3, it forms the MILP problem for leaf node 3 by conjoining the constraint representing $0.6v_1 + 0.9v_2 - 0.1 <= 0$ (i.e., $\overline{v_4}$) %\tvn{Hai check}\hd{by setting $a_1^{(2)}=0$ representing that $ hat(z)_1^{(2)} <= 0$ (see~\autoref{eq:mip}e) or \emph{implicitly} conjoining the inequality $0.6 hat(z)^{(1)}_0 + 0.9 hat(z)^{(1)}_1 - 0.1 <= 0$ (or ${z}_1^{(2)} <= 0$), where $ hat(z)^{(1)}_0$, $ hat(z)^{(1)}_1$ represent the outputs of $v_1$ and $v_2$, respectively.}
-// with the constraints in~\autoref{eq:nnv2} representing the input ranges and the network with the objective of optimizing the output. \proofcheck{} then invokes an LP solver, which determines that this MILP is infeasible, i.e., leaf node 3 indeed leads to unsatisfiability.
+//     For the \prooflang{} proof in~@fig:proof_example, we check that the four leaf nodes 3, 5, 6, and 7 of the proof tree in~@fig:proof-exampleb are unsatisfiability. Assume \proofcheck{} first selects node 3, it forms the MILP problem for leaf node 3 by conjoining the constraint representing $0.6v_1 + 0.9v_2 - 0.1 <= 0$ (i.e., $\overline{v_4}$) %\tvn{Hai check}\hd{by setting $a_1^{(2)}=0$ representing that $ hat(z)_1^{(2)} <= 0$ (see~@eq:mipe) or \emph{implicitly} conjoining the inequality $0.6 hat(z)^{(1)}_0 + 0.9 hat(z)^{(1)}_1 - 0.1 <= 0$ (or ${z}_1^{(2)} <= 0$), where $ hat(z)^{(1)}_0$, $ hat(z)^{(1)}_1$ represent the outputs of $v_1$ and $v_2$, respectively.}
+// with the constraints in~@eq:nnv2 representing the input ranges and the network with the objective of optimizing the output. \proofcheck{} then invokes an LP solver, which determines that this MILP is infeasible, i.e., leaf node 3 indeed leads to unsatisfiability.
 
 // \proofcheck{} continues this process for the other three leaf nodes and returns \certified as all leaf nodes are unsatisfiable.
 // \end{example}
@@ -5799,14 +5764,14 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 
 // % \subsubsection{Correctness <sec:checker-core-correctness}
 
-// % ~\autoref{fig:algorithm} returns \certified iff the input \prooflang{} proof tree is unsatisfiable. This proof tree encodes a disjunction of constraints, one per tree path, where each constraint represents an activation pattern of the network (the leaf node). The algorithm checks each constraint using LP solving and only returns certified iff every one of them is unsatisfiable.
-// % %Moreover, while pruning optimization (\autoref{sec:pruning}) in~\autoref{fig:algorithm} allows the checker to skip children nodes if the parent node is unsatisfiable, this is still sound because the structure of the proof tree guarantees that the constraints of a child is more restricted its parent, and thus if the parent node is unsatisfiable, the children nodes must also be unsatisfiable. The algorithm  terminates because the proof tree (or the DNF) is finite and the checker will eventually check all nodes.
+// % ~@fig:algorithm returns \certified iff the input \prooflang{} proof tree is unsatisfiable. This proof tree encodes a disjunction of constraints, one per tree path, where each constraint represents an activation pattern of the network (the leaf node). The algorithm checks each constraint using LP solving and only returns certified iff every one of them is unsatisfiable.
+// % %Moreover, while pruning optimization (@sec:pruning) in~@fig:algorithm allows the checker to skip children nodes if the parent node is unsatisfiable, this is still sound because the structure of the proof tree guarantees that the constraints of a child is more restricted its parent, and thus if the parent node is unsatisfiable, the children nodes must also be unsatisfiable. The algorithm  terminates because the proof tree (or the DNF) is finite and the checker will eventually check all nodes.
 // % We note that this correctness argument assumes that the LP solver is correct -- in practice
 // % multiple solvers could be used to guard against errors in that component.  We note that
 // % it is standard for proof checkers to assume the correctness of a small set of external tools, e.g., checkers that use  theorem provers assume the correctness of the underlying prover~\cite{lammich2023grat}.
 
 // \subsection{Optimizations}
-// While the core \proofcheck{} algorithm in~\autoref{fig:algorithm} is minimal, it can be inefficicient for large proofs.
+// While the core \proofcheck{} algorithm in~@fig:algorithm is minimal, it can be inefficicient for large proofs.
 // \proofcheck{} employs several optimizations to improve its efficiency. These are crucial for checking large proof trees generated by NNV tools for challenging problems.
 
 // \paragraph{Neuron Stabilization}
@@ -5824,11 +5789,11 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 // %     \tcp{Add MILP constraints for each layer of network}
 // %     \For{$\layer ~in ~cal(N)$}{
 // %         \If{$\isPiecewiseLinear(\layer)$}{
-// %             \tcp{add constraints~\autoref{eq:mip2} (c), (d), (e)}
+// %             \tcp{add constraints~@eq:mip2 (c), (d), (e)}
 // %             $\model <=ftarrow \PiecewiseLinearMILP(\layer, phi_"in", phi_"out")$ \\ \label{line:create_pwl_layer}
 // %         }
 // %         \Else(\tcp*[h]{this layer is linear}){
-// %             \tcp{add constraints~\autoref{eq:mip2} (a), (b)}
+// %             \tcp{add constraints~@eq:mip2 (a), (b)}
 // %             $\model <=ftarrow \LinearMILP(\layer, phi_"in", phi_"out")$ \\ \label{line:create_linear_layer}
 
 // %             \tcp{estimate upper and lower bounds}
@@ -5873,18 +5838,18 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 // to determine neurons that are \emph{stable}, either active or inactive, for all inputs defined by the property pre-condition.
 // For all stable neurons, the disjunctive ReLU constraint is replaced with a linear constraint that represents the neuron's value.   This simplifies the MILP problem.
 
-// % \proofcheck{} uses the algorithm in~\autoref{fig:stabilize} to traverse the DNN and compute stable neurons. The algorithm initializes the MILP model with input constraints (\autoref{line:create_input}) and then iterates over each layer of the network.
-// % %follows the~\autoref{eq:mip} to create corresponding
-// % Next, for each layer, it creates constraints (\autoref{line:create_pwl_layer} or~\autoref{line:create_linear_layer}) depending on the layer type.
-// % Moreover,  it uses approximation to estimate bounds of neuron values to determine neuron stability (\autoref{line:estimate_bounds}).
-// % Next, it filters unstable neurons (\autoref{line:find_unstable}) and attempt to make them stable by optimizing either their lower ($\Maximize$) or upper ($\Minimize$) bounds.
+// % \proofcheck{} uses the algorithm in~@fig:stabilize to traverse the DNN and compute stable neurons. The algorithm initializes the MILP model with input constraints (@line:create_input) and then iterates over each layer of the network.
+// % %follows the~@eq:mip to create corresponding
+// % Next, for each layer, it creates constraints (@line:create_pwl_layer or~@line:create_linear_layer) depending on the layer type.
+// % Moreover,  it uses approximation to estimate bounds of neuron values to determine neuron stability (@line:estimate_bounds).
+// % Next, it filters unstable neurons (@line:find_unstable) and attempt to make them stable by optimizing either their lower ($\Maximize$) or upper ($\Minimize$) bounds.
 
 
 
 // \paragraph{Pruning Leaf Nodes}
 
 // Another optimization used is that \proofgen{} does not check child nodes if the parent node is unsatisfiable.
-// In a \prooflang{} proof tree, a child node adds constraints to the parent (e.g., node 6 adds the constraint of $v_1$ to node 4, which adds the constraint of $v_2$ to node 2 in~\autoref{fig:proof-example}b). Thus, if we determine that the constraint of the parent is unsatisfiable, we can skip the child nodes, which must also be unsatisfiable.
+// In a \prooflang{} proof tree, a child node adds constraints to the parent (e.g., node 6 adds the constraint of $v_1$ to node 4, which adds the constraint of $v_2$ to node 2 in~@fig:proof-exampleb). Thus, if we determine that the constraint of the parent is unsatisfiable, we can skip the child nodes, which must also be unsatisfiable.
 
 // %Simply checking parent nodes would actually increase MILP cost, because they have shorter tree paths and thus have a greater number of disjunctive constraints.
 
@@ -5926,11 +5891,11 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 // % verification optimizations.
 // % We focus our evaluation on the following research questions:
 
-// % \noindent\mbox{~~}\textbf{RQ1} (\autoref{sec:rq1}): How does \proofcheck{} perform and how does it compare prior work?
+// % \noindent\mbox{~~}\textbf{RQ1} (@sec:rq1): How does \proofcheck{} perform and how does it compare prior work?
 
-// % \noindent\mbox{~~}\textbf{RQ2} (\autoref{sec:rq2}): How does proof checking optimization improve performance?
+// % \noindent\mbox{~~}\textbf{RQ2} (@sec:rq2): How does proof checking optimization improve performance?
 
-// % \noindent\mbox{~~}\textbf{RQ3} (\autoref{sec:rq3}): How does proof checking performance vary with verification algorithms and optimizations?
+// % \noindent\mbox{~~}\textbf{RQ3} (@sec:rq3): How does proof checking performance vary with verification algorithms and optimizations?
 
 
 
@@ -6015,7 +5980,7 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 // % kernels, which generates complex constraints that can be challenging to solve.
 // % We adapt the smallest of the CIFAR2020 benchmarks, by varying the size of the
 // % convolutional kernels and the number of CNN layers, to produce
-// % the CNN benchmark in the second row of~\autoref{tab:benchmarks}.
+// % the CNN benchmark in the second row of~@tab:benchmarks.
 // % \begin{table}[t]
 // %     \footnotesize
 // %     \centering
@@ -6039,7 +6004,7 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 // % The MNISTFC and MNIST\_GDVB benchmarks contain 41 networks and a total of 106 UNSAT verification problems.
 // % From those we selected 8 networks with varying numbers of layers and neurons, resulting
 // % in models spanning several orders of magnitude in terms of parameters, to produce
-// % the FNN benchmark in the first row of~\autoref{tab:benchmarks}.
+// % the FNN benchmark in the first row of~@tab:benchmarks.
 
 // % For each of the networks, following the approach from~\cite{duong2024harnessing},
 // % we randomly selected centerpoints and radii for local-robustness properties until we found 25 property specifications that yielded UNSAT results.  This yielded 200 properties
@@ -6121,7 +6086,7 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 // % within the timeout.
 
 // % For each benchmark, we provide cactus plots which plot the time for a problem on the y-axis, and the number of problems solved on the x-axis; problems are sorted on the x-axis from least to largest.
-// % As shown in~\autoref{fig:cactus-plots}, these plots allow one to observe both the time difference between baselines and treatments (vertical distance between lines at a point on the x-axis) and the ability of techniques to solve problems (the maximum x-coordinate for a given line).
+// % As shown in~@fig:cactus-plots, these plots allow one to observe both the time difference between baselines and treatments (vertical distance between lines at a point on the x-axis) and the ability of techniques to solve problems (the maximum x-coordinate for a given line).
 
 // % We also report the size of proof trees that are generated in \prooflang{}.
 // % In the absence of optimizations this defines the \textit{number of sub-proofs}
@@ -6129,13 +6094,13 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 // % be reduced, e.g., when an interior node in the tree can be proven.
 // % The complexity of  sub-proofs
 // % may vary significantly, so to provide a more detailed characterization we
-// % also report \textit{MILP complexity}. ~\autoref{eq:mip} defines the general form
+// % also report \textit{MILP complexity}. ~@eq:mip defines the general form
 // % of each MILP problem, but the problems will vary based on how many of the $a$ variables
-// % defined in~\autoref{eq:mip}(d) have a fixed value -- either 0 or 1.   When this
-// % happens the constraint in~\autoref{eq:mip}(e) are simplified.
+// % defined in~@eq:mip(d) have a fixed value -- either 0 or 1.   When this
+// % happens the constraint in~@eq:mip(e) are simplified.
 // % Consequently, we measure MILP complexity as the number of neurons that do \textit{not}
 // % have a fixed value, i.e., the number of unstable neurons.
-// % \ignore{This does not account for the contribution of~\autoref{eq:mip}a,b which is directly
+// % \ignore{This does not account for the contribution of~@eq:mipa,b which is directly
 // % related to network size and input/output dimension.   Is there any way to measure that?}
 // % % \hd{I see. It seems hard since "a"s and constraints do not have the same unit.}
 
@@ -6146,7 +6111,7 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 
 // % \subsection{RQ1 : Proof Checking Performance}
 // % \label{sec:rq1}
-// %~\autoref{fig:cactus-plots} presents data on the performance
+// %~@fig:cactus-plots presents data on the performance
 // % of \proofcheck{} relative to both an underlying verifier, \neuralsat{}, and prior work on neural network proof checking, \marabou{}'s proof checker.
 // % In cactus plots like this, lines that extend further on the x-axis
 // % are better -- more problems solved -- and lines that are lower are better -- faster solve times.
@@ -6198,11 +6163,11 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 // % % \matt{Some of the line number references are no longer resolving below.}
 // % The shape of these cactus plots indicates a high-degree of variability in the cost of proof
 // % checking relative to verification.
-// % From~\autoref{fig:algorithm} it is clear that both the number of leaves in the tree
-// % structure,~\autoref{line:get_leaf}, and the complexity of the model to be checked,~\autoref{line:proof_check_objective1}, are factors that contribute to the cost of proof checking.
+// % From~@fig:algorithm it is clear that both the number of leaves in the tree
+// % structure,~@line:get_leaf, and the complexity of the model to be checked,~@line:proof_check_objective1, are factors that contribute to the cost of proof checking.
 // % To explore those factors we plot their variation across the benchmarks when running \proofcheck{}.
 
-// %~\autoref{fig:sub-proofs-plots} (left) plots a histogram of the number of sub-proofs solved per verification
+// %~@fig:sub-proofs-plots (left) plots a histogram of the number of sub-proofs solved per verification
 // % problem, i.e., the number of nodes of the proof tree.
 // % When interpreting these plots, understand that the y-axis log scale means that vertical
 // % distances have a different meaning as you move upward in the plot.
@@ -6210,7 +6175,7 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 // % Note also that even among the smaller sized proof trees, there are some problems that cannot be solved.
 // % This is due to complexity of solving the MILP constraints at the leaves of those proof trees.
 
-// %~\autoref{fig:constrs-proofs-plots} (top) plots a histogram of the number of occurrences of MILP problems of
+// %~@fig:constrs-proofs-plots (top) plots a histogram of the number of occurrences of MILP problems of
 // % a given complexity across the benchmarks.  Here again we see a spread in data, but unlike with the number of sub-proofs the CNN benchmarks seem to have consistently larger constraints and there is a clear bias among the unsolved problems towards larger constraint size.
 // % To optimize proof checking, we must address both of these sources of complexity.
 
@@ -6221,7 +6186,7 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 
 // % \subsection{RQ2 : Proof Checking Optimizations}
 // % \label{sec:rq2}
-// % The performance cactus plots~\autoref{fig:cactus-plots} present an ablation
+// % The performance cactus plots~@fig:cactus-plots present an ablation
 // % study of the
 // % pruning (X) and stabilization (S) optimizations of \proofcheck{}.
 // % The trend across both benchmarks is consistent with pruning (yellow) and stabilization (blue)
@@ -6234,7 +6199,7 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 // % - S: 178 (F) + 170 (C) = 348
 // % }
 
-// % The~\autoref{fig:sub-proofs-plots} (right) and~\autoref{fig:constrs-proofs-plots} (right) explore the impact of the S and X optimizations on the number of sub-proofs and MILP complexity.  Across the benchmarks optimizations reduce
+// % The~@fig:sub-proofs-plots (right) and~@fig:constrs-proofs-plots (right) explore the impact of the S and X optimizations on the number of sub-proofs and MILP complexity.  Across the benchmarks optimizations reduce
 // % the number of sub-proofs is to less than 1000 and
 // % MILP complexity to less than 2000.
 // % The reduction in sub-proofs directly contributes to the increase
@@ -6247,7 +6212,7 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 // % values based on other constraints in the MILP problem.  For each
 // % such variable, the constraints associated with it is effectively
 // % eliminated.  We can observe this in comparing the left and
-// % right of~\autoref{fig:constrs-proofs-plots} where we see both
+// % right of~@fig:constrs-proofs-plots where we see both
 // % constraints of higher complexity eliminated and the peak of
 // % the constraint distribution shifted downward from 400 to 100
 // % constraints.
@@ -6282,7 +6247,7 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 
 // % \subsection{RQ3 : Proof Checking and Verifier Optimizations}
 // % \label{sec:rq3}
-// %~\autoref{fig:algvariation} shows cactus-plots for two configurations of \neuralsat{} and \crown{} generated proofs across the benchmarks.   The performance of the verifiers, dashed lines, differ across configurations and they are able to
+// %~@fig:algvariation shows cactus-plots for two configurations of \neuralsat{} and \crown{} generated proofs across the benchmarks.   The performance of the verifiers, dashed lines, differ across configurations and they are able to
 // % verify between 337 and 400 problems in the benchmark.
 // % \ignore{Number of Verified/Proved problems
 // %     + abcrown(babsr):   337/335 = 99.4%
@@ -6296,7 +6261,7 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 // % generated by differing neural network verification algorithms, and
 // % that \proofcheck{} can check them.
 
-// % %~\autoref{tab:sizestats}.
+// % %~@tab:sizestats.
 // % \begin{figure}[t]
 // %     \centering
 // %      in cludegraphics[width=0.8\linewidth]{figure/ablation.pdf}
@@ -6322,7 +6287,7 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 
 // % We performed an analysis of both the number of sub-proofs and MILP complexity for the proofs generated by the two best performing verifier
 // % configurations.  These values follow a skewed
-// % distribution, so we report the mean and median values in~\autoref{tab:sizestats}.   One can observe variation in the
+// % distribution, so we report the mean and median values in~@tab:sizestats.   One can observe variation in the
 // % structure of the proofs generated by these verifiers.
 // % \neuralsat{} generates smaller proof trees, but where the
 // % MILP problems are more complex.
@@ -6377,8 +6342,8 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 == Input Splitting <sec:input-splitting>
 
 // Many verifiers, e.g.,~\cite{katz2019marabou,wang2018formal,wang2021beta,duong2025neuralsat}, use a technique called \emph{input splitting} to quickly deal with networks with verification problems involving low-dimensional networks, such as those in the ACAS Xu benchmark where the networks have a small number of inputs (e.g., $<= 50$).
-// %~\autoref{sec:acasxu}
-// The idea is to split the original verification problem into subproblems, each checking whether the network produces the desired output from a smaller input region and returns \unsat{} if all subproblems are verified and \sat{} if a counterexample is found in any subproblem. Input splitting avoids BaB search (\autoref{chap:bab})---which performs \emph{neuron splitting}---and is often used to quickly eliminate easy cases.
+// %~@sec:acasxu
+// The idea is to split the original verification problem into subproblems, each checking whether the network produces the desired output from a smaller input region and returns \unsat{} if all subproblems are verified and \sat{} if a counterexample is found in any subproblem. Input splitting avoids BaB search (@chap:bab)---which performs \emph{neuron splitting}---and is often used to quickly eliminate easy cases.
 
 // Moreover, each subproblem now has a smaller input region, thus the verifier can often verify them more quickly than the original problem.
 // Finally, because each task can be solved independently, the verifier can solve them in parallel to further speed up the verification process.
@@ -6408,7 +6373,7 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 // prune subproblems earlier.
 
 // \begin{example <ex:inputboundstigthten}
-// Recall the network from~\autoref{fig:dnn-b} can be represented as:
+// Recall the network from~@fig:dnn-b can be represented as:
 // \[
 // \begin{aligned}
 // &  hat(x)_3 = -0.5x_1 + 0.5x_2 + 1.0 ~\land\\
@@ -6447,7 +6412,7 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 // We can apply the same approach to tighten the lower bounds of $x_1$ using a minimization problem.  Similarly, we can create optimization problems to tighten both the bounds of $x_2$.
 
 // \end{example}
-// %~\autoref{sec:acasxu}
+// %~@sec:acasxu
 
 // Note that, this approach works well for networks with small inputs, e.g., the ACAS Xu benchmark with 5 inputs, and is adopted by many modern NNV tools, including \marabou{} and \nnenum{}.
 // For larger input dimensions networkswe, it will take much time as we need to run $2 \times$ the number of inputs to tighten all the input bounds (for each input, we need to tighten the upper and lower bounds individually).
@@ -6465,7 +6430,7 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 // \end{enumerate}
 
 // \begin{example <ex:neuronboundstigthten}
-// Let's revisit~\autoref{ex:inputboundstigthten}, after splitting $x_4$\tvn{you wrote $x_3$ here, did you mean $x_4$?}, we can tighten the upper bounds of $x_4$ (suppose that $l_{x_4} < 0 < u_{x_4}$, e.g., unstable and not split yet) by solving the following optimization problem:
+// Let's revisit~@ex:inputboundstigthten, after splitting $x_4$\tvn{you wrote $x_3$ here, did you mean $x_4$?}, we can tighten the upper bounds of $x_4$ (suppose that $l_{x_4} < 0 < u_{x_4}$, e.g., unstable and not split yet) by solving the following optimization problem:
 
 // \begin{equation}
 // \begin{aligned}
@@ -6485,7 +6450,7 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 
 
 
-// %(line~\ref{line:abstraction},~\autoref{alg:deduction})
+// %(line~\ref{line:abstraction},~@alg:deduction)
 // % After tightening input bounds DNN verification tools apply abstraction to approximate the output bounds, which can be more precise with better input bounds.
 // % For networks with large number of inputs, we obtain input bounds from the input property $phi_"in"$.\tvn{Vu: to rewrite}
 
@@ -6503,7 +6468,7 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 
 
 //  == Batch Processing} \label{sec:batchprocessing}
-// % \tvn{Do we still use this?  or we use the Parallel DPLL(T) in~\autoref{sec:parallel-search} instead?}
+// % \tvn{Do we still use this?  or we use the Parallel DPLL(T) in~@sec:parallel-search instead?}
 // % For networks with small inputs, \tool{} uses a simple approach to create and solve subproblems in parallel.
 // % Given a verification problem $N_{orig} = (alpha, phi_"in", phi_"out")$, where $alpha$ is the DNN and $phi_"in" \Rightarrow phi_"out"$ is the desired property, \tool{} creates subproblems $N_i = (alpha, phi_{{in}_i}, phi_"out")$, where $phi_{{in}_i}$ is the $i$-th subregion of the input region specified by $phi_"in"$.
 // % Intuitively, each subproblem checks if the DNN produces the output $phi_"out"$  from a smaller input region $phi_{{in}_i}$.
@@ -6522,7 +6487,7 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 
 // \paragraph{Matrix Form for Interval Computation}
 
-// While the min/max formulation, e.g., for abstraction~\autoref{sec:interval-abstraction}, is intuitive, it can be efficiently implemented using matrix operations.
+// While the min/max formulation, e.g., for abstraction~@sec:interval-abstraction, is intuitive, it can be efficiently implemented using matrix operations.
 // We can decompose the weight matrix $W$ into positive and negative components:
 // \[
 // W^+ = \max(W, 0) \qquad W^- = \min(W, 0)
@@ -6540,7 +6505,7 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 
 
 // \begin{example <ex:matrix-form-equivalence}
-//     We can verify that the matrix form produces identical results to the min/max approach using the same network from~\autoref{ex:transformer-affine1}.
+//     We can verify that the matrix form produces identical results to the min/max approach using the same network from~@ex:transformer-affine1.
 
 //     Given the weight $w_1 = -0.5$, $w_2 = 0.5$, and bias $b = 1.0$, we decompose:
 //     \[
@@ -6569,7 +6534,7 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 //     \end{aligned}
 //     \]
 
-//     This gives us $f^a([1,2],[-1,3]) = [-0.5, 2.0]$, which matches exactly the result from the min/max approach in~\autoref{ex:transformer-affine1}.
+//     This gives us $f^a([1,2],[-1,3]) = [-0.5, 2.0]$, which matches exactly the result from the min/max approach in~@ex:transformer-affine1.
 //     \end{example}
 
 
@@ -6583,7 +6548,7 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 // \item Subproblem 2: $ {x_1 in [0,1], x_2 in [-2,2] }$
 // \end{enumerate}
 
-// Using the matrix form in~\autoref{ex:matrix-form-equivalence}, we can process both subproblems simultaneously by stacking the bounds into matrices:
+// Using the matrix form in~@ex:matrix-form-equivalence, we can process both subproblems simultaneously by stacking the bounds into matrices:
 // \[
 // \mathbf{L} = \begin{bmatrix} -1 & -2 \\ 0 & -2 \end{bmatrix}, quad
 // \mathbf{U} = \begin{bmatrix} 0 & 2 \\ 1 & 2 \end{bmatrix}
@@ -6600,7 +6565,7 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 // where $\mathbf{1}$ is a vector of ones with appropriate dimension and $\otimes$ denotes the outer product.
 
 // \begin{example <ex:batch-processing}
-// Consider the network from~\autoref{ex:transformer-affine1} with weight $W = [-0.5, 0.5]$ and bias $b = 1.0$. We split the input region $ {x_1 in [-1,1], x_2 in [-2,2] }$ into two subproblems as described above.
+// Consider the network from~@ex:transformer-affine1 with weight $W = [-0.5, 0.5]$ and bias $b = 1.0$. We split the input region $ {x_1 in [-1,1], x_2 in [-2,2] }$ into two subproblems as described above.
 
 // First, we decompose the weight:
 // \[W^+ = [0, 0.5] \qquad W^- = [-0.5, 0] \qquad \mathbf{b} = [1.0, 1.0]\]
@@ -6647,7 +6612,7 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 
 
 // By using matrix operations, we can leverage using GPUs natively to speed up the computation.
-// As expected, the computation time is reduced significantly using GPUs when the size of matrices (weights, bias, inputs, etc.) becomes larger~\autoref{fig:gpu-benchmarking}.
+// As expected, the computation time is reduced significantly using GPUs when the size of matrices (weights, bias, inputs, etc.) becomes larger~@fig:gpu-benchmarking.
 
 // \begin{figure}[t]
 //     \centering
@@ -6695,15 +6660,15 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 // %In the input splitting used in~\cite{wang2018formal,wang2021beta}, they only compute the abstraction over each subregion once to get estimated output.
 // %If the subregion causes UNSAT, it will be eliminate immediately.
 // %Otherwise, they split that current subregion into multiple instances, and continue at the aforementioned abstraction step.
-// %In the other hand, in \tool{}, each CDCL instance takes input of a subregion and run for verifying it with iterations as in~\autoref{fig:alg}.
+// %In the other hand, in \tool{}, each CDCL instance takes input of a subregion and run for verifying it with iterations as in~@fig:alg.
 
 // \part{Modern NNV Tools <part:modern-tools}
 // = The \neuralsat{} Algorithm <chap:neuralsat}
 
-// \neuralsat{}~\cite{duong2025neuralsat,duong2024harnessing} is a relatively new competitor in NNV, but  it has quickly become a strong contender, consistently placed among the top tools at NNV competitions~\autoref{chap:vnncomps}.
+// \neuralsat{}~\cite{duong2025neuralsat,duong2024harnessing} is a relatively new competitor in NNV, but  it has quickly become a strong contender, consistently placed among the top tools at NNV competitions~@chap:vnncomps.
 
 // At its core, \neuralsat{} is BaB, but follows a DPLL(T) framework~\cite{davis1962machine} and includes specialized optimizations and heuristics to improve its search.
-// Thus, \neuralsat{} is essentially an SMT solver (\autoref{sec:smt-solvers}) with respect to a theory, in this case, the theory of DNNs.
+// Thus, \neuralsat{} is essentially an SMT solver (@sec:smt-solvers) with respect to a theory, in this case, the theory of DNNs.
 
 
 // \tvn{TODO: rewrite completely because hard to explain without knowing BCP and stuff. Have a section on DPLL(T) first.}
@@ -6714,9 +6679,9 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 //     \caption{\label{fig:overview} The \neuralsat{} DPLL(T) Algorithm.}
 // \end{figure}
 
-// \autoref{fig:overview} gives an overview of \neuralsat{}, which consists of standard DPLL components (light shades) and the theory solver (dark shade).
+// @fig:overview gives an overview of \neuralsat{}, which consists of standard DPLL components (light shades) and the theory solver (dark shade).
 // \neuralsat{} first constructs a propositional formula over Boolean variables that represent the activation status of neurons (\emph{Boolean Abstraction}). Clauses in the formula assert that each neuron, e.g., neuron $i$, is active or inactive, e.g., $v_i \vee \overline{v_i}$.
-// This representation enables using standard DPLL to search for truth values satisfying these clauses and a neural network-specific theory solver to check the feasibility of truth assignments---\emph{activation patterns} (\autoref{sec:activation-patterns})--- with respect to the constraints encoding the network and the property of interest.
+// This representation enables using standard DPLL to search for truth values satisfying these clauses and a neural network-specific theory solver to check the feasibility of truth assignments---\emph{activation patterns} (@sec:activation-patterns)--- with respect to the constraints encoding the network and the property of interest.
 
 // \neuralsat{} now enters an iterative process to find activation pattern (truth assignment) satisfying the activation clauses.
 // First, \neuralsat{} assigns a truth value to an unassigned variable (\emph{Decide}), detects unit clauses caused by this assignment, and infers additional assignments (\emph{Boolean Constraint Propagation}).
@@ -6730,12 +6695,12 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 // This iterative process repeats until \neuralsat{} can no longer backtrack, and returns \unsat{}, indicating the network has the property, or it finds a total assignment for all boolean variables, and returns \sat{}. % (and the user can query \neuralsat{} for a counterexample).
 
 // % TODO: uncomment after I put back sec:neuralsat-alg.
-// % \autoref{sec:neuralsat-alg} provides more details on the \neuralsat{} algorithm, describing the main components of \neuralsat{} and how they work together to verify networks.
+// % @sec:neuralsat-alg provides more details on the \neuralsat{} algorithm, describing the main components of \neuralsat{} and how they work together to verify networks.
 
 //  == Illustration}
 
 // \begin{example <ex:neuralsat}
-// We use \neuralsat{} to prove that for inputs $x_1 in [-1, 1], x_2 in [-2,2]$ the network in~\autoref{fig:dnn} produces the output $x_5 <= 0$.
+// We use \neuralsat{} to prove that for inputs $x_1 in [-1, 1], x_2 in [-2,2]$ the network in~@fig:dnn produces the output $x_5 <= 0$.
 // \neuralsat{} takes as input the formula $alpha$ representing the network:
 
 // \begin{equation*}%\label{eq:ex}
@@ -6766,9 +6731,9 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 // %Now, \neuralsat{} searches for truth assignments for activation variables to satisfy the clauses. %(and later check that they also satisfy the constraints of DNN implied by these variables and the properties to be proved).
 // %We summarize the five iterations \neuralsat{} uses to determine that no such assignment exists (i.e., \texttt{unsat}).
 
-// %We show how \neuralsat{} proves that network in~\autoref{fig:dnn} has property in ~\autoref{eq:valid_prop}, i.e., for any inputs $x_1 in [-1, 1], x_2 in [-2,2]$, the network produces the output $x_5 <= 0$.
+// %We show how \neuralsat{} proves that network in~@fig:dnn has property in ~@eq:valid_prop, i.e., for any inputs $x_1 in [-1, 1], x_2 in [-2,2]$, the network produces the output $x_5 <= 0$.
 
-// % \textbf{SAT formulation} \neuralsat{} first encodes the verification task into an SMT checking problem as described in \S\ref{sec:nnverif} by representing the network in~\autoref{fig:dnn}b as the formula:
+// % \textbf{SAT formulation} \neuralsat{} first encodes the verification task into an SMT checking problem as described in \S\ref{sec:nnverif} by representing the network in~@fig:dnnb as the formula:
 
 // % and negating of the property in Eq~\ref{eq:valid_prop}:
 // % \begin{equation <eq:negprop}
@@ -6778,7 +6743,7 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 
 // %\hd{I might use different weight for DNN to trigger some technique in the tool.}\tvn{yes, that's fine, make it as easy to illustrate as possible, but should also be challenging enough to require at least 2-3 iterations.  Also good to demonstrate 2 cases:  sat and unsat. For example, focus on say unsat,  and then after illustrating that,  make a new subsection and change something so that it would be sat and briefly mentions how \neuralsat{} would work to return sat}\tvn{\tool is complex, so instead of using the Dynaplex example, which is a bit too easy,  maybe look at the illustrative example for the GenTree's paper---it has more details.  Or even look at the Reluplex's illustrative example in the Survey paper}.
 
-// %We use an example\tvn{Hai: create an example, may be use the DNN from PA4 (or subset of that DNN)} to demonstrate how \neuralsat{} works. ~\autoref{fig:ex} shows a small DNN ....
+// %We use an example\tvn{Hai: create an example, may be use the DNN from PA4 (or subset of that DNN)} to demonstrate how \neuralsat{} works. ~@fig:ex shows a small DNN ....
 
 
 // % \begin{figure}
@@ -6790,16 +6755,16 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 // %\hd{Step 0: About the network - copy somewhere, need to rewrite}
 // %\textbf{Running example}
 
-// %We use an example of simple fully-connected feed-forward neural network with %ReLU activation shown in~\autoref{fig:dnn} to demonstrate how \neuralsat{} works.
+// %We use an example of simple fully-connected feed-forward neural network with %ReLU activation shown in~@fig:dnn to demonstrate how \neuralsat{} works.
 // %This network has already been trained and we have the learned weights and bias shown in the figure.
 // %The network consists of three layers: an input layer, a hidden layer, and an output layer with two neurons each.
 // %The weights on the edges represent the learned coefficients of the weight matrix used by the affine transformations done at each layer. The learned bias for each neuron is shown above or below it.
 
 
-// % \neuralsat{} aims to find an assignment satisfying the conjunction of the formulae in ~\autoref{eq:ex} and~\ref{eq:negprop}. Such an assignment represents a counterexample violating the property, i.e., within the given ranges but does not satisfy the output requirement.
+// % \neuralsat{} aims to find an assignment satisfying the conjunction of the formulae in ~@eq:ex and~\ref{eq:negprop}. Such an assignment represents a counterexample violating the property, i.e., within the given ranges but does not satisfy the output requirement.
 // % %If such an input does not exist, \neuralsat{} returns \texttt{unsat}, indicating the property is valid. Otherwise it returns \texttt{sat} and the input, which represents a counterexample violating the property.
 
-// % Next, from the formula in ~\autoref{eq:ex}, \neuralsat{} creates two Boolean variables $v_3$ and $v_4$ to represent the status of the hidden pre-ReLU neurons $x_3'$ and $x_4'$. For example, $v_3=T$ means the status of $x_3$ is \texttt{on}, i.e., $-x_1-0.5x_2-1>0$ and $v_3=F$ means $x_4=\texttt{off}$, i.e.,  $-x_1-0.5x_2-1>0$. \neuralsat{} also forms two initial clauses indicating the status variables must be either \texttt{on} or \texttt{off}: $v_3 \lor \overline{v_3} \;;\; v_4 \lor \overline{v_4}$.
+// % Next, from the formula in ~@eq:ex, \neuralsat{} creates two Boolean variables $v_3$ and $v_4$ to represent the status of the hidden pre-ReLU neurons $x_3'$ and $x_4'$. For example, $v_3=T$ means the status of $x_3$ is \texttt{on}, i.e., $-x_1-0.5x_2-1>0$ and $v_3=F$ means $x_4=\texttt{off}$, i.e.,  $-x_1-0.5x_2-1>0$. \neuralsat{} also forms two initial clauses indicating the status variables must be either \texttt{on} or \texttt{off}: $v_3 \lor \overline{v_3} \;;\; v_4 \lor \overline{v_4}$.
 
 
 
@@ -6838,10 +6803,10 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 // %     \end{tabular}
 // % \end{table*}
 
-// %The goal is to find an activation pattern---a truth assignment for these variables---that satisfies the conjunction of the clauses in~\autoref{eq:negprop}. Such an assignment represents a counterexample violating the property, i.e., within the given ranges but does not satisfy the output requirement. If no such assignment exists, \neuralsat{} returns \texttt{unsat}, indicating the property is valid.
+// %The goal is to find an activation pattern---a truth assignment for these variables---that satisfies the conjunction of the clauses in~@eq:negprop. Such an assignment represents a counterexample violating the property, i.e., within the given ranges but does not satisfy the output requirement. If no such assignment exists, \neuralsat{} returns \texttt{unsat}, indicating the property is valid.
 
-// \paragraph{DPLL(T) Iterations} \neuralsat{} searches for a satisfying \emph{activation pattern}---truth assignment for the Boolean variables to satisfy the clauses and the constraints they represent with respect to the formula in~\autoref{eq:negprop}.
-// For this example, \neuralsat{} uses four iterations, summarized in~\autoref{tab:valid}, to determine that no such assignment exists and the problem is thus \unsat{}.
+// \paragraph{DPLL(T) Iterations} \neuralsat{} searches for a satisfying \emph{activation pattern}---truth assignment for the Boolean variables to satisfy the clauses and the constraints they represent with respect to the formula in~@eq:negprop.
+// For this example, \neuralsat{} uses four iterations, summarized in~@tab:valid, to determine that no such assignment exists and the problem is thus \unsat{}.
 
 
 // \begin{table*}
@@ -6870,9 +6835,9 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 //   \end{table*}
 
 
-// %\emph{Initially}, the set of constraints  consists of the given bounds over the inputs, and the set of the clauses contains the two clauses in ~\autoref{eq:newvars}.
+// %\emph{Initially}, the set of constraints  consists of the given bounds over the inputs, and the set of the clauses contains the two clauses in ~@eq:newvars.
 
-// In \emph{iteration 1}, as shown in~\autoref{fig:overview}, \neuralsat{} starts with \texttt{BCP}, which has no effects because the current clauses and (empty) assignment produce no unit clauses.
+// In \emph{iteration 1}, as shown in~@fig:overview, \neuralsat{} starts with \texttt{BCP}, which has no effects because the current clauses and (empty) assignment produce no unit clauses.
 // In \texttt{Deduction}, \neuralsat{} uses an LP solver to determine that the current set of constraints, which contains just the initial input bounds, is feasible\footnote{We use the terms feasible, from the LP community, and satisfiable, from the SAT community, interchangeably.}. \neuralsat{} then uses abstraction to approximate an output upper bound $x_5 <= 1$ and thus deduces that satisfying the output $x_5 >0$ might be feasible. \neuralsat{} continues with \texttt{Decide}, which uses a heuristic to select the unassigned variable $v_4$ and sets $v_4=F$---essentially a \emph{guess} that neuron $x_4$ is inactive. \neuralsat{} increments the decision level ($dl$) to 1 and associates $dl=1$ to the assignment, i.e., $\overline{v_4}@1$.
 
 
@@ -6899,7 +6864,7 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 
 // %\tvn{do we use restart for this example?}\hd{we do not, it would be very long as in FSE paper.}
 
-// %Note that this example is too simple to illustrate the use of \emph{restart}, which is described in~\autoref{sec:restart-tree} and~\autoref{sec:restart} and crucial for more complicated and nontrivial problems.
+// %Note that this example is too simple to illustrate the use of \emph{restart}, which is described in~@sec:restart-tree and~@sec:restart and crucial for more complicated and nontrivial problems.
 // \end{example}
 
 
@@ -6995,21 +6960,21 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 
 
 // \tvn{rewrite: technically we don't split if the guess was right}
-// Note that this process of selecting and assigning (guessing) values to variables representing neurons is the \emph{branching} phase in BaB. It is also commonly called \emph{neuron splitting} because  it splits the search tree into subtrees corresponding into the assigned values (e.g., see~\autoref{sec:restart-tree}).
+// Note that this process of selecting and assigning (guessing) values to variables representing neurons is the \emph{branching} phase in BaB. It is also commonly called \emph{neuron splitting} because  it splits the search tree into subtrees corresponding into the assigned values (e.g., see~@sec:restart-tree).
 
 
-// As mentioned in~\autoref{sec:complexity}, ReLU-based NNV is \NP-complete, and for difficult problem instances NNV tools often have to exhaustively search a very large space, making scalability a main concern for modern NNV approaches.
+// As mentioned in~@sec:complexity, ReLU-based NNV is \NP-complete, and for difficult problem instances NNV tools often have to exhaustively search a very large space, making scalability a main concern for modern NNV approaches.
 
 // %One major difference that sets \tool{} apart from other DNN approaches is how it tackles and prunes such large search space.
 
-// \autoref{fig:tree} shows the difference between \tool{} and another NNV tool (e.g., using the popular Branch-and-Bound (BaB) approach) in how they navigate the search space.  We assume both tools employ similar abstraction and neuron splitting.
-// \autoref{fig:tree}b shows that the other tool performs splitting to explore different parts of the tree (e.g., splitting $v_1$ and explore the branches with $v_1=T$ and $v_1=F$ and so on). Note that the other tool needs to consider the tree shown regardless if it runs sequentially or in parallel.
+// @fig:tree shows the difference between \tool{} and another NNV tool (e.g., using the popular Branch-and-Bound (BaB) approach) in how they navigate the search space.  We assume both tools employ similar abstraction and neuron splitting.
+// @fig:treeb shows that the other tool performs splitting to explore different parts of the tree (e.g., splitting $v_1$ and explore the branches with $v_1=T$ and $v_1=F$ and so on). Note that the other tool needs to consider the tree shown regardless if it runs sequentially or in parallel.
 
 // % \tvn{Hai, could you change the LaTeX neg to overline?}\hd{yes}
-// In contrast, \tool{} has a smaller search space shown in~\autoref{fig:tree}a.
+// In contrast, \tool{} has a smaller search space shown in~@fig:treea.
 // \tool{} follows the path $v_1$, $v_2$ and then $\overline{v_2}$ (just like the tool on the right).
 // However, because of the learned clause $v_2\lor v_3$, \tool{} performs a BCP step that sets $v_3$ (and therefore prunes the branch with $\overline{v_3}$ that needs to be considered in the other tree).
-// Then \tool{} splits $v_4$, and like the other tool, determines infeasibility for both branches. Now \tool{}'s conflict analysis determines from learned clauses that it needs to backtrack to $v_3$ (yellow node) instead of $v_1$.  Without learned clauses and non-chronological backtracking, \tool{} would backtrack to decision $v_1$ and continues with the $\overline{v_1}$ branch, just like the other tool in~\autoref{fig:tree}b.
+// Then \tool{} splits $v_4$, and like the other tool, determines infeasibility for both branches. Now \tool{}'s conflict analysis determines from learned clauses that it needs to backtrack to $v_3$ (yellow node) instead of $v_1$.  Without learned clauses and non-chronological backtracking, \tool{} would backtrack to decision $v_1$ and continues with the $\overline{v_1}$ branch, just like the other tool in~@fig:treeb.
 
 // Thus, \tool{} was able to generate non-chronological backtracks and use BCP to prune various parts of the search tree.  In contrast, the other tool would have to move through the exponential search space to eventually reach the same result.
 
@@ -7017,7 +6982,7 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 
 // = The \reluplex{} Algorithm <chap:reluplex}
 
-// \reluplex{}~\cite{katz2017reluplex} is a classical BaB (\autoref{chap:bab}) approach for NNV. The technique extends the \emph{simplex} method~\cite{nelder1965simplex} to support the ReLU activation function (\textbf{Reluplex} = \textbf{Relu} + Sim\textbf{plex}). \reluplex{} has been succeeded by the more efficient Marabou tool~\cite{katz2019marabou}. However, the core ideas of \reluplex{} are still relevant and thus presented here as another example of BaB-based NNV techniques.
+// \reluplex{}~\cite{katz2017reluplex} is a classical BaB (@chap:bab) approach for NNV. The technique extends the \emph{simplex} method~\cite{nelder1965simplex} to support the ReLU activation function (\textbf{Reluplex} = \textbf{Relu} + Sim\textbf{plex}). \reluplex{} has been succeeded by the more efficient Marabou tool~\cite{katz2019marabou}. However, the core ideas of \reluplex{} are still relevant and thus presented here as another example of BaB-based NNV techniques.
 
 //  == Algorithm Overview <sec:reluplex-overview}
 
@@ -7093,7 +7058,7 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 
 // \begin{example <ex:reluplex}
 
-//   We demonstrate \reluplex{} using the network in~\autoref{fig:dnn-replux}. This network can be represented by the following equations:
+//   We demonstrate \reluplex{} using the network in~@fig:dnn-replux. This network can be represented by the following equations:
 
 // \begin{gather*}%\label{eq:reluplex1}
 //     x_3 = x_1 - x_2,quad \hat{x_3} = \relu{x_3},\\
@@ -7106,16 +7071,16 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 //   (0 <= x_1 <= 0.5 \land -2 <= x_2 <= -1) \implies ( x_5< 0 \lor x_5 > 0.5).
 // \end{equation}
 // That is, when the inputs $x_1, x_2$ fall within certain ranges, then the result $x_5$ has certain values.
-// As shown in~\autoref{sec:satisfiability-and-activation-pattern-search}, we turn this into a satisfiability problem by negating the property:
+// As shown in~@sec:satisfiability-and-activation-pattern-search, we turn this into a satisfiability problem by negating the property:
 // \begin{equation <eq:negprop1}
 //     ( 0 <= x_1 <= 0.5 \land -2 <= x_2 <= -1) \land 0 <= x_5 <= 0.5,
 //   \end{equation}
 // and checking whether there exists a counterexample satisfying the negated property.
 
-// % For example, in~\autoref{fig:reluplex}, the ReLU node $x_3=\max(i0 -1i1,0)$ is encoded using two variables $x_3'=i0 -1i1$ and $x_3''=\max(x_3',0)$.  The DNN in\autoref{fig:reluplexB} shows the network in~\autoref{fig:reluplex} with additional nodes representing ReLU encoding.
+// % For example, in~@fig:reluplex, the ReLU node $x_3=\max(i0 -1i1,0)$ is encoded using two variables $x_3'=i0 -1i1$ and $x_3''=\max(x_3',0)$.  The DNN in@fig:reluplexB shows the network in~@fig:reluplex with additional nodes representing ReLU encoding.
 
 
-// We now use \reluplex{} to check whether there exists an assignment satisfying the negated property in~\autoref{eq:negprop1}.
+// We now use \reluplex{} to check whether there exists an assignment satisfying the negated property in~@eq:negprop1.
 // We start by introducing three \emph{basic} (auxilliary or slack) variables to represent the relationships between the variables in the network:
 
 // \begin{gather}
@@ -7127,14 +7092,14 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 // These basic variables are used to maintain the relationships between the variables in the constraints and are updated during the search process.
 // In contrast, a \emph{non-basic} variable is one that does not represent the relationship between other variables in the constraints. In this example, all variables except $a_1, a_2, a_3$ are non-basic.
 
-// \reluplex{} first assigns 0 to all variables in the equations in~\autoref{eq:reluplex2a}--~\autoref{eq:reluplex2c}.  This will likely violate some bounds, which \reluplex{} uses an iterative process, represented by a sequence of \emph{configurations}, to refine.
+// \reluplex{} first assigns 0 to all variables in the equations in~@eq:reluplex2a--~@eq:reluplex2c.  This will likely violate some bounds, which \reluplex{} uses an iterative process, represented by a sequence of \emph{configurations}, to refine.
 
 // %This assignment are essentially an initial guess and would likely cause issues such as variables violating their bounds.  \reluplex{} works by iteratively fixing these invalid values until it finds a feasible assignment (\sat{}), or cannot do so (\unsat{}).
 
 // %This \reluplex{} iterative updating process can be demonstrated through a sequence of \emph{configuration updates} over the variables.
 
-// \autoref{tab:reluplex1} shows the initial configuration with all values assigned to 0.
-// The lower (LB) and upper (UB) bounds of the inputs $x_1, x_2$ and output $x_5$ are specified in ~\autoref{eq:negprop1}. The LBs of $\hat{n}_i$'s representing ReLUs are 0s, and the other hidden variables are unbounded (i.e., $- in fty$ to $ in fty$).
+// @tab:reluplex1 shows the initial configuration with all values assigned to 0.
+// The lower (LB) and upper (UB) bounds of the inputs $x_1, x_2$ and output $x_5$ are specified in ~@eq:negprop1. The LBs of $\hat{n}_i$'s representing ReLUs are 0s, and the other hidden variables are unbounded (i.e., $- in fty$ to $ in fty$).
 
 // \begin{table}[h]
 //     \caption{Configuration \#1 <tab:reluplex1}
@@ -7153,9 +7118,9 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 // %\reluplex{} now checks whether any variable violates its bounds and fixes them by updating their values.
 // %For non-basic variables, \reluplex{} simply updates them to valid values within their bounds and propagates the changes to the basic variables that depend on them. For basic variables, \reluplex{} pivots (swaps) them with one of the variables they depend and then updates the non-basic variable to a valid value.
 
-// \autoref{tab:reluplex1} also shows that $x_2$ is out-of-bounds because $0 \notin [-2,-1]$. To fix $x_2$, which is non-basic, \reluplex{} updates it to a valid value, e.g., $x_2 \texttt{+=} -1.0 = -1.0$ by adding -1.0 to the current value of $x_2$.
+// @tab:reluplex1 also shows that $x_2$ is out-of-bounds because $0 \notin [-2,-1]$. To fix $x_2$, which is non-basic, \reluplex{} updates it to a valid value, e.g., $x_2 \texttt{+=} -1.0 = -1.0$ by adding -1.0 to the current value of $x_2$.
 
-// Now, because $a_1=x_1 - x_2 - x_3$ and $a_2=x_1 + x_2 - x_4$ depend on $x_2$ as shown in~\autoref{eq:reluplex2a} and~\autoref{eq:reluplex2b}, this update to $x_2$ also changes $a_1,a_2$:
+// Now, because $a_1=x_1 - x_2 - x_3$ and $a_2=x_1 + x_2 - x_4$ depend on $x_2$ as shown in~@eq:reluplex2a and~@eq:reluplex2b, this update to $x_2$ also changes $a_1,a_2$:
 //     \begin{align*}
 //         a_1 ~\texttt{+=}~ 1.0 = 1.0, \\
 //         a_2 ~\texttt{+=}~ -1.0 = -1.0.
@@ -7174,12 +7139,12 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 // \end{tabular}
 // \end{table}
 
-// \autoref{tab:reluplex2} shows the new configuration, which now has $a_1, a_2$ violating their bounds and need to be fixed. Assume \reluplex{} picks $a_1$. To fix the basic variable $a_1$ \reluplex{} pivots (swaps) it with a variable it depends on from the constraint $ a_1 = x_1 - x_2 - x_3$ in~\autoref{eq:reluplex2a}. Assume \reluplex{} pivots $a_1$ with $x_3$, we get
+// @tab:reluplex2 shows the new configuration, which now has $a_1, a_2$ violating their bounds and need to be fixed. Assume \reluplex{} picks $a_1$. To fix the basic variable $a_1$ \reluplex{} pivots (swaps) it with a variable it depends on from the constraint $ a_1 = x_1 - x_2 - x_3$ in~@eq:reluplex2a. Assume \reluplex{} pivots $a_1$ with $x_3$, we get
 // \begin{equation <eq:reluplex5}
 // x_3 = x_1 - x_2 - a_1.
 // \end{equation}
 
-// \reluplex{} now updates the non-basic $a_1$ to 0 ($a_1 \text{+=} -1.0 = 0$). This also changes $x_3$  to 1.0 ($x_3+=1.0 = 1.0)$ because $x_3$ depends on $a_1$ as shown in~\autoref{eq:reluplex5}.
+// \reluplex{} now updates the non-basic $a_1$ to 0 ($a_1 \text{+=} -1.0 = 0$). This also changes $x_3$  to 1.0 ($x_3+=1.0 = 1.0)$ because $x_3$ depends on $a_1$ as shown in~@eq:reluplex5.
 // \begin{table}[h]
 // \caption{Configuration \#3 <tab:reluplex3}
 //     \centering
@@ -7194,11 +7159,11 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 
 // \end{table}
 
-// ~\autoref{tab:reluplex3} shows the new configuration, which now has the basic variable $a_2$ out-of-bound.  To fix it, \reluplex{} pivots $a_2$ with a variable it depends on from the constraint $a_2 = x_1 + x_2 - x_4$ in Eq~\ref{eq:reluplex2b}.  Assume \reluplex{} pivots $a_2$ with $x_4$, we get
+// ~@tab:reluplex3 shows the new configuration, which now has the basic variable $a_2$ out-of-bound.  To fix it, \reluplex{} pivots $a_2$ with a variable it depends on from the constraint $a_2 = x_1 + x_2 - x_4$ in Eq~\ref{eq:reluplex2b}.  Assume \reluplex{} pivots $a_2$ with $x_4$, we get
 // \begin{equation <eq:reluplex6}
 //   x_4 = x_1 + x_2 - a_2
 // \end{equation}
-// Now $a_2$ becomes non-basic and is updated to 0 through $a_2+= 1.0 = 0$. As $x_4$ depends on $a_1$ as shown in ~\autoref{eq:reluplex6}, we make the change $x_4 ~\texttt{-=}~1.0 = -1.0$.
+// Now $a_2$ becomes non-basic and is updated to 0 through $a_2+= 1.0 = 0$. As $x_4$ depends on $a_1$ as shown in ~@eq:reluplex6, we make the change $x_4 ~\texttt{-=}~1.0 = -1.0$.
 
 
 // \begin{table}[h]
@@ -7215,7 +7180,7 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 
 // \end{table}
 
-// \autoref{tab:reluplex4} shows the new configuration.
+// @tab:reluplex4 shows the new configuration.
 // At this point, we no longer have out-of-bound variables, but have inconsistent values for the pair of RELU variables $x_3,  hat(x)_3$. This is because $ hat(x)_3 = \max(x_3,0)$ but  we have $x_3=1$ thus $\max(1,0)=1$, which is not $ hat(x)_3=0$.  Thus, \reluplex{} needs to fix either $ hat(x)_3$ or $x_3$.
 
 // Assume \reluplex{} picks $ hat(x)_3$. Because $ hat(x)_3$ is non-basic, we simply update it, i.e.,  $ hat(x)_3 = \text{+} 1 = 1$.  As $a_3$ depends on $ hat(x)_4$, i.e., $ a_3 = 0.5 hat(x)_3 -0.2  hat(x)_4 - x_5$, \reluplex{} also makes the change $a_3+= 0.5\times 1.0=0.5$.
@@ -7236,8 +7201,8 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 
 // \end{table}
 
-// ~\autoref{tab:reluplex5} shows the new configuration.
-// In the new configuration, $a_3$ is out-of-bound. To fix this basic variable, we pivot $a_3$ with one of the variables $ hat(x)_3,  hat(x)_4, x_5$ because of the constraint $a_3 = 0.5 hat(x)_3 -0.2  hat(x)_4 - x_5$ in ~\autoref{eq:reluplex2c}. Assume we pivot $a_3$ with $x_5$, we get
+// ~@tab:reluplex5 shows the new configuration.
+// In the new configuration, $a_3$ is out-of-bound. To fix this basic variable, we pivot $a_3$ with one of the variables $ hat(x)_3,  hat(x)_4, x_5$ because of the constraint $a_3 = 0.5 hat(x)_3 -0.2  hat(x)_4 - x_5$ in ~@eq:reluplex2c. Assume we pivot $a_3$ with $x_5$, we get
 // \begin{equation <eq:reluplex7}
 //   x_5 = 0.5 hat(x)_3 -0.2  hat(x)_4 - a_3
 // \end{equation}
@@ -7258,30 +7223,30 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 
 // \end{table}
 
-// \autoref{tab:reluplex6} shows the new configuration.
-// At this point, \reluplex{} no longer sees any out-of-bound or inconsinstent values, and thus stops and returns \sat{} with the values in the \textbf{Val} row in ~\autoref{tab:reluplex6} as the satisfying assignment for the formula in Eq~\ref{eq:negprop1}.
+// @tab:reluplex6 shows the new configuration.
+// At this point, \reluplex{} no longer sees any out-of-bound or inconsinstent values, and thus stops and returns \sat{} with the values in the \textbf{Val} row in ~@tab:reluplex6 as the satisfying assignment for the formula in Eq~\ref{eq:negprop1}.
 
-// Thus, the property in~\autoref{eq:prop1} is \emph{not valid} for the network in~\autoref{fig:dnn-replux} because for inputs $x_1=0,x_2=-1$, the network gives the output $x_5=0.5$, violating the property.
+// Thus, the property in~@eq:prop1 is \emph{not valid} for the network in~@fig:dnn-replux because for inputs $x_1=0,x_2=-1$, the network gives the output $x_5=0.5$, violating the property.
 // \end{example}
 
 
 // \begin{problem <problem:reluplex-hand}
-//     Read the example in~\autoref{ex:reluplex} again carefully. Then:
+//     Read the example in~@ex:reluplex again carefully. Then:
 //     \begin{itemize}
-//       \item Rewrite the steps in~\autoref{ex:reluplex} on paper, showing all the calculations for each step. The goal of handwriting the steps is to help you understand how \reluplex{} works in detail.
+//       \item Rewrite the steps in~@ex:reluplex on paper, showing all the calculations for each step. The goal of handwriting the steps is to help you understand how \reluplex{} works in detail.
 
 //     \item Provide feedback on this example.  Is it clear?  Are there any steps or terminologies that are confusing?  How can we improve the explanation? 
 //     \end{itemize}
 // \end{problem}
 
 // % \begin{problem}
-// % Consider the DNN in~\autoref{fig:reluplex} and the property in~\autoref{eq:prop1}.  Use \reluplex{} to verify the property.  If you find a counterexample, provide it.  You will need to provide all the steps in the \reluplex{} algorithm, e.g., DNN encoding, basic variable encoding, and the \reluplex{} search through a series of configurations as shown in~\autoref{ex:reluplex}.
+// % Consider the DNN in~@fig:reluplex and the property in~@eq:prop1.  Use \reluplex{} to verify the property.  If you find a counterexample, provide it.  You will need to provide all the steps in the \reluplex{} algorithm, e.g., DNN encoding, basic variable encoding, and the \reluplex{} search through a series of configurations as shown in~@ex:reluplex.
 
 // % \end{problem}
 
 
 // \begin{problem <problem:reluplex-basic-nonbasic}
-//   Consider the description of \reluplex{} in~\autoref{sec:reluplex-overview} and the example in~\autoref{ex:reluplex}.
+//   Consider the description of \reluplex{} in~@sec:reluplex-overview and the example in~@ex:reluplex.
 
 //   \begin{enumerate}
 //     \item Explain the difference between a \emph{basic} and a \emph{non-basic} variable in \reluplex{}.
@@ -7834,7 +7799,7 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 // %  == Results}
 
 
-// % \paragraph{Results}~\autoref{tab:score} shows the results. We report the Rank (\textbf{\#}) and  \textbf{\%} is the percentage of solved problems over all problem instances of the corresponding benchmark.   The last two columns break down the number of problems each verifier was able to verify and falsify. For example, for ACAS Xu, all tools other than \crowndefault{} were able to verify all 186 problems (139 + 47), and \crowndefault{} was only able to solve 113 problems (78 + 35), which is 60.8\% of the total problems.
+// % \paragraph{Results}~@tab:score shows the results. We report the Rank (\textbf{\#}) and  \textbf{\%} is the percentage of solved problems over all problem instances of the corresponding benchmark.   The last two columns break down the number of problems each verifier was able to verify and falsify. For example, for ACAS Xu, all tools other than \crowndefault{} were able to verify all 186 problems (139 + 47), and \crowndefault{} was only able to solve 113 problems (78 + 35), which is 60.8\% of the total problems.
 
 // % \newcommand{\nsTwentyFour}{\texttt{NeuralSAT}$_\text{VNN-COMP'24}$}
 // % \newcommand{\ns}{\texttt{NeuralSAT}}
@@ -7945,7 +7910,7 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 
 
 // \paragraph{VNN-COMP'25 Results} In the latest 2025 VNN-COMP iteration~\cite{kaulen20256thinternationalverificationneural}, 7 teams participated on a diverse set of 16 regular and 6 extended benchmarks. 
-// The table in the~\autoref{fig:vnn-comp25}, corresponding to Tab. 6~\cite{kaulen20256thinternationalverificationneural},  presents the overall scores and rankings of the tools. 
+// The table in the~@fig:vnn-comp25, corresponding to Tab. 6~\cite{kaulen20256thinternationalverificationneural},  presents the overall scores and rankings of the tools. 
 // The cactus plot corresponds to Fig. 6~\cite{kaulen20256thinternationalverificationneural} and shows tool performance on all benchmark instances. 
 // In summary, our \neuralsat{} tool ranks 2nd overall, behind \crown{}, a regular winner of VNN-COMPs, and ahead of \texttt{PyRAT}.
 
@@ -8001,7 +7966,7 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 // % From our experience evaluating tools and participating in competitions, we found that the
 // % novelty described in research papers often does not translate to competitive performance or practical usability.
 // % Instead, the implementation details, such as being versatile, easy to use, and employing ``engineering'' optimizations to improve performance matter perhaps just as much.
-// % ~\autoref{tab:features} shows features of \toolu{}, many of which are often overlooked in research papers (e.g., absent in~\cite{duong2024harnessing}) but are critical for building a long-term and high-performance tool.
+// % ~@tab:features shows features of \toolu{}, many of which are often overlooked in research papers (e.g., absent in~\cite{duong2024harnessing}) but are critical for building a long-term and high-performance tool.
 
 // \paragraph{Nework Types and Activation Functions} Currently, most NNV tools work with fully connected (FC), convolutional (CNN), residual (ResNet), batch normalization (BatchNorm) networks, etc.
 // Some also support mixtures of different types, e.g., VAEs which are large residual CNN-based networks~\cite{duong2025compositional}.
@@ -8018,10 +7983,10 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
    
 // \paragraph{Standard Input and Output Formats.} VNN-COMPs and major NNV tools support input networks in the standard ONNX format~\cite{onnx} and properties in VNNLIB format~\cite{vnnlib}. 
 // Some of SOTA tools, e.g., \neuralsat{}, also work directly with networks in Pytorch, a common format for neural networks.
-// The output is reported as \texttt{unsat} (property proved), \texttt{sat} (property disproved), or \texttt{unknown} and \texttt{timeout} (property cannot be proved). NNV tools also generate counterexamples for \texttt{sat} results in text format supported by VNN-COMPs. However, few tools generate unsat proofs, a topic of ongoing research as discussed in~\autoref{chap:proof-gen-check}.
+// The output is reported as \texttt{unsat} (property proved), \texttt{sat} (property disproved), or \texttt{unknown} and \texttt{timeout} (property cannot be proved). NNV tools also generate counterexamples for \texttt{sat} results in text format supported by VNN-COMPs. However, few tools generate unsat proofs, a topic of ongoing research as discussed in~@chap:proof-gen-check.
 
     
-// % \subsubsection*{Fully Automatic, but Configurable.} An important decision in designing \toolu{} is to make it fully automatic and so that for end-users it \emph{``just works''}, perhaps even at the cost of some runtime. Users can simply apply \toolu{} to check their networks and desired properties without any parameter configuration. For example, \toolu{} runs on all VNN-COMP benchmarks with \emph{zero} tuning. In contrast, top tools, such as \crown{}, require significant tuning to perform effectively (more details in~\autoref{sec:eval}).
+// % \subsubsection*{Fully Automatic, but Configurable.} An important decision in designing \toolu{} is to make it fully automatic and so that for end-users it \emph{``just works''}, perhaps even at the cost of some runtime. Users can simply apply \toolu{} to check their networks and desired properties without any parameter configuration. For example, \toolu{} runs on all VNN-COMP benchmarks with \emph{zero} tuning. In contrast, top tools, such as \crown{}, require significant tuning to perform effectively (more details in~@sec:eval).
 
 // % However, \toolu{} has many settings that can be configured by the users, such as the number of threads, number of restarts,  timeout, etc. These options are useful for experts who want to explore different settings and optimize the performance of \toolu{} for their specific problems.
 
@@ -8050,7 +8015,7 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 
 
 // % \subsubsection*{Extensibility.} As mentioned, \toolu{} has many optimizations, and 
-// % their addition was facilitated by the use of DPLL(T). The DPLL(T) framework in \toolu{} is modular and extensible, consisting of a small core search algorithm and allows users to: add new decision or restart heuristics for DPLL, add new adversarial attacks in preprocessing, or extend the T-solver with additional abstraction or optimizations for DNN analysis. For example, the neuron stabilization optimization described in~\autoref{sec:overview} is an independent function with fewer than 100 SLOCs and integrated via a hook method call into the core DPLL search. Similarly, heuristics are implemented as independent functions and can be easily replaced or extended (e.g., in current implementation decisions and restarts are less than 50 SLOC). 
+// % their addition was facilitated by the use of DPLL(T). The DPLL(T) framework in \toolu{} is modular and extensible, consisting of a small core search algorithm and allows users to: add new decision or restart heuristics for DPLL, add new adversarial attacks in preprocessing, or extend the T-solver with additional abstraction or optimizations for DNN analysis. For example, the neuron stabilization optimization described in~@sec:overview is an independent function with fewer than 100 SLOCs and integrated via a hook method call into the core DPLL search. Similarly, heuristics are implemented as independent functions and can be easily replaced or extended (e.g., in current implementation decisions and restarts are less than 50 SLOC). 
 // % \toolu{} also uses the Gurobi LP solver as a black box and thus can switch to different solvers, e.g, Xpress~\cite{xpress}, dReal~\cite{dreal}.
 
 
@@ -9575,7 +9540,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // \end{problem}
 
 // \begin{problem <prob:z3-2}
-// Use Z3 to check the formula given in~\autoref{ex:smt2}. Do it for both the reals and integers.
+// Use Z3 to check the formula given in~@ex:smt2. Do it for both the reals and integers.
 // \end{problem}
 
 // \begin{problem <prob:z3-3}
@@ -9621,7 +9586,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // \end{figure}
 
 
-// \autoref{fig:dpll} gives an overview of \textbf{DPLL}, a SAT solving technique introduced in 1961 by Davis, Putnam, Logemann, and Loveland~\cite{davis1962machine}. DPLL is an iterative algorithm that takes as input a propositional formula and (i) decides an unassigned variable and assigns it a truth value, (ii) performs Boolean constraint propagation (BCP or also called Unit Propagation),  which detects single literal clauses that either force a literal to be true in a satisfying assignment or give rise to a conflict; (iii) analyzes the conflict to backtrack to a previous decision level \texttt{dl}; and (iv) erases assignments at levels greater than \texttt{dl} to try new  assignments.
+// @fig:dpll gives an overview of \textbf{DPLL}, a SAT solving technique introduced in 1961 by Davis, Putnam, Logemann, and Loveland~\cite{davis1962machine}. DPLL is an iterative algorithm that takes as input a propositional formula and (i) decides an unassigned variable and assigns it a truth value, (ii) performs Boolean constraint propagation (BCP or also called Unit Propagation),  which detects single literal clauses that either force a literal to be true in a satisfying assignment or give rise to a conflict; (iii) analyzes the conflict to backtrack to a previous decision level \texttt{dl}; and (iv) erases assignments at levels greater than \texttt{dl} to try new  assignments.
 
 // These steps repeat until DPLL finds  a satisfying assignment and returns \texttt{sat}, or decides that it cannot backtrack (\texttt{dl}=-1) and returns \texttt{unsat}.
 
@@ -10099,7 +10064,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 
 //  == Mixed-Integer Linear Programming (MILP) <sec:milp-basics}
 
-// LP (\autoref{sec:lp}) assumes continuous variables over real numbers.
+// LP (@sec:lp) assumes continuous variables over real numbers.
 // A mixed-integer linear program---MILP---extends LP by requiring some variables to be integers (often binary 0 or 1).  This is useful because it allows for modeling discrete decisions and logical constraints, e.g., on/off decisions, yes/no choices, and active/inactive ReLU.
 
 // \paragraph{Linear Constraints}
@@ -10236,7 +10201,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 
 // \begin{example}[Encoding ReLU in MILP]\label{ex:relu_milp}
 
-// To encode the ReLU (\autoref{sec:relu}) activation function $y = \max(0, x)$, use
+// To encode the ReLU (@sec:relu) activation function $y = \max(0, x)$, use
 // \begin{equation <eq:relu-milp}
 // \begin{aligned}
 // & y >= x, \\
@@ -10256,10 +10221,10 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // \end{example}
 
 // \begin{problem <problem:relu-milp-bounds}
-// Consider again the ReLU example in \autoref{ex:relu_milp} but now $x$ has the bounds $L <=q x <=q U$. Modify the MILP encoding so that $L$ and $U$ are used \emph{directly} instead of a large constant $M$.
+// Consider again the ReLU example in @ex:relu_milp but now $x$ has the bounds $L <=q x <=q U$. Modify the MILP encoding so that $L$ and $U$ are used \emph{directly} instead of a large constant $M$.
 
 // \begin{solution}
-// To modify the MILP encoding for the ReLU function with bounds $L <=q x <=q U$, we add the following constraints to those in~\autoref{eq:relu-milp}:
+// To modify the MILP encoding for the ReLU function with bounds $L <=q x <=q U$, we add the following constraints to those in~@eq:relu-milp:
 // \[
 // \begin{aligned}
 // & y >= x, \\
@@ -10278,7 +10243,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // We can use Z3's optimization capabilities to solve both LP and MILP problems. Note that in practice, we often use dedicated solvers such as Gurobi or CPLEX for large problems, but Z3 is effective for demonstration purposes.
 
 // \begin{example <ex:lp-z3}
-//     We can model and solve~\autoref{ex:lp-example1} using Z3 as follows:
+//     We can model and solve~@ex:lp-example1 using Z3 as follows:
 
 //     \begin{lstlisting}
 // from z3 import *
@@ -10300,11 +10265,11 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 
 
 // \begin{problem}
-// Do~\autoref{ex:lp-problem2} using Z3.
+// Do~@ex:lp-problem2 using Z3.
 // \end{problem}
 
 // \begin{problem}
-// Do~\autoref{ex:lp-example3} using Z3.
+// Do~@ex:lp-example3 using Z3.
 // \end{problem}
 
 
@@ -10314,13 +10279,13 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // \begin{itemize}
 // \item Find \emph{two} interesting MILP problems online. These can be from textbooks, research papers, or online resources (Youtube, Google, online tutorials).
 
-// Note: Interesting here means the problem has a non-trivial structure, resembles real-world applications (like the table and chair example in~\autoref{ex:lp-example3}), or involves complex constraints.
+// Note: Interesting here means the problem has a non-trivial structure, resembles real-world applications (like the table and chair example in~@ex:lp-example3), or involves complex constraints.
 // \item For each problem:
 // \begin{itemize}
 //     \item Write down the problem and \emph{cite} the source (e.g., exact URL or Author(s)/Title/Year if from a paper).
 //     \item Formulate the problem as a MILP (clearly indicate the objective and constraints).
 //     \item Solve them by hand (show all the steps, and if possible, draw the graph showing the feasible region).
-//     \item Implement the formulation in Z3 and solve it (also document the steps as comments). Use~\autoref{ex:lp-z3} as example.
+//     \item Implement the formulation in Z3 and solve it (also document the steps as comments). Use~@ex:lp-z3 as example.
 // \end{itemize}
 // \end{itemize}
 
@@ -10403,7 +10368,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 
 // \begin{example}
 
-// For the constraints in~\autoref{ex:lp-constraints}:
+// For the constraints in~@ex:lp-constraints:
 // \begin{align}
 // x+y <= 4,quad x>= 0,quad y>= 0
 // \end{align}
@@ -10668,15 +10633,15 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // % \end{algorithm}
 
 
-// % \autoref{fig:alg} shows the \tool{} algorithm, which takes as input the formula $alpha$ representing the ReLU-based DNN $N$ and the formulae $phi_"in"\Rightarrow phi_"out"$ representing the property $phi$ to be proved.
-// % Internally, \tool{} checks the satisfiability of the formula given in~\autoref{eq:nnv2}
+// % @fig:alg shows the \tool{} algorithm, which takes as input the formula $alpha$ representing the ReLU-based DNN $N$ and the formulae $phi_"in"\Rightarrow phi_"out"$ representing the property $phi$ to be proved.
+// % Internally, \tool{} checks the satisfiability of the formula given in~@eq:nnv2
 // % \begin{equation*}
 // %   alpha \land phi_"in" \land \lnot{phi_"out"}.
 // % \end{equation*}
 // % \tool{} returns \texttt{unsat} if the formula unsatisfiable, indicating  that $phi$ is a valid property of $N$, and \texttt{sat} if it is satisfiable, indicating the $N$ is not a valid property.
 
 // % \tool{} uses a  DPLL(T)-based algorithm to check unsatisfiability.
-// % First, the input formula in~\autoref{eq:nnv2} is abstracted to a propositional formula
+// % First, the input formula in~@eq:nnv2 is abstracted to a propositional formula
 // % with variables encoding neuron activation status (\texttt{BooleanAbstraction}).
 // % Next, \tool{} assign values to Boolean variables (\texttt{Decide}) and checks for conflicts the assignment has with the real-valued constraints of the DNN and the property of interest (\texttt{BCP} and \texttt{Deduction}).
 // % If conflicts arise, \tool{} determines the assignment decisions causing the conflicts (\texttt{AnalyzeConflict}), backtracks to erase such decisions (\texttt{Backtrack}), and learns clauses to avoid those decisions in the future.
@@ -10687,14 +10652,14 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 
 
 // %  == Boolean Abstraction}
-// % \texttt{BooleanAbstraction} (\autoref{fig:alg}~\autoref{line:Booleanabstraction}) encodes the DNN verification problem into a Boolean constraint to be solved by DPLL.  This step creates Boolean variables to represent the \emph{activation status} of hidden neurons in the DNN. Observe that when evaluating the DNN on any concrete input, the value of each hidden neuron \emph{before} applying ReLU is either $>0$ (the neuron is \emph{active} and the input is passed through to the output) or $<= 0$ (the neuron is \emph{inactive} because the output is 0).
+// % \texttt{BooleanAbstraction} (@fig:alg~@line:Booleanabstraction) encodes the DNN verification problem into a Boolean constraint to be solved by DPLL.  This step creates Boolean variables to represent the \emph{activation status} of hidden neurons in the DNN. Observe that when evaluating the DNN on any concrete input, the value of each hidden neuron \emph{before} applying ReLU is either $>0$ (the neuron is \emph{active} and the input is passed through to the output) or $<= 0$ (the neuron is \emph{inactive} because the output is 0).
 // % This allows partial assignments to these variables to represent neuron activation patterns within the DNN.
 
 // % From the given network, \tool{} first creates Boolean variables representing the activation status of neurons. Next, \tool{} forms a set of initial clauses ensuring that each status variable is either \texttt{T} or \texttt{F}, indicating that each neuron is either active or inactive, respectively. A truth assignment over the variable $v_i$ creates a constraint on the pre-ReLU neuron $x_i$.
 
 
 // % \begin{example}
-// % For the DNN in~\autoref{fig:dnn}, \tool{} creates two status variables $v_3,v_4$ for neurons $x_3,x_4$, respectively, and two initial clauses $v_3\lor \lnot{v_3}$ and $v_4 \lor \lnot{v_4}$. The assignment $ {x_3=T, x_4=F  }$ creates the constraint $0.5x_1-0.5x_2-1>0 \land x_1 + x_2 -2 <= 0$.
+// % For the DNN in~@fig:dnn, \tool{} creates two status variables $v_3,v_4$ for neurons $x_3,x_4$, respectively, and two initial clauses $v_3\lor \lnot{v_3}$ and $v_4 \lor \lnot{v_4}$. The assignment $ {x_3=T, x_4=F  }$ creates the constraint $0.5x_1-0.5x_2-1>0 \land x_1 + x_2 -2 <= 0$.
 // % \end{example}
 
 
@@ -10726,21 +10691,21 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 
 // %  == DPLL <sec:ns-dpll}
 
-// % After \texttt{BooleanAbstraction}, \tool{} iteratively searches for an assignment satisfying the status clauses (\autoref{fig:alg}, lines~\ref{line:dpllstart}--~\ref{line:dpllend}).
+// % After \texttt{BooleanAbstraction}, \tool{} iteratively searches for an assignment satisfying the status clauses (@fig:alg, lines~\ref{line:dpllstart}--~\ref{line:dpllend}).
 // % % \tvn{something is wrong with the line ?? here} \hd{fixed}
 // % \tool{} combines  DPLL components (e.g., \texttt{Decide}, \texttt{BCP}, \texttt{AnalyzeConflict}, \texttt{Backtrack} and \texttt{Restart}) to assign truth values with a theory solver (\S\ref{sec:deduction}), consisting of abstraction and linear programming solving, to check the feasibility of the constraints implied by the assignment with respect to the network and property of interest.
 
-// % \tool{} maintains several variables (\autoref{fig:alg}, lines~\ref{line:Booleanabstraction}--~\ref{line:varsb}). These include $\clauses$, a set of \emph{clauses} consisting of the initial activation clauses and learned clauses;   $sigma$, a \emph{truth assignment} mapping status variables to truth values; $igraph$, an \emph{implication graph} used for analyzing conflicts; and  $dl$, a non-zero \emph{decision level} used for assignment and backtracking.
+// % \tool{} maintains several variables (@fig:alg, lines~\ref{line:Booleanabstraction}--~\ref{line:varsb}). These include $\clauses$, a set of \emph{clauses} consisting of the initial activation clauses and learned clauses;   $sigma$, a \emph{truth assignment} mapping status variables to truth values; $igraph$, an \emph{implication graph} used for analyzing conflicts; and  $dl$, a non-zero \emph{decision level} used for assignment and backtracking.
 
 
 // % %needs to analyze both \emph{Boolean constraints} (i.e., clauses involving status variables) and \emph{non-Boolean constraints} involving the nonlinear representation of the activation function and linear constraints encoding the network and status variables,  e.g., $v_3=\texttt{F}$ means $x_3'=\texttt{off}=0.5x_1-0.5x_2-1.0 <= 0$.
 // % %To analyze both kinds of constraints,
 
-// % %\autoref{fig:overview} gives an overview of \tool{}, which takes as input a DNN $N$ and a property $P$ and returns \texttt{unsat} if $P$ is a valid property of $N$ and \texttt{sat} otherwise. In the case of \texttt{sat}, \tool{} can also return a satisfying assignment representing a counterexample input violating $P$.
+// % %@fig:overview gives an overview of \tool{}, which takes as input a DNN $N$ and a property $P$ and returns \texttt{unsat} if $P$ is a valid property of $N$ and \texttt{sat} otherwise. In the case of \texttt{sat}, \tool{} can also return a satisfying assignment representing a counterexample input violating $P$.
 
 // % \subsection{Decide <sec:decide}
 
-// % From the current assignment, \texttt{Decide} (\autoref{fig:alg}, line~\ref{line:decide}) uses a heuristic to choose an unassigned variable and assigns it a random truth value at the current decision level.
+// % From the current assignment, \texttt{Decide} (@fig:alg, line~\ref{line:decide}) uses a heuristic to choose an unassigned variable and assigns it a random truth value at the current decision level.
 // % \tool{} applies the Filtered Smart Branching (FSB) heuristic~\cite{bunel2018unified,de2021improved}. For each unassigned variable, FSB assumes that it has been decided (i.e., the corresponding neuron has been split) and computes a fast approximation of the lower and upperbounds of the network output variables.  FSB then prioritizes unassigned variables with the best differences among the bounds that would help make the input formula unsatisfiable (which helps prove the property of interest).
 // % Note that if the current assignment is full, i.e., all variables have assigned values, \texttt{Decide} returns \texttt{False} (from which \tool{} returns \texttt{sat}).
 
@@ -10772,14 +10737,14 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 
 // % \subsection{Boolean Constraint Propagation (BCP) <sec:bcp}
 
-// % From the current assignment and clauses, \texttt{BCP} (\autoref{fig:alg}, line~\ref{line:bcp}) detects \emph{unit clauses}\footnote{A unit clause is a clause that has a single unassigned literal.} and infers values for variables in these clauses.
+// % From the current assignment and clauses, \texttt{BCP} (@fig:alg, line~\ref{line:bcp}) detects \emph{unit clauses}\footnote{A unit clause is a clause that has a single unassigned literal.} and infers values for variables in these clauses.
 // % For example, after the decision $a\mapsto F$, \texttt{BCP} determines that the clause $a\vee b$ becomes unit, and infers that $b \mapsto T$.
 // % Moreover, each assignment due to \texttt{BCP} is associated with the current decision level because instead of being ``guessed'' by \texttt{Decide} the chosen value is logically implied by other assignments.
 // % Moreover, because each {BCP} implication might cause other clauses to become unit, \texttt{BCP} is applied repeatedly until it can no longer find unit clauses.
 // % \textsc{BCP} returns \texttt{False} if it obtains contradictory implications (e.g., one BCP application infers $a \mapsto F$ while another infers $a \mapsto T$), and returns \texttt{True} otherwise.
 
 // % \paragraph{Implication Graph} \texttt{BCP} uses an \emph{implication graph}~\cite{barrett2013decision} to represent the current assignment and the reason for each BCP implication. In this graph, a node represents the assignment and an edge $i \xrightarrow{c} j$ means that \texttt{BCP} infers the assignment represented in node $j$ due to the unit clause $c$ caused by the assignment represented by node $i$.
-// % The implication graph is used by both BCP, which iteratively constructs the graph on each BCP application and uses it to determine conflict, and \texttt{AnalyzeConflict} (\autoref{sec:analyze-conflicts}), which analyzes the conflict in the graph to learn clauses.
+// % The implication graph is used by both BCP, which iteratively constructs the graph on each BCP application and uses it to determine conflict, and \texttt{AnalyzeConflict} (@sec:analyze-conflicts), which analyzes the conflict in the graph to learn clauses.
 
 // % \begin{figure}
 // %     \begin{minipage}[c]{0.15\textwidth}
@@ -10818,7 +10783,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 
 
 // % \begin{example}
-// %     Assume we have the clauses in~\autoref{fig:igraph}(a), the assignments $\overline{v_5}@3$ and $v_1@6$ (represented in the graph in~\autoref{fig:igraph}(b) by nodes  $\overline{v_5}@3$ and $v_1@6$, respectively), and are currently at decision level $dl$ 6.
+// %     Assume we have the clauses in~@fig:igraph(a), the assignments $\overline{v_5}@3$ and $v_1@6$ (represented in the graph in~@fig:igraph(b) by nodes  $\overline{v_5}@3$ and $v_1@6$, respectively), and are currently at decision level $dl$ 6.
 // % Because of assignment $v_1@6$, \texttt{BCP} infers $v_2@6$ from the unit clause $c_1$ and captures that implication with edge $v_1@6 \xrightarrow{c_1} v_2@6$.
 // % Next, because of assignment $v_2@6$, \texttt{BCP} infers $v_4@6$ from the unit clause $c_3$ as shown by edge $v_2@6 \xrightarrow{c_3} v_4@6$.
 
@@ -10856,7 +10821,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 
 // % \subsection{Conflict Analysis <sec:analyze-conflicts}
 
-// % Given an implication graph with a conflict (e.g.,~\autoref{fig:igraph}b), \texttt{AnalyzeConflict} learns a new \emph{clause} to avoid past decisions causing the conflict.
+// % Given an implication graph with a conflict (e.g.,~@fig:igraphb), \texttt{AnalyzeConflict} learns a new \emph{clause} to avoid past decisions causing the conflict.
 // % The algorithm traverses the implication graph backward, starting from the conflicting node $\kappa$, while constructing a new clause through a series of resolution steps.
 // % \texttt{AnalyzeConflict} aims to obtain an \emph{asserting} clause, which is a clause that will force an immediate BCP implication after backtracking.
 
@@ -10881,7 +10846,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // %   \end{algorithm}
 // %   \end{minipage}
 // % \end{wrapfigure}
-// % \texttt{AnalyzeConflict}, shown in~\autoref{alg:conflict}, first extracts the conflicting clause $cl$ (line~\ref{line:conflict}), represented by the edges connecting to the conflicting node $\kappa$ in the implication graph.
+// % \texttt{AnalyzeConflict}, shown in~@alg:conflict, first extracts the conflicting clause $cl$ (line~\ref{line:conflict}), represented by the edges connecting to the conflicting node $\kappa$ in the implication graph.
 // % Next, the algorithm refines this clause to achieve an asserting clause (lines~\ref{line:loopstart}--~\ref{line:loopend}).
 // % It obtains the literal $lit$ that was assigned last in $cl$ (line~\ref{line:lit}), the variable $var$ associated with $lit$ (line~\ref{line:var}), and the antecedent clause $ante$ of that $var$ (line~\ref{line:ante}), which contains $\overline{lit}$ as the only satisfied literal in the clause. Now, \texttt{AnalyzeConflict} resolves $cl$ and $ante$ to eliminate literals involving $var$ (line~\ref{line:resolve}). The result of the resolution is a clause, which is then refined in the next iteration.
 
@@ -10898,10 +10863,10 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // % %\textbf{Stopping Criteria} \hd{Learned conflict clause is a special kind of conflict clause, called an \textbf{asserting} clause: it forces an immediate implication after backtracking. Empirical studies show that a good strategy for stopping criteria is to  return \textbf{true} if and only if the learned conflict clause $cl$ contains the negation of the first UIP as its single literal at the current decision level. This negated literal becomes asserted immediately after backtracking. In short, the learned conflict clause $cl$ should be an \textbf{asserting} clause.}
 // % %(to obtain an asserting clause
 
-// % % using the clauses in~\autoref{fig:igraph}a and implication graph in~\autoref{fig:igraph}b developed in
+// % % using the clauses in~@fig:igrapha and implication graph in~@fig:igraphb developed in
 // % \begin{example}
 
-// %    ~\autoref{fig:igraph}(c) demonstrates \texttt{AnalyzeConflict} using the example in \S\ref{sec:bcp} with the BCP implication order $v_2,v_4,v_3$ and the conflicting clause $cl$ (connecting to node $\kappa$ in the graph in~\autoref{fig:igraph}(b)) $c_4=\overline{v_3} \lor \overline{v_4}$. From $c_4$, we determine the last assigned literal is $lit=\overline{v_3}$, which contains the variable $var=v_3$, and the antecedent clause containing $v_3$ is $c_2=\overline{v_1} \lor v_3 \lor v_5$ (from the implication graph in~\autoref{fig:igraph}(b), we determine that assignments $v_1@6$ and $\overline{v_5}@3$ cause the BCP implication $v_3@6$ due to clause $c_2$). Now we resolve the two clauses $cl$ and $c_2$ using the resolution variable $v_3$ to obtain the clause $\overline{v_4} \lor \overline{v_1} \lor v_5$.
+// %    ~@fig:igraph(c) demonstrates \texttt{AnalyzeConflict} using the example in \S\ref{sec:bcp} with the BCP implication order $v_2,v_4,v_3$ and the conflicting clause $cl$ (connecting to node $\kappa$ in the graph in~@fig:igraph(b)) $c_4=\overline{v_3} \lor \overline{v_4}$. From $c_4$, we determine the last assigned literal is $lit=\overline{v_3}$, which contains the variable $var=v_3$, and the antecedent clause containing $v_3$ is $c_2=\overline{v_1} \lor v_3 \lor v_5$ (from the implication graph in~@fig:igraph(b), we determine that assignments $v_1@6$ and $\overline{v_5}@3$ cause the BCP implication $v_3@6$ due to clause $c_2$). Now we resolve the two clauses $cl$ and $c_2$ using the resolution variable $v_3$ to obtain the clause $\overline{v_4} \lor \overline{v_1} \lor v_5$.
 // % Next, from the new clause, we obtain $lit=\overline{v_4}, var=v_4, ante=c_3$ and apply resolution to get the clause $\overline{v_1} \vee v_5 \lor \overline{v_2}$.
 // % Similarly, from this clause, we obtain $lit=\overline{v_2}, var=v_2, ante=c_1$ and apply resolution to obtain the clause $v_1 \lor v_5$.
 // % % \begin{figure}
@@ -10925,7 +10890,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 
 // % %is a main benefit of CDCL and
 // % The process of learning clauses allows \tool{} to learn from its past mistakes.
-// % While such clauses are logically implied by the formula in ~\autoref{eq:nnv2} and therefore do not change the result, they help prune the search space and allow DPLL and therefore \tool{} to scale. For example, after learning the clause $c_5$, together with assignment $v_5@3$, we immediately infer $v_1 \mapsto F$ through BCP instead of having to guess through \texttt{Decide}.
+// % While such clauses are logically implied by the formula in ~@eq:nnv2 and therefore do not change the result, they help prune the search space and allow DPLL and therefore \tool{} to scale. For example, after learning the clause $c_5$, together with assignment $v_5@3$, we immediately infer $v_1 \mapsto F$ through BCP instead of having to guess through \texttt{Decide}.
 
 // % %The literal lit is the literal in cl assigned last, and var denotes its associated variable. The antecedent clause of var, denoted by ante, contains ¬lit as the only satisfied literal, and other literals, all of which are currently unsatisfied. The clauses cl and ante thus contain lit and ¬lit, respectively, and can therefore be resolved with the resolution variable var. The resolvent clause is again a conflicting clause, which is the basis for the next resolution step.
 
@@ -10948,7 +10913,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // % %% The other functions and variables are self-explanatory.
 
 
-// % %% The implication graph on the~\autoref{fig:igraph}b demonstrates the BCP process at the current decision level 6 until, in this case, a conflict is detected.
+// % %% The implication graph on the~@fig:igraphb demonstrates the BCP process at the current decision level 6 until, in this case, a conflict is detected.
 // % %% The roots of this graph, namely $\overline{v_5}@3$ and $v_1@6$, constitute a sufficient condition for creating this conflict.
 // % %% Therefore, we can safely add to our formula the \textbf{conflict clause}:
 // % %% \begin{equation}
@@ -10957,7 +10922,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 
 
 // % \subsection{Backtrack} \label{sec:backtrack}
-// % From the clause returned by \texttt{AnalyzeConflict}, \texttt{Backtrack}  (\autoref{fig:alg}, line~\ref{line:backtrack}) computes a backtracking level and erases all decisions and implications made after that level.
+// % From the clause returned by \texttt{AnalyzeConflict}, \texttt{Backtrack}  (@fig:alg, line~\ref{line:backtrack}) computes a backtracking level and erases all decisions and implications made after that level.
 // % If the clause is \emph{unary} (containing just a single literal), then we backtrack to level 0. % (and if we obtain further conflict with this clause, then the formula is unsatisfiable).
 
 // % Currently, \tool{} uses the standard \emph{conflict-drive backtracking} strategy~\cite{barrett2013decision}, which sets the backtracking level to the \emph{second most recent} decision level in the clause.
@@ -10970,7 +10935,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 
 // % \begin{example}
 
-// %     From the clause $c_5=\overline{v_1} \lor v_5$ learned in \texttt{AnalyzeConflict}, we backtrack to decision level 3, the second most recent decision level in the clause (because assignments $v_1@6$  and $\overline{v_5}@3$ were decided at levels 6 and 3, respectively). Next, we erase all assignments from decision level 4 onward (i.e., the assignments to $v_1,v_2,v_3,v_4$ as shown in the implication graph in~\autoref{fig:igraph}). This thus makes these more recently assigned variables (after decision level 3) available for new assignments (in fact, as shown by the example in~\autoref{sec:bcp}, \texttt{BCP} will immediately infer $v_1=T$ by noticing that $c_5$ is now a unit clause).
+// %     From the clause $c_5=\overline{v_1} \lor v_5$ learned in \texttt{AnalyzeConflict}, we backtrack to decision level 3, the second most recent decision level in the clause (because assignments $v_1@6$  and $\overline{v_5}@3$ were decided at levels 6 and 3, respectively). Next, we erase all assignments from decision level 4 onward (i.e., the assignments to $v_1,v_2,v_3,v_4$ as shown in the implication graph in~@fig:igraph). This thus makes these more recently assigned variables (after decision level 3) available for new assignments (in fact, as shown by the example in~@sec:bcp, \texttt{BCP} will immediately infer $v_1=T$ by noticing that $c_5$ is now a unit clause).
 // % \end{example}
 
 // % %\tvn{Discussion: waste of time for erasing everything from dl?} \hd{If we don't erase information from $dl$ when backtrack occurs, it will require a lot of memories to save the redundant information of implication graph from decision level $dl$ onwards.}
@@ -10988,7 +10953,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 
 
 
-// % %% \subsubsection{Backtrack} Given a conflict clause, \textbf{Backtrack}  (\autoref{fig:alg}, line~\ref{line:backtrack}) compute a decision level to backtrack to. Currently, we use the \emph{conflict-drive backtracking}~\cite{barrett2013decision}, which sets the backtracking level to the \emph{second most recent} decision level in the conflict clause \tvn{Intuitively this is because}.
+// % %% \subsubsection{Backtrack} Given a conflict clause, \textbf{Backtrack}  (@fig:alg, line~\ref{line:backtrack}) compute a decision level to backtrack to. Currently, we use the \emph{conflict-drive backtracking}~\cite{barrett2013decision}, which sets the backtracking level to the \emph{second most recent} decision level in the conflict clause \tvn{Intuitively this is because}.
 // % %% Next, Backtrack erases decisions by Decide and implications by BCP and Deduce made after that level.
 // % %% Note that if we learn a \emph{unary} clause, which contain just a single literal, then we backtrack to level 0 (and if we obtain further conflict with this clause (a conflict at level $dl=0$, line~\ref{line:unsat}), i.e., the formula is unsatisfiable).
 
@@ -11008,7 +10973,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // % %\hd{simple and trivial clauses lead to simple chronological backtracks by the binary resolution during conflict analysis step}
 // % %Having said that without using restart, the non-chronological backtracks would never get used by \tool{} since these backtracks need more complex implication graph to be jumped into.
 
-// % \tool{} uses a simple restart heuristic (\autoref{fig:alg}, line~\ref{line:restart}) that triggers a restart when either the number of processed assignments (nodes) exceeds a pre-defined number (e.g., 300 nodes) or the current runtime exceeds a pre-defined threshold (e.g., 50 seconds).
+// % \tool{} uses a simple restart heuristic (@fig:alg, line~\ref{line:restart}) that triggers a restart when either the number of processed assignments (nodes) exceeds a pre-defined number (e.g., 300 nodes) or the current runtime exceeds a pre-defined threshold (e.g., 50 seconds).
 // % % \tvn{what are these number and threshold?}\hd{added}
 // % After a restart, \tool{} avoids using the same decision order of previous runs (i.e., it would use a different sequence of neuron splittings). It also resets all internal information (e.g., decisions and implication graph) except the learned conflict clauses, which are kept and reused as these are \textit{facts} about the given constraint system.
 // % This allows a restarted search to quickly prune parts of the  space of assignments.
@@ -11017,7 +10982,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // % %For \tool{} and DNN verification problem, we found that restart is especially important for solving difficult problem.
 // % %Restart, which is only triggered for expensive searches, allows for a different decision ordering and assignments that might solve the problem quicker. Moreover,
 
-// % We found the combination of clause learning and restarts effective for DNN verification. In particular, while restart resets information  it keeps learned clauses, which  are \emph{facts} implied by the problem, and therefore enables quicker BCP applications and non-chronological backtracking (e.g., as illustrated in~\autoref{fig:tree}).
+// % We found the combination of clause learning and restarts effective for DNN verification. In particular, while restart resets information  it keeps learned clauses, which  are \emph{facts} implied by the problem, and therefore enables quicker BCP applications and non-chronological backtracking (e.g., as illustrated in~@fig:tree).
 
 // % %It is worth noting that while it is possible to add a restart to existing DNN verification approaches. This is unlikely to help, because these techniques do not learn conflict clauses and therefore restart will just randomize order but carry no information forward to prune the search space.
 
@@ -11039,7 +11004,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 
 // %     $\lpmodel <=ftarrow \LPSolver(\assignment, \network \land phi_"in" \land \overline{phi_"out"})$\;\label{line:lpsolver}
 // %     \lIf{$\Solve(\lpmodel) \equiv  in feasible$}{\Return {\false} <line:solve}
-// %     \lIf(\tcp*[h]{orig prob (~\autoref{eq:nnv2}) is satisfiable}){$\isTotal(\assignment)$}{\Return {\true}  <line:full}
+// %     \lIf(\tcp*[h]{orig prob (~@eq:nnv2) is satisfiable}){$\isTotal(\assignment)$}{\Return {\true}  <line:full}
 // %     %$ in puts = >=tInputs(phi_"in")$
 // %     % $\ninputs <=ftarrow >=tNumInputs(\network)$
 // %     % $\layernodes = \FindLayerNodes(\assignment)$\;
@@ -11067,20 +11032,20 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // %     \caption{\textsc{Deduction} <alg:deduction}
 // % \end{algorithm}
 
-// % \texttt{Deduction} (\autoref{fig:alg}, line~\ref{line:deduction}) is the theory or T-solver, i.e., the T in DPLL(T). The main purpose of the T-solver is to check the feasibility of the constraints represented by the current propositional variable assignment; as shown in the formalization in \S\ref{sec:formalization} this amounts to just \emph{linear equation} solving for verifying piecewise linear DNNs. However, \tool{} is able to leverage specific information from the DNN problem, including input and output properties, for more aggressive feasibility checking.  Specifically, \texttt{Deduction} has three tasks: (i) checking feasibility using linear programming (LP) solving, (i) further checking feasibility with input tightening and abstraction, and (iii) inferring literals that are unassigned and are implied by the abstracted constraint.
+// % \texttt{Deduction} (@fig:alg, line~\ref{line:deduction}) is the theory or T-solver, i.e., the T in DPLL(T). The main purpose of the T-solver is to check the feasibility of the constraints represented by the current propositional variable assignment; as shown in the formalization in \S\ref{sec:formalization} this amounts to just \emph{linear equation} solving for verifying piecewise linear DNNs. However, \tool{} is able to leverage specific information from the DNN problem, including input and output properties, for more aggressive feasibility checking.  Specifically, \texttt{Deduction} has three tasks: (i) checking feasibility using linear programming (LP) solving, (i) further checking feasibility with input tightening and abstraction, and (iii) inferring literals that are unassigned and are implied by the abstracted constraint.
 
 // % %The algorithm returns conflict if the current assignment does not satisfy the constraints of the network and property.
 // % %Similar to \textsc{BCP}, Deduce also perform assignment inferencing.
 
 
-// % \autoref{alg:deduction} describes \texttt{Deduction}, which returns \texttt{False} if infeasibility occurs and  \texttt{True} otherwise.
+// % @alg:deduction describes \texttt{Deduction}, which returns \texttt{False} if infeasibility occurs and  \texttt{True} otherwise.
 // % %\textsc{Deduce} is a theory solver that takes the arguments including: the current assignment $sigma$, neural network $alpha$, precondition $phi_"in"$ over inputs and postcondition $phi_"out"$ over outputs.
-// % First, it creates a linear constraint system from the input assignment $sigma$ and $alpha \land phi_"in" \land \overline{phi_"out"}$, i.e., the formula in ~\autoref{eq:nnv2} representing the original problem  (line~\ref{line:lpsolver}).
+// % First, it creates a linear constraint system from the input assignment $sigma$ and $alpha \land phi_"in" \land \overline{phi_"out"}$, i.e., the formula in ~@eq:nnv2 representing the original problem  (line~\ref{line:lpsolver}).
 // % The key idea is that we can remove ReLU activation for hidden neurons whose activation status have been decided.
 // % For constraints in $alpha$ associated with variables that are not in the $sigma$,  we ignore them and just consider the cutting planes introduced by the partial assignment.
 // % %FixUB preceding sentence based on answer.}
 // % %\hd{Yes, you're correct. We ignore constraints generated by unassigned variables and only consider the cutting planes introduced by the partial assignment}
-// % For example, for the assignment $v_3\mapsto T, v_4 \mapsto F$, the non-linear ReLU constraints $x_3=ReLU(-0.5x_1+0.5x_2+1)$ and  $x_4=ReLU(x_1+x_2-1)$ for the DNN in~\autoref{fig:dnn} become linear constraints $x_3=-0.5x_1+0.5x_2$ and $x_4=0$, respectively.
+// % For example, for the assignment $v_3\mapsto T, v_4 \mapsto F$, the non-linear ReLU constraints $x_3=ReLU(-0.5x_1+0.5x_2+1)$ and  $x_4=ReLU(x_1+x_2-1)$ for the DNN in~@fig:dnn become linear constraints $x_3=-0.5x_1+0.5x_2$ and $x_4=0$, respectively.
 
 // % Next, an LP solver checks the feasibility of the linear constraints (line~\ref{line:solve}).
 // % If the solver returns infeasible,  \texttt{Deduction} returns \texttt{False} so that \tool{} can analyze the assignment and backtrack.
@@ -11120,8 +11085,8 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // % \end{figure}
 
 // % \tool{} uses abstraction to approximate the lower and upper bounds of hidden and output neurons.
-// % \autoref{fig:abs} compares the (a) interval~\cite{wang2018formal}, (b) zonotope~\cite{singh2018fast}, and (c, d) polytope~\cite{xu2020fast,singh2019abstract,wang2021beta} abstraction domains to compute the lower $l_y(x)$ and upper $u_y(x)$ bounds of a ReLU computation $y=\texttt{ReLU(x)}$ (non-convex red line).
-// % \tool{} can employ any existing abstract domains, though currently it adopts the \emph{LiRPA} polytope (\autoref{fig:abs}d)~\cite{xu2020fast,xu2020automatic,wang2021beta} because it has a good trade-off between precision and efficiency.
+// % @fig:abs compares the (a) interval~\cite{wang2018formal}, (b) zonotope~\cite{singh2018fast}, and (c, d) polytope~\cite{xu2020fast,singh2019abstract,wang2021beta} abstraction domains to compute the lower $l_y(x)$ and upper $u_y(x)$ bounds of a ReLU computation $y=\texttt{ReLU(x)}$ (non-convex red line).
+// % \tool{} can employ any existing abstract domains, though currently it adopts the \emph{LiRPA} polytope (@fig:absd)~\cite{xu2020fast,xu2020automatic,wang2021beta} because it has a good trade-off between precision and efficiency.
 
 // % %\hd{remove this sentence?}
 
@@ -11134,37 +11099,37 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // % %\mbd{forward pointer to data on this in evaluation section.}
 // % %\hd{Maximum overhead is about 39\% of runtime, all cases which have overhead > 30\% belong to CIFAR networks from CIFAR2020 benchmark which are large (cifar10\_2\_255, convBigRELU\_PGD), average overhead is about 4\%, apply median filter and average will be 2\%}
 
-// % \begin{example} For the illustrative example in~\autoref{ex:neuralsat}, in iteration 3, the current assignment $sigma$ is  $ {v_4=1 }$, corresponding to a constraint $x_1 + x_2 - 1 > 0$. With the new constraint, we optimize the input bounds and compute the new bounds for hidden neurons $0.5 <= x_3 <= 2.5$, $0 < x_4 <= 2.0$ and output neuron  $x_5 <= 0.5$ (and use this to determine that the postcondition $x_5 > 0$ might be feasible). We also infer $v_3=1$ because of the positive lower bound $0.5 <= x_3$.
+// % \begin{example} For the illustrative example in~@ex:neuralsat, in iteration 3, the current assignment $sigma$ is  $ {v_4=1 }$, corresponding to a constraint $x_1 + x_2 - 1 > 0$. With the new constraint, we optimize the input bounds and compute the new bounds for hidden neurons $0.5 <= x_3 <= 2.5$, $0 < x_4 <= 2.0$ and output neuron  $x_5 <= 0.5$ (and use this to determine that the postcondition $x_5 > 0$ might be feasible). We also infer $v_3=1$ because of the positive lower bound $0.5 <= x_3$.
 // % \end{example}
 
 
 
 // %  == \tool{}'s Optimizations <sec:optimizations}
 
-// % \tool{} implements several optimizations to improve the performance of the search. First are the common optimizations used by other DNN verifiers, such as input splittings (\autoref{chap:common-engineering}) and adversarial attacks (\autoref{chap:adversarial-attacks}). In addition, \neuralsat{} implements several unique optimizations~\cite{duong2024harnessing} to improve the performance of the search. These are neuron stability, restart tree, and restart.
+// % \tool{} implements several optimizations to improve the performance of the search. First are the common optimizations used by other DNN verifiers, such as input splittings (@chap:common-engineering) and adversarial attacks (@chap:adversarial-attacks). In addition, \neuralsat{} implements several unique optimizations~\cite{duong2024harnessing} to improve the performance of the search. These are neuron stability, restart tree, and restart.
 
 
 // % \subsection{Neuron Stability <sec:stabilization}
-// % A neuron is \emph{stable} if its activation status does not change regardless of the input values. In contrast, a neuron is \emph{unstable} if its activation status can change depending on the input values. For example, in the DNN in~\autoref{fig:dnn}, \tvn{any neuron stable? or they are all unstable?}
+// % A neuron is \emph{stable} if its activation status does not change regardless of the input values. In contrast, a neuron is \emph{unstable} if its activation status can change depending on the input values. For example, in the DNN in~@fig:dnn, \tvn{any neuron stable? or they are all unstable?}
 
 
 // % The key idea in using neuron stability is that if we can determine that a neuron is stable,  we can assign the exact truth value for the corresponding Boolean variable instead of having to guess. This has a similar effect as \mycode{BCP}---reducing mistaken assignments by \Decide---but it operates at the theory level instead of the propositional Boolean level.
 
-// % %First, the T-solver creates a linear constraint system from the input assignment $sigma$ and $alpha \land phi_"in" \land \overline{phi_"out"}$, i.e., the formula in ~\autoref{eq:nnv2} representing the original problem  (line~\ref{line:lpsolver}).
+// % %First, the T-solver creates a linear constraint system from the input assignment $sigma$ and $alpha \land phi_"in" \land \overline{phi_"out"}$, i.e., the formula in ~@eq:nnv2 representing the original problem  (line~\ref{line:lpsolver}).
 // % %First, the T-solver creates a set of linear constraints representing ReLU activation for hidden neurons whose activation status have been decided.
 // % %Next, those constraints are used in \textsc{Stabilize} for inferring status of neurons that are unassigned, \textsc{Deduce} then applies the polytope abstraction to check satisfiability.
 // % %If the abstraction confirms the infeasibility, \textsc{Deduce} returns \texttt{False} so that \textsc{AnalyzeConflict} can analyze the assignment and and learn the conflict clause.
 // % %Otherwise, the current assignment might be feasible and \textsc{Decide} continues to split more hidden neurons.
 
 
-// % %\texttt{Stabilize} (\autoref{fig:alg} line~\ref{line:stabilize}) first creates linear constraints consisting of the DNN $alpha$, the input \tvn{fillin} and output \tvn{fillin} conditions, and the current assignment $sigma$. Next, it uses these constraints to generate a Mixed Integer Linear Programming (MILP) problem (~\autoref{eq:mip}), whose objective is compute a tighter lower and upper bounds for unstable neurons based on the current search state (i.e., the current assignment $sigma$).
+// % %\texttt{Stabilize} (@fig:alg line~\ref{line:stabilize}) first creates linear constraints consisting of the DNN $alpha$, the input \tvn{fillin} and output \tvn{fillin} conditions, and the current assignment $sigma$. Next, it uses these constraints to generate a Mixed Integer Linear Programming (MILP) problem (~@eq:mip), whose objective is compute a tighter lower and upper bounds for unstable neurons based on the current search state (i.e., the current assignment $sigma$).
 
 // % %the considered property into a set of constraints for
 // % %The main goal of this process is to
 
 
 // % %the boolean values activation status instead of
-// % %that we can remove ReLU activation for hidden neurons whose activation status have been decided, each propositional variable in current assignment concretizes (removes) its corresponding constraints in MILP problem (~\autoref{eq:mip}) that helps solver reduce numbers of constraints and be able to tighten bounds further.
+// % %that we can remove ReLU activation for hidden neurons whose activation status have been decided, each propositional variable in current assignment concretizes (removes) its corresponding constraints in MILP problem (~@eq:mip) that helps solver reduce numbers of constraints and be able to tighten bounds further.
 
 
 
@@ -11213,8 +11178,8 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // %     \Output{Tighten bounds for variables \textbf{not} in $sigma$ (unassigned variables)}
 // %     \BlankLine
 
-// %     % \tcp{create an MILP solver based on ~\autoref{eq:mip}}
-// %     $\model <=ftarrow \MIP(alpha, phi_"in", phi_"out", sigma)$ \tcp{create model (~\autoref{eq:mip1}) with  current assignment}
+// %     % \tcp{create an MILP solver based on ~@eq:mip}
+// %     $\model <=ftarrow \MIP(alpha, phi_"in", phi_"out", sigma)$ \tcp{create model (~@eq:mip1) with  current assignment}
 
 // %     $[v_1, ..., v_m] <=ftarrow >=tUnassignedVariable(sigma)$ \tcp{get all $m$ current unassigned variables} \label{line:find}
 
@@ -11246,8 +11211,8 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 
 
 
-// % \autoref{fig:stabilize} describes Stabilize solves this equation system.
-// % First,  a MILP problem is created from the current assignment, the DNN, and the property of interest using formulation in ~\autoref{eq:mip1}.
+// % @fig:stabilize describes Stabilize solves this equation system.
+// % First,  a MILP problem is created from the current assignment, the DNN, and the property of interest using formulation in ~@eq:mip1.
 // % Note that the neuron lower (${l}_j^{(i)}$) and upper bounds (${u}_j^{(i)}$) can be quickly computed by polytope abstraction.
 
 // % Next, it collects a list of all unassigned variables which are candidates being stabilized (line~\ref{line:find}).
@@ -11261,7 +11226,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // % The order of optimizing bounds of select neurons is decided by its boundaries, e.g., if the lower bound is closer to zero than the upper bound then the lower bound would be optimized first.
 // % These optimization processes, i.e., \mycode{Maximize} (line~\ref{line:maximize1} or line~\ref{line:maximize2}) and \mycode{Minimize} (line~\ref{line:minimize1} or line~\ref{line:minimize2}), are performed by an external LP solver (e.g., Gurobi~\cite{gurobi}).
 
-// % %Note that the work in~\cite{tjeng2019evaluating} uses the MILP system in ~\autoref{eq:mip} to encode the entire verification problem and thus is limited to the encodings of small networks that can be handled by an LP solver.
+// % %Note that the work in~\cite{tjeng2019evaluating} uses the MILP system in ~@eq:mip to encode the entire verification problem and thus is limited to the encodings of small networks that can be handled by an LP solver.
 // % %This MILP system is used by~\cite{tjeng2019evaluating} to encode the entire verification problem. It is passed to an LP solver to optimize the output of the network with respect to the the property of interest.
 // % %This approach only works small networks whose constraints can be handled by LP solving.
 // % %In contrast, \tool{} creates this system based on the current assignment, which has significantly fewer constraints.
@@ -11270,7 +11235,7 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 
 
 // % \begin{example}
-// %   \tvn{Need a concrete example here.  Use the DNN in~\autoref{fig:dnn} and create the MILP system in ~\autoref{eq:mip1}.}
+// %   \tvn{Need a concrete example here.  Use the DNN in~@fig:dnn and create the MILP system in ~@eq:mip1.}
 // % \end{example}
 
 // % \subsubsection{Parallel Search <sec:parallel-search}
@@ -11306,10 +11271,10 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // % At every step of the search algorithm, we select up to $n$ nodes  of the DPLL(T) search tree to create a beam of width $n$.
 // % This splits (like DNC) the search into $n$ subproblems that are independently processed.  Each subproblem extends the tree by a depth of 1.
 
-// % Our approach simplifies the more general DNC scheme since the $n$ bodies of the \textbf{parfor} on line~\ref{line:parfor} of~\autoref{fig:alg} are roughly load balanced.
+// % Our approach simplifies the more general DNC scheme since the $n$ bodies of the \textbf{parfor} on line~\ref{line:parfor} of~@fig:alg are roughly load balanced.
 // % While this is a limited form of parallelism, it sidesteps one of the major roadblocks to DPLL parallelism -- the need to efficiently synchronize across load-imbalanced subproblems~\cite{le2017painless,le2019modular}.
 
-// % In addition to raw speedUB due to multiprocessing, parallelism accelerates the sharing of information across search subspaces, in particular learned clause information for DPLL. In \tool{}, we only generate independent subproblems which eliminates the need to coordinate their solution. When all subproblems are complete, their conflicts are accumulated,~\autoref{fig:alg} line~\ref{line:analyze_conflict},  to inform the next round of search.
+// % In addition to raw speedUB due to multiprocessing, parallelism accelerates the sharing of information across search subspaces, in particular learned clause information for DPLL. In \tool{}, we only generate independent subproblems which eliminates the need to coordinate their solution. When all subproblems are complete, their conflicts are accumulated,~@fig:alg line~\ref{line:analyze_conflict},  to inform the next round of search.
 
 
 // % \subsection{Restart}
@@ -11331,8 +11296,8 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // % %     $\maxvisited <=ftarrow 200000$ \tcp{predefined maximum number of visited nodes}
 // % %     $\maxremaining <=ftarrow 30000$ \tcp{predefined maximum number of remaining nodes}
 
-// %     % \tcp{create an MILP solver based on ~\autoref{eq:mip}}
-// %     % $\model <=ftarrow \MIP(alpha, phi_"in", phi_"out", sigma)$ \tcp{create model (~\autoref{eq:mip}) with  current assignment}
+// %     % \tcp{create an MILP solver based on ~@eq:mip}
+// %     % $\model <=ftarrow \MIP(alpha, phi_"in", phi_"out", sigma)$ \tcp{create model (~@eq:mip) with  current assignment}
 
 // %     % $[v_1, ..., v_m] <=ftarrow >=tUnassignedVariable(sigma)$ \tcp{get all $m$ current unassigned variables} \label{line:find}
 
@@ -11442,18 +11407,18 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 //     \item Week 1 (1/20): 
 //     \begin{itemize}
 //         \item Introduction / Syllabus Overview
-//         \item Formal Methods and Specifications Overview (\autoref{chap:formal-methods})
+//         \item Formal Methods and Specifications Overview (@chap:formal-methods)
 //         \item HW: Post a short introduction about yourself on Canvas
 //     \end{itemize}
     
 //     \item Week 2 (2/3):
 //     \begin{itemize}
-//     \item Topics: Background on Logic and Satisfiability~\autoref{chap:logics}
-//     \item Quiz:~\autoref{problem:duplicate-specs}
+//     \item Topics: Background on Logic and Satisfiability~@chap:logics
+//     \item Quiz:~@problem:duplicate-specs
 //     \item HW: Using Z3 SMT Solver to check satisfiability.
 //     \begin{itemize}
-//         \item Familiarize yourself with Z3 and install it on your machine (\autoref{sec:z3}). Try a few examples as given in~\autoref{ex:z3-propositional} and~\autoref{ex:z3-linear-constraints}.
-//       \item Do~\autoref{prob:z3-0},~\autoref{prob:z3-1},~\autoref{prob:z3-2},~\autoref{prob:z3-3}
+//         \item Familiarize yourself with Z3 and install it on your machine (@sec:z3). Try a few examples as given in~@ex:z3-propositional and~@ex:z3-linear-constraints.
+//       \item Do~@prob:z3-0,~@prob:z3-1,~@prob:z3-2,~@prob:z3-3
 //     \end{itemize}
       
             
@@ -11461,91 +11426,91 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 
 //     \item Week 3 (2/10):
 //     \begin{itemize}
-//         \item Backgrounds on Linear Programming (\autoref{chap:lp})
-//         \item Topics: NNV and Properties and their formal representation (\autoref{chap:nn-basics} and~\autoref{chap:properties})
+//         \item Backgrounds on Linear Programming (@chap:lp)
+//         \item Topics: NNV and Properties and their formal representation (@chap:nn-basics and~@chap:properties)
 //         \item Short Videos
 //         \begin{itemize}
 //             %\item Formal Verification: A Quick Primer~\cite{axiomise2020formal}
 //             \item But what is a neural network?~\cite{3blue1brown2017neuralnetworks}
 //             %\item Large Language Models~\cite{3blue1brown2017llms}
 //         \end{itemize}
-//         \item Quiz:~\autoref{problem:short-questions}             
-//         \item HW: MILP problem~\autoref{ex:milp-online}
+//         \item Quiz:~@problem:short-questions             
+//         \item HW: MILP problem~@ex:milp-online
             
 //     \end{itemize}
 
 
 //     \item Week 4 (2/17):
 //     \begin{itemize}
-//         \item Topics: NN Properties~\autoref{chap:properties} 
-//         \item In class exercise: Using Z3 to check satisfiability of networks and properties~\autoref{prob:z3-dnn}
-//         \item Quiz:~\autoref{problem:milp-hand}
-//         \item HW: Neural Networks and Properties~\autoref{problem:z3-properties}
+//         \item Topics: NN Properties~@chap:properties 
+//         \item In class exercise: Using Z3 to check satisfiability of networks and properties~@prob:z3-dnn
+//         \item Quiz:~@problem:milp-hand
+//         \item HW: Neural Networks and Properties~@problem:z3-properties
 
 //     \end{itemize}
 
 //     \item Week 4 (2/24):
 //     \begin{itemize}
-//         \item Topics: Neural Network Verification (NNV) (\autoref{sec:verification}) and Symbolic Execution~\autoref{sec:se-smt}
-//         \item In class exercise:~\autoref{ex:dnn-b} and~\autoref{problem:z3-dnn}
-//         \item Quiz:~\autoref{problem:drone}
-//         \item HW:~\autoref{ex:negation-trick}
+//         \item Topics: Neural Network Verification (NNV) (@sec:verification) and Symbolic Execution~@sec:se-smt
+//         \item In class exercise:~@ex:dnn-b and~@problem:z3-dnn
+//         \item Quiz:~@problem:drone
+//         \item HW:~@ex:negation-trick
 //     \end{itemize}
        
 //     \item Programming Assignment 1 (PA1)
 //     \begin{itemize}
-//         \item Topics: Symbolic Execution of Neural Networks~\autoref{sec:pa1}
+//         \item Topics: Symbolic Execution of Neural Networks~@sec:pa1
 //         \item Due date \alert{Monday March 17, 2026 11:59 PM}         
 //     \end{itemize}
 
 
 //     \item Week 5 (3/3):
 //     \begin{itemize}
-//         \item Topics: MILP Enncoding of NNVs (\autoref{sec:using-milp})        
-//         \item Quiz:~\autoref{problem:mydnntwo}. You don't need to do question 4 (Z3) for the quiz.
-//         \item HW: Do~\autoref{problem:relu-milp-bounds} and~\autoref{prob:milp-dnn}
+//         \item Topics: MILP Enncoding of NNVs (@sec:using-milp)        
+//         \item Quiz:~@problem:mydnntwo. You don't need to do question 4 (Z3) for the quiz.
+//         \item HW: Do~@problem:relu-milp-bounds and~@prob:milp-dnn
 //     \end{itemize}
 
 //     \item Week 6 (3/17):
 //     \begin{itemize}
-//         \item Topics: Abstraction (\autoref{chap:abstractions}), Interval Abstraction  (\autoref{sec:interval-abstraction})        
-//         \item Quiz: (Re)Do~\autoref{ex:milp-dnn} by hand
+//         \item Topics: Abstraction (@chap:abstractions), Interval Abstraction  (@sec:interval-abstraction)        
+//         \item Quiz: (Re)Do~@ex:milp-dnn by hand
 //         \item HW: No HW because we didn't get a chance to cover the material in class.
 //     \end{itemize}
 
 //     \item Week 7 (3/24):
 //     \begin{itemize}
-//         \item Topics: Abstraction (\autoref{chap:abstractions}), Interval and Zonotope (\autoref{sec:interval-abstraction},~\autoref{sec:zonotope-abstraction})
+//         \item Topics: Abstraction (@chap:abstractions), Interval and Zonotope (@sec:interval-abstraction,~@sec:zonotope-abstraction)
 //         \item Quiz: No Quiz because no HW due this week.
-//         \item HW: Do~\autoref{prob:int-abs} and~\autoref{ex:zonotope_linear_example} (this is a complete example so just rewrite it by hand and submit it as HW)      
+//         \item HW: Do~@prob:int-abs and~@ex:zonotope_linear_example (this is a complete example so just rewrite it by hand and submit it as HW)      
 //     \end{itemize}
 
 //     \item Programming Assignment 2 (PA2)
 //     \begin{itemize}
-//         \item Abstraction~\autoref{sec:pa2}
+//         \item Abstraction~@sec:pa2
 //         \item Due date \alert{Monday April 13, 2026 11:59 PM}
 //     \end{itemize}
     
 //     \item Week 8 (3/31):
 //     \begin{itemize}
-//         \item Topics: Branch and Bound (\autoref{chap:bab}), Activation Pattern Search (\autoref{sec:activation-patterns})
-//         \item Quiz:~\autoref{prob:zonotope_linear_example_x4}
-//         \item HW:~\autoref{problem:pattern-enumeration} and~\autoref{problem:nnv-pattern}
+//         \item Topics: Branch and Bound (@chap:bab), Activation Pattern Search (@sec:activation-patterns)
+//         \item Quiz:~@prob:zonotope_linear_example_x4
+//         \item HW:~@problem:pattern-enumeration and~@problem:nnv-pattern
 
 //     \end{itemize}
 
 //     \item Week 9 (April 7):
 //     \begin{itemize}
-//         \item Topics: Adversarial Attacks~\autoref{chap:adversarial-attacks} %and Proof Certificates~\autoref{chap:proof-gen-check}        
-//         \item Quiz:~\autoref{problem:counting-patterns}
-//         %~\autoref{prob:bab-understanding}
-//         \item HW: Do~\autoref{prob:bab-detailed},~\autoref{prob:compute-gradients},~\autoref{prob:pgd-iterations} (due date extended to Friday April 17, 2026 11:59pm)
-//         % ~\autoref{prob:bab-counterexample}, and ~\autoref{prob:bab-interval}
+//         \item Topics: Adversarial Attacks~@chap:adversarial-attacks %and Proof Certificates~@chap:proof-gen-check        
+//         \item Quiz:~@problem:counting-patterns
+//         %~@prob:bab-understanding
+//         \item HW: Do~@prob:bab-detailed,~@prob:compute-gradients,~@prob:pgd-iterations (due date extended to Friday April 17, 2026 11:59pm)
+//         % ~@prob:bab-counterexample, and ~@prob:bab-interval
 
 //     \end{itemize}
 //     \item Programming Assignment 3 (PA3)
 //     \begin{itemize}
-//         \item Branch and Bound~\autoref{sec:pa3}
+//         \item Branch and Bound~@sec:pa3
 //         \item Due date \alert{Friday May 1, 2026 11:59pm}
 //     \end{itemize}
 
@@ -11559,24 +11524,24 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 // %     \item Week 8 (Oct 15):
 // %     \begin{itemize}
 // %       
-// %        \item Topics: Abstraction (\autoref{chap:abstractions}), Interval and Zonotope (\autoref{sec:interval-abstraction},~\autoref{sec:zonotope-abstraction})
-// %        \item Quiz:~\autoref{prob:stable-neuron}
+// %        \item Topics: Abstraction (@chap:abstractions), Interval and Zonotope (@sec:interval-abstraction,~@sec:zonotope-abstraction)
+// %        \item Quiz:~@prob:stable-neuron
 // %     \end{itemize}
 // %   \item Week 9 (Oct 22):
 // %         \begin{itemize}
-// %           \item Topics: Abstraction (\autoref{chap:abstractions}), Interval and Zonotope (\autoref{sec:interval-abstraction},~\autoref{sec:zonotope-abstraction})
-// %           \item HW: Do~\autoref{prob:int-abs}
-// %           \item Quiz:~\autoref{prob:correct-abs}
+// %           \item Topics: Abstraction (@chap:abstractions), Interval and Zonotope (@sec:interval-abstraction,~@sec:zonotope-abstraction)
+// %           \item HW: Do~@prob:int-abs
+// %           \item Quiz:~@prob:correct-abs
 // %         \end{itemize}
 // %     \item Week 10 (Oct 29):
 // %     \begin{itemize}
 // %         \item No HW because of PA2 due date
-// %         \item Topics: Zonotope~\autoref{sec:zonotope-abstraction} and BaB Algorithm~\autoref{chap:bab}
+// %         \item Topics: Zonotope~@sec:zonotope-abstraction and BaB Algorithm~@chap:bab
 // %         \item Quiz: attendance
 // %     \end{itemize}
 //     \item Week 10 (April 14):
 //     \begin{itemize}
-//         \item Topics: Branch and Bound (\autoref{chap:bab}), Activation Pattern Search (\autoref{sec:activation-patterns})
+//         \item Topics: Branch and Bound (@chap:bab), Activation Pattern Search (@sec:activation-patterns)
 //         \item Quiz: No quiz due to homework extension
 //         \item HW: no new HW
 //     \end{itemize}
@@ -11584,20 +11549,20 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 //     \item Week 11 (April 21):
 //     \begin{itemize}
 //         \item Short Clip: \href{https://www.youtube.com/watch?v=YYgepDY3rHw}{Mathematical Proofs}
-//         \item Topics: Proof Generation for NNV~\autoref{chap:proof-gen-check}, Engineering and Optimization Tricks~\autoref{chap:common-engineering}, \neuralsat{} algorithm~\autoref{chap:neuralsat}. %, \reluplex{} algorithm~\autoref{chap:reluplex}
-//         \item Quiz:~\autoref{prob:pgd-iterations} (part 2 only)
-//         \item HW: Do~\autoref{prob:proof-tree}  and~\autoref{problem:reluplex-hand}
+//         \item Topics: Proof Generation for NNV~@chap:proof-gen-check, Engineering and Optimization Tricks~@chap:common-engineering, \neuralsat{} algorithm~@chap:neuralsat. %, \reluplex{} algorithm~@chap:reluplex
+//         \item Quiz:~@prob:pgd-iterations (part 2 only)
+//         \item HW: Do~@prob:proof-tree  and~@problem:reluplex-hand
 //     \end{itemize}        
 
 // %     \item Week 13 (Nov 19):
 // %     \begin{itemize}
 // %         \item Topics: TBD
 // %         
-// %         \item Quiz: \autoref{problem:reluplex-basic-nonbasic}
+// %         \item Quiz: @problem:reluplex-basic-nonbasic
 // %     \end{itemize}
 // %     \item Final Project---Programming Assignment 4 (PA4)
 // %     \begin{itemize}
-// %         \item Putting everything together~\autoref{sec:pa4}
+// %         \item Putting everything together~@sec:pa4
 // %         \item Due date \alert{Wednesday Dec 10, 2025 11:59pm}
 // %     \end{itemize}
 
