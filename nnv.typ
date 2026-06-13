@@ -849,7 +849,36 @@ A ReLU activated neuron is said to be _active_ if its input is greater than zero
   }
 ) <fig:relu>
 
+#import "@preview/cetz:0.3.4"
 
+#figure(
+  cetz.canvas(length: 0.45cm, {
+    import cetz.draw: *
+
+    // axes through the origin, with arrowheads
+    line((-4.5, 0.0), (4.5, 0.0), mark: (end: ">"), stroke: 1pt)
+    line((0.0, -0.5), (0.0, 4.5), mark: (end: ">"), stroke: 1pt)
+
+    // x-axis ticks and labels
+    for x in (-4, -2, 0, 2, 4) {
+      if x != 0 {
+        line((x, -0.1), (x, 0.1), stroke: 0.5pt)
+      }
+      content((x, -0.4), text(size: 7pt)[#x], anchor: "north")
+    }
+
+    // y-axis ticks and labels
+    for y in (2, 4) {
+      line((-0.1, y), (0.1, y), stroke: 0.5pt)
+      content((-0.4, y), text(size: 7pt)[#y], anchor: "east")
+    }
+
+    // ReLU curve: flat at zero for x <= 0, then linear for x >= 0
+    line((-4.5, 0.0), (0.0, 0.0), stroke: red.darken(20%) + 1.5pt)
+    line((0.0, 0.0), (4.5, 4.5), stroke: red.darken(20%) + 1.5pt)
+  }),
+  caption: [ReLU (Rectified Linear Unit) function.]
+) <fig:relu2>
 
 
 #paragraph[Logical encoding][ 
@@ -914,6 +943,51 @@ This non-linearity makes NNV difficult. In fact, verifying networks with ReLU is
 //     \caption{Sigmoid function. <fig:sigmoid}
 // \end{figure}
 
+
+
+#import "@preview/cetz:0.3.4"
+
+#figure(
+  cetz.canvas(length: 1cm, {
+    import cetz.draw: *
+
+    // independent scale factors -> map data into a ~square box
+    // x in [-4.5, 4.5] (span 9), y in [0, 1.1]
+    let sx = 4.0 / 9.0      // x span -> 4 canvas units wide
+    let sy = 4.0 / 1.1      // y span -> 4 canvas units tall
+    let pt = (x, y) => (x * sx, y * sy)
+
+    // axes through the origin, with arrowheads
+    line(pt(-4.5, 0), pt(4.5, 0), mark: (end: ">"), stroke: 1pt)
+    line(pt(0, 0), pt(0, 1.1), mark: (end: ">"), stroke: 1pt)
+
+    // x-axis ticks + labels (tick marks in fixed canvas units)
+    for x in (-4, -2, 2, 4) {
+      let (px, _) = pt(x, 0)
+      line((px, -0.08), (px, 0.08), stroke: 0.6pt)
+      content((px, -0.25), text(size: 8pt)[#x], anchor: "north")
+    }
+
+    // y-axis ticks + labels
+    for y in (0.5, 1) {
+      let (_, py) = pt(0, y)
+      line((-0.08, py), (0.08, py), stroke: 0.6pt)
+      content((-0.2, py), text(size: 8pt)[#y], anchor: "east")
+    }
+
+    // sigmoid curve, sampled
+    let pts = ()
+    let n = 80
+    for i in range(0, n + 1) {
+      let x = -4.5 + i * (9.0 / n)
+      let y = 1 / (1 + calc.exp(-x))
+      pts.push(pt(x, y))
+    }
+    line(..pts, stroke: red.darken(20%) + 1.5pt)
+  }),
+  caption: [Sigmoid function.]
+) <fig:sigmoid>
+
 //, shown in @fig:sigmoid,  TODO
 Sigmoid is a smooth---i.e., continuous and differentiable---non-linear activation function that maps any real value to the range $(0, 1)$.
 It is continuous, meaning that small changes in the input will result in small changes in the output, and differentiable, meaning that it has a well-defined derivative at every point. Sigmoid is often used in the output layer of a binary classification problem.
@@ -929,7 +1003,52 @@ $
 // \subsection{Hyperbolic Tangent (Tanh) <sec:tanh}
 
 // Tanh, shown in~\autoref{fig:tanh}, is similar to sigmoid (\autoref{sec:sigmoid})  but maps any real value to the range (-1,1). It is often used in the output layer of a multi-class classification problem.
+#import "@preview/cetz:0.3.4"
 
+#figure(
+  cetz.canvas(length: 1cm, {
+    import cetz.draw: *
+
+    // independent scale factors -> map data into a ~square box
+    // x in [-4.5, 4.5] (span 9), y in [-1.2, 1.2] (span 2.4)
+    let sx = 4.0 / 9.0      // x span -> 4 canvas units wide
+    let sy = 4.0 / 2.4      // y span -> 4 canvas units tall
+    let pt = (x, y) => (x * sx, y * sy)
+
+    // axes through the origin, with arrowheads
+    line(pt(-4.5, 0), pt(4.5, 0), mark: (end: ">"), stroke: 1pt)
+    line(pt(0, -1.2), pt(0, 1.2), mark: (end: ">"), stroke: 1pt)
+
+    // x-axis ticks + labels (skip 0 to avoid clutter at origin)
+    for x in (-4, -2, 2, 4) {
+      let (px, _) = pt(x, 0)
+      line((px, -0.08), (px, 0.08), stroke: 0.6pt)
+      content((px, -0.25), text(size: 8pt)[#x], anchor: "north")
+    }
+
+    // y-axis ticks + labels (skip 0)
+    for y in (-1, 1) {
+      let (_, py) = pt(0, y)
+      line((-0.08, py), (0.08, py), stroke: 0.6pt)
+      content((-0.2, py), text(size: 8pt)[#y], anchor: "east")
+    }
+
+    // tanh curve, sampled  (tanh(x) = (e^x - e^-x) / (e^x + e^-x))
+    let tanh = x => {
+      let a = calc.exp(x)
+      let b = calc.exp(-x)
+      (a - b) / (a + b)
+    }
+    let pts = ()
+    let n = 80
+    for i in range(0, n + 1) {
+      let x = -4.5 + i * (9.0 / n)
+      pts.push(pt(x, tanh(x)))
+    }
+    line(..pts, stroke: red.darken(20%) + 1.5pt)
+  }),
+  caption: [tanh (hyperbolic tangent) activation function.]
+) <fig:tanh>
 // \begin{figure}[htp]
 //     \centering
 //     \begin{tikzpicture}
@@ -998,7 +1117,68 @@ $
 //     \end{tikzpicture}
 //     \caption{Softmax function for 2 classes. <fig:softmax}
 // \end{figure}
+#import "@preview/cetz:0.3.4"
 
+#figure(
+  cetz.canvas(length: 1cm, {
+    import cetz.draw: *
+
+    // independent scale factors -> map data into a ~square box
+    // x in [-4.5, 4.5] (span 9), y in [-0.1, 1.1] (span 1.2)
+    let sx = 4.0 / 9.0
+    let sy = 4.0 / 1.2
+    let pt = (x, y) => (x * sx, y * sy)
+
+    // axes through the origin, with arrowheads
+    line(pt(-4.5, 0), pt(4.5, 0), mark: (end: ">"), stroke: 1pt)
+    line(pt(0, -0.1), pt(0, 1.1), mark: (end: ">"), stroke: 1pt)
+
+    // x-axis ticks + labels (skip 0)
+    for x in (-4, -2, 2, 4) {
+      let (px, _) = pt(x, 0)
+      line((px, -0.08), (px, 0.08), stroke: 0.6pt)
+      content((px, -0.25), text(size: 8pt)[#x], anchor: "north")
+    }
+
+    // y-axis ticks + labels
+    for y in (0.5, 1) {
+      let (_, py) = pt(0, y)
+      line((-0.08, py), (0.08, py), stroke: 0.6pt)
+      content((-0.2, py), text(size: 8pt)[#y], anchor: "east")
+    }
+
+    // softmax_1(x) = e^x / (e^x + 1)  (solid red)
+    let f1 = x => calc.exp(x) / (calc.exp(x) + 1)
+    // softmax_2(x) = 1 / (e^x + 1)    (dashed blue)
+    let f2 = x => 1 / (calc.exp(x) + 1)
+
+    let sample = f => {
+      let pts = ()
+      let n = 80
+      for i in range(0, n + 1) {
+        let x = -4.5 + i * (9.0 / n)
+        pts.push(pt(x, f(x)))
+      }
+      pts
+    }
+
+    line(..sample(f1), stroke: red.darken(20%) + 1.5pt)
+    line(..sample(f2), stroke: (paint: blue.darken(20%), thickness: 1.5pt, dash: "dashed"))
+
+    // legend, above the plot, two columns
+    let top = 4.0 / 1.2 * 1.1   // canvas y of the top of the plot (y = 1.1)
+    let ly = top + 0.5
+
+    // entry 1: solid red
+    line((-1.7, ly), (-1.1, ly), stroke: red.darken(20%) + 1.5pt)
+    content((-1.0, ly), text(size: 8pt)[$mono("softmax")_1 (x)$], anchor: "west")
+
+    // entry 2: dashed blue
+    line((0.9, ly), (1.5, ly), stroke: (paint: blue.darken(20%), thickness: 1.5pt, dash: "dashed"))
+    content((1.6, ly), text(size: 8pt)[$mono("softmax")_2 (x)$], anchor: "west")
+  }),
+  caption: [Softmax function for 2 classes.]
+) <fig:softmax>
 
 // Softmax, shown in~\autoref{fig:softmax}, is a generalization of sigmoid (\autoref{sec:sigmoid}) that maps any real value to the range (0,1) and ensures that the sum of the output values is 1. It is often used in the output layer of a multi-class classification problem.
 // \begin{align}
@@ -1150,6 +1330,51 @@ Widely used feedforward architectures include fully connected, convolutional, an
 // \end{figure}
 // \end{example}
 
+#import "@preview/cetz:0.3.4"
+
+#figure(
+  cetz.canvas(length: 1cm, {
+    import cetz.draw: *
+
+    let r = 0.3   // node radius (= minimum size 0.6cm / 2)
+
+    // y-centers for each layer (matching the LaTeX coordinates)
+    let input-ys = (3, 2, 1, 0)              // x = 0
+    let h1-ys    = (3.5, 2.5, 1.5, 0.5, -0.5) // x = 3
+    let h2-ys    = (3.5, 2.5, 1.5, 0.5, -0.5) // x = 6
+    let out-ys   = (2.5, 1.5, 0.5)            // x = 9
+
+    // draw one layer of nodes, naming each "<prefix><index>"
+    let draw-layer(x, ys, prefix) = {
+      for (i, y) in ys.enumerate() {
+        circle((x, y), radius: r, fill: white, stroke: black + 0.8pt, name: prefix + str(i))
+      }
+    }
+    draw-layer(0, input-ys, "I")
+    draw-layer(3, h1-ys, "A")
+    draw-layer(6, h2-ys, "B")
+    draw-layer(9, out-ys, "O")
+
+    // headers
+    content((0, 4), text(weight: "bold")[Input Layer])
+    content((3, 4), text(weight: "bold")[Hidden Layer 1])
+    content((6, 4), text(weight: "bold")[Hidden Layer 2])
+    content((9, 4), text(weight: "bold")[Output Layer])
+
+    // fully-connect two layers (east anchor of source -> west anchor of target)
+    let connect(p1, n1, p2, n2) = {
+      for i in range(n1) {
+        for j in range(n2) {
+          line(p1 + str(i) + ".east", p2 + str(j) + ".west", mark: (end: ">"), stroke: 0.5pt)
+        }
+      }
+    }
+    connect("I", 4, "A", 5)
+    connect("A", 5, "B", 5)
+    connect("B", 5, "O", 3)
+  }),
+  caption: [A fully connected NN with two hidden layers.]
+) <fig:ffn>
 
 #example[Classifier][
   A common use case for FCNs is classification. They take an input, e.g., pixels of an image, and predict what the image is (e.g., cat, dog, car). The output layer represents the probabilities of each class (e.g., $y_1$ is the probability of cat, $y_2$ is the probability of dog). Moreover, the outputs are often passed through a `softmax` activation function (@sec:softmax) to convert them into probabilities that sum to 1, and the class with the highest probability is chosen as the predicted label.
@@ -1210,6 +1435,65 @@ Widely used feedforward architectures include fully connected, convolutional, an
 //     \caption{1-dimensional CNN <fig:cnn}
 // \end{figure}
 
+#import "@preview/cetz:0.3.4"
+
+#figure(
+  cetz.canvas(length: 1cm, {
+    import cetz.draw: *
+
+    let r = 0.5   // node radius (~ 0.4in diameter)
+
+    // helper: draw a node with a centered label
+    let node(x, y, name, label) = {
+      circle((x, y), radius: r, fill: white, stroke: black + 0.8pt, name: name)
+      content((x, y), label)
+    }
+
+    // input nodes   y = 2.25 - (i-1)*1.5
+    node(0, 2.25, "I1", [$x_1$])
+    node(0, 0.75, "I2", [$x_2$])
+    node(0, -0.75, "I3", [$x_3$])
+    node(0, -2.25, "I4", [$x_4$])
+
+    // hidden nodes  (x = 3.2)
+    node(3.2, 1.5, "H1", [$h_1$])
+    node(3.2, 0.0, "H2", [$h_2$])
+    node(3.2, -1.5, "H3", [$h_3$])
+
+    // output nodes  (x = 6.4)
+    node(6.4, 1.5, "O1", [$y_1$])
+    node(6.4, 0.0, "O2", [$y_2$])
+    node(6.4, -1.5, "O3", [$y_3$])
+
+    // bias labels above H1 and O1
+    content((3.2, 2.25), text(size: 9pt)[$0.5$])
+    content((6.4, 2.25), text(size: 9pt)[$-1$])
+
+    // connections (drawn on top of nodes)
+    let edge(a, b) = line(a + ".east", b + ".west", mark: (end: ">"), stroke: 1pt)
+
+    // input -> hidden
+    edge("I1", "H1")
+    edge("I2", "H1")
+    edge("I2", "H2")
+    edge("I3", "H2")
+    edge("I3", "H3")
+    edge("I4", "H3")
+
+    // hidden -> output (one-to-one)
+    edge("H1", "O1")
+    edge("H2", "O2")
+    edge("H3", "O3")
+
+    // weight labels near their edges
+    content((1.4, 2.0), text(size: 9pt)[$2$])
+    content((1.7, 0.95), text(size: 9pt)[$-1$])
+    content((4.8, 1.8), text(size: 9pt)[$1$])
+  }),
+  caption: [1-dimensional CNN]
+) <fig:cnn>
+
+
 // \begin{example}
 //    ~\autoref{fig:cnn} shows a simple CNN with four inputs, three hidden neurons, and three outputs. %The first hidden neuron computes a weighted sum of its inputs, applies the ReLU activation function, and produces an output. The second and third hidden neurons compute their outputs similarly. The outputs are computed by taking the outputs of the hidden neurons and applying a linear transformation (without activation) to produce the final output values.
 // Given an input vector $\mathbf{x} = [x_1, x_2, x_3, x_4]$, the computation of the first output proceeds as follows.
@@ -1256,7 +1540,69 @@ Widely used feedforward architectures include fully connected, convolutional, an
 //     \end{tikzpicture}
 //     \caption{ResNet block with weights on all connections and biases above nodes. Each node is labeled and typical ReLU is applied after each hidden sum. <fig:resnet}
 // \end{figure}
+#import "@preview/cetz:0.3.4"
 
+#figure(
+  cetz.canvas(length: 1cm, {
+    import cetz.draw: *
+
+    let r = 0.5   // node radius (~ 0.4in diameter)
+
+    // helper: node with centered label
+    let node(x, name, label) = {
+      circle((x, 0), radius: r, fill: white, stroke: black + 1pt, name: name)
+      content((x, 0), label)
+    }
+
+    // chain of nodes
+    node(0.0, "H1", [$x$])
+    node(2.5, "H2", [$h_1$])
+    node(5.0, "H3", [$h_2$])
+    node(7.5, "H4", [$h_3$])
+    node(10.0, "H5", [$y$])
+
+    // layer labels
+    content((0.0, 2.0), text(weight: "bold")[Input])
+    content((5.0, 2.0), text(weight: "bold")[Hidden Layers])
+    content((10.0, 2.0), text(weight: "bold")[Output])
+
+    // biases above nodes (all but input)
+    content((2.5, 0.85), text(size: 9pt)[$1$])
+    content((5.0, 0.85), text(size: 9pt)[$-1$])
+    content((7.5, 0.85), text(size: 9pt)[$0.5$])
+    content((10.0, 0.85), text(size: 9pt)[$2$])
+
+    // main arrows with weight labels above midpoint
+    let edge(a, b, w, mx) = {
+      line(a + ".east", b + ".west", mark: (end: ">"), stroke: 1pt)
+      content((mx, 0.3), text(size: 9pt)[#w])
+    }
+    edge("H1", "H2", [$1$], 1.25)
+    edge("H2", "H3", [$2$], 3.75)
+    edge("H3", "H4", [$-1$], 6.25)
+    edge("H4", "H5", [$0.5$], 8.75)
+
+    // residual (skip) connections as arcs above
+    // leave each source at 60deg, enter each target at 120deg
+    bezier(
+      (0.25, 0.433), (4.75, 0.433),   // boundary points on H1 and H3
+      (1.0, 1.732), (4.0, 1.732),     // control points
+      mark: (end: ">"), stroke: 1pt,
+    )
+    content((1.8, 1.55), text(size: 9pt)[$1$])
+
+    bezier(
+      (5.25, 0.433), (9.75, 0.433),   // boundary points on H3 and H5
+      (6.0, 1.732), (9.0, 1.732),
+      mark: (end: ">"), stroke: 1pt,
+    )
+    content((6.8, 1.55), text(size: 9pt)[$1$])
+  }),
+  caption: [
+    ResNet block with weights on all connections and biases above nodes.
+    Each node is labeled and typical ReLU is applied after each hidden sum.
+  ]
+) <fig:resnet>
 
 // \autoref{fig:resnet}  shows an example of a Resnet.
 // Assume the input $x$ and each node applies the ReLU activation. With the weights and biases shown in the diagram, the outputs are computed as follows:
@@ -1369,6 +1715,92 @@ Currently, most NNV work tackles RNNs by _unrolling_ them into an equivalent fee
 // \end{figure}
 
 // \begin{example}
+
+#import "@preview/cetz:0.3.4"
+
+#figure(
+  cetz.canvas(length: 0.6cm, {
+    import cetz.draw: *
+
+    let r = 0.5
+
+    // helper: node with centered label
+    let node(x, y, name, label) = {
+      circle((x, y), radius: r, fill: white, stroke: black + 1pt, name: name)
+      content((x, y), label)
+    }
+
+    // ===================== Left: rolled RNN cell =====================
+    content((0, 1.5), text(weight: "bold")[Input])
+    content((2.4, 1.5), text(weight: "bold")[Hidden])
+    content((4.8, 1.5), text(weight: "bold")[Output])
+
+    node(0.0, 0, "RI", [$x_t$])
+    node(2.4, 0, "RH", [$h_t$])
+    node(4.8, 0, "RO", [$y_t$])
+
+    content((2.4, 0.85), text(size: 9pt)[$0.5$])
+    content((4.8, 0.85), text(size: 9pt)[$-0.5$])
+
+    line("RI.east", "RH.west", mark: (end: ">"), stroke: 1pt)
+    content((1.2, 0.35), text(size: 9pt)[$2$])
+    line("RH.east", "RO.west", mark: (end: ">"), stroke: 1pt)
+    content((3.6, 0.35), text(size: 9pt)[$1$])
+
+    // recurrent self-loop below the hidden node (out=-120, in=-60)
+    bezier(
+      (2.15, -0.433), (2.65, -0.433),   // boundary points at -120deg / -60deg
+      (1.45, -1.7), (3.35, -1.7),       // control points (looseness -> deep loop)
+      mark: (end: ">"), stroke: 1pt,
+    )
+    content((3.05, -1.0), text(size: 9pt)[$-1$])
+
+    content((2.4, -2.7), [RNN cell])
+
+    // ================ Right: unrolled RNN (shifted +8 in x) ================
+    let sx = 8.0
+    let ys = (3, 1, -1, -3)   // y = (N-1)*0.5*dy - (i-1)*dy,  N=4, dy=2
+
+    // layer labels  (y = N/2*dy + 0.8 = 4.8)
+    content((sx + 0.0, 4.8), text(weight: "bold")[Input])
+    content((sx + 3.2, 4.8), text(weight: "bold")[Hidden])
+    content((sx + 6.4, 4.8), text(weight: "bold")[Output])
+
+    // node columns + biases
+    for (i, y) in ys.enumerate() {
+      node(sx + 0.0, y, "UI" + str(i), [$x_#(i + 1)$])
+      node(sx + 3.2, y, "UH" + str(i), [$h_#(i + 1)$])
+      node(sx + 6.4, y, "UO" + str(i), [$y_#(i + 1)$])
+      content((sx + 3.95, y + 0.6), text(size: 8pt)[$0.5$])   // hidden bias (above-right)
+      content((sx + 6.4, y + 0.85), text(size: 8pt)[$-0.5$])  // output bias (above)
+    }
+
+    // input -> hidden (1-to-1, weight 2)
+    for i in range(4) {
+      line("UI" + str(i) + ".east", "UH" + str(i) + ".west", mark: (end: ">"), stroke: 1pt)
+      content((sx + 1.6, ys.at(i) + 0.35), text(size: 8pt)[$2$])
+    }
+
+    // hidden -> hidden (recurrent, downward, weight -1)
+    for i in range(3) {
+      line("UH" + str(i) + ".south", "UH" + str(i + 1) + ".north", mark: (end: ">"), stroke: 1pt)
+      content((sx + 2.65, (ys.at(i) + ys.at(i + 1)) / 2), text(size: 8pt)[$-1$])
+    }
+
+    // hidden -> output (1-to-1, weight 1)
+    for i in range(4) {
+      line("UH" + str(i) + ".east", "UO" + str(i) + ".west", mark: (end: ">"), stroke: 1pt)
+      content((sx + 4.8, ys.at(i) + 0.35), text(size: 8pt)[$1$])
+    }
+
+    content((sx + 3.2, -4.0), [Unrolled RNN])
+  }),
+  caption: [
+    RNN cell (left) and unrolled RNN sequence structure (right).
+    Weights on connections; biases above hidden and output nodes.
+  ]
+) <fig:rnn>
+
 // \autoref{fig:rnn} shows a simple RNN cell. Assume the input sequence is $\mathbf{x} = [x_1, x_2, x_3, x_4]$, and the initial hidden state is $h_0$.
 // For the first time step, the hidden state is computed as $h_1 = \relu{2x_1 - h_0 + 0.5}$, and the output is $y_1 = h_1 - 0.5$.
 // For the second time step, the hidden state is $h_2 = \relu{2x_2 - h_1 + 0.5}$, and the output is $y_2 = h_2 - 0.5$.
@@ -1384,6 +1816,98 @@ Transformers are designed for long-range dependencies using _self-attention_ rat
 Graph Neural Networks (GNNs) operate on graphs (instead of vectors like FNNs or sequences like RNNs). 
 It uses message passing between nodes in the graph and allows each node to aggregate information from its neighbors. GNNs are used in applications involving structured data like molecules or social networks. Currently, most NNV tools do not support GNNs, and we will not focus on them in this book. However, they are an important area of research in the broader field of NNV.
 
+#import "@preview/cetz:0.3.4"
+
+#figure(
+  cetz.canvas(length: 1cm, {
+    import cetz.draw: *
+
+    let r = 0.45
+
+    // node with centered label
+    let node(x, y, name, label, fill: white) = {
+      circle((x, y), radius: r, fill: fill, stroke: black + 1pt, name: name)
+      content((x, y), label)
+    }
+
+    // segment p->q trimmed by da at start and db at end (to land on circle borders)
+    let seg(p, q, da, db) = {
+      let dx = q.at(0) - p.at(0)
+      let dy = q.at(1) - p.at(1)
+      let L = calc.sqrt(dx * dx + dy * dy)
+      let ux = dx / L
+      let uy = dy / L
+      ((p.at(0) + ux * da, p.at(1) + uy * da), (q.at(0) - ux * db, q.at(1) - uy * db))
+    }
+
+    // node centers (left panel)
+    let cv = (0, 0)
+    let ca = (-1.9, 1.3)
+    let cb = (1.9, 1.3)
+    let cc = (-1.9, -1.3)
+    let cd = (1.9, -1.3)
+
+    // undirected (structural) edge, boundary to boundary
+    let und(p, q) = {
+      let (s, e) = seg(p, q, r, r)
+      line(s, e, stroke: gray.darken(20%) + 0.9pt)
+    }
+
+    // ===================== Left: input graph =====================
+    content((0, 2.5), text(weight: "bold")[Input graph $G = (V, E)$])
+
+    und(cv, ca); und(cv, cb); und(cv, cc); und(cv, cd)
+    und(ca, cb); und(cc, cd)
+
+    node(..cv, "v", [$v$], fill: blue.lighten(75%))
+    node(..ca, "a", [$a$])
+    node(..cb, "b", [$b$])
+    node(..cc, "c", [$c$])
+    node(..cd, "d", [$d$])
+
+    // ================= Right: message passing at v =================
+    let sx = 7.0
+    let add = p => (p.at(0) + sx, p.at(1))
+    let rv = add(cv)
+    let ra = add(ca)
+    let rb = add(cb)
+    let rc = add(cc)
+    let rd = add(cd)
+
+    content((sx, 2.5), text(weight: "bold")[Message passing at $v$])
+
+    // structural edges (gray)
+    und(rv, ra); und(rv, rb); und(rv, rc); und(rv, rd)
+    und(ra, rb); und(rc, rd)
+
+    // nodes
+    node(..rv, "rv", [$v$], fill: blue.lighten(75%))
+    node(..ra, "ra", [$a$])
+    node(..rb, "rb", [$b$])
+    node(..rc, "rc", [$c$])
+    node(..rd, "rd", [$d$])
+
+    // message arrows (orange, dashed): neighbors -> v, drawn ON TOP so heads show
+    let msg(p) = {
+      let (s, e) = seg(p, rv, r, r)
+      line(s, e, mark: (end: ">"),
+        stroke: (paint: orange.darken(10%), thickness: 1.2pt, dash: "dashed"))
+    }
+    msg(ra); msg(rb); msg(rc); msg(rd)
+
+    // update rule, centered beneath the figure
+    content((3.5, -2.8), text(size: 10pt)[
+      $ h_v^((k)) = "UPDATE"(h_v^((k-1)), space "AGG"_(u in N(v)) "MSG"(h_u^((k-1)))) $
+    ])
+  }),
+  caption: [
+    Graph neural network message passing. Left: an input graph $G = (V, E)$.
+    Right: node $v$ updates its representation by aggregating messages
+    (dashed orange) from its neighbors $N(v) = {a, b, c, d}$, then combining
+    them with its own previous state. Stacking $k$ such layers lets information
+    propagate over $k$-hop neighborhoods.
+  ]
+) <fig:gnn>
 
 == Representing Neural Networks with ONNX <sec:onnx>
 
@@ -2907,8 +3431,87 @@ Our abstract domains, e.g., interval, zonotope, and polytopes, are all geometric
 
 - *Generator-based representation*: Define the shape using a _center point_ and several direction vectors (_generators_) that define how the shape can stretch or tilt. Instead of listing all corners, it specifies how to reach any point in the shape by starting from the center and moving along the generators within certain limits.  This representation is often more compact, especially for higher-dimensional shapes.
 
-// \autoref{fig:interval-rectangle-two-views} uses corner-based and generator-based representations to represent a 2D rectangle, which is an interval abstraction over two variables.  The left side shows the corner-based view, where the rectangle is defined by its 4 corners.  The right side shows the generator-based view, where the rectangle is represented as a zonotope with a center point \(c\) and two orthogonal generators \(g_1\) and \(g_2\).
+@fig:interval-rectangle-two-views uses corner-based and generator-based representations to represent a 2D rectangle, which is an interval abstraction over two variables.  The left side shows the corner-based view, where the rectangle is defined by its 4 corners.  The right side shows the generator-based view, where the rectangle is represented as a zonotope with a center point $c$ and two orthogonal generators $g_1$ and $g_2$.
 
+
+#figure(
+  canvas(length: 1.1cm, {
+    import draw: *
+
+    let sx = -3.8
+
+    // rectangle
+    rect((sx + 0, 0), (sx + 2, 1.4), fill: yellow.lighten(80%), stroke: none)
+    rect((sx + 0, 0), (sx + 2, 1.4), stroke: (thickness: 0.8pt))
+
+    // corner points
+    for (x, y) in ((0, 0), (2, 0), (0, 1.4), (2, 1.4)) {
+      circle((sx + x, y), radius: 0.04, fill: blue, stroke: none)
+    }
+
+    // labels
+    content((sx + 1.0, 1.8), text(size: 0.8em)[Corner-based view])
+    content((sx + 1.0, -0.4), text(size: 0.8em)[Defined by vertices])
+
+    let rx = 3.8
+
+    // rectangle (same shape)
+    rect((rx + 0, 0), (rx + 2, 1.4), fill: yellow, stroke: none)
+    rect((rx + 0, 0), (rx + 2, 1.4), stroke: (thickness: 0.8pt))
+
+    // center
+    let c = (rx + 1.0, 0.7)
+    circle(c, radius: 0.04, fill: black, stroke: black)
+    content((rx + 1.0, 0.7), $c$, anchor: "north-east", padding: 3pt)
+
+    // generator arrows
+    line(c, (rx + 2.0, 0.7), stroke: (paint: blue, thickness: 0.8pt), mark: (end: "stealth", fill: black))
+    content((rx + 2.0, 0.7), $g_1$, anchor: "west", padding: 2pt)
+    line(c, (rx + 1.0, 1.4), stroke: (paint: blue, thickness: 0.8pt), mark: (end: "stealth", fill: black))
+    content((rx + 1.0, 1.4), $g_2$, anchor: "south", padding: 2pt)
+
+    // labels
+    content((rx + 1.0, 1.8), text(size: 0.8em)[Generator-based view])
+    content((rx + 1.0, -0.4), text(size: 0.8em)[Built from $c + epsilon_1 g_1 + epsilon_2 g_2$])
+
+    // center arrow
+    content((0, 0.7), text(size: 1em)[$arrow.l.r.long.double$])
+  }),
+  caption: [Two equivalent descriptions of a 2D interval abstraction (a rectangle). Left: defined by its four corners (independent variable bounds). Right: represented as a zonotope with center $c$ and orthogonal generators $g_1$, $g_2$.],
+) <fig:interval-rectangle-two-views>
+#import "@preview/cetz:0.3.4"
+
+#figure(
+  cetz.canvas(length: 1cm, {
+    import cetz.draw: *
+
+    // number line
+    line((-3.0, 0.0), (3.5, 0.0), mark: (end: ">"), stroke: 1pt)
+    content((3.5, 0.0), [$x$], anchor: "west")
+
+    // interval region
+    rect((-2.0, 0.0), (3.0, 0.25), fill: orange.lighten(80%), stroke: none)
+    line((-2.0, 0.0), (3.0, 0.0), stroke: orange.darken(30%) + 1pt)
+
+    // center point
+    circle((0.5, 0.12), radius: 0.04, fill: blue.darken(30%), stroke: none)
+    content((0.5, 0.12), [$c = 0.5$], anchor: "south", padding: 0.1)
+
+    // labels
+    line((-2.0, 0.0), (-2.0, 0.5), stroke: (dash: "dashed"))
+    content((-2.0, 0.5), [$-2$], anchor: "south")
+
+    line((3.0, 0.0), (3.0, 0.5), stroke: (dash: "dashed"))
+    content((3.0, 0.5), [$3$], anchor: "south")
+
+    content((0.5, -0.4), [$x = c + epsilon g$])
+
+    // epsilon arrows
+    line((-2.0, 0.25), (3.0, 0.25), mark: (start: ">", end: ">"), stroke: orange.darken(20%) + 1pt)
+    content((0.5, 0.7), [$epsilon in [-1, 1]$ moves along $g = 2.5$], fill: orange.darken(30%))
+  }),
+  caption: [An interval $[-2, 3]$ is a 1D zonotope with center $c = 0.5$, generator $g = 2.5$, and parameter $epsilon in [-1, 1]$. Varying $epsilon$ covers the entire interval.]
+) <fig:interval-zonotope>
 // \begin{figure}
 // \centering
 // \begin{tikzpicture}[scale=1.1,>=stealth]
@@ -2976,6 +3579,8 @@ Our abstract domains, e.g., interval, zonotope, and polytopes, are all geometric
 //     x in [-2, 3].
 //     \]
 //     We can express this interval using a single generator as shown in~\autoref{fig:interval-zonotope}.
+
+
 
 //     \begin{figure}
 //     \centering
@@ -3251,6 +3856,75 @@ Our abstract domains, e.g., interval, zonotope, and polytopes, are all geometric
 // \label{fig:relu-interval-cases}
 // \end{figure}
 
+#import "@preview/cetz:0.3.4"
+
+#figure(
+  cetz.canvas(length: 1cm, {
+    import cetz.draw: *
+
+    // helper to draw one ReLU panel, shifted by dx
+    let panel(dx, input-rect, output-rect, input-label, output-label, output-label-pos) = {
+      // axes
+      line((dx - 1.5, 0.0), (dx + 2.0, 0.0), mark: (end: ">"), stroke: 1pt)
+      content((dx + 2.0, 0.0), [$x$], anchor: "west")
+      line((dx + 0.0, -0.3), (dx + 0.0, 1.5), mark: (end: ">"), stroke: 1pt)
+      content((dx + 0.0, 1.5), [$y$], anchor: "south")
+
+      // ReLU curve
+      line(
+        (dx - 1.5, 0.0), (dx + 0.0, 0.0), (dx + 1.8, 1.3),
+        stroke: 1.2pt
+      )
+
+      // input interval (blue)
+      let ((ix0, iy0), (ix1, iy1)) = input-rect
+      rect((dx + ix0, iy0), (dx + ix1, iy1), fill: blue.lighten(85%), stroke: blue.darken(30%) + 1pt)
+      content((dx + (ix0 + ix1) / 2, -0.3), text(size: 8pt, fill: blue.darken(30%))[input $[l,u]$])
+
+      // output interval (orange)
+      let ((ox0, oy0), (ox1, oy1)) = output-rect
+      rect((dx + ox0, oy0), (dx + ox1, oy1), fill: orange.lighten(80%), stroke: orange.darken(30%) + 1pt)
+      content((dx + (ox0 + ox1) / 2, output-label-pos), text(size: 8pt, fill: orange.darken(30%))[#output-label])
+    }
+
+    // --- (1) Inactive case: [l,u] below 0 ---
+    panel(
+      -4.0,
+      ((-1.0, 0.0), (-0.3, 0.2)),
+      ((1.0, 0.0), (1.7, 0.2)),
+      "input",
+      [output $[0,0]$],
+      -0.3,
+    )
+
+    // --- (2) Active case: [l,u] above 0 ---
+    panel(
+      0.0,
+      ((0.5, 0.0), (1.5, 0.2)),
+      ((0.5, 0.5), (1.5, 0.7)),
+      "input",
+      [output $[l,u]$],
+      0.9,
+    )
+
+    // --- (3) Unstable case: [l,u] crosses 0 ---
+    panel(
+      4.0,
+      ((-0.8, 0.0), (0.8, 0.2)),
+      ((0.0, 0.0), (0.8, 0.7)),
+      "input",
+      [output $[0,u]$],
+      0.9,
+    )
+  }),
+  caption: [
+    ReLU transformer for intervals.
+    Left: all inputs negative $=> [0,0]$.
+    Middle: all inputs positive $=>$ unchanged.
+    Right: interval crosses zero $=> [0,u]$.
+    The ReLU function clamps negative parts to zero while preserving positive regions.
+  ]
+) <fig:relu-interval-cases>
 
 // \begin{example}
 // For~\autoref{ex:transformer-affine1}, applying ReLU$^a$ to neuron $x_3$ gives:
@@ -3315,6 +3989,66 @@ Our abstract domains, e.g., interval, zonotope, and polytopes, are all geometric
 // \item \(\epsilon_i in [-1,1]\) are independent coefficients that determine how much we move along each generator.
 // For example, \(\epsilon_i = -1\) moves in the negative direction, \(\epsilon_i = 0\) stays at the center, and \(\epsilon_i = +1\) moves in the positive direction.
 // \end{itemize}
+
+#import "@preview/cetz:0.3.4"
+
+#figure(
+  cetz.canvas(length: 1cm, {
+    import cetz.draw: *
+
+    // === Left: independent generators ===
+    let dx1 = -3.8
+
+    // filled rectangle
+    line(
+      (dx1 + 0.0, 0.0), (dx1 + 2.0, 0.0), (dx1 + 2.0, 1.5), (dx1 + 0.0, 1.5),
+      close: true,
+      fill: blue.lighten(90%),
+      stroke: blue.darken(30%) + 1pt,
+    )
+
+    // center point
+    circle((dx1 + 1.0, 0.75), radius: 0.04, fill: blue.darken(20%), stroke: none)
+
+    // generators
+    line((dx1 + 1.0, 0.75), (dx1 + 2.0, 0.75), mark: (end: ">"), stroke: blue.darken(20%) + 1pt)
+    content((dx1 + 2.0, 0.75), text(size: 8pt, fill: blue.darken(20%))[$g_1 = (1,0)$], anchor: "west")
+
+    line((dx1 + 1.0, 0.75), (dx1 + 1.0, 1.5), mark: (end: ">"), stroke: blue.darken(20%) + 1pt)
+    content((dx1 + 1.0, 1.5), text(size: 8pt, fill: blue.darken(20%))[$g_2 = (0,1)$], anchor: "south")
+
+    // caption label
+    content((dx1 + 1.0, -0.5), text(size: 9pt)[Independent $=>$ Rectangle])
+
+    // === Right: correlated generators ===
+    let dx2 = 3.8
+
+    // filled parallelogram
+    line(
+      (dx2 + 0.0, 0.0), (dx2 + 2.0, 0.5), (dx2 + 1.0, 2.0), (dx2 - 1.0, 1.5),
+      close: true,
+      fill: orange.lighten(85%),
+      stroke: orange.darken(20%) + 1pt,
+    )
+
+    // center point
+    circle((dx2 + 0.5, 1.0), radius: 0.04, fill: orange.darken(20%), stroke: none)
+
+    // generators
+    line((dx2 + 0.5, 1.0), (dx2 + 1.5, 1.25), mark: (end: ">"), stroke: orange.darken(20%) + 1pt)
+    content((dx2 + 1.5, 1.25), text(size: 8pt, fill: orange.darken(20%))[$g_1 = (1, 0.25)$], anchor: "west")
+
+    line((dx2 + 0.5, 1.0), (dx2 + 1.0, 2.0), mark: (end: ">"), stroke: orange.darken(20%) + 1pt)
+    content((dx2 + 1.0, 2.0), text(size: 8pt, fill: orange.darken(20%))[$g_2 = (0.5, 1)$], anchor: "south-west")
+
+    // caption label
+    content((dx2 + 0.5, -0.5), text(size: 9pt)[Correlated $=>$ Parallelogram])
+  }),
+  caption: [
+    Left: independent generators produce an axis-aligned rectangle (interval abstraction).
+    Right: correlated generators tilt the shape into a parallelogram, capturing dependency between $x_1$ and $x_2$.
+  ]
+) <fig:zonotope-correlated-generators>
 
 // \begin{figure}
 // \centering

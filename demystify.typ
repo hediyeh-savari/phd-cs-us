@@ -22,7 +22,6 @@
 #show raw.where(block: false): it => box(fill: rgb("#f0f0f0"), inset: (x: 2pt), radius: 2pt, it)
 
 // Code blocks
-
 #show raw.where(block: true): it => block(
   fill: gray.lighten(80%),
   inset: 10pt,
@@ -76,7 +75,7 @@
 #show heading: set heading(supplement: [Sec.])
 
 
-#import "@preview/glossarium:0.5.10": make-glossary, register-glossary, print-glossary, gls, glspl, gls-long
+#import "@preview/glossarium:0.5.10": make-glossary, register-glossary, print-glossary, gls, glspl, gls-long, Gls
 #show: make-glossary
 
 #let entry-list = (
@@ -88,15 +87,15 @@
   (key: "advisor", long: "advisor/supervisor", description: [A faculty member who guides and mentors a PhD student throughout research.]),
   (key: "r1", short: "R1", long: "Research 1 university", description: [Universities with the highest level of research activity.]),
   (key: "stipend", description: [A fixed regular payment to students as part of their funding package.]),
-  (key: "rolling-admission", short: "rolling admission", long: "rolling admission", description: [Applications are reviewed as they arrive, with decisions released continuously.]),
+  (key: "rolling admission", description: [Applications are reviewed as they arrive, with decisions released continuously.]),
   (key: "toptier", short: "top-tier venues", long: "top-tier conferences and journals", description: [Highly prestigious publication venues in a CS field.]),
   (key: "diversity-statement", short: "diversity statement", long: "diversity statement", description: [An application document describing contributions to diversity and inclusion.]),
   (key: "fields", short: "fields", long: "fields or research areas", description: [Specific areas of study within a discipline, such as ML, CV, or Software Engineering.]),
   (key: "international-domestic", short: "international vs domestic", long: "international vs. domestic students", description: [International students usually need a visa; domestic students do not.]),
   (key: "in-out-state", short: "in-state vs out-of-state", long: "in-state vs. out-of-state tuition", description: [Tuition categories based on state residency; often important for MS applicants.]),
-  (key: "lab", short: "research lab", long: "research lab", description: [A group of faculty and students working in a shared research area.]),
-  (key: "major", short: "major", long: "major", description: [A student's primary field of study, usually in undergraduate education.]),
-  (key: "open-house", short: "Open House", long: "Open House", description: [An event where admitted students visit or attend virtually to learn about the program.]),
+  (key: " research lab", description: [A group of faculty and students working in a shared research area.]),
+  (key: "major", description: [A student's primary field of study, usually in undergraduate education.]),
+  (key: "open house", description: [An event where admitted students visit or attend virtually to learn about the program.]),
   (key: "AY", short: "AY", long: "Academic Year", description: [The yearly academic calendar (typically Fall and Spring; sometimes Summer/quarter systems).]),
   (key: "Q1", short: "Q1", long: "Scopus Q1 Journals", description: [A journal quartile label; less commonly used by US CS faculty than venue-specific names.]),
   (key: "ra", short: "RA", long: "Research Assistantship", description: [A major type of PhD funding through research work with a professor.]),
@@ -1207,13 +1206,13 @@ However, no interview usually means you are less likely to get an RA (@sec:ra), 
   caption: [Email from the University of Rochester about sending offers and waitlist.]
 ) <fig:waitlist>
 
-Some schools send out admission letters in batches, some do _rolling admission_/*#gls[rolling-admission]*/, and some do not send anything out, e.g., because you're on their waitlist. You should hear back from most schools by mid-March, though rejection can come out much later.
+Some schools send out admission letters in batches, some do #gls("rolling admission"), and some do not send anything out, e.g., because you're on their waitlist. You should hear back from most schools by mid-March, though rejection can come out much later.
 
 Not much you can do other than to be patient and wait. Do not send emails asking about interviews or status; unless you have interviewed specifically with someone then you can ask that person for status updates and other questions (@sec:accept-postpone-decline).  You can, though not recommended, send an email to the CS dept to ask about your status, but likely they will not reply (in addition to being busy, they do not want to give you false hope or inaccurate information), or they can send a generic reply such as "we are still reviewing applications" or "you will hear in two weeks". @fig:waitlist shows an email from the University of Rochester about their admission process.
 
 #paragraph[Acceptance Letters][ Universities often prioritize sending out acceptance letters first. This allows the admitted students to make decisions and plan for their studies. Read carefully on the acceptance letter for terms and conditions, e.g., funding and other benefits (@sec:offer-letters).
 
-Some universities have rolling-admission. Others have a specific date when they send out the first round of acceptance letters.]
+Some universities have #gls("rolling admission"). Others have a specific date when they send out the first round of acceptance letters.]
 
 #paragraph[Response Deadlines][ Accepted students are usually given a deadline to make decisions on their offers, often around #gls("April 15", first: false). After this date, CS programs can gauge how many slots remain unfilled.]
 
@@ -1262,7 +1261,7 @@ But you likely won't hear back from schools that do not want to admit you (@sec:
 
 If you receive offers, congratulations!  Now you're at a different game because the schools that have admitted you will try to get you to accept them!  Look carefully at the offer letters (@sec:offer-letters) for the terms and conditions of the offers.  Other important factors to consider include the reputation of schools (@chap:choosing-school) and professors (@chap:choosing-advisor), and funding availability (@chap:funding). You will have to make your decision (@sec:accept-postpone-decline) by a certain deadline, e.g., #gls("April 15").
 
-#paragraph[Open House][Most schools have _Open House_ or _Visit Day_ events, which are a great resource to learn about the school, department, faculty, research, living, etc.
+#paragraph[Open House][Most schools have #Gls("open house") or _Visit Day_ events, which are a great resource to learn about the school, department, faculty, research, living, etc.
 
 Even if you can't come in person, you should attend virtually and meet with individual faculty. During the event, you get a chance to learn more about the program, and talk to individual faculty and current students.  Take notes of faculty who make you excited, and count those taking in new students (if they meet you, likely they are considering new students!).  Talk to students about their advisors, the dept, the area, and the funding situation.  Ask about anything you want to determine that they deserve _you_.]
 
@@ -1271,7 +1270,7 @@ Even if you can't come in person, you should attend virtually and meet with indi
 ]
 
 
-#paragraph[What's next?][Make a decision, accept, reject, or defer the offers (@sec:accept-postpone-decline). Ask to meet with potential advisors (e.g., through Open House or separately) and even their students. Ask about computer equipment and software, office space, and other resources; in many cases these will be provided for free by your advisor or department (@sec:buying-equipment).
+#paragraph[What's next?][Make a decision, accept, reject, or defer the offers (@sec:accept-postpone-decline). Ask to meet with potential advisors (e.g., through #Gls("open house") or separately) and even their students. Ask about computer equipment and software, office space, and other resources; in many cases these will be provided for free by your advisor or department (@sec:buying-equipment).
 
 Also, do not forget to update and thank LOR writers and others who have supported you through this process (@sec:thank-writers).
 ]
@@ -1617,11 +1616,10 @@ For a full breakdown of how much a graduate student costs, see @sec:ra-cost.
 #remark-block[ The website #link("https://csstipendrankings.org/")[CS Stipend Rankings] shows stipend for various CS PhD programs. You can use it to get idea on how much you can expect to get paid. However, I would ignore about the Living Cost because it does not fit most students' lifestyle and thus makes you unnecessarily worry. For example,  it says with GMU's stipend \$40K and Fairfax's living expense \$75K, you will be in _deficit_ of \$35K annually --- which is ridiculous because all GMU PhD CS students are doing just fine with that stipend, and even enough to support their famlies.
 ]
 
-
-=== How much do *YOU* cost? <sec:ra-cost>
+=== How much do YOU cost? <sec:ra-cost>
 // \subsectioninfo{Your entire PhD program costs about \$400K in total, but you \emph{do not} pay for it.}
 
-PhD students often ask why their salary is low compared to the large grants their advisors get. They also wonder why their offer letters sometimes show that their benefits are higher than what they receive as stipend (e.g., your financial assistance says you get a package of \$60K, but your stipend is only \$30K).  The reason is that the cost of supporting a PhD student is much higher than just their stipend.  In fact, the total cost of supporting a PhD student can be around \$70K per year, which includes not only the stipend but also tuition, health insurance, and other expenses. Over the course of a 5-6 year PhD program, this can add up to around \$400K.
+PhD students might wonder why their #gls("stipend") is low compared to the large grants their advisors get. They also wonder why their offer letters sometimes show that their benefits are higher than what they receive as stipend (e.g., your financial assistance says you get a package of \$60K, but your stipend is only \$30K).  The reason is that the cost of supporting a PhD student is much higher than just their stipend.  In fact, the total cost of supporting a PhD student can be around \$70K per year, which includes not only the stipend but also tuition, health insurance, and other expenses. Over the course of a 5-6 year PhD program, this can add up to around \$400K.
 
 #align(center)[
   #image("files/c6.png", width: 50%)
@@ -2412,7 +2410,7 @@ While admission requirements are similar to PhD programs (e.g., GPA, SOP, LORs),
 
 === MS Admission Committee <sec:ms-adcom>
 
-MS admission also involves an adcom that reviews applications and makes admission decisions. However, MS admission is typically rolling---applications are reviewed as they come in---and decisions are made throughout the admission cycle.  
+MS admission also involves an adcom that reviews applications and makes admission decisions. However, MS admission is typically #gls("rolling admission", display: "rolling")---applications are reviewed as they come in---and decisions are made throughout the admission cycle.  
 
 Moreover, unlike PhD that has multiple reviewers for each application, an MS application typically involves only one reviewer and does not require much time to review compared to a PhD application (@sec:ievaluate). 
 
