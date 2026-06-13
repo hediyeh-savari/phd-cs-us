@@ -2856,7 +2856,6 @@ This chapter discusses the interval, zonotope, and polytope abstract domains com
 
 // ============ Usage example ============
 #figure(
-  placement: top,
   grid(
     columns: 3,
     //gutter: 1.5cm,
@@ -2869,7 +2868,7 @@ This chapter discusses the interval, zonotope, and polytope abstract domains com
     [(a) Interval], [(b) Zonotope], [(c) Polytope]
   ),
   caption: [Abstractions of $"relu"(x) = max(0,x)$ over $x in [l_x, u_x]$ using (a) interval, (b) zonotope, (c) polytope abstractions.]
-)
+) <fig:relu-all-abstractions>
 
 #paragraph[Abstractions for ReLU][
 We use ReLU to illustrate different abstractions.
@@ -2878,238 +2877,35 @@ Our goal is to approximate the bounds of the post-ReLU value of a neuron given t
 
 
 
-// \autoref{fig:relu-all-abstractions} illustrates common abstractions (or \emph{over-approximations}) for the ReLU function $y = \max(0, x)$, where $x in [l_x, u_x]$ and $y in [l_y(x), u_y(x)]$. The values of ReLU are shown as points on the \colorbox{myred}{red line}, which is non-convex and consists of two linear segments: one for $x < 0$ (where $y = 0$) and another for $x >= 0$ (where $y = x$).
-// To compute the bounds $l_y(x)$ and $u_y(x)$, we can use different abstractions:
+@fig:relu-all-abstractions illustrates common abstractions (or _over-approximations_) for the ReLU function $y = max(0, x)$, where $x in [l_x, u_x]$ and $y in [l_y(x), u_y(x)]$. The values of ReLU are shown as points on the #highlight(fill:red.lighten(50%))[red line], which is non-convex and consists of two linear segments: one for $x < 0$ (where $y = 0$) and another for $x >= 0$ (where $y = x$).
+To compute the bounds $l_y(x)$ and $u_y(x)$, we can use different abstractions:
 
-// \begin{itemize}
-//     \item \textbf{Interval Abstraction:} Interval represents the post-ReLU value as an interval $[l_y(x), u_y(x)]$ where $l_y(x) = 0$ and $u_y(x) = u_x$. Interval is a simple and efficient abstraction, but it can be \emph{imprecise}, e.g., it does not capture the relationship between the input and output of ReLU. %, and simply assumes that the output can take any value between 0 and the upper bound of the input.
++ *Interval Abstraction*: Interval represents the post-ReLU value as an interval $[l_y(x), u_y(x)]$ where $l_y(x) = 0$ and $u_y(x) = u_x$. Interval is a simple and efficient abstraction, but it can be _imprecise_, e.g., it does not capture the relationship between the input and output of ReLU. %, and simply assumes that the output can take any value between 0 and the upper bound of the input. 
+  
+  In @fig:relu-all-abstractions(a), the #highlight[yellow rectangle] (box) represents the interval abstraction in the 2D space of $(x, y)$. As can be seen, this box is too large of an over-approximation (too coarse or loose), as it includes many points that are not achievable by ReLU, e.g., the point $(0.5, 0.0)$ is not on the red line.
 
-//     In~\autoref{fig:relu-interval-abstraction}, the \colorbox{yellowfill}{yellow rectangle} (box) represents the interval abstraction in the 2D space of $(x, y)$. As can be seen, this box is too large of an over-approximation (too coarse or loose), as it includes many points that are not achievable by ReLU, e.g., the point $(0.5, 0.0)$ is not on the red line.
++ *Zonotope Abstraction*: Zonotopes, commonly represented using center and generators, can capture linear relationships between variables more effectively. 
 
-//     \item \textbf{Zonotope Abstraction:} Zonotopes, commonly represented using center and generators, can capture linear relationships between variables more effectively. %We can represent ReLU as a zonotope that includes the linear segments.  The lower bound $l_y(x)$ is $y = \lambda x$ and the upper bound $u_y(x)$ is $y = \lambda x + u_x(1 - \lambda)$ for some slope $\lambda in [0, \frac{u_x}{u_x - l_x}]$. If we set $\lambda = 0$, the zonotope is a rectangle, which is the same as the interval abstraction. If we set $\lambda = \frac{u_x}{u_x - l_x}$, the zonotope's is upper bound is the same as polytope's upper bound in~\autoref{fig:relu-polytope-abstraction}.
-//     In~\autoref{fig:relu-zonotope-abstraction}, the \colorbox{yellowfill}{a parallelogram}---a zonotope in 2D---is arguably tighter than the interval in~\autoref{fig:relu-interval-abstraction}.  It captures the linear relationship between $x$ and $y$ and excludes points that are not achievable by ReLU, e.g., the point $(0.5, 0.0)$ that was included in the interval abstraction is not included in the zonotope. However, it still includes non-ReLU points and is also not strictly better than interval, e.g., the point $(0.5, -0.5)$ is included in the zonotope but not in the interval abstraction (or ReLU).
+  In @fig:relu-all-abstractions(b), the #highlight[a parallelogram]---a zonotope in 2D---is arguably tighter than the interval in @fig:relu-all-abstractions(a).  It captures the linear relationship between $x$ and $y$ and excludes points that are not achievable by ReLU, e.g., the point $(0.5, 0.0)$ that was included in the interval abstraction is not included in the zonotope. However, it still includes non-ReLU points and is also not strictly better than interval, e.g., the point $(0.5, -0.5)$ is included in the zonotope but not in the interval abstraction (or ReLU).
 
-//     %too technical here
++ *Polytope Abstraction*: Polytopes can represent arbitrary linear constraints and provide very precise bounds. We can construct a polytope that tightly encloses the non-convex shape of the ReLU function. 
 
-
-// %    The \colorbox{yellowfill}{zonotope} shown in~\autoref{fig:relu-zonotope-abstraction}
-
-//     \item \textbf{Polytope Abstraction:} Polytopes can represent arbitrary linear constraints and provide very precise bounds. We can construct a polytope that tightly encloses the non-convex shape of the ReLU function.
-
-//     In~\autoref{fig:relu-polytope-abstraction}, the polytope is shown as a \colorbox{yellowfill}{trapezoid} that captures the linear segments of ReLU. The lower bound is $l_y(x) = 0$ and the upper bound is $u_y(x) = u_x$. %\tvn{this is similar to the interval abstraction, as both have the same bounds, right?}\hd{you mean the same lower bound equation? Yes. Upper bound equation is different. However given a single neuron abstraction like in those figures, the concrete bounds (not the equations) are the same.}
+  In @fig:relu-all-abstractions(c), the polytope is shown as a #highlight[trapezoid] that captures the linear segments of ReLU. The lower bound is $l_y(x) = 0$ and the upper bound is $u_y(x) = u_x$. 
+//%\tvn{this is similar to the interval abstraction, as both have the same bounds, right?}\hd{you mean the same lower bound equation? Yes. Upper bound equation is different. However given a single neuron abstraction like in those figures, the concrete bounds (not the equations) are the same.}
 
 // \end{itemize}
-
-// % \begin{figure}[h]
-// %     \centering
-
-// %     \begin{tikzpicture}[scale=2]
-// %         % Colors
-// %         \definecolor{myred}{RGB}{255,100,100}
-// %         \definecolor{yellowfill}{RGB}{255,245,200}
-// %         % Parameters
-// %         \def\lx{-1.0}
-// %         \def\ux{1.0}
-// %         \def\ly{0}
-// %         \def\uy{1.0}
-// %         % Fill region
-// %         \fill[yellowfill] (\lx,\ly) rectangle (\ux,\uy);
-// %         % Axes
-// %         \draw[thick,->] ({\lx-0.2},0) -- ({\ux+0.3},0) node[right] {$x$};
-// %         \draw[thick,->] (0,{\ly-0.3}) -- (0,{\uy+0.3}) node[above] {$y$};
-// %         % Dashed bounds
-// %         \draw[dashed] (\lx,{\ly-0.1}) -- (\lx,{\uy+0.2});
-// %         \draw[dashed] (\ux,{\ly-0.1}) -- (\ux,{\uy+0.2});
-// %         \draw[dashed] (\lx,\uy) -- (\ux,\uy);
-// %         % ReLU line
-// %         \draw[ultra thick,myred] (\lx,\ly) -- (0,\ly) -- (\ux,\uy);
-// %         % Labels
-// %         \node[below] at (\lx,0) {$l_x$};
-// %         \node[below] at (\ux,-0.05) {$u_x$};
-// %         \node[left] at (-0.1,\ly-0.2) {$l_y(x)$};
-// %         \node[above] at (\ux-0.5,\uy) {$u_y(x)$};
-// %         % Origin
-// %         \node[below right] at (0,0) {$0$};
-// %     \end{tikzpicture}
-// %     \caption{Interval abstraction for ReLU: $y = \max(0, x)$, with $x in [l_x, u_x]$ and $y in [l_y(x), u_y(x)]$.}
-// %     \label{fig:relu-interval-abstraction}
-// % \end{figure}
-
-// % \begin{figure}[h]
-// %     \centering
-// %     \begin{subfigure}{0.49\linewidth}
-// %     \begin{tikzpicture}[scale=2]
-// %         % Colors
-// %         \definecolor{myred}{RGB}{255,100,100}
-// %         \definecolor{yellowfill}{RGB}{255,245,200}
-// %         % Parameters
-// %         \def\lx{-1.0}
-// %         \def\ux{1.0}
-// %         \def\ly{0}
-// %         \def\uy{1.0}
-// %         % Fill region
-// %         \fill[yellowfill] (\lx,\ly) rectangle (\ux,\uy);
-// %         % Axes
-// %         \draw[thick,->] ({\lx-0.2},0) -- ({\ux+0.3},0) node[right] {$x$};
-// %         \draw[thick,->] (0,{\ly-0.3}) -- (0,{\uy+0.3}) node[above] {$y$};
-// %         % Dashed bounds
-// %         \draw[dashed] (\lx,{\ly-0.1}) -- (\lx,{\uy+0.2});
-// %         \draw[dashed] (\ux,{\ly-0.1}) -- (\ux,{\uy+0.2});
-// %         \draw[dashed] (\lx,\uy) -- (\ux,\uy);
-// %         % ReLU line
-// %         \draw[ultra thick,myred] (\lx,\ly) -- (0,\ly) -- (\ux,\uy);
-// %         % Labels
-// %         \node[below] at (\lx,0) {$l_x$};
-// %         \node[below] at (\ux,-0.05) {$u_x$};
-// %         \node[left] at (-0.1,\ly-0.2) {$l_y(x)$};
-// %         \node[above] at (\ux-0.5,\uy) {$u_y(x)$};
-// %         % Origin
-// %         \node[below right] at (0,0) {$0$};
-// %     \end{tikzpicture}
-// %     \end{subfigure}
-// %     \hfill
-// %     \begin{subfigure}{0.49\linewidth}
-// %         \begin{tikzpicture}[scale=2]
-// %             % Colors
-// %             \definecolor{myred}{RGB}{255,100,100}
-// %             \definecolor{yellowfill}{RGB}{255,245,200}
-// %             % Parameters
-// %             \def\lx{-1.0}
-// %             \def\ux{1.0}
-// %             % Zonotope (band width)
-// %             \def\d{0.5}
-// %             % Zonotope corners
-// %             \coordinate (A) at (\lx, 0+\d*\lx+0.1);    % bottom left
-// %             \coordinate (B) at (\lx, 0.2);    % top left
-// %             \coordinate (C) at (0, \d*0);          % top middle
-// %             \coordinate (D) at (0, -\d*0);         % bottom middle
-// %             \coordinate (E) at (\ux, \ux+0.01);  % top right
-// %             \coordinate (F) at (\ux, \ux-\d*\ux-0.1);  % bottom right
-// %             % Fill zonotope
-// %             \fill[yellowfill] (A) -- (B) -- (E) -- (F) -- cycle;
-// %             % Axes
-// %             \draw[thick,->] ({\lx-0.2},0) -- ({\ux+0.3},0) node[right] {$x$};
-// %             \draw[thick,->] (0,{-0.6}) -- (0,{\ux+0.2}) node[above] {$y$};
-// %             % Bounded region
-// %             \draw[dashed] (\lx,{-0.6}) -- (\lx,{\ux+0.1});
-// %             \draw[dashed] (\ux,{-0.6}) -- (\ux,{\ux+0.1});
-// %             % Zonotope boundaries
-// %             \draw[dashed] (\lx, 0.2) -- (\ux, \ux+0.01);
-// %             \draw[dashed] (\lx, \d*\lx+0.1) -- (\ux, \ux-\d*\ux-0.1);
-// %             % ReLU line
-// %             \draw[ultra thick,myred] (\lx,0) -- (0,0) -- (\ux,\ux);
-// %             % Labels
-// %             \node[below] at (\lx-0.1,0) {$l_x$};
-// %             \node[below] at (\ux+0.12,-0.05) {$u_x$};
-// %             \node[below] at ({\lx/2},-0.3) {$l_{y}(x)$};
-// %             \node[above] at (\ux/2,\ux/2+0.3) {$u_{y}(x)$};
-// %             % Origin
-// %             \node[below right] at (0,0) {$0$};
-// %         \end{tikzpicture}
-// %     \end{subfigure}
-
-// %     \caption{Zonotope abstraction for ReLU: $y = \max(0,x)$, with $x in [l_x, u_x]$ and $y in [l_y(x), u_y(x)]$.}
-// %     \label{fig:relu-zonotope-abstraction2}
-// % \end{figure}
-
-
-// % \begin{figure}[h]
-// %     \centering
-// %     \begin{subfigure}{0.49\linewidth}
-// %         \begin{tikzpicture}[scale=2]
-// %             % Colors
-// %             \definecolor{myred}{RGB}{255,100,100}
-// %             \definecolor{yellowfill}{RGB}{255,245,200}
-// %             % Parameters
-// %             \def\lx{-1.0}
-// %             \def\ux{1.0}
-// %             % Zonotope (band width)
-// %             \def\d{0.5}
-// %             % Zonotope corners
-// %             \coordinate (A) at (\lx, 0);    % bottom left
-// %             \coordinate (B) at (\lx, 0.01);    % top left
-// %             \coordinate (C) at (0, \d*0);          % top middle
-// %             \coordinate (D) at (0, -\d*0);         % bottom middle
-// %             \coordinate (E) at (\ux, \ux+0.01);  % top right
-// %             \coordinate (F) at (\ux, 0);  % bottom right
-// %             % Fill zonotope
-// %             \fill[yellowfill] (A) -- (B) -- (E) -- (F) -- cycle;
-// %             % Axes
-// %             \draw[thick,->] ({\lx-0.2},0) -- ({\ux+0.3},0) node[right] {$x$};
-// %             \draw[thick,->] (0,{-0.4}) -- (0,{\ux+0.2}) node[above] {$y$};
-// %             % Bounded region
-// %             \draw[dashed] (\lx,{-0.3}) -- (\lx,{\ux+0.1});
-// %             \draw[dashed] (\ux,{-0.3}) -- (\ux,{\ux+0.1});
-// %             % Zonotope boundaries
-// %             \draw[dashed] (\lx, 0) -- (\ux, \ux+0.01);
-// %             \draw[dashed] (\lx, 0) -- (\ux, 0);
-// %             % ReLU line
-// %             \draw[ultra thick,myred] (\lx,0) -- (0,0) -- (\ux,\ux);
-// %             % Labels
-// %             \node[below] at (\lx-0.1,0) {$l_x$};
-// %             \node[below] at (\ux+0.12,-0.05) {$u_x$};
-// %             \node[below] at ({\lx/2},-0.01) {$l_{y}(x)$};
-// %             \node[above] at (\ux/2,\ux/2+0.3) {$u_{y}(x)$};
-// %             % Origin
-// %             \node[below right] at (0,0) {$0$};
-// %         \end{tikzpicture}
-// %     \end{subfigure}
-// %     \hfill
-// %     \begin{subfigure}{0.49\linewidth}
-// %         \begin{tikzpicture}[scale=2]
-// %             % Colors
-// %             \definecolor{myred}{RGB}{255,100,100}
-// %             \definecolor{yellowfill}{RGB}{255,245,200}
-// %             % Parameters
-// %             \def\lx{-1.0}
-// %             \def\ux{1.0}
-// %             % Zonotope (band width)
-// %             \def\d{0.5}
-// %             % Zonotope corners
-// %             \coordinate (A) at (\lx, -0.2);    % bottom left
-// %             \coordinate (B) at (\lx, 0.01);    % top left
-// %             \coordinate (C) at (0, \d*0);          % top middle
-// %             \coordinate (D) at (0, -\d*0);         % bottom middle
-// %             \coordinate (E) at (\ux, \ux+0.01);  % top right
-// %             \coordinate (F) at (\ux, 0.2);  % bottom right
-// %             % Fill zonotope
-// %             \fill[yellowfill] (A) -- (B) -- (E) -- (F) -- cycle;
-// %             % Axes
-// %             \draw[thick,->] ({\lx-0.2},0) -- ({\ux+0.3},0) node[right] {$x$};
-// %             \draw[thick,->] (0,{-0.4}) -- (0,{\ux+0.2}) node[above] {$y$};
-// %             % Bounded region
-// %             \draw[dashed] (\lx,{-0.3}) -- (\lx,{\ux+0.1});
-// %             \draw[dashed] (\ux,{-0.3}) -- (\ux,{\ux+0.1});
-// %             % Zonotope boundaries
-// %             \draw[dashed] (\lx, 0) -- (\ux, \ux+0.01);
-// %             \draw[dashed] (\lx, -0.2) -- (\ux, 0.2);
-// %             % ReLU line
-// %             \draw[ultra thick,myred] (\lx,0) -- (0,0) -- (\ux,\ux);
-// %             % Labels
-// %             \node[below] at (\lx-0.1,0) {$l_x$};
-// %             \node[below] at (\ux+0.12,-0.05) {$u_x$};
-// %             \node[below] at ({\lx/2},-0.1) {$l_{y}(x)$};
-// %             \node[above] at (\ux/2,\ux/2+0.3) {$u_{y}(x)$};
-// %             % Origin
-// %             \node[below right] at (0,0) {$0$};
-// %         \end{tikzpicture}
-// %     \end{subfigure}
-
-// %     \caption{Polytop abstraction for ReLU: $y = \max(0,x)$, with $x in [l_x, u_x]$ and $y in [l_y(x), u_y(x)]$.}
-// %     \label{fig:relu-polytope-abstraction2}
-// % \end{figure}
 
 
 // % \tvn{Hai, create concrete examples with numbers to show how the abstractions work, e.g., for interval, zonotope, polytope, etc. We want to use one example to show the differences in the approximation,  not multiple examples which would be less effective.}
 
-// \subsection{Geometric Representations <sec:geometric-representations}
-// Because our abstract domains are interval, zonotope, and polytopes, it is useful to understand how these shapes can be represented. There are two common ways to describe a geometric shape:
+== Geometric Representations <sec:geometric-representations>
 
-// \begin{itemize}
-//   \item \textbf{Corner-based representation:} Define the shape by listing all of its corner points (vertices). For example, a rectangle in 2D is defined by its four corners, and a box in 3D is defined by its eight corners. This representation is intuitive and directly shows the boundaries of the shape.
+Our abstract domains, e.g., interval, zonotope, and polytopes, are all geometric shapes. There are two common ways to describe a geometric shape:
 
-//   \item \textbf{Generator-based representation:} Define the shape using a \emph{center point} and several direction vectors (\emph{generators}) that define how the shape can stretch or tilt. Instead of listing all corners, it specifies how to reach any point in the shape by starting from the center and moving along the generators within certain limits.  This representation is often more compact, especially for higher-dimensional shapes.
-// \end{itemize}
+
+- *Corner-based representation*: Define the shape by listing all of its corner points (_vertices_). For example, a rectangle in 2D is defined by its four corners, and a box in 3D is defined by its eight corners. This representation is intuitive and directly shows the boundaries of the shape.
+
+- *Generator-based representation*: Define the shape using a _center point_ and several direction vectors (_generators_) that define how the shape can stretch or tilt. Instead of listing all corners, it specifies how to reach any point in the shape by starting from the center and moving along the generators within certain limits.  This representation is often more compact, especially for higher-dimensional shapes.
 
 // \autoref{fig:interval-rectangle-two-views} uses corner-based and generator-based representations to represent a 2D rectangle, which is an interval abstraction over two variables.  The left side shows the corner-based view, where the rectangle is defined by its 4 corners.  The right side shows the generator-based view, where the rectangle is represented as a zonotope with a center point \(c\) and two orthogonal generators \(g_1\) and \(g_2\).
 
@@ -3950,17 +3746,17 @@ Our goal is to approximate the bounds of the post-ReLU value of a neuron given t
 
 
 // \begin{itemize}
-//     \item \textbf{Upper bound constraint:} \(y <=q \lambda x - \lambda l\), where \(\lambda = \frac{u}{u-l}\) is the slope of the line connecting points \((l, 0)\) and \((u, u)\)
-//     \item \textbf{Lower bound constraint:} \(y >= \lambda x\) is the line with the same slope \(\lambda\) passing through \((0, 0)\).
+//     \item \textbf{Upper bound constraint:} \(y <=q lambda x - lambda l\), where \(lambda = \frac{u}{u-l}\) is the slope of the line connecting points \((l, 0)\) and \((u, u)\)
+//     \item \textbf{Lower bound constraint:} \(y >= lambda x\) is the line with the same slope \(lambda\) passing through \((0, 0)\).
 // \end{itemize}
 
 // Merging these two constraints, we get the following equation describing all points \((x, y)\) within the parallelogram:
 // \begin{align*}
-//     \lambda x <=q quad &y quad <=q \lambda x - \lambda l \\
-//     <=ftrightarrow quad &y = \lambda x - alpha \lambda l, quad alpha in [0, 1]
+//     lambda x <=q quad &y quad <=q lambda x - lambda l \\
+//     <=ftrightarrow quad &y = lambda x - alpha lambda l, quad alpha in [0, 1]
 // \end{align*}
 // The parameter \(alpha\) interpolates between the lower and upper bounds of the parallelogram.
-// When \(alpha = 0\), we are on the lower bound \(y = \lambda x\); when \(alpha = 1\), we are on the upper bound \(y = \lambda x - \lambda l\).
+// When \(alpha = 0\), we are on the lower bound \(y = lambda x\); when \(alpha = 1\), we are on the upper bound \(y = lambda x - lambda l\).
 
 // Our zonotope requires $\epsilon_i in [-1,1]$, thus we substitute:
 // \[
@@ -3971,10 +3767,10 @@ Our goal is to approximate the bounds of the post-ReLU value of a neuron given t
 
 // The output zonotope after ReLU transformation is then:
 // \begin{align*}
-//     y  & = \lambda x - alpha \lambda l \\
-//     &= \lambda x - \frac{1 + \epsilon_{new}}{2} \lambda l\\
-//       &= \lambda \underbrace{<=ft(c + \sum_{i=1}^m \epsilon_i g_i\right)}_{x} - \epsilon_{new} \frac{\lambda l }{2} - \frac{\lambda l }{2}  \\
-//       &= \underbrace{<=ft(\lambda c -  \frac{\lambda l }{2}\right)}_{\text{new center}} +  \underbrace{\sum_{i=1}^m \epsilon_i (\lambda g_i) - \epsilon_{new} \frac{\lambda l }{2}}_{\text{new generator}}
+//     y  & = lambda x - alpha lambda l \\
+//     &= lambda x - \frac{1 + \epsilon_{new}}{2} lambda l\\
+//       &= lambda \underbrace{<=ft(c + \sum_{i=1}^m \epsilon_i g_i\right)}_{x} - \epsilon_{new} \frac{lambda l }{2} - \frac{lambda l }{2}  \\
+//       &= \underbrace{<=ft(lambda c -  \frac{lambda l }{2}\right)}_{\text{new center}} +  \underbrace{\sum_{i=1}^m \epsilon_i (lambda g_i) - \epsilon_{new} \frac{lambda l }{2}}_{\text{new generator}}
 // \end{align*}
 
 
@@ -3992,25 +3788,25 @@ Our goal is to approximate the bounds of the post-ReLU value of a neuron given t
 // We compute the slope of the upper bound line of the parallelogram (which connects points \((-0.5, 0)\) and \((2.0, 2.0)\)):
 
 // \[
-// \lambda = \frac{u-0}{u-l} = \frac{2.0}{2.0-(-0.5)} = \frac{2.0}{2.5} = 0.8.
+// lambda = \frac{u-0}{u-l} = \frac{2.0}{2.0-(-0.5)} = \frac{2.0}{2.5} = 0.8.
 // \]
 
 // \textbf{Transform zonotope}
 // The new center becomes:
 // \[
-// c' = \lambda c - \frac{\lambda l }{2} = 0.8 dot 0.75 - \frac{0.8 dot (-0.5) }{2} = 0.6 + 0.2 = 0.8
+// c' = lambda c - \frac{lambda l }{2} = 0.8 dot 0.75 - \frac{0.8 dot (-0.5) }{2} = 0.6 + 0.2 = 0.8
 // \]
 
-// Existing generators are scaled by \(\lambda\):
+// Existing generators are scaled by \(lambda\):
 // \begin{align*}
-// g'_1 &= \lambda g_1 = 0.8 dot (-0.25) = -0.2, \\
-// g'_2 &= \lambda g_2 = 0.8 dot 1.0 = 0.8
+// g'_1 &= lambda g_1 = 0.8 dot (-0.25) = -0.2, \\
+// g'_2 &= lambda g_2 = 0.8 dot 1.0 = 0.8
 // \end{align*}
 
 // \textbf{Create new generator for approximation error}
 // A new generator is introduced to capture the ReLU approximation error:
 // \[
-// g'_3 = -\frac{\lambda l }{2} = -\frac{0.8 dot (-0.5) }{2} = 0.2
+// g'_3 = -\frac{lambda l }{2} = -\frac{0.8 dot (-0.5) }{2} = 0.2
 // \]
 
 // \textbf{Result:} The output zonotope is
@@ -4048,10 +3844,10 @@ Our goal is to approximate the bounds of the post-ReLU value of a neuron given t
 // % Using a set of convex polyhedra, we can more precisely approximate activation functions like ReLU. For instance, to approximate ReLU, we can describe the tightest convex over-approximation by the following constraints:
 
 // % \[
-// % x <=q y, quad 0 <=q y, quad y <=q \lambda x + \mu
+// % x <=q y, quad 0 <=q y, quad y <=q lambda x + \mu
 // % \]
 
-// % where \(\lambda\) and \(\mu\) are parameters chosen based on the bounds of \(x\).
+// % where \(lambda\) and \(\mu\) are parameters chosen based on the bounds of \(x\).
 
 // % \begin{figure}[h]
 // %     \centering
@@ -4088,7 +3884,7 @@ Our goal is to approximate the bounds of the post-ReLU value of a neuron given t
 // % The key idea is to approximate the graph of the non-linear function by a convex polyhedron that covers all possible cases. For ReLU, the previously mentioned three constraints:
 
 // % \begin{equation <minimum_polyhedron}
-// % x <=q y, quad 0 <=q y, quad y <=q \lambda x + \mu
+// % x <=q y, quad 0 <=q y, quad y <=q lambda x + \mu
 // % \end{equation}
 
 
