@@ -833,27 +833,26 @@ $
 ReLU(x) is called #highlight[piecewise linear] because it consists of two linear segments as shown in @fig:relu: (i) a constant function that always return $0$ when $x <= 0$, (ii) an identity function that returns $x$ when $x > 0$.
 A ReLU activated neuron is said to be _active_ if its input is greater than zero and _inactive_ otherwise.
 
+// #figure(
+//   caption: [ReLU (Rectified Linear Unit) function.],  
+//   {
+
+//     plot(
+//     xmin: -4, xmax: 4,
+//     ymin: -2, ymax: 4,
+//     width:6, height:4,
+//     xlabel: $x$,
+//     ylabel: $y$,
+//     show-grid: true,
+//     (fn: x => if x < 0 {0} else {x}, stroke: red + 1.2pt),
+//     )
+//   }
+// ) <fig:relu>
+
+
 #figure(
-  caption: [ReLU (Rectified Linear Unit) function.],  
-  {
-
-    plot(
-    xmin: -4, xmax: 4,
-    ymin: -2, ymax: 4,
-    width:6, height:4,
-    xlabel: $x$,
-    ylabel: $y$,
-    show-grid: true,
-    (fn: x => if x < 0 {0} else {x}, stroke: red + 1.2pt),
-    )
-  }
-) <fig:relu>
-
-#import "@preview/cetz:0.3.4"
-
-#figure(
-  cetz.canvas(length: 0.45cm, {
-    import cetz.draw: *
+  canvas(length: 0.45cm, {
+    import draw: *
 
     // axes through the origin, with arrowheads
     line((-4.5, 0.0), (4.5, 0.0), mark: (end: ">"), stroke: 1pt)
@@ -878,7 +877,7 @@ A ReLU activated neuron is said to be _active_ if its input is greater than zero
     line((0.0, 0.0), (4.5, 4.5), stroke: red.darken(20%) + 1.5pt)
   }),
   caption: [ReLU (Rectified Linear Unit) function.]
-) <fig:relu2>
+) <fig:relu>
 
 
 #paragraph[Logical encoding][ 
@@ -916,45 +915,12 @@ This non-linearity makes NNV difficult. In fact, verifying networks with ReLU is
 === Sigmoid <sec:sigmoid>
 
 
-
-// \begin{figure}[ht]
-//     \centering
-//     \begin{tikzpicture}
-//         \begin{axis}[
-//             width=1.7in, height=1.7in,
-//             axis x line=middle, axis y line=middle,
-//             xlabel={}, ylabel={},
-//             xtick={-4, -2, 0, 2, 4},
-//             ytick={0, 0.5, 1},
-//             xmin=-4.5, xmax=4.5, ymin=0, ymax=1.1,
-//             enlargelimits=false,
-//             samples=300,
-//             domain=-4.5:4.5,
-//             axis line style={-latex},
-//             tick label style={font=\small},
-//             % yticklabel style={font=\small},
-//             % xticklabel style={font=\small},
-//             tick align=outside,
-//             minor tick num=0,
-//         ]
-//         \addplot[line width=1.5pt, red!80!black, samples=300, domain=-4.5:4.5] {1/(1 + exp(-x))};
-//       \end{axis}
-//     \end{tikzpicture}
-//     \caption{Sigmoid function. <fig:sigmoid}
-// \end{figure}
-
-
-
-#import "@preview/cetz:0.3.4"
-
 #figure(
-  cetz.canvas(length: 1cm, {
-    import cetz.draw: *
+  canvas(length: 1cm, {
+    import draw: *
 
-    // independent scale factors -> map data into a ~square box
-    // x in [-4.5, 4.5] (span 9), y in [0, 1.1]
-    let sx = 4.0 / 9.0      // x span -> 4 canvas units wide
-    let sy = 4.0 / 1.1      // y span -> 4 canvas units tall
+    let sx = 4.0 / 10      // x span -> 4 canvas units wide
+    let sy = 4.0 / 1.5      // y span -> 4 canvas units tall
     let pt = (x, y) => (x * sx, y * sy)
 
     // axes through the origin, with arrowheads
@@ -988,8 +954,8 @@ This non-linearity makes NNV difficult. In fact, verifying networks with ReLU is
   caption: [Sigmoid function.]
 ) <fig:sigmoid>
 
-//, shown in @fig:sigmoid,  TODO
-Sigmoid is a smooth---i.e., continuous and differentiable---non-linear activation function that maps any real value to the range $(0, 1)$.
+
+Sigmoid, shown in @fig:sigmoid, is a smooth---i.e., continuous and differentiable---non-linear activation function that maps any real value to the range $(0, 1)$.
 It is continuous, meaning that small changes in the input will result in small changes in the output, and differentiable, meaning that it has a well-defined derivative at every point. Sigmoid is often used in the output layer of a binary classification problem.
 
 $
@@ -1000,19 +966,16 @@ $
   $"sigmoid"(-1.2) approx 0.23$, $"sigmoid"(0) = 0.5$, and $"sigmoid"(2.8) approx 0.94$. This means that the sigmoid function maps $-1.2$ to a value close to $0$, $0$ to $0.5$, and $2.8$ to a value close to $1$.
 ]
 
-// \subsection{Hyperbolic Tangent (Tanh) <sec:tanh}
+=== Hyperbolic Tangent (Tanh) <sec:tanh>
 
-// Tanh, shown in~\autoref{fig:tanh}, is similar to sigmoid (\autoref{sec:sigmoid})  but maps any real value to the range (-1,1). It is often used in the output layer of a multi-class classification problem.
-#import "@preview/cetz:0.3.4"
+Tanh, shown in @fig:tanh, is similar to sigmoid (@sec:sigmoid)  but maps any real value to the range (-1,1). It is often used in the output layer of a multi-class classification problem.
 
 #figure(
-  cetz.canvas(length: 1cm, {
-    import cetz.draw: *
+  canvas(length: 1cm, {
+    import draw: *
 
-    // independent scale factors -> map data into a ~square box
-    // x in [-4.5, 4.5] (span 9), y in [-1.2, 1.2] (span 2.4)
-    let sx = 4.0 / 9.0      // x span -> 4 canvas units wide
-    let sy = 4.0 / 2.4      // y span -> 4 canvas units tall
+    let sx = 4.0 / 10.0      // x span -> 4 canvas units wide
+    let sy = 4.0 / 2.5      // y span -> 4 canvas units tall
     let pt = (x, y) => (x * sx, y * sy)
 
     // axes through the origin, with arrowheads
@@ -1049,39 +1012,10 @@ $
   }),
   caption: [tanh (hyperbolic tangent) activation function.]
 ) <fig:tanh>
-// \begin{figure}[htp]
-//     \centering
-//     \begin{tikzpicture}
-//         \begin{axis}[
-//             width=1.7in, height=1.7in,
-//             axis x line=middle, axis y line=middle,
-//             xlabel={}, ylabel={},
-//             xtick={-4, -2, 0, 2, 4},
-//             ytick={-1, 0, 1},
-//             xmin=-4.5, xmax=4.5, ymin=-1.2, ymax=1.2,
-//             enlargelimits=false,
-//             samples=300,
-//             domain=-4.5:4.5,
-//             axis line style={-latex},
-//             tick label style={font=\small},
-//             tick align=outside,
-//             minor tick num=0,
-//         ]
-//         % tanh curve
-//         \addplot[line width=1.5pt, red!80!black, samples=300, domain=-4.5:4.5] {tanh(x)};
-//         % 0.0 label at origin, slightly offset
-//       \end{axis}
-//     \end{tikzpicture}
-//     \caption{tanh (hyperbolic tangent) activation function. <fig:tanh}
-// \end{figure}
 
-// \begin{align}
-// \tanh(x) = \frac{e^x-e^{-x}}{e^x+e^{-x}}
-// \end{align}
-
-// \begin{example}
-// $\tanh(-1.2) \approx -0.83$, $\tanh(0) = 0$, and $\tanh(2.8) \approx 0.99$. This means that the tanh function maps -1.2 to a value close to -1, 0 to 0, and 2.8 to a value close to 1.
-// \end{example}
+#example[
+$tanh(-1.2) approx -0.83$, $tanh(0) = 0$, and $tanh(2.8) approx 0.99$. This means that the tanh function maps -1.2 to a value close to -1, 0 to 0, and 2.8 to a value close to 1.
+]
 
 === Softmax <sec:softmax>
 
@@ -1117,16 +1051,15 @@ $
 //     \end{tikzpicture}
 //     \caption{Softmax function for 2 classes. <fig:softmax}
 // \end{figure}
-#import "@preview/cetz:0.3.4"
 
 #figure(
-  cetz.canvas(length: 1cm, {
-    import cetz.draw: *
+  canvas(length: 1cm, {
+    import draw: *
 
     // independent scale factors -> map data into a ~square box
     // x in [-4.5, 4.5] (span 9), y in [-0.1, 1.1] (span 1.2)
-    let sx = 4.0 / 9.0
-    let sy = 4.0 / 1.2
+    let sx = 4.0 / 10.0
+    let sy = 4.0 / 1.5
     let pt = (x, y) => (x * sx, y * sy)
 
     // axes through the origin, with arrowheads
@@ -1137,14 +1070,14 @@ $
     for x in (-4, -2, 2, 4) {
       let (px, _) = pt(x, 0)
       line((px, -0.08), (px, 0.08), stroke: 0.6pt)
-      content((px, -0.25), text(size: 8pt)[#x], anchor: "north")
+      content((px, -0.25), text(size: 0.8em)[#x], anchor: "north")
     }
 
     // y-axis ticks + labels
     for y in (0.5, 1) {
       let (_, py) = pt(0, y)
       line((-0.08, py), (0.08, py), stroke: 0.6pt)
-      content((-0.2, py), text(size: 8pt)[#y], anchor: "east")
+      content((-0.2, py), text(size: 0.8em)[#y], anchor: "east")
     }
 
     // softmax_1(x) = e^x / (e^x + 1)  (solid red)
@@ -1171,11 +1104,11 @@ $
 
     // entry 1: solid red
     line((-1.7, ly), (-1.1, ly), stroke: red.darken(20%) + 1.5pt)
-    content((-1.0, ly), text(size: 8pt)[$mono("softmax")_1 (x)$], anchor: "west")
+    content((-1.0, ly), text(size: 0.8em)[$mono("softmax")_1 (x)$], anchor: "west")
 
     // entry 2: dashed blue
     line((0.9, ly), (1.5, ly), stroke: (paint: blue.darken(20%), thickness: 1.5pt, dash: "dashed"))
-    content((1.6, ly), text(size: 8pt)[$mono("softmax")_2 (x)$], anchor: "west")
+    content((1.6, ly), text(size: 0.8em)[$mono("softmax")_2 (x)$], anchor: "west")
   }),
   caption: [Softmax function for 2 classes.]
 ) <fig:softmax>
@@ -1816,10 +1749,10 @@ Transformers are designed for long-range dependencies using _self-attention_ rat
 Graph Neural Networks (GNNs) operate on graphs (instead of vectors like FNNs or sequences like RNNs). 
 It uses message passing between nodes in the graph and allows each node to aggregate information from its neighbors. GNNs are used in applications involving structured data like molecules or social networks. Currently, most NNV tools do not support GNNs, and we will not focus on them in this book. However, they are an important area of research in the broader field of NNV.
 
-#import "@preview/cetz:0.3.4"
+//#import "@preview/cetz:0.3.4"
 
 #figure(
-  cetz.canvas(length: 1cm, {
+  canvas(length: 1cm, {
     import cetz.draw: *
 
     let r = 0.45
