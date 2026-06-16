@@ -2636,7 +2636,7 @@ The #gls("GRFP", display: "NSF GRFP") is a prestigious fellowship for US citizen
 
 - Each applicant is assigned to _about 3 reviewers_ who have expertise in the applicant's research field (e.g., if your topic is in PL, your reviewers will likely work in PL or did their PhD in PL). This means reviewers are quite knowledgeable in your field and your work, your LOR writers and their work, and thus can evaluate your application quite in depth. This is different from PhD applications where adcom reviewers (@sec:adcom) might not be in your field.
 
-- While reviewers are likely in your field, they might not be research-focused faculty members (e.g., tenure-line), they can be teaching faculty (@sec:faculty-types). In fact, I believe many reviewers are teaching faculty. So this means they may not be familiar to the latest related work or trend in the field. So make your research plan easy to understand and well-motivated (see @sec:grfp-pitfalls).
+- While reviewers are likely in your field, they might not be research-focused faculty members (e.g., tenure-line). In fact, I believe many reviewers are teaching faculty (@sec:faculty-types). So this means they may not be familiar to the latest related work or trend in the field. So make your research plan easy to understand and well-motivated (see @sec:grfp-pitfalls).
 
 - Reviewers typically try to compare applicants _within their #gls("cohort",first:false) level_. This means that we do not compare an undergrad, who is still applying to grad school, to a 2nd year PhD student who already has an advisor and published multiple papers. This ensures that each applicant is evaluated fairly based on their level.
 
@@ -2647,13 +2647,13 @@ The #gls("GRFP", display: "NSF GRFP") is a prestigious fellowship for US citizen
 
 Your application will be evaluated based on two criteria: Intellectual Merit (IM) and Broader Impacts (BI). 
 
-*Intellectual merit (IM):* IM evaluates your research potential, e.g., your research experience, your potential to do research, and how you can contribute to the field.   Unlike a normal project or research proposal, in which the evaluation is entirely based on the merits of the proposed work, in the GRFP, the evaluation is _not_ entirely about the research plan. Reviewers are repeatedly reminded to not focus too much on the research plan as many applicants are still applying for PhD programs and might not even get into the field or work with a prof. that fit their research plan. 
++ *Intellectual merit (IM):* IM evaluates your research potential, e.g., your research experience, your potential to do research, and how you can contribute to the field.   Unlike a normal project or research proposal, in which the evaluation is entirely based on the merits of the proposed work, in the GRFP, the evaluation is _not_ entirely about the research plan. Reviewers are repeatedly reminded to not focus too much on the research plan as many applicants are still applying for PhD programs and might not even get into the field or work with a prof. that fit their research plan. 
 
-Instead, the evaluation is based on your _potential_ of being a good researcher using various criteria, e.g., your research experience, what others think of you (LORs), research plan, etc. This also means that even if you have very little research experience, you can still get the fellowship if you can convince the reviewers that you have the potential to be a good researcher.  Vice versa, if you have a lot of research experience and in very top places but cannot convince the reviewers that you have the potential to be a good researcher, you will not get the fellowship.
+  Instead, the evaluation is based on your _potential_ of being a good researcher using various criteria, e.g., your research experience, what others think of you (LORs), research plan, etc. This also means that even if you have very little research experience, you can still get the fellowship if you can convince the reviewers that you have the potential to be a good researcher.  Vice versa, if you have a lot of research experience and in very top places but cannot convince the reviewers that you have the potential to be a good researcher, you will not get the fellowship.
 
-*Broader impacts (BI):* BI is a common and important component in NSF application. It is about how you and your research can _benefit society_.  Many students just mention how their research is cross-discipline and thus has broader impacts (e.g., improve software quality and thus help society).  This is too common and not enough.  You also want to talk about how you, as a grad student with your research, can help society, e.g., through outreach, mentoring, etc. As mentioned below, you will want to be specific and concrete, e.g., _"I will work with highschool students .."_ is not as convincing as _"I have had experience in mentoring highschool students X and will continue to do so through Y,Z ..."_.  
++ *Broader impacts (BI):* BI is a common and important component in NSF application. It is about how you and your research can _benefit society_.  Many students just mention how their research is cross-discipline and thus has broader impacts (e.g., improve software quality and thus help society).  This is too common and not enough.  You also want to talk about how you, as a grad student with your research, can help society, e.g., through outreach, mentoring, etc. As mentioned below, you will want to be specific and concrete, e.g., _"I will work with highschool students .."_ is not as convincing as _"I have had experience in mentoring highschool students X and will continue to do so through Y,Z ..."_.  
 
-Writing BI is often difficult, not only for students but also new faculty.  You should ask someone who has experience writing NSF proposals to review your BI.
+  Writing BI is often difficult, not only for students but also new faculty.  You should ask someone who has experience writing NSF proposals to review your BI.
 
 === Common Pitfalls and Tips <sec:grfp-pitfalls>
 
@@ -2711,11 +2711,11 @@ These are some common pitfalls I see in NDSEG applications and tips to avoid the
 
 == Common Tips for Both Fellowships
 
-- *Use LaTeX to write your research plan and essays* (@chap:writing-latex).  This is the standard in CS and the general engineering and science disciplines,and will make your application look  professional.  Moreover, do not use the default Word settings, e.g., left justification, as it is not standard in CS and engineering and difficult to read.  
+- *Use LaTeX to write your research plan and essays* (@chap:writing-latex).  This is the standard in CS and the general engineering and science disciplines, and will make your application look more professional. //Moreover, do not use the default Word settings, e.g., left justification, as it is not standard in CS and engineering and difficult to read.  
 
 - *Ask your LOR writers and advisor to look at your writing/essays* (this is very important so I keep repeating it).  You are new to the field and research writing, and your ideas might not be accurate or have already been explored. It's better that they tell you now than for you to find out later from reviewers.
 
-- *Do not BS*. I said this before (@sec:grfp-pitfalls) and I say it again here. Many times students have some achievements (e.g., publications) and thought they know a lot and start BSing. This will greatly annoy reviewers, especially experts in the field. Surprisingly I find this being more common with students from top schools with strong LORs and good research experience.
+- *Do not BS*. I said this before (@sec:grfp-pitfalls) and I say it again here. Many times students have some achievements (e.g., publications) and thought they know a lot and start BSing. This will greatly _annoy_ reviewers, especially experts in the field. (Un)Surprisingly I find this being more common with students from _top schools_ with strong LORs and good research experience.
 
 
 == My experience as a reviewer
@@ -2736,7 +2736,7 @@ Homer: I mean an award that's worth winning.]
 
 When exploring potential advisors, students often look at faculty websites to learn about their research and achievements. Common indicators of research productivity include publications and involvement in research community. However, beyond these, CS has several prestigious and meaningful achievements that researchers aim for, but that are not as well-known to prospective students. 
 
-This chapter first looks at the common research activities and then discusses the "big" research achievements that faculty often highlight on their websites, CVs, or departmental news and awards pages (e.g., at #link("https://realgmucs.github.io/awards.html")[GMU] and #link("https://www.cs.washington.edu/people/honors-awards/")[UWash]).
+This chapter first looks at the common research activities and then discusses the "big" research achievements that faculty often highlight on their websites, CVs, or departmental news and awards pages (e.g., at #link("https://www.cs.washington.edu/people/honors-awards/")[UWash] and #link("https://realgmucs.github.io/awards.html")[GMU]).
 
 
 == Common Research Activities <sec:common-research-indicators>
@@ -2762,10 +2762,11 @@ For example, a conference paper might present a new algorithm and some initial e
 Many CS areas do not have journals but some do. For example, TSE (Transactions on Software Engineering) is a top journal in SE and has exceptionally high impact-factors (higher than many top conferences)---but this is a rare exception.
 
 #note-block[
-  Note that some CS areas, such as PL and SE, are publishing conference papers as journals, which among other reasons allow for longer papers and to be consistent with other disciplines such as math and physics. For example, papers in well-known PL conferences including POPL and OOPSLA are now published as special issues in the PACMPL (Proceedings of the ACM on Programming Languages) journal. However, despite this publishing technicality, these are still considered conferences and has the benefits of conferences such as fast review and publication process, and in-person presentation at the conference. Most researchers would treat them exactly as conference papers.
+  Note that some CS areas, such as PL and SE, are publishing conference papers as journals (so a hybrid model).
+  Among other reasons this allow for longer papers and to be consistent with other disciplines such as math and physics. For example, papers in well-known PL conferences including POPL and OOPSLA are now published as special issues in the PACMPL (Proceedings of the ACM on Programming Languages) journal. However, despite this publishing technicality, these are still considered conferences and has the benefits of conferences such as fast review and publication process, and in-person presentation at the conference. Most researchers would treat them exactly as conference papers.
 ]
 
-#paragraph[Best Paper Awards][Conferences often give out best or distinguished paper awards to a small set of accepted papers (e.g., 10% of accepted papers at ICSE) to recognize that they have high-quality and potential impact. AI/ML have "oral" and "spotlight" papers that are selected from accepted papers based on their quality and potential impact, and thus are equivalent to traditional best papers.
+#paragraph[Best Paper Awards][Conferences often give out _Best_ or _Distinguished_ paper awards to a small set of accepted papers (e.g., 10% of accepted papers at ICSE) to recognize that they have high-quality and potential impact. AI/ML have _Oral_ and _Spotlight_ papers that are selected from accepted papers based on their quality and potential impact, and thus are equivalent to traditional best papers.
 
 These best paper awards are determined by the program committee and often presented to the authors at the conference. Note that these are not the same class as the "Test-of-time" paper awards, which are extremely prestigious and discussed in @sec:research-awards.]
 
@@ -2785,19 +2786,22 @@ These are mostly voluntary, but they are important for establishing and maintain
 - Reviewers for Journals. Similar to PC member, faculty also serve as reviewers for journals such as being on the _editorial board_ of major SE journals like TSE, JSS, and TOSEM. 
   However, being a journal reviewer is less visible than being a PC member because the journals do not list their reviewers as conferences do with PC members. Moreover, due to the focus of conferences in CS, many faculty do not publish in journals and therefore do not review for them.
 
-- Proposal Panelist. Another service
-  is reviewing proposals for funding agencies such as the Nationsal Science Foundation or NSF. In addition to shaping the landscape of research directions (e.g., by deciding which proposals to fund), being on an _NSF review panel_ provides insights into good proposal writing and opportunities to connect with program officers and peers. However, being an NSF panelist is not as common as being a PC member (many faculty never got invited), and it is often seen as a "bonus" rather than a requirement for tenure.
+- Grant Proposal Panelist. Another service
+  is reviewing proposals for funding agencies such as #gls("NSF"). In addition to shaping the landscape of research directions (e.g., by deciding which proposals to fund), being on an NSF _review panel_ provides insights into good proposal writing and opportunities to connect with program officers and peers. However, being an NSF panelist is not as common as being a PC member (many faculty never got invited), and it is often seen as a "bonus" rather than a requirement for faculty.
 
 == Research Achievements and Awards
 
 Activities listed in @sec:common-research-indicators --- publishing papers and involving in research community---are common and _expected_ for all research faculty, especially those at top institutions. 
-They are the _"bread and butter"_ of research, but they are not _exceptional_ achievements that make a faculty stand out.
-After all, you rarely see departments celebrating someone's paper acceptance, but they will spotlight certain awards and honors that are genuinely exceptional and give more meaningful insights into a researcher's impact and standing in the field.
+They are the bread and butter of research, but they are not _exceptional_ achievements that make a faculty stand out.
+After all, you rarely see departments highlighting a faculty's publications or PC memberships on their websites or news pages. 
+
+
+However, department and university websites will spotlight certain awards and honors, listed below, that are _genuinely exceptional_ and give more meaningful insights into a researcher's impact and standing in the field.
 
 
 #figure(
   image("files/phd030810s.png", width: 70%),
-  caption: [Adademic Awards.],
+  caption: [Academic Awards.],
 )
 
 
@@ -2805,12 +2809,12 @@ After all, you rarely see departments celebrating someone's paper acceptance, bu
 
 === Early-Career Funding Awards
 
-These refer to prestigious grants and fellowships for early-career faculty such as assistant professors who have not yet received tenure (\autoref{sec:faculty-types}). In addition to coming with major funding, these awards are highly valued and can significantly boost the tenure case and career of the recipient. 
+These refer to prestigious grants and fellowships for early-career faculty such as assistant professors who have not yet received tenure (@sec:faculty-types). In addition to coming with major funding, these awards are highly valued and can significantly boost the tenure case and career of the recipient. 
 
 + *NSF CAREER Award:* The _most prestigious award_ for junior faculty with research _and_ educational excellence. It comes with a 5-year research grant, which is substantial for early-career researchers. 
   
-  Given its impact on tenure review, some junior faculty consider the CAREER award so important that they may prioritize it over other major life events such as having children.
-  In some cases, faculty consider moving to a better school after getting this award.
+  Given its impact on tenure review, some junior faculty consider the CAREER award so important that they may prioritize it over other major life events such as having children (no kidding!).
+  In some cases, faculty even consider moving to a better school after getting this award.
 
 
   + *NSF CRII (CISE Research Initiation Initiative):* A "mini" version of CAREER for junior faculty in CISE (Computer and Information Science and Engineering) directorate. It comes with a 2-year grant and many faculty use this as a stepping stone to apply for the CAREER. Note that this seems to be phasing out and might not be available in the future. 
