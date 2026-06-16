@@ -2301,6 +2301,7 @@ But there's a good chance that we would respond to well-written emails (@sec:con
 // % % \begin{center}
 // % %     \includegraphics[scale=0.8]{files/visa.pdf}
 // % % \end{center}
+#image("files/visa.pdf", width: 100%)
 
 As defined in @chap:glossary, international students are those who would need a visa to study in the US.  In most cases, *_F-1_* is the main visa needed to study full-time at an accredited institution.  Here are some key points about F-1: 
 
@@ -2312,7 +2313,6 @@ As defined in @chap:glossary, international students are those who would need a 
 
 - *Full-time Enrollment:* You must maintain full-time enrollment status during the #gls("AY", first: false). This means taking a minimum number of credits each semester, as defined by your program. Dropping below full-time status can result in loss of visa status.
 
-#image("files/visa.pdf", width: 100%)
 
 
 == For Spouses and Children
@@ -2336,20 +2336,22 @@ F-2 visa holders must leave the US if the primary F-1 student visa holder loses 
 
 #simpsons[I'm not a bad guy! I work hard, and I love my kids. So why should I spend half my Sunday hearing about how I'm going to Hell?]
 
-Most of what is written in this handbook applies to both domestic and international students (_domestic_ here simply means you do not require a visa to study in the US.). 
+Most of what is written in this handbook applies to both international and domestic students (_domestic_ here simply means you do not require a visa to study in the US.). 
 However, there are some differences and benefits that domestic students should be aware of and can leverage to improve their chances of admission.
 
-#strong[Standing out @sec:stand-out.] There are #emph[few] domestic applications compared to international ones (one reason is that many domestic students go to the workforce after their undergraduate degree). Many US universities thus want to increase the number of domestic students in their programs. So if you're a domestic student, you already #emph[stand out] from the crowd.
+#strong[Standing Out @sec:stand-out.] There are #emph[few] domestic applications compared to international ones (one reason is that many domestic students go to the workforce after their undergraduate degree). Many US universities thus want to increase the number of domestic students in their programs. So if you're a domestic student, you already #emph[stand out] from the crowd.
 
 #strong[Fee Waiving @sec:fee-waive.] Some schools might offer application fee waivers for domestic students. You should check with the school you're applying to.
 
-#strong[School @chap:your-school.] Adcom already knows about your school, which is a plus. You are also more familiar with the US education system and academic culture (@chap:cultural).
+#strong[School @chap:your-school.] Adcom already knows about your school, which is a plus (so that we do not have to spend time evaluating your school and its curriculum). You likely have better English skills, which can help you in writing your SOP and communicating with professors (@sec:contact). You are also more familiar with the US education system and academic culture (@chap:cultural). 
 
-#strong[Standard Tests @chap:standard-tests.] You do not need to take TOEFL or IELTS (@sec:english-tests) because you already did your undergrad (or MS) at a US university. You might also be more comfortable communicating in English, e.g., contacting professors (@sec:contact).
 
 #strong[Transcripts.] You do not need to get your transcripts evaluated or translated (which can be a hassle and inaccurate). You can just send your official transcripts directly to the school you're applying to.
 
-#strong[Funding @chap:funding.] You have more opportunities for funding, e.g., through government scholarships for US citizens and permanent residents. You can also apply to specific programs #emph[before] you start your PhD, e.g., NSF #gls("GRFP") and Hertz Foundation Fellowship. These fellowships are very competitive (@chap:fellowships) and can significantly improve your admission chances.
+#strong[Standard Tests @chap:standard-tests.] You do not need to take TOEFL or IELTS (@sec:english-tests) because you already did your undergrad (or MS) at a US university. You might also be more comfortable communicating in English, e.g., contacting professors (@sec:contact).
+
+
+#strong[Funding @chap:funding.] You have more opportunities for funding, e.g., through government scholarships for US citizens and permanent residents. You can also apply to specific programs #emph[before] you start your PhD, e.g., NSF #gls("GRFP"), DoD NDSEG and Hertz Foundation Fellowship. These fellowships are very competitive (@chap:fellowships) and can significantly improve your admission chances.
 
 #strong[Research Experience @chap:research-opportunities.] You might have many opportunities to do research as an undergraduate, e.g., through #gls("REU") programs and internships at your undergrad university. Highlight such experience in your application.
 
