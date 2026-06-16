@@ -2296,7 +2296,7 @@ But there's a good chance that we would respond to well-written emails (@sec:con
 
 = Visa for International Students <chap:visa>
 
-// % \myepigraphsimpsons{"I didn't do it. Nobody saw me do it. You can't prove anything!"}
+#simpsons[I didn't do it. Nobody saw me do it. You can't prove anything!"]
 
 // % % \begin{center}
 // % %     \includegraphics[scale=0.8]{files/visa.pdf}
