@@ -2343,12 +2343,13 @@ However, there are some differences and benefits that domestic students should b
 
 #strong[Fee Waiving @sec:fee-waive.] Some schools might offer application fee waivers for domestic students. You should check with the school you're applying to.
 
-#strong[School @chap:your-school.] Adcom already knows about your school, which is a plus (so that we do not have to spend time evaluating your school and its curriculum). You likely have better English skills, which can help you in writing your SOP and communicating with professors (@sec:contact). You are also more familiar with the US education system and academic culture (@chap:cultural). 
+#strong[School @chap:your-school.] Adcom already knows about your school, which is a plus (so that we do not have to spend time evaluating your school and its curriculum). 
+You are also more familiar with the US education system and academic culture (@chap:cultural). 
 
 
 #strong[Transcripts.] You do not need to get your transcripts evaluated or translated (which can be a hassle and inaccurate). You can just send your official transcripts directly to the school you're applying to.
 
-#strong[Standard Tests @chap:standard-tests.] You do not need to take TOEFL or IELTS (@sec:english-tests) because you already did your undergrad (or MS) at a US university. You might also be more comfortable communicating in English, e.g., contacting professors (@sec:contact).
+#strong[Standard and English Tests @chap:standard-tests.] You do not need to take TOEFL or IELTS (@sec:english-tests) because you already did your undergrad (or MS) at a US university. You likely have better English skills, which can help you in writing your SOP and communicating with professors (@sec:contact).
 
 
 #strong[Funding @chap:funding.] You have more opportunities for funding, e.g., through government scholarships for US citizens and permanent residents. You can also apply to specific programs #emph[before] you start your PhD, e.g., NSF #gls("GRFP"), DoD NDSEG and Hertz Foundation Fellowship. These fellowships are very competitive (@chap:fellowships) and can significantly improve your admission chances.
