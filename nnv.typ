@@ -1526,7 +1526,7 @@ Widely used feedforward architectures include fully connected, convolutional, an
 
 === Other NN Architectures
 
-Not all NNs are feedforward.
+Not all neural networks are feedforward.
 Some architectures introduce cycles, dynamic connections, or non-Euclidean#footnote[Euclidean data refers to data that can be represented in a flat, two-dimensional space, such as images.] data structures (e.g., graphs).
 
 ==== Recurrent Neural Networks (RNNs)

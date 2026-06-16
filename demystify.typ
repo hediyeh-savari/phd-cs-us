@@ -2109,21 +2109,13 @@ Thus, don't worry about this too much and just apply to the profs. you think are
 
 Faculty often receive "cold" emails from prospective students. Most of the time, we #highlight[just ignore such emails] (@sec:busy), but on some rare occasions, we do answer them. _So how to write an email that gets our attention?_
 
-First, if you want to contact a prof. to _ask about your admission chance_, please *don't*. We don't know and can't answer because, as explained in @chap:evalapps, we don't make individual decisions and might not even be assigned to evaluate your application. It is the same as sending a paper draft to a journal editor or program chair and asking them if your paper has a chance.
+First, if you want to contact a prof. with the purpose of checking about _potential admission chance_, *don't*. We don't know and can't answer because, as explained in @chap:evalapps, we don't make individual decisions and might not even be assigned to evaluate your application. It is the same as sending a paper draft to a journal editor or program chair and asking them if your paper has a chance. 
 
 So how to get someone to look at your profile and give input? You could ask your professors, LOR writers, collaborators, or those who have previously applied. For this kind of feedback, ask someone you have a personal connection with.
 
-On the other hand, if you want to contact a prof. to ask about _research opportunities_, or _GTA/GRA_ support (@sec:ta-ra), then _yes_, I believe you should try. It is still a long shot (you likely won't get any reply), but it is _worth trying_ (and I say this even though I do not reply to most of these emails; see @sec:kiss-of-death-emails for why). Thus, you really need to put effort into it and do it the _right way_ to get a positive reply.
+On the other hand, if you want to contact a prof. to ask about _research opportunities_, or _GTA/GRA_ support (@sec:ta-ra), then _yes_, I believe you *should* try. It is still a _very_ long shot (you likely won't get any reply), but it is _worth trying_ (and I say this even though I do not reply to most of these emails; see @sec:kiss-of-death-emails for why). Thus, you really need to put effort into it and do it the _right way_ to get a positive reply.
 
-The best way to catch the prof.'s attention is to _customize your email_ for them and _make yourself stand out_ from the crowd. First, the usual advice is to read papers of the profs. you're interested in, know what they work on, and see if you are interested in their research. Many profs. explicitly state on their website how prospective students should (or should not) contact them, e.g., using specific email subjects and additional information (e.g., read specific papers).
-
-#note-block[
-  On my lab #link("https://roars.dev")[website], I have a section on _Prospective Students_ that lists how to contact me and what information to include or exclude in the email. I also have an #link("https://roars.dev/phd-cs-us/advising.pdf")[advising guide] to help students understand more about my advising style and lab culture.
-
-  For example, recently, I ask that they contribute a bit to one of my projects, e.g., create a pull request to fix a bug or add a feature. This shows that they have done their homework and are genuinely interested in my work. This effectively filters out those who are not serious or not interested. I do this for both graduate and undergraduate students.
-]
-
-In general, your email should talk about how/why their work would match yours, how you have followed their work and did what they ask from their website (if they have any). In contrast, if you write a generic email that can be sent to multiple professors (e.g., if you just change some names and keywords in the email or copy and paste paper titles), you will not get a response.
+The best way to catch the prof.'s attention is to _customize your email_ for them and _make yourself stand out_ from the crowd. First, customize your email so that it is about how/why their work would match yours, how you have followed their work and did what they ask from their website (if they have any). In contrast, if you write a generic email that can be sent to multiple professors (e.g., if you just change some names and keywords in the email or copy and paste paper titles), you will not get a response.
 
 Below is a good example:
 
@@ -2141,6 +2133,14 @@ Below is a good example:
   ---
 
   This is a good example because it is written just for me. It shows that the student has done their homework, followed my instructions, and knows my work well.
+]
+
+The usual advice is to read papers of the profs. you're interested in, know what they work on, and see if you are interested in their research. Many profs. explicitly state on their website how prospective students should (or should not) contact them, e.g., using specific email subjects and additional information (e.g., read specific papers).
+
+#note-block[
+  On my lab #link("https://roars.dev")[website], I have a section on _Prospective Students_ that lists how to contact me and what information to include or exclude in the email. I also have an #link("https://roars.dev/phd-cs-us/advising.pdf")[advising guide] to help students understand more about my advising style and lab culture.
+
+  For example, recently, I ask that they contribute a bit to one of my projects, e.g., create a pull request to fix a bug or add a feature. This shows that they have done their homework and are genuinely interested in my work. This effectively filters out those who are not serious or not interested. I do this for both graduate and undergraduate students.
 ]
 
 Second, and probably more importantly, is to make yourself _stand out_. It is not difficult to customize the email, thus the very few students that both customize _and_ stand out will get our attention. Standing out (@sec:stand-out) varies from person to person and can range from the classic ways of having good publications in top conferences and having strong recommendations from well-known profs (e.g., people I know) to having strong technical skills (e.g., winning well-known competitions such as IMO and developing significant start-ups or popular open-source projects). In fact, most CS research groups develop open-source software and having contributions (e.g., finding and fixing bugs, creating pull requests, etc) to these projects is a great way to stand out. @fig:email shows an example of being stand out by solving a problem that the prof. has.
