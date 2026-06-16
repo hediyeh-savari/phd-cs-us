@@ -2446,11 +2446,13 @@ Unlike PhD programs, which often have funding (@chap:funding), MS students are t
 
 - *TA*: MS students are typically not given TA positions because PhDs are given priority as they will stay much longer (@sec:time). Many depts. do not have enough TAs for PhD students and so they cannot afford to give them to MS students.
 
-*Exceptions*: While MS students are typically not funded and do not focus on research, there are always exceptions.
+#remark-block[While MS students are typically not funded and do not focus on research, there are always exceptions.
 Some MS programs are fully funded, e.g., those that are research-oriented and have a strong research component.
 Moreover, some schools have TAs for MS students, and you can apply for these positions. For example, GMU CS has quite a few TAs for MS students, and my courses in the past two years have MS TAs.
 
 Finally, if you have a strong background and can demonstrate that you can be productive in research, then a prof. might be willing to take you as their RA.  Some of these students convert to PhD students after having this research experience.
+]
+
 
 == Selecting and Ranking Schools <sec:selecting-ranking-schools-ms>
 // \sectioninfo{How to select and rank MS programs in CS.}
@@ -2488,22 +2490,21 @@ Many universities have programs to encourage undergraduate research. For example
 
 You can also take honor thesis or independent study courses with a professor.  This is a good way to get research experience and also get a LOR from the professor.  You can also ask your academic advisor or other faculty members for suggestions.  Finally, you can also ask your peers who are already doing research.  Use the method described in @sec:contact to contact professors
 
-#remark-block[
+#example[
     I enjoy working with undergrads and actively recruit them to my #link("https://roars.dev")[research group].
     I get undergraduates through my classes, e.g., asking students who did well in my class if they are interested in research.
-    Occasionally I was introduced to students by other students or faculty (though I didnot have much success with this method).
+    Occasionally I was introduced to students by other students or faculty (though I did not have much success with this method).
     
-    Sometimes I found students by accident, e.g., a student came to my office hours and we had a good conversation about research, or I see some news about a student and I reach out to them (e.g., Stefania came to my office for advising, I found out about KimHao because he participated in an ACM competition, and Azan created a website that aiming to replace RateMyProfessors that got my attention).
+    Several times I found students by accident. For example, _Stefania_ came to my office for advising and her volunteer work caught my attention; I found out about _KimHao_ because he participated (and placed highly) in an ACM competition, and _Azan_'s vibe-code webapp that aims to replace RateMyProfessors both amused and impressed me.
      
-
-While most undergrads are understandably not productive in research, some are and I have published multiple papers with them---like with Kimhao and Stefania.  
+  While most undergrads are understandably not productive in research, some are and I have published multiple papers with them---like with Kimhao and Stefania.  
 I also have written LORs for them and have helped them get into good PhD programs.
 ]
 
 == Open Source Contributions <sec:open-source-contribs>
 
 Open development platforms such as GitHub offer many research opportunities.
-In CS and many other fields, research labs put their projects on GitHub to encourage collaboration and contributions from the community. For example, my research group, #link("https://roars.dev/")[Roars], has many open-source projects that undergrads can contribute to (some of my undergrad actually created and maintain these projects, e.g., #link("https://roars.dev/cspicks")[CSPicks]).
+In CS and many other fields, research labs often put their projects on GitHub to encourage collaboration and contributions from the community. For example, my research group, #link("https://roars.dev/")[Roars], has many open-source projects that undergrads can contribute to (some of my undergrad actually created and maintain these projects, e.g., #link("https://roars.dev/cspicks")[CSPicks]).
 
 By contributing code, fixing bugs, implementing new features, or providing documentation, students can gain practical research experience and interact with experienced developers and researchers in the field. Not only you gain research experience, but you might be able to get a LOR from the project maintainer, and you should write about this experience in your SOP (@chap:sop)
 
@@ -2686,9 +2687,9 @@ Reviewers mainly get to know you and evaluate your application by reading your r
 
 #remark-block[
 I find it a bit difficult to evaluate NDSEG applications because I do not have the full picture.  For example, a student mentioned that they have published in the topic they proposed but redacted all information about the publication, so I have no idea where they published, what the paper is about, etc.  
-It is also difficult to evaluate the academic background of the student, e.g., some student just started grad school and so their transcript is essentially blank. It is also annoying to see CVs with so many blanked out information (they might as well should just submit a blank CV).
+It is also difficult to evaluate the academic background of the student, e.g., some student just started grad school and so their transcript is essentially blank. It is also annoying to see CVs with so many blanked out and redacted information (they might as well should just submit a blank CV).
 
-In the beginning I find it surprising that I don't get to see the LORs, but I understand the reasoning behind it and gradually think it is a good idea. As mentioned above, LOR writers for NSF GRFP (@sec:grfp-pitfalls), especially those from top schools, often overrate their students and thus can bias the evaluation. So I don't find I am missing much by not seeing the LORs.
+In the beginning I find it surprising that I don't even get to see the LORs, but I understand the reasoning behind it and gradually think it is a good idea. As mentioned above, LOR writers for NSF GRFP (@sec:grfp-pitfalls), especially those from top schools, often overrate their students and thus can bias the evaluation. So I don't find I am missing much by not seeing the LORs.
 ] <remark-ndseg>
 
 === Common Pitfalls and Tips <sec:ndseg-pitfalls>
@@ -2703,7 +2704,7 @@ These are some common pitfalls I see in NDSEG applications and tips to avoid the
 
 - *Personal stories and essays should be unique and interesting*. Many essays and stories I read are quite generic and do not tell much about the student. For example, involving in a robotics club or mentoring students are quite common and do not tell much.
   
-  You should pick a few thing and provide concrete examples and details.  For example, talk about what you have accomplished in your robotics club, e.g., you built a robot that won a competition.  Just a small, interesting detail can make your essay stand out.
+  So you should pick a few thing and provide concrete examples and details.  For example, talk about what you have accomplished in your robotics club, e.g., you built a robot that won a competition.  Such small, interesting details can make your essay stand out.
 
 - *Not using all allowed pages*. Many research plans use only 1/2 or 2/3 of the number of allowed pages, which themselves are already quite short. This often does not provide enough information for reviewers to understand and evaluate the research plan.  So use all allowed pages to provide enough details about your research plan. This is especially important as we do not know much about you due to redacted materials.
 
