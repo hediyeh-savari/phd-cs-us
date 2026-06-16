@@ -2135,7 +2135,7 @@ Below is a good example:
   This is a good example because it is written just for me. It shows that the student has done their homework, followed my instructions, and knows my work well.
 ]
 
-The usual advice is to read papers of the profs. you're interested in, know what they work on, and see if you are interested in their research. Many profs. explicitly state on their website how prospective students should (or should not) contact them, e.g., using specific email subjects and additional information (e.g., read specific papers).
+Many profs. explicitly state on their website how prospective students should (or should not) contact them, e.g., using specific email subjects and additional information (e.g., read specific papers, try some programming tasks). If they don't state anything, you can still customize your email by showing that you have read their papers know their work. This is a good way to show that you are genuinely interested in their work and not just sending a generic email.
 
 #note-block[
   On my lab #link("https://roars.dev")[website], I have a section on _Prospective Students_ that lists how to contact me and what information to include or exclude in the email. I also have an #link("https://roars.dev/phd-cs-us/advising.pdf")[advising guide] to help students understand more about my advising style and lab culture.
