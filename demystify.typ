@@ -2294,7 +2294,7 @@ But there's a good chance that we would respond to well-written emails (@sec:con
 
 // %T10,T20,T50,TX
 
-// % = Visa for International Students <chap:visa}
+= Visa for International Students <chap:visa>
 
 // % \myepigraphsimpsons{"I didn't do it. Nobody saw me do it. You can't prove anything!"}
 
@@ -2302,37 +2302,35 @@ But there's a good chance that we would respond to well-written emails (@sec:con
 // % %     \includegraphics[scale=0.8]{files/visa.pdf}
 // % % \end{center}
 
-// % As defined in~\autoref{chap:glossary}, international students are those who would need a visa to study in the US.  In most cases, \textbf{F-1} is the main visa needed to study full-time at an accredited institution.  Here are some key points about F-1: 
+As defined in @chap:glossary, international students are those who would need a visa to study in the US.  In most cases, *_F-1_* is the main visa needed to study full-time at an accredited institution.  Here are some key points about F-1: 
 
-// % \begin{itemize}
-// % \item \textbf{Employment:} You are allowed to work on-campus for up to \textbf{20 hours per week during the \acrfull{AY}} (because you still need to take classes) and \textbf{full-time} (typically 40 hrs) during official school breaks (e.g., summer and winter breaks). Off-campus employment requires authorization, which can be obtained through CPT and OPT programs described below.
+- *Employment:* You are allowed to work on-campus for up to *20 hours per week during the #gls("AY")* (because you still need to take classes) and *full-time* (typically 40 hrs) during official school breaks (e.g., summer and winter breaks). Off-campus employment, such as internship, requires authorization, which can be obtained through CPT and OPT programs described below.
 
-// % \item \textbf{Curricular Practical Training (CPT):} CPT allows you to participate in internships or practical training that is an integral part of their academic curriculum. CPT must be related to your field of study and can be full-time or part-time. It requires prior authorization from your university and must be completed before graduation.
+- *Curricular Practical Training (CPT):* CPT allows you to participate in internships or practical training that is an integral part of your academic curriculum. CPT must be related to your field of study and can be full-time or part-time. It requires prior authorization from your university and must be completed before graduation.
 
-// % \item \textbf{Optional Practical Training (OPT):} OPT provides up to 12 months of work authorization for students before or after completing their degree. For students in STEM fields, there is an additional 24-month extension available. OPT requires prior application and approval from USCIS.
+- *Optional Practical Training (OPT):* OPT provides up to 12 months of work authorization for students before or after completing their degree. For students in STEM fields, there is an additional 24-month extension available. OPT requires prior application and approval from USCIS.
 
-// % \item \textbf{Full-time Enrollment:} You must maintain full-time enrollment status during the \acrshort{AY}. This means taking a minimum number of credits each semester, as defined by your program. Dropping below full-time status can result in loss of visa status.
-// % \end{itemize}
+- *Full-time Enrollment:* You must maintain full-time enrollment status during the #gls("AY", first: false). This means taking a minimum number of credits each semester, as defined by your program. Dropping below full-time status can result in loss of visa status.
 
-// % \includepdf[pages=-]{files/visa.pdf}
+#image("files/visa.pdf", width: 100%)
 
 
-// % \section{For Spouses and Children}
+== For Spouses and Children
 
-// % The spouses and children of F-1 visa holders can enter the US under the F-2 visa status. The F-2 visa allows family members to live in the US with the following conditions:
+The spouses and children of F-1 visa holders can enter the US under the F-2 visa status. The F-2 visa allows family members to live in the US with the following conditions:
 
-// % For Spouse: 
-// % \begin{itemize}
-// % \item \textbf{Work Restrictions:} F-2 spouses are not permitted to work in the US.
-// % \item \textbf{Education:} They can study part-time but cannot enroll in full-time degree programs.
-// % \end{itemize}
-// % For Children:
-// % \begin{itemize}
-// % \item \textbf{Education:} F-2 children can attend K-12 schools but cannot pursue higher education full-time.
-// % \item \textbf{Work Restrictions:} Like F-2 spouses, children are not allowed to work under any circumstances.
-// % \end{itemize}
-// % F-2 visa holders must leave the US if the primary F-1 student visa holder loses status or completes their program.
+For spouse:
 
+- *Work Restrictions:* F-2 spouses are not permitted to work in the US.
+- *Education:* They can study part-time but cannot enroll in full-time degree programs.
+
+For children:
+
+- *Education:* F-2 children can attend K-12 schools but cannot pursue higher education full-time.
+- *Work Restrictions:* Like F-2 spouses, children are not allowed to work under any circumstances.
+F-2 visa holders must leave the US if the primary F-1 student visa holder loses status or completes their program.
+
+#pagebreak()
 = Domestic Students <chap:domestic-students>
 // \chapterinfo{Specific benefits and opportunities for domestic students applying to CS PhD programs.}
 
