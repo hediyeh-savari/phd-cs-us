@@ -1013,7 +1013,7 @@ Compared to other factors such as LORs (@chap:LOR) and research experiences (@ch
   #link("https://jeffe.cs.illinois.edu/")[Jeff Erickson] (UIUC) has an undergraduate GPA (2.4/4.0) and wrote a #link("https://jeffgerickson.substack.com/p/re-phd-with-low-gpa")[blog] about it.
 ]
 
-=== Good Grades Won't Help Much <sec:good-grades>
+==== Good Grades Won't Help Much <sec:good-grades>
 
 PhD in CS is a research degree and doing well in courses does not necessarily mean you can do research---other factors such as research experiences, pubs, LORs are more important. Thus, do not assume that having a high GPA (e.g., 3.8/4.0 or 9.0/10) will help much in your application.
 
@@ -1025,7 +1025,7 @@ As with school reputation, you and your LOR writers can mention the grading syst
   Vietnamese universities typically offer specialized programs, such as the talented engineer program at HUST, that have highly competitive entrance exams and a limited number of available slots (e.g., 30 per year). However, these programs often set higher requirements for students, including more demanding tests and assignments, resulting in lower GPAs and overall rankings. For example, 3.5 GPA students from such talented programs are typically much better than 4.0 GPA students not in those programs. Similarly, variations in GPA standards exist among different universities, with technical universities generally having lower GPAs than economic universities. These make gaining admission in the US difficult as US faculty are not familiar with these issues.
 ]
 
-=== Bad Grades Likely Will Hurt
+==== Bad Grades Likely Will Hurt
 
 While having good GPA might not help much (@sec:good-grades), #highlight[_having bad GPA will likely hurt your application_]. If you have bad grades, you should explain them in your SOP, or better yet, have your LOR writers explain them in their letters if they know the reasons.
 
@@ -1950,7 +1950,10 @@ In addition, a CS department has various *administrative staff* who handle day-t
 
 There is no one-size-fits-all answer to finding an #gls("advisor"). The best advisor is the one that fits you, e.g., you can work well with, and has the ability to help you succeed. But how do you find such a person?
 
-Fortunately, while some non-US programs require finding an advisor and research topic before starting the PhD (@sec:non-us-differences), CS PhD programs in the US will typically give you a couple of years to "shop" for advisors and research topics. This is especially true if you're admitted with TA (@sec:ta), which gives you time to explore and find an advisor.
+Fortunately, while some non-US programs require finding an advisor and research topic before starting the PhD (@sec:non-us-differences), CS PhD programs in the US will typically give you a couple of years to "shop" for advisors and research topics. This is especially true if you're admitted with GTA (@sec:ta), which gives you time to explore and find an advisor.
+
+#remark-block[Prospective PhD students often refer to potential advisors as #glspl("PI"), which commonly means a lead investigator in a research project or grant. I rarely see it used in the context of CS PhD advising, and was a bit surprised when I first heard of it used that way. 
+]
 
 === Finding an advisor <sec:finding-advisor>
 
