@@ -89,26 +89,26 @@
   (key: "stipend", description: [A fixed regular payment to students as part of their funding package.]),
   (key: "rolling admission", description: [Applications are reviewed as they arrive, with decisions released continuously.]),
   (key: "toptier", short: "top-tier venues", long: "top-tier conferences and journals", description: [Highly prestigious publication venues in a CS field.]),
-  (key: "diversity-statement", short: "diversity statement", long: "diversity statement", description: [An application document describing contributions to diversity and inclusion.]),
+  (key: "diversity-statement", description: [An application document describing contributions to diversity and inclusion.]),
   (key: "fields", short: "fields", long: "fields or research areas", description: [Specific areas of study within a discipline, such as ML, CV, or Software Engineering.]),
   (key: "international-domestic", short: "international vs domestic", long: "international vs. domestic students", description: [International students usually need a visa; domestic students do not.]),
   (key: "in-out-state", short: "in-state vs out-of-state", long: "in-state vs. out-of-state tuition", description: [Tuition categories based on state residency; often important for MS applicants.]),
   (key: " research lab", description: [A group of faculty and students working in a shared research area.]),
   (key: "major", description: [A student's primary field of study, usually in undergraduate education.]),
   (key: "open house", description: [An event where admitted students visit or attend virtually to learn about the program.]),
-  (key: "AY", short: "AY", long: "Academic Year", description: [The yearly academic calendar (typically Fall and Spring; sometimes Summer/quarter systems).]),
-  (key: "Q1", short: "Q1", long: "Scopus Q1 Journals", description: [A journal quartile label; less commonly used by US CS faculty than venue-specific names.]),
-  (key: "ra", short: "RA", long: "Research Assistantship", description: [A major type of PhD funding through research work with a professor.]),
-  (key: "ta", short: "TA", long: "Teaching Assistantship", description: [A major type of PhD funding through teaching support duties.]),
-  (key: "GRE", short: "GRE", long: "Graduate Record Examination", description: "A standardized admissions test; often optional for CS PhD programs."),
+  (key: "AY",  long: "Academic Year", description: [The yearly academic calendar (typically Fall and Spring; sometimes Summer/quarter systems).]),
+  (key: "Q1", long: "Scopus Q1 Journals", description: [A journal quartile label; less commonly used by US CS faculty than venue-specific names.]),
+  (key: "RA", long: "Research Assistantship", description: [A major type of PhD funding through research work with a professor.]),
+  (key: "TA", long: "Teaching Assistantship", description: [A major type of PhD funding through teaching support duties.]),
+  (key: "GRE", long: "Graduate Record Examination", description: "A standardized admissions test; often optional for CS PhD programs."),
   (key: "REU", long: "Research Experience for Undergraduates", description: "An NSF-funded program offering undergraduate research opportunities."),
   (key: "SOP", long: "Statement of Purpose", description: "An application essay describing your research interests, background, and goals."),
   (key: "adcom", long: "admission committee", description: "The group of faculty members who review applications and make admission decisions."),
   (key: "phd", short: "PhD", long: "doctor of philosophy", description: "A research doctorate requiring original contributions and a dissertation."),
   (key: "ABD", long: "All But Dissertation", description: "A PhD candidate who completed coursework/exams and is finishing the dissertation."),
-  (key: "PI", long: "Principal Investigator", description: "Lead researcher on a grant or project."),
-  (key: "STEM", short: "STEM", long: "Science Technology Engineering and Mathematics", description: "A collective term for science, technology, engineering, and mathematics fields."),
-  (key: "NSF", short: "NSF", long: "National Science Foundation", description: "A US agency that funds research and education in science and engineering."),
+  (key: "PI", long: "Principal Investigator", description: "Lead researcher on a grant or project. Prospective students often refer to potential advisors as PIs."),
+  (key: "STEM", long: "Science Technology Engineering and Mathematics", description: "A collective term for science, technology, engineering, and mathematics fields."),
+  (key: "NSF", long: "National Science Foundation", description: "A US agency that funds research and education in science and engineering."),
   (key: "GRFP", long: "NSF Graduate Research Fellowship Program", description: "A competitive fellowship program for PhD students funded by the National Science Foundation."),
   (key: "NDSEG", long: "DoD National Defense Science and Engineering Graduate Fellowship", description: "A competitive fellowship program for PhD students funded by the US. Department of Defense."),
   (key: "LOR", long: "Letter of Recommendation", description: "A letter evaluating your qualifications and potential for graduate study."),
@@ -396,11 +396,11 @@ text(size: 0.9em,
     
 - *Coursework*: In the US you will spend the first couple of years taking classes and exploring potential advisor and research topics. After that, you have to pass a series of exams during your PhD---qualifying exam, comprehensive exam, thesis proposal defense (#gls("ABD")). In other countries, you often start your research right away and work on the research project you proposed with the advisor you chose. Moreover, you might not have exams like those in the US or only have to do a few of them.
     
-- *Funding*: In many countries, funding often comes from the university or the government. This funding often has a fixed duration, e.g., 3 or 4 years. In the US (@chap:funding), funding such as RA comes directly from your advisor (no fixed duration). There are also fewer TA opportunities in European universities compared to the US.
+- *Funding*: In many countries, funding often comes from the university or the government. This funding often has a fixed duration, e.g., 3 or 4 years. In the US (@chap:funding), funding such as GRA comes directly from your advisor (no fixed duration). There are also fewer GTA opportunities in European universities compared to the US.
     
 - *Academic Position after PhD*: In other countries, PhD graduates interested in academia typically go for additional research appointments, i.e., postdocs in the US, and then consider faculty positions. In the US, PhD graduates often apply directly for faculty positions. Postdoc for US graduates is no longer a popular option as it was before. The reason is that US PhD programs are longer, so you already have enough research experience (e.g., publications) to apply for faculty positions. In contrast, in other countries, PhD students often finish their PhD earlier and need more time to gain research experience before applying for faculty positions.
     
-- *Work-life Balance*: PhD students in the US are often said to be overworked compared to other countries, e.g., in Europe. This is partly due to the longer PhD program and that US PhD students are often paid through TA, which requires them to do TA in addition to their own research. In contrast, PhD students in other countries are often paid through fellowships, which might not require doing TA.
+- *Work-life Balance*: PhD students in the US are often said to be overworked compared to other countries, e.g., in Europe. This is partly due to the longer PhD program and that US PhD students are often paid through GTA, which requires them to do GTA in addition to their own research. In contrast, PhD students in other countries are often paid through fellowships, which might not require doing GTA.
     #remark-block[
       Work-life balance is more of a personal and cultural issue (@chap:cultural) than a regulatory one. US academia is known for its intense work culture, because students themselves are fiercely competitive (after reading this book you would see how competitive it is to get into a good PhD program in the US), and opportunities for research and funding are abundant. All of these contribute to a systems that favors those who work hard and produce results, which can create a culture of long hours and high stress.
     ]
@@ -529,7 +529,7 @@ I read _strong LORs_ carefully and skim weaker ones, noting either strong letter
 
 I skim weak _SOPs_ but read strong ones carefully. I note whether the SOP is exciting, research-oriented, stands out, and is tailored to our program (e.g., if they are familiar with the work of some faculty or have talked to them). These notes are entered into the evaluation system.
 
-Finally, I enter my decision, which is usually either a rejection or an offer of admission with full funding (e.g., TA). I also recommend very strong candidates for the University Presidential Fellowship, which is a fellowship from GMU that provides funding similar to an RA (@chap:funding).
+Finally, I enter my decision, which is usually either a rejection or an offer of admission with full funding (e.g., TA). I also recommend very strong candidates for the University Presidential Fellowship, which is a fellowship from GMU that provides funding similar to  a GRA (@chap:funding).
 Note that while the system has other decision options, e.g., admit without funding, provisional admission (e.g., if they need to take some courses), I do not use them, simply because we either reject or admit with funding.
 
 Note that I _do not_ need to interview a student to make a decision. I can tell from the application if they are strong or not. However, if I want to recruit a student, I will ask them to chat with me.
@@ -862,7 +862,7 @@ While not as strong as CS publications, they still show your research ability an
 ]
 
 #caution-block[
-  International students often mention Scopus Q1, which consists of various journals from IEEE, Elsevier, and many other publishers. I don't know/recognize many of the journals listed in Scopus Q1. This might be something to be mindful of, as *CS* faculty might not be too familiar with Scopus or journals listed there, so devote some part in your statement to discuss the significance of your papers.
+  International students often mention #gls("Q1"), which consists of various journals from IEEE, Elsevier, and many other publishers. I don't know/recognize many of the journals listed in Scopus Q1. This might be something to be mindful of, as *CS* faculty might not be too familiar with Scopus or journals listed there, so devote some part in your statement to discuss the significance of your papers.
 ]
 
 === What If You Don't Have Any Publications?
@@ -902,7 +902,7 @@ So do talk about them in your SOP (@chap:sop) and have your writers mention them
   #image("files/c2.png", width: 90%)
 ]
 
-While you might not have control over LORs (@chap:LOR) or where you go to school (@chap:your-school), you do have control over your #gls("SOP",first:true) or personal statement#footnote[Some schools separate these documents and ask you to write both: SOP, which focuses on research experiences, and personal statement, which covers more personal aspects, e.g., why PhD, challenges, etc.]. A well-written SOP also demonstrates that you can communicate effectively, which is crucial in research and important for TA funding (@chap:funding). Many SOP samples for CS are #link("https://cs-sop.org/")[available here].
+While you might not have control over LORs (@chap:LOR) or where you go to school (@chap:your-school), you do have control over your #gls("SOP",first:true) or personal statement#footnote[Some schools separate these documents and ask you to write both: SOP, which focuses on research experiences, and personal statement, which covers more personal aspects, e.g., why PhD, challenges, etc.]. A well-written SOP also demonstrates that you can communicate effectively, which is crucial in research and important for GTA funding (@chap:funding). Many SOP samples for CS are #link("https://cs-sop.org/")[available here].
 
 In your SOP, focus on research potential (@chap:research-experience) and convince reviewers through your experience, e.g., published papers (@sec:publications). Back up your claims with *concrete evidence*. For example, if you say you have teaching experience, show what you did, e.g., undergraduate TA or mentoring someone. If you say you worked on a research project, show some results, e.g., paper submitted (or even rejected), achieved certain performance improvement over the state of the art.
 
@@ -1072,7 +1072,7 @@ Unless your degrees are from the US (e.g., you did your undergrad or MS in the U
 #tip-block[You might wonder why you need to know English well when you focus on CS topics that are mainly math and programming.  
   As you will see in your PhD study, you will need to read and write a lot, and the papers you read and write will be in English.  You will also need to communicate with your advisor, collaborators, students, and other people.
   
-  Also, the university often requires a certain level of English proficiency for TA (@sec:ta), as you will need to communicate with students. 
+  Also, the university often requires a certain level of English proficiency for GTA (@sec:ta), as you will need to communicate with students. 
 ]
 
 Just as with grades (@chap:your-school) and GRE (@sec:gre), having high scores in English tests might not help, but having too low scores can be a #alert[red flag] and can result in an automatic rejection (@sec:why-rejected), e.g., below the minimum requirement.
@@ -1182,9 +1182,9 @@ You should treat the interview as an informal chat. Prepare an _"elevator pitch"
 #paragraph[Updating your profile][If you have important  achievements after you submitted your application, e.g., new top publications or big fellowship awards, you can mention to your interviewer. If you did not have interviews, you can try to ask the CS dept to update your application (though no guarantee that they will consider them). However, in general, you should not send emails to update your profile unless you really have important updates.]
 
 === Not Getting Interviews <sec:no-interview>
-While in general it is good to get an interview, not getting one *does not* mean you're out. Many programs do not have the tradition of interviewing applicants. For example, at GMU, most admitted students with TA (@sec:ta) do not go through interviews.
+While in general it is good to get an interview, not getting one *does not* mean you're out. Many programs do not have the tradition of interviewing applicants. For example, at GMU, most admitted students with GTA (@sec:ta) do not go through interviews.
 
-However, no interview usually means you are less likely to get an RA (@sec:ra), which is typically offered by an individual faculty member. If they want you to do research with them, they will likely interview you first. If you have no interviews, your application (and TA/fellowship funding) is decided by the adcom.
+However, no interview usually means you are less likely to get an GRA (@sec:ra), which is typically offered by an individual faculty member. If they want you to do research with them, they will likely interview you first. If you have no interviews, your application (and GTA/fellowship funding) is decided by the adcom.
 
 
 === Notification Timeline: Why rejection letters are sent so late? <sec:late-rejection>
@@ -1343,11 +1343,11 @@ It is #emph[unlikely] that you can negotiate things like stipend, as it is stand
 === Negotiating PhD offer (e.g., having multiple offers)? <sec:negotiate>
 // \sectioninfo{You will not be able to negotiate stipend, but you can ask for specific start date, TA assignment, and conference travel budget.}
 
-In CS, negotiating a TA stipend is unlikely, as it is determined by the university (@sec:ta). For RA (@sec:ra), advisors have more leeway as it is funded by their grants. However, they will likely not negotiate RA stipend as they have to be fair to other students and also have to follow departmental standards. Note that the university typically automatically increases these stipends each year by a small amount.
+In CS, negotiating a GTA stipend is unlikely, as it is determined by the university (@sec:ta). For RA (@sec:ra), advisors have more leeway as it is funded by their grants. However, they will likely not negotiate RA stipend as they have to be fair to other students and also have to follow departmental standards. Note that the university typically automatically increases these stipends each year by a small amount.
 
 Typically, the most wiggle room is funding in the summer (@sec:summer-funding) where the prof. might be able to pay you more from their grants. However, they typically only do this after you have been with them for a year or so and they see your potential.
 
-For a specific start date or TA assignment (e.g., TA'ing a particular course), you can ask for it. Also, there is typically no moving allowance for PhD students. In short, standard things set by the university or department are unlikely negotiable. However, you can ask for things such as books and computer equipment (@sec:buying-equipment).
+For a specific start date or GTA assignment (e.g., TA'ing a particular course), you can ask for it. Also, there is typically no moving allowance for PhD students. In short, standard things set by the university or department are unlikely negotiable. However, you can ask for things such as books and computer equipment (@sec:buying-equipment).
 
 #remark-block[
   This is my personal opinion (as with all advice in this book): #highlight[don't try to negotiate your TA/RA offer]. You will likely not be able to get anything due to reasons mentioned above, and risk offending the prof. who made the offer. Negotiation is more common in job offers, and perhaps other graduate programs, but not in CS PhD.
@@ -1431,7 +1431,7 @@ You can be rejected for insufficient interest in the program. Beyond a generic S
 Paradoxically, overqualification is also a reason. If adcom believes you'll get into a better program, they may reject you to save the spot for someone else.
 
 #strong[Low GPA or exam scores.]
-While faculty may not emphasize these, universities often set minimums you must pass. For example, minimum English proficiency is often required for TA funding—low scores raise concerns about your ability to communicate with students. Faculty may be reluctant to argue against institutional requirements.
+While faculty may not emphasize these, universities often set minimums you must pass. For example, minimum English proficiency is often required for GTA funding—low scores raise concerns about your ability to communicate with students. Faculty may be reluctant to argue against institutional requirements.
 
 #strong[Red flags.]
 Various issues can raise concerns: many STEM courses with low grades or withdrawals, plagiarism, cheating, or other academic dishonesty. A history of jumping between programs is another flag—adcom members may have contacts elsewhere. If these apply to you, address them in your SOP or ask your letter writers to do so.
@@ -1481,7 +1481,7 @@ There are other things you might not think are important but can make you stand 
 
 If you're admitted to a #emph[good] CS PhD program, you should not have to worry about funding!
 In the US, the common types of funding for PhDs are #emph[graduate teaching assistant] (GTA or TA), #emph[graduate research assistant] (GRA or RA), and #emph[Fellowship].
-RA is paid by a prof. for you to do their research. TA is paid by the dept. for you to help with teaching. Finally, fellowship is independent funding that can come from a school, a company, or an organization. 
+GRA is paid by a prof. for you to do their research. GTA is paid by the dept. for you to help with teaching. Finally, fellowship is independent funding that can come from a school, a company, or an organization. 
 
 @tab:funding summarizes the differences.
 Note that funding is typically more available for PhD students than MS (@sec:ms-funding).
@@ -1507,34 +1507,34 @@ Note that funding is typically more available for PhD students than MS (@sec:ms-
   ))
 ) <tab:funding>
 
-== Graduate Assistantship (TA/RA) <sec:ta-ra>
-The most common type of funding is *graduate assistantship*, which comes in two main forms: TA (Teaching Assistant) and RA (Research Assistant). Both TA and RA positions typically include a tuition waiver (so you don't pay tuition), health insurance (which is required in the US), and a stipend (your salary). Some universities also offer discounts or insurance coverage for spouses and children.
+== Graduate Assistantship (GTA/GRA) <sec:ta-ra>
+The most common type of funding is *graduate assistantship*, which comes in two main forms: GTA (Graduate Teaching Assistant) and GRA (Graduate Research Assistant). Both positions typically include a tuition waiver (so you don't pay tuition), health insurance (which is required in the US), and a stipend (your salary). Some universities also offer discounts or insurance coverage for spouses and children.
 
 A few notes about stipends:
 - The stipend amount *varies* by location (e.g., higher in expensive areas like DC than in Lincoln, Nebraska), university, and sometimes by department.
-- An *academic year* (AY) is usually *9 months* in the US, so the standard stipend covers 9 months. Summer funding (@sec:summer-funding) may be available from your professor or a fellowship, but TA positions are rarely available in summer.
+- An #gls("AY", first:true) is usually *9 months* in the US, so the standard stipend covers 9 months. Summer funding (@sec:summer-funding) may be available from your professor or a fellowship, but TA positions are rarely available in summer.
 - Like most income in the US, you *must pay tax* on your stipend.
 - Private universities may offer higher stipends, but sometimes have extra or hidden fees (such as per-credit fees or activity fees).
 
 #note-block[
-  At GMU, both TA and RA positions provide similar benefits: tuition waiver and health insurance. The college and department set the standard 9-month stipend for graduate assistants. TA positions (paid by the department) usually pay this standard rate, while RA positions (paid by professors) may pay more, especially for advanced students (e.g., those close to graduation, or ABD#footnote[ABD: all but dissertation.]).
+  At GMU, both GTA and GRA positions provide similar benefits: tuition waiver and health insurance. The college and department set the standard 9-month stipend for graduate assistants. GTA positions (paid by the department) usually pay this standard rate, while GRA positions (paid by professors) may pay more, especially for advanced students (e.g., those close to graduation, or ABD#footnote[ABD: all but dissertation.]).
   
-  In GMU's CS department, TA/RA stipends are among the highest: CS is part of the College of Engineering and Computing (CEC), which already pays more than other colleges, and CS itself pays above the CEC baseline. It's also common for CS faculty to pay their RAs more than the standard TA rate.
+  In GMU's CS department, GTA/GRA stipends are among the highest: CS is part of the College of Engineering and Computing (CEC), which already pays more than other colleges, and CS itself pays above the CEC baseline. It's also common for CS faculty to pay their RAs more than the standard TA rate.
   
-  Health insurance is required at most US universities. Don't assume you can skip it because you're young and healthy (@chap:cultural-misc). At GMU and most CS PhD programs, your TA or RA position includes full insurance. At GMU, your spouse and children can also get insurance at a significant discount. So you don't have to worry about health coverage for yourself or your family.
+  Health insurance is required at most US universities. Don't assume you can skip it because you're young and healthy (@chap:cultural-misc). At GMU and most CS PhD programs, your GTA or GRA position includes full insurance. At GMU, your spouse and children can also get insurance at a significant discount. So you don't have to worry about health coverage for yourself or your family.
 ]
 
 
 === Teaching Assistant (TA) <sec:ta>
 
-TA is common at the beginning of a PhD, when you have not yet found an advisor who can support you as an RA. It is also common to alternate between TA and RA, for example when your professor does not have enough funding or when you want to gain teaching experience.
+TA is common at the beginning of a PhD, when you have not yet found an advisor who can support you as  a GRA. It is also common to alternate between TA and RA, for example when your professor does not have enough funding or when you want to gain teaching experience.
 
-As a TA, you are paid through the school or department to help with teaching. You typically work up to 20 hours per week and assist with classes, for example by grading, running labs, or leading recitations.
-During a semester, a TA might work with several courses and professors, not necessarily their advisor. TA funding is *not* typically available during the summer (@sec:summer-funding), when there are fewer courses.
+As a GTA, you are paid through the school or department to help with teaching. You typically work up to 20 hours per week and assist with classes, for example by grading, running labs, or leading recitations.
+During a semester, a GTA might work with several courses and professors, not necessarily their advisor. GTA funding is *not* typically available during the summer (@sec:summer-funding), when there are fewer courses.
 
-*How to get TA?* Unless you have other funding such as RA or fellowships, TA is typically the default funding source for CS PhD programs. In your application, simply indicate that you need financial assistance. Typically, adcom will either admit you with TA support or reject you. We do not admit students without supporting them (@sec:ievaluate).
+*How to get GTA?* Unless you have other funding such as GRA or fellowships, GTA is typically the default funding source for CS PhD programs. In your application, simply indicate that you need financial assistance. Typically, adcom will either admit you with GTA support or reject you. We do not admit students without supporting them (@sec:ievaluate).
 
-TA assignments are decided by the department, so you usually do not need to worry about them. However, if you have a strong preference for a specific course or professor, you can mention that after being offered a TA. This can let you work with a professor you like or in an area that interests you. In many cases, professors can request specific TAs for their courses, for example students who have previously taken the course and done well.
+GTA assignments are decided by the department, so you usually do not need to worry about them. However, if you have a strong preference for a specific course or professor, you can mention that after being offered a GTA. This can let you work with a professor you like or in an area that interests you. In many cases, professors can request specific GTAs for their courses, for example students who have previously taken the course and done well.
 
 
 
@@ -1542,32 +1542,32 @@ TA assignments are decided by the department, so you usually do not need to worr
   At GMU CS, admitted PhD students have 4 years of GTA guaranteed, and also receive a stipend for the first summer (@sec:summer-funding).
 ]
 
-Even if you have other funding and do not need a TA, you should still try TA at least once. This lets you see what teaching is like, which is especially helpful for a research career where you often give talks and explain your work to others. GMU sometimes has courses that more senior students can teach. In that case, you may be paid as a GTA or sometimes even as a lecturer. This is a good opportunity to gain teaching experience, and you might even get paid a bit more.
+Even if you have other funding and do not need a GTA, you should still try GTA at least once. This lets you see what teaching is like, which is especially helpful for a research career where you often give talks and explain your work to others. GMU sometimes has courses that more senior students can teach. In that case, you may be paid as a GTA or sometimes even as a lecturer. This is a good opportunity to gain teaching experience, and you might even get paid a bit more.
 
-*Where does TA funding come from?* Typically, the department receives TA funding from the college based on enrollment and budget, and then assigns TAs to courses based on instructional needs and student qualifications. For example, a CS department often has many TAs because it has high enrollment and many courses. In contrast, a department such as Math might have fewer TAs because it has lower enrollment and fewer courses.
+*Where does GTA funding come from?* Typically, the department receives GTA funding from the college based on enrollment and budget, and then assigns GTAs to courses based on instructional needs and student qualifications. For example, a CS department often has many GTAs because it has high enrollment and many courses. In contrast, a department such as Math might have fewer GTAs because it has lower enrollment and fewer courses.
 
-=== Research Assistant (RA) <sec:ra>
-RA support is provided by a professor through their funding so that you can work on their research project.
-As an RA, you generally do not need to teach, so you can focus on research. Depending on the professor, RA support may also be available during the summer. See @sec:ra-cost for more details on RA budgeting.
+=== Research Assistant (GRA) <sec:ra>
+GRA support is provided by a professor through their funding so that you can work on their research project.
+As a GRA, you generally do not need to teach, so you can focus on research. Depending on the professor, GRA support may also be available during the summer. See @sec:ra-cost for more details on GRA budgeting.
 
-*How to get RA?* When a professor recruits you, they might offer you an RA immediately, so you start the program with RA support. However, a more common scenario is that you first get admitted with TA support, then after a year or two you find an advisor who can support you as an RA.
+*How to get GRA?* When a professor recruits you, they might offer you an GRA immediately, so you start the program with GRA support. However, a more common scenario is that you first get admitted with GTA support, then after a year or two you find an advisor who can support you as an GRA.
 
-It is important to note that RA support is *never guaranteed* because it depends on the professor's funding situation. So you should also pay attention to TA availability, since TA is a good backup plan and usually comes with benefits similar to RA. In other words, you should check whether TA support is readily available for PhD students in the program.
+It is important to note that GRA support is *never guaranteed* because it depends on the professor's funding situation. So you should also pay attention to GTA availability, since GTA is a good backup plan and usually comes with benefits similar to GRA. In other words, you should check whether GTA support is readily available for PhD students in the program.
 
 
 #note-block[
-  If you got recruited and offered an RA by a prof., you will likely get admitted. For example, if a prof., even if not in PhD adcom, wants to fund you, adcom will likely respect that decision and admit you.
+  If you got recruited and offered  a GRA by a prof., you will likely get admitted. For example, if a prof., even if not in PhD adcom, wants to fund you, adcom will likely respect that decision and admit you.
 ]
 
 
-*Where does RA funding come from?* Professors apply for funding to support students from various sources, such as government grants (for example NSF, NIH, or DoD), industry grants (for example Google or Microsoft), or internal university funds. For many CS professors, the most common source is #gls("NSF") grants, which are often designed to support graduate students as RAs. Recently hired professors, such as new assistant professors, often also have start-up funds from the university to help them establish their research lab.
+*Where does GRA funding come from?* Professors apply for funding to support students from various sources, such as government grants (for example NSF, NIH, or DoD), industry grants (for example Google or Microsoft), or internal university funds. For many CS professors, the most common source is #gls("NSF") grants, which are often designed to support graduate students as GRAs. Recently hired professors, such as new assistant professors, often also have start-up funds from the university to help them establish their research lab.
 
-Typically, each grant can support one or at most two students per year, and each student can cost up to about \$70,000 per year (@sec:ra-cost). This is why professors often need multiple grants to support multiple students. It is also one reason professors may not have time to do experiments or write papers directly, and instead mentor their students to do that work. If a professor no longer has funding—which is quite common—they might not be able to support you as an RA, in which case you would become a TA while still working with the same professor.
+Typically, each grant can support one or at most two students per year, and each student can cost up to about \$70,000 per year (@sec:ra-cost). This is why professors often need multiple grants to support multiple students. It is also one reason professors may not have time to do experiments or write papers directly, and instead mentor their students to do that work. If a professor no longer has funding—which is quite common—they might not be able to support you as a GRA, in which case you would become a GTA while still working with the same professor.
 
 == Fellowships/Scholarships <sec:fellowships>
 
 Fellowship is another type of funding that students can get from the university, industries, or government.
-Fellowships are typically competitive and generous, giving pretty much all benefits tuition/insurance that a TA/RA has.  They might even give higher stipends (including summer) and open doors for job opportunities such as internships.
+Fellowships are typically competitive and generous, giving pretty much all benefits tuition/insurance that a GTA/GRA has.  They might even give higher stipends (including summer) and open doors for job opportunities such as internships.
 
 *How to get Fellowship?*   Many schools provide fellowships to attract students. You likely will not need to do anything and adcom will recommend such fellowships to strong students. Some schools automatically offer a fellowship to all accepted students, while others only award it to a limited number of admitted students, such as the top percentile.
 
@@ -2850,16 +2850,18 @@ These can be (i) lifetime achievements in the field---such as ACM or IEEE Fellow
   
 
 #note[
-  CSRankings (@chap:rankings) highlights  individual faculty who are ACM Fellows or Turing Award winners.  You can also find a list of ACM Fellows at #link("https://awards.acm.org/fellows")[ACM Fellows] and Turing Award winners at #link("https://awards.acm.org/turing")[Turing Award].  Note that these individuals might no longer be active in research and therefore do not have many recent publications or recruit students.  You should check their recent publications and research activities to see if they are still active in research and recruiting students.   
+  CSRankings (@chap:rankings) highlights faculty who are ACM Fellows or Turing Award winners.  You can also find a list of ACM Fellows at #link("https://awards.acm.org/fellows")[ACM Fellows] and Turing Award winners at #link("https://awards.acm.org/turing")[Turing Award]. 
+  
+  Note that these individuals might no longer be active in research and therefore do not have many recent publications or recruit students.  You should check their recent publications and research activities to see if they are still active in research and recruiting students.   
 ]
 
 
 ==== Most Influential Paper Awards 
 
-_Most Influential Papers, Test of Time , and Impact Awards_ are given to papers that were published 10+ years ago at a top venue and made a lasting contribution to their area of research, e.g., creating a new research field. In other words, the work described in these papers have stood the _test of time_. Typically, these papers are highly cited and have inspired many follow-up works.
+_Most Influential Papers, Test of Time , or Impact Awards_ are given to papers that were published 10+ years ago at a top venue and made a lasting contribution to their area of research, e.g., creating a new research field. In other words, the work described in these papers have stood the _test of time_. Typically, these papers are highly cited and have inspired many follow-up works.
 Note that these paper awards are different than Distinguished or Best Paper awards, which are given at the conference and therefore might not be as well-known or influential.   
 
-Note that while typically given to senior researchers (because of the 10+ years requirement), some junior faculty have received these highly prestigious awards for their work as shown in @fig:LOR4junior. 
+Note that while typically given to senior researchers (due to the 10+ years requirement), some junior faculty have received these highly prestigious awards for their work as shown in @fig:LOR4junior. 
 
 #figure(
   align(left)[#text(size: 0.8em)[
@@ -2884,7 +2886,7 @@ There are also awards from others companies and organization but only in specifi
 
 
 Some companies have partnerships with universities and created awards only for faculty and students at these universities, e.g., faculty awards from Intel and Qualcomm, and Packard Fellowships. 
-These awards are not open to all researchers and face less competition (e.g.,  compared to the Amazon ARA which attracts a huge number of applicants from all over the world).
+These awards are not open to all researchers and therefore face less competition (e.g.,  compared to the Amazon ARA which attracts a huge number of applicants from all over the world) and are less well-known internationally. However, they are still valuable and meaningful for faculty at these universities.
 
 
 #pagebreak()
@@ -2912,7 +2914,7 @@ Below is a very basic example of a LaTeX document with 11pt font and 1-inch marg
 )
 ```
 
-#paragraph[A quick word on Typst][#link("https://typst.app/")[Typst] is a new typesetting system that is gaining popularity for its ease of use and modern features, such as incremental compilation and live preview. It is not as widely used as LaTeX yet, but it is worth considering if you want to try something new (though you will likely need to learn LaTeX anyway as most publishing venues do not support Typst). 
+#paragraph[A quick word on Typst][#link("https://typst.app/")[Typst] is a new typesetting system that is gaining popularity for its ease of use and modern features, such as incremental compilation and instant live preview. It is not as widely used as LaTeX _yet_, but it is worth considering if you want to try something new (though you will likely need to learn LaTeX anyway as most publishing venues do not support Typst). 
 
 For example, #link("https://code.roars.dev/phd-cs-us")[this book] is originally written in  #link("https://code.roars.dev/phd-cs-us/blob/main/demystify-old.tex")[LaTeX] but has been converted to #link("https://code.roars.dev/phd-cs-us/blob/main/demystify.typ")[Typst].]
 
@@ -2930,14 +2932,14 @@ This section lists some general academic and cultural issues that students, espe
 Plagiarism and cheating (e.g., exams and assignments) are a BIG no-no in the US.  If you're caught cheating, you will face serious consequences and likely be expelled from the university (e.g., after the second time at GMU).   This is quite different from many international countries where cheating is common and often tolerated.  Faculty is quite good at detecting cheating (we have been dealing with these situations so many times over so many years), and _will_ report cheating cases.  #highlight[In short, whatever you do, don't cheat---it can ruin your career and is not worth it!]
 
 Here are the typical steps that will happen if you are caught cheating (e.g., on an exam or assignment): 
-  + A faculty suspecting a cheating case will report it to the Office of Academic Integrity (OAI) at the university---the report often has supporting evidence, e.g., a copy of the exam or assignment; 
+  + A faculty suspecting a cheating case will report it to the Office of Academic Integrity (OAI) or some equivalent office at the university. The report often has supporting evidence, e.g., a copy of the exam or assignment; 
   + OAI will investigate the case, e.g., by interviewing the student and faculty, and checking the evidence; 
   + OAI will make a decision, e.g., whether the student is guilty or not; and 
   + If guilty, OAI will decide on the punishment, e.g., a failing grade for the assignment or exam, a failing grade for the course, or even expulsion from the university, especially for repeat offenders.
 
 It is important to note that in most cases _after_ receiving the report from your prof., OAI _completely_ takes over and makes its decision.  
 This means begging your professor will not help because they simply are no longer involved in the case and cannot do anything.
-This is because OAI is an independent office above your prof and depatment that handles all academic integrity cases at the university, and they have their own procedures and policies.  If you are found guilty, you can appeal to OAI, but not to your prof. or department.
+This is because OAI is an independent office that is separate from your prof. and depatment that handles all academic integrity cases at the university, and they have their own procedures and policies.  If you are found guilty, you can appeal to OAI, but not to your prof. or department.
 
 == Illegal Software <sec:illegal-software>
 
@@ -2988,7 +2990,7 @@ For example, I prefer that my students and colleagues call me Vu. Some students 
   *Vu:* Yes, for some reason I enjoy calling you "Professor" (without appending a last or first name).  The use of Prof. Vu may have foreshadowed my future in academia.
 ]
 
-Note that in some universities the formal title Dr. Lastname is preferred over Prof. Lastname. Moreover, be aware that not all faculty members hold a PhD, so using Prof. Lastname is a suitable alternative. For example, at many places, including Mason, the requirement for adjunct faculty (@sec:faculty-types) is a PhD or an MS with significant industry experience. You just need to observe and follow the conventions at your particular institution. One way to determine how to address a prof. is to observe how they sign their emails or how they introduce themselves in class. For example, while I don't sign my emails,I introduce myself as "Vu" in class. You will get used to it after a while. 
+Note that in some universities the formal title Dr. Lastname is preferred over Prof. Lastname. Moreover, be aware that not all faculty members hold a PhD, so using Prof. Lastname is a suitable alternative. For example, at many places, including Mason, the requirement for adjunct faculty (@sec:faculty-types) is a PhD or an MS with significant industry experience. You just need to observe and follow the conventions at your particular institution. One way to determine how to address a prof. is to observe how they _sign_ their emails (e.g., some sign as Prof. or Dr. Lastname, while others sign as Firstname), or how they introduce themselves in class. For example, while I don't sign my emails, I introduce myself as "Vu" in class. You will get used to it after a while. 
 
 #paragraph[Referring to Professors You Know][When referring or talking about a prof (e.g., your mentor) that you know, you can just informally use their names if they are OK with it as mentioned above (or Dr./Prof., if you want to be formal). You can also include their institution if it makes it more precise.  For example, I can say:  _"I did my postdoc with Jeff Foster at Univ. of Maryland"_.
 
@@ -3002,7 +3004,7 @@ Here are some other common surprises for international students in the US. Note 
 
 #paragraph[Small talks][People often engage in small talks, e.g., about the weather, sports, or weekend plans. This is a way to start a conversation and how social interaction starts in the US.
 
-However, avoid asking personal questions, e.g., about salary, age, relationship status, or health, as these are considered private. Talking about kids' activities or schools are OK. Also, do not talk about politics or religion. In fact, we often do not talk about these subjects with our family and friends to avoid conflicts.
+However, avoid asking personal questions, e.g., about salary, age, relationship status, or health, as these are considered private. Talking about kids' activities or schools are OK. Also, do not talk about politics or religion. In fact, we even avoid talking about these sensitive subjects with our family and friends to avoid conflicts.
 
 Sometimes foreigners are surprised by how Americans do not talk about their personal lives, e.g., sharing details about their families, health, or relationships, and that their conversations are often not very "deep" or "mind-provoking". This is just a cultural norm about privacy and personal space.
 ]
@@ -3011,11 +3013,20 @@ Sometimes foreigners are surprised by how Americans do not talk about their pers
 
 Note that even with insurance, heathcare services might still be expensive. So you should know what your insurance covers and be prepared for unexpected costs. Moreover, healthcare system has many confusing jargons such as HMO, PPO, deductibles, co-pays, and coinsurance (try take a look at the Explanation of Benefits or EoB statement you received from your insurance company). It's arguably the most complicated system in the US and even Americans often do not understand it (and politicians often exploit this to their advantage). Do not hesitate to ask your HR or the insurance company for help.]
 
+#paragraph[Car Dependency][Most places in the US are highly car-dependent. If you do not have a car, you will need to rely on friends, Uber, or public transportation, which can be inconvenient and time-consuming. Many international students end up getting a driver's license, which is highly convenient and replaces many documents (e.g., ID, passport), and eventually buying a car.]
+
+
 #paragraph[Tipping Culture][Unlike many other countries, tipping is expected for various services, especially in restaurant. So adding an extra 15--20% to your bills is common, especially in restaurants.]
 
 You should also tip other services, e.g., Uber, taxi, haircuts, and hotel services. The minimum wage for tipped employees is typically lower than the standard minimum wage, so tips are an important part of their income.
 
-#paragraph[Car Dependency][Most places in the US are highly car-dependent. If you do not have a car, you will need to rely on friends, Uber, or public transportation, which can be inconvenient and time-consuming. Many international students end up getting a driver's license, which is highly convenient and replaces many documents (e.g., ID, passport), and eventually buying a car.]
+#tip-block[
+For convenience, many restaurants and services have a tipping option built into their payment system (e.g., on the receipt or app), which makes it easy to add a tip. If you go with a large group, the restaurant might automatically add a gratuity (e.g., 18%) to the bill, so be sure to check the bill before adding an additional tip. You can also tip in cash, which is sometimes preferred by service workers because they receive the full amount without any processing fees. However, tipping through the payment system is more convenient and common.
+
+In addition, while many tip on the total (post-tax) amount, some tip on the pre-tax amount. For example, if your bill is \$100 before tax and \$108 after tax, a 20% tip would be \$20 if you tip on the pre-tax amount, and \$21.60 if you tip on the post-tax amount. 
+In general, tipping on the pre-tax amount is common and the logic is that tax is a government fee and not part of the service. However, the amount is not huge and tipping on the post-tax is also more convenient, so you can choose either way.
+]
+
 
 
 //   %\paragraphP{Conversation} Americans are generally friendly and open.  However, there are certain things that we rarely talk about, e.g., salary, relationship status, or health. 
@@ -3067,7 +3078,7 @@ align(left)[
 
 == What's Wrong with Popular CS Rankings <sec:rankings-cra>
 
-Popular college rankings such as the #link("https://www.usnews.com/best-colleges")[U.S. News & World Report] or #link("https://www.topuniversities.com/university-rankings")[QS World University Rankings] are often based on subjective criteria---such as reputation, faculty credentials, and student satisfaction---and are not transparent---how scores are calculated is often not disclosed.
+Popular college rankings such as #link("https://www.usnews.com/best-colleges")[U.S. News & World Report] or #link("https://www.topuniversities.com/university-rankings")[QS World University Rankings] are often based on subjective criteria---such as reputation, faculty credentials, and student satisfaction---and are not transparent---how scores are calculated is often not disclosed.
 CS research community has long questioned and discouraged the use of these rankings. For example, the Computing Research Association (CRA)---a highly respected organization in CS---issued a sharp critique of the U.S. News & World Report's global rankings for CS depts, calling the methodology _"deeply flawed and misleading"_#footnote([#link("https://cra.org/cra-statement-us-news-world-report-rankings-computer-science-universities/")]). Among many issues, the CRA highlighted that the rankings rely heavily on journal publications indexed by the Web of Science, ignoring conference publications—despite conferences being the primary venue for publishing top-tier CS research (@sec:pubs-top-tier).   
 
 // In short, rankings from sources like US News are mainly used high school and undergraduate students (or their parents) who are not familiar with CS research or PhD study. Those who know the field best---CS PhD students and faculty and researchers---largely discard them.
@@ -3079,11 +3090,12 @@ CS research community has long questioned and discouraged the use of these ranki
 == CSRankings.org <sec:csrankings>
 Instead of traditional school rankings, many PhD students and faculty use #link("https://www.csrankings.org")[CSRankings.org], which is a ranking system based on faculty publications at top CS conferences.  The metrics and ranking calculation are transparent and ranking results are updated automatically (after the conference proceedings are indexed in DBLP).  Because the approach is entirely data-driven and open source, it is not influenced by any subjective opinions or biases, and very difficult to manipulate. The number of #link("https://github.com/emeryberger/CSrankings/pulls")[Github pull requests] by CS faculty (in fact, even non-CS faculty) to be included in the rankings is a good indicator of the impact of the rankings.  
 
-*Ranking Method* CSRankings uses the _geometric mean_ to summarize the performance of a department across multiple disciplines. The score for each department is calculated as follows:
+#paragraph[Ranking Method][CSRankings uses the _geometric mean_ to summarize the performance of a department across multiple disciplines. The score for each department is calculated as follows:
 
 $ "averageCount" = root(N, product_(i=1)^N ("adjustedCounts"_i + 1)) $
 
-where $N$ is the number of fields (e.g., OS, Cryptography, ML, PL) selected, and `adjustedCounts_i` is the number of papers published by faculty of that department in a field $i$. 
+where $N$ is the number of fields (e.g., OS, Cryptography, ML, PL) selected, and `adjustedCounts_i` is the number of papers published by faculty of that department in a field $i$.]
+
 CSRankings thus favors departments that publish in multiple fields.  For example, a department that has 10 papers in each of the 10 fields will have a higher `averageCount` ($root(10, 11^10) = 11$)than a department that has 100 papers in one field and 0 in the others ($root(10, 101 · 1^9) = 1.59$). This is because the geometric mean is designed to favor departments that have a balanced distribution of publications across multiple fields, rather than excelling in just one field. 
 
 Note that CSRankings allows users to select the fields they are interested in, so the `averageCount` can be calculated based on a subset of fields. For example, if the student is only interested in field $X$, then the `averageCount` will be $root(1, 101) = 101$.
@@ -3169,7 +3181,7 @@ More details and justfication for this metric can be found in the #link("https:/
 
 #paragraph[History][This book was conceived during a lunch with a faculty member at GMU. We talked about why GMU was not able to attract good Vietnamese and other international students, despite having a much stronger CS program than many schools these students target (part of the reason is discussed in @sec:selecting-ranking-schools). We wished there were a way for international students to better understand PhD programs in the US.
 
-I am also a member of the VietPhD group on Facebook and often browse forums like #link("https://www.reddit.com/r/gradadmissions/")[Reddit/gradadmissions] and #link("https://forum.thegradcafe.com/")[GradCafe]. I saw many questions from students about PhD programs, but most participants are students (often outside CS or outside the US), and answers are frequently inaccurate and confusing. So I thought a handbook focused on US CS PhD admissions from an insider perspective would be useful.
+I am also a member of the VietPhD group on Facebook and often browse forums like #link("https://www.reddit.com/r/gradadmissions/")[Reddit/gradadmissions] and #link("https://forum.thegradcafe.com/")[GradCafe]. I saw many questions from students about PhD programs, but most participants are students (often outside CS or outside the US), and answers are frequently inaccurate and confusing. So I thought a comprehensive guide focused on US CS PhD admissions from an insider perspective would be useful.
 
 I started writing this book in May 2023 and have updated it since then (mostly around deadline when I procrastinate—#highlight[productive procrastination]). The book was initially intended for international students but has expanded to include advice for domestic students (e.g., @chap:domestic-students and @chap:fellowships).]
 
@@ -3185,7 +3197,7 @@ My goal is thus to level the playing field by providing info that is not readily
 #example[
   I was a first-generation PhD student and was very much on my own navigating the admission process---there was no one to ask for help, no Reddit, Facebook, or resources like this book.
 
-  Fun fact: I was the first PhD student in my family and my extended family. My parents were war refugees and did not finish high school (though my dad eventually got his GED). I was the first one to go to college (Penn State), and then grad school. This helps inspire my cousins, and in total our family has 15+ Nittany Lions, several MS, 2 PhDs (me in CS and the other in Finance), and 1 MD. So, be the first and create a path for others to follow!
+  *Fun fact*: I was the first PhD student in my family and my extended family. My parents were war refugees and did not finish high school (though my dad eventually got his GED). I was the first one to go to college (Penn State), and then grad school. This helps inspire my cousins, and in total our family has 15+ Nittany Lions, several MS, 2 PhDs (me in CS and the other in Finance), and 1 MD. So, be the first and create a path for others to follow!
 ]
   
 
@@ -3245,10 +3257,9 @@ You can support this book in many ways. The best way is to #emph[share it with o
 You can also _link to it_ from your website or social media accounts. I was very happy to hear that it has helped many students, especially those from smaller countries---which is the main reason I wrote it.
 
 You can also: 
-- leave a review on #link("https://www.amazon.com/dp/B0F41HP6Y2")[Amazon] and #link("mailto:tvn@roars.dev")[send me] a _"Thank you"_ note and let me know how it helped you (those messages make my day!)
-- give it a star ⭐ on its #link(mybookgithub)[GitHub repo],
-- share it with friends, or
-- buy the Kindle book on #link("https://www.amazon.com/dp/B0F41HP6Y2")[Amazon]---so that I can brag about having a book on Amazon (priced at \$7.77---Unix/Linux 777 permission and the open nature of the book).
+- #link("mailto:tvn@roars.dev")[Send me] a _"Thank you"_ note and let me know how it helped you (those messages make my day!), 
+- Give it a star ⭐ on its #link(mybookgithub)[GitHub repo],
+- Buy the Kindle book on #link("https://www.amazon.com/dp/B0F41HP6Y2")[Amazon]. Note that I actually _do not_ think you should buy the book, which is free and more updated on GitHub. Making the Kindle version is just a fun experiment in self-publishing and allows me to brag about having a book on Amazon (priced at \$7.77---Unix/Linux 777 permission and the open nature of the book).
 ]
 #pagebreak()
 
@@ -3259,16 +3270,16 @@ Before GMU, I was at the University of Nebraska-Lincoln (UNL). Both UNL and GMU 
 
 I have been involved in the PhD admission process at GMU and UNL for many years. This allows me to have a good understanding of the process, the challenges students face, and what faculty are looking for. Currently I am the program director of the MS program in Software Engineering at GMU (thus also have experience with MS admission, which is quite different than PhD as discussed in @chap:ms). I have also served on panels for PhD fellowships including NSF GRFP and DoD NDSEG, which allows me to provide insights on external fellowship applications (@chap:fellowships).
 
-Though I was _not_ an international student, many of my students and collaborators are or were. I also mentor students from Vietnam and have close colleagues and friends who were once international students. I hope to capture the diverse challenges and experiences they've faced in this book so that it can be a valuable resource for prospective international students.
+Though I was _not_ an international student, many of my students and collaborators are or were. I also mentor students from Vietnam and have close colleagues and friends who were once international students. I hope to capture the diverse challenges and experiences they have faced in this book so that it can be a valuable resource for prospective international students.
 Finally, my upbringing in the US provides a perspective aligned with American culture, allowing me to shed light on various issues, particularly those related to cultural differences (@chap:cultural).
 
 = Disclaimer <sec:disclaimer>
 
 This book is inherently #highlight[_subjective_ and _opinionated_] based on my experience in PhD adcoms and student advising (@sec:about-me). Such a candid approach is beneficial, because overly neutral and "feel-good" advice are often useless and unrealistic in the competitive CS PhD admissions process.
 
-Moreover, since PhD admission varies significantly across institutions, there's rarely a universal "correct" way, and too many choices often lead to confusion. Clear and direct guidance---even if opinionated---can provide practical pathways to navigate the PhD admissions process better.
+Moreover, since PhD admission varies significantly across institutions, there's rarely a universal "correct" way, and too many choices often lead to confusion. Clear and direct guidance---even if opinionated---can provide practical pathways to navigate the complicated PhD admissions process better.
 
-This #link("https://roars.dev/phd-cs-us/advising.pdf")[advising guide] is another example of a highly subjective and opinionated document that I wrote for my current and prospective PhD students.
+#note-block[This #link("https://roars.dev/phd-cs-us/advising.pdf")[advising guide] is another example of a highly subjective and opinionated document that I wrote for my current and prospective PhD students.]
 
 
 = Acknowledgement 
@@ -3277,7 +3288,7 @@ Many people have contributed to this book.
 Profs. Craig Yu (GMU), Hakan Aydin (GMU), 
 Xiaokuan Zhang (GMU), Hung Le (UMass), and Deepak Kapur (UNM) provided valuable input in the early version. Many students including Didier (GMU), Thanh (Melbourne), and Dat (Melbourne) have contributed valuable questions and feedback (@sec:contribute).
 
-Also thanks to NSF for encouraging faculty to be creative in research and education, which allows me to work on this book. 
+Also thanks to NSF for encouraging faculty to be creative in research and education, which allows me to work on this book and other projects. 
 
 Finally, thanks to my wife and kids for always supporting me and putting up with my long hours of work and writing.
 
