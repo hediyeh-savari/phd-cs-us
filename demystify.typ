@@ -1569,7 +1569,7 @@ Typically, each grant can support one or at most two students per year, and each
 Fellowship is another type of funding that students can get from the university, industries, or government.
 Fellowships are typically competitive and generous, giving pretty much all benefits tuition/insurance that a GTA/GRA has.  They might even give higher stipends (including summer) and open doors for job opportunities such as internships.
 
-*How to get Fellowship?*   Many schools provide fellowships to attract students. You likely will not need to do anything and adcom will recommend such fellowships to strong students. Some schools automatically offer a fellowship to all accepted students, while others only award it to a limited number of admitted students, such as the top percentile.
+#paragraph[How to get Fellowship?][Many schools provide fellowships to attract students. You likely will not need to do anything and adcom will recommend such fellowships to strong students. Some schools automatically offer a fellowship to all accepted students, while others only award it to a limited number of admitted students, such as the top percentile.]
 
 If you're aiming for external fellowships (@chap:fellowships)---whether from the U.S. government like #gls("GRFP", display: "NSF GRFP") or #gls("NDSEG", display: "DOD NDSEG") or from major tech companies like Google, Microsoft, and Facebook---you'll need to apply on your own.
 Such major fellowships typically require a clear and good research plan (the GRFP also requires broader impacts discussion). So it might be a good idea to wait until your second year to have research experience and even publication before applying. Remember, you're competing with the top PhD students at top universities worldwide.
@@ -1580,7 +1580,7 @@ Such major fellowships typically require a clear and good research plan (the GRF
 
 // In addition to general fellowships that are available to all students, there are also specific fellowships, e.g., for US citizens and permanent residents (@chap:domestic-students), for underrepresented minority (URM) students (@sec:urm), and students from specific countries. There are many fellowships available, so you should look for them and apply.
 
-In general, external fellowships are highly competitive and prestigious---you will stand out if you get one.  Every PhD student has pubs, but only a few would have the NSF GRFP#footnote[#link("https://www.alexhunterlang.com/nsf-fellowship")[is a good starting place for the GRFP with lots of proposal examples.]] or Microsoft fellowships. In fact, these are so prestigious that even if you didn't get it but make it to the final round or even *"honorable mentioning"* you should put it on your CV. @chap:fellowships discusses the evaluation processes of the #gls("GRFP") and #gls("NDSEG").
+In general, external fellowships are highly competitive and prestigious---you will stand out if you get one.  Every PhD student has pubs, but only a few would have the NSF GRFP#footnote[#link("https://www.alexhunterlang.com/nsf-fellowship")[This link] is a good starting place for the GRFP with lots of proposal examples.] or Microsoft fellowships. In fact, these are so prestigious that even if you didn't get it but make it to the final round or even _"honorable mentioning"_ you should put it on your CV. @chap:fellowships discusses the evaluation processes of the #gls("GRFP") and #gls("NDSEG").
 
 == Funding Miscs
 
@@ -1589,22 +1589,22 @@ In general, external fellowships are highly competitive and prestigious---you wi
 
 Students often get confused about summer funding, e.g., if they will get paid during the summer.  This is a good question because PhD students have no classes over the summer and so are often more productive and produce good research. However, summer salary is largely depending on your funding source.
 
-First, recall that an #gls("AY")---consisting of Fall and Spring semesters---is typically 9 months. Thus, your stipend is for 9 months and do not cover the three summer months (and many places allow you to #emph[spread] it over 12 months, so you get paid monthly over 12 months, but the total amount is still the same).
+First, recall that an #gls("AY")---consisting of Fall and Spring semesters---is typically 9 months. Thus, your stipend is for 9 months and do not cover the three summer months (many places allow you to #emph[spread] it over 12 months, so you get paid monthly over 12 months, but the total amount is still the same).
 
-If your funding source is TA (@sec:ta), you typically do not get paid over the summer because there are no classes to teach.  Some CS departments offer summer funding, but it is not guaranteed and might not be a lot. For example, at GMU, we offer summer funding for 1st-year PhD TA students. The amount over the 3-month summer is similar to their monthly stipend (i.e., their 9-month stipend divided by 3 for the 3 summer months).
+If your funding source is GTA (@sec:ta), you typically do not get paid over the summer because there are no classes to teach.  Some CS departments offer summer funding, but it is not guaranteed and might not be a lot. For example, at GMU, we offer summer funding for 1st-year PhD TA students. The amount over the 3-month summer is similar to their monthly stipend (i.e., their 9-month stipend divided by 3 for the 3 summer months).
 
-For RA (@sec:ra), your summer funding depends on your prof. and their funding.
+For GRA (@sec:ra), your summer funding depends on your prof. and their funding.
 When writing grant proposals, profs. typically include summer funding for their students (@sec:ra-cost). However, funding is never guaranteed, e.g., the prof might not get the grant.
 
 #remark-block[
-For my students, I have been fortunate to have funding to support them over the summer. Over the 3-summer months, I typically pay them 1/3 of their 9-month stipend. I prioritize summer funding for my students because GMU has good TA resources so they never have to worry about funding during the AY.
+For my students, I have been fortunate to have funding to support them over the summer. Over the 3-summer months, I typically pay them 1/3 of their 9-month stipend. I prioritize summer funding for my students because GMU has good GTA resources so they don't have to worry about funding during the AY.
 ]
 
 Finally, for fellowships (@sec:fellowships) you might get paid over the summer depending on your fellowship (@sec:fellowships). Major ones, e.g., from NSF, Google, and Microsoft, will pay you the whole year.
 
 === Low Stipend? <sec:low-stipend>
 
-Students often think their stipend is too low and not enough to live on.  For example, if you look at the stipend at GMU, which is around \$40K (including summer), and then compare it to the #link("https://www.epi.org/resources/budget/")[living cost] of Fairfax, VA, which says you need \$75K _annually_ to live in a 1-bed apartment, then you might be in a panic.
+Students might think their stipend is too low and not enough to live on.  For example, if you look at the stipend at GMU, which is around \$40K (including summer), and then compare it to the #link("https://www.epi.org/resources/budget/")[living cost] of Fairfax, VA, which says you need \$75K _annually_ to live in a 1-bed apartment, then you might be in a panic.
 
 However,  in almost all cases, the stipend is enough to live on.  You might not be able to live in a 1-bed apartment by yourself, but you can live in a shared apartment or house with other students (most grad students shared apt).  You might not be able to buy a new car, but you get a good, used one (most students do this) or use public transportation.  In short, while stipend looks bad compared to living expense, you can make it work by adjusting your lifestyle and living arrangements.
 
