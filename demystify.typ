@@ -1993,20 +1993,20 @@ Ultimately, choose a prof. that fits you by communicating with them, taking thei
 
 === Types of Faculty: Who can serve as a PhD advisor? <sec:faculty-types>
 
-#highlight[Not every faculty] can serve as your official PhD advisor. Understanding the different types of faculty roles such as  tenured, tenure-track, teaching, research, adjunct, and emeritus professors will help you avoid common mistakes, e.g.,  contacting the wrong person (@sec:contact) for research opportunities or listing in your SOP (@chap:sop) someone who can't actually supervise PhD students.
+_*Not every faculty*_ can serve as your official PhD advisor. Understanding the different types of faculty roles such as  tenured, tenure-track, teaching, research, adjunct, and emeritus professors will help you avoid common mistakes, e.g.,  contacting the wrong person (@sec:contact) for research opportunities or listing in your SOP (@chap:sop) someone who can't actually supervise PhD students.
 
-*Faculty Types*: At most R1 universities, faculty generally fall into two categories:
+#paragraph[Faculty Types][At most #gls("R1") universities, faculty fall into two categories:
 + Tenure-line faculty (tenured or tenure-track)
 + Non-tenure-line faculty (e.g., teaching, adjunct, or research faculty)
-
-The key distinction is in their responsibilities—whether they are expected to do research, get funding, and supervise PhD students.
+]
+The key distinction is in their responsibilities—whether they are expected to do research, get funding, and supervise PhD students or primarily focus on teaching.
 
 ==== Tenure-Line Faculty
 
 _Tenure-line_ faculty members are expected to perform research, publish in top venues, get funding (@sec:ra), and mentor PhD students. They typically teach fewer courses—often just one per semester—and are the *main group eligible to serve as primary PhD advisors*. Tenure-line faculty consist of two subcategories:
 
 - *Tenure-track faculty* are on the path to tenure and are often actively recruiting students.
-- *Tenured faculty* have already earned permanent status and might be less active in building their research group.
+- *Tenured faculty* have already earned tenure or permanent status and might be less active in research or more selective in recruiting new students.
 
 #emph-block[
   *If you're reaching out to professors about potential advising, focus on tenure-line faculty*. These are the faculty most likely to have funding, institutional authority, and the capacity to take on new PhD students. See @sec:tenure-vs-tenure-track for more on choosing between tenured and tenure-track faculty as advisors.
