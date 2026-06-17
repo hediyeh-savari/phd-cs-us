@@ -2825,8 +2825,8 @@ These refer to prestigious grants and fellowships for early-career faculty such 
   
 + *Sloan Fellowship:*  Comes with a \$75K research grant over 2 years for junior faculty with exceptional potential in their field. Unlike the CAREER or YIP, these are nominated by their institutions and faculty cannot apply directly.
 
-Other awards that junior faculty can get include the _ACM Dissertation Awards_ and early career awards from the industry. 
-The ACM SIGs (Special Interest Groups) such as SIGPLAN (programming languages) and SIGARCH (architecture) have  dissertation awards for best PhD dissertation in different areas of CS. These are typically given _after_ the student has graduated and thus are given very junior faculty who recently graduated.   
+Other awards that junior faculty can get include the _ACM Dissertation Awards_. 
+The ACM SIGs (Special Interest Groups) such as SIGPLAN (programming languages) and SIGARCH (architecture) have  dissertation awards for best PhD dissertation in different areas of CS. These are typically given _after_ the student has graduated and thus are for very junior faculty who recently graduated.   
 
 
 //%  These industrial awards are very flexible (unrestricted) and thus prof. often save them for emergencies (e.g., when they cannot get NSF funding).
@@ -2849,9 +2849,9 @@ These can be (i) lifetime achievements in the field---such as ACM or IEEE Fellow
   
   
 
-#align(center, box(width: 100%)[
-  CSRankings (@chap:rankings) highlights if an individual is an ACM Fellow or Turing Award winner. Note that these individuals might no longer be active in research and therefore do not have many recent publications.
-])
+#note[
+  CSRankings (@chap:rankings) highlights  individual faculty who are ACM Fellows or Turing Award winners.  You can also find a list of ACM Fellows at #link("https://awards.acm.org/fellows")[ACM Fellows] and Turing Award winners at #link("https://awards.acm.org/turing")[Turing Award].  Note that these individuals might no longer be active in research and therefore do not have many recent publications or recruit students.  You should check their recent publications and research activities to see if they are still active in research and recruiting students.   
+]
 
 
 ==== Most Influential Paper Awards 
