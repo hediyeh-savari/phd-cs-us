@@ -1475,7 +1475,7 @@ Given the high number of quality applicants and a limited number of spots, in ad
 There are other things you might not think are important but can make you stand out. For example, if you have a strong background in a non-CS field that can be integrated with CS, e.g., you have a degree or background in _dance_ or _music_ and want to integrate them with CS, do talk about it. If you have reported numerous bugs in Knuth's The Art of Computer Programming and received several reward checks from Knuth himself, mention them---this shows exceptional attention to detail and a good understanding of algorithms.
 
 #remark-block[
-  In #link("https://matt.might.net/articles/how-to-apply-and-get-in-to-graduate-school-in-science-mathematics-engineering-or-computer-science/")[his post], Matt Might was initially unsure about an application. However, upon learning that the applicant had led a *100km hike in the Himalayas*, he decided to accept the applicant. This is a good example of _standing out_, and I would also advocate for that student as this shows they have the persistence and determination required for research.
+  In #link("https://matt.might.net/articles/how-to-apply-and-get-in-to-graduate-school-in-science-mathematics-engineering-or-computer-science/")[his post], Matt Might was initially unsure about an application. However, upon learning that the applicant had led a *100km hike in the Himalayas*, he decided to accept the applicant. This is a good example of _standing out_, and I would also advocate for such student as this shows they have the persistence and determination required for research.
 ]
 
 #pagebreak()
