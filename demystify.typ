@@ -1397,11 +1397,11 @@ Many students lament that they get no interviews or are rejected and that the ad
 ==== Your profile is *not* as strong as you think <sec:profile-not-strong>
 I have seen many cases where students think they have a strong profile, but they do not. Here are some common examples:
 
-#strong[LORs] (@chap:LOR) might not be as strong as you think. Your reference writers—who might be very well-known within your institution—might not be well-known internationally, or they might not be very active in research, or may not know how to write a strong letter.
+Your #strong[LORs] (@chap:LOR) might not be as strong as you think. Your reference writers—who might be very well-known within your institution—might not be well-known internationally, or they might not be very active in research, or may not know how to write a strong letter.
 
-#strong[School] (@chap:your-school) might not be as good as you think. It might be the "top" in your country (or in your own definition), but we do not know about it. For example, most well-known schools in Vietnam are not well-known outside of Vietnam.
+Your #strong[School] (@chap:your-school) might not be as good as you think. It might be the "top" in your country (or in your own definition), but we do not know about it. For example, most well-known schools in Vietnam are not well-known outside of Vietnam.
 
-#strong[Research] (@chap:research-experience) might not be as strong as you think. Participating in a research project does not mean much (or anything) without results, e.g., publications (@sec:publications). Moreover, publications might not have much value if they were published locally or in unknown venues. Even papers at top venues might not be as impressive as you think. For example, many AI/ML/NLP faculty are not interested in "dataset" work, even if papers appear at top venues like NeurIPS (@fig:comment-neurips). However, while you might not have papers, you might get strong LORs from professors or PhD students you worked with closely on research projects. But just saying you do research is not enough.
+Your #strong[Research] (@chap:research-experience) might not be as strong as you think. Participating in a research project does not mean much (or anything) without results, e.g., publications (@sec:publications). Moreover, publications might not have much value if they were published locally or in unknown venues. Even papers at top venues might not be as impressive as you think. For example, many AI/ML/NLP faculty are not interested in "dataset" work, even if papers appear at top venues like NeurIPS (@fig:comment-neurips). //However, while you might not have papers, you might get strong LORs from professors or PhD students you worked with closely on research projects. But just saying you do research is not enough.
 
 
 
@@ -1422,11 +1422,13 @@ Even with a strong profile (e.g., research potential, GPA, LORs, SOP, interviews
 You have applied to schools that are way too high for your profile (@sec:profile-not-strong and @sec:selecting-ranking-schools). Many students apply only to top 10 CS programs and are surprised when rejected from all of them, sometimes multiple years in a row. While ambition is valuable, understand how PhD admission works (e.g., good GPA or GRE scores matter less at top programs), recognize that the US has many excellent schools (@sec:chance-me), and be realistic about your targets.
 
 #strong[Not a good fit and bad luck.]
-You could have an excellent profile, but if your research interests don't align with the program's strengths, you won't be admitted. Similarly, if no faculty can advise you—due to sabbatical, insufficient funding, or already having many students—you'll be rejected. This is actually good; you don't want to be somewhere without proper guidance.
+You could have an excellent profile, but if your research interests don't align with the program's strengths, you won't be admitted. Similarly, if no faculty can advise you—due to sabbatical, insufficient funding, or already having many students—you'll be rejected (this is actually good; you don't want to be somewhere without proper guidance).
 
 Bad timing also plays a role. For instance, since 2024, there's been a surge in AI/NLP applicants (thanks, ChatGPT!). Overwhelmed AI/NLP faculty may reject strong candidates simply due to capacity.
 
-Before applying, ask your professors for honest feedback on where you should target. Apply to a range of schools, including "safety" options.
+#tip-block[
+Before applying, ask your professors and LoR writers for honest feedback on where you should target. Apply to a range of schools, including "safety" options.
+]
 
 #strong[Lack of interest or overqualification.]
 You can be rejected for insufficient interest in the program. Beyond a generic SOP (@sec:kiss-of-death-sop), this includes ignoring professors' interview invitations or showing little knowledge or enthusiasm during interviews.
@@ -1434,7 +1436,7 @@ You can be rejected for insufficient interest in the program. Beyond a generic S
 Paradoxically, overqualification is also a reason. If adcom believes you'll get into a better program, they may reject you to save the spot for someone else.
 
 #strong[Low GPA or exam scores.]
-While faculty may not emphasize these, universities often set minimums you must pass. For example, minimum English proficiency is often required for GTA funding—low scores raise concerns about your ability to communicate with students. Faculty may be reluctant to argue against institutional requirements.
+While faculty may not emphasize these, universities often set minimums you must pass. For example, minimum English proficiency is often required for GTA funding---low scores raise concerns about your ability to communicate with students. Faculty may be reluctant to argue against institutional requirements.
 
 #strong[Red flags.]
 Various issues can raise concerns: many STEM courses with low grades or withdrawals, plagiarism, cheating, or other academic dishonesty. A history of jumping between programs is another flag—adcom members may have contacts elsewhere. If these apply to you, address them in your SOP or ask your letter writers to do so.
@@ -1447,7 +1449,7 @@ Many international students aim for very top schools such as Stanford and MIT, a
 
 People who do get into these schools often were explicitly encouraged by their mentors and LOR writers, who themselves might be alumni of these schools or are academic celebrities who've sent many of their students there. If you are not in this category (doubt you are, because you're asking random people on the internet instead of your trusted LOR writers), then you're likely not going to get in, and MIT and Stanford would gladly take your application money.
 
-#strong["Your" top might not really be top in CS.] Harvard and the Ivies? Yes, good for many things but usually not coding marathons and typically absent from top CS conferences. (Okay, they are still good, but a school somewhere in Maryland, Wisconsin, or the Urbana-Champaign cornfield would likely beat them by far in CS). MIT and Stanford? Yes, they are top, but many others are equivalent, and there could be CS areas (@sec:csrankings) where they are not as strong as other schools. Caltech and Johns Hopkins? Are you confusing CS with Physics and Medicine?
+#strong["Your" top might not really be top in CS.] Harvard and the Ivies? Yes, good for many things but usually not coding marathons and typically absent from top CS conferences. (Okay, they are still good, but a school somewhere in Maryland, Wisconsin, or the Urbana-Champaign cornfield would likely beat them by far in CS). MIT and Stanford? Yes, they are top, but many others are equivalent, and there are many CS areas (@sec:csrankings) where they are not as strong as other schools. Caltech and Johns Hopkins? Are you confusing CS with Physics and Medicine?
 
 You're missing out on some serious CS PhD programs: UCSD, UW, UMD, Michigan, Purdue, Stony Brook. These all have strong CS programs but rarely get mentioned compared to the usual suspects. Utah, Rutgers, Buffalo, Penn State, UVA, Ohio, UC Riverside, GMU—any of them ring a bell? These might not rank very high on QS or US News and are not household names to you, your friends, or your parents, but they are excellent CS schools where graduating students from your dream schools often apply for faculty positions (e.g., see #link("https://github.com/dynaroars/dynaroars.github.io/wiki/About-GMU")[GMU stats]). You can go to these places and be a superstar there—be the big fish in a small pond, instead of a small fish in a big pond.
 
@@ -1457,7 +1459,9 @@ You're missing out on some serious CS PhD programs: UCSD, UW, UMD, Michigan, Pur
   Don't aim for just the moon and the stars; also try the sky, clouds, or even just the trees. You might find much happiness and success there, which can then catapult you places beyond the moon and the stars. This is the American dream, which is strongly embodied in its higher education system.
 ]
 
+#caution-block[
 Note that what I said above might not apply to BS or even MS degrees, which often do not involve research and thus are more about the school name and your grades. For PhD, it is all about the research.
+]
 
 === Standing Out: Increasing your admission chance <sec:stand-out>
 // \subsectioninfo{You can improve your profile by being unique and standing out.}
