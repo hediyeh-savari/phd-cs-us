@@ -1082,23 +1082,19 @@ $tanh(-1.2) approx -0.83$, $tanh(0) = 0$, and $tanh(2.8) approx 0.99$. This mean
 ) <fig:softmax>
 
 Softmax, shown in @fig:softmax, is a generalization of sigmoid (@sec:sigmoid) that maps any real value to the range (0,1) and ensures that the sum of the output values is 1. It is often used in the output layer of a multi-class classification problem.
-// \begin{align}
-// \softmax{x}_i = \frac{e^{x_i}}{\sum_{j=1}^{n}e^{x_j}}
-// \end{align}
+$
+"softmax"(x)_i = e^(x_i) / (sum_(j=1)^n e^(x_j))
+$
 
-// \begin{example}
-// For a vector $x = [2, 1, 0]$, softmax computes:
-
-// {\small
-// \begin{align*}
-// \softmax{x} &= <=ft[\frac{e^2}{e^2+e^1+e^0}, \frac{e^1}{e^2+e^1+e^0}, \frac{e^0}{e^2+e^1+e^0}\right] \\
-// &= <=ft[\frac{7.389}{7.389+2.718+1}, \frac{2.718}{7.389+2.718+1}, \frac{1}{7.389+2.718+1}\right] \\
-// &\approx [0.71, 0.24, 0.05]
-// \end{align*}
-// }
-
-// This means that softmax maps the input vector $x$ to a probability distribution over the three classes, where the first class has a probability of 0.71, the second class has a probability of 0.24, and the third class has a probability of 0.05.
-// \end{example}
+#example[Softmax Computation][
+For a vector $x = [2, 1, 0]$, softmax computes:
+$
+"softmax"(x) &= [e^2 / (e^2+e^1+e^0), e^1 / (e^2+e^1+e^0), e^0 / (e^2+e^1+e^0)] \
+&= [7.389 / (7.389+2.718+1), 2.718 / (7.389+2.718+1), 1 / (7.389+2.718+1)] \
+&approx [0.71, 0.24, 0.05]
+$
+Softmax maps the input vector $x$ to a probability distribution: the first class has probability 0.71, the second 0.24, and the third 0.05.
+]
 
 #example[
 Use Z3 to encode the network in @fig:dnn and compute its output $x_5$ for the input $(x_1, x_2) = (2.0, 0.5)$ and find an input that maximizes the output $x_5$.
@@ -1392,16 +1388,11 @@ Widely used feedforward architectures include fully connected, convolutional, an
 ) <fig:cnn>
 
 
-// \begin{example}
-//    ~@fig:cnn shows a simple CNN with four inputs, three hidden neurons, and three outputs. %The first hidden neuron computes a weighted sum of its inputs, applies the ReLU activation function, and produces an output. The second and third hidden neurons compute their outputs similarly. The outputs are computed by taking the outputs of the hidden neurons and applying a linear transformation (without activation) to produce the final output values.
-// Given an input vector $\mathbf{x} = [x_1, x_2, x_3, x_4]$, the computation of the first output proceeds as follows.
-// The first hidden unit forms a linear combination of its inputs as $h_1 = 2x_1 - x_2 + 0.5$.
-// This value is then passed through the ReLU activation function, resulting in $\hat{h}_1 = \relu{h_1} = \max(0, 2x_1 - x_2 + 0.5)$.
-// Finally, the first output is simply $y_1 = \hat{h}_1 - 1$.
+#example[CNN Computation][
+@fig:cnn shows a simple CNN with four inputs, three hidden neurons, and three outputs. Given an input vector $bold(x) = [x_1, x_2, x_3, x_4]$, the computation of the first output proceeds as follows. The first hidden unit forms a linear combination of its inputs as $h_1 = 2x_1 - x_2 + 0.5$. This value is then passed through the ReLU activation function, resulting in $hat(h)_1 = "relu"(h_1) = max(0, 2x_1 - x_2 + 0.5)$. Finally, the first output is simply $y_1 = hat(h)_1 - 1$.
+]
 
-// \end{example}
-
-// \paragraph{Residual Networks (ResNets)} Resnets extend FNNs by adding \emph{skip connections}—direct links that bypass one or more layers. Resnets are often used in image recognition and classification.
+#paragraph[Residual Networks (ResNets)][ResNets extend FNNs by adding _skip connections_ --- direct links that bypass one or more layers. ResNets are often used in image recognition and classification.]
 
 // \begin{example}
 // \begin{figure}[htp]
@@ -1502,17 +1493,13 @@ Widely used feedforward architectures include fully connected, convolutional, an
   ]
 ) <fig:resnet>
 
-// @fig:resnet  shows an example of a Resnet.
-// Assume the input $x$ and each node applies the ReLU activation. With the weights and biases shown in the diagram, the outputs are computed as follows:
-
-// \[
-// \begin{aligned}
-//     h_1 = \relu{x + 1} &quad h_2 = \relu{2h_1 + x - 1} \\
-//     h_3 = \relu{-h_2 + 0.5} &quad y  = 0.5h_3 + h_2 + 2
-// \end{aligned}
-// \]
-
-// \end{example}
+#example[ResNet Computation][
+@fig:resnet shows an example of a ResNet. Assuming each hidden node applies the ReLU activation, with the weights and biases shown in the diagram, the outputs are:
+$
+h_1 = "relu"(x + 1) quad & h_2 = "relu"(2h_1 + x - 1) \
+h_3 = "relu"(-h_2 + 0.5) quad & y = 0.5h_3 + h_2 + 2
+$
+]
 
 // % \subsubsection*{Common Layer Types}
 
@@ -1699,13 +1686,9 @@ Currently, most NNV work tackles RNNs by _unrolling_ them into an equivalent fee
   ]
 ) <fig:rnn>
 
-// @fig:rnn shows a simple RNN cell. Assume the input sequence is $\mathbf{x} = [x_1, x_2, x_3, x_4]$, and the initial hidden state is $h_0$.
-// For the first time step, the hidden state is computed as $h_1 = \relu{2x_1 - h_0 + 0.5}$, and the output is $y_1 = h_1 - 0.5$.
-// For the second time step, the hidden state is $h_2 = \relu{2x_2 - h_1 + 0.5}$, and the output is $y_2 = h_2 - 0.5$.
-// % For the third time step, the hidden state is $h_3 = ReLU(2x_3 - h_2 + 0.5)$, and the output is $y_3 = h_3 - 0.5$.
-// % For the fourth time step, the hidden state is $h_4 = ReLU(2x_4 - h_3 + 0.5)$, and the output is $y_4 = h_4 - 0.5$.
-
-// \end{example}
+#example[RNN Computation][
+@fig:rnn shows a simple RNN cell. Assume the input sequence is $bold(x) = [x_1, x_2, x_3, x_4]$ and the initial hidden state is $h_0$. For the first time step, $h_1 = "relu"(2x_1 - h_0 + 0.5)$ and $y_1 = h_1 - 0.5$. For the second time step, $h_2 = "relu"(2x_2 - h_1 + 0.5)$ and $y_2 = h_2 - 0.5$.
+]
 
 ==== Transformers
 Transformers are designed for long-range dependencies using _self-attention_ rather than recurrence. They dominate applications in natural language processing and are increasingly used in vision and reinforcement learning.
@@ -2098,52 +2081,48 @@ This includes:
 Properties are encoded in *SMT-LIB2*, referencing input/output variable names consistent with ONNX.
 
 
-// \begin{example}
-// A typical ACAS XU network (@sec:acasxu) maps 5D input to 5D output via 6 layers of 50 ReLU neurons. A property is of the network is
-// \[
-// -\varepsilon_i <=q x_i <=q \varepsilon_i quad (0 <=q i < 5)
-// \]
-// \[
-// y_0 <=q y_1, quad y_0 <=q y_2, quad y_0 <=q y_3, quad y_0 <=q y_4,
-// \]
-// where $x_i$ are the input variables, $y_i$ are the output variables, and $\varepsilon_i$ are small perturbation bounds for each input dimension. This property states that if the inputs are perturbed within the bounds $\varepsilon_i$, then the first output neuron $y_0$ is less than or equal to all other output neurons $y_1, y_2, y_3, y_4$.
+#example[ACAS XU VNN-LIB Property][
+A typical ACAS XU network maps 5D input to 5D output via 6 layers of 50 ReLU neurons. A property of the network is:
+$
+-epsilon_i <= x_i <= epsilon_i quad (0 <= i < 5)
+$
+$
+y_0 <= y_1, quad y_0 <= y_2, quad y_0 <= y_3, quad y_0 <= y_4,
+$
+where $x_i$ are the input variables, $y_i$ are the output variables, and $epsilon_i$ are small perturbation bounds for each input dimension. This property states that if the inputs are perturbed within the bounds $epsilon_i$, then the first output neuron $y_0$ is less than or equal to all other output neurons $y_1, y_2, y_3, y_4$.
 
-// %\tvn{Hai, is this local?}\hd{yes, it is local. But it doesn't tailor to a specific input (center point), so people might call it a safety property.}
-
-// The VNN-LIB code for this property is as follows:
-
-// \begin{lstlisting}[style=SMTLIB-style, language=SMTLIB,basicstyle=\ttfamily\scriptsize, multicols=2]
-// ; declaring the input variables
-// (declare-const X_0 Real)
-// (declare-const X_1 Real)
-// (declare-const X_2 Real)
-// (declare-const X_3 Real)
-// (declare-const X_4 Real)
-// (declare-const X_5 Real)
-// ; declaring neuron outputs
-// (declare-const Y_0 Real)
-// (declare-const Y_1 Real)
-// (declare-const Y_2 Real)
-// (declare-const Y_3 Real)
-// (declare-const Y_4 Real)
-// ; asserting the input relations
-// (assert (<= X_0 eps0))
-// (assert (>= X_0 -eps0))
-// (assert (<= X_1 eps1))
-// (assert (>= X_1 -eps1))
-// (assert (<= X_2 eps2))
-// (assert (>= X_2 -eps2))
-// (assert (<= X_3 eps3))
-// (assert (>= X_3 -eps3))
-// (assert (<= X_4 eps4))
-// (assert (>= X_4 -eps4))
-// ; asserting the output relations
-// (assert (<= Y_0 Y_1))
-// (assert (<= Y_0 Y_2))
-// (assert (<= Y_0 Y_3))
-// (assert (<= Y_0 Y_4))
-// \end{lstlisting}
-// \end{example}
+The VNN-LIB code for this property is:
+```smtlib
+; declaring the input variables
+(declare-const X_0 Real)
+(declare-const X_1 Real)
+(declare-const X_2 Real)
+(declare-const X_3 Real)
+(declare-const X_4 Real)
+; declaring neuron outputs
+(declare-const Y_0 Real)
+(declare-const Y_1 Real)
+(declare-const Y_2 Real)
+(declare-const Y_3 Real)
+(declare-const Y_4 Real)
+; asserting the input relations
+(assert (<= X_0 eps0))
+(assert (>= X_0 -eps0))
+(assert (<= X_1 eps1))
+(assert (>= X_1 -eps1))
+(assert (<= X_2 eps2))
+(assert (>= X_2 -eps2))
+(assert (<= X_3 eps3))
+(assert (>= X_3 -eps3))
+(assert (<= X_4 eps4))
+(assert (>= X_4 -eps4))
+; asserting the output relations
+(assert (<= Y_0 Y_1))
+(assert (<= Y_0 Y_2))
+(assert (<= Y_0 Y_3))
+(assert (<= Y_0 Y_4))
+```
+]
 
 
 // % \begin{example}[MNIST Network]
@@ -2195,175 +2174,71 @@ Properties are encoded in *SMT-LIB2*, referencing input/output variable names co
 
 
 
-//  == Problems}
+== Problems
 
-// \begin{problem}[Robustness + Safety: Drone Controller]\label{problem:drone}
-// An autonomous drone computes its thrust level using a (neural) network controller $f(w,d)$, where $w$ is wind speed and $d$ the distance to nearest obstacle. State the following properties in formal logic (remember to use quantifiers, e.g., $\forall$ and $\exists$):
-// \begin{enumerate}
-// \item Robustness: If the wind speed reading changes by at most 1 unit ($|w-w'|<=q 1$) and distance remains the same, then thrust decision should remain the same.
-// \item Safety: If the obstacle distance is less than 5 meters, then thrust must not be greater than 2.
-// \end{enumerate}
+#problem[Robustness + Safety: Drone Controller][
+An autonomous drone computes its thrust level using a (neural) network controller $f(w,d)$, where $w$ is wind speed and $d$ the distance to nearest obstacle. State the following properties in formal logic (remember to use quantifiers, e.g., $forall$ and $exists$):
 
-// \begin{solution}
-// Robustness:
-// \[
-// \forall w, w', d, quad |w-w'|<=q 1 \implies f(w,d) = f(w',d)
-// \]
++ Robustness: If the wind speed reading changes by at most 1 unit ($|w-w'| <= 1$) and distance remains the same, then thrust decision should remain the same.
++ Safety: If the obstacle distance is less than 5 meters, then thrust must not be greater than 2.
 
-// Safety:
-// \[
-// \forall w, d, quad d < 5 \implies f(w,d) <=q 2
-// \]
-// \end{solution}
-// \end{problem}
+#solution[
+Robustness:
+$
+forall w, w', d, quad |w-w'| <= 1 => f(w,d) = f(w',d)
+$
 
-// \begin{problem}[Global Consistency: Celsius and Fahrenheit]
-// An NN answers two related questions:
-// Q1: ``What is the temperature in Celsius?'' (input $t_C$)
-// Q2: ``What is the temperature in Fahrenheit?'' (input $t_F$)
+Safety:
+$
+forall w, d, quad d < 5 => f(w,d) <= 2
+$
+]
+] <problem:drone>
 
-// State the following consistency property in formal logic (remember to use quantifiers, e.g., $\forall$ and $\exists$): If Q1 outputs $y$, then Q2 must output $1.8y+32$.
+#problem[Global Consistency: Celsius and Fahrenheit][
+An NN answers two related questions:
+Q1: "What is the temperature in Celsius?" (input $t_C$)
+Q2: "What is the temperature in Fahrenheit?" (input $t_F$)
 
-// \begin{solution}
-// \[
-// \forall t_C, quad f(Q2, t_C \times 1.8 + 32) = 1.8 dot f(Q1,t_C) + 32
-// \]
-// \end{solution}
-// \end{problem}
+State the following consistency property in formal logic (remember to use quantifiers, e.g., $forall$ and $exists$): If Q1 outputs $y$, then Q2 must output $1.8y+32$.
 
-// % \begin{problem}[Monotonicity in Multiple Inputs: Flight Risk]
-// % A neural network predicts flight risk score $r$ for passengers. Inputs are number of missed flights $m$
-// % and number of valid documents provided $d$. We want:
-// % - Increasing $m$ should never decrease $r$.
-// % - Increasing $d$ should never increase $r$.
+#solution[
+$
+forall t_C, quad f("Q2", t_C times 1.8 + 32) = 1.8 dot f("Q1",t_C) + 32
+$
+]
+]
 
-// % \begin{solution}
-// % Missed flights:
-// % \[
-// % m <=q m' \land d = d' \implies f(m,d) <=q f(m',d')
-// % \]
+#problem[Counterexample: Safety in Vehicles][
+A neural network computes car acceleration $a$. State a safety property in formal logic (remember to use quantifiers, e.g., $forall$ and $exists$): if distance to obstacle $d<10$, then $a <= 0$. But we observe a scenario where $d=5$ but $a=+2$.
 
-// % Documents:
-// % \[
-// % d <=q d' \land m = m' \implies f(m,d) >= f(m,d')
-// % \]
-// % \end{solution}
-// % \end{problem}
+Write the safety requirement and show how this is a counterexample.
 
-// % \begin{problem}[Temporal Safety: Medical Monitoring]
-// % A medical monitoring network takes as input heart rate readings over time and outputs an alarm signal
-// % (0 = safe, 1 = alarm). Property:
-// % If heart rate exceeds 180 bpm for 3 consecutive time steps, then the alarm must be raised at the next time step.
+#solution[
+Safety requirement:
+$
+forall d, a, quad d < 10 => a <= 0
+$
 
-// % \begin{solution}
-// % \[
-// % \forall t, quad (HR_t > 180 \land HR_{t+1} > 180 \land HR_{t+2} > 180) \implies f(HR_{t+3}) = 1
-// % \]
-// % \end{solution}
-// % \end{problem}
+Counterexample:
+$
+d=5, quad f(d)=a=+2 quad "violates property."
+$
+]
+]
 
+#problem[Z3 Properties][
+Consider the neural network shown below. Recall that in this network the hidden neurons ($v_1 ... v_4$) use ReLU activation, but the output neurons ($y_1,y_2$) does not.
 
-// % \begin{problem}[Robustness in Speech Recognition]
-// % A speech recognition NN maps audio clips $x$ to text. Robustness property: if background noise changes by at most
-// % $\epsilon$ in volume, the transcription should remain the same.
-
-// % \begin{solution}
-// % \[
-// % \forall x', quad \|x - x'\| <=q \epsilon \implies f(x') = f(x)
-// % \]
-// % \end{solution}
-// % \end{problem}
-
-// % \begin{problem}[Safety in Medical Diagnosis]
-// % A NN diagnoses diseases from patient data (age $a$, blood pressure $bp$, heart rate $hr$).
-// % Safety property: If age $a > 80$ and $bp > 200$, then the network must never output ``safe''.
-
-// % \begin{solution}
-// % \[
-// % a > 80 \land bp > 200 \implies f(a,bp,hr) \neq \text{``safe''}
-// % \]
-// % \end{solution}
-// % \end{problem}
-
-// % \begin{problem}[Consistency in Translation]
-// % A multilingual NN translates between English, French, and German.
-// % If English $\to$ French translation of ``cat'' is ``chat'', then French $\to$ German translation of ``chat'' must be ``Katze''.
-
-// % \begin{solution}
-// % \[
-// % f(\text{EN}\to\text{FR}, \text{``cat''}) = \text{``chat''} \implies
-// % f(\text{FR}\to\text{DE}, \text{``chat''}) = \text{``Katze''}
-// % \]
-// % \end{solution}
-// % \end{problem}
-
-// % \begin{problem}[Monotonicity in Fairness]
-// % A network computes credit approval probability $f(p,s,g)$ with GPA $p$, score $s$, and gender $g$.
-// % We require: increasing GPA or score cannot decrease approval, and gender should not matter.
-
-// % \begin{solution}
-// % \[
-// % p <=q p' \land s = s' \land g \neq g' \implies f(p,s,g) <=q f(p',s',g')
-// % \]
-// % \[
-// % s <=q s' \land p = p' \land g \neq g' \implies f(p,s,g) <=q f(p,s',g')
-// % \]
-// % \[
-// % f(p,s,\text{male}) = f(p,s,\text{female}) quad \forall p,s
-// % \]
-// % \end{solution}
-// % \end{problem}
-
-// \begin{problem}[Counterexample: Safety in Vehicles]
-// A neural network computes car acceleration $a$. State a safety property in formal logic (remember to use quantifiers, e.g., $\forall$ and $\exists$): if distance to obstacle $d<10$, then $a<=q 0$. But we observe a scenario where $d=5$ but $a=+2$.
-
-// Write the safety requirement and show how this is a counterexample.
-
-// \begin{solution}
-// Safety requirement:
-// \[
-// \forall d, a, quad d < 10 \implies a <=q 0
-// \]
-
-// Counterexample:
-// \[
-// d=5, quad f(d)=a=+2 quad \text{violates property.}
-// \]
-// \end{solution}
-// \end{problem}
-
-
-// \begin{problem <problem:z3-properties}
-
-// \begin{figure}
-// \centering
-// \proofnet{1}
-// \caption{\label{fig:proofnet}A simple NN with 2 inputs, 4 hidden ReLU neurons, and 2 outputs.}
-// \end{figure}
-
-
-
-// Consider the neural network in~@fig:proofnet. Recall that in this network the hidden neurons ($v_1 \ldots v_4$) use ReLU activation, but the output neurons ($y_1,y_2$) does not.
-
-
-// \begin{itemize}
-//     \item Encode this network using Z3.
-//     \begin{itemize}
-//         \item Try to use Z3 to evaluate the network on various inputs.
-//     \end{itemize}
-// \item Come up with \emph{three} properties that this network \emph{does not} have.  Recall that a property often has the form shown in~@sec:properties-def.
-// \begin{itemize}
-//     \item Argue why each property does not hold by providing a counterexample (@sec:properties-counterexamples).
-//     \item (Optional, Easy) Try to use Z3 to show that the properties you came up with do not hold by asking Z3 to find counterexamples (one for each property).
-// \end{itemize}
-// \item Come up with \emph{three} properties that that this network has (i.e., as long as the precondition holds, the postcondition holds).
-// \begin{itemize}
-//     \item Argue why each property always holds (e.g., for any input satisfying the range X, the first layer outputs values in range Y, etc).
-//     \item (Optional) Show that the properties you came up will always hold by using Z3 to prove that no counterexample exists (i.e., \unsat{}).
-// \end{itemize}
-// \end{itemize}
-
-// \end{problem}
+- Encode this network using Z3.
+  - Try to use Z3 to evaluate the network on various inputs.
+- Come up with _three_ properties that this network _does not_ have. Recall that a property often has the form shown in @sec:properties-def.
+  - Argue why each property does not hold by providing a counterexample (@sec:properties-counterexamples).
+  - (Optional, Easy) Try to use Z3 to show that the properties you came up with do not hold by asking Z3 to find counterexamples (one for each property).
+- Come up with _three_ properties that that this network has (i.e., as long as the precondition holds, the postcondition holds).
+  - Argue why each property always holds (e.g., for any input satisfying the range X, the first layer outputs values in range Y, etc).
+  - (Optional) Show that the properties you came up will always hold by using Z3 to prove that no counterexample exists (i.e., unsat).
+] <problem:z3-properties>
 
 // = Verification of Neural Networks <sec:verification}
 
@@ -3462,13 +3337,25 @@ Our abstract domains, e.g., interval, zonotope, and polytopes, are all geometric
 
 
 
-// \begin{example <ex:interval-zonotope}
-//   An interval for a single variable is simply a line segment defined by its \emph{two} endpoints (corners)---the lower and upper bounds. Equivalently, it can be represented using a zonotope with a center point and a single generator vector that points in both directions (left and right) from the center:
-//   \[
-//     [l, u] =  { c + \epsilon g \mid \epsilon in [-1, 1]  }
-//   \]
-//     where \(c = \frac{l + u}{2}\) is the center, \(g = \frac{u - l}{2}\) is the generator, and \(\epsilon\) controls how far we move along the generator.
-// \end{example}
+#example[Interval as Zonotope][
+An interval for a single variable is a line segment defined by its two endpoints. Equivalently, it can be represented as a zonotope with a center point and a single generator:
+$
+[l, u] = { c + epsilon g mid epsilon in [-1, 1] }
+$
+where $c = (l + u)/2$ is the center, $g = (u - l)/2$ is the generator, and $epsilon$ controls how far we move along the generator.
+] <ex:interval-zonotope>
+
+#example[Interval $[-2, 3]$ as Zonotope][
+Consider the interval $x in [-2, 3]$, shown in @fig:interval-zonotope. We compute:
+$
+c = (-2 + 3)/2 = 0.5, quad g = (3 - (-2))/2 = 2.5, quad epsilon in [-1, 1].
+$
+Thus, any point $x$ in this interval can be written as $x = 0.5 + epsilon dot 2.5$, where $epsilon in [-1, 1]$. For example:
+$
+epsilon = -1 => x = -2, quad epsilon = 0 => x = 0.5, quad epsilon = +1 => x = 3.
+$
+As $epsilon$ varies between $-1$ and $+1$, we cover the entire interval $[-2, 3]$.
+]
 
 // \begin{example}
 
@@ -3539,220 +3426,101 @@ Our abstract domains, e.g., interval, zonotope, and polytopes, are all geometric
 
 
 
-// \subsection{Transformer Functions <sec:transformer-functions}
+=== Transformer Functions <sec:transformer-functions>
 
-// The concept of computing abstractions is central to program analysis, e.g., through \emph{abstract interpretation} techniques.
-// It allows us reason about the behavior of a program without evaluating it on all concrete inputs---which may be infinite. Instead, we use an \emph{abstract domain}, such as interval, to summarize sets of concrete values, enabling sound and scalable approximation.
+The concept of computing abstractions is central to program analysis, e.g., through _abstract interpretation_ techniques. It allows us to reason about the behavior of a program without evaluating it on all concrete inputs---which may be infinite. Instead, we use an _abstract domain_, such as interval, to summarize sets of concrete values, enabling sound and scalable approximation.
 
+==== Abstraction Functions
 
-// \subsubsection{Abstraction Functions} In abstraction interpretation, we have the \emph{abstraction function}
-// \[
-// alpha : D \to D^a,
-// \]
-// which maps a concrete value from the domain $D$ to an element in a finite or simpler abstract domain $D^a$.
+In abstract interpretation, we have the _abstraction function_
+$
+alpha : D -> D^a,
+$
+which maps a concrete value from the domain $D$ to an element in a finite or simpler abstract domain $D^a$.
 
-// \begin{example}[Odd/Even]
-//     The \texttt{odd/even} or parity abstraction is defined as:
-// \[
-// alpha_{\texttt{parity}}(x in \mathbb{Z}) =
-// \begin{cases}
-// \texttt{even} & \text{if } x \bmod 2 = 0 \\
-// \texttt{odd}  & \text{if } x \bmod 2 = 1
-// \end{cases}
-// \]
-// Even though $\mathbb{Z}$ is infinite, this abstraction maps all integers to a finite set $ {\texttt{odd}, \texttt{even} }$.
-// \end{example}
+#example[Odd/Even][
+The `odd/even` or parity abstraction is defined as:
+$
+alpha_("parity")(x in ZZ) = cases(
+  "even" & "if" x mod 2 = 0,
+  "odd"  & "if" x mod 2 = 1
+)
+$
+Even though $ZZ$ is infinite, this abstraction maps all integers to a finite set ${"odd", "even"}$.
+]
 
-// \subsubsection{Transformer Functions} Once we have values in the abstract domains, we often define an \emph{abstract transformer function}
-// \[
-// f^a : D^a \to D^a,
-// \]
-// for each operation \(f\) to reason about its behavior on abstract values.
+==== Transformer Functions
 
+Once we have values in the abstract domains, we often define an _abstract transformer function_
+$
+f^a : D^a -> D^a,
+$
+for each operation $f$ to reason about its behavior on abstract values.
 
-// \begin{example}
-//  Consider the function $f(x) = x + 1$. We define the abstract transformers $f^a$ for different abstract domains $D^a$:
+#example[
+Consider the function $f(x) = x + 1$. We define the abstract transformers $f^a$ for different abstract domains $D^a$:
 
-//  \begin{itemize}
-// \item \textbf{Odd/Even abstraction}:  $D^a =  {\texttt{odd}, \texttt{even} }$. Then:
-// \[
-// f^a(\texttt{odd}) = \texttt{even}, quad
-// f^a(\texttt{even}) = \texttt{odd}
-// \]
+- *Odd/Even abstraction*: $D^a = {"odd", "even"}$. Then:
+  $ f^a ("odd") = "even", quad f^a ("even") = "odd" $
 
-// \item \textbf{Sign abstraction}: $D^a =  {\texttt{neg}, \texttt{zero}, \texttt{pos} }$. Then:
-// \[
-// f^a(\texttt{neg}) =  {\texttt{neg}, \texttt{zero} }, quad
-// f^a(\texttt{zero}) = \texttt{pos}, quad
-// f^a(\texttt{pos}) = \texttt{pos}
-// \]
+- *Sign abstraction*: $D^a = {"neg", "zero", "pos"}$. Then:
+  $ f^a ("neg") = {"neg", "zero"}, quad f^a ("zero") = "pos", quad f^a ("pos") = "pos" $
 
+- *Interval abstraction*: $D^a = {[a, b] mid a <= b in ZZ union {-infinity, +infinity}}$. Then:
+  $ f^a ([a, b]) = [a+1, b+1] $
 
-// \item \textbf{Interval abstraction}: $D^a =  { [a, b] \mid a <=q b in \mathbb{Z} \cup  {- in fty, + in fty }  }$. Then:
-// \[
-// f^a([a, b]) = [a+1, b+1]
-// \]
+Notice that the input and output of the abstract transformer $f^a$ are both in the abstract domain $D^a$ (e.g., odd/even, sign, or interval).
+]
 
-//  \end{itemize}
+== Abstract Domains <sec:abstract-domains>
 
-//  Notice that the input and output of the abstract transformer $f^a$ are both in the abstract domain $D^a$ (e.g., odd/even, sign, or interval).
-// \end{example}
+We now introduce several abstract domains that are commonly used in NNV. Each domain has its own abstract transformer functions to compute the bounds of neurons.
 
-
-//  == Abstract Domains <sec:abstract-domains}
-
-// We now introduce several abstract domains that are commonly used in NNV. Each domain has its own abstract transformer functions  to compute the bounds of neurons.
-
-// Note that the input to the transformer functions (@sec:transformer-functions) are the abstract values and the output is also an abstract value.  For example, for interval transformers, the input is an interval $[l, u]$ and the output is also an interval $[l', u']$. Similarly for zonotope transformers, the input is a zonotope defined by center and generators, and the output is also a zonotope.
+Note that the input to the transformer functions (@sec:transformer-functions) are the abstract values and the output is also an abstract value. For example, for interval transformers, the input is an interval $[l, u]$ and the output is also an interval $[l', u']$. Similarly for zonotope transformers, the input is a zonotope defined by center and generators, and the output is also a zonotope.
 == Interval <sec:interval-abstraction>
 
-// Interval is a very simple abstraction which represents the possible values of a variable as an interval $[l, u]$, where $l$ is the lower bound and $u$ is the upper bound.
-// For example, the set of values $ {-2.5, -8.2, -10.7, 2, 4.7, 5.1 }$ can be represented as $[-10.7, 5.1]$.
+Interval is a very simple abstraction which represents the possible values of a variable as an interval $[l, u]$, where $l$ is the lower bound and $u$ is the upper bound.
+For example, the set of values ${ -2.5, -8.2, -10.7, 2, 4.7, 5.1 }$ can be represented as $[-10.7, 5.1]$.
 
-// \paragraph{Definition}
-// The interval for one variable \(v\) is defined as:
-// \[
-// v in [l, u] =  {v in \mathbb{R} \mid l <= v <= u }
-// \]
+*Definition.*
+The interval for one variable $v$ is defined as:
+$ v in [l, u] = { v in RR | l <= v <= u } $
 
+For $n$ variables, the interval becomes a box (like a rectangle in 2D, a cuboid in 3D, or a hyperrectangle in $n$D):
+$ [v_1, v_2, dots, v_n] in [l_1, u_1] times [l_2, u_2] times dots times [l_n, u_n] $
 
-// For $n$ variables, the interval becomes a box (like a rectangle in 2D, a cupoid in 3D, or a hyperrectangle in $n$D):
-// \[
-// [v_1, v_2, \ldots, v_n] in [l_1, u_1] \times [l_2, u_2] \times dots \times [l_n, u_n]
-// \]
+=== Affine Transformer <sec:interval-affine-transformer>
 
+For the linear or affine function $f$ in @sec:affine
+$ f(v_1, v_2, ..., v_n) = sum_(i=1)^n w_i v_i + b $
+where $w_i$ is the weight for the input $v_i$, $n$ is the number of output nodes from the previous layer and $b$ is the bias term, the abstract transformer $f^a$ is:
+$
+f^a ([l_1, u_1], ..., [l_n, u_n]) = [f^a_L, f^a_U] =
+[b + sum_(i=1)^n min(w_i l_i, w_i u_i),; b + sum_(i=1)^n max(w_i l_i, w_i u_i)].
+$
 
-// \subsubsection{Affine Transformer <sec:interval-affine-transformer}
+#example[Affine Transformer][
+Consider the network in @fig:dnn with inputs $x_1 in [1, 2]$ and $x_2 in [-1, 3]$. The affine function for the neuron $x_3$ is:
+$ f(x_1, x_2) = -0.5 x_1 + 0.5 x_2 + 1.0 $
 
-// For the linear or affine function \(f\) in~@sec:affine
-// \[f(v_1, v_2, ...,v_n) = \sum_{i=1}^{n} w_i v_i + b\]
-// where $w_i$ is the weight for the input \(v_i\), $n$ is the number of output nodes from the previous layer and \(b\) is the bias term, the abstract transformer \(f^a\) is:
-// \[
-// f^{a}([l_1, u_1],..., [l_n, u_n]) = [f^a_L, f^a_U] =
-// \Bigg[b + \sum_{i=1}^{n}\big(\min(w_il_i, w_iu_i\big),\; b+ \sum_{i=1}^{n}\big(\max(w_il_i + w_iu_i\big)\Bigg].
-// \]
+Then the interval for $x_3$ can be computed as:
+$
+f^a ([1,2],[-1,3]) &= [ 1 + min(-0.5 dot 1, -0.5 dot 2) + min(0.5 dot (-1), 0.5 dot 3), \
+& quad 1 + max(-0.5 dot 1, -0.5 dot 2) + max(0.5 dot (-1), 0.5 dot 3)] \
+&= [1 - 1.0 - 0.5, 1 - 0.5 + 1.5] \
+&= [-0.5, 2.0]
+$
+] <ex:transformer-affine1>
 
+=== ReLU Transformer
 
+For $"relu"(x) = max(0, x)$, the abstract transformer is defined as:
+$ "relu"^a ([l, u]) = ["relu"(l), "relu"(u)] = [max(0, l), max(0, u)] $
 
-// \begin{example <ex:transformer-affine1}
-
-// \begin{figure}
-// \centering
-// \mydnn{1}
-// \caption{\label{fig:dnn-abs}A simple network (similar to~@fig:dnn).}
-// \end{figure}
-
-// Consider the network in~@fig:dnn-abs with inputs \(x_1 in [1, 2]\) and \(x_2 in [-1, 3]\). The affine function for the neuron \(x_3\) is:
-// \[
-// f(x_1,x_2) = -0.5\,x_1 + 0.5\,x_2 + 1.0
-// \]
-
-// Then the interval for \(x_3\) can be computed as:
-// \small{
-// \[
-// \begin{aligned}
-// f^a([1,2],[-1,3]) = & \Bigg[ 1 + \min(-0.5 dot 1,~ -0.5 dot 2) + \min(0.5 dot -1,~ 0.5 dot 3),\\
-// & ~~1 + \max(-0.5 dot 1,~ -0.5 dot 2) + \max(0.5 dot -1,~ 0.5 dot 3)\Bigg]\\
-// = & [1 - 1.0 - 0.5,~ 1 - 0.5 + 1.5]\\
-// = & [-0.5,~ 2.0]
-// \end{aligned}
-// \]
-// }
-// \end{example}
-// \subsubsection{ReLU Transformer}
-// For \(\myrelu(x) = \max(0, x)\), the abstract transformer is defined as:
-
-// \[
-// \myrelu^a([l, u]) = [ \myrelu(l), \myrelu(u)] = [\max(0, l), \max(0, u)]
-// \]
-
-// This is equivalent to three cases shown in @fig:relu-interval-cases:
-// \begin{enumerate}
-// \item If $u < 0$, then $\myrelu^a([l, u]) = [0, 0]$.  If inputs are negative, the output is also negative.
-// \item If $l >= 0$, then $\myrelu^a([l, u]) = [l, u]$. If inputs are positive, the output is exactly the same.
-// \item If $l < 0 < u$, then $\myrelu^a([l, u]) = [0, u]$. If inputs are mixed, the output is approximated to $[0, u]$
-
-// \end{enumerate}
-// \begin{figure}
-// \centering
-// \begin{tikzpicture}[scale=1.2,>=stealth]
-
-// % Common settings
-// \tikzstyle{axis}=[->, thick]
-// \tikzstyle{relu}=[very thick, black]
-// \tikzstyle{rangebox}=[fill=blue!15, draw=blue!70!black, thick]
-// \tikzstyle{outputbox}=[fill=orange!20, draw=orange!70!black, thick]
-
-// %% --- (1) Inactive case: [l,u] below 0 ---
-// \begin{scope}[shift={(-4,0)}]
-//   \draw[axis] (-1.5,0) -- (2.0,0) node[right] {$x$};
-//   \draw[axis] (0,-0.3) -- (0,1.5) node[above] {$y$};
-
-//   % ReLU curve
-//   \draw[relu] (-1.5,0) -- (0,0) -- (1.8,1.3);
-
-//   % Interval below zero
-//   \fill[blue!10] (-1.0,0) rectangle (-0.3,0.2);
-//   \draw[blue!80!black,thick] (-1.0,0) rectangle (-0.3,0.2);
-//   \node[blue!80!black] at (-0.65,-0.3) {\scriptsize input $[l,u]$};
-
-//   % Output collapsed to zero
-//   \fill[orange!20] (1.0,0.0) rectangle (1.7,0.2);
-//   \draw[orange!70!black,thick] (1.0,0.0) rectangle (1.7,0.2);
-//   \node[orange!70!black] at (1.35,-0.3) {\scriptsize output $[0,0]$};
-
-
-// \end{scope}
-
-
-// %% --- (2) Active case: [l,u] above 0 ---
-// \begin{scope}
-//   \draw[axis] (-1.5,0) -- (2.0,0) node[right] {$x$};
-//   \draw[axis] (0,-0.3) -- (0,1.5) node[above] {$y$};
-//   \draw[relu] (-1.5,0) -- (0,0) -- (1.8,1.3);
-
-//   % Input interval (above zero)
-//   \fill[blue!10] (0.5,0.0) rectangle (1.5,0.2);
-//   \draw[blue!80!black,thick] (0.5,0.0) rectangle (1.5,0.2);
-//   \node[blue!80!black] at (1.0,-0.3) {\scriptsize input $[l,u]$};
-
-//   % Output interval (same)
-//   \fill[orange!20] (0.5,0.5) rectangle (1.5,0.7);
-//   \draw[orange!70!black,thick] (0.5,0.5) rectangle (1.5,0.7);
-//   \node[orange!70!black] at (1.0,0.9) {\scriptsize output $[l,u]$};
-
-
-// \end{scope}
-
-
-// %% --- (3) Unstable case: [l,u] crosses 0 ---
-// \begin{scope}[shift={(4,0)}]
-//   \draw[axis] (-1.5,0) -- (2.0,0) node[right] {$x$};
-//   \draw[axis] (0,-0.3) -- (0,1.5) node[above] {$y$};
-//   \draw[relu] (-1.5,0) -- (0,0) -- (1.8,1.3);
-
-//   % Input interval crossing zero
-//   \fill[blue!10] (-0.8,0.0) rectangle (0.8,0.2);
-//   \draw[blue!80!black,thick] (-0.8,0.0) rectangle (0.8,0.2);
-//   \node[blue!80!black] at (0,-0.3) {\scriptsize input $[l,u]$};
-
-//   % Output interval [0,u]
-//   \fill[orange!20] (0,0.0) rectangle (0.8,0.7);
-//   \draw[orange!70!black,thick] (0,0.0) rectangle (0.8,0.7);
-//   \node[orange!70!black] at (0.4,0.9) {\scriptsize output $[0,u]$};
-
-// \end{scope}
-
-// \end{tikzpicture}
-// \caption{
-// ReLU transformer for intervals.
-// Left: all inputs negative $\Rightarrow [0,0]$.
-// Middle: all inputs positive $\Rightarrow$ unchanged.
-// Right: interval crosses zero $\Rightarrow [0,u]$.
-// The ReLU function clamps negative parts to zero while preserving positive regions.
-// }
-// \label{fig:relu-interval-cases}
-// \end{figure}
+This is equivalent to three cases shown in @fig:relu-interval-cases:
++ If $u < 0$, then $"relu"^a ([l, u]) = [0, 0]$. If inputs are negative, the output is also negative.
++ If $l >= 0$, then $"relu"^a ([l, u]) = [l, u]$. If inputs are positive, the output is exactly the same.
++ If $l < 0 < u$, then $"relu"^a ([l, u]) = [0, u]$. If inputs are mixed, the output is approximated to $[0, u]$.
 
 #import "@preview/cetz:0.3.4"
 
@@ -3824,69 +3592,55 @@ Our abstract domains, e.g., interval, zonotope, and polytopes, are all geometric
   ]
 ) <fig:relu-interval-cases>
 
-// \begin{example}
-// For~@ex:transformer-affine1, applying ReLU$^a$ to neuron $x_3$ gives:
+#example[ReLU Interval][
+For @ex:transformer-affine1, applying $"relu"^a$ to neuron $x_3$ gives:
+$ "relu"^a ([-0.5, 2.0]) = ["relu"(-0.5), "relu"(2.0)] = [0, 2.0]. $
+]
 
-// \[
-// \myrelu^a([-0.5, 2.0]) = [\myrelu(-0.5), \myrelu(2.0)]
-// = [0, 2.0].
-// \]
-// \end{example}
+#problem[Interval Abstraction][
+Apply interval abstraction to the network in @fig:dnn with inputs $x_1 in [1, 2]$ and $x_2 in [-1, 3]$. Compute the bounds for all neurons. Clearly indicate the steps (e.g., results after affine and ReLU transformers).
+] <prob:int-abs>
 
-// \begin{problem <prob:int-abs}
-//   Apply interval abstraction to the network in~@fig:dnn-abs with inputs \(x_1 in [1, 2]\) and \(x_2 in [-1, 3]\). Compute the bounds for all neurons.  Clearly indicate the steps (e.g., results after affine and ReLU transformers).
-// \end{problem}
+=== Efficiency and Precision
 
-// \subsubsection{Efficiency and Precision}
-// Intervals is very efficient and scales  well to large networks. The affine transformer only requires a linear number of multiplications and min/max operations, and ReLU reduces to only three matching cases.
-// However, the cost of efficiency is \emph{precision}.
+Interval is very efficient and scales well to large networks. The affine transformer only requires a linear number of multiplications and min/max operations, and ReLU reduces to only three matching cases.
+However, the cost of efficiency is _precision_.
 
-// \begin{example <ex:interval-overapproximation}
+#example[Interval Overapproximation][
+Suppose we have $v_1 in [0, 1]$, $v_2 = -v_1$, and $z = v_1 + v_2$.
+The concrete value of $z$ would always be 0, but interval abstraction gives $z in [-1, 1]$, which is a very loose over-approximation.
+Moreover, if we apply ReLU, then the output would be $"relu"(z) = "relu"(0) = 0$, but the interval gives $"relu"^a ([-1, 1]) = [0, 1]$, which is again a loose over-approximation.
+] <ex:interval-overapproximation>
 
-// Suppose we have $v_1 in [0, 1]$, $v_2 = -v_1$, and $z = v_1 + v_2$.
-// The concrete value of $z$ would be always 0, but interval abstraction gives $z in [-1, 1]$, which is a very loose over-approximation.
-// Moreover, if we apply ReLU, then the output would be $\myrelu(z) = \myrelu(0) = 0$, but the interval gives $\myrelu^a([-1, 1]) = [0, 1]$, which is again a loose over-approximation.
-// \end{example}
+Interval overapproximation grows quickly as we propagate through many layers of a large network, i.e., it keeps "inflating" the bounds, leading to a loose approximation of the output and becoming unable to verify valid properties. For example, $z <= 0$ is a valid property for @ex:interval-overapproximation, but the interval abstraction gives $z in [0, 1]$, which is not tight (precise) enough to show this property.
 
-// Interval overapproximation grows quickly as we propagate through many layers of a large network, i.e., it keeps ``inflating'' the bounds, leading to a loose approximation of the output and becoming unable to verify valid properties.  For example, $z <=q 0$ is a valid property for~@ex:interval-overapproximation, but the interval abstractions gives $z in [0,1]$, which is not tight (precise) enough to show this property.
+Nonetheless, interval domain remains popular due to its simplicity and efficiency. In some cases, despite being imprecise, it can still successfully verify properties of neural networks, e.g., for @ex:interval-overapproximation if we want to verify that $z <= 2$, then the interval $z in [0, 1]$ would suffice.
 
-// Nonetheless, interval domain remains popular due to its simplicity and efficiency. In some cases, despite being imprecise, it can still successfully verify properties of neural networks, e.g., for~@ex:interval-overapproximation if we want to verify that $z <= 2$, then the interval $zin [0, 1]$ would suffice.
-
-// \begin{problem <prob:correct-abs}
-//     Suppose $y$ can take values from 0 to 3. Student A computes an interval abstraction $y in [-2,4]$, while student B computes $y in [1,2]$.
-//     \begin{enumerate}
-//         \item Which student's abstraction is correct?  If both are correct, which is more precise? Explain your answer.
-//         \item Using the correct abstraction (if both are correct, use the more precise one), can we use it verify the property $y <=q 3$? How about $y <= 5$? Explain your answers.
-//     \end{enumerate}
-// \end{problem}
+#problem[Correct Abstraction][
+Suppose $y$ can take values from 0 to 3. Student A computes an interval abstraction $y in [-2, 4]$, while student B computes $y in [1, 2]$.
++ Which student's abstraction is correct? If both are correct, which is more precise? Explain your answer.
++ Using the correct abstraction (if both are correct, use the more precise one), can we use it to verify the property $y <= 3$? How about $y <= 5$? Explain your answers.
+] <prob:correct-abs>
 
 
 == Zonotope <sec:zonotope-abstraction>
 
 
-// Interval abstraction (@sec:interval-abstraction) treats each variable independently. For example, if \(x_1 in [1,2]\) and \(x_2 in [3,4]\), interval assumes any combination of \(x_1\) and \(x_2\) is possible. But variables can correlate: e.g., when \(x_1\) increases, \(x_2\) also increases\tvn{but this doesn't happens in neural networks, so why do we need zonotope? does it help with ReLU abstraction?}.  Zonotopes can capture such correlations and therefore  provide a tighter abstraction.
+Interval abstraction (@sec:interval-abstraction) treats each variable independently. For example, if $x_1 in [1, 2]$ and $x_2 in [3, 4]$, interval assumes any combination of $x_1$ and $x_2$ is possible. But variables can correlate: e.g., when $x_1$ increases, $x_2$ also increases. Zonotopes can capture such correlations and therefore provide a tighter abstraction.
 
+*Definition.*
 
+A zonotope is often represented using a generator-based representation as illustrated in @sec:geometric-representations.
+It is built by starting from a center point and then stretching along several directions defined by generator vectors.
+Each generator can move forward or backward within a certain range, and together these movements sweep out the entire shape.
+Zonotope generalizes the idea of an interval, which itself is a zonotope (e.g., see @fig:interval-zonotope).
 
-// \paragraph{Definition}
-
-// A zonotope is often represented using a generator-based representation as illustrated in~@sec:geometric-representations.
-// It is built by starting from a center point and then stretching along several directions defined by generator vectors.
-// Each generator can move forward or backward within a certain range, and together these movements sweep out the entire shape.
-// Zonotope generalizes the idea of an interval, which itself is a zonotope (e.g., see @ex:interval-zonotope).
-
-// Formally, a \textbf{zonotope} \(\mathcal{Z}\) in \(\mathbb{R}^n\) is defined as:
-// \[
-// % \mathcal{Z} = <=ft { c + \sum_{i=1}^{m} \epsilon_i g_i \mid \epsilon_i in [-1, 1] \right }
-// \mathcal{Z} = <=ft { c + \sum_{i=1}^{n} \epsilon_i g_i \mid \epsilon_i in [-1, 1] \right }
-// \]
-// where:
-// \begin{itemize}
-// \item \(c in \mathbb{R}^n\) is the \textit{center} (analogous to the midpoint of an interval),
-// \item \(g_i in \mathbb{R}^n\) are \textit{generator vectors} (directions of variability), and
-// \item \(\epsilon_i in [-1,1]\) are independent coefficients that determine how much we move along each generator.
-// For example, \(\epsilon_i = -1\) moves in the negative direction, \(\epsilon_i = 0\) stays at the center, and \(\epsilon_i = +1\) moves in the positive direction.
-// \end{itemize}
+Formally, a *zonotope* $cal(Z)$ in $RR^n$ is defined as:
+$ cal(Z) = { c + sum_(i=1)^n epsilon_i g_i | epsilon_i in [-1, 1] } $
+where:
+- $c in RR^n$ is the _center_ (analogous to the midpoint of an interval),
+- $g_i in RR^n$ are _generator vectors_ (directions of variability), and
+- $epsilon_i in [-1, 1]$ are independent coefficients that determine how much we move along each generator. For example, $epsilon_i = -1$ moves in the negative direction, $epsilon_i = 0$ stays at the center, and $epsilon_i = +1$ moves in the positive direction.
 
 #import "@preview/cetz:0.3.4"
 
@@ -3948,114 +3702,47 @@ Our abstract domains, e.g., interval, zonotope, and polytopes, are all geometric
   ]
 ) <fig:zonotope-correlated-generators>
 
-// \begin{figure}
-// \centering
-// \begin{tikzpicture}[scale=1.0,>=stealth]
+#example[Zonotope Parallelogram][
+A common zonotope in 2D is a parallelogram. It can be defined by its center point and two generator vectors that define its sides. For instance, the parallelogram on the right side of @fig:zonotope-correlated-generators has the center $c = (1, 1)$ and the generators $g_1 = (1, 0.25)$ and $g_2 = (0.5, 1)$. This zonotope represents all points that can be reached by moving along these generators within the range $[-1, 1]$:
+$ cal(Z) = { (1, 1) + epsilon_1 (1, 0.25) + epsilon_2 (0.5, 1) | epsilon_1, epsilon_2 in [-1, 1] } $
+This zonotope includes points like:
+$ (1, 1) + (-1)(1, 0.25) + (1)(0.5, 1) = (-1, 2.5) $
+$ (1, 1) + (1)(1, 0.25) + (-1)(0.5, 1) = (3, -0.5) $
+]
 
-// % == Left: independent generators ===
-// \begin{scope}[shift={(-3.8,0)}]
-//   \fill[blue!10] (0,0) -- (2,0) -- (2,1.5) -- (0,1.5) -- cycle;
-//   \draw[blue!70!black,thick] (0,0) rectangle (2,1.5);
-//   \coordinate (c) at (1,0.75);
-//   \filldraw[blue!80!black] (c) circle (1.5pt);
-//   \draw[->,blue!70!black,thick] (c)--++(1,0) node[right]{\small $g_1=(1,0)$};
-//   \draw[->,blue!70!black,thick] (c)--++(0,0.75) node[above]{\small $g_2=(0,1)$};
-//   \node at (1,-0.5) {\small Independent $\Rightarrow$ Rectangle};
-// \end{scope}
+#example[Correlated vs Independent Generators][
+In @fig:zonotope-correlated-generators the parallelogram zonotope on the right captures points with correlated $x_1$ and $x_2$ values, e.g., increasing $x_1$ by moving along $g_1$ also increases $x_2$ due to the non-zero second component of $g_1$.
+In contrast, the rectangle zonotope on the left, which represents an interval abstraction, has independent generators, i.e., changing $x_1$ does not affect $x_2$, and therefore cannot capture the correlation.
+]
 
-// % == Right: correlated generators ===
-// \begin{scope}[shift={(3.8,0)}]
-//   \fill[orange!15] (0,0) -- (2,0.5) -- (1,2.0) -- (-1,1.5) -- cycle;
-//   \draw[orange!80!black,thick] (0,0)--(2,0.5)--(1,2.0)--(-1,1.5)--cycle;
-//   \coordinate (c2) at (0.5,1.0);
-//   \filldraw[orange!80!black] (c2) circle (1.5pt);
-//   \draw[->,orange!80!black,thick] (c2)--++(1,0.25) node[right]{\small $g_1=(1,0.25)$};
-//   \draw[->,orange!80!black,thick] (c2)--++(0.5,1.0) node[above right]{\small $g_2=(0.5,1)$};
-//   \node at (0.5,-0.5) {\small Correlated $\Rightarrow$ Parallelogram};
-// \end{scope}
+=== Computing Bounds of a Zonotope <sec:zonotope-bounds>
 
-// \end{tikzpicture}
-// \caption{
-// Left: independent generators produce an axis-aligned rectangle (interval abstraction).
-// Right: correlated generators tilt the shape into a parallelogram, capturing dependency between $x_1$ and $x_2$. <fig:zonotope-correlated-generators}
-// \end{figure}
+In NNV, we often need to compute the bounds of each variable represented by a zonotope. This allows us to determine stable neurons, which in turn helps optimize the verification process.
 
+For each coordinate (dimension) of the zonotope, we compute its lower and upper bounds as follows:
+$
+l_j = min_(epsilon_i in [-1,1]) (c_j + sum_(i=1)^n epsilon_i g_(i,j)), quad
+u_j = max_(epsilon_i in [-1,1]) (c_j + sum_(i=1)^n epsilon_i g_(i,j)),
+$
+where $c_j$ is the $j$-th component of the center and $g_(i,j)$ is the $j$-th component of the $i$-th generator.
 
-// \begin{example}
-//     A common zonotope in 2D is a parallelogram. It can be defined by its center point and two generator vectors that define its sides. For instance, parallelogram on the right side of~@fig:zonotope-correlated-generators has the center \(c = (1, 1)\) and the generators \(g_1 = (1, 0.25)\) and \(g_2 = (0.5, 1)\). This zonotope represents all points that can be reached by moving along these generators within the range \([-1, 1]\):
-//   \[
-//     \mathcal{Z} = <=ft { (1, 1) + \epsilon_1 (1, 0.25) + \epsilon_2 (0.5, 1) \mid \epsilon_1, \epsilon_2 in [-1, 1] \right }
-//   \]
-//   This zonotope includes points like:
-//     \[
-//       (1, 1) + (-1)(1, 0.25) + (1)(0.5, 1) = (-1, 2.5)
-//     \]
-//     \[
-//       (1, 1) + (1)(1, 0.25) + (-1)(0.5, 1) = (3, -0.5)
-//     \]
-// \end{example}
+*A simpler way.*
+Since each $epsilon_i in [-1, 1]$, each term $epsilon_i g_(i,j)$ can vary between $-|g_(i,j)|$ and $+|g_(i,j)|$.
+Hence:
+$ l_j = c_j - sum_(i=1)^n |g_(i,j)|, quad u_j = c_j + sum_(i=1)^n |g_(i,j)|. $
 
+*Example (1D).* Given the interval zonotope:
+$ x = 3 + epsilon_1 (2), quad epsilon_1 in [-1, 1], $
+the bounds are computed as:
+$ [l, u] = [3 - |2|, 3 + |2|] = [1, 5]. $
 
-// \begin{example}
-// In~@fig:zonotope-correlated-generators the parallelogram zonotope on the right of captures   points with correlated \(x_1\) and \(x_2\) values, e.g., increasing \(x_1\) by moving along \(g_1\) also increases \(x_2\) due to the non-zero second component of \(g_1\).
-// In contrast, the rectangle zonotope on the left, which represents an interval abstraction, has independent generators, i.e., changing \(x_1\) does not affect \(x_2\), and therefore cannot capture the correlation.
-// \end{example}
-
-// \subsection{Computing Bounds of a Zonotope <sec:zonotope-bounds}
-// In NNV, we often need to compute the bounds of each variable represented by a zonotope. This allows us to determine stable neurons, which in turms helps optimize the verification process.
-
-// For each coordinate (dimension) of the zonotope, we compute its lower and upper bounds as follows:
-// \[
-// % l_j = \min_{\epsilon_i in [-1,1]} <=ft(c_j + \sum_{i=1}^{m} \epsilon_i g_{i,j}\right),
-// l_j = \min_{\epsilon_i in [-1,1]} <=ft(c_j + \sum_{i=1}^{n} \epsilon_i g_{i,j}\right),
-// quad
-// % u_j = \max_{\epsilon_i in [-1,1]} <=ft(c_j + \sum_{i=1}^{m} \epsilon_i g_{i,j}\right),
-// u_j = \max_{\epsilon_i in [-1,1]} <=ft(c_j + \sum_{i=1}^{n} \epsilon_i g_{i,j}\right),
-// \]
-// where \(c_j\) is the \(j\)-th component of the center and \(g_{i,j}\) is the \(j\)-th component of the \(i\)-th generator.
-
-// \paragraph{A simpler way.}
-// Since each \(\epsilon_i in [-1,1]\), each term \(\epsilon_i g_{i,j}\) can vary between \(-|g_{i,j}|\) and \(+|g_{i,j}|\).
-// Hence:
-// \[
-// \boxed{
-// % l_j = c_j - \sum_{i=1}^{m} |g_{i,j}|, \qquad
-// % u_j = c_j + \sum_{i=1}^{m} |g_{i,j}|.
-// l_j = c_j - \sum_{i=1}^{n} |g_{i,j}|, \qquad
-// u_j = c_j + \sum_{i=1}^{n} |g_{i,j}|.
-// }
-// \]
-
-// \paragraph{Example (1D).} Given the interval zonotope:
-// \[
-// x = 3 + \epsilon_1(2), quad \epsilon_1 in [-1,1],
-// \]
-// the bounds are computed as:
-// \[
-// [l, u] = [3 - |2|, 3 + |2|] = [1, 5].
-// \]
-
-// \paragraph{Example (2D).}
-// \[
-// \mathcal{Z} =
-// <=ft {
-// \begin{bmatrix} 1 \\ 2 \end{bmatrix}
-// + \epsilon_1
-// \begin{bmatrix} 0.5 \\ 1.0 \end{bmatrix}
-// + \epsilon_2
-// \begin{bmatrix} -0.3 \\ 0.2 \end{bmatrix},
-// quad \epsilon_1, \epsilon_2 in [-1,1]
-// \right }.
-// \]
-// Then for each coordinate:
-// \[
-// \begin{aligned}
-// l_1 &= 1 - (|0.5| + |{-0.3}|) = 0.2, &
-// u_1 &= 1 + (|0.5| + |{-0.3}|) = 1.2,\\
-// l_2 &= 2 - (|1.0| + |0.2|) = 0.8, &
-// u_2 &= 2 + (|1.0| + |0.2|) = 3.2.
-// \end{aligned}
-// \]
+*Example (2D).*
+$ cal(Z) = { vec(1, 2) + epsilon_1 vec(0.5, 1.0) + epsilon_2 vec(-0.3, 0.2), quad epsilon_1, epsilon_2 in [-1, 1] }. $
+Then for each coordinate:
+$
+l_1 &= 1 - (|0.5| + |-0.3|) = 0.2, quad & u_1 &= 1 + (|0.5| + |-0.3|) = 1.2, \
+l_2 &= 2 - (|1.0| + |0.2|) = 0.8, quad & u_2 &= 2 + (|1.0| + |0.2|) = 3.2.
+$
 
 
 
@@ -4140,324 +3827,145 @@ Our abstract domains, e.g., interval, zonotope, and polytopes, are all geometric
 // % \label{fig:zonotope-vs-box}
 // % \end{figure}
 
-// \subsubsection{Affine Transformer}
-
-// Recall that the affine function \(f\) in~@sec:affine is
-// \[
-// f(v_1, v_2, \ldots, v_n) = \sum_{i=1}^{n} w_i v_i + b, 
-// \]
-// where \(w_i\) is the weight associated with input \(v_i\), \(n\) is the number of inputs, and \(b\) is the bias term.
-
-
-// More formally, given a zonotope
-// \[
-// % \mathcal{Z} = <=ft { c + \sum_{j=1}^{m} \epsilon_j g_j \mid \epsilon_j in [-1, 1] \right },
-// \mathcal{Z} = <=ft { c + \sum_{j=1}^{m} \epsilon_j g_j \mid \epsilon_j in [-1, 1] \right },
-// \]
-
-// % For simplicity, we use notation $v = c + \sum_{j=1}^{m} \epsilon_j g_j$ to represent a zonotope.
-
-// The abstract transformer \(f^a\) for the affine function \(f\):
-// \begin{equation}
-//     \begin{aligned}
-//     f^a(v_1, v_2, \ldots, v_n) &= \sum_{i=1}^{n} w_i v_i + b \\
-//     &= \sum_{i=1}^{n} w_i \underbrace{<=ft(c_i + \sum_{j=1}^{m} \epsilon_{j} g_{ij}\right)}_{v_i} + b \\
-//     &= \sum_{i=1}^{n} w_i c_i + \sum_{i=1}^{n} w_i \sum_{j=1}^{m} \epsilon_{j} g_{ij}  + b\\
-//     &= \underbrace{<=ft(\sum_{i=1}^{n} w_i c_i + b\right)}_{\text{new center}} + \sum_{j=1}^{m} \epsilon_{j} \underbrace{<=ft(\sum_{i=1}^{n} w_i g_{ij}\right)}_{\text{new generators}}
-//     \end{aligned}
-// \end{equation}
-
-// % \(f^a\) 
-// % \[
-// % % f^a(\mathcal{Z}) = <=ft { f(c) + \sum_{j=1}^{m} \epsilon_j f(g_j) \mid \epsilon_j in [-1, 1] \right }
-// % f^a(\mathcal{Z}) = <=ft { f(c) + \sum_{j=1}^{n} \epsilon_j f(g_j) \mid \epsilon_j in [-1, 1] \right }
-// % \]
-
-// That is, the new zonotope has:
-// \begin{itemize}
-//   \item \textbf{center:} \(f^c(c) = \sum_{i=1}^{n} w_i c_i + b\)
-//   \item \textbf{generators:} each generator $g_j$, \(f^g(g_j) = \sum_{i=1}^{n} w_i g_{ij}\)
-// \end{itemize}
-
-
-// Applying an affine transformation to a zonotope transforms its center by the same affine rule (weights and bias) and transforms each generator by the linear part (weights only).
-// In other words, affine operations \emph{preserve} the structure of zonotopes exactly: no approximation needed.  % Imagine a tilted box in space, then an affine transformation just stretches, rotates, and shifts it---the result is still a tilted box.
-
-// % \(f^a\) 
-// \[
-// % f^a(\mathcal{Z}) = <=ft { f(c) + \sum_{j=1}^{m} \epsilon_j f(g_j) \mid \epsilon_j in [-1, 1] \right }
-// f^a(\mathcal{Z}) = <=ft { f^c(c) + \sum_{j=1}^{m} \epsilon_j f^g(g_j) \mid \epsilon_j in [-1, 1] \right }
-// \]
-
-// % For the affine function \(f\) in~@sec:affine
-// % \[
-// % f(x) = Wx + b
-// % \]
-// % where \(W\) is a weight matrix and \(b\) is a bias vector. Given an input zonotope \(\mathcal{Z} = (c, G)\) where \(G = [g_1, g_2, \ldots, g_m]\) is the generator matrix, the abstract transformer \(f^a\) forn zonotopes is:
-// % \[
-// % f^a(\mathcal{Z}) = (Wc + b, WG)
-// % \]
-// % The new center becomes \(Wc + b\) and the new generator matrix becomes \(WG\).
-
-// % Affine operations \emph{preserve} the structure of zonotopes exactly: no approximation needed.
-// % Imagine a tilted box in space, then an affine transformation just stretches, rotates, and shifts it---the result is still a tilted box.
-
-// \begin{example <ex:zonotope_linear_example}
-// Consider the network in~@fig:dnn-abs with inputs \(x_1 in [1, 2]\) and \(x_2 in [-1, 3]\).
-// The affine function for neuron \(x_3\) is:
-// \[
-// f(x_1, x_2) = -0.5\,x_1 + 0.5\,x_2 + 1.0
-// \]
-// We want to compute the bounds for \(x_3\) using zonotope abstraction.
-// %\mathcal{Z} = <=ft { c + \sum_{i=1}^{m} \epsilon_i g_i \mid \epsilon_i in [-1, 1] \right }
-// \paragraph{Represent the input as a zonotope}
-// % We represent the input intervals \(x_1 in [1, 2]\) and \(x_2 in [-1, 3]\) as a zonotope $ { c + \sum_{i=1}^{m} \epsilon_i g_i \mid \epsilon_i in [-1,1]  }$.
-// We represent the input intervals \(x_1 in [1, 2]\) and \(x_2 in [-1, 3]\) as a zonotope $ { c + \sum_{i=1}^{n} \epsilon_i g_i \mid \epsilon_i in [-1,1]  }$.
-
-// The center $c_i$ represents the midpoint of each input interval:
-// \[
-// c_1 = \frac{1 + 2}{2} = 1.5, quad c_2 = \frac{-1 + 3}{2} = 1.0,
-// \]
-// and the generator \(g_i\) captures the half-width of each interval:
-// \[
-// g_1 = \frac{2 - 1}{2} = 0.5, quad g_2 = \frac{3 - (-1)}{2} = 2.0
-// \]
-
-
-// Thus, the input zonotope is
-// {\small
-// \[
-// \mathcal{Z} =  {(1.5, 1.0) + \epsilon_1(0.5, 0) + \epsilon_2(0, 2.0), quad \epsilon_1, \epsilon_2 in [-1,1] }.
-// \]
-// }
-
-// \paragraph{Apply the affine transformation} We apply the affine function \(f(x_1, x_2) = -0.5\,x_1 + 0.5\,x_2 + 1.0\) of neuron \(x_3\)
-// to the input zonotope $\mathcal{Z}$:
-
-// \begin{equation}
-// \small
-// \begin{aligned}
-// f^a(\mathcal{Z})
-//   &= f^c(c_1, c_2)
-//      + \epsilon_1\, f^g(g_1)
-//      + \epsilon_2\, f^g(g_2) \\[4pt]
-//   &= \big(-0.5\,c_1 + 0.5\,c_2 + 1.0\big)
-//      + \epsilon_1\big(-0.5\,g_{1x} + 0.5\,g_{1y}\big)
-//      + \epsilon_2\big(-0.5\,g_{2x} + 0.5\,g_{2y}\big) \\[4pt]
-//   &= \big(-0.5(1.5) + 0.5(1.0) + 1.0\big)
-//      + \epsilon_1\big(-0.5(0.5) + 0.5(0)\big)
-//      + \epsilon_2\big(-0.5(0) + 0.5(2.0)\big) \\[4pt]
-//   &= 0.75 - 0.25\,\epsilon_1 + 1.0\,\epsilon_2.
-// \end{aligned}
-// \end{equation}
-// Hence, the output zonotope for \(x_3\) is
-// {\small
-// \[
-//  {0.75 + \epsilon_1(-0.25) + \epsilon_2(1.0), quad \epsilon_1, \epsilon_2 in [-1,1] }.
-// \]
-// }
-// \paragraph{Compute output bounds} From the output zonotope, we can compute the lower and upperbounds for \(x_3\) by subtracting and adding the absolute values of the generator coefficients:
-
-// \begin{equation}
-//     \small
-// \begin{aligned}
-// f^a_L &= c' - (|g'_1| + |g'_2|) = 0.75 - (0.25 + 1.0) = -0.5, \\
-// f^a_U &= c' + (|g'_1| + |g'_2|) = 0.75 + (0.25 + 1.0) = 2.0.
-// \end{aligned}
-// \end{equation}
-// Thus, the output range of $x_3$ is \([-0.5, 2.0]\).
-
-
-// Note that the reason for computing the bounds from the zonotope representation is to determine \emph{stable neurons} as described in~@sec:pre-relu-bounds. If the lower bound is non-negative, ReLU will be active; if the upper bound is non-positive,  ReLU will be inactive. In these cases, ReLU can be simplified to either the identity function or zero, respectively, which helps reduce overapproximation in subsequent layers.
-
-// For this simple example, both interval (@sec:interval-affine-transformer) and zonotope abstractions yield identical bounds \([-0.5, 2.0]\).
-// The benefit of zonotopes becomes clear in deeper layers, where they preserve linear correlations that interval abstractions lose.
-// \end{example}
-
-// \begin{problem <prob:zonotope_linear_example_x4}
-//      Compute the bounds for \(x_4\) in~@fig:dnn-abs using zonotope abstraction, with inputs \(x_1 in [1, 2]\) and \(x_2 in [-1, 3]\), and the affine function for \(x_4\) is:
-// \[
-// f(x_1,x_2) = 0.5x_1 -0.5x_2 - 1
-// \]
-
-// \begin{solution}
-// \section*{Problem 5.2.3: Zonotope Abstraction for $x_4$}
-
-// Given inputs $x_1 in [1, 2]$ and $x_2 in [-1, 3]$, and the affine function:
-// \[
-// f(x_1, x_2) = 0.5x_1 - 0.5x_2 + 1
-// \]
-
-// \subsection*{Step 1: Represent Inputs as a Zonotope}
-
-// The center $c_i$ represents the midpoint of each input interval:
-// \[
-// c_1 = \frac{1 + 2}{2} = 1.5, \qquad c_2 = \frac{-1 + 3}{2} = 1.0
-// \]
-// and the generator $g_i$ captures the half-width of each interval:
-// \[
-// g_1 = \frac{2 - 1}{2} = 0.5, \qquad g_2 = \frac{3 - (-1)}{2} = 2.0
-// \]
-
-// Thus, the input zonotope is:
-// \[
-// Z = <=ft {(1.5,\ 1.0) + \epsilon_1(0.5,\ 0) + \epsilon_2(0,\ 2.0) \;\middle|\; \epsilon_1, \epsilon_2 in [-1, 1]\right }
-// \]
-
-// \subsection*{Step 2: Apply the Affine Transformation}
-
-// We apply the affine function $f(x_1, x_2) = 0.5x_1 - 0.5x_2 + 1$ to the input zonotope $Z$:
-// \[
-// f^a(Z) = \bigl(0.5\,c_1 - 0.5\,c_2 + 1\bigr)
-//         + \epsilon_1\bigl(0.5\,g_{1x} - 0.5\,g_{1y}\bigr)
-//         + \epsilon_2\bigl(0.5\,g_{2x} - 0.5\,g_{2y}\bigr)
-// \]
-
-// Substituting the values:
-// \[
-// = \bigl(0.5(1.5) - 0.5(1.0) + 1\bigr)
-//   + \epsilon_1\bigl(0.5(0.5) - 0.5(0)\bigr)
-//   + \epsilon_2\bigl(0.5(0) - 0.5(2.0)\bigr)
-// \]
-// \[
-// = (0.75 - 0.5 + 1) + \epsilon_1(0.25) + \epsilon_2(-1.0)
-// \]
-// \[
-// = 1.25 + 0.25\,\epsilon_1 - 1.0\,\epsilon_2
-// \]
-
-// Hence, the output zonotope for $x_4$ is:
-// \[
-// <=ft {1.25 + \epsilon_1(0.25) + \epsilon_2(-1.0) \;\middle|\; \epsilon_1, \epsilon_2 in [-1, 1]\right }
-// \]
-// \subsection*{Step 3: Compute Output Bounds}
-
-// From the output zonotope, we compute the lower and upper bounds for $x_4$ by
-// subtracting and adding the absolute values of the generator coefficients:
-// \[
-// f^a_L = c' - \bigl(|g'_1| + |g'_2|\bigr) = 1.25 - (0.25 + 1.0) = 0.0
-// \]
-// \[
-// f^a_U = c' + \bigl(|g'_1| + |g'_2|\bigr) = 1.25 + (0.25 + 1.0) = 2.5
-// \]
-
-// Thus, the output range of $x_4$ is $[0.0,\ 2.5]$.
-// \end{solution}
-// \end{problem}
-
-
-// \subsubsection{ReLU Transformer}
-
-// Activation functions like ReLU are non-affine and do not preserve zonotope structure.
-// For \(\text{ReLU}(x) = \max(0, x)\), the shape of the input region changes at \(x = 0\): $x < 0$ maps to $0$ (a flat line), while $x >= 0$ maps to $x$ (a slanted line). Thus, we will over-approximate these shapes with a new zonotope---a parallelogram---that contains the entire ReLU output region.
-
-// We can distinguish three possible cases of ReLU depending on the bounds $[l,r]$ of the input zonotope.
-
-// \begin{itemize}
-//     \item \textbf{Active case} (\(l >= 0\)):
-//     All values are non-negative, so \(\text{ReLU}^a(x) = x\) (identity function), i.e., the output zonotope is the same as the input zonotope.
-
-
-//     \item \textbf{Inactive case} (\(u <=q 0\)):
-//     All values are negative, so \(\text{ReLU}^a(x) =  {0 }\), i.e., the output zonotope is a single point at zero.
-
-
-//     \item \textbf{Unstable case} (\(l < 0 < u\)):
-//     The range crosses zero, requiring over-approximation using a parallelogram that bounds ReLU over \([l, u]\) as described below.
-// \end{itemize}
-
-// \paragraph{Building parallelogram}
-// % Given the input zonotope  $x =  {(c + \sum_{i=1}^m \epsilon_i g_i) \mid \epsilon_i in [-1,1] }$ with $x$ ranging over \([l, u]\) where \(l < 0 < u\) (i.e., the unstable case), we construct a parallelogram that bounds the ReLU function over this interval. We capture the parallelogram using two linear constraints representing its upper and lower edges as shown in~@fig:relu-parallelogram.
-// Given the input zonotope  $x =  {(c + \sum_{i=1}^n \epsilon_i g_i) \mid \epsilon_i in [-1,1] }$ with $x$ ranging over \([l, u]\) where \(l < 0 < u\) (i.e., the unstable case), we construct a parallelogram that bounds  ReLU over this interval. We construct the parallelogram using two linear constraints representing its upper and lower edges as shown in~@fig:relu-parallelogram.
-
-// \begin{figure}
-//     \centering
-//      in cludegraphics[width=\linewidth]{zonotope_bounds.png}
-//     \caption{Lower and upper bounds computation for a zonotope input. <fig:relu-parallelogram}
-// \end{figure}
-
-
-// \begin{itemize}
-//     \item \textbf{Upper bound constraint:} \(y <=q lambda x - lambda l\), where \(lambda = \frac{u}{u-l}\) is the slope of the line connecting points \((l, 0)\) and \((u, u)\)
-//     \item \textbf{Lower bound constraint:} \(y >= lambda x\) is the line with the same slope \(lambda\) passing through \((0, 0)\).
-// \end{itemize}
-
-// Merging these two constraints, we get the following equation describing all points \((x, y)\) within the parallelogram:
-// \begin{align*}
-//     lambda x <=q quad &y quad <=q lambda x - lambda l \\
-//     <=ftrightarrow quad &y = lambda x - alpha lambda l, quad alpha in [0, 1]
-// \end{align*}
-// The parameter \(alpha\) interpolates between the lower and upper bounds of the parallelogram.
-// When \(alpha = 0\), we are on the lower bound \(y = lambda x\); when \(alpha = 1\), we are on the upper bound \(y = lambda x - lambda l\).
-
-// Our zonotope requires $\epsilon_i in [-1,1]$, thus we substitute:
-// \[
-// alpha = \frac{1 + \epsilon_{new}}{2}, quad \epsilon_{new} in [-1, 1]
-// \]
-
-// For example, when \(\epsilon_{new} = -1\), we have \(alpha = 0\) (lower bound); when \(\epsilon_{new} = 1\), we have \(alpha = 1\) (upper bound).
-
-// The output zonotope after ReLU transformation is then:
-// \begin{align*}
-//     y  & = lambda x - alpha lambda l \\
-//     &= lambda x - \frac{1 + \epsilon_{new}}{2} lambda l\\
-//       &= lambda \underbrace{<=ft(c + \sum_{i=1}^m \epsilon_i g_i\right)}_{x} - \epsilon_{new} \frac{lambda l }{2} - \frac{lambda l }{2}  \\
-//       &= \underbrace{<=ft(lambda c -  \frac{lambda l }{2}\right)}_{\text{new center}} +  \underbrace{\sum_{i=1}^m \epsilon_i (lambda g_i) - \epsilon_{new} \frac{lambda l }{2}}_{\text{new generator}}
-// \end{align*}
-
-
-
-// \begin{example}[ReLU on zonotope]\label{ex:zonotope_relu_example}
-// Continuing from~@ex:zonotope_linear_example, applying ReLU to the zonotope output of \(x_3\)
-
-// \[
-// x_3 = 0.75 + \epsilon_1(-0.25) + \epsilon_2(1.0), quad \epsilon_1, \epsilon_2 in [-1,1].
-// \]
-
-// \textbf{Determine the bounds of the input zonotope} As shown in~@ex:zonotope_linear_example, the output zonotope (before ReLU) has bounds \([-0.5, 2.0]\).   So the input zonotope to ReLU has bounds \([-0.5, 2.0]\). Since \(l = -0.5 < 0 < 2.0 = u\), this is an unstable neuron requiring over-approximation.
-
-// \textbf{Approximate Slope}
-// We compute the slope of the upper bound line of the parallelogram (which connects points \((-0.5, 0)\) and \((2.0, 2.0)\)):
-
-// \[
-// lambda = \frac{u-0}{u-l} = \frac{2.0}{2.0-(-0.5)} = \frac{2.0}{2.5} = 0.8.
-// \]
-
-// \textbf{Transform zonotope}
-// The new center becomes:
-// \[
-// c' = lambda c - \frac{lambda l }{2} = 0.8 dot 0.75 - \frac{0.8 dot (-0.5) }{2} = 0.6 + 0.2 = 0.8
-// \]
-
-// Existing generators are scaled by \(lambda\):
-// \begin{align*}
-// g'_1 &= lambda g_1 = 0.8 dot (-0.25) = -0.2, \\
-// g'_2 &= lambda g_2 = 0.8 dot 1.0 = 0.8
-// \end{align*}
-
-// \textbf{Create new generator for approximation error}
-// A new generator is introduced to capture the ReLU approximation error:
-// \[
-// g'_3 = -\frac{lambda l }{2} = -\frac{0.8 dot (-0.5) }{2} = 0.2
-// \]
-
-// \textbf{Result:} The output zonotope is
-
-// \[
-// 0.8 + \epsilon_1(-0.2) + \epsilon_2(0.8) + \epsilon_3(0.2), quad \epsilon_i in [-1,1].
-// \]
-// with concrete bounds:
-// %\((0.8, [-0.2, 0.8, 0.2])\) with concrete bounds:
-// \begin{align*}
-// l' &= 0.8 - 0.2 - 0.8 - 0.2 = -0.4 \rightarrow 0 \text{ (clamp negative values)}\\
-// u' &= 0.8 + 0.2 + 0.8 + 0.2 = 2.0
-// \end{align*}
-
-// Thus, the final bounds after ReLU are \([0, 2.0]\).
-
-// \end{example}
-
-//  in put{longtable_interval_zonotope_simple.tex}
+==== Affine Transformer
+
+Recall that the affine function $f$ in @sec:affine is
+$ f(v_1, v_2, dots, v_n) = sum_(i=1)^n w_i v_i + b, $
+where $w_i$ is the weight associated with input $v_i$, $n$ is the number of inputs, and $b$ is the bias term.
+
+More formally, given a zonotope
+$ cal(Z) = { c + sum_(j=1)^m epsilon_j g_j | epsilon_j in [-1, 1] }, $
+
+the abstract transformer $f^a$ for the affine function $f$ is:
+$
+f^a (v_1, v_2, dots, v_n) &= sum_(i=1)^n w_i v_i + b \
+&= sum_(i=1)^n w_i underbrace((c_i + sum_(j=1)^m epsilon_j g_(i j)), v_i) + b \
+&= sum_(i=1)^n w_i c_i + sum_(i=1)^n w_i sum_(j=1)^m epsilon_j g_(i j) + b \
+&= underbrace((sum_(i=1)^n w_i c_i + b), "new center") + sum_(j=1)^m epsilon_j underbrace((sum_(i=1)^n w_i g_(i j)), "new generators")
+$
+
+That is, the new zonotope has:
+- *center:* $f^c (c) = sum_(i=1)^n w_i c_i + b$
+- *generators:* each generator $g_j$ becomes $f^g (g_j) = sum_(i=1)^n w_i g_(i j)$
+
+Applying an affine transformation to a zonotope transforms its center by the same affine rule (weights and bias) and transforms each generator by the linear part (weights only).
+In other words, affine operations _preserve_ the structure of zonotopes exactly: no approximation needed.
+
+$ f^a (cal(Z)) = { f^c (c) + sum_(j=1)^m epsilon_j f^g (g_j) | epsilon_j in [-1, 1] } $
+
+#example[Zonotope Affine Transformer][
+Consider the network in @fig:dnn with inputs $x_1 in [1, 2]$ and $x_2 in [-1, 3]$.
+The affine function for neuron $x_3$ is:
+$ f(x_1, x_2) = -0.5 x_1 + 0.5 x_2 + 1.0 $
+We want to compute the bounds for $x_3$ using zonotope abstraction.
+
+*Represent the input as a zonotope.*
+We represent the input intervals $x_1 in [1, 2]$ and $x_2 in [-1, 3]$ as a zonotope ${ c + sum_(i=1)^n epsilon_i g_i | epsilon_i in [-1, 1] }$.
+
+The center $c_i$ represents the midpoint of each input interval:
+$ c_1 = (1 + 2) / 2 = 1.5, quad c_2 = (-1 + 3) / 2 = 1.0, $
+and the generator $g_i$ captures the half-width of each interval:
+$ g_1 = (2 - 1) / 2 = 0.5, quad g_2 = (3 - (-1)) / 2 = 2.0 $
+
+Thus, the input zonotope is
+$ cal(Z) = { (1.5, 1.0) + epsilon_1 (0.5, 0) + epsilon_2 (0, 2.0), quad epsilon_1, epsilon_2 in [-1, 1] }. $
+
+*Apply the affine transformation.* We apply $f(x_1, x_2) = -0.5 x_1 + 0.5 x_2 + 1.0$ to $cal(Z)$:
+$
+f^a (cal(Z))
+  &= f^c (c_1, c_2) + epsilon_1 f^g (g_1) + epsilon_2 f^g (g_2) \
+  &= (-0.5 c_1 + 0.5 c_2 + 1.0) + epsilon_1 (-0.5 g_(1 x) + 0.5 g_(1 y)) + epsilon_2 (-0.5 g_(2 x) + 0.5 g_(2 y)) \
+  &= (-0.5(1.5) + 0.5(1.0) + 1.0) + epsilon_1 (-0.5(0.5) + 0.5(0)) + epsilon_2 (-0.5(0) + 0.5(2.0)) \
+  &= 0.75 - 0.25 epsilon_1 + 1.0 epsilon_2.
+$
+Hence, the output zonotope for $x_3$ is
+$ { 0.75 + epsilon_1 (-0.25) + epsilon_2 (1.0), quad epsilon_1, epsilon_2 in [-1, 1] }. $
+
+*Compute output bounds.* From the output zonotope, the bounds for $x_3$ are:
+$
+f^a_L &= c' - (|g'_1| + |g'_2|) = 0.75 - (0.25 + 1.0) = -0.5, \
+f^a_U &= c' + (|g'_1| + |g'_2|) = 0.75 + (0.25 + 1.0) = 2.0.
+$
+Thus, the output range of $x_3$ is $[-0.5, 2.0]$.
+
+Note that the reason for computing the bounds from the zonotope representation is to determine _stable neurons_ as described in @sec:pre-relu-bounds. If the lower bound is non-negative, ReLU will be active; if the upper bound is non-positive, ReLU will be inactive. In these cases, ReLU can be simplified to either the identity function or zero, respectively, which helps reduce overapproximation in subsequent layers.
+
+For this simple example, both interval (@sec:interval-affine-transformer) and zonotope abstractions yield identical bounds $[-0.5, 2.0]$.
+The benefit of zonotopes becomes clear in deeper layers, where they preserve linear correlations that interval abstractions lose.
+] <ex:zonotope_linear_example>
+
+#problem[Zonotope Abstraction for $x_4$][
+Compute the bounds for $x_4$ in @fig:dnn using zonotope abstraction, with inputs $x_1 in [1, 2]$ and $x_2 in [-1, 3]$, and the affine function for $x_4$ is:
+$ f(x_1, x_2) = 0.5 x_1 - 0.5 x_2 - 1 $
+] <prob:zonotope_linear_example_x4>
+
+
+==== ReLU Transformer
+
+Activation functions like ReLU are non-affine and do not preserve zonotope structure.
+For $"relu"(x) = max(0, x)$, the shape of the input region changes at $x = 0$: $x < 0$ maps to $0$ (a flat line), while $x >= 0$ maps to $x$ (a slanted line). Thus, we over-approximate these shapes with a new zonotope --- a parallelogram --- that contains the entire ReLU output region.
+
+We can distinguish three possible cases of ReLU depending on the bounds $[l, u]$ of the input zonotope:
+- *Active case* ($l >= 0$): All values are non-negative, so $"relu"^a (x) = x$ (identity function), i.e., the output zonotope is the same as the input zonotope.
+- *Inactive case* ($u <= 0$): All values are negative, so $"relu"^a (x) = { 0 }$, i.e., the output zonotope is a single point at zero.
+- *Unstable case* ($l < 0 < u$): The range crosses zero, requiring over-approximation using a parallelogram that bounds ReLU over $[l, u]$ as described below.
+
+*Building parallelogram.*
+Given the input zonotope $x = { c + sum_(i=1)^n epsilon_i g_i | epsilon_i in [-1, 1] }$ with $x$ ranging over $[l, u]$ where $l < 0 < u$ (i.e., the unstable case), we construct a parallelogram that bounds ReLU over this interval using two linear constraints representing its upper and lower edges:
+- *Upper bound constraint:* $y <= lambda x - lambda l$, where $lambda = u / (u - l)$ is the slope of the line connecting points $(l, 0)$ and $(u, u)$.
+- *Lower bound constraint:* $y >= lambda x$ is the line with the same slope $lambda$ passing through $(0, 0)$.
+
+Merging these two constraints, we get the following equation describing all points $(x, y)$ within the parallelogram:
+$
+lambda x <= quad &y quad <= lambda x - lambda l \
+arrow.l.r.double quad &y = lambda x - alpha lambda l, quad alpha in [0, 1]
+$
+The parameter $alpha$ interpolates between the lower and upper bounds of the parallelogram.
+When $alpha = 0$, we are on the lower bound $y = lambda x$; when $alpha = 1$, we are on the upper bound $y = lambda x - lambda l$.
+
+Our zonotope requires $epsilon_i in [-1, 1]$, thus we substitute:
+$ alpha = (1 + epsilon_"new") / 2, quad epsilon_"new" in [-1, 1] $
+
+For example, when $epsilon_"new" = -1$, we have $alpha = 0$ (lower bound); when $epsilon_"new" = 1$, we have $alpha = 1$ (upper bound).
+
+The output zonotope after ReLU transformation is then:
+$
+y &= lambda x - alpha lambda l \
+&= lambda x - (1 + epsilon_"new") / 2 dot lambda l \
+&= lambda underbrace((c + sum_(i=1)^m epsilon_i g_i), x) - epsilon_"new" (lambda l) / 2 - (lambda l) / 2 \
+&= underbrace((lambda c - (lambda l) / 2), "new center") + underbrace(sum_(i=1)^m epsilon_i (lambda g_i) - epsilon_"new" (lambda l) / 2, "new generators")
+$
+
+#example[ReLU on Zonotope][
+Continuing from @ex:zonotope_linear_example, applying ReLU to the zonotope output of $x_3$:
+$ x_3 = 0.75 + epsilon_1 (-0.25) + epsilon_2 (1.0), quad epsilon_1, epsilon_2 in [-1, 1]. $
+
+*Determine the bounds.* As shown in @ex:zonotope_linear_example, the output zonotope (before ReLU) has bounds $[-0.5, 2.0]$. Since $l = -0.5 < 0 < 2.0 = u$, this is an unstable neuron requiring over-approximation.
+
+*Approximate slope.* We compute the slope of the upper bound line of the parallelogram (connecting points $(-0.5, 0)$ and $(2.0, 2.0)$):
+$ lambda = (u - 0) / (u - l) = 2.0 / (2.0 - (-0.5)) = 2.0 / 2.5 = 0.8. $
+
+*Transform zonotope.* The new center becomes:
+$ c' = lambda c - (lambda l) / 2 = 0.8 dot 0.75 - (0.8 dot (-0.5)) / 2 = 0.6 + 0.2 = 0.8 $
+
+Existing generators are scaled by $lambda$:
+$
+g'_1 &= lambda g_1 = 0.8 dot (-0.25) = -0.2, \
+g'_2 &= lambda g_2 = 0.8 dot 1.0 = 0.8
+$
+
+*New generator for approximation error.* A new generator is introduced to capture the ReLU approximation error:
+$ g'_3 = -(lambda l) / 2 = -(0.8 dot (-0.5)) / 2 = 0.2 $
+
+*Result:* The output zonotope is
+$ 0.8 + epsilon_1 (-0.2) + epsilon_2 (0.8) + epsilon_3 (0.2), quad epsilon_i in [-1, 1], $
+with concrete bounds:
+$
+l' &= 0.8 - 0.2 - 0.8 - 0.2 = -0.4 -> 0 quad ("clamp negative values") \
+u' &= 0.8 + 0.2 + 0.8 + 0.2 = 2.0
+$
+Thus, the final bounds after ReLU are $[0, 2.0]$.
+] <ex:zonotope_relu_example>
 
 
 
@@ -5002,101 +4510,57 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 
 
 
-// \begin{example <ex:bab}
-// @fig:bab-examplea illustrates a network and how \bab{} verifies that this network has the property
-// \[
-// (x_1, x_2) in [-2.0, 2.0] \times [-1.0, 1,0] \Rightarrow (y_1 > y_2),
-// \]
-// by showing that no counterexample exists, i.e., no inputs $(x_1,x_2)$ in the given input range such that $y_1 <= y_2$.
+#example[BaB Illustration][
+Consider verifying that a network has the property
+$
+(x_1, x_2) in [-2.0, 2.0] times [-1.0, 1.0] => (y_1 > y_2),
+$
+i.e., no counterexample exists where $y_1 <= y_2$ for inputs in the given range.
 
-// \begin{figure}
-//     \begin{minipage}[b]{\linewidth}
-//         \centering
-//         \begin{minipage}[t]{0.52\textwidth}
-//             \centering
-//             \proofnet{0.8}
-//             \caption*{(a)}
-//         \end{minipage}
-//         \begin{minipage}[t]{0.45\textwidth}
-//             \centering
-//              in cludegraphics[width=\linewidth]{figure/proof_tree.pdf}
-//             \caption*{(b)}
-//         \end{minipage}
-//         \caption{(a) A simple network  (similar to~@fig:proofnet), and (b) BaB search tree. White nodes correspond to \bab{} neuron splitting. Red nodes correspond to leaf nodes where \bab{}determines infeasibility and prunes the branch.}
-//         \label{fig:bab-example}
-//     \end{minipage}
-// \end{figure}
+First, #bab initializes $"ActPatterns"$ with an empty activation pattern $emptyset$ (i.e., no neurons fixed). Then #bab enters its main loop.
 
++ *First iteration.* #bab selects the only available activation pattern $emptyset$, i.e., $sigma_i = emptyset$, and calls _Deduce_ to check the feasibility of the problem.
 
-// First, \bab{} initializes $"ActPatterns"$s{}\footnote{\mycode{Queue} is often used to implement the problems set $"ActPatterns"$s.} with an empty activation pattern $\emptyset$ (i.e., no neurons fixed).
-// Then \bab{} enters its main loop.
+  Here, _Deduce_ determines that the problem is feasible — the computed bounds of $y_1$ and $y_2$ indicate that $y_1 <= y_2$ can be satisfied. Next, #bab calls an LP solver to check satisfiability. The LP solver returns unknown — the problem is too complex without fixing any neuron status. Thus we need to refine by _splitting_ a neuron.
 
-// \begin{enumerate}
-// \item \textbf{First iteration.}~\bab{} selects the only available activation pattern $\emptyset$, i.e., $sigma_i = \emptyset$,
-// and  calls \Deduce to check the feasibility of the problem based $sigma_i$.
+  #bab selects a neuron to split (_Decide_). Assume it chooses $v_4$, spawning two independent subproblems: one with $v_4$ active and one with $v_4$ inactive. Both activation patterns ${v_4}$ and ${overline(v_4)}$ are added to $"ActPatterns"$.
 
-// Here, \Deduce determines that the problem is feasible, e.g., the computed bounds of $y_1$ and $y_2$ indicate that $y_1 <= y_2$ can be satisfied. Next, \bab{} calls \mycode{LP} to check the satisfiability of the problem using an LP solver. The LP solver returns \texttt{unknown}--likely because the problem is too complex to solve without fixing any neuron status. Thus we need to make search smaller by \emph{splitting} a neuron (i.e., fixing its activation status).
++ *Second iteration.* For the subproblem with pattern ${v_4}$, _Deduce_ finds it feasible but the LP solver is inconclusive, so $v_2$ is split, adding ${v_4, v_2}$ and ${v_4, overline(v_2)}$. For the subproblem with $overline(v_4)$, _Deduce_ determines infeasibility and prunes this branch.
 
-// \bab{} then randomly selects a neuron to split (\Decide). Assume that it chooses $v_4$ to split, i.e., the problem spawns two independent subproblems: one with $v_4$ active and the other with $v_4$ inactive.
-// It does so by unioning $ {v_4 }$ and $ {\overline{v_4} }$ with $sigma_i$ and adds both new activation patterns to $"ActPatterns"$s. 
-// Next, \bab{} loops back to process the next activation pattern.
-// Thus, each of the two new subproblem is simpler than the original one because we have fixed the status of one neuron ($v_4$), which hopefully makes \Deduce{} and \mycode{LP} more precise and efficient in the next iterations.
++ *Third iteration.* For pattern ${v_4, v_2}$, #bab splits $v_1$, adding ${v_4, v_2, v_1}$ and ${v_4, v_2, overline(v_1)}$. For pattern ${v_4, overline(v_2)}$, _Deduce_ determines infeasibility; pruned.
 
++ *Fourth iteration.* Both remaining patterns ${v_4, v_2, v_1}$ and ${v_4, v_2, overline(v_1)}$ are determined infeasible and pruned.
 
-// \item \textbf{Second iteration.}~\bab{} has two subproblems. For the subproblem with activation pattern $ {v_4 }$, \Deduce decides feasibility but \mycode{LP} returns unsatisfiable (or unknown),
-// so it selects $v_2$ to split by adding $ {v_4, v_2 }$ and $ {v_4, \overline{v_2} }$ to \texttt{ActPatterns}.
-// For the other subproblem with $\overline{v_4}$ inactive, \Deduce determines infeasibility and thus discards this subproblem.
++ *Fifth iteration.* $"ActPatterns"$ is empty; #bab returns #unsat, proving the property holds.
 
-// \item \textbf{Third iteration.}~\bab{} has two subproblems corresponding to activation patterns $ {v_4, v_2 }$ and $ {v_4, \overline{v_2} }$. For the first subproblem, \bab{} selects $v_1$ to split by unioning $v_1$ and then $\overline{v_1}$ to the current activation pattern $v_4 \land v_2$ and adds them to $"ActPatterns"$s. For the second subproblem, \Deduce determines infeasibility and \bab{} discards this subproblem.
+Notice that while there are $2^4 = 16$ possible activation patterns for the four ReLU neurons, #bab only explores 6 of them — infeasibility pruning avoids exploring the rest.
+] <ex:bab>
 
-// \item \textbf{Fourth iteration.}~\bab{} has two subproblems corresponding to activation patterns $ {v_4, v_2, v_1 }$ and $ {v_4, v_2, \overline{v_1} }$, both which are then determined infeasible and discarded.
+#problem[BaB Detailed Steps][
+Do @ex:bab but come up with concrete values for each step, e.g., what are the bounds computed by _Deduce_, what does the LP solver return, etc., to illustrate the process in more detail.
+] <prob:bab-detailed>
 
-// \item \textbf{Fifth iteration.}~Finally, \bab{} has no more activation patterns in $"ActPatterns"$s, stops the search, and returns \unsat{}, indicating that the property is valid.
-// \end{enumerate}
+#problem[BaB Counterexample][
+Do @ex:bab again but make the property invalid and find a counterexample. It is also OK to change the problem (e.g., the input bounds or the property itself) to make it invalid.
+] <prob:bab-counterexample>
 
-// @fig:bab-exampleb illustrates the BaB search tree corresponding to the above process. Each white node represents a branching decision where \bab{} splits a neuron, while each red node represents a leaf node where \Deduce determines infeasibility and prunes the branch. Notice that not all activation patterns are explored because some branches are pruned early due to infeasibility. In other words, while there are $2^4=16$ possible complete activation patterns for the three ReLU neurons, \bab{} only explores 6 of them in this example.
-// \end{example}
+#problem[BaB with Interval Abstraction][
+Apply #bab on the network in @fig:dnn to verify the property $x_5 > 0$ for any inputs $x_1 in [-1,1], x_2 in [-2,2]$. Use interval abstraction to compute bounds. For LP solving, use any LP solver or solve manually. Show all steps: iterations, activation patterns, bounds computed, LP results, etc.
+] <prob:bab-interval>
 
+#problem[BaB Understanding][
+Test your understanding of #bab and activation patterns by answering the following questions:
++ In the #bab algorithm, what happens if _Deduce_ always returns infeasible?
++ What happens if _Deduce_ always returns feasible but the LP solver always returns satisfiable?
++ What is the maximum number of activation patterns that #bab may need to explore in the worst case for a network with $m$ ReLU neurons?
++ What is the minimum number of activation patterns that #bab may need to explore in the best case for a network with $m$ ReLU neurons? What are these patterns?
+] <prob:bab-understanding>
 
-// \begin{problem <prob:bab-detailed>
-// Do~@ex:bab but come up with concrete values for each step, e.g., what are the bounds computed by \Deduce, what does \mycode{LP} return, etc to illustrate the process in more detail.
-// \end{problem}
+=== Beyond the Basic
 
+What is described above is the basic and minimal #bab algorithm. Modern NNV tools implement many optimizations and strategies to improve the performance of the search. For example, they apply various engineering tricks to eliminate easy cases or find easy counterexamples (@chap:adversarial-attacks) before running the full #bab search.
 
-// \begin{problem <prob:bab-counterexample>
-// Do~@ex:bab again but make the property is invalid and find a counterexample. It is also OK to change the problem, e.g., the input bounds or the property itself, to make it invalid.
-// \end{problem}
-
-
-// \begin{problem <prob:bab-interval>
-// \begin{figure}
-// \centering
-// \mydnn{1}
-// \caption{\label{fig:dnn-bab}A simple network (similar to~@fig:dnn).}
-// \end{figure}
-
-// Apply BaB on the network in @fig:dnn-bab to verify the property $x_5 > 0$ for any inputs $x_1 in [-1,1], x_2 in [-2,2]$.  Use interval abstraction to compute bounds. For LP solving, you can use any LP solver or solve it manually. Show all steps, e.g., iterations, activation patterns, bounds computed, LP results, etc.
-
-// \end{problem}
-
-
-// \begin{problem <prob:bab-understanding}
-// Test your understanding of BaB and activation patterns by answering the following questions:
-// \begin{enumerate}
-
-//   \item In @alg:bab, what happens if \Deduce always returns infeasible?
-//   \item What happens if \Deduce always returns feasible but \mycode{LP} always returns satisfiable?
-//   \item What is the maximum number of activation patterns that \bab{} may need to explore in the worst case for a network with $m$ ReLU neurons?
-//   \item What is the minimum number of activation patterns that \bab{} may need to explore in the best case for a network with $m$ ReLU neurons? What are these patterns?
-// \end{enumerate}
-// \end{problem}
-
-// \subsection{Beyond the Basic} What described above is the basic and minimal BaB algorithm. Modern NNV tools implement many optimizations and strategies to improve the performance of the search. For example, they apply various engineering tricks to eliminate easy cases or find easy counterexamples (@chap:adversarial-attacks) before running the full BaB search.
-
-
-// Even the BaB search itself is optimized to avoid exploring the entire search space. For example, if \Deduce step determines infeasibility, a smarter \bab{} variant (e.g., the \neuralsat{} tool) can analyze the conflict and add a new clause to the set of clauses (\texttt{clauses}) to prevent the same activation pattern from being selected again. This is similar to conflict-driven clause learning (CDCL) in modern SAT solvers and is implemented in the \neuralsat{} NNV tool~\cite{duong2025neuralsat}. In addition, heuristics are also used to select, e.g., which neuron to split next (\Decide). We explore these optimizations and strategies in later chapters (e.g.,~@chap:neuralsat).
-
-// % \tvn{TODO: this basic BaB is also used to create a proof tree, which is used to generate a proof in the \prooflang{} format. We will discuss this in~@chapter:proof-gen-check.}
+Even the #bab search itself is optimized to avoid exploring the entire search space. For example, if the _Deduce_ step determines infeasibility, a smarter #bab variant (e.g., #tool) can analyze the conflict and add a new clause to prevent the same activation pattern from being selected again. This is similar to conflict-driven clause learning (CDCL) in modern SAT solvers and is implemented in #tool @duong2025neuralsat. In addition, heuristics are used to select, e.g., which neuron to split next (_Decide_). We explore these optimizations and strategies in later chapters (e.g., @chap:neuralsat).
 
 
 
@@ -5105,781 +4569,272 @@ Abstraction is (very) quick but may yield false positives (declaring feasible wh
 = Adversarial Attacks <chap:adversarial-attacks>
 
 
-// A full branch and bound (BaB) search (@chap:bab) is typically expensive and slow on large networks. Thus most NNV tools implement optimizations to improve performance. A common optimization is to use \emph{adversarial attack} techniques to find counterexamples before running BaB.
-// Examples of such techniques include randomized attacks~\cite{das2021fast} and gradient-based attacks~\cite{madry2017towards}, described in @chap:adversarial-attacks.
-
-// Thus, modern verification tools have two phases: (i) attempt to \emph{falsify} the property with adversarial attacks, and (ii) if no counterexample is found, attempt to \emph{verify} the property using search algorithms such as \bab{} (@chap:bab). Of course, during the verification phase, the verifier may also discover counterexamples that the falsify phase misses.
-
-
-//  == Random Search Attack}
-// \textbf{Random search} is a simple adversarial attack method.  It randomly samples points in the allowed input ranges and checks if any samples violate the property; if so, a counterexample is found.
-
-// \begin{example <ex:random-search}
-// Suppose the network input ranges are:
-// \[
-// -1 <=q x_1 <=q 1,quad -2 <=q x_2 <=q 2
-// \]
-// and the network output is:
-// \[
-// y = 2x_1 - 1.5x_2 + 1.
-// \]
-// We wish to use random search to find a counterexample to the property $y > 0$; i.e.,  trying random inputs $(x_1, x_2)$ satisfying the given ranges and producing $y <=q 0$.
-
-
-// \begin{itemize}
-//     \item Try 1: $x_1 = 0.2,\ x_2 = -0.5$
-//     \[
-//     y = 2 \times 0.2 - 1.5 \times (-0.5) + 1 = 0.4 + 0.75 + 1 = 2.15 > 0
-//     \]
-//     Not a violation.
-
-//     \item Try 2: $x_1 = -1,\ x_2 = 2$
-//     \[
-//     y = 2 \times (-1) - 1.5 \times 2 + 1 = -2 - 3 + 1 = -4 < 0
-//     \]
-//     \textbf{Counterexample found}: $(x_1 = -1,\ x_2 = 2)$.
-// \end{itemize}
-// \end{example}
-
-// \begin{problem}
-// Consider the input ranges
-// \[
-// -1 <= x_1 <= 1, quad -1 <= x_2 <= 1,
-// \]
-// and network output
-// \[
-// y = 3x_1 + 2x_2 - 2.
-// \]
-
-// Use random search to find a counterexample to the property $y > 0$:
-// \begin{enumerate}
-//     \item Randomly sample three valid points and compute $y$ at each point.
-//     \item Check if any sample violates the property. Note, if none violates, that's OK; just report the results.
-//     \item Based on your samples, discuss whether random search is likely to be efficient for this problem.
-// \end{enumerate}
-// \end{problem}
-
-//  == Projected Gradient Descent (PGD)}
-
-// \textbf{PGD} is a powerful and widely used adversarial attack that builds on the idea of \emph{gradient descent}.
-// Gradient descent is the procedure of repeatedly moving the input a small amount in the direction that most rapidly \emph{decreases} (or, for an attack, increases the likelihood of) some objective by following the negative (or positive) gradient.
-
-// Specifically, at each step PGD computes the gradient of the network output with respect to the input and takes a small gradient-descent step that pushes the input toward a stronger property violation. Next, PGD \emph{projects} (clips) the updated input back into the allowed domain if the step goes outside the input bounds.
-
-// We will reuse~@ex:random-search to illustrate PGD. Here,  the network input ranges are $-1 <=q x_1 <=q 1,~-2 <=q x_2 <=q 2$, and the output is $y = 2x_1 - 1.5x_2 + 1$, and the goal is to find a counterexample that satisfies the input ranges and produces $y <=q 0$.
-
-
-// \begin{enumerate}
-//     \item \textbf{Initialize}
-//     Choose a valid starting input, for example:
-//     \[
-//     (x_1^{(0)}, x_2^{(0)}) = (0, 0)
-//     \]
-//     This point is within the allowed input ranges, but does not violate the property $y > 0$ because $y = 2*0-1.5*0 + 1 = 1 > 0$. So we need to continue.
-
-//     \item \textbf{Iterative update}
-//     For each step $t = 0, 1, 2, \ldots$:
-//     \begin{enumerate}
-//         \item \textbf{Compute the gradient.}
-//         The gradient $\nabla_x y$ tells us how sensitive the output $y$ is to each input variable:
-//         \[
-//         \nabla_x y = <=ft( \frac{\partial y}{\partial x_1}, \frac{\partial y}{\partial x_2}, \ldots, \frac{\partial y}{\partial x_n} \right)
-//         \]
-//         It represents the direction of steepest \emph{increase} in $y$.
-//         To move toward a smaller $y$ (to make violation $y <= 0$ more likely), we go in the \emph{opposite} direction, i.e., $-\nabla_x y$.
-
-//         For example, if:
-//         \[
-//         y = 2x_1 - 1.5x_2 + 1,
-//         \]
-//         then the partial derivatives are:
-//         \[
-//         \frac{\partial y}{\partial x_1} = 2, \qquad
-//         \frac{\partial y}{\partial x_2} = -1.5,
-//         \]
-//         resulting in the gradient:
-//         \[
-//         \nabla_x y = (2, -1.5).
-//         \]
-//         This gradient means that increasing $x_1$ by a small amount increases $y$ by about twice that amount, while increasing $x_2$ by a small amount decreases $y$ by about 1.5 times that amount.
-
-
-
-//         \item \textbf{Gradient update}
-//         Move a small distance $\eta$ (called the \emph{step size} or \emph{learning rate}) in the negative gradient direction:
-//         \[
-//         x_1^{(t+1)} = x_1^{(t)} - \eta dot 2, \qquad
-//         x_2^{(t+1)} = x_2^{(t)} - \eta dot (-1.5)
-//         \]
-//         This decreases $y$ as quickly as possible.
-
-//         For example, if $\eta = 0.5$ and starting from $(x_1^{(0)}, x_2^{(0)}) = (0, 0)$:
-//         \[
-//         x_1^{(1)} = 0 - 0.5 \times 2 = -1.0, \qquad
-//         x_2^{(1)}   = 0 - 0.5 \times (-1.5) = +0.75
-//         \]
-//         Thus, the candidate input after one step is $(-1.0, +0.75)$.
-
-//         \item \textbf{Project (Clip) to valid input range}
-//         If the new values go outside the valid range, bring them back to the closest valid boundary:
-//         \[
-//         x_1^{(t+1)} = \max(-1, \min(x_1^{(t+1)}, 1)), \qquad
-//         x_2^{(t+1)} = \max(-2, \min(x_2^{(t+1)}, 2))
-//         \]
-//         This ensures every step stays within $[-1, 1] \times [-2, 2]$.
-
-//         Our candidate input $(-1.0, +0.75)$ is already within the valid ranges, so no clipping is needed.
-
-//         \item \textbf{Check for violation}
-//         Compute the output at the new input.
-//         If $y(x^{(t+1)}) <= 0$, then a counterexample has been found, and the attack succeeds.
-
-//         In our example, compute:
-//         \[
-//         y = 2(-1) - 1.5(0.75) + 1 = -2 - 1.125 + 1 = -2.125 <   0
-//         \]
-//         Thus, PGD finds a counterexample at $(x_1, x_2) = (-1, 0.75)$.
-
-//     \end{enumerate}
-// \end{enumerate}
-
-
-// \begin{example}[PGD with Clipping]
-// We continue the example above but with a larger step size $\eta = 1.0$. Starting again from $(x_1^{(0)}, x_2^{(0)}) = (0, 0)$:
-// \[
-// \begin{aligned}
-// x_1^{(1)} &= 0 - 1.0 \times 2 = -2.0 \\
-// x_2^{(1)} &= 0 - 1.0 \times (-1.5) = +1.5
-// \end{aligned}
-// \]
-// Here, $x_1^{(1)} = -2.0$ is outside the allowed range $[-1, 1]$, so we \emph{clip} it:
-// \[
-// x_1^{(1)} = -1 quad (\text{projected to boundary})
-// \]
-// Meanwhile, $x_2^{(1)} = 1.5$ is within $[-2, 2]$, so it remains unchanged.
-
-// After projection, we have:
-// \[
-// (x_1^{(1)}, x_2^{(1)}) = (-1, 1.5)
-// \]
-
-// Compute the output:
-// \[
-// y = 2(-1) - 1.5(1.5) + 1 = -2 - 2.25 + 1 = -3.25 < 0,
-// \]
-// which is a counterexample.
-
-// \end{example}
-
-
-// \begin{example}
-// Consider
-// \[
-// y = x_1^2 + 3x_2.
-// \]
-// The gradient of $y$ with respect to $(x_1, x_2)$ is
-// \[
-// \nabla_x y = <=ft( \frac{\partial y}{\partial x_1}, \frac{\partial y}{\partial x_2} \right).
-// \]
-// Compute each partial derivative:
-
-// \[
-// \frac{\partial y}{\partial x_1} = 2x_1, \qquad
-// \frac{\partial y}{\partial x_2} = 3.
-// \]
-// Therefore the gradient is
-// \[
-// \nabla_x y = (2x_1,\ 3).
-// \]
-
-// For instance, at point $(x_1, x_2) = (1, 2)$,
-// \[
-// \nabla_x y = (2 \times 1,\ 3) = (2, 3).
-// \]
-// This means that near $(1,2)$, increasing $x_1$ by a small amount increases $y$ twice as fast as that same increase in $x_2$ would.
-// \end{example}
-
-
-// \begin{problem <prob:compute-gradients}
-// For each of the following output functions, compute the gradient
-// \[
-// \nabla_x y = <=ft( \frac{\partial y}{\partial x_1}, \frac{\partial y}{\partial x_2} \right).
-// \]
-// \begin{enumerate}
-//     \item $y = 2x_1 - x_2 + 1$
-//     \item $y = -x_1^2 + 4x_2$
-//     \item $y = 3x_1x_2 - x_2^2$
-// \end{enumerate}
-// Explain what the gradient tells you about how $y$ changes with $x_1$ and $x_2$.
-// \end{problem}
-
-// \begin{problem <prob:pgd-iterations}
-// Let
-// \[
-// y = 2x_1 - 3x_2 + 1, quad -1 <= x_1, x_2 <= 1.
-// \]
-// Starting from $(x_1^{(0)}, x_2^{(0)}) = (0, 0)$ with some step size $\eta > 0$, use PGD to minimize $y$ so that it violates the property $y > 0$. Show all steps (e.g., computing gradient, updating point, clipping, etc) until a counterexample is found.
-
-// Depend on your choice of step size $\eta$, PGD might have one or more iterations before finding a counterexample. Thus, for this problem, identify two different step sizes $\eta_1$ and $\eta_2$ such that:
-// \begin{enumerate}
-//     \item With step size $\eta_1$, PGD finds a counterexample in \emph{one} iteration.
-//     \item With step size $\eta_2$, PGD finds a counterexample in \emph{two or more} iterations.
-// \end{enumerate}
-// \begin{solution}
-// \subsection*{Problem 7.2.2}
-
-// Let $y = 2x_1 - 3x_2 + 1$, with $-1 <=q x_1, x_2 <=q 1$.
-// We use PGD starting from $(x_1^{(0)}, x_2^{(0)}) = (0, 0)$ to minimize $y$ and find a counterexample violating $y > 0$.
-
-// \paragraph{Step 1: Initialize.}
-// Starting point: $(x_1^{(0)}, x_2^{(0)}) = (0, 0)$.
-
-// Check the property:
-// \[
-// y = 2(0) - 3(0) + 1 = 1 > 0.
-// \]
-// The property holds, so we proceed with PGD.
-
-// \paragraph{Step 2: Compute the gradient.}
-// \[
-// \nabla_x y = <=ft(\frac{\partial y}{\partial x_1},\, \frac{\partial y}{\partial x_2}\right) = (2,\,-3).
-// \]
-// Increasing $x_1$ increases $y$ by twice that amount; increasing $x_2$ decreases $y$ by three times that amount. To minimize $y$, we move in the direction $-\nabla_x y$.
-
-// \subsubsection*{Case A: Step size $\eta_1 = 0.5$}
-// \par\medskip
-// \noindent\textbf{Iteration 1.}\par
-
-// \textit{Gradient update:}
-// \begin{align*}
-// x_1^{(1)} &= x_1^{(0)} - \eta_1 dot 2 = 0 - 0.5(2) = -1, \\
-// x_2^{(1)} &= x_2^{(0)} - \eta_1 dot (-3) = 0 - 0.5(-3) = 1.5.
-// \end{align*}
-// Candidate input: $(-1,\; 1.5)$.
-
-// \textit{Clip to valid range $[-1,1]$:}
-// \begin{align*}
-// x_1^{(1)} &= \max(-1,\,\min(-1,\,1)) = -1 quad \text{(already in range)}, \\
-// x_2^{(1)} &= \max(-1,\,\min(1.5,\,1)) = 1 quad \text{(clipped to boundary)}.
-// \end{align*}
-// Projected input: $(-1,\; 1)$.
-
-// \textit{Check for violation:}
-// \[
-// y = 2(-1) - 3(1) + 1 = -2 - 3 + 1 = -4 < 0.
-// \]
-// Counterexample found at $(x_1, x_2) = (-1,\, 1)$ after \textbf{one iteration}.
-
-// \subsubsection*{Case B: Step size $\eta_2 = 0.07$}
-// \par\medskip
-// \noindent\textbf{Iteration 0 (initialization).}\par
-// $(x_1^{(0)}, x_2^{(0)}) = (0, 0)$, $y = 1 > 0$.
-
-// Continue.
-
-// \par\medskip
-// \noindent\textbf{Iteration 1.}\par
-
-// \textit{Gradient update:}
-// \begin{align*}
-// x_1^{(1)} &= 0 - 0.07(2) = -0.14, \\
-// x_2^{(1)} &= 0 - 0.07(-3) = 0.21.
-// \end{align*}
-// Candidate input: $(-0.14,\; 0.21)$.
-
-// \textit{Clip:} Both values are within $[-1,1]$; no clipping required.
-
-// \textit{Check for violation:}
-// \[
-// y = 2(-0.14) - 3(0.21) + 1 = -0.28 - 0.63 + 1 = 0.09 > 0.
-// \]
-// Property not violated. Continue to next iteration.
-
-// \par\medskip
-// \noindent\textbf{Iteration 2.}\par
-
-// \textit{Gradient update:}
-// \begin{align*}
-// x_1^{(2)} &= -0.14 - 0.07(2) = -0.28, \\
-// x_2^{(2)} &= 0.21 - 0.07(-3) = 0.42.
-// \end{align*}
-// Candidate input: $(-0.28,\; 0.42)$.
-
-// \textit{Clip:} Both values are within $[-1,1]$; no clipping required.
-
-// \textit{Check for violation:}
-// \[
-// y = 2(-0.28) - 3(0.42) + 1 = -0.56 - 1.26 + 1 = -0.82 < 0.
-// \]
-// Counterexample found at $(x_1, x_2) = (-0.28,\, 0.42)$ after \textbf{two iterations}.
-// \end{solution}
-// \end{problem}
-
-// = Proof Generation and Checking <chap:proof-gen-check}
-
-// As NNV tools become more complex (e.g., state-of-the-art tools have 20K+ LoCs), they are more prone to bugs. VNN-COMP'23~\cite{brix2023fourth} showed that 3 of the top 7 participants produced unsound results by claiming unsafe networks are safe, i.e., they produce \unsat{} on problems that are actually \sat{}.
-
-// While checking counterexamples is relatively straightforward (we can just evaluate the network on the input), checking \unsat{} results---proving no counterexample exists---is more challenging as it requires tracing the reasoning steps of the verifier.
-// In this chapter, we discuss work~\cite{duong2025generating} on generating and checking proofs of \unsat{} results generated by BaB-based NNV tools.
-
-//  == Proof Generation for Branch and Bound Algorithms <sec:proofgen}
-
-
-// \begin{algorithm}
-//     \small
-
-//      in put{NN $cal(N)$, property $phi_"in" \Rightarrow phi_"out"$}
-//     \Output{($\unsat, \blue{\prooftree}$) if property is valid, otherwise ($\sat, \counterexample$)}
-//     \BlankLine
-
-
-//     $$"ActPatterns"$s <=ftarrow  { \emptyset  }$ \tcp{initialize verification problems}
-//     $\blue{\prooftree >=ts  { ~  }}$ \tcp{initialize proof tree <line:prooftree}
-
-//     \While(\tcp*[h]{main loop}){$$"ActPatterns"$s$}{
-//         $sigma_i >=ts \Select($"ActPatterns"$s)$ \tcp{process problem $i$-th}
-//         % \Parfor(\tcp*[h]{process in parallel}){$sigma_i ~ in ~ $"ActPatterns"$s$}{ \label{line:parfor}
-//             \If{\Deduce{$cal(N), phi_"in", phi_"out", sigma_i$}}{
-// $\counterexample <=ftarrow \LP(cal(N), phi_"in", phi_"out", sigma_i)$ \tcp{check satisfiability}
-//                 \If(\tcp*[h]{found a valid cex}){$\counterexample$}{
-//                     \Return{$(\mysat, \counterexample)$}
-//                 }
-//                 $v_i <=ftarrow \Decide(cal(N), sigma_i)$\\
-//                 \tcp{create new activation patterns}
-//                 $$"ActPatterns"$s <=ftarrow $"ActPatterns"$s \cup  { sigma_i \cup  {v_i } ~;~ sigma_i \land  {\overline{v_i} }  }$
-//             }
-//             \Else(\tcp*[h]{detect infeasibility}){
-//                 $\blue{\prooftree <=ftarrow \prooftree \cup  { sigma_i  }}$ \tcp{build proof tree <line:record_proof}
-//             }
-//     }
-//     \Return{$(\unsat, \blue{\prooftree})$}
-//     \caption{The \proofgen{} NNV tool with proof generation. <alg:bab-proof}
-// \end{algorithm}
-
-// Recall that the BaB algorithm, shown in~~@alg:bab, splits the problem into smaller subproblems and use abstraction to compute bounds to prune the search space. This structure allows us to bring proof generation capabilities with minimal overhead to existing NNV tools that use BaB.
-
-// @alg:bab-proof extends~@alg:bab to show \proofgen, a BaB-based NNV algorithm with proof generation capability. The key idea is to introduce a \textbf{proof tree} (@line:prooftree) and recording the branching decisions to it (@line:record_proof).
-// Thus, the proof tree has a binary structure, where each node represents a neuron and its left and right edges represent its activation decision (active or inactive).
-// At the end of the verification process, the proof tree is returned as the proof of \unsat{} result.
-
-
-// %White nodes correspond to branching nodes where \neuralsat{} makes decisions to split ReLU neurons.
-
-// \begin{example}
-
-// \begin{figure}
-//     \begin{minipage}[b]{\linewidth}
-//         \centering
-//         \begin{minipage}[t]{0.52\textwidth}
-//             \centering
-//             \proofnet{0.8}
-//             \caption*{(a)}
-//         \end{minipage}
-//         \begin{minipage}[t]{0.45\textwidth}
-//             \centering
-//              in cludegraphics[width=\linewidth]{figure/proof_tree.pdf}
-//             \caption*{(b)}
-//         \end{minipage}
-//         \caption{(a) A simple network  (similar to~@fig:proofnet), and (b) A proof tree produced by \proofgen{}. White nodes correspond to \bab{} neuron splitting. Red nodes correspond to leaf nodes where \bab{} determines infeasibility and prunes the branch.}
-//         \label{fig:proof-example}
-//     \end{minipage}
-// \end{figure}
-
-
-// We reuse the example in~@ex:bab to illustrate \proofgen{}. Recall the goal is to verify that the network in~@fig:proof-example(a) has the property $(x_1, x_2) in [-2.0, 2.0] \times [-1.0, 1,0] \Rightarrow (y_1 > y_2)$.
-
-// For this problem \proofgen{} generates the proof tree in~@fig:proof-example(b) to show unsatisfiability, i.e., the property is valid. \proofgen{} first splits neuron $v_4$, creating two subproblems: one with $v_4$ active and the other with $v_4$ inactive (split node 1). The inactive $v_4$ subproblem is determined to be unsatisfiable (leaf node 3). The active $v_4$ subproblem is further split on $v_2$ (split node 2). The inactive $v_2$ subproblem is determined to be unsatisfiable (leaf node 5). The active $v_2$ subproblem is further split on $v_1$ (split node 4). Both the active and inactive $v_1$ subproblems are determined to be unsatisfiable (leaf nodes 6 and 7). Since all branches lead to unsatisfiability, the property is valid.
-
-// \end{example}
-
-// \begin{problem <prob:proof-tree}
-// Consider the following toy network:
-// \[
-// \begin{aligned}
-//  hat(x)_3 &= x_1 - 2x_2 + 1,\\
-// x_3 &= \relu{ hat(x)_3},\\
-//  hat(x)_4 &= -x_1 + x_3 + 0.5,\\
-// x_4 &= \relu{ hat(x)_4},\\
-// y &= -x_3 + 2x_4.
-// \end{aligned}
-// \]
-
-// The input region is
-// \[
-// (x_1, x_2) in [-1,1] \times [-1,1],
-// \]
-// and the property to verify is:
-// \[
-// y <= 5.
-// \]
-
-// A verifier uses a BaB-based proof generation method and performs \emph{neuron splitting} on the ReLU nodes $x_3$ and $x_4$.
-// Assume the verifier splits neurons in the order:
-// \begin{enumerate}
-//     \item First split on $x_3$.
-//     \item For the \emph{active-$x_3$} branch, split on $x_4$.
-// \end{enumerate}
-
-// The solver determines that:
-// \begin{itemize}
-//     \item When $x_3$ is inactive, the subproblem is \unsat.
-//     \item When $x_3$ is active and $x_4$ is inactive, the subproblem is \unsat.
-//     \item When both $x_3$ and $x_4$ are active, the subproblem is also \unsat.
-// \end{itemize}
-
-// \paragraph{Do the following:}
-// \begin{enumerate}
-//     \item Draw the \emph{proof tree} for this verification process, labeling each split node with the neuron being split (e.g., $x_3$ or $x_4$), etc like in @fig:proof-example(b).
-
-//     \item For each split, explain:
-//     \begin{itemize}
-//         \item which constraints are added (e.g., $ hat(x)_3 >= 0$, $ hat(x)_4 <= 0$),
-//         \item how the equations simplify under these constraints,
-//         \item why the resulting subproblem is \unsat{}.
-//     \end{itemize}
-
-//     \item Explain why the proof tree is a correctness proof.  In other words, justify why showing that all leaf nodes are \unsat{} means that the property $y <= 5$ is valid.
-// \end{enumerate}
-// \end{problem}
-
-
-
-//  == Proof Language <sec:prooflang}
-
-
-// \newcommand{\lra}[1]{
-//     \textcolor{green!40!black}{\langle}
-//     \textit{\textcolor{green!40!black}{#1}}
-//     \textcolor{green!40!black}{\rangle}
-// }
-
-// \begin{figure}
-// \begin{minipage}[b]{0.54\textwidth}
-//     \scriptsize
-// \begin{align*}
-//     \lra{proof}         &::= \lra{declarations} \ \lra{assertions} \\
-//     \lra{declarations}  &::= \lra{declaration} \ | \ \lra{declaration} \ \lra{declarations} \\
-//     \lra{declaration}   &::= (\textbf{declare-const} \ \lra{input-vars} \ \textbf{Real}) \\
-//                         & quad ~| \ (\textbf{declare-const} \ \lra{output-vars} \ \textbf{Real}) \\
-//                         & quad ~| \ (\textbf{declare-pwl} \ \lra{hidden-vars} \ \lra{activation}) \\
-//     \lra{input-vars}    &::= \lra{input-var} \ | \ \lra{input-var} \ \lra{input-vars} \\
-//     \lra{output-vars}    &::= \lra{output-var} \ | \ \lra{output-var} \ \lra{output-vars} \\
-//     \lra{hidden-vars}    &::= \lra{hidden-var} \ | \ \lra{hidden-var} \ \lra{hidden-vars} \\
-//     \lra{activation}    &::= ~\text{ReLU} \ | \ \text{Leaky ReLU} \ | \ \ldots \\
-//     \lra{assertions}    &::= \lra{assertion} \ | \ \lra{assertion} \ \lra{assertions} \\
-//     \lra{assertion}     &::= (\textbf{assert} \ \lra{formula}) \\
-//     \lra{formula}       &::= (\lra{operator} \ \lra{term} \ \lra{term}) \\
-//                         & quad ~| \ (\textbf{and} \ \lra{formula}+) \ | \ (\textbf{or} \ \lra{formula}+) \\
-//                         % & quad ~| \ (\textbf{and} \ \lra{formula} \ \lra{formula}) \\
-//                         % & quad ~| \ (\textbf{or} \ \lra{formula}+) \\
-//                         % & quad ~| \ (\textbf{or} \ \lra{formula} \ \lra{formula}) \\
-//     \lra{term}          &::= \lra{input-var} \ | \ \lra{output-var} \\
-//                         & quad ~| \ \lra{hidden-var} \ | \ \lra{constant} \\
-//     \lra{operator}      &::= ~ < \ | \ <=q \ | \ > \ | \ >= \\
-//     \lra{input-var}     &::= ~\text{X\_}\lra{constant} \\
-//     \lra{output-var}    &::= ~\text{Y\_}\lra{constant} \\
-//     \lra{hidden-var}    &::= ~\text{N\_}\lra{constant} \\
-//     \lra{constant}      &::= ~\textbf{Int} \ | \ \textbf{Real}
-// \end{align*}
-// \caption{The \prooflang{} proof language. <fig:grammar}
-// \end{minipage}
-// \hfill
-// \begin{minipage}[b]{0.45\textwidth}
-// \begin{lstlisting}[style=SMTLIB-style, language=SMTLIB, basicstyle=\ttfamily\scriptsize,numbers=none]
-// ; Declare variables
-// (declare-const X_0 X_1 Real)
-// (declare-const Y_0 Y_1 Real)
-// (declare-pwl N_1 N_2 N_3 N_4 ReLU)
-
-// ; Input constraints
-// (assert (>= X_0 -2.0))
-// (assert (<= X_0  2.0))
-// (assert (>= X_1 -1.0))
-// (assert (<= X_1  1.0))
-
-// ; Output constraints
-// (assert (<= Y_0 Y_1))
-
-// ; Hidden constraints
-// (assert (or
-//     (and (<  N_4 0))
-//     (and (<  N_2 0)
-//         (>= N_4 0))
-//     (and (>= N_2 0)
-//         (>= N_1 0)
-//         (>= N_4 0))
-//     (and (>= N_2 0)
-//         (<  N_1 0)
-//         (>= N_4 0)
-//     )))
-// \end{lstlisting}
-// \caption{\prooflang{} example format of the proof tree in~@fig:proof-exampleb.
-// }
-// \label{fig:proof_example}
-// \end{minipage}
-// \end{figure}
-
-
-// Rather than recording the generated proof tree in an verifier-specific format, it is more desirable to have a standard format
-// that is human-readable, is compact, can be efficiently generated by verification tools, and can
-// be efficiently and independently processed by proof checkers.
-
-// The proof language \prooflang{} is designed to meet these requirements.
-// \prooflang{} is inspired by the SMTLIB format~\cite{barrett2010smt} used for SMT solving, which has also been adopted by the  VNNLIB language~\cite{vnnlib} to specify neural networks and their properties for verification (see~@sec:vnnlib for examples).
-
-// %accepted by our proof check algorithm (@sec:proof-checker
-
-// @fig:grammar outlines the \prooflang{} syntax and grammar, represented as production rules.
-// A proof is composed of \textit{declarations} and \textit{assertions}. Declarations define the variables and their types within the proof. Specifically, \textit{input variables} (prefixed with \mycode{X}) and \textit{output variables} (prefixed with \mycode{Y}) are declared as real numbers, representing the inputs and outputs of the neural network, respectively. Additionally, \textit{hidden variables}, which correspond to internal nodes of the neural network, are declared with specific piece-wise linear (PWL) activation functions, such as ReLU or Leaky ReLU.
-// Assertions are logical statements that specify the conditions or properties that must hold within the proof. Assertions over input variables are \emph{preconditions} and those over output variables are \emph{post-conditions}. %Each assertion is composed of a \textit{formula}, which can involve terms and logical operators. Formulas include simple comparisons between terms (e.g., less than, greater than) or more complex logical combinations using \mycode{and} and \mycode{or} operators. The terms used in these formulas can be input variables, output variables, hidden variables, or constants.
-
-// %\begin{figure}
-// %\end{figure}
-
-// %@fig:proof_example shows an example of a proof in \prooflang{} using the network in~@fig:examplea.
-
-// The \texttt{declare-*} statements declare input, output, and hidden variables, while the \texttt{assert} statements specify the constraints on these variables (i.e., the pre and postcondition of the desired property).
-// The hidden constraints represent the activation patterns of the hidden neurons in the network (i.e., the proof tree). Each \texttt{and} statement represents a tree path that represents an activation pattern.
-
-// \begin{example}
-//     The proof in~@fig:proof_example corresponds to the proof tree in~@fig:proof-exampleb. The statement \texttt{(and (< N\_4 0))} corresponds to the rightmost path of the tree with $\overline{v_4}$ decision (leaf 3).  The statement \texttt{(and (< N\_2 0) (>= N\_4 0))} corresponds to the path with $v_4 \land \overline{v_2}$ (leaf 5).
-// \end{example}
-
-// The \prooflang{} language is intentionally designed to (a) not explicitly include weights/bias terms to minimize size of the proof structure, and (b) explicitly reflect a DNF structure to enable easy parallelization.
-// The network weights and bias terms are readily available in the standard ONNX~\cite{onnx} format, which is typically used to represent the network input to a \proofgen{}-based NNV tool and can be accessed by any \prooflang{} checker like the one described next in~@sec:proofchecking.
-
-
-//  == Proof Checker <sec:proofchecking}
-// We present \proofcheck{}, a proof checker for \prooflang{} proofs generated by BaB-based NNV tools.
-// %Finally, we need to check that the generated proof is correct and proves that the original DNN verification problem is indeed \unsat{}. %The checker must be efficient to handle large proofs and trusted of its results (if it verifies the proof, then the original NNV problem is proved).
-// \proofcheck{} is verifier-independent and support \prooflang{} proofs generated by different verification tools. \proofcheck{} also has several optimizations to handle large proofs efficiently.
-
-// \subsection{The Core \proofcheck{} Algorithm}
-
-// The goal of \proofcheck{} is to verify that the \prooflang{} tree generated by an NNV tool is correct (i.e., the proof tree is a proof of unsatisfiability of the NNV problem).
-// \proofcheck{} thus must verify that the constraint represented by each \emph{leaf} node in the proof tree is unsatisfiable. To check each node, \proofcheck{} forms an MILP problem (@sec:using-milp) consisting of the constraint in~@eq:nnv2 (the network, the input condition, and the negation of the output) with the constraints representing the activation pattern encoded by the tree path to the leaf node. \proofcheck{} then invokes an LP solver to check that the MILP problem is infeasible, which indicates unsatisfiability of the leaf node.
-
-// \begin{algorithm}[t]
-//     \small
-
-//      in put{Network $cal(N)$, property $phi_"in" \Rightarrow phi_"out"$, $\prooftree$}
-//     \Output{\certified if proof is valid, otherwise \uncertified}
-//     \BlankLine
-
-//     \If{$not$ \RepOK(\prooftree)}{
-//         \RaiseError{Invalid proof tree}
-//     }
-
-//     \tcp{initialize MILP model with inputs}
-//     $\model <=ftarrow \CreateStabilizedMILP(cal(N), phi_"in", phi_"out")$ \label{line:build_model}
-
-
-//     $<=af >=ts \mynull$ \tcp{initialize current processing node}
-
-//     \While{$\prooftree$}{\label{line:proof_loop}
-
-//         % \tcp{Get $k$ leaf nodes from $\prooftree$}
-//         % $[<=af_1, ..., <=af_k] >=ts >=tLeafNodes(\prooftree, k)$ \\ \label{line:get_leaf}
-//         $<=af >=ts \Select(\prooftree, <=af)$ \tcp{get next node to check} \label{line:select} \label{line:get_leaf}
-
-//         % \tcp{Process $k$ nodes in parallel}
-//         % \Parfor{$<=af_i ~ in ~ [<=af_1, ..., <=af_k]$}{ \label{line:parfor}
-
-//         $\model >=ts \AddConstrs(\model, <=af)$  \tcp{add constraints} \label{line:add_proof_leaf_constrs}
-
-//         % $\minimum >=ts \Minimize(\model)$ \tcp{} \label{line:optimize1}
-//         \If{$\Feasible(\model)$}{\label{line:proof_check_objective1}
-//             \Return{\uncertified} \tcp{cannot certify}
-//         }
-
-//         % $\Backtrack(\prooftree, <=af)$ \tcp{process interior node}
-
-//         % \While{$\StoppingConditions(<=af_i)$}{ \label{line:stop_condition}
-//         %     % \tcp{remove constraints of old $<=af_i$ }
-//         %     % $\model >=ts \RemoveConstrs(\model, <=af_i)$  \\
-//         %     % \tcp{move to $<=af_i$'s parent}
-//         %     % $<=af_i >=ts \ShortenSplitConstrs(<=af_i)$ \\
-//         %     % \tcp{add constraints of new (looser) $<=af_i$ }
-
-//         %     \tcp{move to $<=af_i$'s parent}
-//         %     $\model >=ts \Backjump(<=af_i)$  \\ \label{line:proof_backjump}
-
-//         %     \tcp{Prove the new $<=af_i$}
-//         %     $\minimum >=ts \Minimize(\model)$ \\ \label{line:optimize2}
-//         %     \If(\tcp*[h]{cannot certify}){$\minimum <= 0$}{
-//         %         \Break
-//         %     }
-//         %     \tcp{if parent is proved, remove its children}
-//         %     $\prooftree >=ts \RemoveLeafNodes(\prooftree, <=af_i)$ \label{line:proof_prune}
-//         % }
-//         }
-//     % }
-//     \Return{\certified}
-
-//     \caption{\proofcheck{} algorithm.}
-//     % \Description{}
-//     \label{fig:algorithm}
-// \end{algorithm}
-
-
-// @fig:algorithm shows a minimal (core)  \proofcheck{} algorithm, which takes as input a network $cal(N)$, a property $phi_"in" \Rightarrow phi_"out"$, a proof tree $\prooftree$, and returns \certified if the proof tree is valid and \uncertified otherwise.
-// \proofcheck{} first checks the validity of the proof tree (@line:build_model), i.e., the input must represent a proper \prooflang{} proof tree (@sec:prooflang).
-// If the proof tree is invalid, \proofcheck{} raises an error.
-// \proofcheck{} next creates a MILP model (@line:build_model) representing the input. % (@sec:neuron-stabelization).
-// \proofcheck{} then enters a loop (@line:proof_loop) that selects a (random) leaf node from the proof tree (@line:select) and adds its MILP constraint to the model (@line:add_proof_leaf_constrs). It then checks the model using an LP solver to determine whether the leaf node is unsatisfiable. If the LP solver returns feasibility, \proofcheck{} returns \uncertified, i.e., it cannot verify the input proof tree.
-// \proofcheck{} continues until all leaf nodes are checked and returns \certified, indicating the proof tree is valid.
-
-
-
-// \begin{example}
-//     For the \prooflang{} proof in~@fig:proof_example, we check that the four leaf nodes 3, 5, 6, and 7 of the proof tree in~@fig:proof-exampleb are unsatisfiability. Assume \proofcheck{} first selects node 3, it forms the MILP problem for leaf node 3 by conjoining the constraint representing $0.6v_1 + 0.9v_2 - 0.1 <= 0$ (i.e., $\overline{v_4}$) %\tvn{Hai check}\hd{by setting $a_1^{(2)}=0$ representing that $ hat(z)_1^{(2)} <= 0$ (see~@eq:mipe) or \emph{implicitly} conjoining the inequality $0.6 hat(z)^{(1)}_0 + 0.9 hat(z)^{(1)}_1 - 0.1 <= 0$ (or ${z}_1^{(2)} <= 0$), where $ hat(z)^{(1)}_0$, $ hat(z)^{(1)}_1$ represent the outputs of $v_1$ and $v_2$, respectively.}
-// with the constraints in~@eq:nnv2 representing the input ranges and the network with the objective of optimizing the output. \proofcheck{} then invokes an LP solver, which determines that this MILP is infeasible, i.e., leaf node 3 indeed leads to unsatisfiability.
-
-// \proofcheck{} continues this process for the other three leaf nodes and returns \certified as all leaf nodes are unsatisfiable.
-// \end{example}
-
-// % \subsubsection{MILP Formulation <sec:milp-formulation}
-
-// % \proofcheck{} formulates MILP problems~\cite{tjeng2019evaluating} and check for feasible solutions using off-the-shelf LP solving. Formally, the MILP problem is defined as:
-// % \begin{equation}
-// %     \begin{aligned}
-// %         &\mbox{(a)}quad z^{(i)} = W^{(i)}  hat(z)^{(i-i)} + b^{(i)} \
-// %         &\mbox{(b)}quad y = z^{(L)};  x =  hat(z)^{(0)} \
-// %         &\mbox{(c)}quad  hat(z)_j^{(i)} >= {z}_j^{(i)};  hat(z)_j^{(i)} >= 0 \
-// %         &\mbox{(d)}quad a_j^{(i)} in  { 0, 1 } ;\\
-// %         &\mbox{(e)}quad  hat(z)_j^{(i)} <= {a}_j^{(i)} {u}_j^{(i)};  hat(z)_j^{(i)} <= {z}_j^{(i)} - {l}_j^{(i)}(1 - {a}_j^{(i)}) \
-// %     \end{aligned}
-// %     \label{eq:mip2}
-// % \end{equation}
-
-// % \noindent where $x$ is input, $y$ is output, and $z^{(i)}$, $ hat(z)^{(i)}$, $W^{(i)}$, and $b^{(i)}$ are the pre-activation, post-activation, weight, and bias vectors for layer $i$, respectively.
-// % This encodes the semantics of a ReLU-based DNN:
-// % (a) the affine transformation computing the pre-activation value for a neuron in terms of outputs in the preceding layer;
-// % (b) the inputs and outputs in terms of the adjacent hidden layers;
-// % (c) assertion that post-activation values are non-negative and no less than pre-activation values;
-// % (d) neuron activation status indicator variables that are either 0 or 1; and
-// % (e) constraints on the upper, $u_j^{(i)}$, and lower, $l_j^{(i)}$, bounds of the pre-activation value of the $j$th neuron in the $i$th layer.
-// % Deactivating a neuron, $a_j^{(i)} = 0$, simplifies the first of the (e) constraints to $ hat(z)_j^{(i)} <= 0$, and activating a neuron simplifies the second to $ hat(z)_j^{(i)} <= z_j^{(i)}$, which is consistent with the semantics of $ hat(z)_j^{(i)} = max(z_j^{(i)},0)$.
-
-
-// % \subsubsection{Correctness <sec:checker-core-correctness}
-
-// % ~@fig:algorithm returns \certified iff the input \prooflang{} proof tree is unsatisfiable. This proof tree encodes a disjunction of constraints, one per tree path, where each constraint represents an activation pattern of the network (the leaf node). The algorithm checks each constraint using LP solving and only returns certified iff every one of them is unsatisfiable.
-// % %Moreover, while pruning optimization (@sec:pruning) in~@fig:algorithm allows the checker to skip children nodes if the parent node is unsatisfiable, this is still sound because the structure of the proof tree guarantees that the constraints of a child is more restricted its parent, and thus if the parent node is unsatisfiable, the children nodes must also be unsatisfiable. The algorithm  terminates because the proof tree (or the DNF) is finite and the checker will eventually check all nodes.
-// % We note that this correctness argument assumes that the LP solver is correct -- in practice
-// % multiple solvers could be used to guard against errors in that component.  We note that
-// % it is standard for proof checkers to assume the correctness of a small set of external tools, e.g., checkers that use  theorem provers assume the correctness of the underlying prover~\cite{lammich2023grat}.
-
-// \subsection{Optimizations}
-// While the core \proofcheck{} algorithm in~@fig:algorithm is minimal, it can be inefficicient for large proofs.
-// \proofcheck{} employs several optimizations to improve its efficiency. These are crucial for checking large proof trees generated by NNV tools for challenging problems.
-
-// \paragraph{Neuron Stabilization}
-
-// % \begin{algorithm}
-// %     \small
-
-// %      in put{DNN $cal(N)$, property $phi_"in" \Rightarrow phi_"out"$, parallel factor $k$}
-// %     \Output{MILP $\model$}
-// %     \BlankLine
-
-
-// %     $\model <=ftarrow  in putMILP(phi_"in")$  \tcp{input property}    \label{line:create_input}
-
-// %     \tcp{Add MILP constraints for each layer of network}
-// %     \For{$\layer ~in ~cal(N)$}{
-// %         \If{$\isPiecewiseLinear(\layer)$}{
-// %             \tcp{add constraints~@eq:mip2 (c), (d), (e)}
-// %             $\model <=ftarrow \PiecewiseLinearMILP(\layer, phi_"in", phi_"out")$ \\ \label{line:create_pwl_layer}
-// %         }
-// %         \Else(\tcp*[h]{this layer is linear}){
-// %             \tcp{add constraints~@eq:mip2 (a), (b)}
-// %             $\model <=ftarrow \LinearMILP(\layer, phi_"in", phi_"out")$ \\ \label{line:create_linear_layer}
-
-// %             \tcp{estimate upper and lower bounds}
-// %             $\layerbounds >=ts \EstimateBounds(\layer)$ \\ \label{line:estimate_bounds}
-
-// %             \tcp{select unstable neurons to be stabilized}
-// %             $[v_1, ..., v_k] <=ftarrow >=tUnstableNeurons(\layerbounds)$ \\ \label{line:find_unstable}
-
-// %             \tcp{stabilize selected neurons in parallel}
-// %             \Parfor{$v_i ~ in ~[v_1, ..., v_k]$}{ \label{line:parallel_stabilize}
-// %                 % \tcp{lower is closer to 0 than upper}
-// %                 \tcp{optimize lower first}
-// %                 \If{$(v_i.lower + v_i.upper) >= 0$}{
-// %                     $\Maximize(\model, v_i.lower)$ \\ \label{line:maximize1}
-// %                     \If(\tcp*[h]{still unstable}){$v_i.lower < 0$}{
-// %                         $\Minimize(\model, v_i.upper)$ \label{line:minimize1}
-// %                     }
-// %                 }
-// %                 % \tcp{upper is closer to 0 than lower}
-// %                 % \tcp{optimize upper first}
-// %                 \Else(\tcp*[h]{optimize upper first}){
-// %                     $\Minimize(\model, v_i.upper)$ \\ \label{line:minimize2}
-// %                     \If(\tcp*[h]{still unstable}){$v_i.upper > 0$}{
-// %                         $\Maximize(\model, v_i.lower)$  \label{line:maximize2}
-// %                     }
-// %                 }
-// %             }
-// %         }
-// %     }
-
-// %     $\model >=ts \AddObjective(\model, phi_"out")$ \tcp{output property}
-
-// %     \Return{$\model$}
-
-// %     % \vspace*{-0.2in}
-// %     \caption{\texttt{CreateStabilizedMILP} procedure.}
-// %     \label{fig:stabilize}
-// %     % \Description{}
-// % \end{algorithm}
-
-// A primary challenge in NNV is the presence of large numbers of piecewise-linear constraints (e.g., ReLU) which generate a large number of branches and yield large proof trees. In the MILP formulation, this creates many disjunctions which are hard to solve. To reduce the number of disjunctions, \proofcheck{} uses \emph{neuron stabilization}~\cite{duong2024harnessing}
-// to determine neurons that are \emph{stable}, either active or inactive, for all inputs defined by the property pre-condition.
-// For all stable neurons, the disjunctive ReLU constraint is replaced with a linear constraint that represents the neuron's value.   This simplifies the MILP problem.
-
-// % \proofcheck{} uses the algorithm in~@fig:stabilize to traverse the DNN and compute stable neurons. The algorithm initializes the MILP model with input constraints (@line:create_input) and then iterates over each layer of the network.
-// % %follows the~@eq:mip to create corresponding
-// % Next, for each layer, it creates constraints (@line:create_pwl_layer or~@line:create_linear_layer) depending on the layer type.
-// % Moreover,  it uses approximation to estimate bounds of neuron values to determine neuron stability (@line:estimate_bounds).
-// % Next, it filters unstable neurons (@line:find_unstable) and attempt to make them stable by optimizing either their lower ($\Maximize$) or upper ($\Minimize$) bounds.
-
-
-
-// \paragraph{Pruning Leaf Nodes}
-
-// Another optimization used is that \proofgen{} does not check child nodes if the parent node is unsatisfiable.
-// In a \prooflang{} proof tree, a child node adds constraints to the parent (e.g., node 6 adds the constraint of $v_1$ to node 4, which adds the constraint of $v_2$ to node 2 in~@fig:proof-exampleb). Thus, if we determine that the constraint of the parent is unsatisfiable, we can skip the child nodes, which must also be unsatisfiable.
-
-// %Simply checking parent nodes would actually increase MILP cost, because they have shorter tree paths and thus have a greater number of disjunctive constraints.
-
-// \proofcheck{} uses a backtracking mechanism to check the parent node only when the child nodes are infeasible. Specifically, it starts checking a leaf node $l$. If it determines unsatisfiability it will check the parent $p$ of $l$. If $p$ is unsatisfiable it immediately removes the children of $p$ (more specifically the sibling of $l$). Next it backtracks to the parent of $p$ and repeats until meeting a stopping criteria. This optimization reduces the number of LP problems that need to be solved, making the proof checking process more efficient.
-
-// \proofgen{} implement a backjumping strategy that allows for backtracking multiple levels, $N$, rather than a single level at a time.
-// A large value of $N$ offers the chance for greater pruning if an unsatisfiable node is found by
-// backjumping, but such nodes also represent less constrained, and therefore, more complex MILP problems
-// and are less likely to be unsatisfiable.
-// The default value in $\proofcheck{}$ is $N=2$ is selected to enable a modest degree of pruning,
-// while being close enough to a proven unsatisfiable node that it has a reasonable chance of itself being unsatisfiable.
-// %Future work will explore tuning $N$ to a given verification problem.
-
-
-// % \hd{Without X, \proofcheck{} will have to check all the children.}
-
-// % \hd{It backjumps when the leave node is proved and X optimization is enabled.
-// % We can keep backing up until it cannot prove anymore, however, after N times, each time half the length of an activation pattern, an activation pattern is shortened to $1 / 2^{N}$ (e.g., if $N=2$, after 2 times of backing up, an activation pattern is shortened to 1/4 of its length).
-// % This is when the pruned leaves by those proved interiors are getting overlapped (due to parallelization, we backjump on multiple leaves), so more backjumps might not helpful.
-// % Instead, we start over with a new iteration with remaining leaves.
-// % I experienced with $N =  {1, 2, 3, 4, 5 }$ and I settled down $N=2$ for all experiments (fixed N) which seems to be good enough in our experiments.
-// % Increasing $N$ does not improve the performances but hurts especially when dealing with CNNs.
-// % }
-// % \matt{I think my main point is ``How much of this is important to \proofcheck{}?'' whatever is important needs to be described.  You don't need to describe all of the discarded alternatives.  If we settled on a particular strategy, then define that strategy and say why it works well, e.g., balances cost of failing to prove unsat for parents with ability to prune sub-trees.  Right now we just say "simple backtracking mechanism", but your description makes seem like it is not all that simple.}
-// % This optimization reduces the number of LP problems that need to be solved, making the proof checking process more efficient.
-
-// %. \proofcheck{} thus uses a simple backtracking mechanism to check the parent node only when the child nodes are infeasible. This optimization reduces the number of LP problems that need to be solved, making the proof checking process more efficient.
-// %However, checking the parent node is more expensive than checking the child nodes (otherwise we can just directly check the root node). \proofcheck{} thus uses a simple backtracking mechanism to check the parent node only when the child nodes are infeasible. This optimization reduces the number of LP problems that need to be solved, making the proof checking process more efficient.
-
-// \paragraph{Parallelization} Finally, the structure of a prooflang{} proof trees is designed to be easily parallelized.  Each tree path is an independent sub-proof and partitions of the tree allow checker to leverage multiprocessing to check large proof trees efficiently. \proofcheck{} uses a parameter $k$ to control the number of leaf nodes to be checked in parallel.
+A full branch and bound (#bab) search (@chap:bab) is typically expensive and slow on large networks. Thus most NNV tools implement optimizations to improve performance. A common optimization is to use _adversarial attack_ techniques to find counterexamples before running #bab. Examples of such techniques include randomized attacks @das2021fast and gradient-based attacks @madry2017towards.
+
+Modern verification tools have two phases: (i) attempt to _falsify_ the property with adversarial attacks, and (ii) if no counterexample is found, attempt to _verify_ the property using search algorithms such as #bab (@chap:bab). Of course, during the verification phase, the verifier may also discover counterexamples that the falsify phase misses.
+
+== Random Search Attack
+
+*Random search* is a simple adversarial attack method. It randomly samples points in the allowed input ranges and checks if any samples violate the property; if so, a counterexample is found.
+
+#example[Random Search][
+Suppose the network input ranges are:
+$ -1 <= x_1 <= 1, quad -2 <= x_2 <= 2 $
+and the network output is:
+$ y = 2x_1 - 1.5x_2 + 1. $
+We wish to find a counterexample to the property $y > 0$, i.e., find inputs $(x_1, x_2)$ in the given ranges producing $y <= 0$.
+
+- Try 1: $x_1 = 0.2, x_2 = -0.5$: $ y = 2 times 0.2 - 1.5 times (-0.5) + 1 = 0.4 + 0.75 + 1 = 2.15 > 0.$ Not a violation.
+- Try 2: $x_1 = -1, x_2 = 2$: $ y = 2 times (-1) - 1.5 times 2 + 1 = -2 - 3 + 1 = -4 < 0.$ *Counterexample found*: $(x_1 = -1, x_2 = 2)$.
+] <ex:random-search>
+
+#problem[Random Search Exercise][
+Consider the input ranges $-1 <= x_1 <= 1, quad -1 <= x_2 <= 1$ and network output $y = 3x_1 + 2x_2 - 2$.
+
+Use random search to find a counterexample to the property $y > 0$:
++ Randomly sample three valid points and compute $y$ at each point.
++ Check if any sample violates the property. Note, if none violates, that's OK; just report the results.
++ Based on your samples, discuss whether random search is likely to be efficient for this problem.
+]
+
+== Projected Gradient Descent (PGD)
+
+*PGD* is a powerful and widely used adversarial attack that builds on the idea of _gradient descent_. Gradient descent repeatedly moves the input a small amount in the direction that most rapidly decreases some objective by following the negative gradient.
+
+Specifically, at each step PGD computes the gradient of the network output with respect to the input and takes a small gradient-descent step that pushes the input toward a stronger property violation. Next, PGD _projects_ (clips) the updated input back into the allowed domain if the step goes outside the input bounds.
+
+We reuse @ex:random-search to illustrate PGD. The input ranges are $-1 <= x_1 <= 1, -2 <= x_2 <= 2$, the output is $y = 2x_1 - 1.5x_2 + 1$, and the goal is to find a counterexample producing $y <= 0$.
+
++ *Initialize.* Choose a valid starting input, e.g., $(x_1^((0)), x_2^((0))) = (0, 0)$. This satisfies the input ranges but does not violate $y > 0$ since $y = 1 > 0$. Proceed.
+
++ *Iterative update.* For each step $t = 0, 1, 2, ...$:
+
+  a. *Compute the gradient.* The gradient $nabla_x y$ indicates how sensitive $y$ is to each input:
+    $ nabla_x y = ((partial y)/(partial x_1), (partial y)/(partial x_2), ..., (partial y)/(partial x_n)) $
+    It represents the direction of steepest _increase_ in $y$. To minimize $y$ (make violation $y <= 0$ more likely), move in the _opposite_ direction $-nabla_x y$.
+
+    For $y = 2x_1 - 1.5x_2 + 1$: $(partial y)/(partial x_1) = 2$, $(partial y)/(partial x_2) = -1.5$, so $nabla_x y = (2, -1.5)$.
+
+  b. *Gradient update.* Move distance $eta$ (the _step size_) in the negative gradient direction:
+    $ x_1^((t+1)) = x_1^((t)) - eta dot 2, quad x_2^((t+1)) = x_2^((t)) - eta dot (-1.5) $
+    With $eta = 0.5$ from $(0, 0)$: $x_1^((1)) = -1.0$, $x_2^((1)) = +0.75$.
+
+  c. *Project (Clip) to valid range.* If new values are outside bounds, clip them:
+    $ x_1^((t+1)) = max(-1, min(x_1^((t+1)), 1)), quad x_2^((t+1)) = max(-2, min(x_2^((t+1)), 2)) $
+    The candidate $(-1.0, +0.75)$ is already within range; no clipping needed.
+
+  d. *Check for violation.* Compute $y = 2(-1) - 1.5(0.75) + 1 = -2.125 < 0$. PGD finds counterexample $(x_1, x_2) = (-1, 0.75)$.
+
+#example[PGD with Clipping][
+Using step size $eta = 1.0$ from $(0, 0)$:
+$
+x_1^((1)) &= 0 - 1.0 times 2 = -2.0 \
+x_2^((1)) &= 0 - 1.0 times (-1.5) = +1.5
+$
+$x_1^((1)) = -2.0$ is outside $[-1, 1]$, so clip to $x_1^((1)) = -1$. $x_2^((1)) = 1.5$ is within $[-2, 2]$; unchanged.
+
+Projected input: $(-1, 1.5)$. Output: $y = 2(-1) - 1.5(1.5) + 1 = -3.25 < 0$. Counterexample found.
+]
+
+#example[Gradient Computation][
+Consider $y = x_1^2 + 3x_2$. The gradient is:
+$ nabla_x y = ((partial y)/(partial x_1), (partial y)/(partial x_2)) = (2x_1, 3). $
+At $(x_1, x_2) = (1, 2)$: $nabla_x y = (2, 3)$. Near $(1,2)$, increasing $x_1$ raises $y$ twice as fast as increasing $x_2$ would.
+]
+
+#problem[Compute Gradients][
+For each output function below, compute $nabla_x y = ((partial y)/(partial x_1), (partial y)/(partial x_2))$ and explain what the gradient tells you about how $y$ changes:
++ $y = 2x_1 - x_2 + 1$
++ $y = -x_1^2 + 4x_2$
++ $y = 3x_1 x_2 - x_2^2$
+] <prob:compute-gradients>
+
+#problem[PGD Iterations][
+Let $y = 2x_1 - 3x_2 + 1$, with $-1 <= x_1, x_2 <= 1$. Starting from $(0, 0)$ with step size $eta > 0$, use PGD to minimize $y$ and violate $y > 0$. Find two step sizes $eta_1$ and $eta_2$ such that:
++ With $eta_1$, PGD finds a counterexample in _one_ iteration.
++ With $eta_2$, PGD finds a counterexample in _two or more_ iterations.
+
+#solution[
+The gradient is $nabla_x y = (2, -3)$. PGD update: $x_1^((t+1)) = x_1^((t)) - 2eta$, $x_2^((t+1)) = x_2^((t)) + 3eta$.
+
+*Case A: $eta_1 = 0.5$.*
+- Iteration 1: $x_1^((1)) = 0 - 0.5(2) = -1$, $x_2^((1)) = 0 + 0.5(3) = 1.5$. Clip $x_2$ to 1. Check: $y = 2(-1) - 3(1) + 1 = -4 < 0$. *Counterexample* $(-1, 1)$ in one iteration.
+
+*Case B: $eta_2 = 0.07$.*
+- Iteration 1: $x_1^((1)) = -0.14$, $x_2^((1)) = 0.21$. Check: $y = 2(-0.14) - 3(0.21) + 1 = 0.09 > 0$. Continue.
+- Iteration 2: $x_1^((2)) = -0.28$, $x_2^((2)) = 0.42$. Check: $y = 2(-0.28) - 3(0.42) + 1 = -0.82 < 0$. *Counterexample* $(-0.28, 0.42)$ in two iterations.
+]
+] <prob:pgd-iterations>
+
+#pagebreak()
+= Proof Generation and Checking <chap:proof-gen-check>
+
+As NNV tools become more complex (e.g., state-of-the-art tools have 20K+ lines of code), they are more prone to bugs. VNN-COMP'23 @brix2023fourth showed that 3 of the top 7 participants produced unsound results by claiming unsafe networks are safe, i.e., they return #unsat on problems that are actually #sat.
+
+While checking counterexamples is straightforward (we evaluate the network on the input), checking #unsat results---proving no counterexample exists---is more challenging as it requires tracing the reasoning steps of the verifier. In this chapter, we discuss work @duong2025generating on generating and checking proofs of #unsat results generated by BaB-based NNV tools.
+
+== Proof Generation for Branch and Bound Algorithms <sec:proofgen>
+
+The #bab algorithm splits the problem into smaller subproblems and uses abstraction to compute bounds to prune the search space. This structure allows proof generation capabilities to be added with minimal overhead to existing #bab{}-based NNV tools.
+
+#smallcaps[ProofGen] extends the basic #bab algorithm with proof generation. The key idea is to introduce a *proof tree* and record the branching decisions into it. The proof tree has a binary structure, where each node represents a neuron and its left and right edges represent its activation decision (active or inactive). At the end of verification, the proof tree is returned as the proof of #unsat.
+
+```
+Algorithm: ProofGen (BaB with Proof Generation)
+Input:  NN N, property phi_in => phi_out
+Output: (unsat, ProofTree) if valid, else (sat, counterexample)
+
+ActPatterns = {∅}     // initialize with empty activation pattern
+ProofTree   = {}      // initialize empty proof tree
+
+while ActPatterns is not empty:
+  σ_i = Select(ActPatterns)
+  if Deduce(N, phi_in, phi_out, σ_i):        // feasible
+    cex = LP(N, phi_in, phi_out, σ_i)
+    if cex: return (sat, cex)                // counterexample found
+    v_i = Decide(N, σ_i)                    // pick neuron to split
+    ActPatterns += {σ_i ∪ {v_i}, σ_i ∪ {v̄_i}}
+  else:                                      // infeasible — prune
+    ProofTree += {σ_i}                       // record in proof
+
+return (unsat, ProofTree)
+```
+
+#example[ProofGen Illustration][
+We reuse @ex:bab to illustrate #smallcaps[ProofGen]. The goal is to verify the property $(x_1, x_2) in [-2.0, 2.0] times [-1.0, 1.0] => (y_1 > y_2)$.
+
+#smallcaps[ProofGen] first splits neuron $v_4$, creating two subproblems. The inactive-$v_4$ subproblem is determined to be #unsat (leaf node 3). The active-$v_4$ subproblem is further split on $v_2$. The inactive-$v_2$ subproblem is #unsat (leaf node 5). The active-$v_2$ subproblem is split on $v_1$. Both resulting subproblems (leaf nodes 6 and 7) are #unsat. Since all branches lead to #unsat, the property is valid and the proof tree is returned.
+]
+
+#problem[Proof Tree Construction][
+Consider the following network:
+$
+hat(x)_3 &= x_1 - 2x_2 + 1, quad x_3 = "relu"(hat(x)_3) \
+hat(x)_4 &= -x_1 + x_3 + 0.5, quad x_4 = "relu"(hat(x)_4) \
+y &= -x_3 + 2x_4
+$
+The input region is $(x_1, x_2) in [-1,1] times [-1,1]$ and the property to verify is $y <= 5$.
+
+A verifier uses BaB with neuron splitting on $x_3$ and $x_4$ in order:
++ First split on $x_3$.
++ For the active-$x_3$ branch, split on $x_4$.
+
+The solver determines: (a) inactive $x_3$ is #unsat, (b) active $x_3$ + inactive $x_4$ is #unsat, (c) both active is also #unsat.
+
+Do the following:
++ Draw the _proof tree_, labeling each split node with the neuron being split.
++ For each split, explain: which constraints are added (e.g., $hat(x)_3 >= 0$ or $hat(x)_3 <= 0$), how equations simplify, and why the subproblem is #unsat.
++ Explain why the proof tree is a correctness proof — why showing all leaf nodes are #unsat proves $y <= 5$ is valid.
+] <prob:proof-tree>
+
+
+
+== Proof Language <sec:prooflang>
+
+Rather than recording the generated proof tree in a verifier-specific format, it is more desirable to have a standard format that is human-readable, compact, efficiently generated by verification tools, and independently processable by proof checkers.
+
+#smallcaps[ProofLang] is designed to meet these requirements. It is inspired by the SMTLIB format @barrett2010smt used for SMT solving, which has also been adopted by the VNNLIB language @vnnlib to specify neural network properties (see @sec:vnnlib for examples).
+
+A #smallcaps[ProofLang] proof is composed of *declarations* and *assertions*. The grammar is:
+
+```
+<proof>        ::= <declarations> <assertions>
+<declarations> ::= <declaration> | <declaration> <declarations>
+<declaration>  ::= (declare-const <input-vars>  Real)
+                 | (declare-const <output-vars> Real)
+                 | (declare-pwl   <hidden-vars> <activation>)
+<activation>   ::= ReLU | LeakyReLU | ...
+<assertions>   ::= <assertion> | <assertion> <assertions>
+<assertion>    ::= (assert <formula>)
+<formula>      ::= (<op> <term> <term>)
+                 | (and <formula>+) | (or <formula>+)
+<term>         ::= <input-var> | <output-var> | <hidden-var> | <constant>
+<op>           ::= < | <= | > | >=
+<input-var>    ::= X_<constant>
+<output-var>   ::= Y_<constant>
+<hidden-var>   ::= N_<constant>
+```
+
+_Input variables_ (prefixed `X`) and _output variables_ (prefixed `Y`) are declared as reals. _Hidden variables_ (prefixed `N`) correspond to internal neurons and are declared with their piecewise-linear activation function (e.g., ReLU). Assertions over input variables are _preconditions_ and those over output variables are _postconditions_. The hidden constraints encode the activation patterns of the proof tree, where each `and` clause represents one tree path.
+
+Below is a #smallcaps[ProofLang] proof for the example in @ex:bab:
+
+```
+; Declare variables
+(declare-const X_0 X_1 Real)
+(declare-const Y_0 Y_1 Real)
+(declare-pwl N_1 N_2 N_3 N_4 ReLU)
+
+; Input constraints (precondition)
+(assert (>= X_0 -2.0))
+(assert (<= X_0  2.0))
+(assert (>= X_1 -1.0))
+(assert (<= X_1  1.0))
+
+; Output constraint (negated postcondition)
+(assert (<= Y_0 Y_1))
+
+; Hidden constraints (proof tree paths — one per leaf)
+(assert (or
+    (and (<  N_4 0))
+    (and (<  N_2 0) (>= N_4 0))
+    (and (>= N_2 0) (>= N_1 0) (>= N_4 0))
+    (and (>= N_2 0) (<  N_1 0) (>= N_4 0))
+))
+```
+
+#example[ProofLang Format][
+The `(and (< N_4 0))` clause corresponds to the rightmost path of the proof tree with $overline(v_4)$ (leaf 3). The `(and (< N_2 0) (>= N_4 0))` clause corresponds to the path with $v_4 and overline(v_2)$ (leaf 5).
+]
+
+#smallcaps[ProofLang] intentionally omits network weights and biases — these are available in the standard ONNX format @onnx, which any #smallcaps[ProofLang] checker can access independently. The explicit DNF (disjunctive normal form) structure enables easy parallelization of proof checking.
+
+
+== Proof Checker <sec:proofchecking>
+
+#smallcaps[ProofCheck] is a verifier-independent proof checker for #smallcaps[ProofLang] proofs generated by #bab{}-based NNV tools.
+
+=== The Core Algorithm
+
+The goal of #smallcaps[ProofCheck] is to verify that each _leaf_ node of the proof tree is #unsat. To check a leaf, #smallcaps[ProofCheck] forms an MILP problem (@sec:using-milp) consisting of the NNV constraints (@eq:nnv2) — network, input condition, negated output — augmented with the activation-pattern constraints encoded by the tree path to that leaf. It then invokes an LP solver; infeasibility certifies that leaf.
+
+```
+Algorithm: ProofCheck
+Input:  Network N, property phi_in => phi_out, ProofTree
+Output: certified if proof valid, else uncertified
+
+if not RepOK(ProofTree): raise Error("Invalid proof tree")
+
+model = CreateStabilizedMILP(N, phi_in, phi_out)
+node  = null
+
+while ProofTree is not empty:
+  node  = Select(ProofTree, node)         // get next leaf to check
+  model = AddConstrs(model, node)         // add leaf's activation constraints
+  if Feasible(model):
+    return uncertified                    // LP found a satisfying point
+  // (leaf is infeasible — continue)
+
+return certified
+```
+
+#smallcaps[ProofCheck] first validates the proof tree structure (@sec:prooflang). It then creates an MILP model for the network and property. The main loop selects leaf nodes one at a time, adds their activation-pattern constraints to the model, and calls the LP solver. If any leaf is found feasible, the proof is invalid. After all leaves are verified infeasible, #smallcaps[ProofCheck] returns #smallcaps[certified].
+
+#example[ProofCheck on BaB Example][
+For the #smallcaps[ProofLang] proof in @sec:prooflang, #smallcaps[ProofCheck] must certify the four leaf nodes 3, 5, 6, and 7. Suppose it first selects node 3, which has the single constraint $overline(v_4)$, i.e., $0.6v_1 + 0.9v_2 - 0.1 <= 0$. It conjoins this with the NNV constraints for the input region and network, then invokes the LP solver. The LP is infeasible — leaf 3 is certified. #smallcaps[ProofCheck] continues for the remaining three leaves and returns #smallcaps[certified] once all are verified.
+]
+
+=== Optimizations
+
+While the core algorithm is minimal, it can be inefficient for large proofs. #smallcaps[ProofCheck] employs several optimizations.
+
+*Neuron Stabilization.*
+
+A primary challenge in NNV is the presence of large numbers of piecewise-linear constraints (e.g., ReLU), which generate many branches and yield large proof trees. In the MILP formulation this creates many disjunctions that are hard to solve. #smallcaps[ProofCheck] uses _neuron stabilization_ @duong2024harnessing to identify neurons that are _stable_ (always active or always inactive) for all inputs satisfying the property precondition. For stable neurons, the disjunctive ReLU constraint is replaced by a simpler linear constraint, reducing MILP complexity.
+
+*Pruning Leaf Nodes.* A child node in the proof tree adds constraints to its parent's constraints (the child's activation pattern is strictly more constrained). Therefore, if a parent node is #unsat, all its descendants must also be #unsat. #smallcaps[ProofCheck] exploits this by using a *backtracking* mechanism: after certifying a leaf $l$, it checks the parent $p$; if $p$ is #unsat, the sibling subtree of $l$ is pruned. This backjumping can proceed up to $N$ levels at a time. The default $N = 2$ balances pruning benefit against the cost of solving less-constrained (harder) parent problems.
+
+*Parallelization.* The DNF structure of a #smallcaps[ProofLang] proof tree is inherently parallel — each tree path is an independent sub-proof. #smallcaps[ProofCheck] uses a parameter $k$ to check $k$ leaf nodes concurrently using multiprocessing.
 
 // % == Rounding Errors <sec:rounding-errors}
 
@@ -6341,922 +5296,538 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 
 == Input Splitting <sec:input-splitting>
 
-// Many verifiers, e.g.,~\cite{katz2019marabou,wang2018formal,wang2021beta,duong2025neuralsat}, use a technique called \emph{input splitting} to quickly deal with networks with verification problems involving low-dimensional networks, such as those in the ACAS Xu benchmark where the networks have a small number of inputs (e.g., $<= 50$).
-// %~@sec:acasxu
-// The idea is to split the original verification problem into subproblems, each checking whether the network produces the desired output from a smaller input region and returns \unsat{} if all subproblems are verified and \sat{} if a counterexample is found in any subproblem. Input splitting avoids BaB search (@chap:bab)---which performs \emph{neuron splitting}---and is often used to quickly eliminate easy cases.
-
-// Moreover, each subproblem now has a smaller input region, thus the verifier can often verify them more quickly than the original problem.
-// Finally, because each task can be solved independently, the verifier can solve them in parallel to further speed up the verification process.
-
-
-// \begin{example}
-// Given a problem with input region $ {x_1 in [-1,1] , x_2 in [-2,2] }$, input splitting splits the input region into four subregions:
-// $ {x_1 in [-1,0] , x_2 in [-2,0] }$,
-// $ {x_1 in [-1,0] , x_2 in [0,2] }$ ,
-// $ {x_1 in [0,1] , x_2 in [-2,0] }$, and
-// $ {x_1 in [0,1], x_2 in [0,2] }$.
-// The verifier then checks if the network produces the desired output from each of these subregions.
-
-// Note that the formula $-1 <= x_1 <= 1 \land -2 <= x_2 <= 2$ representing the original input region is equivalent to the formula $(-1 <= x_1 <= 0 \lor 0 <= x <= 1) \land (-2 <= x_2 <= 0 \lor 0 <= x_2 <= 2)$ representing the combination of the created subregions.
-// \end{example}
-
-
-//  == Bounds Tightening <sec:boundstigthten}
-
-// \subsection{Input Bounds Tightening <sec:inputboundstigthten}
-
-// When the verifier splits on a neuron (e.g., $ hat(x)_i <= 0$ or $ hat(x)_i > 0$),
-// it adds new linear constraints that further restrict the feasible input region.
-// As a result, the original input bounds (e.g., $-1 <= x_1 <= 1$) may no longer  reflect the true range of values that satisfy all current constraints.
-// \textbf{Input Bound tightening} recomputes the smallest possible ranges for each input variable  under these constraints.
-// These tighter input bounds propagate through the network and yield tighter neuron and output bounds, which in turn helps
-// prune subproblems earlier.
-
-// \begin{example <ex:inputboundstigthten}
-// Recall the network from~@fig:dnn-b can be represented as:
-// \[
-// \begin{aligned}
-// &  hat(x)_3 = -0.5x_1 + 0.5x_2 + 1.0 ~\land\\
-// &  hat(x)_4 = 0.5x_1 - 0.5x_2 + 1.0 ~\land\\
-// & x_3 = \relu{ hat(x)_3} ~\land \\
-// & x_4 = \relu{ hat(x)_4} ~\land \\
-// & x_5 = -x_3 + x_4 - 1.0,
-// \end{aligned}
-// \]
-// and input property $phi_"in"$
-// \(
-// -1 <= x_1 <= 1 \land -2 <= x_2 <= 2
-// \)
+Many verifiers use a technique called _input splitting_ to quickly deal with networks with verification problems involving low-dimensional networks, such as those in the ACAS Xu benchmark where the networks have a small number of inputs (e.g., $<= 50$).
+The idea is to split the original verification problem into subproblems, each checking whether the network produces the desired output from a smaller input region and returns #unsat if all subproblems are verified and #sat if a counterexample is found in any subproblem. Input splitting avoids BaB search (@chap:bab)---which performs _neuron splitting_---and is often used to quickly eliminate easy cases.
+
+Moreover, each subproblem now has a smaller input region, thus the verifier can often verify them more quickly than the original problem.
+Finally, because each task can be solved independently, the verifier can solve them in parallel to further speed up the verification process.
+
+#example[
+Given a problem with input region ${ x_1 in [-1,1] , x_2 in [-2,2] }$, input splitting splits the input region into four subregions:
+${ x_1 in [-1,0] , x_2 in [-2,0] }$,
+${ x_1 in [-1,0] , x_2 in [0,2] }$,
+${ x_1 in [0,1] , x_2 in [-2,0] }$, and
+${ x_1 in [0,1], x_2 in [0,2] }$.
+The verifier then checks if the network produces the desired output from each of these subregions.
+
+Note that the formula $-1 <= x_1 <= 1 and -2 <= x_2 <= 2$ representing the original input region is equivalent to the formula $(-1 <= x_1 <= 0 or 0 <= x <= 1) and (-2 <= x_2 <= 0 or 0 <= x_2 <= 2)$ representing the combination of the created subregions.
+]
+
+
+== Bounds Tightening <sec:boundstigthten>
+
+=== Input Bounds Tightening <sec:inputboundstigthten>
+
+When the verifier splits on a neuron (e.g., $hat(x)_i <= 0$ or $hat(x)_i > 0$),
+it adds new linear constraints that further restrict the feasible input region.
+As a result, the original input bounds (e.g., $-1 <= x_1 <= 1$) may no longer reflect the true range of values that satisfy all current constraints.
+*Input Bound tightening* recomputes the smallest possible ranges for each input variable under these constraints.
+These tighter input bounds propagate through the network and yield tighter neuron and output bounds, which in turn helps prune subproblems earlier.
+
+#example[
+Recall the network from @fig:dnn-b can be represented as:
+$
+  hat(x)_3 = -0.5x_1 + 0.5x_2 + 1.0 and \
+  hat(x)_4 = 0.5x_1 - 0.5x_2 + 1.0 and \
+  x_3 = "relu"(hat(x)_3) and \
+  x_4 = "relu"(hat(x)_4) and \
+  x_5 = -x_3 + x_4 - 1.0,
+$
+and input property $phi_"in"$: $-1 <= x_1 <= 1 and -2 <= x_2 <= 2$.
+
+Suppose we make a split on $x_3$, which gives us two subproblems, represented by the constraints:
+$-0.5x_1 + 0.5x_2 + 1.0 <= 0$
+and
+$-0.5x_1 + 0.5x_2 + 1.0 > 0$.
+We can use the new constraint to tighten the input bounds of $x_1$ and $x_2$ for each subproblem.
+
+For the first subproblem, we can create an optimization problem to tighten the bounds.
+For example, to tighten the upper bounds of $x_1$, we can create an optimization problem as follows:
+$
+  "maximize" & x_1 quad "s.t." \
+  & -0.5x_1 + 0.5x_2 + 1.0 <= 0 \
+  & -1 <= x_1 <= 1 \
+  & -2 <= x_2 <= 2
+$
+
+We can apply the same approach to tighten the lower bounds of $x_1$ using a minimization problem. Similarly, we can create optimization problems to tighten both the bounds of $x_2$.
+] <ex:inputboundstigthten>
+
+Note that this approach works well for networks with small inputs, e.g., the ACAS Xu benchmark with 5 inputs, and is adopted by many modern NNV tools, including #smallcaps[Marabou] and #smallcaps[nnenum].
+For larger input dimensions networks, it will take much time as we need to run $2 times$ the number of inputs to tighten all the input bounds (for each input, we need to tighten the upper and lower bounds individually).
+
+To reduce the time complexity, we can prioritize the input variables to tighten first, e.g., deciding the variable with the largest bounds first, and only tighten up to a maximum number of inputs, e.g., 10 inputs.
+
+=== Neuron (Hidden) Bounds Tightening <sec:neuronboundstigthten>
+
+Instead of tightening the input bounds, we can tighten the bounds of the hidden neurons.
+There are a couple of advantages of tightening the bounds of the hidden neurons:
++ In some networks, numbers of hidden neurons are _fewer_ than the number of inputs, e.g., the MNISTFC 2x256 network has $28 times 28 = 784$ inputs and only 512 hidden neurons.
++ We don't necessarily tighten all hidden neurons, as some hidden neurons are already stable, i.e., their lower bounds are greater than 0 or their upper bounds are less than 0.
++ More importantly, if a hidden neuron is stabilized after tightening its bounds, e.g., its lower bound becomes greater than 0 or its upper bound becomes less than 0, we no longer need to branch on that particular neuron.
+
+#example[
+Let's revisit @ex:inputboundstigthten; after splitting $x_4$, we can tighten the upper bounds of $x_4$ (suppose that $l_{x_4} < 0 < u_{x_4}$, e.g., unstable and not split yet) by solving the following optimization problem:
+$
+  "maximize" & x_4 quad "s.t." \
+  & 0.5x_1 - 0.5x_2 + 1.0 <= 0 \
+  & -1 <= x_1 <= 1 \
+  & -2 <= x_2 <= 2
+$
+If the optimization result yields a maximum value of $x_4$ less than 0, e.g., $u_{x_4} < 0$, we can conclude that $x_4$ is stabilized and no longer need to branch on $x_4$, thus reducing the number of branches made by the verifier.
+There will be many tweaks to make the optimization problem more efficient, e.g., setting an early stopping condition: if the maximum value of $x_4$ is less than 0, we can stop the optimization. This is because, if the upper bound of $x_4$ is already less than 0, $x_4$ will be considered as _inactive_ no matter what the _optimal_ upper bound is.
+
+Note that in both cases optimization problems are independent (between inputs/neurons and lower/upper bounds) and thus can be solved in parallel, e.g., optimizing both upper and lower bounds of $x_1$ (input) and $x_4$ (neuron) simultaneously.
+] <ex:neuronboundstigthten>
+
+
+== Batch Processing <sec:batchprocessing>
+
+*Matrix Form for Interval Computation*
+
+While the min/max formulation, e.g., for abstraction @sec:interval-abstraction, is intuitive, it can be efficiently implemented using matrix operations.
+We can decompose the weight matrix $W$ into positive and negative components:
+$
+  W^+ = max(W, 0) quad quad W^- = min(W, 0)
+$
+where the max and min operations are applied element-wise.
+
+Then the interval bounds can be computed as:
+$
+  f^a_L &= W^+ dot bold(l) + W^- dot bold(u) + bold(b) \
+  f^a_U &= W^+ dot bold(u) + W^- dot bold(l) + bold(b)
+$
+where $bold(l) = [l_1, l_2, dots, l_n]^T$ and $bold(u) = [u_1, u_2, dots, u_n]^T$ are the vectors of lower and upper bounds.
+
+#example[
+We can verify that the matrix form produces identical results to the min/max approach using the same network from @ex:transformer-affine1.
+
+Given the weight $w_1 = -0.5$, $w_2 = 0.5$, and bias $b = 1.0$, we decompose:
+$W^+ = [max(-0.5, 0), max(0.5, 0)] = [0, 0.5]$
+$W^- = [min(-0.5, 0), min(0.5, 0)] = [-0.5, 0]$
+
+For inputs $x_1 in [1, 2]$ and $x_2 in [-1, 3]$, the lower vector $bold(l) = [1, -1]$ and the upper vector $bold(u) = [2, 3]$:
+$
+  f^a_L &= W^+ dot bold(l) + W^- dot bold(u) + b \
+  &= [0, 0.5] dot [1, -1] + [-0.5, 0] dot [2, 3] + 1 \
+  &= 0 dot 1 + 0.5 dot (-1) + (-0.5) dot 2 + 0 dot 3 + 1 \
+  &= 0 - 0.5 - 1.0 + 0 + 1 = -0.5
+$
+
+$
+  f^a_U &= W^+ dot bold(u) + W^- dot bold(l) + b \
+  &= [0, 0.5] dot [2, 3] + [-0.5, 0] dot [1, -1] + 1 \
+  &= 0 dot 2 + 0.5 dot 3 + (-0.5) dot 1 + 0 dot (-1) + 1 \
+  &= 0 + 1.5 - 0.5 + 0 + 1 = 2.0
+$
+
+This gives us $f^a([1,2],[-1,3]) = [-0.5, 2.0]$, which matches exactly the result from the min/max approach in @ex:transformer-affine1.
+] <ex:matrix-form-equivalence>
+
+The matrix formulation of interval arithmetic is equivalent to the min/max approach but enables efficient batch processing of multiple input regions simultaneously.
+This is particularly useful when splitting input regions into multiple subproblems and computing abstraction in parallel.
 
-// Suppose we make a split on $x_3$, which give us two subproblems, represented by the constraints:
-// \(
-//     -0.5x_1 + 0.5x_2 + 1.0 <= 0
-// \)
-// and
-// \(
-//     -0.5x_1 + 0.5x_2 + 1.0 > 0
-// \).
-// We can use the new constraint to tighten the input bounds of $x_1$ and $x_2$ for each subproblem.
-
-// For the first subproblem, we can create an optimization problem to tighten the bounds.
-// For example, to tighten the upper bounds of $x_1$, we can create an optimization problem as follows:
-// \begin{equation}
-// \begin{aligned}
-// \text{maximize~} &x_1 quad \text{s.t.} \\
-// & -0.5x_1 + 0.5x_2 + 1.0 <= 0 \\
-// & -1 <= x_1 <= 1 \\
-// & -2 <= x_2 <= 2
-// \end{aligned}
-// \end{equation}
-
-// We can apply the same approach to tighten the lower bounds of $x_1$ using a minimization problem.  Similarly, we can create optimization problems to tighten both the bounds of $x_2$.
-
-// \end{example}
-// %~@sec:acasxu
-
-// Note that, this approach works well for networks with small inputs, e.g., the ACAS Xu benchmark with 5 inputs, and is adopted by many modern NNV tools, including \marabou{} and \nnenum{}.
-// For larger input dimensions networkswe, it will take much time as we need to run $2 \times$ the number of inputs to tighten all the input bounds (for each input, we need to tighten the upper and lower bounds individually).
-
-// To reduce the time complexity, we can prioritize the input variables to tighten first, e.g., deciding the variable with the largest bounds first, and only tighten up to a maxinum number of inputs, e.g., 10 inputs.
-
-// \subsection{Neuron (Hidden) Bounds Tightening <sec:neuronboundstigthten}
-
-// Instead of tightening the input bounds, we can tighten the bounds of the hidden neurons.
-// There are a couple of advantages of tightening the bounds of the hidden neurons:
-// \begin{enumerate}
-// \item In some networks, numbers of hidden neurons are \emph{fewer} than the number of inputs, e.g., the MNISTFC 2x256 network has $28\times 28 = 784$ inputs and only 512 hidden neurons.
-// \item We don't necessarily tighten all hidden neurons, as some hidden neurons are already stable, i.e., their lower bounds are greater than 0 or their upper bounds are less than 0.
-// \item More importantly, if a hidden neuron is stabilized after tightening its bounds, e.g., its lower bound becomes greater than 0 or its upper bound becomes less than 0, we no longer need to branch on that particular neuron.
-// \end{enumerate}
-
-// \begin{example <ex:neuronboundstigthten}
-// Let's revisit~@ex:inputboundstigthten, after splitting $x_4$\tvn{you wrote $x_3$ here, did you mean $x_4$?}, we can tighten the upper bounds of $x_4$ (suppose that $l_{x_4} < 0 < u_{x_4}$, e.g., unstable and not split yet) by solving the following optimization problem:
-
-// \begin{equation}
-// \begin{aligned}
-// \text{maximize~} &x_4 quad \text{s.t.} \\
-// & 0.5x_1 - 0.5x_2 + 1.0 <= 0 \\
-// & -1 <= x_1 <= 1 \\
-// & -2 <= x_2 <= 2
-// \end{aligned}
-// \end{equation}
-// If the optimization result yields a maximum value of $x_4$ less than 0, e.g., $u_{x_4} < 0$, we can conclude that $x_4$ is stabilized and no longer need to branch on $x_4$, thus, reducing the number of branches made by the verifier.
-// There will be many tweaks to make the optimization problem more efficient, e.g., setting a early stopping condition, e.g., if the maximum value of $x_4$ is less than 0, we can stop the optimization. It is because the fact that, if the upper bound of $x_4$ is already less than 0, $x_4$ will be considered as \emph{inactive} no matter what the \emph{optimal} upper bound is.
+Consider an input region that needs to be split for improving abstraction precision.
+For example, we can split the input region ${ x_1 in [-1,1], x_2 in [-2,2] }$ along the first dimension into two subproblems:
++ Subproblem 1: ${ x_1 in [-1,0], x_2 in [-2,2] }$
++ Subproblem 2: ${ x_1 in [0,1], x_2 in [-2,2] }$
 
-// Note that in both cases optimization problems are independent (between inputs/neurons and lower/upper bounds) and thus can be solved in parallel, e.g., optimizing the both upper and lower bounds of $x_1$ (input) and $x_4$ (neuron) simultaneously.
-// \end{example}
+Using the matrix form in @ex:matrix-form-equivalence, we can process both subproblems simultaneously by stacking the bounds into matrices:
+$
+  bold(L) = mat(-1, -2; 0, -2), quad
+  bold(U) = mat(0, 2; 1, 2)
+$
+where each row represents the lower and upper bounds for one subproblem.
 
-// % For networks with small inputs, DNN verification tools use a more aggressive abstraction process to achieve more precise computation. Specifically, they use LP solving to compute the tightest bounds for all input variables from the generated linear constraints. This computation is efficient when the number of inputs is small.
+Next, for a linear layer with weight matrix $W$ and bias vector $bold(b)$, we can compute the bounds for all subproblems simultaneously:
+$
+  bold(O)_L &= bold(L) dot (W^+)^T + bold(U) dot (W^-)^T + bold(b) \
+  bold(O)_U &= bold(U) dot (W^+)^T + bold(L) dot (W^-)^T + bold(b)
+$
 
+#example[
+Consider the network from @ex:transformer-affine1 with weight $W = [-0.5, 0.5]$ and bias $b = 1.0$. We split the input region ${ x_1 in [-1,1], x_2 in [-2,2] }$ into two subproblems as described above.
 
+First, we decompose the weight:
+$W^+ = [0, 0.5] quad quad W^- = [-0.5, 0] quad quad bold(b) = [1.0, 1.0]$
+The bias vector is the same for both subproblems, thus just duplicate it for each subproblem.
+Then we compute bounds for both subproblems:
+$
+  bold(L) dot (W^+)^T = mat(-1, -2; 0, -2) mat(0; 0.5) = mat(-1.0; -1.0)
+$
 
-// %(line~\ref{line:abstraction},~@alg:deduction)
-// % After tightening input bounds DNN verification tools apply abstraction to approximate the output bounds, which can be more precise with better input bounds.
-// % For networks with large number of inputs, we obtain input bounds from the input property $phi_"in"$.\tvn{Vu: to rewrite}
+$
+  bold(U) dot (W^-)^T = mat(0, 2; 1, 2) mat(-0.5; 0) = mat(0.0; -0.5)
+$
 
+$
+  bold(O)_L = mat(-1.0; -1.0) + mat(0.0; -0.5) + mat(1.0; 1.0) = mat(0.0; -0.5)
+$
 
-// % \ignore{
-// %  == Branching Heuristics <sec:branchingheuristics}
-// % Decision or branching heuristics decide free variables to make assignments and thus are crucial for the scalability of DPLL by reducing assignment mistakes~\cite{kroening2016decision,beyer2022progress}.
+Similarly for upper bounds:
+$
+  bold(U) dot (W^+)^T = mat(0, 2; 1, 2) mat(0; 0.5) = mat(1.0; 1.0)
+$
 
-// % For networks with small inputs, \tool{} prioritizes variables representing neurons with the \emph{furthest bounds} from the decision value 0 of ReLU, i.e., the 0 in $\max(x,0)$.
-// % Such neurons have wider bounds and therefore are more difficult to tighten during abstraction compared to other neurons.
-// % }
-
-
+$
+  bold(L) dot (W^-)^T = mat(-1, -2; 0, -2) mat(-0.5; 0) = mat(0.5; 0.0)
+$
 
+$
+  bold(O)_U = mat(1.0; 1.0) + mat(0.5; 0.0) + mat(1.0; 1.0) = mat(2.5; 2.0)
+$
 
-
-//  == Batch Processing} \label{sec:batchprocessing}
-// % \tvn{Do we still use this?  or we use the Parallel DPLL(T) in~@sec:parallel-search instead?}
-// % For networks with small inputs, \tool{} uses a simple approach to create and solve subproblems in parallel.
-// % Given a verification problem $N_{orig} = (alpha, phi_"in", phi_"out")$, where $alpha$ is the DNN and $phi_"in" \Rightarrow phi_"out"$ is the desired property, \tool{} creates subproblems $N_i = (alpha, phi_{{in}_i}, phi_"out")$, where $phi_{{in}_i}$ is the $i$-th subregion of the input region specified by $phi_"in"$.
-// % Intuitively, each subproblem checks if the DNN produces the output $phi_"out"$  from a smaller input region $phi_{{in}_i}$.
-// % The combination of these subproperties $\bigwedge phi_{{in}_i} \Rightarrow phi_"out"$ is logically equivalent to the original property $phi_"in" \Rightarrow phi_"out"$.
-
-
-// % Given $k$ available threads, \tool{} splits the original input region to obtain subproblems as described and and runs DPLL(T) on $k$ subproblems in parallel. % and iteratively splits any subproblem which cannot be solved within pre-defined amount of time, e.g., 2 seconds.
-// % \tool{} returns \texttt{unsat} if it verifies all subproblems and \texttt{sat} if it found a counterexample in any subproblem. %In the current implementation, \tool{} uses the number of available threads to determine the number of created subproblems.
-// % For example, we split the input region $ {x_1 in [-1,1] , x_2 in [-2,2] }$ into four subregions
-// % $ {x_1 in [-1,0] , x_2 in [-2,0] }$,
-// % $ {x_1 in [-1,0] , x_2 in [0,2] }$ ,
-// % $ {x_1 in [0,1] , x_2 in [-2,0] }$, and
-// % $ {x_1 in [0,1], x_2 in [0,2] }$.
-// % Note that the formula $-1 <= x_1 <= 1 \land -2 <= x_2 <= 2$ representing the original input region is equivalent to the formula $(-1 <= x_1 <= 0 \lor 0 <= x <= 1) \land (-2 <= x_2 <= 0 \lor 0 <= x_2 <= 2)$ representing the combination of the created subregions.
-
-
-// \paragraph{Matrix Form for Interval Computation}
-
-// While the min/max formulation, e.g., for abstraction~@sec:interval-abstraction, is intuitive, it can be efficiently implemented using matrix operations.
-// We can decompose the weight matrix $W$ into positive and negative components:
-// \[
-// W^+ = \max(W, 0) \qquad W^- = \min(W, 0)
-// \]
-// where the max and min operations are applied element-wise.
-
-// Then the interval bounds can be computed as:
-// \[
-// \begin{aligned}
-// f^a_L &= W^+ dot \mathbf{l} + W^- dot \mathbf{u} + \mathbf{b}\\
-// f^a_U &= W^+ dot \mathbf{u} + W^- dot \mathbf{l} + \mathbf{b}
-// \end{aligned}
-// \]
-// where $\mathbf{l} = [l_1, l_2, \ldots, l_n]^T$ and $\mathbf{u} = [u_1, u_2, \ldots, u_n]^T$ are the vectors of lower and upper bounds.
-
-
-// \begin{example <ex:matrix-form-equivalence}
-//     We can verify that the matrix form produces identical results to the min/max approach using the same network from~@ex:transformer-affine1.
-
-//     Given the weight $w_1 = -0.5$, $w_2 = 0.5$, and bias $b = 1.0$, we decompose:
-//     \[
-//     W^+ = [\max(-0.5, 0), \max(0.5, 0)] = [0, 0.5]
-//     \]
-//     \[
-//     W^- = [\min(-0.5, 0), \min(0.5, 0)] = [-0.5, 0]
-//     \]
+Therefore:
+- Subproblem 1: $x_3 in [0.0, 2.5]$
+- Subproblem 2: $x_3 in [-0.5, 2.0]$
 
-//     For inputs $x_1 in [1, 2]$ and $x_2 in [-1, 3]$, the lower vector $\mathbf{l} = [1, -1]$ and the upper vector $\mathbf{u} = [2, 3]$:
-//     \[
-//     \begin{aligned}
-//     f^a_L &= W^+ dot \mathbf{l} + W^- dot \mathbf{u} + b\\
-//     &= [0, 0.5] dot [1, -1] + [-0.5, 0] dot [2, 3] + 1\\
-//     &= 0 dot 1 + 0.5 dot (-1) + (-0.5) dot 2 + 0 dot 3 + 1\\
-//     &= 0 - 0.5 - 1.0 + 0 + 1 = -0.5
-//     \end{aligned}
-//     \]
+We can verify these results by computing each subproblem individually using the original formulation, which yields identical results.
+] <ex:batch-processing>
 
-//     \[
-//     \begin{aligned}
-//     f^a_U &= W^+ dot \mathbf{u} + W^- dot \mathbf{l} + b\\
-//     &= [0, 0.5] dot [2, 3] + [-0.5, 0] dot [1, -1] + 1\\
-//     &= 0 dot 2 + 0.5 dot 3 + (-0.5) dot 1 + 0 dot (-1) + 1\\
-//     &= 0 + 1.5 - 0.5 + 0 + 1 = 2.0
-//     \end{aligned}
-//     \]
 
-//     This gives us $f^a([1,2],[-1,3]) = [-0.5, 2.0]$, which matches exactly the result from the min/max approach in~@ex:transformer-affine1.
-//     \end{example}
+== GPU Processing <sec:gpu>
 
+By using matrix operations, we can leverage GPUs natively to speed up the computation.
+As expected, the computation time is reduced significantly using GPUs when the size of matrices (weights, bias, inputs, etc.) becomes larger @fig:gpu-benchmarking.
 
-// The matrix formulation of interval arithmetic is equivalent to the min/max approach but enables efficient batch processing of multiple input regions simultaneously.
-// This is particularly useful when splitting input regions into multiple subproblems and computing abstraction in parallel.
+#figure(
+  image("figure/gpu-benchmarking.png", width: 70%),
+  caption: [GPU Benchmarking Results.],
+) <fig:gpu-benchmarking>
 
-// Consider an input region that needs to be split for improving abstraction precision.
-// For example, we can split the input region $ {x_1 in [-1,1], x_2 in [-2,2] }$ along the first dimension into two subproblems:
-// \begin{enumerate}
-// \item Subproblem 1: $ {x_1 in [-1,0], x_2 in [-2,2] }$
-// \item Subproblem 2: $ {x_1 in [0,1], x_2 in [-2,2] }$
-// \end{enumerate}
+```python
+import torch
 
-// Using the matrix form in~@ex:matrix-form-equivalence, we can process both subproblems simultaneously by stacking the bounds into matrices:
-// \[
-// \mathbf{L} = \begin{bmatrix} -1 & -2 \\ 0 & -2 \end{bmatrix}, quad
-// \mathbf{U} = \begin{bmatrix} 0 & 2 \\ 1 & 2 \end{bmatrix}
-// \]
-// where each row represents the lower and upper bounds for one subproblem.
+# weights and bias
+W = torch.tensor([[0, 0.5], [-0.5, 0]]).cuda()
+b = torch.tensor([1.0, 1.0]).cuda()
 
-// Next, for a linear layer with weight matrix $W$ and bias vector $\mathbf{b}$, we can compute the bounds for all subproblems simultaneously:
-// \[
-// \begin{aligned}
-// \mathbf{O}_L &= \mathbf{L} dot (W^+)^T + \mathbf{U} dot (W^-)^T + \mathbf{b}\\
-// \mathbf{O}_U &= \mathbf{U} dot (W^+)^T + \mathbf{L} dot (W^-)^T + \mathbf{b}
-// \end{aligned}
-// \]
-// where $\mathbf{1}$ is a vector of ones with appropriate dimension and $\otimes$ denotes the outer product.
+# input bounds
+L = torch.tensor([[-1, -2], [0, -2]]).cuda()
+U = torch.tensor([[0, 2], [1, 2]]).cuda()
 
-// \begin{example <ex:batch-processing}
-// Consider the network from~@ex:transformer-affine1 with weight $W = [-0.5, 0.5]$ and bias $b = 1.0$. We split the input region $ {x_1 in [-1,1], x_2 in [-2,2] }$ into two subproblems as described above.
+# decompose weights
+W_plus = W.clamp(min=0)
+W_minus = W.clamp(max=0)
 
-// First, we decompose the weight:
-// \[W^+ = [0, 0.5] \qquad W^- = [-0.5, 0] \qquad \mathbf{b} = [1.0, 1.0]\]
-// The bias vector is the same for both subproblems, thus, just duplicate it for each subproblem.
-// Then we compute bounds for both subproblems:
-// \[
-// \mathbf{L} dot (W^+)^T = \begin{bmatrix} -1 & -2 \\ 0 & -2 \end{bmatrix} \begin{bmatrix} 0 \\ 0.5 \end{bmatrix} = \begin{bmatrix} -1.0 \\ -1.0 \end{bmatrix}
-// \]
+# compute bounds
+O_L = L @ W_plus.T + U @ W_minus.T + b
+O_U = U @ W_plus.T + L @ W_minus.T + b
+```
 
-// \[
-// \mathbf{U} dot (W^-)^T = \begin{bmatrix} 0 & 2 \\ 1 & 2 \end{bmatrix} \begin{bmatrix} -0.5 \\ 0 \end{bmatrix} = \begin{bmatrix} 0.0 \\ -0.5 \end{bmatrix}
-// \]
+#pagebreak()
+= The #tool Algorithm <chap:neuralsat>
 
-// \[
-// \mathbf{O}_L = \begin{bmatrix} -1.0 \\ -1.0 \end{bmatrix} + \begin{bmatrix} 0.0 \\ -0.5 \end{bmatrix} + \begin{bmatrix} 1.0 \\ 1.0 \end{bmatrix} = \begin{bmatrix} 0.0 \\ -0.5 \end{bmatrix}
-// \]
+#tool @duong2025neuralsat @duong2024harnessing is a relatively new competitor in NNV, but it has quickly become a strong contender, consistently placed among the top tools at NNV competitions (@chap:vnncomps).
 
-// Similarly for upper bounds:
-// \[
-// \mathbf{U} dot (W^+)^T = \begin{bmatrix} 0 & 2 \\ 1 & 2 \end{bmatrix} \begin{bmatrix} 0 \\ 0.5 \end{bmatrix} = \begin{bmatrix} 1.0 \\ 1.0 \end{bmatrix}
-// \]
+At its core, #tool is #bab, but follows a DPLL(T) framework @davis1962machine and includes specialized optimizations and heuristics to improve its search.
+Thus, #tool is essentially an SMT solver (@sec:smt-solvers) with respect to a theory, in this case, the theory of DNNs.
 
-// \[
-// \mathbf{L} dot (W^-)^T = \begin{bmatrix} -1 & -2 \\ 0 & -2 \end{bmatrix} \begin{bmatrix} -0.5 \\ 0 \end{bmatrix} = \begin{bmatrix} 0.5 \\ 0.0 \end{bmatrix}
-// \]
 
-// \[
-// \mathbf{O}_U = \begin{bmatrix} 1.0 \\ 1.0 \end{bmatrix} + \begin{bmatrix} 0.5 \\ 0.0 \end{bmatrix} + \begin{bmatrix} 1.0 \\ 1.0 \end{bmatrix} = \begin{bmatrix} 2.5 \\ 2.0 \end{bmatrix}
-// \]
+== Overview <sec:neuralsat:overview>
 
-// Therefore:
-// \begin{itemize}
-// \item Subproblem 1: $x_3 in [0.0, 2.5]$
-// \item Subproblem 2: $x_3 in [-0.5, 2.0]$
-// \end{itemize}
+// TODO: <fig:overview> NeuralSAT architecture figure (DPLL components + theory solver) — not yet added
+#figure(caption: [_TODO: NeuralSAT overview figure not yet added_])[_placeholder_] <fig:overview>
 
-// We can verify these results by computing each subproblem individually using the original formulation, which yields identical results.
-// \end{example}
+@fig:overview gives an overview of #tool, which consists of standard DPLL components (light shades) and the theory solver (dark shade).
+#tool first constructs a propositional formula over Boolean variables that represent the activation status of neurons (_Boolean Abstraction_). Clauses in the formula assert that each neuron, e.g., neuron $i$, is active or inactive, e.g., $v_i or overline(v_i)$.
+This representation enables using standard DPLL to search for truth values satisfying these clauses and a neural network-specific theory solver to check the feasibility of truth assignments---_activation patterns_ (@sec:activation-patterns)---with respect to the constraints encoding the network and the property of interest.
 
+#tool now enters an iterative process to find activation pattern (truth assignment) satisfying the activation clauses.
+First, #tool assigns a truth value to an unassigned variable (_Decide_), detects unit clauses caused by this assignment, and infers additional assignments (_Boolean Constraint Propagation_).
+Next, #tool invokes the theory solver or T-solver (_Deduction_), which uses LP solving and abstraction to check the feasibility of the constraints of the current assignment with the property of interest.
 
+If the T-solver confirms feasibility, #tool continues with new assignments (_Decide_). Otherwise, #tool detects a conflict (_Analyze Conflict_) and learns clauses to remember it and backtrack to a previous decision (_Backtrack_).
+If #tool detects local optima, it would restart (_Restart_) the search by clearing all decisions that have been made, but save the conflict clauses learned so far to avoid reaching the same state in the next runs.
+Restarting especially benefits challenging NNV problems by enabling better clause learning and exploring different decision orderings.
 
-//  == GPU Processing <sec:gpu}
+This iterative process repeats until #tool can no longer backtrack, and returns #unsat, indicating the network has the property, or it finds a total assignment for all boolean variables, and returns #sat.
 
+== Illustration <sec:neuralsat:illustration>
 
+We use #tool to prove that for inputs $x_1 in [-1, 1], x_2 in [-2,2]$ the network in @fig:dnn produces the output $x_5 <= 0$.
+#tool takes as input the formula $alpha$ representing the network:
 
-// By using matrix operations, we can leverage using GPUs natively to speed up the computation.
-// As expected, the computation time is reduced significantly using GPUs when the size of matrices (weights, bias, inputs, etc.) becomes larger~@fig:gpu-benchmarking.
+$
+  x_3 &= op("ReLU")(-0.5x_1 + 0.5x_2 + 1) quad and \
+  x_4 &= op("ReLU")(x_1 + x_2 - 1) quad and \
+  x_5 &= -x_3 + x_4 - 1.0
+$
 
-// \begin{figure}[t]
-//     \centering
-//      in cludegraphics[width=0.7\linewidth]{figure/gpu-benchmarking.png}
-//     \caption{GPU Benchmarking Results. <fig:gpu-benchmarking}
-// \end{figure}
+and the formula $phi$ representing the property:
 
-// \begin{lstlisting}[language=Python]
-// import torch
+$ phi : -1 <= x_1 <= 1 and -2 <= x_2 <= 2 quad => quad x_5 <= 0. $ <eq:valid_prop>
 
-// # weights and bias
-// W = torch.tensor([[0, 0.5], [-0.5, 0]]).cuda()
-// b = torch.tensor([1.0, 1.0]).cuda()
+To prove $alpha => phi$, #tool needs to show that _no_ values of $x_1, x_2$ satisfying the input properties would result in $x_5 > 0$. In other words, #tool needs to return `unsat` for:
 
-// % input bounds
-// L = torch.tensor([[-1, -2], [0, -2]]).cuda()
-// U = torch.tensor([[0, 2], [1, 2]]).cuda()
+$ alpha and -1 <= x_1 <= 1 and -2 <= x_2 <= 2 and x_5 > 0. $ <eq:negprop>
 
-// # decompose weights
-// W_plus = W.clamp(min=0)
-// W_minus = W.clamp(max=0)
+*Notation:* In the following, we write $x |-> v$ to denote that the variable $x$ is assigned with a truth value $v in {T, F}$. This assignment can be either decided by `Decide` or inferred by `BCP`. We also write $x@d l$ and $overline(x)@d l$ to indicate the respective assignments $x |-> T$ and $x |-> F$ at decision level $d l$.
 
-// # compute bounds
-// O_L = L @ W_plus.T + U @ W_minus.T + b
-// O_U = U @ W_plus.T + L @ W_minus.T + b
+#paragraph[Boolean Abstraction][First, #tool creates two Boolean variables $v_3$ and $v_4$ to represent the activation status of the hidden neurons $x_3$ and $x_4$, respectively. For example, $v_3 = T$ means $x_3$ is `active` and thus gives the constraint $-0.5x_1 + 0.5x_2 + 1 > 0$. Similarly, $v_3 = F$ means $x_3$ is `inactive` and therefore gives $-0.5x_1 + 0.5x_2 + 1 <= 0$. Next, #tool forms two clauses ${v_3 or overline(v_3) ; v_4 or overline(v_4)}$ ensuring that these variables are either `active` or `inactive`.]
 
-// \end{lstlisting}
+#paragraph[DPLL(T) Iterations][#tool searches for a satisfying _activation pattern_---truth assignment for the Boolean variables to satisfy the clauses and the constraints they represent with respect to the formula in @eq:negprop.
+For this example, #tool uses four iterations, summarized in @tab:valid, to determine that no such assignment exists and the problem is thus #unsat.
 
+#figure(
+  caption: [#tool's run producing #unsat. The notation $x@d l$ and $overline(x)@d l$ mean the assignments $x |-> T$ and $x |-> F$ at decision level $d l$, respectively.],
+  table(
+    columns: 7,
+    align: center,
+    table.header(
+      [Iter], [*BCP*], table.cell(colspan: 2)[*Deduction*], [*Decide*], table.cell(colspan: 2)[*Analyze Conflict*],
+      [], [], [Constraints], [Bounds], [], [Bt], [Learned Clauses],
+    ),
+    [Init], [-], [$I = -1 <= x_1 <= 1;$ \ $-2 <= x_2 <= 2$], [$-1 <= x_1 <= 1;$ \ $-2 <= x_2 <= 2$], [-], [-], [$C = {v_3 or overline(v_3); v_4 or overline(v_4)}$],
+    [1], [-], [$I$], [$x_5 <= 1$], [$overline(v_4)@1$], [-], [-],
+    [2], [-], [$I; x_4 = $ `off`], [$x_5 <= -1$], [-], [0], [$C = C union {v_4}$],
+    [3], [$v_4@0$], [$I; x_4 = $ `on`], [$x_3 >= 0.5; x_5 <= 0.5$], [$v_3@0$], [-], [-],
+    [4], [-], [$I; x_3 = $ `on`$; x_4 = $ `on`], [-], [-], [*-1*], [$C = C union {overline(v_4)}$],
+  )
+) <tab:valid>
 
+In _iteration 1_, as shown in @fig:overview, #tool starts with `BCP`, which has no effects because the current clauses and (empty) assignment produce no unit clauses.
+In `Deduction`, #tool uses an LP solver to determine that the current set of constraints, which contains just the initial input bounds, is feasible#footnote[We use the terms feasible, from the LP community, and satisfiable, from the SAT community, interchangeably.]. #tool then uses abstraction to approximate an output upper bound $x_5 <= 1$ and thus deduces that satisfying the output $x_5 > 0$ might be feasible. #tool continues with `Decide`, which uses a heuristic to select the unassigned variable $v_4$ and sets $v_4 = F$---essentially a _guess_ that neuron $x_4$ is inactive. #tool increments the decision level ($d l$) to 1 and associates $d l = 1$ to the assignment, i.e., $overline(v_4)@1$.
 
-// %\hd{Updated.}
+In _iteration 2_, `BCP` again has no effect because it does not detect any unit clauses. In `Deduction`, #tool determines that the current set of constraints, which contains $x_1 + x_2 - 1 <= 0$ due to the assignment $v_4 |-> F$ (i.e., $x_4 = $ `off`), is feasible. #tool then approximates a new output upper bound $x_5 <= -1$, which means satisfying the output $x_5 > 0$ constraint is _infeasible_.
 
+#tool now enters `AnalyzeConflict` and determines that $v_4$ causes the conflict ($v_4$ is the only variable assigned so far). From the assignment $overline(v_4)@1$, #tool learns a "backjumping" clause $v_4$, i.e., $v_4$ must be $T$. #tool now backtracks to $d l$ $0$ and erases all assignments decided _after_ this level. Thus, $v_4$ is now unassigned and the constraint $x_1 + x_2 - 1 <= 0$ is also removed.
 
-// %We note that this input splitting technique is different than other input splitting techniques whe
+In _iteration 3_, `BCP` determines that the learned clause is also a unit clause $v_4$ and infers $v_4@0$. In `Deduction`, we now have the new constraint $x_1 + x_2 - 1 > 0$ due to $v_4 |-> T$ (i.e., $x_4 = $ `on`). With the new constraint, #tool approximates the output upper bound $x_5 <= 0.5$, which means $x_5 > 0$ might be satisfiable.
+Also, #tool computes new bounds $0.5 <= x_3 <= 2.5$ and $0 < x_4 <= 2.0$, and deduces that $x_3$ must be positive because its lower bound is 0.5.
+Thus, #tool has a new assignment $v_3@0$ ($d l$ stays unchanged due to the implication).
+This new assignment inference from the T-solver is known as _theory propagation_ in DPLL(T).
 
-// %% can be split into the subproblems  $-1 <= x_1 <= 1 \land -2 <= x_2 <= 2  \Rightarrow x_5 <= 0$
+In _iteration 4_, `BCP` has no effects because we have no new unit clauses. In `Deduction`, #tool determines that the current set of constraints, which contains the new constraint $-0.5x_1 + 0.5x_2 + 1 > 0$ (due to $v_3 |-> T$), is _infeasible_. Thus, #tool enters `AnalyzeConflict` and determines that $v_4$, which was set at $d l = 0$ (by `BCP` in iteration 3), causes the conflict.
+#tool then learns a clause $overline(v_4)$ (the conflict occurs due to the assignment ${v_3 |-> T; v_4 |-> T}$, but $v_3$ was implied and thus making $v_4$ the conflict).
+However, because $v_4$ was assigned at decision level 0, #tool can no longer backtrack and thus sets $d l = -1$ and returns #unsat, i.e., the property is valid.]
 
-// %% \tvn{hm .. if you have multiple inputs, how do you create regions from those?  e.g., if $phi = 5<= x_2 <= 10 \land 10 <= i_2 <= 20$, then what is $phi_k$?}
-// %% \hd{Split each input at a time, e.g., split $x_2$ from $5<= x_2 <= 10$ to $(5<= x_2 <= 8) \lor (8<= x_2 <= 10)$. Now original problem is $phi = [(5<= x_2 <= 8) \lor (8<= x_2 <= 10)] \land (10 <= i_2 <= 20)$, or we could rewrite that formula in DNF form like $phi = [(5<= x_2 <= 8) \land (10 <= i_2 <= 20)] \lor [(8<= x_2 <= 10) \land (10 <= i_2 <= 20)]$}\tvn{so if for i1 you make k1 splits,  i2 you make k2 splits,  .., then the number of sub probs is k1*k2*...kn?}\hd{yes, this thing is very trivial, I did it when I had no idea to optimize during that time}
-// %% After that, \tool{} creates multiple CDCL verification instances, and each of them will solve a subproblem independently\tvn{how do you determine the number of subregions? is it automatically based on the number of avail threads?} \hd{I did split based on number of threads for now.}
 
+== #tool vs. #bab <sec:restart-tree>
 
+// TODO: <fig:tree>, <fig:treea>, <fig:treeb> — NeuralSAT vs BaB search tree comparison figures, not yet added
+#figure(caption: [_TODO: NeuralSAT vs BaB combined search tree figure not yet added_])[_placeholder_] <fig:tree>
+#figure(caption: [_TODO: NeuralSAT search tree (smaller space) not yet added_])[_placeholder_] <fig:treea>
+#figure(caption: [_TODO: BaB search tree (larger space) not yet added_])[_placeholder_] <fig:treeb>
 
+Note that this process of selecting and assigning (guessing) values to variables representing neurons is the _branching_ phase in #bab. It is also commonly called _neuron splitting_ because it splits the search tree into subtrees corresponding to the assigned values (e.g., see @sec:restart-tree).
 
-// %In the input splitting used in~\cite{wang2018formal,wang2021beta}, they only compute the abstraction over each subregion once to get estimated output.
-// %If the subregion causes UNSAT, it will be eliminate immediately.
-// %Otherwise, they split that current subregion into multiple instances, and continue at the aforementioned abstraction step.
-// %In the other hand, in \tool{}, each CDCL instance takes input of a subregion and run for verifying it with iterations as in~@fig:alg.
+As mentioned in @sec:complexity, ReLU-based NNV is NP-complete, and for difficult problem instances NNV tools often have to exhaustively search a very large space, making scalability a main concern for modern NNV approaches.
 
-// \part{Modern NNV Tools <part:modern-tools}
-// = The \neuralsat{} Algorithm <chap:neuralsat}
+@fig:tree shows the difference between #tool and another NNV tool (e.g., using the popular Branch-and-Bound (#bab) approach) in how they navigate the search space. We assume both tools employ similar abstraction and neuron splitting.
+@fig:treeb shows that the other tool performs splitting to explore different parts of the tree (e.g., splitting $v_1$ and explore the branches with $v_1 = T$ and $v_1 = F$ and so on). Note that the other tool needs to consider the tree shown regardless if it runs sequentially or in parallel.
 
-// \neuralsat{}~\cite{duong2025neuralsat,duong2024harnessing} is a relatively new competitor in NNV, but  it has quickly become a strong contender, consistently placed among the top tools at NNV competitions~@chap:vnncomps.
+In contrast, #tool has a smaller search space shown in @fig:treea.
+#tool follows the path $v_1$, $v_2$ and then $overline(v_2)$ (just like the tool on the right).
+However, because of the learned clause $v_2 or v_3$, #tool performs a BCP step that sets $v_3$ (and therefore prunes the branch with $overline(v_3)$ that needs to be considered in the other tree).
+Then #tool splits $v_4$, and like the other tool, determines infeasibility for both branches. Now #tool's conflict analysis determines from learned clauses that it needs to backtrack to $v_3$ (yellow node) instead of $v_1$. Without learned clauses and non-chronological backtracking, #tool would backtrack to decision $v_1$ and continues with the $overline(v_1)$ branch, just like the other tool in @fig:treeb.
 
-// At its core, \neuralsat{} is BaB, but follows a DPLL(T) framework~\cite{davis1962machine} and includes specialized optimizations and heuristics to improve its search.
-// Thus, \neuralsat{} is essentially an SMT solver (@sec:smt-solvers) with respect to a theory, in this case, the theory of DNNs.
+Thus, #tool was able to generate non-chronological backtracks and use BCP to prune various parts of the search tree. In contrast, the other tool would have to move through the exponential search space to eventually reach the same result.
 
 
-// \tvn{TODO: rewrite completely because hard to explain without knowing BCP and stuff. Have a section on DPLL(T) first.}
-//  == Overview <sec:neuralsat:overview}
-// \begin{figure}[h]
-//     \centering
-//      in cludegraphics[width=0.4\linewidth]{figure/arch.pdf}
-//     \caption{\label{fig:overview} The \neuralsat{} DPLL(T) Algorithm.}
-// \end{figure}
+#pagebreak()
+= The #smallcaps[Reluplex] Algorithm <chap:reluplex>
 
-// @fig:overview gives an overview of \neuralsat{}, which consists of standard DPLL components (light shades) and the theory solver (dark shade).
-// \neuralsat{} first constructs a propositional formula over Boolean variables that represent the activation status of neurons (\emph{Boolean Abstraction}). Clauses in the formula assert that each neuron, e.g., neuron $i$, is active or inactive, e.g., $v_i \vee \overline{v_i}$.
-// This representation enables using standard DPLL to search for truth values satisfying these clauses and a neural network-specific theory solver to check the feasibility of truth assignments---\emph{activation patterns} (@sec:activation-patterns)--- with respect to the constraints encoding the network and the property of interest.
+#smallcaps[Reluplex] @katz2017reluplex is a classical BaB (@chap:bab) approach for NNV. The technique extends the _simplex_ method @nelder1965simplex to support the ReLU activation function (*Reluplex* = *Relu* + Sim#strong[plex]). #smallcaps[Reluplex] has been succeeded by the more efficient #smallcaps[Marabou] tool @katz2019marabou. However, the core ideas of #smallcaps[Reluplex] are still relevant and thus presented here as another example of #bab{}-based NNV techniques.
 
-// \neuralsat{} now enters an iterative process to find activation pattern (truth assignment) satisfying the activation clauses.
-// First, \neuralsat{} assigns a truth value to an unassigned variable (\emph{Decide}), detects unit clauses caused by this assignment, and infers additional assignments (\emph{Boolean Constraint Propagation}).
-// Next, \neuralsat{} invokes the theory solver or T-solver (\emph{Deduction}), which uses LP solving and abstraction to check the feasibility of the constraints of the current assignment with the property of interest. %The T-solver can also infer additional truth assignments.
+== Algorithm Overview <sec:reluplex-overview>
 
 
-// If the T-solver confirms feasibility, \neuralsat{} continues with new assignments (\emph{Decide}). Otherwise, \neuralsat{} detects a conflict   (\emph{Analyze Conflict}) and learns clauses to remember it and backtrack to a previous decision  (\emph{Backtrack}).
-// If \neuralsat{} detects local optima, it would restart (\emph{Restart}) the search by clearing all decisions that have been made, but save the conflict clauses learned so far to avoid reaching the same state in the next runs.
-// Restarting especially benefits challenging NNV problems by enabling better clause learning and exploring different decision orderings.
+#smallcaps[Reluplex] extends the classical simplex method to handle the
+non-linear ReLU constraints $hat(x) = max(x, 0)$.
+Like simplex, #smallcaps[Reluplex] maintains a set of _basic_ variables whose values are determined by other (non-basic) variables, and updates them through pivot operations.
 
-// This iterative process repeats until \neuralsat{} can no longer backtrack, and returns \unsat{}, indicating the network has the property, or it finds a total assignment for all boolean variables, and returns \sat{}. % (and the user can query \neuralsat{} for a counterexample).
+*Initialization* The constraints representing the network are first rewritten into a basic form by introducing basic or _slack_ variables. #smallcaps[Reluplex] also forms the lower and upper bounds for each variable based the input constraints and semantics ReLU, e.g., for a ReLU variable $hat(x)_i$, the lower bound is 0.
 
-// % TODO: uncomment after I put back sec:neuralsat-alg.
-// % @sec:neuralsat-alg provides more details on the \neuralsat{} algorithm, describing the main components of \neuralsat{} and how they work together to verify networks.
+All variable values are then initially set to some guess, such as $0$, even if these values violate bounds. This initial configuration acts as the starting point for #smallcaps[Reluplex] to iteratively refine the variable values to satisfy all constraints.
 
-//  == Illustration}
+*Fixing bound violations* #smallcaps[Reluplex] repeatedly checks all variables to see if any violate their bounds.
+If a non-basic variable violates its bounds, it can be directly updated to a valid value; the update is then propagated into the basic variables using the defining linear equations.
+If a basic variable violates its bounds, #smallcaps[Reluplex] cannot adjust it directly; instead it performs a _pivot_, swapping that basic variable with one of the non-basic variables appearing in its defining equation.
+After pivoting, the out-of-bounds variable becomes non-basic and can then be directly fixed.
 
-// \begin{example <ex:neuralsat}
-// We use \neuralsat{} to prove that for inputs $x_1 in [-1, 1], x_2 in [-2,2]$ the network in~@fig:dnn produces the output $x_5 <= 0$.
-// \neuralsat{} takes as input the formula $alpha$ representing the network:
+*Handling ReLU violations* When all variable bounds are satisfied, #smallcaps[Reluplex] next checks the ReLU relations $hat(x)_i = max(x_i, 0)$.
+If a pair $(x_i, hat(x)_i)$ is inconsistent (e.g., $x_i > 0$ but $hat(x)_i = 0$), then the algorithm repairs it in the same way: if the violated variable is non-basic, it is simply updated; if it is basic, a pivot is performed so it can be updated.
 
-// \begin{equation*}%\label{eq:ex}
-// \begin{aligned}
-//   x_3 &=  \relu{-0.5x_1 + 0.5x_2 + 1} ~\land\\
-//   x_4 &= \relu{x_1 + x_2 - 1} ~\land\\
-//   x_5 &= -x_3 + x_4 - 1.0
-// \end{aligned}
-// \end{equation*}
-// and the formula $phi$ representing the property:
+*Termination* If no variable violates bounds or ReLU relations, the current configuration is a feasible assignment that satisfies all constraints, and #smallcaps[Reluplex] returns #sat.
+If #smallcaps[Reluplex] explores all possible pivoting options without finding any feasible configuration, it concludes #unsat.
 
-// \begin{equation* <eq:valid_prop}
-//     phi : -1<= x_1 <= 1 \land -2 <= x_2 <= 2 quad\Rightarrowquad x_5 <= 0.
-// \end{equation*}
 
-// To prove $alpha \Rightarrow phi$, \neuralsat{} needs to show  that \emph{no} values of $x_1,x_2$ satisfying the input properties would result in $x_5 > 0$. In other words, \neuralsat{} needs to return \texttt{unsat} for:
-// \begin{equation <eq:negprop}
-//   alpha\; \land\; -1 <= x_1 <= 1     \;\land\; -2 <= x_2 <= 2   \;\land\; x_5 > 0.
-// \end{equation}
+== Illustration <ex:reluplex>
 
-// \textbf{Notation:} In the following, we write $x \mapsto v$ to denote that the variable $x$ is assigned with a truth value $v in  {T,F }$. This assignment can be either decided by \texttt{Decide} or inferred by \texttt{BCP}. We also write $x@dl$ and  $\overline{x}@dl$ to indicate the respective assignments $x \mapsto T$ and $x \mapsto F$  at decision level $dl$.
 
-// \paragraph{Boolean Abstraction} First, \neuralsat{} creates two Boolean variables $v_3$ and $v_4$ to represent the
-// %(pre-ReLU)
-// activation status of the hidden neurons $x_3$ and $x_4$, respectively. For example, $v_3=T$ means $x_3$ is \texttt{active} and thus gives the constraint $-0.5x_1 + 0.5x_2 + 1 > 0$. Similarly, $v_3=F$ means $x_3$ is \texttt{inactive} and therefore gives $-0.5x_1 + 0.5x_2 + 1<= 0$. Next, \neuralsat{} forms two clauses  $ {v_3 \lor \overline{v_3} \;;\; v_4 \lor \overline{v_4} }$ ensuring that these variables are either \texttt{active} or \texttt{inactive}.
+#figure(
+    [#mydnn(sc:100%)],
+    caption: [A simple network (similar to @fig:dnn).],
+  ) <fig:dnn-replux>
 
+We demonstrate #smallcaps[Reluplex] using the network in @fig:dnn-replux. This network has inputs $x_1, x_2$, two hidden neurons $x_3, x_4$ with ReLU activations, and one output $x_5$. It can be represented by the following equations:
 
-// %Now, \neuralsat{} searches for truth assignments for activation variables to satisfy the clauses. %(and later check that they also satisfy the constraints of DNN implied by these variables and the properties to be proved).
-// %We summarize the five iterations \neuralsat{} uses to determine that no such assignment exists (i.e., \texttt{unsat}).
+$
+x_3 = x_1 - x_2, quad hat(x)_3 = max(x_3, 0), \
+x_4 = x_1 + x_2, quad hat(x)_4 = max(x_4, 0), \
+x_5 = 0.5 hat(x)_3 - 0.2 hat(x)_4
+$
 
-// %We show how \neuralsat{} proves that network in~@fig:dnn has property in ~@eq:valid_prop, i.e., for any inputs $x_1 in [-1, 1], x_2 in [-2,2]$, the network produces the output $x_5 <= 0$.
+We want to check that the network has the property
 
-// % \textbf{SAT formulation} \neuralsat{} first encodes the verification task into an SMT checking problem as described in \S\ref{sec:nnverif} by representing the network in~@fig:dnnb as the formula:
+$ (0 <= x_1 <= 0.5 and -2 <= x_2 <= -1) => (x_5 < 0 or x_5 > 0.5). $ <eq:prop1>
 
-// % and negating of the property in Eq~\ref{eq:valid_prop}:
-// % \begin{equation <eq:negprop}
-// %         -1 <= x_1 <= 1     \;\land\; -2 <= x_2 <= 2
-// %         \;\land\; x_5 > 0.
-// % \end{equation}
+That is, when the inputs $x_1, x_2$ fall within certain ranges, then the result $x_5$ has certain values.
+As shown in @sec:satisfiability-and-activation-pattern-search, we turn this into a satisfiability problem by negating the property:
 
-// %\hd{I might use different weight for DNN to trigger some technique in the tool.}\tvn{yes, that's fine, make it as easy to illustrate as possible, but should also be challenging enough to require at least 2-3 iterations.  Also good to demonstrate 2 cases:  sat and unsat. For example, focus on say unsat,  and then after illustrating that,  make a new subsection and change something so that it would be sat and briefly mentions how \neuralsat{} would work to return sat}\tvn{\tool is complex, so instead of using the Dynaplex example, which is a bit too easy,  maybe look at the illustrative example for the GenTree's paper---it has more details.  Or even look at the Reluplex's illustrative example in the Survey paper}.
+$ (0 <= x_1 <= 0.5 and -2 <= x_2 <= -1) and 0 <= x_5 <= 0.5, $ <eq:negprop1>
 
-// %We use an example\tvn{Hai: create an example, may be use the DNN from PA4 (or subset of that DNN)} to demonstrate how \neuralsat{} works. ~@fig:ex shows a small DNN ....
+and checking whether there exists a counterexample satisfying the negated property.
 
+We now use #smallcaps[Reluplex] to check whether there exists an assignment satisfying the negated property in @eq:negprop1.
+We start by introducing three _basic_ (auxilliary or slack) variables to represent the relationships between the variables in the network:
 
-// % \begin{figure}
-// %   \centering
-// %    in cludegraphics[width=0.7\linewidth]{figure/example-b.pdf}
-// %   \caption{Simple FNN with ReLU activation.} \label{fig:ex}
-// % \end{figure}
+$a_1 = x_1 - x_2 - x_3$ <eq:reluplex2a>
 
-// %\hd{Step 0: About the network - copy somewhere, need to rewrite}
-// %\textbf{Running example}
+$a_2 = x_1 + x_2 - x_4$ <eq:reluplex2b>
 
-// %We use an example of simple fully-connected feed-forward neural network with %ReLU activation shown in~@fig:dnn to demonstrate how \neuralsat{} works.
-// %This network has already been trained and we have the learned weights and bias shown in the figure.
-// %The network consists of three layers: an input layer, a hidden layer, and an output layer with two neurons each.
-// %The weights on the edges represent the learned coefficients of the weight matrix used by the affine transformations done at each layer. The learned bias for each neuron is shown above or below it.
+$a_3 = 0.5 hat(x)_3 - 0.2 hat(x)_4 - x_5$ <eq:reluplex2c>
 
+These basic variables are used to maintain the relationships between the variables in the constraints and are updated during the search process.
+In contrast, a _non-basic_ variable is one that does not represent the relationship between other variables in the constraints. In this example, all variables except $a_1, a_2, a_3$ are non-basic.
 
-// % \neuralsat{} aims to find an assignment satisfying the conjunction of the formulae in ~@eq:ex and~\ref{eq:negprop}. Such an assignment represents a counterexample violating the property, i.e., within the given ranges but does not satisfy the output requirement.
-// % %If such an input does not exist, \neuralsat{} returns \texttt{unsat}, indicating the property is valid. Otherwise it returns \texttt{sat} and the input, which represents a counterexample violating the property.
+#smallcaps[Reluplex] first assigns 0 to all variables in the equations in @eq:reluplex2a -- @eq:reluplex2c. This will likely violate some bounds, which #smallcaps[Reluplex] uses an iterative process, represented by a sequence of _configurations_, to refine.
 
-// % Next, from the formula in ~@eq:ex, \neuralsat{} creates two Boolean variables $v_3$ and $v_4$ to represent the status of the hidden pre-ReLU neurons $x_3'$ and $x_4'$. For example, $v_3=T$ means the status of $x_3$ is \texttt{on}, i.e., $-x_1-0.5x_2-1>0$ and $v_3=F$ means $x_4=\texttt{off}$, i.e.,  $-x_1-0.5x_2-1>0$. \neuralsat{} also forms two initial clauses indicating the status variables must be either \texttt{on} or \texttt{off}: $v_3 \lor \overline{v_3} \;;\; v_4 \lor \overline{v_4}$.
+@tab:reluplex1 shows the initial configuration with all values assigned to 0.
+The lower (LB) and upper (UB) bounds of the inputs $x_1, x_2$ and output $x_5$ are specified in @eq:negprop1. The LBs of $hat(x)_i$'s representing ReLUs are 0s, and the other hidden variables are unbounded (i.e., $-infinity$ to $infinity$).
 
+#figure(caption: [Configuration \#1],
+  text(size: 0.85em,
+  table(
+    columns: 11,
+    align: center, stroke: none,
+    [], [$x_1$], [$x_2$], [$x_3$], [$hat(x)_3$], [$x_4$], [$hat(x)_4$], [$x_5$], [$a_1$], [$a_2$], [$a_3$],
+    table.hline(),
+    [LB], [0], [-2], [$-infinity$], [0], [$-infinity$], [0], [0], [0], [0], [0],
+    [Val], [0], [*0*], [0], [0], [0], [0], [0], [0], [0], [0],
+    [UB], [0.5], [-1], [$infinity$], [$infinity$], [$infinity$], [$infinity$], [0.5], [0], [0], [0],
+  ))
+) <tab:reluplex1>
 
+@tab:reluplex1 also shows that $x_2$ is out-of-bounds because $0 in.not [-2,-1]$. To fix $x_2$, which is non-basic, #smallcaps[Reluplex] updates it to a valid value, e.g., $x_2 += -1.0 = -1.0$ by adding $-1.0$ to the current value of $x_2$.
 
-// % \begin{equation <eq:newvars}
-// %     \begin{aligned}
-// %         v_3 \vee \overline{v_3} \\
-// %         v_4 \vee \overline{v_4}
-// %     \end{aligned}
-// % \end{equation}
+Now, because $a_1 = x_1 - x_2 - x_3$ and $a_2 = x_1 + x_2 - x_4$ depend on $x_2$ as shown in @eq:reluplex2a and @eq:reluplex2b, this update to $x_2$ also changes $a_1, a_2$:
 
+$
+a_1 += 1.0 = 1.0, \
+a_2 += -1.0 = -1.0.
+$
 
+#figure(caption: [Configuration \#2],
+  text(size: 0.85em,
+  table(
+    columns: 11,
+    align: center, stroke: none,
+    [], [$x_1$], [$x_2$], [$x_3$], [$hat(x)_3$], [$x_4$], [$hat(x)_4$], [$x_5$], [$a_1$], [$a_2$], [$a_3$],
+    table.hline(),
+    [LB], [0], [-2], [$-infinity$], [0], [$-infinity$], [0], [0], [0], [0], [0],
+    [Val], [0], [*-1*], [0], [0], [0], [0], [0], [*1*], [*-1*], [0],
+    [UB], [0.5], [-1], [$infinity$], [$infinity$], [$infinity$], [$infinity$], [0.5], [0], [0], [0],
+  ))
+) <tab:reluplex2>
 
+@tab:reluplex2 shows the new configuration, which now has $a_1, a_2$ violating their bounds and need to be fixed. Assume #smallcaps[Reluplex] picks $a_1$. To fix the basic variable $a_1$, #smallcaps[Reluplex] pivots (swaps) it with a variable it depends on from the constraint $a_1 = x_1 - x_2 - x_3$ in @eq:reluplex2a. Assume #smallcaps[Reluplex] pivots $a_1$ with $x_3$, we get
 
-// % \begin{table*}
-// %   \caption{\neuralsat{}'s run producing \texttt{unsat}. The notation $x@dl$ and $\overline{x}@dl$ mean the assignments $x \mapsto T$ and $x \mapsto F$ at decision level $dl$, respectively. <tab:valid}
-// %   \centering
-// %   \footnotesize
-// %     \begin{tabular}{c|c|cc|c|cc}
-// %     \toprule
-// %     Iter & \textbf{BCP} & \multicolumn{2}{c|}{\textbf{DEDUCTION}}& \textbf{DECIDE} & \multicolumn{2}{c}{\textbf{ANALYZE-CONFLICT}} \\
-// %       &&Constraints&Bounds&&Backtrack&Learned Clauses\\
-// %       \midrule
-// %       Init &-& $I = -1 <= x_1 <= 1; -2 <= x_2 <= 2$ & $-1 <= x_1 <= 1; -2 <= x_2<= 2$ & - &-&$C =  {v_3 \lor \overline{v_3};\; v_4 \lor \overline{v_4} }$\\
+$ x_3 = x_1 - x_2 - a_1. $ <eq:reluplex5>
 
-// %       1 &-&$I$ & $ x_5 <= 1 $& $\overline{v_4}@1$&-&-\\
+#smallcaps[Reluplex] now updates the non-basic $a_1$ to 0 ($a_1 += -1.0 = 0$). This also changes $x_3$ to 1.0 ($x_3 += 1.0 = 1.0$) because $x_3$ depends on $a_1$ as shown in @eq:reluplex5.
 
-// %       2 &-&$I; x_4=\texttt{off}$&$ x_5 <= -1$& - & 0 &  $C = C \cup  {v_4 }$\\
+#figure(caption: [Configuration \#3],
+  text(size: 0.85em,
+  table(
+    columns: 11,
+    align: center, stroke: none,
+    [], [$x_1$], [$x_2$], [$x_3$], [$hat(x)_3$], [$x_4$], [$hat(x)_4$], [$x_5$], [$a_1$], [$a_2$], [$a_3$],
+    table.hline(),
+    [LB], [0], [-2], [$-infinity$], [0], [$-infinity$], [0], [0], [0], [0], [0],
+    [Val], [0], [-1], [*1*], [0], [0], [0], [0], [*0*], [-1], [0],
+    [UB], [0.5], [-1], [$infinity$], [$infinity$], [$infinity$], [$infinity$], [0.5], [0], [0], [0],
+  ))
+) <tab:reluplex3>
 
-// %       3 &$v_4@0$&$I; x_4=\texttt{on} $&$ x_3 >= 0.5; x_5 <= 0.5$ & $v_3@0$&-&-\\
+@tab:reluplex3 shows the new configuration, which now has the basic variable $a_2$ out-of-bound. To fix it, #smallcaps[Reluplex] pivots $a_2$ with a variable it depends on from the constraint $a_2 = x_1 + x_2 - x_4$ in @eq:reluplex2b. Assume #smallcaps[Reluplex] pivots $a_2$ with $x_4$, we get
 
-// %       4 &-&$I; x_3=\texttt{on}; x_4=\texttt{on}$&-&- & \bf{-1} & $C = C\cup  {\overline{v_4} }$\\
+$ x_4 = x_1 + x_2 - a_2. $ <eq:reluplex6>
 
-// %       % 5 &$v_4@0$&$I; x_3=\texttt{on}; x_4=\texttt{on}$&-&- & \bf{-1}& $C = C \cup \overline{v_3}\lor \overline{v_4}$\\
+Now $a_2$ becomes non-basic and is updated to 0 through $a_2 += 1.0 = 0$. As $x_4$ depends on $a_2$ as shown in @eq:reluplex6, we make the change $x_4 -= 1.0 = -1.0$.
 
-// %        \bottomrule
-// %     \end{tabular}
-// % \end{table*}
+#figure(caption: [Configuration \#4],
+  text(size: 0.85em,
+  table(
+    columns: 11,
+    align: center, stroke: none,
+    [], [$x_1$], [$x_2$], [$x_3$], [$hat(x)_3$], [$x_4$], [$hat(x)_4$], [$x_5$], [$a_1$], [$a_2$], [$a_3$],
+    table.hline(),
+    [LB], [0], [-2], [$-infinity$], [0], [$-infinity$], [0], [0], [0], [0], [0],
+    [Val], [0], [-1], [1], [0], [*-1*], [0], [0], [0], [*0*], [0],
+    [UB], [0.5], [-1], [$infinity$], [$infinity$], [$infinity$], [$infinity$], [0.5], [0], [0], [0],
+  ))
+) <tab:reluplex4>
 
-// %The goal is to find an activation pattern---a truth assignment for these variables---that satisfies the conjunction of the clauses in~@eq:negprop. Such an assignment represents a counterexample violating the property, i.e., within the given ranges but does not satisfy the output requirement. If no such assignment exists, \neuralsat{} returns \texttt{unsat}, indicating the property is valid.
+@tab:reluplex4 shows the new configuration.
+At this point, we no longer have out-of-bound variables, but have inconsistent values for the pair of ReLU variables $x_3, hat(x)_3$. This is because $hat(x)_3 = max(x_3, 0)$ but we have $x_3 = 1$ thus $max(1, 0) = 1$, which is not $hat(x)_3 = 0$. Thus, #smallcaps[Reluplex] needs to fix either $hat(x)_3$ or $x_3$.
 
-// \paragraph{DPLL(T) Iterations} \neuralsat{} searches for a satisfying \emph{activation pattern}---truth assignment for the Boolean variables to satisfy the clauses and the constraints they represent with respect to the formula in~@eq:negprop.
-// For this example, \neuralsat{} uses four iterations, summarized in~@tab:valid, to determine that no such assignment exists and the problem is thus \unsat{}.
+Assume #smallcaps[Reluplex] picks $hat(x)_3$. Because $hat(x)_3$ is non-basic, we simply update it, i.e., $hat(x)_3 += 1 = 1$. As $a_3$ depends on $hat(x)_3$, i.e., $a_3 = 0.5 hat(x)_3 - 0.2 hat(x)_4 - x_5$, #smallcaps[Reluplex] also makes the change $a_3 += 0.5 times 1.0 = 0.5$.
 
+#figure(caption: [Configuration \#5],
+  text(size: 0.85em,
+  table(
+    columns: 11,
+    align: center, stroke: none,
+    [], [$x_1$], [$x_2$], [$x_3$], [$hat(x)_3$], [$x_4$], [$hat(x)_4$], [$x_5$], [$a_1$], [$a_2$], [$a_3$],
+    table.hline(),
+    [LB], [0], [-2], [$-infinity$], [0], [$-infinity$], [0], [0], [0], [0], [0],
+    [Val], [0], [-1], [1], [*1*], [-1], [0], [0], [0], [0], [*0.5*],
+    [UB], [0.5], [-1], [$infinity$], [$infinity$], [$infinity$], [$infinity$], [0.5], [0], [0], [0],
+  ))
+) <tab:reluplex5>
 
-// \begin{table*}
-//     \centering
-//     \caption{\neuralsat{}'s run producing \unsat{}. <tab:valid}
-//     \footnotesize
-//       \begin{tabular}{ccccccc}
-//       \toprule
-//       Iter & \textbf{BCP} & \multicolumn{2}{c}{\textbf{DEDUCTION}}& \textbf{DECIDE} & \multicolumn{2}{c}{\textbf{ANALYZE-CONFLICT}} \\
-//         &&Constraints&Bounds&&Bt&Learned Clauses\\
-//         \midrule
-//         Init &-& $I = -1 <= x_1 <= 1; $& $-1 <= x_1 <= 1;$  & - &-&$C =  {v_3 \lor \overline{v_3};\; v_4 \lor \overline{v_4} }$\\
-//         && $-2 <= x_2 <= 2$ & $-2 <= x_2<= 2$& & & \\
-//         1 &-&$I$ & $ x_5 <= 1 $& $\overline{v_4}@1$&-&-\\
+@tab:reluplex5 shows the new configuration.
+In the new configuration, $a_3$ is out-of-bound. To fix this basic variable, we pivot $a_3$ with one of the variables $hat(x)_3, hat(x)_4, x_5$ because of the constraint $a_3 = 0.5 hat(x)_3 - 0.2 hat(x)_4 - x_5$ in @eq:reluplex2c. Assume we pivot $a_3$ with $x_5$, we get
 
-//         2 &-&$I; x_4=\texttt{off}$&$ x_5 <= -1$& - & 0 &  $C = C \cup  {v_4 }$\\
+$ x_5 = 0.5 hat(x)_3 - 0.2 hat(x)_4 - a_3. $ <eq:reluplex7>
 
-//         3 &$v_4@0$&$I; x_4=\texttt{on} $&$ x_3 >= 0.5; x_5 <= 0.5$ & $v_3@0$&-&-\\
+Now, $a_3$ becomes non-basic and we update it to 0 through $a_3 += -0.5 = 0$. As $x_5$ depends on $a_3$ as shown in @eq:reluplex7, we make the change $x_5 += 0.5 = 0.5$.
 
-//         4 &-&$I; x_3=\texttt{on}; x_4=\texttt{on}$&-&- & \bf{-1} & $C = C\cup  {\overline{v_4} }$\\
+#figure(caption: [Configuration \#6],
+  text(size: 0.85em,
+  table(
+    columns: 11,
+    align: center, stroke: none,
+    [], [$x_1$], [$x_2$], [$x_3$], [$hat(x)_3$], [$x_4$], [$hat(x)_4$], [$x_5$], [$a_1$], [$a_2$], [$a_3$],
+    table.hline(),
+    [LB], [0], [-2], [$-infinity$], [0], [$-infinity$], [0], [0], [0], [0], [0],
+    [Val], [0], [-1], [1], [*1*], [-1], [0], [*0.5*], [0], [0], [*0*],
+    [UB], [0.5], [-1], [$infinity$], [$infinity$], [$infinity$], [$infinity$], [0.5], [0], [0], [0],
+  ))
+) <tab:reluplex6>
 
-//         % 5 &$v_4@0$&$I; x_3=\texttt{on}; x_4=\texttt{on}$&-&- & \bf{-1}& $C = C \cup \overline{v_3}\lor \overline{v_4}$\\
+@tab:reluplex6 shows the new configuration.
+At this point, #smallcaps[Reluplex] no longer sees any out-of-bound or inconsistent values, and thus stops and returns #sat with the values in the *Val* row in @tab:reluplex6 as the satisfying assignment for the formula in @eq:negprop1.
 
-//          \bottomrule
-//       \end{tabular}
-//   \end{table*}
+Thus, the property in @eq:prop1 is _not valid_ for the network in @fig:dnn-replux because for inputs $x_1 = 0, x_2 = -1$, the network gives the output $x_5 = 0.5$, violating the property.
 
 
-// %\emph{Initially}, the set of constraints  consists of the given bounds over the inputs, and the set of the clauses contains the two clauses in ~@eq:newvars.
+#problem[#smallcaps[Reluplex] by Hand][
+Read the example in @ex:reluplex again carefully. Then:
+- Rewrite the steps in @ex:reluplex on paper, showing all the calculations for each step. The goal of handwriting the steps is to help you understand how #smallcaps[Reluplex] works in detail.
+- Provide feedback on this example. Is it clear? Are there any steps or terminologies that are confusing? How can we improve the explanation?
+] <problem:reluplex-hand>
 
-// In \emph{iteration 1}, as shown in~@fig:overview, \neuralsat{} starts with \texttt{BCP}, which has no effects because the current clauses and (empty) assignment produce no unit clauses.
-// In \texttt{Deduction}, \neuralsat{} uses an LP solver to determine that the current set of constraints, which contains just the initial input bounds, is feasible\footnote{We use the terms feasible, from the LP community, and satisfiable, from the SAT community, interchangeably.}. \neuralsat{} then uses abstraction to approximate an output upper bound $x_5 <= 1$ and thus deduces that satisfying the output $x_5 >0$ might be feasible. \neuralsat{} continues with \texttt{Decide}, which uses a heuristic to select the unassigned variable $v_4$ and sets $v_4=F$---essentially a \emph{guess} that neuron $x_4$ is inactive. \neuralsat{} increments the decision level ($dl$) to 1 and associates $dl=1$ to the assignment, i.e., $\overline{v_4}@1$.
 
+#problem[Basic vs. Non-Basic Variables][
+Consider the description of #smallcaps[Reluplex] in @sec:reluplex-overview and the example in @ex:reluplex.
 
-// In \emph{iteration 2}, \texttt{BCP} again has no effect because it does not detect any unit clauses. In \texttt{Deduction}, \neuralsat{} determines that current set of constraints, which contains $x_1 + x_2 - 1 <= 0$ due to the assignment $v_4\mapsto F$ (i.e., $x_4=\texttt{off}$), is feasible. \neuralsat{} then approximates a new output upper bound $x_5<= -1$, which means satisfying the output $x_5 > 0$ constraint is \emph{infeasible}.
-
-// \neuralsat{} now enters \texttt{AnalyzeConflict} and determines that $v_4$ causes the conflict ($v_4$ is the only variable assigned so far).  From the assignment $\overline{v_4}@1$, \neuralsat{} learns a ``backjumping'' clause $v_4$, i.e., $v_4$ must be $T$. \neuralsat{} now backtracks to $dl$ $0$ and erases all assignments decided \emph{after} this level. Thus, $v_4$ is now unassigned and the constraint  $x_1 + x_2 - 1 <= 0$ is also removed.
-
-// In \emph{iteration 3}, \texttt{BCP} determines that the learned clause is also a unit clause $v_4$ and infers $v_4@0$. In \texttt{Deduction}, we now have the new constraint $x_1 + x_2 - 1 > 0$ due to $v_4 \mapsto T$ (i.e., $x_4=\texttt{on}$).  With the new constraint, \neuralsat{}
-// %\hd{tightens input bounds and get $0 <= x_2 <= 2$, then}
-// approximates the output upper bound $x_5 <=  0.5$, which means $x_5>0$ might be satisfiable.
-// Also, \neuralsat{} computes new bounds $0.5 <= x_3 <= 2.5$ and $0 < x_4 <= 2.0$, and deduces that $x_3$ must be positive because its lower bound is 0.5.
-// Thus, \neuralsat{} has a new assignment $v_3@0$ ($dl$ stays unchanged due to the implication).
-// This new assignment inference from the T-solver is known as \emph{theory propagation} in DPLL(T).
-
-// In \emph{iteration 4}, \texttt{BCP} has no effects because we have no new unit clauses.  In \texttt{Deduction}, \neuralsat{} determines that the current set of constraints, which contains the new constraint $-0.5x_1+0.5x_2+1 > 0$ (due to $v_3 \mapsto T$), is \emph{infeasible}. Thus, \neuralsat{} enters \texttt{AnalyzeConflict} and determines that $v_4$, which was set at $dl=0$ (by \texttt{BCP} in iteration 3), causes the conflict.
-// \neuralsat{} then learns a clause $\overline{v_4}$ (the conflict occurs due to the assignment $ {v_3 \mapsto T; v_4 \mapsto T }$, but $v_3$ was implied and thus making $v_4$ the conflict).
-// However, because $v_4$ was assigned at decision level 0, \neuralsat{} can no longer backtrack and thus sets $dl=-1$ and returns \unsat{}, i.e , the property is valid.
-
-
-// % Note that because we backtrack to $dl=0$, we do not erase the assignment $v_3=T$ because it was decided at $dl=0$ (by BCP in iteration 3).
-
-// % In \emph{iteration 5}, because of the new clause $\overline{v_3} \lor v4$ and $v_3$ is already set to $T$, BCD infers $v_4=T$ at dl=0.  In DEDUCTION, \neuralsat{} determines that set of constraints, which contains $-0.5x_1+x_2+1> 0$ for $x_4'=\texttt{on}$ (because $v_4=T$), is infeasible. In ANALYZE-CONFLICT, \neuralsat{} determines $v_4$ causes the conflict  and learns the new clause $\overline{v3} \lor \overline{v4}$ (because the current assignment $v_3=1;v_4=1$ cause the conflict).
-// % \neuralsat{} then sets $dl=-1$ (because $v_4=T$ was decided at level 0) and realizes that it can no longer backtrack, and thus returns \texttt{unsat}.  Note that we can also see that the learned clauses $ {v_3, \overline{v_3} \lor v_4, \overline{v_3} \lor \overline{v_4} }$ are not satisfiable.
-
-// %\tvn{do we use restart for this example?}\hd{we do not, it would be very long as in FSE paper.}
-
-// %Note that this example is too simple to illustrate the use of \emph{restart}, which is described in~@sec:restart-tree and~@sec:restart and crucial for more complicated and nontrivial problems.
-// \end{example}
-
-
-
-
-
-
-// %% \textbf{Discussion}
-// %% Testing. Does not affect soundness and helps with completeness.
-// %% Since the procedure is sampling-based, it is applicable to neural networks with any type of activation function.
-// %% Does not affect performance of DPLL(T) and helps quickly knock out easy instances as shown in experimentation.
-// %% Used by some verification tools. \tvn{SAT/SMT solvers also do that?} \hd{Not SAT/SMT solver, other verifiers, like ERAN, abcrown, also do that}
-
-
-// %% The falsification algorithm is \textbf{sound} but \textbf{not complete}.
-// %% When a falsifying input has been found by our algorithm, it terminates by declaring the network as \textbf{unsafe} and the reported counterexample indeed violates the safety property of the network.
-// %% However, when it terminates before finding any falsifying input, one cannot guarantee the absence of any falsifying input and consequently, the safety of the network with respect to the property.
-
-// %% % \subsection{Other DPLL components}
-
-// %% % Describe other DPLL components (BCP, Decide using VSIDS, etc).  If they are complicated enough,  give it its own section.
-
-// %% \subsection{Properties of \tool{}}
-
-// %% \textbf{Sound} \tool{} is sound because the main DPLL algorithm is sound, also the abstraction domain are over-approximated techniques, then they are sound.
-
-// %% \textbf{Complete} Deduce/Theory solver calls LP solver over the reals?
-
-// %% \textbf{Complexity} The worst-case complexity of \tool{} is exponential in the number of neurons. More specifically, the algorithm works by assigning activation status for each neuron (either on or off) and thus in the worst-case \tool{} will try all $2^n$ possible combinations of assignments, where $n$ is the number of neurons.  %Moreover, for each combination, \tool{} also performs linear programming solving to check for assignment feasibility.
-
-// %% \hd{
-// %%     This section is duplicated elsewhere
-
-// %%     \subsection{Difference between of \tool{} and BaB-based verifiers}
-
-// %%     For example, the network has 5 neurons corresponding to 5 variables, e.g., $ {v_1, v_2, v_3, v_4, v_5 }$.
-// %%     Also, \tool{} already assigned $v_1@0, v_2@0, v_3@0$, and suppose that it has generated a conflict clause $c = \overline{v_2} \lor v_4 \lor v_5$.
-// %%     If \tool{} continue to split an unsigned neurons (e.g., $v_4$ or $v_5$), e.g., \tool{} chooses $v_4$.
-// %%     If $v_4@1$, there will be 2 cases for $v_5$, e.g., $v_5@2$ and $\overline{v_5}@2$.
-// %%     If $\overline{v_4}@1$, there will be only one case for $v_5$, that is, $v_5@2$, because of the generated conflict clause $c$.
-// %%     In total, there will be \textbf{at most} 3 splits to check with help of the learnt conflict clause $c$.
-
-// %%     In the other hand, if the BaB-based algorithm reached the same state above, e.g, there remains 2 unstable neurons $v_4, v_5$, and they need to check \textbf{at most} 4 splits.
-
-
-// %%     In short, we might be able to decrease some iterations with the help of the conflict clause learning technique.
-// %% }
-
-
-
-// %In addition, to avoid revisiting the same search space over and over again, the decision  is changed at the beginning of every new run and conflict clauses learned so far are saved and never deleted.
-
-// % \hd{Why are restarts beneficial?}
-
-
-
-
-//  == \tool{} vs. BaB <sec:restart-tree}
-
-
-// \begin{figure}[t]
-//     \begin{minipage}[b]{\textwidth}
-//     \centering
-//         \begin{minipage}[t]{0.495\textwidth}
-//             \centering
-//              in cludegraphics[width=\linewidth]{figure/cdcl-tree-clause.png}
-//             %  in cludegraphics[width=\linewidth]{figure/cdcl-tree-clause.pdf}
-//             \caption*{(a) \tool{}}
-//         \end{minipage}
-//         % \hspace{0.5cm}
-//         \hfill
-//         \begin{minipage}[t]{0.44\textwidth}
-//             \centering
-//              in cludegraphics[width=\linewidth]{figure/none-cdcl-tree.pdf}
-//             \caption*{(b) Others}
-//         \end{minipage}
-//         % \hfill
-//         \vspace{-0.1in}
-//         \caption{Search tree explored by \tool{} (a) and other verifiers (b) during a verification run.
-//         \tvn{Hai, instead of other verifiers can we say this search tree is for a native/general BaB approach?}
-//         The notation $ {... }$ indicates learned clauses; red is  infeasibility; white is feasibility; yellow is BCP application; and blue is current consideration.
-//         The search tree of \tool{} is smaller than the tree of the other techniques because \tool{} was able to prune various branches, e.g., through BCPs (e.g., ${v_3}$ and $\overline{v_5}$) and non-chronological backtracks (e.g., $\overline{v_3}$).}
-//         % \hd{missing a paragraph writing about this figure.}\tvn{yes, may be in the overview or intro if appropriate}\hd{still thinking of incorporating learned clauses.}
-//         \label{fig:tree}
-//     \end{minipage}
-// \end{figure}
-
-// \tvn{TODO: talk about how \tool{} is BaB but has things such as CDCL to help prune the search space.}
-
-// %modern DPLL implementations restart the DPLL procedure whenever the search is not making enough progress according to some measure. The rationale behind this idea is that upon each restart, the additional knowledge of the search space compiled into the newly learned lemmas will lead the heuristics for Decide to behave differently, and possibly cause the procedure to explore the search space in a more compact way. The combination of learning and restarts has been shown to be powerful not only in practice, but also in theory. Essentially, any Basic DPLL derivation to FailState is equivalent to a tree-like refutation by resolution. But for some classes of problems tree-like proofs are always exponentially larger than the smallest general, that is, DAG-like, resolution ones [Bonet et al. 2000]. The good news is that DPLL with learning and restarts becomes again equivalent to general resolution with respect to such notions of proof complexity [Beame et al. 2003].
-
-
-
-
-// \tvn{rewrite: technically we don't split if the guess was right}
-// Note that this process of selecting and assigning (guessing) values to variables representing neurons is the \emph{branching} phase in BaB. It is also commonly called \emph{neuron splitting} because  it splits the search tree into subtrees corresponding into the assigned values (e.g., see~@sec:restart-tree).
-
-
-// As mentioned in~@sec:complexity, ReLU-based NNV is \NP-complete, and for difficult problem instances NNV tools often have to exhaustively search a very large space, making scalability a main concern for modern NNV approaches.
-
-// %One major difference that sets \tool{} apart from other DNN approaches is how it tackles and prunes such large search space.
-
-// @fig:tree shows the difference between \tool{} and another NNV tool (e.g., using the popular Branch-and-Bound (BaB) approach) in how they navigate the search space.  We assume both tools employ similar abstraction and neuron splitting.
-// @fig:treeb shows that the other tool performs splitting to explore different parts of the tree (e.g., splitting $v_1$ and explore the branches with $v_1=T$ and $v_1=F$ and so on). Note that the other tool needs to consider the tree shown regardless if it runs sequentially or in parallel.
-
-// % \tvn{Hai, could you change the LaTeX neg to overline?}\hd{yes}
-// In contrast, \tool{} has a smaller search space shown in~@fig:treea.
-// \tool{} follows the path $v_1$, $v_2$ and then $\overline{v_2}$ (just like the tool on the right).
-// However, because of the learned clause $v_2\lor v_3$, \tool{} performs a BCP step that sets $v_3$ (and therefore prunes the branch with $\overline{v_3}$ that needs to be considered in the other tree).
-// Then \tool{} splits $v_4$, and like the other tool, determines infeasibility for both branches. Now \tool{}'s conflict analysis determines from learned clauses that it needs to backtrack to $v_3$ (yellow node) instead of $v_1$.  Without learned clauses and non-chronological backtracking, \tool{} would backtrack to decision $v_1$ and continues with the $\overline{v_1}$ branch, just like the other tool in~@fig:treeb.
-
-// Thus, \tool{} was able to generate non-chronological backtracks and use BCP to prune various parts of the search tree.  In contrast, the other tool would have to move through the exponential search space to eventually reach the same result.
-
-
-
-// = The \reluplex{} Algorithm <chap:reluplex}
-
-// \reluplex{}~\cite{katz2017reluplex} is a classical BaB (@chap:bab) approach for NNV. The technique extends the \emph{simplex} method~\cite{nelder1965simplex} to support the ReLU activation function (\textbf{Reluplex} = \textbf{Relu} + Sim\textbf{plex}). \reluplex{} has been succeeded by the more efficient Marabou tool~\cite{katz2019marabou}. However, the core ideas of \reluplex{} are still relevant and thus presented here as another example of BaB-based NNV techniques.
-
-//  == Algorithm Overview <sec:reluplex-overview}
-
-
-// \reluplex{} extends the classical simplex method to handle the
-// non-linear ReLU constraints $ hat(x) = \max(x,0)$.
-// Like simplex, \reluplex{} maintains a set of \emph{basic} variables whose values are determined by other (non-basic) variables, and updates them through pivot operations.
-
-// \textbf{Initialization}~ The constraints representing the network are first rewritten into a basic form by introducing basic or \emph{slack} variables.  \reluplex{} also forms the lower and upper bounds for each variable based the input constraints and semantics ReLU, e.g., for a ReLU variable $ hat(x)_i$, the lower bound is 0.
-
-// All variable values are then initially set to some guess, such as $0$, even if these values violate bounds.  This initial configuration acts as the starting point for \reluplex{} to iteratively refine the variable values to satisfy all constraints.
-
-// \textbf{Fixing bound violations}~
-// \reluplex{} repeatedly checks all variables to see if any violate their bounds.
-// If a non-basic variable violates its bounds,
-// it can be directly updated to a valid value; the update is then propagated into the basic variables using the defining linear equations.
-// If a basic variable violates its bounds,
-// \reluplex{} cannot adjust it directly; instead it performs a \emph{pivot}, swapping that basic variable with one of the non-basic variables appearing in its defining equation.
-// After pivoting, the out-of-bounds variable becomes non-basic and can then be directly fixed.
-
-// \textbf{Handling ReLU violations}~
-// When all variable bounds are satisfied, \reluplex{} next checks the ReLU relations $ hat(x)_i = \max(x_i,0)$.
-// If a pair $(x_i, hat(x)_i)$ is inconsistent (e.g., $x_i>0$ but $ hat(x)_i=0$), then the algorithm repairs it in the same way:
-// if the violated variable is non-basic, it is simply updated; if it is basic, a pivot is performed so it can be updated.
-
-// \textbf{Termination}~
-// If no variable violates bounds or ReLU relations, the current configuration is a feasible assignment that satisfies all constraints, and \reluplex{} returns \sat{}.
-// If \reluplex{} explores all possible pivoting options without finding any feasible configuration, it concludes \unsat{}.
-
-
-
-//  == Illustration}
-
-
-// \newcommand{\mydnnthree}[1]{
-// \begin{tikzpicture}[scale=#1, transform shape, semithick, ->]
-//     % Input nodes
-//     \node[input] (x1) at (0,1)  {$x_1$};
-//     \node[input] (x2) at (0,-1) {$x_2$};
-
-//     % Hidden layer
-//     \node[hidden] (x3) at (2.8,1) {$x_3$};
-//     \node[hidden] (x4) at (2.8,-1) {$x_4$};
-
-//     % Output layer node (centered horizontally)
-//     \node[output] (x5) at (5,0) {$x_5$};
-
-//     % Connections with weights
-//     \draw (x1) -- (x3) node[midway, above] {$1.0$} ;
-//     \draw (x1) -- (x4) node[near end, below] {$1.0$} ;
-//     \draw (x2) -- (x3) node[near end, above] {$-1.0$} ;
-//     \draw (x2) -- (x4) node[midway, below] {$1.0$} ;
-//     \draw (x3) -- (x5) node[midway, below] {$0.5$};
-//     \draw (x4) -- (x5) node[midway, below] {$-0.2$};
-
-
-// \end{tikzpicture}
-// }
-
-
-
-// \begin{figure}
-//     \centering
-//     \mydnnthree{1}
-//     \caption{\label{fig:dnn-replux}A simple network.}
-// \end{figure}
-
-// % \begin{figure}
-// % \centering
-// %  in cludegraphics[width=0.5\linewidth]{reluplexA.pdf}
-// % \caption{A DNN example <fig:reluplex}
-// % \end{figure}
-
-// \begin{example <ex:reluplex}
-
-//   We demonstrate \reluplex{} using the network in~@fig:dnn-replux. This network can be represented by the following equations:
-
-// \begin{gather*}%\label{eq:reluplex1}
-//     x_3 = x_1 - x_2,quad \hat{x_3} = \relu{x_3},\\
-//     x_4 = x_1 + x_2, quad \hat{x_4} = \relu{x_4},\\
-//     x_5 = 0.5\hat{x_3} - 0.2\hat{x_4}
-// \end{gather*}
-
-// We want to check that the network has the property
-// \begin{equation <eq:prop1}
-//   (0 <= x_1 <= 0.5 \land -2 <= x_2 <= -1) \implies ( x_5< 0 \lor x_5 > 0.5).
-// \end{equation}
-// That is, when the inputs $x_1, x_2$ fall within certain ranges, then the result $x_5$ has certain values.
-// As shown in~@sec:satisfiability-and-activation-pattern-search, we turn this into a satisfiability problem by negating the property:
-// \begin{equation <eq:negprop1}
-//     ( 0 <= x_1 <= 0.5 \land -2 <= x_2 <= -1) \land 0 <= x_5 <= 0.5,
-//   \end{equation}
-// and checking whether there exists a counterexample satisfying the negated property.
-
-// % For example, in~@fig:reluplex, the ReLU node $x_3=\max(i0 -1i1,0)$ is encoded using two variables $x_3'=i0 -1i1$ and $x_3''=\max(x_3',0)$.  The DNN in@fig:reluplexB shows the network in~@fig:reluplex with additional nodes representing ReLU encoding.
-
-
-// We now use \reluplex{} to check whether there exists an assignment satisfying the negated property in~@eq:negprop1.
-// We start by introducing three \emph{basic} (auxilliary or slack) variables to represent the relationships between the variables in the network:
-
-// \begin{gather}
-//   a_1 = x_1 - x_2 - x_3\label{eq:reluplex2a},\\
-//   a_2 = x_1 + x_2 - x_4\label{eq:reluplex2b},\\
-//   a_3 = 0.5 hat(x)_3 -0.2  hat(x)_4 - x_5\label{eq:reluplex2c}
-// \end{gather}
-
-// These basic variables are used to maintain the relationships between the variables in the constraints and are updated during the search process.
-// In contrast, a \emph{non-basic} variable is one that does not represent the relationship between other variables in the constraints. In this example, all variables except $a_1, a_2, a_3$ are non-basic.
-
-// \reluplex{} first assigns 0 to all variables in the equations in~@eq:reluplex2a--~@eq:reluplex2c.  This will likely violate some bounds, which \reluplex{} uses an iterative process, represented by a sequence of \emph{configurations}, to refine.
-
-// %This assignment are essentially an initial guess and would likely cause issues such as variables violating their bounds.  \reluplex{} works by iteratively fixing these invalid values until it finds a feasible assignment (\sat{}), or cannot do so (\unsat{}).
-
-// %This \reluplex{} iterative updating process can be demonstrated through a sequence of \emph{configuration updates} over the variables.
-
-// @tab:reluplex1 shows the initial configuration with all values assigned to 0.
-// The lower (LB) and upper (UB) bounds of the inputs $x_1, x_2$ and output $x_5$ are specified in ~@eq:negprop1. The LBs of $\hat{n}_i$'s representing ReLUs are 0s, and the other hidden variables are unbounded (i.e., $- in fty$ to $ in fty$).
-
-// \begin{table}[h]
-//     \caption{Configuration \#1 <tab:reluplex1}
-//     \centering
-//     \small
-// \begin{tabular}{ccccccccccc}
-//      & $x_1$ & $x_2$ & $x_3$ & $ hat(x)_3$ & $x_4$ & $ hat(x)_4$ & $x_5$ &$a_1$&$a_2$&$a_3$ \\
-//     \midrule
-//     LB & 0 & -2 & $- in fty$&0&$- in fty$& 0 & 0 & 0 & 0 &0\\
-//     Val& 0 & \textbf{\red{0}} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
-//     UB & 0.5 & -1 &$ in fty$&$ in fty$&$ in fty$&$ in fty$&0.5& 0 & 0 & 0
-// \end{tabular}
-// \end{table}
-
-
-// %\reluplex{} now checks whether any variable violates its bounds and fixes them by updating their values.
-// %For non-basic variables, \reluplex{} simply updates them to valid values within their bounds and propagates the changes to the basic variables that depend on them. For basic variables, \reluplex{} pivots (swaps) them with one of the variables they depend and then updates the non-basic variable to a valid value.
-
-// @tab:reluplex1 also shows that $x_2$ is out-of-bounds because $0 \notin [-2,-1]$. To fix $x_2$, which is non-basic, \reluplex{} updates it to a valid value, e.g., $x_2 \texttt{+=} -1.0 = -1.0$ by adding -1.0 to the current value of $x_2$.
-
-// Now, because $a_1=x_1 - x_2 - x_3$ and $a_2=x_1 + x_2 - x_4$ depend on $x_2$ as shown in~@eq:reluplex2a and~@eq:reluplex2b, this update to $x_2$ also changes $a_1,a_2$:
-//     \begin{align*}
-//         a_1 ~\texttt{+=}~ 1.0 = 1.0, \\
-//         a_2 ~\texttt{+=}~ -1.0 = -1.0.
-//     \end{align*}
-
-// \begin{table}[h]
-// \caption{Configuration \#2 <tab:reluplex2}
-//     \centering
-// \small
-// \begin{tabular}{ccccccccccc}
-//      & $x_1$ & $x_2$ & $x_3$ & $ hat(x)_3$ & $x_4$ & $ hat(x)_4$ & $x_5$ &$a_1$&$a_2$&$a_3$ \\
-//     \midrule
-//     LB & 0 & -2 & $- in fty$&0&$- in fty$& 0 & 0 & 0 & 0 &0\\
-//     Val& 0 & \textbf{\red{-1}} & 0 & 0 & 0 & 0 & 0 & \textbf{\red{1}} & \textbf{\red{-1}} & 0\\
-//     UB & 0.5 & -1 &$ in fty$&$ in fty$&$ in fty$&$ in fty$&0.5& 0 & 0 & 0\\\
-// \end{tabular}
-// \end{table}
-
-// @tab:reluplex2 shows the new configuration, which now has $a_1, a_2$ violating their bounds and need to be fixed. Assume \reluplex{} picks $a_1$. To fix the basic variable $a_1$ \reluplex{} pivots (swaps) it with a variable it depends on from the constraint $ a_1 = x_1 - x_2 - x_3$ in~@eq:reluplex2a. Assume \reluplex{} pivots $a_1$ with $x_3$, we get
-// \begin{equation <eq:reluplex5}
-// x_3 = x_1 - x_2 - a_1.
-// \end{equation}
-
-// \reluplex{} now updates the non-basic $a_1$ to 0 ($a_1 \text{+=} -1.0 = 0$). This also changes $x_3$  to 1.0 ($x_3+=1.0 = 1.0)$ because $x_3$ depends on $a_1$ as shown in~@eq:reluplex5.
-// \begin{table}[h]
-// \caption{Configuration \#3 <tab:reluplex3}
-//     \centering
-//     \small
-// \begin{tabular}{ccccccccccc}
-//      & $x_1$ & $x_2$ & $x_3$ & $ hat(x)_3$ & $x_4$ & $ hat(x)_4$ & $ hat(x)_5$ &$a_1$&$a_2$&$a_3$ \\
-//     \midrule
-//     LB & 0 & -2 & $- in fty$&0&$- in fty$& 0 & 0 & 0 & 0 &0\\
-//     Val& 0 & -1 & \textbf{\red{1}} & 0 & 0 & 0 & 0 & \textbf{\red{0}} & -1 & 0\\
-//     UB & 0.5 & -1 &$ in fty$&$ in fty$&$ in fty$&$ in fty$&0.5& 0 & 0 & 0\\\
-// \end{tabular}
-
-// \end{table}
-
-// ~@tab:reluplex3 shows the new configuration, which now has the basic variable $a_2$ out-of-bound.  To fix it, \reluplex{} pivots $a_2$ with a variable it depends on from the constraint $a_2 = x_1 + x_2 - x_4$ in Eq~\ref{eq:reluplex2b}.  Assume \reluplex{} pivots $a_2$ with $x_4$, we get
-// \begin{equation <eq:reluplex6}
-//   x_4 = x_1 + x_2 - a_2
-// \end{equation}
-// Now $a_2$ becomes non-basic and is updated to 0 through $a_2+= 1.0 = 0$. As $x_4$ depends on $a_1$ as shown in ~@eq:reluplex6, we make the change $x_4 ~\texttt{-=}~1.0 = -1.0$.
-
-
-// \begin{table}[h]
-//     \caption{Configuration \#4 <tab:reluplex4}
-//     \centering
-//     \small
-// \begin{tabular}{ccccccccccc}
-//      & $x_1$ & $x_2$ & $x_3$ & $ hat(x)_3$ & $x_4$ & $ hat(x)_4$ & $x_5$ &$a_1$&$a_2$&$a_3$ \\
-//     \midrule
-//     LB & 0 & -2 & $- in fty$&0&$- in fty$& 0 & 0 & 0 & 0 &0\\
-//     Val& 0 & -1 & 1 & 0 & \textbf{\red{-1}} & 0 & 0 & 0 & \textbf{\red{0}} & 0\\
-//     UB & 0.5 & -1 &$ in fty$&$ in fty$&$ in fty$&$ in fty$&0.5& 0 & 0 & 0\\\
-// \end{tabular}
-
-// \end{table}
-
-// @tab:reluplex4 shows the new configuration.
-// At this point, we no longer have out-of-bound variables, but have inconsistent values for the pair of RELU variables $x_3,  hat(x)_3$. This is because $ hat(x)_3 = \max(x_3,0)$ but  we have $x_3=1$ thus $\max(1,0)=1$, which is not $ hat(x)_3=0$.  Thus, \reluplex{} needs to fix either $ hat(x)_3$ or $x_3$.
-
-// Assume \reluplex{} picks $ hat(x)_3$. Because $ hat(x)_3$ is non-basic, we simply update it, i.e.,  $ hat(x)_3 = \text{+} 1 = 1$.  As $a_3$ depends on $ hat(x)_4$, i.e., $ a_3 = 0.5 hat(x)_3 -0.2  hat(x)_4 - x_5$, \reluplex{} also makes the change $a_3+= 0.5\times 1.0=0.5$.
-
-
-
-// \begin{table}[h]
-//     \caption{Configuration \#5 <tab:reluplex5}
-//     \centering
-//     \small
-// \begin{tabular}{ccccccccccc}
-//      & $x_1$ & $x_2$ & $x_3$ & $ hat(x)_3$ & $x_4$ & $ hat(x)_4$ & $x_5$ &$a_1$&$a_2$&$a_3$ \\
-//     \midrule
-//     LB & 0 & -2 & $- in fty$&0&$- in fty$& 0 & 0 & 0 & 0 &0\\
-//     Val& 0 & -1 & 1 & \textbf{\red{1}} & -1 & 0 & 0 & 0 & 0 & \textbf{\red{0.5}}\\
-//     UB & 0.5 & -1 &$ in fty$&$ in fty$&$ in fty$&$ in fty$&0.5& 0 & 0 & 0\\\
-// \end{tabular}
-
-// \end{table}
-
-// ~@tab:reluplex5 shows the new configuration.
-// In the new configuration, $a_3$ is out-of-bound. To fix this basic variable, we pivot $a_3$ with one of the variables $ hat(x)_3,  hat(x)_4, x_5$ because of the constraint $a_3 = 0.5 hat(x)_3 -0.2  hat(x)_4 - x_5$ in ~@eq:reluplex2c. Assume we pivot $a_3$ with $x_5$, we get
-// \begin{equation <eq:reluplex7}
-//   x_5 = 0.5 hat(x)_3 -0.2  hat(x)_4 - a_3
-// \end{equation}
-
-// Now, $a_3$ becomes non-basic and we update it to 0 through $a_3+=-0.5=0$.  As $x_5$ depends on $a_3$ as shown in Eq~\ref{eq:reluplex7}, we make the change $x_5 += 0.5=0.5$.
-
-// \begin{table}[h]
-//     \caption{Configuration \#6 <tab:reluplex6}
-//     \centering
-//     \small
-// \begin{tabular}{ccccccccccc}
-//      & $x_1$ & $x_2$ & $x_3$ & $ hat(x)_3$ & $x_4$ & $ hat(x)_4$ & $x_5$ &$a_1$&$a_2$&$a_3$ \\
-//     \midrule
-//     LB & 0 & -2 & $- in fty$&0&$- in fty$& 0 & 0 & 0 & 0 &0\\
-//     Val& 0 & -1 & 1 & \textbf{\red{1}} & -1 & 0 & \textbf{\red{0.5}} & 0 & 0 & \textbf{\red{0}}\\
-//     UB & 0.5 & -1 &$ in fty$&$ in fty$&$ in fty$&$ in fty$&0.5& 0 & 0 & 0\\\
-// \end{tabular}
-
-// \end{table}
-
-// @tab:reluplex6 shows the new configuration.
-// At this point, \reluplex{} no longer sees any out-of-bound or inconsinstent values, and thus stops and returns \sat{} with the values in the \textbf{Val} row in ~@tab:reluplex6 as the satisfying assignment for the formula in Eq~\ref{eq:negprop1}.
-
-// Thus, the property in~@eq:prop1 is \emph{not valid} for the network in~@fig:dnn-replux because for inputs $x_1=0,x_2=-1$, the network gives the output $x_5=0.5$, violating the property.
-// \end{example}
-
-
-// \begin{problem <problem:reluplex-hand}
-//     Read the example in~@ex:reluplex again carefully. Then:
-//     \begin{itemize}
-//       \item Rewrite the steps in~@ex:reluplex on paper, showing all the calculations for each step. The goal of handwriting the steps is to help you understand how \reluplex{} works in detail.
-
-//     \item Provide feedback on this example.  Is it clear?  Are there any steps or terminologies that are confusing?  How can we improve the explanation? 
-//     \end{itemize}
-// \end{problem}
-
-// % \begin{problem}
-// % Consider the DNN in~@fig:reluplex and the property in~@eq:prop1.  Use \reluplex{} to verify the property.  If you find a counterexample, provide it.  You will need to provide all the steps in the \reluplex{} algorithm, e.g., DNN encoding, basic variable encoding, and the \reluplex{} search through a series of configurations as shown in~@ex:reluplex.
-
-// % \end{problem}
-
-
-// \begin{problem <problem:reluplex-basic-nonbasic}
-//   Consider the description of \reluplex{} in~@sec:reluplex-overview and the example in~@ex:reluplex.
-
-//   \begin{enumerate}
-//     \item Explain the difference between a \emph{basic} and a \emph{non-basic} variable in \reluplex{}.
-//     \item Why can \reluplex{} update a non-basic variable directly, but must perform a pivot before updating a basic variable? Use an example if necessary.
-//     \item Explain why \reluplex{} must \emph{still} consider ReLU violations after all bound violations have been fixed.  Why is all variables (excluding ReLU ones) within bounds not sufficient? Use an example if necessary.
-//    \end{enumerate}
-// \end{problem}
-
-
-// % \part{Advanced Topics\label{part:advanced-topics}}
++ Explain the difference between a _basic_ and a _non-basic_ variable in #smallcaps[Reluplex].
++ Why can #smallcaps[Reluplex] update a non-basic variable directly, but must perform a pivot before updating a basic variable? Use an example if necessary.
++ Explain why #smallcaps[Reluplex] must _still_ consider ReLU violations after all bound violations have been fixed. Why is all variables (excluding ReLU ones) within bounds not sufficient? Use an example if necessary.
+] <problem:reluplex-basic-nonbasic>
 
 #pagebreak()
 
@@ -7896,113 +6467,66 @@ In addition to adversarial attacks (@chap:adversarial-attacks), NNV tools often 
 // % \end{table}
 
 
-// = VNN-COMPs <chap:vnncomps}
+= VNN-COMPs <chap:vnncomps>
 
+As NNV matured, it became increasingly difficult to compare approaches. Papers often evaluated tools on different benchmarks, under different hardware assumptions, and using different specification languages. This fragmentation made it hard to assess the true state of the art, identify open challenges, and drive progress. This chapter describes the VNN-COMPs, which were created to address this problem by providing a common platform for evaluating and comparing NNV tools, and discusses common features of SOTA tools.
 
-// As NNV matured, it became increasingly difficult to compare approaches. Papers often evaluated tools on different benchmarks, under different hardware assumptions, and using different specification languages. This fragmentation made it hard to assess the true state of the art, identify open challenges, and drive progress. This chapter describes the VNN-COMPs, which were created to address this problem by providing a common platform for evaluating and comparing NNV tools, and discusses common features of SOTA tools.
+== VNN-COMPs
 
+Inspired by the success of other formal methods competitions (e.g., SAT, SMT, model checking), the International Verification of Neural Networks Competition (*VNN-COMP* @kaulen20256thinternationalverificationneural @brix2024fifth @brix2023fourth) encourages the standardization of tool interfaces and brings together the NNV community. To this end, VNN-COMP uses standardized formats for networks (ONNX @onnx) and specification (VNN-LIB @vnnlib), and evaluates tools using a common set of benchmarks on a common platform (AWS instances).
 
-//  == VNN-COMPs}
-// Inspired by the success of other formal methods competitions (e.g., SAT, SMT, model checking), the International Verification of Neural Networks Competition (\textbf{VNN-COMP}~\cite{kaulen20256thinternationalverificationneural,brix2024fifth,brix2023fourth}) is to encourage the standardization of tool interfaces, and bring together the NNV community.
-// To this end, VNN-COMP uses standardized formats for networks (ONNX~\cite{onnx}) and specification (VNN-LIB~\cite{vnnlib}), and evaluates tools 
-// using a common set of benchmarks (collected from various sources including previous papers and contributions from the community) on a common platform (AWS instances).
+*VNN-COMP'25 Results.* In the latest 2025 VNN-COMP iteration @kaulen20256thinternationalverificationneural, 7 teams participated on a diverse set of 16 regular and 6 extended benchmarks. @fig:vnn-comp25 presents the overall scores and rankings of the tools (Tab. 6 in @kaulen20256thinternationalverificationneural) and a cactus plot of tool performance on all benchmark instances (Fig. 6 in @kaulen20256thinternationalverificationneural). In summary, #tool ranks 2nd overall, behind $alpha beta$-CROWN, a regular winner of VNN-COMPs, and ahead of PyRAT.
 
+#figure(
+  table(
+    columns: 3,
+    table.hline(),
+    [*\#*], [*Tool*], [*Score*],
+    table.hline(),
+    [1], [$alpha beta$-CROWN], [1566.9],
+    [2], [#tool], [1430.2],
+    [3], [PyRAT], [1228.4],
+    [4], [CORA], [987.2],
+    [5], [NNV], [796.4],
+    [6], [nnenum], [740.3],
+    [7], [SobolBox], [593.3],
+    table.hline(),
+  ),
+  caption: [VNN-COMP'25 results @kaulen20256thinternationalverificationneural.]
+) <fig:vnn-comp25>
 
+== Common Features of SOTA Tools
 
-// \paragraph{VNN-COMP'25 Results} In the latest 2025 VNN-COMP iteration~\cite{kaulen20256thinternationalverificationneural}, 7 teams participated on a diverse set of 16 regular and 6 extended benchmarks. 
-// The table in the~@fig:vnn-comp25, corresponding to Tab. 6~\cite{kaulen20256thinternationalverificationneural},  presents the overall scores and rankings of the tools. 
-// The cactus plot corresponds to Fig. 6~\cite{kaulen20256thinternationalverificationneural} and shows tool performance on all benchmark instances. 
-// In summary, our \neuralsat{} tool ranks 2nd overall, behind \crown{}, a regular winner of VNN-COMPs, and ahead of \texttt{PyRAT}.
+#figure(
+  table(
+    columns: 2,
+    table.hline(),
+    [*Feature*], [*Supported*],
+    table.hline(),
+    [Network Type], [Acyclic computation graphs, e.g., Feed-forward, Residual],
+    [Layer Type], [FC, CNN, MaxPool, BatchNorm, Softmax],
+    [Activation Function], [ReLU, Sigmoid, Tanh, Sign, Exp],
+    [Abstract Domain], [Polytope, Interval],
+    [Search Algorithm], [Parallel DPLL(T)],
+    [Hardware], [Multi-core CPU, GPU],
+    [Optimization], [Adv. Attacks, Input splitting, Large Output Opt., MILP solving],
+    [Property], [Robustness, Safety],
+    [Input], [Pytorch, ONNX, VNN-LIB],
+    [Output], [(sat, unsat, timeout), counter-examples],
+    table.hline(),
+  ),
+  caption: [Common features of SOTA NNV tools.],
+) <tab:features>
 
-// \begin{figure}
-// \begin{minipage}{0.24\linewidth}
-//     \footnotesize    
-//     \centering
-//     \begin{tabular}{cll}
-//         \toprule
-//     \# & Tool & Score\\
-//     \midrule
-//     1 & \crown{} & 1566.9\\
-//     2 & \neuralsat{} & 1430.2\\
-//     3 & \pyrat{} & 1228.4\\
-//     4 & \cora{} & 987.2\\
-//     5 & \nnv{} & 796.4\\
-//     6 & \nnenum{} & 740.3\\
-//     7 & \sobolbox{} & 593.3\\
-//     \bottomrule
-//     \end{tabular}
-// \end{minipage}
-// \begin{minipage}{0.72\linewidth}
-//     \centerline{ in cludegraphics[width=\textwidth]{figure/all_scored.pdf}}
-// \end{minipage}
-// \caption{VNN-COMP'25 results~\cite{kaulen20256thinternationalverificationneural}\tvn{keep the $alpha\beta$ instead of AB} <fig:vnn-comp25}    
-// \end{figure}
+*Network Types and Activation Functions.* Currently, most NNV tools work with fully connected (FC), convolutional (CNN), residual (ResNet), and batch normalization (BatchNorm) networks. Some also support mixtures of different types, e.g., VAEs which are large residual CNN-based networks @duong2025compositional. In addition to ReLU, SOTA tools support other major activation functions including sigmoid, tanh, and power @kaulen20256thinternationalverificationneural.
 
+*Standard Input and Output Formats.* VNN-COMPs and major NNV tools support input networks in the standard ONNX format @onnx and properties in VNNLIB format @vnnlib. Some SOTA tools, e.g., #tool, also work directly with networks in Pytorch. The output is reported as `unsat` (property proved), `sat` (property disproved), or `unknown`/`timeout` (property cannot be proved). NNV tools also generate counterexamples for `sat` results. However, few tools generate unsat proofs, a topic of ongoing research as discussed in @chap:proof-gen-check.
 
-//  == Common Features of SOTA Tools}
-// \begin{table}
-//     \caption{Common features of SOTA NNV tools.} \label{tab:features}
-//     \centering
-//     \small
-//     \begin{tabular}{c|c}
-//         \toprule
-//         \textbf{Feature} & \textbf{Supported} \\
-//         \midrule
-//         Network Type           & Acyclic computation graphs, e.g., Feed-forward, Residual\\
-//         Layer Type             & FC, CNN, MaxPool, BatchNorm, Softmax \\
-//         Activation Function    & ReLU, Sigmoid, Tanh, Sign, Exp \\
-//         Abstract Domain        & Polytope, Interval\\
-//         Search Algorithm       & Parallel DPLL(T)\\
-//         Hardware               & Multi-core CPU, GPU\\
-//         Optimization           & Adv. Attacks, Input splitting, Large Output Opt., MILP solving\\ 
-//         Property    & Robustness, Safety\\
-//         Input                  & Pytorch, ONNX, VNN-LIB\\
-//         Output                 & (sat, unsat, timeout), counter-examples\\ %, unsat proof\\
-//         \bottomrule
-//     \end{tabular}
-// \end{table}
+*Engineering Optimizations.* As with most high-performance analysis tools, engineering matters! SOTA NNV tools use various engineering optimizations to improve performance. For example, they employ adversarial attack techniques such as derivative-free sampling-based @yu2016derivative and gradient-based @madry2017towards methods to quickly find counterexamples. They also preprocess and apply heuristics that automatically select appropriate abstractions and algorithms based on input network structures and properties @duong2025neuralsat @duong2024harnessing. They use input splitting @duong2025neuralsat @wang2021beta @bak2021nnenum @zhang2022general for networks with low input dimension and neuron splitting for other networks.
 
+*Commodity Hardware.* NNV tools heavily leverage the power of modern hardware, including multi-core CPUs and GPUs. For example, the parallel search in #tool uses multi-threading, allowing multiple search subspaces to be processed simultaneously on different CPU cores. Abstraction techniques, e.g., the LiRPA library @xu2020automatic, are often implemented to run on GPUs, which significantly speeds up the computation of neuron bounds. However, real-world networks are growing rapidly in size, and we need to explore new paradigms beyond simply leveraging commodity hardware to scale verification.
 
-// % From our experience evaluating tools and participating in competitions, we found that the
-// % novelty described in research papers often does not translate to competitive performance or practical usability.
-// % Instead, the implementation details, such as being versatile, easy to use, and employing ``engineering'' optimizations to improve performance matter perhaps just as much.
-// % ~@tab:features shows features of \toolu{}, many of which are often overlooked in research papers (e.g., absent in~\cite{duong2024harnessing}) but are critical for building a long-term and high-performance tool.
-
-// \paragraph{Nework Types and Activation Functions} Currently, most NNV tools work with fully connected (FC), convolutional (CNN), residual (ResNet), batch normalization (BatchNorm) networks, etc.
-// Some also support mixtures of different types, e.g., VAEs which are large residual CNN-based networks~\cite{duong2025compositional}.
-// %\tvn{citations and add some more examples on uncommon networks supported by existing tools}\hd{done}
-// In addition to ReLU, SOTA tools support other major activation functions including sigmoid, tanh, and power~\cite{kaulen20256thinternationalverificationneural}. %Briefly,  for these non-ReLU activation functions, we split a neuron at the center of its interval. Unlike ReLU where it becomes linear after splitting, non-ReLU does not, so \toolu{} splits a single neuron multiple times, if needed, until the problem is verified or timed out.
-
-// % Note that these are also supported by other DNN verification tools such as \crown{} though the LiRPA library~\cite{xu2020automatic}.  However, it is straight-forward to extend \toolu{} to support new layer or activation functions, by modifying the abstractions used in the T-solver to compute the approximation bounds of activation functions over different network layers. 
-// % % For example, VNN-COMP'24 has networks with ``Exponential'' and ``Reciprocal'' layers that were not supported by existing work and so we just extend our abstraction to compute the lower and upperbounds for these types of layers to allow \toolu{} to verify them.
-
-// % %The main idea is extending the lower and upper bound computations over different layers and computing heuristic scores through these layers used in the decision heuristics in DPLL.
-
-// % %Non-ReLU activation functions are continuous, and to handle them, we compute their lower and upper bounds and split their values in the middle of their bounds.
-// % %\matt{I'm not sure what this means and it seems like it should be described in more detail if it is a valuable engineering optimization.  We have space so we might want to add more here.}
-   
-// \paragraph{Standard Input and Output Formats.} VNN-COMPs and major NNV tools support input networks in the standard ONNX format~\cite{onnx} and properties in VNNLIB format~\cite{vnnlib}. 
-// Some of SOTA tools, e.g., \neuralsat{}, also work directly with networks in Pytorch, a common format for neural networks.
-// The output is reported as \texttt{unsat} (property proved), \texttt{sat} (property disproved), or \texttt{unknown} and \texttt{timeout} (property cannot be proved). NNV tools also generate counterexamples for \texttt{sat} results in text format supported by VNN-COMPs. However, few tools generate unsat proofs, a topic of ongoing research as discussed in~@chap:proof-gen-check.
-
-    
-// % \subsubsection*{Fully Automatic, but Configurable.} An important decision in designing \toolu{} is to make it fully automatic and so that for end-users it \emph{``just works''}, perhaps even at the cost of some runtime. Users can simply apply \toolu{} to check their networks and desired properties without any parameter configuration. For example, \toolu{} runs on all VNN-COMP benchmarks with \emph{zero} tuning. In contrast, top tools, such as \crown{}, require significant tuning to perform effectively (more details in~@sec:eval).
-
-// % However, \toolu{} has many settings that can be configured by the users, such as the number of threads, number of restarts,  timeout, etc. These options are useful for experts who want to explore different settings and optimize the performance of \toolu{} for their specific problems.
-
-// \paragraph{Engineering Optimizations.}
-// As with most high-performance analysis tools, engineering matters! SOTA NNV tools use various engineering optimizations to improve performance.  For example, they often employ adversarial attack techniques such as derivative-free sampling-based~\cite{yu2016derivative} and gradient-based~\cite{madry2017towards} methods to quickly find counterexamples indicating property violation. They also preprocess and apply heuristics that automatically select appropriate abstractions and algorithms based on input network structures and properties~\cite{duong2025neuralsat,duong2024harnessing}. They use input splitting~\cite{duong2025neuralsat,wang2021beta,bak2021nnenum,zhang2022general} for networks with low input dimension and neuron splitting for other networks.
-
-// \paragraph{Commodity Hardware.} NNV tools heavily leverages the power of modern hardware, including multi-core CPUs and GPUs. For example, the parallel search in \neuralsat{} uses multi-threading, allowing multiple search subspaces to be processed simultaneously on different CPU cores. Abstraction techniques, e.g., the LiRPA library~\cite{xu2020automatic},
-// %\tvn{citation, correct?}\hd{correct}, 
-// are often implemented to run on GPUs, which significantly speeds up the computation of neuron bounds. However, real-world networks are growing rapidly in size, and we need to explore new paradigms beyond simply leveraging commodity hardware to scale verification.
-
-// \paragraph{Parameter Tuning and Extensibility.} NNV tools are powerful and flexible and have many parameters that can be tuned to further optimize performance for specific problems. Common parameters include decision heuristics, restart strategies, timeouts, CPU threads for parallelism, etc. 
-// The \tool{}, in contrast to most other SOTA tools, is designed to be fully automatic and so that for end-users it \emph{``just works''}, \tool{} runs on all VNN-COMP benchmarks with \emph{zero} tuning.
-
-// Some tools are designed in a modular and extensible way, which allows users to easily add new heuristics, optimizations, or new search algorithms.
-// For example, \tool{} consists of a small core BnB/DPLL search algorithm and other 
-// heuristics and optimizations are implemented as independent functions and can be easily replaced or extended (e.g., in current implementation decision heuristics or restart functionalities are less than 50 SLOC). 
+*Parameter Tuning and Extensibility.* NNV tools are powerful and flexible and have many parameters that can be tuned to further optimize performance for specific problems. Common parameters include decision heuristics, restart strategies, timeouts, CPU threads for parallelism, etc. #tool, in contrast to most other SOTA tools, is designed to be fully automatic so that for end-users it _"just works"_ --- #tool runs on all VNN-COMP benchmarks with _zero_ tuning. Some tools are designed in a modular and extensible way, allowing users to easily add new heuristics, optimizations, or new search algorithms. For example, #tool consists of a small core BnB/DPLL search algorithm, and other heuristics and optimizations are implemented as independent functions that can be easily replaced or extended (e.g., in current implementation decision heuristics or restart functionalities are less than 50 SLOC).
 
 
 
@@ -11396,10 +9920,1153 @@ The main difference between LP feasibility and SMT satisfiability checking is th
 = Programming Assignments <chap:pa>
 
 == PA1 <sec:pa1>
-//  in put{pa/pa1.tex}
-//  in put{pa/pa2.tex}
-//  in put{pa/pa3.tex}
-// %  in put{pa/pa4.tex}
+
+In this PA you will implement NNV using symbolic execution (SE) as described in @sec:se-smt. You can consider neural networks as a specific type of programs and thus can "execute" it. SE runs the network on symbolic inputs and returns symbolic outputs, i.e., a constraint representation. You will represent the symbolic outputs as a logical formula and use a constraint solver to check _assertions_, i.e., properties about the network. This PA has two parts: (1) implement SE on a given a network, and (2) evaluate the scalability of your SE on various networks.
+
+You will use Python and the Z3 SMT solver (@sec:z3) for this assignment. *Do not* use external libraries or any extra tools. *Do not* use AI tools (e.g., ChatGPT, GitHub Copilot, etc.) to generate code for this assignment, the purpose of this PA is for you to understand and implement symbolic execution yourself.
+
+Finally, you will need to answer some questions about your implementation and findings in the provided `README` template. #link("https://github.com/dynaroars/book_nnv/blob/main/pa/templates/README_PA1.md")
+
+=== Part 1: Symbolic Execution
+
+Consider the following fully-connected network with 2 inputs, 2 hidden layers, and 2 outputs.
+
+#figure(image("figure/dnn1.png", width: 80%))
+
+#enum(
+  [*DNN Encoding*: We can encode this DNN using Python:
+
+  ```python
+  # (weights, bias, use activation function relu or not)
+  n00 = ([1.0, -1.0], 0.0, True)
+  n01 = ([1.0, 1.0], 0.0, True)
+  hidden_layer0 = [n00, n01]
+
+  n10 = ([0.5, -0.2], 0.0, True)
+  n11 = ([-0.5, 0.1], 0.0, True)
+  hidden_layer1 = [n10, n11]
+
+  # don't use relu for outputs
+  o0 = ([1.0, -1.0], 0.0, False)
+  o1 = ([-1.0, 1.0], 0.0, False)
+  output_layer = [o0, o1]
+
+  dnn = [hidden_layer0, hidden_layer1, output_layer]
+  ```
+
+  In this network, the outputs of the neurons in the hidden layers (prefixed with `n`) are applied with the ReLU activation function, but the outputs of the network (prefixed with `o`) are not. These settings are controlled by the `True`, `False` parameters as shown above. Also, this example does not use `bias`, i.e., bias values are all 0.0's as shown.
+
+  Note that all of these settings are parameterized and I deliberately use this example to show how these parameters are used (e.g., ReLU only applies to hidden neurons, but not outputs).
+  ],
+
+  [*Symbolic States*: After performing symbolic execution on the network, we obtain _symbolic states_, represented by a logical formula relating input and output variables.
+
+  ```python
+  # my_symbolic_execution is something you implement,
+  # it returns a single (but large) formula representing the symbolic states.
+  symbolic_states = my_symbolic_execution(dnn)
+  ...
+  "done, obtained symbolic states for DNN in 0.1s"
+  assert z3.is_expr(symbolic_states)  # symbolic_states is a Z3 expression
+
+  # your symbolic states should look something like this
+  print(symbolic_states)
+  # And(n0_0 == If(i0 + -1*i1 <= 0, 0, i0 + -1*i1),
+  #     n0_1 == If(i0 + i1 <= 0, 0, i0 + i1),
+  #     n1_0 ==
+  #     If(1/2*n0_0 + -1/5*n0_1 <= 0, 0, 1/2*n0_0 + -1/5*n0_1),
+  #     n1_1 ==
+  #     If(-1/2*n0_0 + 1/10*n0_1 <= 0, 0, -1/2*n0_0 + 1/10*n0_1),
+  #     o0 == n1_0 + -1*n1_1,
+  #     o1 == -1*n1_0 + n1_1)
+  ```
+  ],
+
+  [*Constraint Solving*: We will use Z3 to query various things about this network from the obtained symbolic states. Examples include:
+
+  #enum(numbering: "(a)")[
+    Generating random inputs and obtain outputs. Note that these are random values (that satisfy the symbolic states), so your results might look different.
+
+    ```python
+    z3.solve(symbolic_states)
+    [n0_1 = 15/2,
+        o1 = 1/2,
+        o0 = -1/2,
+        i1 = 7/2,
+        n1_1 = 1/2,
+        n1_0 = 0,
+        i0 = 4,
+        n0_0 = 1/2]
+    ```
+  ][
+    Simulating a concrete execution.
+
+    ```python
+    i0, i1, n0_0, n0_1, o0, o1 = z3.Reals("i0 i1 n0_0 n0_1 o0 o1")
+
+    # finding outputs when inputs are fixed [i0 == 1, i1 == -1]
+    g = z3.And([i0 == 1.0, i1 == -1.0])
+    z3.solve(z3.And(symbolic_states, g))  # you should get o0, o1 = 1, -1
+    [n0_1 = 0,
+    o1 = -1,
+    o0 = 1,
+    i1 = -1,
+    n1_1 = 0,
+    n1_0 = 1,
+    i0 = 1,
+    n0_0 = 2]
+    ```
+  ][
+    Checking assertions, i.e., verifying/proving properties about the network or disproving/finding counterexamples.
+
+    ```python
+    print("Prove that if (n0_0 > 0.0 and n0_1 <= 0.0) then o0 > o1")
+    g = z3.Implies(z3.And([n0_0 > 0.0, n0_1 <= 0.0]), o0 > o1)
+    print(g)  #  Implies(And(n0_0 > 0, n0_1 <= 0), o0 > o1)
+    z3.prove(z3.Implies(symbolic_states, g))  # proved
+
+    print("Prove that when (i0 - i1 > 0 and i0 + i1 <= 0), then o0 > o1")
+    g = z3.Implies(z3.And([i0 - i1 > 0.0, i0 + i1 <= 0.0]), o0 > o1)
+    print(g)  # Implies(And(i0 - i1 > 0, i0 + i1 <= 0), o0 > o1)
+    z3.prove(z3.Implies(symbolic_states, g))
+    # proved
+
+    print("Disprove that when i0 - i1 > 0, then o0 > o1")
+    g = z3.Implies(i0 - i1 > 0.0, o0 > o1)
+    z3.prove(z3.Implies(symbolic_states, g))
+    # counterexample (you might get different counterexamples)
+    # [n0_1 = 15/2,
+    # i1 = 7/2,
+    # o0 = -1/2,
+    # o1 = 1/2,
+    # n1_0 = 0,
+    # i0 = 4,
+    # n1_1 = 1/2,
+    # n0_0 = 1/2]
+    ```
+  ]
+  ],
+)
+
+=== Tips
+
++ You should apply symbolic execution on this example *by hand* first before attempting any coding. This example is small enough that you can work out step by step. For example, you can do these steps:
+  + First, obtain the symbolic states by hand (e.g., on paper) for the given network.
+  + Then, put what you have in code but also for the given network. Use Z3 format (e.g., declare the inputs as symbolic values `i0 = z3.Real("i0")`, then compute the neurons and outputs, etc.).
+  + Finally, convert what you have into a general program that would work for any network input.
+
++ You can use the method below to construct a Z3 formula for ReLU:
+
+  ```python
+  @classmethod
+  def relu(cls, v):
+      return z3.If(0.0 >= v, 0.0, v)
+  ```
+
++ Two ways of doing symbolic execution to obtain symbolic states:
+  + You can follow the traditional SE method which produces symbolic execution trees in which each condition representing ReLU forks into two paths. You can decide whether to do a depth-first or breadth-first search (they will have the same results). At the end, the symbolic states are a disjunction of the path conditions (i.e., `z3.And[path_conds]`).
+  + But since we are using Z3, a much simpler way is to encode all those forked paths directly as a formula. For example:
+
+    ```python
+    if (x + y > 0):
+        r = 3
+    else:
+        r = 4
+    ```
+
+    Using traditional SE, you would have 2 paths: path 1: `x+y > 0 && r = 3` and path 2: `x+y <= 0 && r == 4`, from which you take the disjunction to get `(x+y > 0 && r == 3) || (x+y <= 0 && r == 4)`. But for this assignment, instead of forking into two paths, you can use Z3 to encode both branches using the `If` function, e.g., `If(x+y>0, r==3, r==4)` or `r==If(x+y>0,3,4)`. The results of these two methods are exactly the same; the latter requires less work. It is up to you.
+
++ When `bias` is non-zero, it will simply be added to the neuron computation, i.e., `neuron = relu(sum(value_i * weight_i) + bias)`. For example, if `bias` is `0.123` then for neuron `n0_0` we would obtain `n0_0 == If(i0 + -1*i1 + 0.123 <= 0, 0, i0 + -1*i1 + 0.123)`.
+
+=== Part 2: Evaluation
+
+In this part you will show that symbolic execution _does not_ scale on large networks.
+
++ You will create a function `create_random` that takes as input a list of positive integers representing the shape of the network `[#inputs, #neurons, ..., #outputs]`, and creates a neural network of that size with _random_ weights and biases (e.g., between $-5$ and $5$).
++ You will run symbolic execution on this network as you did in Part 1, get its results, and time the solving process.
++ You will do this for various sizes of networks *until your computer cannot handle it anymore* (e.g., until it takes more than a minute or two).
++ You will *save these networks* because you will reuse them to measure and compare execution time using abstraction in Part 2.
++ Finally, you will plot the results: the $x$-axis will show the size of the networks (for simplicity, the product of all numbers in the input list) and the $y$-axis shows the time.
+
+Feel free to be creative in this process (e.g., play around with different sizes/layers), and discuss your findings in the `README` file. Below gives some code example:
+
+```python
+# Create a random network from a given
+# number of inputs, hidden neurons, and outputs
+l = [2, 3, 4, 3, 3]  # 2 inputs, 3 hidden layers (with 3, 4, 3 hidden neurons
+                      # for respective hidden layer 1, 2, 3), and 3 outputs.
+dnn = create_random_nn(l)
+
+symbolic_state = my_symbolic_execution(dnn)
+
+# time the execution
+import time
+st = time.time()
+_ = z3.solve(symbolic_state)
+print('time to solve: ', time.time() - st)
+```
+
+=== Conventions and Requirements
+
+Your program must have the following:
+
+*Part 1*
+
++ A function `my_symbolic_execution(dnn)` that:
+  - takes as input the network, whose specifications are given as example above.
+    - *Do NOT hard-code* the network in your program (e.g., do not hardcode the example given above in your code or hard-code the weight values). This function should work with any network input.
+  - returns _symbolic states_ of the network represented as a Z3 expression (a formula) as shown above.
++ In your resulting formula, you must name:
+  - the $n$th input as $i_n$ (e.g., the first input is $i_0$)
+  - the $n$th output as $o_n$ (e.g., the second output is $o_1$)
+  - the $j$th neuron at the $i$th layer as $n_{i\_j}$ (note that the first layer is the $0$th layer)
++ A testing function `test()` where you copy and paste pretty much the complete examples given above to demonstrate that your SE works for the given example. In summary, your `test` will include:
+  - the specification of the 2×2×2×2 network in the Figure
+  - run the symbolic execution on the network (as shown above, it should output the dimension of the network and runtime)
+  - output the symbolic states results
+  - apply Z3 to the symbolic states to obtain:
+    - random inputs and associated outputs
+    - simulate concrete execution
+    - checking the 3 assertions as shown
++ Another testing function `test2()` where you create another network:
+  - The network will have:
+    - the same number of 2 inputs and 2 outputs, but 3 hidden layers where each layer has 4 neurons, i.e., a 2×4×4×4×2 network.
+    - non-zero bias values.
+  - Then on this network, do every single task you did in `test()` (run SE on it, output results, apply Z3, etc.). You will need to have 2 assertions that are true and 1 assertion that is false (just like above).
+    - Initially you might randomly generate weights and bias values, but you will likely need to manually adjust them so that you can prove some correct assertions (randomly generated values probably will not give you a meaningful network with any asserted properties).
+
+You can be as creative as you want, but your SE must not run for too long and must not take up too much space (e.g., do not generate over 50MB of files). Use the `README` to tell me exactly how to compile/run your program, e.g., `python3 se.py`.
+
+*Part 2*
+
++ A function `create_random(sizes: int)` that:
+  - takes as input the list `sizes` and returns a network of that size as described above.
++ A testing function `test3()` that runs `create_random` on various sizes of networks, runs `my_symbolic_execution` on them as you did with `test()` and `test2()` above, and times the execution.
++ A plot (in pdf, png, or jpeg) showing the scalability of `my_symbolic_execution` on various networks. You need to use *at least 25 networks of different sizes* to generate the plot. Use incrementally sized networks (e.g., gradually increasing the number of neurons/layers) or a good random distribution of sizes. A plot with very few datapoints will not be sufficient to show the scalability trend.
+
+=== What to Turn In
+
+You must submit a *zip file* containing the following files. Use the following names:
+
++ The zip file must be named `pa1-[yourname].zip`.
++ One single main source file `se.py`. Indicate in the `README` file how I can run it.
+  - Your file should include at least a `my_symbolic_execution` function and the test functions `test()`, `test2()`, and `test3()` as indicated above.
++ The completed `README.md` file. You _must_ use the provided template and answer all questions in it.
++ Nothing else; do not include any binary files or other directories like `__pycache__`, `.venv`.
+
+=== Grading Rubric (out of 30 points)
+
+- 12 points --- for complete SE implementation.
+  - 4 points for `my_symbolic_execution`
+  - 2 points for `test`
+  - 2 points for `test2`
+  - 4 points for `create_random` and `test3`
+- 2 points --- for code quality and submission format.
+- 16 points --- for completing the `README` file.
+  - 4 points for Part 1
+  - 10 points for Part 2 (plot and discussion)
+  - 2 points for the running instructions and screenshots
+
+== PA2 <sec:pa2>
+
+In this PA you will implement neural network (NN) verification using (1) _interval abstraction_ as described in @sec:interval-abstraction and (2) _zonotope abstraction_ as described in @sec:zonotope-abstraction.
+While symbolic execution (PA1 @sec:pa1) computes exact symbolic representations, abstract interpretation uses over-approximations to make verification more scalable at the cost of some precision. You will implement interval and zonotope abstract transformers and compare their precision-scalability trade-offs with symbolic execution.
+
+You will use Python and PyTorch for this assignment. *Do not* use external verification libraries (other than standard numerical libraries like `torch`, `numpy`).
+
+This PA has three main parts:
+
++ implement interval abstraction for linear layers and ReLU activations.
++ implement zonotope abstraction for linear layers and ReLU activations.
++ evaluate the precision/scalability compared to symbolic execution from PA1.
+
+A README template is provided. Please answer the questions in the template and include it in your submission. #link("https://github.com/dynaroars/book_nnv/blob/main/pa/templates/README_PA2.md")
+
+=== Interval Abstraction
+
+Interval abstraction is the simplest form of abstract interpretation for neural networks. Each variable is represented by an interval $[l, u]$ indicating its lower and upper bounds.
+
+==== Part 1: Interval for Linear Layers
+
+Linear transformations on intervals can be computed exactly using interval arithmetic.
+
+```python
+class LinearTransformer:
+    def __init__(self, W, b):
+        # TODO: store weight matrix and bias vector
+
+    def forward(self, input_lower, input_upper):
+        """
+        Apply affine transformation f(x) = Wx + b to intervals [l, u]
+
+        Mathematical formulation:
+        - W+: positive part of weights
+        - W-: negative part of weights
+        - output_lower = W+ @ input_lower + W- @ input_upper + bias
+        - output_upper = W+ @ input_upper + W- @ input_lower + bias
+
+        Args:
+            input_lower: lower bounds of input intervals
+            input_upper: upper bounds of input intervals
+
+        Returns:
+            (output_lower, output_upper): transformed interval bounds
+        """
+        # TODO:
+        # 1. Split weights into positive and negative parts
+        # 2. Compute output bounds using interval arithmetic
+        # 3. Add bias to both bounds
+        # 4. Return (output_lower, output_upper)
+
+        return output_lower, output_upper
+```
+
+==== Part 2: Interval for ReLU Activations
+
+ReLU transformation on intervals is straightforward: clamp lower bounds to 0.
+
+```python
+class ReluTransformer:
+
+    def forward(self, input_lower, input_upper):
+        """
+        Apply ReLU transformation to intervals: ReLU(x) = max(0, x)
+        Args:
+            input_lower: lower bounds of input intervals
+            input_upper: upper bounds of input intervals
+
+        Returns:
+            (output_lower, output_upper): intervals after ReLU
+        """
+        # TODO: For each dimension:
+        # 1. Clamp lower bounds to be >= 0
+        # 2. Clamp upper bounds to be >= 0
+        # 3. Return transformed bounds
+
+        return output_lower, output_upper
+```
+
+==== Part 3: Putting It All Together
+
+```python
+class IntervalAbstraction:
+
+    def __init__(self, DNN):
+        # TODO: convert DNN to corresponding interval abstraction transformers
+        self.transformers = ...
+
+    def forward(self, lb, ub):
+        # propagate through layers
+        for transformer in self.transformers:
+            lb, ub = ...
+
+        return (lb, ub)
+```
+
+==== Part 4: Test Your Implementation
+
+In this DNN, the outputs of the neurons in the hidden layers (prefixed with `n`) are applied with the `relu` activation function, but the outputs of the DNN (prefixed with `o`) are not. These settings are controlled by the `True`, `False` parameters. Also, this example does not use `bias`, i.e., bias values are all 0.0's as shown.
+
+```python
+# DNN specification
+n00 = ([1.0, 1.0], 2.0, True)
+n01 = ([1.0, -1.0], 2.0, True)
+hidden_layer0 = [n00, n01]
+
+n10 = ([1.0, 1.0], -0.5, True)
+n11 = ([1.0, -1.0], -1.0, True)
+hidden_layer1 = [n10, n11]
+
+n20 = ([-1.0, 1.0], 7.0, False)
+n21 = ([0.0, 1.0], 0.0, False)
+hidden_layer2 = [n20, n21]
+
+o0 = ([1.0, -1.0], 0.0, False)
+output_layer = [o0]
+
+dnn = [hidden_layer0, hidden_layer1, hidden_layer2, output_layer]
+```
+
+Note that all of these settings are parameterized and I deliberately use this example to show how these parameters are used (e.g., `relu` only applies to hidden neurons, but not outputs).
+
+```python
+net = IntervalAbstraction(dnn)
+input_lower = torch.tensor([-1, -1], dtype=torch.float)
+input_upper = torch.tensor([1, 3], dtype=torch.float)
+output_lower, output_upper = net(input_lower, input_upper)
+print(f'{output_lower=}')
+print(f'{output_upper=}')
+# output_lower=tensor([-7.5000])
+# output_upper=tensor([12.])
+```
+
+=== Zonotope Abstraction
+
+==== Part 1: Zonotope Representation
+
+*From Bounds to Zonotope*
+
+A zonotope is represented by a tuple of a center vector and a generator matrix. Given the bounds of a zonotope, we can convert it to a zonotope.
+
+```python
+def zonotope(lb, ub):
+    """
+    Computes zonotope from interval bounds [l, u].
+    TODO:
+    - compute center from bounds
+    - generator from bounds
+    """
+    return center, generator
+```
+
+*From Zonotope to Bounds*
+
+Given the center and generators of a zonotope, we can concretize the bounds of the zonotope.
+
+```python
+def concrete(center, generator):
+    """
+    Computes interval bounds [l, u] from zonotope (center, generator).
+
+    A zonotope Z = {c + sum_i eps_i * g_i | eps_i in [-1,1]} can be
+    converted to interval bounds:
+      Lower bound: l = c - sum_i |g_i|  (eps_i = -sign(g_i))
+      Upper bound: u = c + sum_i |g_i|  (eps_i = +sign(g_i))
+
+    Args:
+        center: Center vector c of the zonotope
+        generator: Generator matrix G
+
+    Returns:
+        (lb, ub): Interval bounds for each dimension
+    """
+    # TODO: compute interval bounds from zonotope
+    # 1. compute lower bound
+    # 2. compute upper bound
+    return lb, ub
+```
+
+==== Part 2: Zonotope for Linear Layers
+
+Linear (affine) transformations can be handled exactly in zonotope abstraction.
+
+```python
+class LinearTransformer(nn.Module):
+    def __init__(self, W, b):
+        # TODO: store weights and bias
+
+    def forward(self, center, generator):
+        """
+        Apply affine transformation f(x) = Wx + b to zonotope Z = (c, G)
+        Result: f^a(Z) = (Wc + b, WG)
+
+        Args:
+            center: center vector c of input zonotope
+            generator: generator matrix G of input zonotope
+
+        Returns:
+            (new_center, new_generator): transformed zonotope
+        """
+        # TODO:
+        # 1. Transform center using weight matrix and bias
+        # 2. Transform generator matrix using weight matrix
+        # 3. Return transformed (center, generator)
+
+        return new_center, new_generator
+```
+
+==== Part 3: Zonotope for ReLU Activations
+
+ReLU activations are non-linear and require over-approximation in zonotope abstraction. For each neuron with bounds $[l, u]$, there are three cases to handle.
+
+```python
+class ReluTransformer(nn.Module):
+
+    def forward(self, center, generator):
+        """
+        Apply ReLU abstraction to zonotope: ReLU(x) = max(0, x)
+
+        Three cases for each neuron i with bounds [l_i, u_i]:
+        1. Active case (l_i >= 0): ReLU is identity, Z' = Z
+        2. Inactive case (u_i <= 0): ReLU outputs 0, Z' = {0}
+        3. Unstable case (l_i < 0 < u_i): requires over-approximation
+
+        Args:
+            center: center vector of input zonotope
+            generator: generator matrix of input zonotope
+
+        Returns:
+            (new_center, new_generator): over-approximated zonotope after ReLU
+        """
+        # TODO:
+        # 1. Compute current bounds using concrete(center, generator)
+        # 2. Create new generator matrix with extra row for ReLU error
+        # 3. For each neuron, handle based on bounds [l, u]:
+        #    - Active (l >= 0): keep unchanged
+        #    - Inactive (u <= 0): set to zero
+        #    - Unstable (l < 0 < u): apply slope approximation
+        # 4. Return transformed (center, generator)
+
+        return new_center, new_generator
+```
+
+==== Part 4: Putting It All Together
+
+```python
+class ZonotopeAbstraction(nn.Module):
+
+    def __init__(self, DNN):
+        # TODO: convert DNN to corresponding zonotope abstraction transformers
+        self.transformers = ...
+
+    def forward(self, lb, ub):
+        # 1. convert bounds to zonotope
+        center, generator = ...
+        # 2. propagate zonotope through layers
+        for transformer in self.transformers:
+            center, generator = ...
+
+        # 3. convert zonotope to bounds
+        lb, ub = ...
+        return (lb, ub)
+```
+
+==== Part 5: Test Your Implementation
+
+```python
+net = ZonotopeAbstraction(dnn)  # same DNN specification as interval
+input_lower = torch.tensor([-1, -1], dtype=torch.float)
+input_upper = torch.tensor([1, 3], dtype=torch.float)
+output_lower, output_upper = net(input_lower, input_upper)
+print(f'{output_lower=}')
+print(f'{output_upper=}')
+# output_lower=tensor([0.1667])
+# output_upper=tensor([6.1667])
+```
+
+=== Evaluation
+
+- Make sure you use the same set of DNNs for the evaluation of both abstraction methods and the symbolic execution for fair comparison.
+- Same requirement as PA1: use at least 25 DNNs of varying sizes (number of layers, number of neurons per layer, etc.) in your evaluation.
+- A good proxy of precision is the width of the output bounds (i.e., upper $-$ lower), but you can be creative with other metrics as well.
+- All text in your plots must be legible.
+- If the DNNs you use are too small or too few to show the trend, you will receive a low score.
+- Answer the questions in the README template.
+
+=== What to Turn In
+
+You must submit a *zip file* containing the following files. Use the following names:
+
++ The zip file must be named `pa2-[yourname/groupname].zip` (1 submission per group).
++ One single main source file `pa2.py`. Indicate in the `README` file how I can run it.
+  - Your code should use the provided class/function signatures as indicated above. E.g., `LinearTransformer`, `ReluTransformer`, `IntervalAbstraction`, `ZonotopeAbstraction`, `zonotope`, `concrete`.
++ If you imported anything from your previous PAs, please include those files as well (e.g., `p1.py`). We will not run your code if they are missing and you will lose points.
++ A completed `README.md` file. You _must_ use the provided template and answer all questions in it.
++ Nothing else; do not include any binary files or other directories like `__pycache__`, `.venv`.
+
+=== Grading Rubric (out of 30 points)
+
+- 12 points --- for complete interval and zonotope abstraction implementation.
+  - 2 points for `LinearTransformer` for Interval Abstraction
+  - 2 points for `ReluTransformer` for Interval Abstraction
+  - 2 points for zonotope representation functions (`zonotope` and `concrete`)
+  - 3 points for `LinearTransformer` for Zonotope Abstraction
+  - 3 points for `ReluTransformer` for Zonotope Abstraction
+- 16 points --- for completed README with evaluation and analysis.
+- 2 points --- for code quality and submission format.
+
+== PA3 <sec:pa3>
+
+In this PA you will implement the branch and bound (BaB) algorithm as described in @sec:bab-alg with abstract interpretation from PA2 @sec:pa2 (using either interval @sec:interval-abstraction or zonotope @sec:zonotope-abstraction).
+
+While symbolic execution (PA1 @sec:pa1) provides exact analysis but does not scale, and abstract interpretation (PA2 @sec:pa2) scales well but may lose precision, Branch and Bound provides a framework that can _refine_ abstract domains when needed, achieving a balance between precision and scalability.
+
+You will use Python and PyTorch for this assignment, building upon your implementations from PA2. *Do not* use external verification libraries.
+
+This PA has three main parts:
+
++ implement the core BaB algorithm with a priority _queue_-based approach.
++ implement utility functions: `deduce`, `decide`, `bound`, and `prune`.
++ evaluate the precision and scalability of BaB compared to pure abstract interpretation and symbolic execution.
+
+A README template is provided. Please answer the questions in the template and include it in your submission. #link("https://github.com/dynaroars/book_nnv/blob/main/pa/templates/README_PA3.md")
+
+=== Part 1: Branch and Bound Algorithm Framework
+
+BaB systematically explores the space by maintaining a queue of subproblems and iteratively refining them until verification is complete or a counterexample is found. You will implement four core utility functions that form the building blocks of the BaB algorithm: `deduce`, `decide`, `bound`, and `prune`.
+
+==== Algorithm Skeleton
+
+```python
+class BranchAndBound:
+    def __init__(self, network, abstraction_type):
+        """
+        Initialize BaB verifier
+        Args:
+            network: DNN to verify (same format as PA2)
+            abstraction_type: Interval or Zonotope from PA2
+        """
+        # TODO: Initialize your abstraction from PA2
+        self.abstraction = ...
+        self.network = network
+
+    def verify(self, input_lower, input_upper, property_fn, timeout=60):
+        """
+        Main BaB verification algorithm following Algorithm 1 from the book
+
+        Args:
+            input_lower: lower bounds of input domain
+            input_upper: upper bounds of input domain
+            property_fn: function that takes (output_lower, output_upper)
+                         and returns VERIFIED, FALSIFIED, or UNKNOWN
+            timeout: maximum time in seconds
+
+        Returns:
+            result: VERIFIED, FALSIFIED, or TIMEOUT
+            counterexample: input that violates property (if FALSIFIED)
+        """
+        start_time = time.time()
+
+        # Initialize verification problems (Line 5 in Algorithm 1)
+        problems = Queue()
+        initial_problem = (input_lower, input_upper)
+        problems.put(initial_problem)
+
+        # Main loop
+        while not problems.empty():
+            if time.time() - start_time > timeout:
+                return TIMEOUT, None
+
+            # Select a subproblem
+            lb, ub = ...  # Hint: use problems.get()
+
+            # TODO: Use self.deduce() to determine if the problem is feasible
+            if self.deduce(lb, ub, property_fn):
+                # Check satisfiability using adversarial attack
+                cex = ...  # Hint: use self.attack()
+
+                if cex is not None:  # Found valid counterexample
+                    return FALSIFIED, cex
+
+                # Decide: pick an input dimension to split on
+                subproblems = ...  # Hint: use self.decide()
+
+                # Add new subproblems to queue
+                for sub_lb, sub_ub in subproblems:
+                    ...  # Hint: use problems.put()
+
+        # All subproblems are verified
+        return VERIFIED, None
+```
+
+==== Deduce Function
+
+The `deduce` function checks if the current problem is feasible by combining the abstract interpretation (bound).
+
+```python
+def deduce(self, input_lower, input_upper, property_fn):
+    """
+    Deduce: combine bound + prune to check if we can make progress
+
+    Args:
+        input_lower: lower bounds of input domain
+        input_upper: upper bounds of input domain
+        property_fn: property function to check
+
+    Returns:
+        bool: False if verified, True otherwise (need to branch)
+    """
+    # TODO:
+    # 1. Compute abstract bounds using self.bound() (PA2)
+    # 2. Check pruning using self.prune()
+    # 3. Return True if prune_result == UNKNOWN (need to branch)
+    # 4. Return False if prune_result == VERIFIED (can prune)
+    # 5. This function should NOT handle FALSIFIED case directly
+
+    return prune_result == UNKNOWN
+```
+
+==== Attack Function
+
+The `attack` function finds a counterexample using an adversarial attack. You can use a simpler approach like random sampling, or a more advanced approach like PGD, FGSM, etc.
+
+```python
+def attack(self, input_lower, input_upper, property_fn):
+    """
+    Find counterexample using adversarial attack
+
+    Uses random sampling or adversarial attacks instead of LP solving
+
+    Args:
+        input_lower: lower bounds of input domain
+        input_upper: upper bounds of input domain
+        property_fn: property function to check
+
+    Returns:
+        counterexample: cex that violates property, or None if not found
+
+    Example approaches:
+        # Random sampling
+        for _ in range(100):
+            random_input = ...
+            output = self.network(random_input)
+            if violates_property(output):
+                return random_input
+
+        # Or use PGD attack, FGSM, etc.
+    """
+    # TODO: Implement adversarial attack to find counterexample
+    # 1. Generate candidate inputs within [input_lower, input_upper]
+    # 2. Run network on candidates
+    # 3. Check if any output violates the property
+    # 4. Return first violating input, or None if none found
+
+    return counterexample
+```
+
+==== Branch (Decide) Function
+
+The `decide` function splits a domain into smaller subdomains. For this PA, we use input splitting where we divide one dimension at a time.
+
+```python
+def decide(self, input_lower, input_upper):
+    """
+    Split input domain into 2 subproblems by splitting one dimension
+
+    Args:
+        input_lower: lower bounds of input domain
+        input_upper: upper bounds of input domain
+
+    Returns:
+        list of (sub_lower, sub_upper) tuples representing subproblems
+
+    Example:
+        # Input domain: [-1, 1] x [-2, 2]
+        input_lower = torch.tensor([-1.0, -2.0])
+        input_upper = torch.tensor([1.0, 2.0])
+
+        # Splitting the 1st dimension at 0:
+        # Subproblem 1: [-1, 0] x [-2, 2]
+        # Subproblem 2:  [0, 1] x [-2, 2]
+
+        subproblems = decide(input_lower, input_upper)
+        # subproblems = [
+        #     (torch.tensor([-1.0, -2.0]), torch.tensor([0.0, 2.0])),
+        #     (torch.tensor([0.0, -2.0]), torch.tensor([1.0, 2.0]))
+        # ]
+    """
+    # TODO:
+    # 1. Find desired dimension to split on
+    #       (e.g., first dimension, max width, random, etc.)
+    # 2. Compute split point for that dimension
+    #       (e.g., midpoint, random, etc.)
+    # 3. Create two subproblems by splitting at the computed point
+    # 4. Return list of subproblems
+
+    return subproblems
+```
+
+==== Bound Function
+
+The `bound` function computes abstract output bounds using your abstraction from PA2 (@sec:pa2).
+
+```python
+def bound(self, input_lower, input_upper):
+    """
+    Compute output bounds using abstract interpretation
+
+    Args:
+        input_lower: lower bounds of input domain
+        input_upper: upper bounds of input domain
+
+    Returns:
+        (output_lower, output_upper): abstract bounds on network outputs
+
+    Example:
+        input_lower = torch.tensor([-1.0, -2.0])
+        input_upper = torch.tensor([1.0, 2.0])
+
+        output_lower, output_upper = bound(input_lower, input_upper)
+        # output_lower = tensor([-10.0])
+        # output_upper = tensor([10.0])
+    """
+    # TODO: Use your abstraction from PA2 (interval or zonotope)
+    # to compute output bounds
+
+    return output_lower, output_upper
+```
+
+==== Prune Function
+
+The `prune` function determines whether a subproblem can be eliminated based on the property being verified.
+
+```python
+def prune(self, output_lower, output_upper, property_fn):
+    """
+    Determine if subproblem can be pruned based on abstract bounds
+
+    Args:
+        output_lower: lower bounds on network outputs
+        output_upper: upper bounds on network outputs
+        property_fn: function that checks if bounds satisfy property
+
+    Returns:
+        VERIFIED: property holds for all points in this subproblem
+        FALSIFIED: property violated for all points in this subproblem
+        UNKNOWN: cannot determine, need to branch further
+
+    Example:
+        def safety_property(out_lb, out_ub, threshold):
+            if torch.all(out_ub < threshold):
+                return VERIFIED
+            elif torch.all(out_lb >= threshold):
+                return FALSIFIED
+            else:
+                return UNKNOWN
+
+        prop_1 = lambda out_lb, out_ub: safety_property(out_lb, out_ub, 5)
+
+        # Example 1: Can be pruned as VERIFIED
+        output_lower = torch.tensor([-10.0])
+        output_upper = torch.tensor([3.0])  # All outputs < 5
+        result = prune(output_lower, output_upper, prop_1)
+        # result = VERIFIED -> prune this subproblem
+
+        # Example 2: Cannot be pruned
+        output_lower = torch.tensor([-2.0])
+        output_upper = torch.tensor([8.0])  # Outputs span threshold
+        result = prune(output_lower, output_upper, prop_1)
+        # result = UNKNOWN -> need to branch further
+    """
+    # TODO:
+    # 1. Check if property_fn gives definitive answer
+    # 2. Return appropriate result based on property satisfaction
+
+    return result
+```
+
+=== Part 2: Evaluation
+
+- Make sure you use the same set of DNNs and properties for the evaluation of all methods for fair comparison.
+- Use at least 30 diverse DNN and property pairs in your evaluation.
+- All text in your plots must be legible.
+- If the DNNs you use are too small or too few to show the trend, you will receive a low score.
+- Answer the questions in the README template.
+
+==== Test Your Implementation
+
+This function is used to test whether your BaB implementation is correct. Make sure there is _at least one perturbed dimension_, e.g., `input_lower` should not equal `input_upper`, or otherwise the input space is just a single point and no need to use abstraction.
+
+```python
+def test_bab():
+    """Test BaB on a DNN"""
+    dnn = ...
+
+    # Test with interval abstraction
+    bab = BranchAndBound(dnn, 'interval')
+
+    # Input domain
+    input_lower = ...
+    input_upper = ...
+
+    # Property:
+    property_fn = ...
+
+    result, counterexample, stats = bab.verify(
+        input_lower, input_upper, property_fn, timeout=30
+    )
+
+    print(f"Result: {result}")
+```
+
+==== Analysis
+
+Create two additional test functions:
+
++ `bab_vs_z3`: Compare BaB with Z3 on a local robustness property.
++ `bab_vs_abstraction`: Compare BaB with pure abstraction from PA2.
+
+Note that `property_fn` can be an arbitrary function; make up your own property function (e.g., $y_0 > 0$ or $y_0 > y_1$, etc.), just make sure to use the _same property function_ for different methods so that the comparison is fair.
+
+For each testcase, you should:
+
++ Create networks of varying sizes.
++ Use BaB with different configurations (e.g., abstraction types, branching strategies, etc.).
++ For each network, measure:
+  - Symbolic execution time/result (PA1 @sec:pa1)
+  - Pure abstraction time/result (PA2 @sec:pa2)
+  - BaB verification time/result
+  - Use appropriate timeouts (e.g., 30s)
++ Plot results showing precision vs. scalability trade-offs.
++ Analyze when BaB is most beneficial.
+
+=== What to Turn In
+
+You must submit a *zip file* containing the following files. Use the following names:
+
++ The zip file must be named `pa3-[yourname/groupname].zip` (1 submission per group).
++ One single main source file `pa3.py`. Indicate in the `README` file how I can run it.
+  - Your code should use the provided class/function signatures as indicated above. E.g., `BranchAndBound`, `deduce`, `decide`, `bound`, `prune`.
++ If you imported anything from your previous PAs, please include those files as well (e.g., `p1.py`). We will not run your code if they are missing and you will lose points.
++ A completed `README.md` file. You _must_ use the provided template and answer all questions in it.
++ Nothing else; do not include any binary files or other directories like `__pycache__`, `.venv`.
+
+=== Grading Rubric (out of 30 points)
+
+- 12 points --- Core BaB implementation.
+  - 3 points for correct `verify` algorithm implementation
+  - 3 points for `branch` function with proper input splitting
+  - 3 points for `bound` function integration with PA2 abstractions
+  - 3 points for `prune` function with correct pruning logic
+- 16 points --- for completed README with evaluation and analysis.
+- 2 points --- for code quality and submission format.
+
+== PA4 <sec:pa4>
+
+In this PA, you will use your existing implementations from previous PAs to verify properties of a real benchmark using the standard format (ONNX for networks, and VNNLIB for properties).
+
+=== Part 1: Handling ONNX Networks
+
+In order to handle ONNX networks, the simplest way is to use the ONNX library to load the network and convert it to a PyTorch model. You can install the conversion library `onnx2pytorch` using pip:
+
+```sh
+pip install onnx2pytorch
+```
+
+Then you can use the library to load the network and convert to a PyTorch model as follows:
+
+```python
+import onnx
+import onnx2pytorch
+
+# load the ONNX network
+model = onnx.load("path/to/your/network.onnx")
+
+# convert to Pytorch model
+# experimental=True is optional to use batch processing
+model = onnx2pytorch.convert(model, experimental=True)
+
+# since ACAS XU benchmarks contain simple feed-forward networks,
+# we can simply enumerate each layer of a network
+for layer_name, layer in enumerate(layers):
+    if isinstance(layer, nn.Linear):
+        # TODO handle linear layer
+        pass
+    elif isinstance(layer, nn.ReLU):
+        # TODO handle ReLU layer
+        pass
+    elif isinstance(layer, sub):
+        # handle subtraction layer
+        continue  # this layer is y = x - 0, which is identity, so skip it
+    else:
+        # TODO handle other layers
+        pass
+```
+
+=== Part 2: Handling VNNLIB Properties
+
+==== Parsing VNNLIB Properties
+
+VNNLIB properties are designed to represent properties of neural networks in a formal language. It specifies the precondition and postcondition of the network. To extract the preconditions and postconditions from a VNNLIB property, you can follow the provided code at #link("https://github.com/dynaroars/book_nnv/blob/main/code/pa4/test.py"):
+
+```python
+# input shape is (1, 5) for ACAS XU benchmarks
+input_shape = (1, 5)
+
+# parse the VNNLIB property
+properties = parse_vnnlib("path/to/your/property.vnnlib", input_shape)
+```
+
+==== VNNLIB Disjunctive Properties
+
+Note that one VNNLIB file can contain disjunctive properties. Let's take a look at an example VNNLIB property 7 of ACAS XU benchmarks:
+
+```
+; ACAS Xu property 7
+
+(declare-const X_0 Real)
+(declare-const X_1 Real)
+(declare-const X_2 Real)
+(declare-const X_3 Real)
+(declare-const X_4 Real)
+
+(declare-const Y_0 Real)
+(declare-const Y_1 Real)
+(declare-const Y_2 Real)
+(declare-const Y_3 Real)
+(declare-const Y_4 Real)
+
+; Unscaled Input 0: (0, 60760)
+(assert (<= X_0 0.679857769))
+(assert (>= X_0 -0.328422877))
+
+; Unscaled Input 1: (-3.141592, 3.141592)
+(assert (<= X_1 0.499999896))
+(assert (>= X_1 -0.499999896))
+
+; Unscaled Input 2: (-3.141592, 3.141592)
+(assert (<= X_2 0.499999896))
+(assert (>= X_2 -0.499999896))
+
+; Unscaled Input 3: (100, 1200)
+(assert (<= X_3 0.5))
+(assert (>= X_3 -0.5))
+
+; Unscaled Input 4: (0, 1200)
+(assert (<= X_4 0.5))
+(assert (>= X_4 -0.5))
+
+; unsafe if strong left is minimal or strong right is minimal
+(assert (or
+    (and (<= Y_3 Y_0) (<= Y_3 Y_1) (<= Y_3 Y_2))
+    (and (<= Y_4 Y_0) (<= Y_4 Y_1) (<= Y_4 Y_2))
+))
+```
+
+This file specifies the properties in the form of $X and (P_0 or P_1)$, where $X$ is the precondition on input variables ($X_0$, $X_1$, $X_2$, $X_3$, $X_4$) and $P_0$ and $P_1$ are the postconditions in _negation form_ (do not negate them!) on output variables ($Y_0$, $Y_1$, $Y_2$, $Y_3$, $Y_4$).
+
+Specifically,
+
+$
+X equiv (-0.328422877 <= X_0 <= 0.679857769) \
+  and (-0.499999896 <= X_1 <= 0.499999896) \
+  and (-0.499999896 <= X_2 <= 0.499999896) \
+  and (-0.5 <= X_3 <= 0.5) \
+  and (-0.5 <= X_4 <= 0.5)
+$
+
+$
+P_0 equiv (Y_3 <= Y_0) and (Y_3 <= Y_1) and (Y_3 <= Y_2) \
+P_1 equiv (Y_4 <= Y_0) and (Y_4 <= Y_1) and (Y_4 <= Y_2)
+$
+
+To deal with disjunctive postconditions ($P_0 or P_1$), the code from NeuralSAT simply converts $X and (P_0 or P_1)$ to a list of conjunctive sub-properties:
+
+$
+underbrace(X and P_0, "property 1") or underbrace(X and P_1, "property 2")
+$
+
+Now each sub-property has the same form as PA3. To verify a sub-property, you can use the code from PA3.
+
+==== Output Constraints in VNNLIB
+
+VNNLIB always represents the output constraints in the form of $c s dot Y <= "rhs"$ where $Y$ is the output vector.
+
+For example, $Y_3 <= Y_0$ is equivalent to $-Y_0 + Y_3 <= 0$, which is represented as:
+
+$
+underbrace(mat(-1, 0, 0, 1, 0), c s) dot underbrace(mat(Y_0; Y_1; Y_2; Y_3; Y_4), Y) <= underbrace(mat(0), "rhs")
+$
+
+If you are using the VNNLIB extraction code from NeuralSAT, each sub-property is an object with the following attributes:
+
+- `lower_bounds`: input lower bounds (e.g., lower bounds of all input variables)
+- `upper_bounds`: input upper bounds (e.g., upper bounds of all input variables)
+- `cs`: coefficient matrix for output constraints
+- `rhs`: constant vector for output constraints
+
+```python
+# number in pop(), e.g., pop(1), means number of sub-properties
+# we want to verify simultaneously, not the index of the sub-property
+sub_property = properties.pop(1)  # get one sub-property
+
+print(sub_property.lower_bounds)
+# tensor([[-0.3284, -0.5000, -0.5000, -0.5000, -0.5000]])
+
+print(sub_property.upper_bounds)
+# tensor([[0.6799, 0.5000, 0.5000, 0.5000, 0.5000]])
+
+print(sub_property.cs)
+# tensor([[[-1.,  0.,  0.,  1.,  0.],   # Y_3 <= Y_0
+#         [ 0., -1.,  0.,  1.,  0.],    # Y_3 <= Y_1
+#         [ 0.,  0., -1.,  1.,  0.]]])  # Y_3 <= Y_2
+
+print(sub_property.rhs)
+# tensor([[0., 0., 0.]])
+```
+
+==== Verifying VNNLIB Properties
+
+Remember that we have a list of disjunctive sub-properties (e.g., property 1 and property 2 for property 7). To verify the original property is UNSAT, we need to verify all sub-properties are UNSAT. But to show the original property is SAT, disproving one sub-property is enough. The high-level idea:
+
+```python
+while len(properties):  # make sure to verify all sub-properties
+    sub_property = properties.pop(1)  # get one sub-property
+    # disprove one sub-property, return counterexample immediately
+    if verify(network, sub_property) == SAT:
+        return SAT, cex
+
+    # run out of time
+    if verify(network, sub_property) == TIMEOUT:
+        return TIMEOUT
+
+    # prove one sub-property
+    if verify(network, sub_property) == UNSAT:
+        continue  # move to next sub-property
+
+# all sub-properties are verified, the original property is UNSAT
+return UNSAT
+```
+
+=== Part 3: Putting Everything Together
+
+Now you have all the components to build the verifier. Follow the naming conventions below:
+
+#enum(
+  [A single Python file `verify.py` that accepts three command line arguments and runs the verification. This provides a unified interface for testing your implementation.
+
+  ```sh
+  python verify.py [path/to/network.onnx] [path/to/property.vnnlib] [timeout_in_seconds]
+
+  # E.g.
+  python verify.py acasxu/Network1_1.onnx acasxu/Property7.vnnlib 116
+  ```
+
+  Your output should be either `UNSAT`, `SAT`, or `TIMEOUT`. If the output is `SAT`, you should also print the counterexample found.
+  ],
+  [Your actual implementation should be in `p4.py`.]
+)
+
+=== Part 4: Verifying ACAS XU Benchmarks
+
+Download the ACAS XU benchmarks from #link("https://github.com/dynaroars/neuralbench/tree/main/instances/acasxu"). In this folder, you will find:
+
+- Folder `onnx`: contains the ONNX networks.
+- Folder `vnnlib`: contains the VNNLIB properties.
+- File `instances.csv`: contains list of instances of the ACAS XU benchmarks, where each line is a tuple of (network path, property path, timeout in seconds).
+
+You can use `acasxu_instances_w_ground_truth.csv` instead of `instances.csv` in the repo. It contains the same instances as `instances.csv`, but also includes the ground truth results for each instance. It is available from #link("https://github.com/dynaroars/book_nnv/blob/main/code/pa4/acasxu_instances_w_ground_truth.csv").
+
+Your task is to:
+
++ Enumerate the first 90 instances in `instances.csv` and verify the properties; the rest are optional.
++ Report the result for each instance: either UNSAT, SAT, or TIMEOUT.
++ Some timeouts are expected; we do not expect your verifier to verify all instances.
++ Check the results with the ground truth at #link("https://github.com/dynaroars/book_nnv/blob/main/code/pa4/acasxu_instances_w_ground_truth.csv").
+
+You should debug your implementation using a few instances first before running all 90, as the complete run may take a long time.
+
+=== What to Turn In
+
+You must submit a *zip file* containing the following files. Use the following names:
+
++ The zip file must be named `pa4-[yourname/groupname].zip` (1 submission per group).
++ If you imported anything from your previous PAs, please include those files as well (e.g., `p1.py`). We will not run your code if they are missing and you will lose points.
++ One `verify.py` file as described above.
++ A completed `README.md` file. You _must_ use the provided template and answer all questions in it.
++ It is recommended to include any logs or results your verifier generated in a separate folder. You can name the folder as you like, e.g., `results/`.
+  - This is not mandatory, but it will show that you have done the experiments and help us grade your PA.
++ If you used any additional scripts/files to help with Part 4, include those as well and add instructions to the `README.md` file.
++ Nothing else; do not include any binary files or other directories like `__pycache__`, `.venv`.
+
+=== Grading Rubric (out of 30 points)
+
+- 20 points --- Verifier implementation.
+  - 4 points --- for parsing ONNX networks correctly
+  - 4 points --- for parsing VNNLIB properties correctly
+  - 6 points --- for implementing the verifier (`verify.py`)
+  - 6 points --- for running your verifier on ACAS XU benchmarks (first 90 instances)
+- 10 points --- for completed README with analysis.
 
 // = Schedule <chap:schedule}
 
