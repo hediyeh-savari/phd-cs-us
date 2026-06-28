@@ -278,7 +278,7 @@ Some areas are growing so large that they are becoming fields in their own right
 At the finest granularity, a research _project_ or dissertation focuses on a specific question within a topic (or cross-topics and even cross-areas). For example: _"How can symbolic execution be applied to generate high-coverage test cases for deep neural networks?"_
 ]
 
-#example[
+#example-box[
 For example, my own #link("https://roars.dev")[research profile] can be structured as:
 - *Discipline:* Computer Science
 - *Fields:* Software Engineering and Formal Methods
@@ -345,7 +345,7 @@ However, an MS _can help_ admission if it gives research experience or is from a
 Some professors prefer students with an MS since they have more experience and are more mature. But this is not a requirement, and many professors are happy to take students without an MS.
 Moreover, if you have an MS, then some coursework _might_ be transferred for course credit, which _might_ save some time. But in general, don't count on finishing earlier just because you have an MS.
 
-#example[
+#example-box[
   I started my PhD with an MS in CS from a US university. The MS helped me gain research experience, but I still had to retake courses because I did my MS at a different university. So in the end, I did not save any time because of the MS.
 
   In general, don't worry if you don't have an MS. But also don't feel that you wasted your time if you have an MS, as it can help you in research.
@@ -359,7 +359,7 @@ Fall---the start of the #gls("AY")---is the most common time to begin PhD progra
 
 However, many universities also accept PhD students in the Spring or Summer, especially when you have a specific advisor who can fund you through an RAship (@sec:ra). This is less common, and you may lose funding opportunities that are available only for Fall admits.
 
-#example[
+#example-box[
   GMU allows PhD students to start in the Spring, but it is usually not recommended. Two of my PhD students started in the Spring because I had funding to support them right away. In general, a student can start in the Spring or even Summer only if an advisor already has RA funding for them. Students who do not start in the Fall may also lose benefits reserved for Fall admits, such as a first-summer stipend. So, it is possible, but I do not recommend aiming for it.
 ]
 
@@ -466,7 +466,7 @@ PhD adcoms typically include assistant professors (@sec:faculty-types), giving j
 
 Each application is assigned to about three #gls("adcom members",first: false), who independently evaluate your profile and then reach a consensus. They consider factors such as #glspl("LOR"), #gls("SOP"), research experience, GPA, test scores, and interviews. (see @part:application).
 
-#example[
+#example-box[
   At GMU, we usually admit full-time PhD candidates with funding (@chap:funding) or reject them. In rare cases, we admit without funding if the student has external support (e.g., government or fellowship). We justify our decision (@sec:ievaluate) with a summary of your application, listing strengths (e.g., well-known school) and weaknesses (e.g., generic LORs).
 ]
 
@@ -1149,7 +1149,7 @@ After you submit your applications, the waiting game begins! For many students, 
 
 After you apply, you _might_ get interviews. The most common case is that a specific prof. is interested in working with you and wants to chat, e.g., to offer RA (@sec:ra). In some cases, the interview is done by several professors, e.g., to see if a student fits in their group or to recruit a very strong student to their program.
 
-Note that unlike other fields (e.g., Physics @fig:adcom-discuss-physics) that has formal interview where adcom members interview selected applicants to accept them in the program, CS interviews are usually with just one prof. or a few profs.---who might not adcom members---that have interests in recruiting specific applicants to work directly with them or their research group. In CS, adcom members rarely do interview to get students for the program as a whole.
+Note that unlike other fields (e.g., Physics as shown in @fig:adcom-discuss-physics) that has formal interview where adcom members interview selected applicants to accept them in the program, CS interviews are usually with just one prof. or a few profs.---who might not adcom members---that have interests in recruiting specific applicants to work directly with them or their research group. In CS, adcom members rarely do interview to get students for the program as a whole.
 
 ==== When do interviews happen?
 
@@ -2500,7 +2500,7 @@ Many universities have programs to encourage undergraduate research. For example
 
 You can also take honor thesis or independent study courses with a professor.  This is a good way to get research experience and also get a LOR from the professor.  You can also ask your academic advisor or other faculty members for suggestions.  Finally, you can also ask your peers who are already doing research.  Use the method described in @sec:contact to contact professors
 
-#example[
+#example-box[
     I enjoy working with undergrads and actively recruit them to my #link("https://roars.dev")[research group].
     I get undergraduates through my classes, e.g., asking students who did well in my class if they are interested in research.
     Occasionally I was introduced to students by other students or faculty (though I did not have much success with this method).
@@ -2971,7 +2971,7 @@ With lab mates and colleagues, you will often work and go to lunch together, con
 With your professors, you can call them by their first name (@sec:address), disagree with them and argue (and gain respect doing so), seek their help (even on personal matters), come to their houses for parties or gathering (e.g., my lab always come to my house for #link("https://photos.app.goo.gl/LFtbqQUuznq9eiL7A")[Thanksgiving]), and give them small thoughtful gifts that they proudly put on their desks (@sec:gifts).  
 Many people maintain lifelong relationships with their professors and colleagues, staying in touch through cards, emails, and visits, even after they no longer work together.
 
-#example[
+#example-box[
   I maintain a close relationship with my former professors and mentors. When there is a new event in my life (or theirs), I often email them or call them, e.g., when I get married, have a new baby, new job, etc. I think this does not bother them a bit; they are genuinely interested in knowing and helping solve these "dramas" in my life.
 
   I also visit my former professors when I am in their area. I meet Thang Bui (my MS advisor) at least once a year when I come back to Harrisburg to visit my parents. When Steph was in DC for a meeting, I invited her to give a research talk at GMU. I have also collaborated with them after I graduated e.g., I recently got an NSF grant with Deepak.
@@ -3204,7 +3204,8 @@ Students from top schools with strong research programs and experience might alr
 My goal is thus to level the playing field by providing info that is not readily available to less privileged students.
 #emph[I hope to encourage more students with such backgrounds to apply and succeed.]
 
-#example[
+
+#example-box[
   I was a first-generation PhD student and was very much on my own navigating the admission process---there was no one to ask for help, no Reddit, Facebook, or resources like this book.
 
   *Fun fact*: I was the first PhD student in my family and my extended family. My parents were war refugees and did not finish high school (though my dad eventually got his GED). I was the first one to go to college (Penn State), and then grad school. This helps inspire my cousins, and in total our family has 15+ Nittany Lions, several MS, 2 PhDs (me in CS and the other in Finance), and 1 MD. So, be the first and create a path for others to follow!
