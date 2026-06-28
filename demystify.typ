@@ -109,34 +109,6 @@
   )).flatten()
 )))
 
-// Bar chart with a free-text annotation per bar (e.g., the "ambition" chart).
-// data: array of (label, value, color, annotation). DRAFT helper.
-#let annotbar(data, max: 100) = align(center, box(width: 95%, grid(
-  columns: (auto, 1fr, auto),
-  row-gutter: 10pt,
-  column-gutter: 8pt,
-  align: (right + horizon, left + horizon, left + horizon),
-  ..data.map(r => (
-    text(size: 0.85em, r.at(0)),
-    rect(width: r.at(1) / max * 100%, height: 0.9em, fill: r.at(2), stroke: none, radius: 1.5pt),
-    text(size: 0.82em, style: "italic", r.at(3)),
-  )).flatten()
-)))
-
-// Owned "don't / do" callout box, used to replace joke comics (zero copyright).
-#let dontdo(dont, do) = block(
-  width: 100%, inset: 9pt, radius: 4pt, fill: luma(245), stroke: 0.5pt + gray,
-)[
-  #grid(columns: (auto, 1fr), row-gutter: 7pt, column-gutter: 7pt, align: (center + top, left + top),
-    text(size: 1.05em)[❌], dont,
-    text(size: 1.05em)[✅], do,
-  )
-]
-
-// Simple flowchart pieces (boxes + down arrows), pure Typst.
-#let flowbox(body, fill: luma(240)) = box(width: 100%, fill: fill, inset: 7pt, radius: 4pt, stroke: 0.5pt + gray, body)
-#let flowarrow = align(center, text(size: 1.1em)[⬇])
-
 #show figure.where(kind: image): set figure(supplement: [Fig.])
 #show figure.where(kind: table): set figure(supplement: [Tab.])
 //#show math.equation: set math.equation(supplement: [Eq.])
@@ -444,15 +416,9 @@ Typically it takes 5--7 years for a CS PhD in the US. This is usually longer com
 #note-block[#drafttag This matches national data: an analysis of the #link("https://ncses.nsf.gov/surveys/earned-doctorates/2024")[NSF Survey of Earned Doctorates] found a #link("https://cra.org/crn/2014/04/time_to_degree_in_computing/")[median time-to-degree in computing of about *7.6 years* from the start of graduate school]. In other words, plan for this to be a _long_ commitment (@sec:worth-it)---closer to the upper end of the 5--7 year range than the lower end, especially if you include time spent on internships and a master's along the way.]
 
 #figure(
-  annotbar((
-    ([1st year], 100, rgb("#4472C4"), [Win a Nobel Prize!]),
-    ([2nd year], 60, rgb("#4472C4"), [Get a job at a top university]),
-    ([3rd year], 35, rgb("#4472C4"), [Just get a job]),
-    ([4th year], 18, rgb("#4472C4"), [Attend that conference in PoDunk, MN]),
-    ([5th year], 8, rgb("#4472C4"), [Hope they have pepperoni pizza]),
-  )),
-  caption: [#drafttag The "ambition" level of a PhD student over their years of study (they miss the 6--7th year when the ambition is _"Just let me graduate"_).],
-) <fig:ambition>
+  image("files/c4a.png", width: 60%),
+  caption: [The "ambition" level of a PhD student over their years of study (they miss the 6--7th year when the ambition is _"Just let me graduate"_).],
+)
 
 The first two years are typically spent taking coursework (somewhat equivalent to MS study), finding an advisor, passing a #gls("qualifying-exam", first:true), and learning how to do research. The next 2--3 years focus on research, forming a #gls("dissertation", first:true) topic, advancing to #gls("candidacy") (often by defending a #gls("proposal", first:true)), and getting results published. The last 1--2 years are usually spent continuing to publish, writing and defending the dissertation (the #gls("defense", first:true)), and looking for a job.
 
@@ -766,11 +732,8 @@ The committee will look at various factors, but the most important ones are #gls
 #simpsons[To whom it may concern… D'oh!]
 
 #figure(
-  dontdo(
-    [A letter from a "big name" or senior professor who *barely remembers you*---it reads as generic and weak (@sec:generic-letters), and a tepid letter can quietly sink an application.],
-    [A *personalized* letter from someone who knows your research well and can give concrete examples---even if they are less famous, this carries far more weight (@sec:LOR-writers).],
-  ),
-  caption: [#drafttag Who should write your #gls("LOR", plural: true): pick people who know your work, not just impressive titles.],
+  image("files/c6.png", width: 60%),
+  caption: [#drafttag A #gls("LOR") from a professor who barely remembers you is generic and weak (@sec:generic-letters)---ask people who know your research well. Source: #link("https://phdcomics.com")[PhD Comics] (© Jorge Cham).],
 ) <fig:lor-comic>
 
 #gls("LOR",plural:true) are crucial for PhD because (i) they paint a picture of your research ability and potential from someone who has worked closely with you, and (ii) adcom trust the opinions of your LOR writers, who are usually faculty members or researchers who have the expertise and reputation to evaluate your research ability (@sec:LOR-writers). Most PhD programs require at least _two_ LORs. 
@@ -1099,11 +1062,8 @@ So do talk about them in your SOP (@chap:sop) and have your writers mention them
 #simpsons[All my life I've had one dream: to achieve my many goals.]
 
 #figure(
-  dontdo(
-    [_"I have always been deeply passionate about the ever-evolving world of computer science, and your university's beautiful campus and fun atmosphere would let me achieve my dream of winning a Nobel Prize."_ --- vague, generic, and all about prestige (@sec:kiss-of-death-sop).],
-    [_"Debugging a race condition in my OS course project got me hooked on concurrency. I later built X, which led me to question Y --- exactly the problems Prof. Z works on."_ --- specific, concrete, and tied to real research.],
-  ),
-  caption: [#drafttag What _not_ to write vs. what to write in your #gls("SOP") (@chap:sop).],
+  image("files/c2.png", width: 90%),
+  caption: [#drafttag A tongue-in-cheek example of what _not_ to write in your #gls("SOP") (@sec:kiss-of-death-sop): vague enthusiasm, partying, and promising a Nobel Prize. Source: #link("https://phdcomics.com")[PhD Comics] (© Jorge Cham).],
 ) <fig:sop-comic>
 
 While you might not have control over LORs (@chap:LOR) or where you go to school (@chap:your-school), you do have control over your #gls("SOP",first:true) or personal statement#footnote[Some schools separate these documents and ask you to write both: SOP, which focuses on research experiences, and personal statement, which covers more personal aspects, e.g., why PhD, challenges, etc.]. A well-written SOP also demonstrates that you can communicate effectively, which is crucial in research and important for GTA funding (@chap:funding). Many SOP samples for CS are #link("https://cs-sop.org/")[available here].
@@ -2015,11 +1975,8 @@ Thus, if your goal is a PhD in CS, you must target only schools offering such a 
 
 === Selecting and Ranking Schools <sec:selecting-ranking-schools>
 #figure(
-  dontdo(
-    [Choosing schools by *name brand*, #gls("Ivy League") prestige, overall university rankings, or even the *weather* and party scene.],
-    [Choosing schools by *research fit*: faculty who work on what you want to work on, and a program strong in your specific area (@sec:selecting-ranking-schools).],
-  ),
-  caption: [#drafttag How (not) to pick schools to apply to.],
+  image("files/c1.png", width: 50%),
+  caption: [#drafttag How _not_ to choose schools: by name brand, #gls("Ivy League") prestige, rankings, or weather---instead of research fit (@sec:selecting-ranking-schools). Source: #link("https://phdcomics.com")[PhD Comics] (© Jorge Cham).],
 ) <fig:schools-comic>
 
 Many students put universities into two bins: (i) top schools that they dream about, and (ii) everything else. They often use rankings from US News, which is not transparent and questionable (@chap:rankings). Sometimes they evaluate based on the reputation of the school's undergrad program or the reputation of the school's non-CS programs such as medical, math, or physics.
@@ -2405,18 +2362,8 @@ Professors with these titles are often tenure-line faculty, and therefore can ad
 === Tenured or tenure-track faculty? <sec:tenure-vs-tenure-track>
 
 #figure(
-  align(center, box(width: 92%, grid(
-    columns: (1fr, 1fr), column-gutter: 10pt,
-    box(width: 100%, fill: rgb("#fde7e9"), inset: 9pt, radius: 4pt, stroke: 0.5pt + gray)[
-      *Un-tenured (#gls("tenure-track"))* \
-      Under intense pressure to publish, win grants, and prove themselves before the tenure review---often hungry for productive students and very hands-on.
-    ],
-    box(width: 100%, fill: rgb("#e6f4ea"), inset: 9pt, radius: 4pt, stroke: 0.5pt + gray)[
-      *Tenured* \
-      Long-term job security and far more freedom in what to work on---may be more relaxed, but also busier with service and possibly less hands-on.
-    ],
-  ))),
-  caption: [#drafttag Life before vs. after tenure---worth understanding when choosing an advisor (@sec:tenure-vs-tenure-track).],
+  image("files/c8.png", width: 55%),
+  caption: [#drafttag Life before vs. after tenure: an un-tenured (#gls("tenure-track")) professor is under intense pressure to produce, while a tenured one has far more freedom. This matters when choosing an advisor (@sec:tenure-vs-tenure-track). Source: #link("https://phdcomics.com")[PhD Comics] (© Jorge Cham).],
 ) <fig:tenure-comic>
 
 Now that you know a bit about tenured and tenure-track faculty (@sec:faculty-types), which one should you choose as your advisor? How do you know if one would fit you better than the other?
@@ -2848,8 +2795,10 @@ Because of the differences between MS and PhD programs (@sec:phd-vs-ms), you sho
 
 #simpsons[Kids, you tried your best and you failed miserably. The lesson is: never try.]
 
-#tip-block[#drafttag Early research can feel unglamorous---your first "research" tasks might be cleaning data, reading papers, or fixing someone else's code rather than making grand discoveries. That is completely normal and still valuable: it is how you learn the ropes, discover your area, and earn the strong #gls("LOR", plural: true) (@chap:LOR) that matter for admission.]
-
+#figure(
+  image("files/phd100404s.png", width: 70%),
+  caption: [Source: #link("https://phdcomics.com")[PhD Comics] (© Jorge Cham).],
+)
 Research experience gives you opportunities to try out research, determine what research area you're interested in, publish papers (@chap:research-experience), connect with researchers, and get strong LORs (@chap:LOR).
 A successful research experience also greatly strengthens a PhD application (@chap:research-experience). This section provides some guidance on how to gain research experience as an undergraduate (or MS) student or as a student at a smaller college where research opportunities might be limited.
 
@@ -3173,7 +3122,10 @@ After all, you rarely see departments highlighting a faculty's publications or P
 However, department and university websites will spotlight certain awards and honors, listed below, that are _genuinely exceptional_ and give more meaningful insights into a researcher's impact and standing in the field.
 
 
-#remark-block[#drafttag Not every "award" means much---academia hands out plenty of minor or honorary ones, and titles can be padded. The honors listed below, however, are _genuinely exceptional_ and say something real about a researcher's impact and standing in the field.]
+#figure(
+  image("files/phd030810s.png", width: 70%),
+  caption: [Academic Awards. Source: #link("https://phdcomics.com")[PhD Comics] (© Jorge Cham).],
+)
 
 
 //%GIVE EXAMPLES from Big Univs celebrating these awards. 
@@ -3345,20 +3297,8 @@ Many people maintain lifelong relationships with their professors and colleagues
 // \sectioninfo{What should you call your profs.? Many possibilities (e.g., Prof., Dr., and even their firstnames), but not Mr., Mrs., or their firstname in the first email.}
 
 #figure(
-  align(center, box(width: 80%, stack(spacing: 6pt,
-    flowbox(fill: rgb("#cfe2f3"))[#align(center)[*How should I address a professor?*]],
-    flowarrow,
-    flowbox[*Default* (always safe, especially in a first email): "Prof. Lastname" or "Dr. Lastname".],
-    flowarrow,
-    flowbox[Have they *explicitly* invited you to use their first name?],
-    grid(columns: (1fr, 1fr), column-gutter: 8pt,
-      stack(spacing: 4pt, align(center)[*Yes* ⬇], flowbox(fill: rgb("#e6f4ea"))[First name is fine.]),
-      stack(spacing: 4pt, align(center)[*No* ⬇], flowbox[Keep using Prof./Dr. Lastname.]),
-    ),
-    flowarrow,
-    flowbox(fill: rgb("#fde7e9"))[*Never:* "Mr./Mrs./Ms.", their first name in a _first_ email, or "Dear esteemed professor."],
-  ))),
-  caption: [#drafttag A quick guide for how to address your professor (@sec:address).],
+  image("files/c5.png", width: 85%),
+  caption: [#drafttag A (humorous) flowchart for deciding how to address your professor---when in doubt, use "Prof./Dr. Lastname" (@sec:address). Source: #link("https://phdcomics.com")[PhD Comics] (© Jorge Cham).],
 ) <fig:address-comic>
 
 If you're reaching out to a professor for the first time,  address them as Prof. or Dr. Lastname (if you know that they they do not have a PhD, then don't use Dr., but Prof. is fine). Many international students use Prof. or Dr. FirstName LastName, but this can come across as if you're simply copying and pasting names. So just stick with Prof. or Dr. Lastname.  Using _Prof._ is generally the safest option.
