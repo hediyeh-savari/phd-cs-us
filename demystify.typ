@@ -69,6 +69,46 @@
   box(rect(fill: fill, height: height)[#hide(text)])
 }
 
+// ============================================================================
+// DRAFT marker for newly added sections that still need the author's review.
+// Search the source for "DRAFT" (or remove the calls below) once reviewed.
+// ============================================================================
+#let draftbanner(note: "") = block(
+  fill: rgb("#fff3cd"),
+  inset: 8pt,
+  radius: 4pt,
+  width: 100%,
+  stroke: (paint: rgb("#e0a800"), thickness: 1pt),
+)[
+  #text(fill: rgb("#856404"), weight: "bold", size: 0.9em)[🚧 DRAFT --- newly added section, pending review and editing by the author.]
+  #if note != "" {
+    linebreak()
+    text(fill: rgb("#856404"), size: 0.85em, style: "italic")[Note to self: #note]
+  }
+]
+
+// Compact inline marker for newly added stats/snippets (search "DRAFT" to find).
+#let drafttag = box(
+  fill: rgb("#fff3cd"),
+  inset: (x: 3pt, y: 1pt),
+  radius: 2pt,
+  text(fill: rgb("#856404"), weight: "bold", size: 0.7em)[DRAFT],
+)
+
+// Simple, dependency-free horizontal bar chart for stat figures.
+// data: array of (label, value, color). DRAFT additions---tweak colors/sizes to taste.
+#let statbar(data, max: 100, unit: [%]) = align(center, box(width: 88%, grid(
+  columns: (auto, 1fr, auto),
+  row-gutter: 10pt,
+  column-gutter: 8pt,
+  align: (right + horizon, left + horizon, left + horizon),
+  ..data.map(row => (
+    text(size: 0.85em, row.at(0)),
+    rect(width: row.at(1) / max * 100%, height: 0.95em, fill: row.at(2), stroke: none, radius: 1.5pt),
+    text(size: 0.82em, weight: "bold", [#row.at(1)#unit]),
+  )).flatten()
+)))
+
 #show figure.where(kind: image): set figure(supplement: [Fig.])
 #show figure.where(kind: table): set figure(supplement: [Tab.])
 //#show math.equation: set math.equation(supplement: [Eq.])
@@ -93,7 +133,7 @@
   (key: "fields", short: "fields", long: "fields or research areas", description: [Specific areas of study within a discipline, such as ML, CV, or Software Engineering.]),
   (key: "international-domestic", short: "international vs domestic", long: "international vs. domestic students", description: [International students usually need a visa; domestic students do not.]),
   (key: "in-out-state", short: "in-state vs out-of-state", long: "in-state vs. out-of-state tuition", description: [Tuition categories based on state residency; often important for MS applicants.]),
-  (key: " research lab", description: [A group of faculty and students working in a shared research area.]),
+  (key: "research-lab", short: "lab", long: "research lab/group", description: [A group of faculty and students working in a shared research area.]),
   (key: "major", description: [A student's primary field of study, usually in undergraduate education.]),
   (key: "open house", description: [An event where admitted students visit or attend virtually to learn about the program.]),
   (key: "AY",  long: "Academic Year", description: [The yearly academic calendar (typically Fall and Spring; sometimes Summer/quarter systems).]),
@@ -112,6 +152,25 @@
   (key: "GRFP", long: "NSF Graduate Research Fellowship Program", description: "A competitive fellowship program for PhD students funded by the National Science Foundation."),
   (key: "NDSEG", long: "DoD National Defense Science and Engineering Graduate Fellowship", description: "A competitive fellowship program for PhD students funded by the US. Department of Defense."),
   (key: "LOR", long: "Letter of Recommendation", description: "A letter evaluating your qualifications and potential for graduate study."),
+  // --- DRAFT: new CS PhD entries added for review ---
+  (key: "dissertation", short: "dissertation", long: "dissertation (thesis)", description: [The original research document a PhD student writes and defends to earn the degree; also called a thesis.]),
+  (key: "qualifying-exam", short: "qualifying exam", long: "qualifying exam (quals)", description: [An early-PhD exam testing foundational knowledge in your area; passing it lets you continue toward candidacy.]),
+  (key: "candidacy", description: [The status of a PhD student who has passed required exams and is approved to work on the dissertation (a "PhD candidate").]),
+  (key: "proposal", short: "proposal", long: "dissertation proposal", description: [A plan for your dissertation research, presented to and approved by your committee before you finish.]),
+  (key: "defense", short: "defense", long: "thesis defense", description: [The oral presentation and examination of your completed dissertation before your committee.]),
+  (key: "postdoc", description: [A temporary research position taken after the PhD, often as a step toward a faculty job.]),
+  (key: "tenure-track", description: [A faculty position on the path to tenure, the long-term job security granted after a multi-year review.]),
+  (key: "first-author", description: [The lead author of a paper, usually the person who did most of the work; first authorship matters a lot in CS.]),
+  (key: "arxiv", short: "arXiv", long: "arXiv preprint server", description: [A widely used open-access server where CS researchers post papers, often before peer review.]),
+  (key: "preprint", description: [A version of a paper shared publicly before (or without) formal peer review.]),
+  (key: "peer-review", description: [Evaluation of a paper, proposal, or grant by other independent experts in the field.]),
+  (key: "POI", long: "professor of interest", description: [A faculty member a prospective student would like to work with as an advisor.]),
+  (key: "reach-safety", short: "reach vs. safety", long: "reach vs. safety schools", description: [Reach schools are ambitious targets; safety schools are very likely to admit you. A good list mixes both.]),
+  (key: "waitlist", description: [A pool of qualified applicants who may receive an offer if admitted students decline theirs.]),
+  (key: "deferral", short: "deferral", long: "deferred admission", description: [Postponing your admission start date, typically by up to a year, with the program's approval.]),
+  (key: "assistantship", description: [A funded position---a TA or RA---that typically covers tuition, health insurance, and a stipend.]),
+  (key: "F-1", long: "F-1 student visa", description: [The most common nonimmigrant visa for full-time international students in the US.]),
+  (key: "CPT-OPT", short: "CPT/OPT", long: "Curricular/Optional Practical Training", description: [Work authorizations that let F-1 students work in their field---CPT during the program, OPT after.]),
 )
 
 #register-glossary(entry-list)
@@ -202,6 +261,16 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 Many students, especially those from smaller countries or schools, have the *imposter syndrome*---worrying they're _"not good enough"_, or get discouraged when competing with others with "stronger" profiles (@sec:profile-not-strong). As explained in @chap:evalapps, #gls("adcom") looks for potential and evidence you'll thrive in research environment and fit well at their institution---things that usually have nothing to do with your GPA or GRE scores.
 ]
 
+#note-block[#drafttag You are not an outsider---you are the _norm_. In the most recent #link("https://datavisualization.cra.org/TaulbeeSurvey/CRA_Taulbee_Survey_Report_2024.html")[CRA Taulbee Survey], about *66% of CS PhD recipients in the US were international students* (non-resident aliens). So if you worry that being from a smaller or less well-known country puts you at a disadvantage, remember that roughly _two out of three_ CS PhDs in the US are international, just like you.]
+
+#figure(
+  statbar((
+    ([International], 66, rgb("#4472C4")),
+    ([Domestic], 34, rgb("#A6A6A6")),
+  )),
+  caption: [#drafttag CS PhD recipients in the US by residency. About two-thirds are international students. Source: #link("https://datavisualization.cra.org/TaulbeeSurvey/CRA_Taulbee_Survey_Report_2024.html")[CRA Taulbee Survey 2024].],
+) <fig:intl-share>
+
 #paragraph[Funding Is Not An Issue][In most cases CS PhD students _do not_ need to worry about funding, especially at good #gls("R1") universities in the US. 
 If you are admitted, you will almost certainly receive _full funding_ (@chap:funding) to support your study. 
 
@@ -216,6 +285,40 @@ Full funding for CS PhD students is the norm in the US, and I'd go as far as to 
 
 // % In fact, many resources are available to encourage and support students from minority and diverse groups to pursue higher education and research, e.g., specific scholarships and fellowships. Faculty in CS are also familiar with and are encouraged to support such students in their group. There are also incentives, such as dedicated funding and awards, to motivate faculty to recruit and mentor minority students (\autoref{sec:urm}).
 
+=== Is a PhD Worth It? Alternatives and Opportunity Cost <sec:worth-it>
+
+#draftbanner(note: "Be honest here---I don't want to come across as recruiting everyone into a PhD. Maybe add a short anecdote about a student who chose industry and was happy.")
+
+So far I have tried to convince you that getting into a CS PhD program in the US is not as hard or as expensive as you might think. But _should_ you do a PhD at all? This is a separate and more important question, and the honest answer is: _not everyone should_.
+
+A PhD is a #highlight[5--6 year commitment] (@sec:time) that mainly trains you to do _research_. If your goal is to become a professor, an industry research scientist, or to work on hard open-ended problems in a national lab or research-heavy team, then a PhD is essentially required and well worth it. If your goal is to be a strong software engineer at a tech company, a PhD is _not_ required and, in many cases, not the most efficient path.
+
+#caution-block[#drafttag It is also worth knowing that a PhD is _hard_, and not everyone finishes. Across US doctoral programs, roughly #link("https://www.statisticssolutions.com/almost-50-of-all-doctoral-students-dont-graduate/")[*half of students do not complete the degree*], and even the #link("https://cgsnet.org/project/minority-attrition-and-completion-in-stem-doctoral-programs")[10-year completion rate hovers around 55--65% in STEM fields]. I mention this not to scare you, but so you go in with eyes open: the biggest predictor of finishing is not raw talent but persistence and a good advisor (@chap:choosing-advisor, @sec:vetting-advisor).]
+
+#figure(
+  statbar((
+    ([Engineering], 64, rgb("#4472C4")),
+    ([Life sciences], 63, rgb("#4472C4")),
+    ([Social sciences], 56, rgb("#4472C4")),
+    ([Math \& phys. sci.], 55, rgb("#4472C4")),
+    ([Humanities], 49, rgb("#4472C4")),
+  )),
+  caption: [#drafttag 10-year PhD completion rates by broad field in the US---note that even in the best-completing fields, a substantial fraction do not finish. Source: #link("https://cgsnet.org/project/minority-attrition-and-completion-in-stem-doctoral-programs")[CGS PhD Completion Project].],
+) <fig:completion-rates>
+
+#paragraph[The real cost is opportunity cost][The tuition and stipend are covered (@chap:funding), so the financial cost to you is roughly zero---in fact you get paid. The real cost is _opportunity cost_: the difference between a PhD stipend (@sec:ra-cost) and what you could earn as a software engineer over those same 5--6 years, which can easily add up to several hundred thousand dollars. People who are happy they did a PhD almost always say it was because they wanted the _work_ (research), not because of the salary afterward.]
+
+#paragraph[Alternatives to consider][
+- *Industry directly.* If you mainly want to build things and earn well, a strong undergrad or MS plus a good portfolio (@sec:personal-website) is often enough.
+- *A terminal MS (@chap:ms), then industry.* A good way to deepen your skills and credentials without committing to research.
+- *Research engineer / pre-doctoral roles.* Many industry labs hire research engineers or offer 1--2 year pre-doc programs (@chap:research-opportunities). These let you _try_ research before committing to a full PhD.
+- *A PhD in another country.* Often shorter (@sec:non-us-differences) if the longer US model does not appeal to you.
+]
+
+#tip-block[A useful test: would you still want to do a PhD if it did _not_ lead to a higher salary or a fancier job title---purely because you enjoy digging into a hard problem for years? If yes, you are the kind of person who tends to thrive. If the PhD is mainly a means to a job that does not actually require it, pause and reconsider.]
+
+#remark-block[None of this is meant to discourage you. Most readers of this book who are excited about research _should_ apply (@chap:should). The point is simply that a PhD is a particular kind of training for a particular kind of career, and it is worth being honest with yourself about whether that is what you want _before_ you spend a year on applications.]
+
 == What's a PhD in CS? <sec:phd-in-cs>
 //\sectioninfo{A PhD in CS is a \textbf{research} degree that transforms you into a researcher in a specific area of CS.
 // You will become an expert in a particular topic and know more about it than anyone else in the world (in many cases even your advisor).}
@@ -227,6 +330,17 @@ A PhD in CS is a #highlight[research degree]. Unlike undergraduate or even Maste
 
 Career-wise, a CS PhD prepares you for jobs that require deep technical expertise and the ability to do independent research. Many graduates become professors or academic researchers while others pursue positions in industry research labs, advanced engineering teams, or technical leadership positions. The degree also opens doors to national labs, government agencies, and startups, where the ability to solve unknown and complex problems is necessary.
 
+#note-block[#drafttag In CS, _most_ PhD graduates go to industry, not academia. In the #link("https://cra.org/crn/2025/06/cra-update-new-cra-taulbee-survey-findings-show-record-doctoral-production-rising-enrollment-and-shifting-undergraduate-trends/")[2024 CRA Taulbee Survey], about *54% of new CS PhDs took industry positions* in North America versus about *39% who took academic jobs* (the rest went to government, other sectors, or were still searching). These numbers swing year to year---industry was 57.5% the year before---so don't read too much into the exact figures, but the broad picture is steady: a CS PhD is valued highly in _both_ industry and academia (@sec:worth-it).]
+
+#figure(
+  statbar((
+    ([Industry], 54, rgb("#4472C4")),
+    ([Academia], 39, rgb("#2E8B7F")),
+    ([Other / searching], 7, rgb("#A6A6A6")),
+  )),
+  caption: [#drafttag Where new CS PhDs went in North America (2023--24). Most go to industry, but academia remains strong. Source: #link("https://cra.org/crn/2025/06/cra-update-new-cra-taulbee-survey-findings-show-record-doctoral-production-rising-enrollment-and-shifting-undergraduate-trends/")[CRA Taulbee Survey 2024].],
+) <fig:phd-destinations>
+
 #remark-block[A PhD is not just a degree, it is a *journey* that transforms you into a researcher. You will learn how to think critically, solve problems, deal with adversity, and work independently. You will also learn how to write and "sell" your work, collaborate with others, and effectively communicate your ideas. In the end, you will have a deep understanding of your chosen field and become an expert in your area of research. In fact, you will know about your research topic more than *anyone* else in the world, including, in many cases, your advisor! This is a scary thought, but it is also exciting and rewarding.]
 
 
@@ -236,6 +350,11 @@ CS is a broad academic discipline with many specialized areas of research. Under
 
 #paragraph[Disciplines][At the highest level, academic _disciplines_ are broad domains of scholarly study, such as CS, Mathematics, Physics, Biology, Economics, Law, Social Sciences, and the Humanities. Universities typically have entire departments and degree programs centered on these disciplines (e.g., a Dept. of Computer Science or of Economics).]
 
+#figure(
+  image("files/xkcd_purity.png", width: 75%),
+  caption: [#drafttag Disciplines, lightheartedly "arranged by purity." CS sits close to math on this spectrum. Source: #link("https://xkcd.com/435/")[xkcd 435], #link("https://creativecommons.org/licenses/by-nc/2.5/")[CC BY-NC 2.5].],
+) <fig:purity>
+
 #definition[STEM][#gls("STEM") collectively refers to the fields of Science, Technology, Engineering, and Mathematics: 
 
 - *Science:* Physics, Chemistry, Biology, Geology
@@ -244,7 +363,7 @@ CS is a broad academic discipline with many specialized areas of research. Under
 - *Mathematics:* Pure and Applied Math, Statistics, Operations Research
 ]
 
-#paragraph[Fields][Within a discipline such as CS, we have _fields_---major branches that often correspond to faculty groups, conference communities, and sometimes even degree tracks. Common fields in CS include:
+#paragraph[Fields][Within a discipline such as CS, we have #gls("fields")---major branches that often correspond to faculty groups, conference communities, and sometimes even degree tracks. Common fields in CS include:
 
 - Artificial Intelligence (AI),
 - Machine Learning (ML),
@@ -294,12 +413,19 @@ For example, my own #link("https://roars.dev")[research profile] can be structur
 
 Typically it takes 5--7 years for a CS PhD in the US. This is usually longer compared to other countries (@sec:non-us-differences), which might require having an MS (@sec:phd-vs-ms).
 
+#note-block[#drafttag This matches national data: an analysis of the #link("https://ncses.nsf.gov/surveys/earned-doctorates/2024")[NSF Survey of Earned Doctorates] found a #link("https://cra.org/crn/2014/04/time_to_degree_in_computing/")[median time-to-degree in computing of about *7.6 years* from the start of graduate school]. In other words, plan for this to be a _long_ commitment (@sec:worth-it)---closer to the upper end of the 5--7 year range than the lower end, especially if you include time spent on internships and a master's along the way.]
+
 #figure(
   image("files/c4a.png", width: 60%),
   caption: [The "ambition" level of a PhD student over their years of study (they miss the 6--7th year when the ambition is _"Just let me graduate"_).],
 )
 
-The first two years are typically spent taking coursework (somewhat equivalent to MS study), finding an advisor, and learning how to do research. The next 2--3 years focus on research, forming a dissertation topic, and getting results published. The last 1--2 years are usually spent continuing to publish, writing and defending the dissertation, and looking for a job.
+The first two years are typically spent taking coursework (somewhat equivalent to MS study), finding an advisor, passing a #gls("qualifying-exam", first:true), and learning how to do research. The next 2--3 years focus on research, forming a #gls("dissertation", first:true) topic, advancing to #gls("candidacy") (often by defending a #gls("proposal", first:true)), and getting results published. The last 1--2 years are usually spent continuing to publish, writing and defending the dissertation (the #gls("defense", first:true)), and looking for a job.
+
+#figure(
+  image("files/xkcd_thesis_defense.png", width: 42%),
+  caption: [#drafttag The light at the end of the tunnel: the #gls("defense"), where you present and defend your #gls("dissertation"). Source: #link("https://xkcd.com/1403/")[xkcd 1403], #link("https://creativecommons.org/licenses/by-nc/2.5/")[CC BY-NC 2.5].],
+) <fig:thesis-defense>
 
 Within these 5--7 years, CS PhD students sometimes take a "leave of absence" for 1--2 semesters or for a summer to do internships at companies and research labs.
 
@@ -312,7 +438,7 @@ Within these 5--7 years, CS PhD students sometimes take a "leave of absence" for
 === Undergrad Not in CS or Related Disciplines <sec:non-stem>
 // \sectioninfo{You can successfully apply to CS PhD even if you have non-CS background.}
 
-Even if your undergraduate degree is not in CS or a related discipline, you still can apply to a PhD in CS _as long as_ you can demonstrate that you are ready for it through your background, research experience, LORs, statements, etc. You might even be able to leverage this to make your profile stand out, as mentioned in @sec:stand-out.
+Even if your undergraduate #gls("major") is not in CS or a related discipline, you still can apply to a PhD in CS _as long as_ you can demonstrate that you are ready for it through your background, research experience, LORs, statements, etc. You might even be able to leverage this to make your profile stand out, as mentioned in @sec:stand-out.
 
 A main concern that #gls("adcom") has for a non-CS or non-STEM student is whether they have sufficient technical background from core CS courses. So you need to demonstrate that you have this knowledge through your coursework, projects, or research.
 
@@ -398,7 +524,7 @@ text(size: 0.9em,
     
 - *Funding*: In many countries, funding often comes from the university or the government. This funding often has a fixed duration, e.g., 3 or 4 years. In the US (@chap:funding), funding such as GRA comes directly from your advisor (no fixed duration). There are also fewer GTA opportunities in European universities compared to the US.
     
-- *Academic Position after PhD*: In other countries, PhD graduates interested in academia typically go for additional research appointments, i.e., postdocs in the US, and then consider faculty positions. In the US, PhD graduates often apply directly for faculty positions. Postdoc for US graduates is no longer a popular option as it was before. The reason is that US PhD programs are longer, so you already have enough research experience (e.g., publications) to apply for faculty positions. In contrast, in other countries, PhD students often finish their PhD earlier and need more time to gain research experience before applying for faculty positions.
+- *Academic Position after PhD*: In other countries, PhD graduates interested in academia typically go for additional research appointments, i.e., a #gls("postdoc", first:true) in the US, and then consider faculty positions. In the US, PhD graduates often apply directly for faculty positions. Postdoc for US graduates is no longer a popular option as it was before. The reason is that US PhD programs are longer, so you already have enough research experience (e.g., publications) to apply for faculty positions. In contrast, in other countries, PhD students often finish their PhD earlier and need more time to gain research experience before applying for faculty positions.
     
 - *Work-life Balance*: PhD students in the US are often said to be overworked compared to other countries, e.g., in Europe. This is partly due to the longer PhD program and that US PhD students are often paid through GTA, which requires them to do GTA in addition to their own research. In contrast, PhD students in other countries are often paid through fellowships, which might not require doing GTA.
     #remark-block[
@@ -542,7 +668,7 @@ Unfortunately, even if all reviewers recommend a student, they might not be admi
 
 === Direct Admit vs Committee Admit <sec:direct-vs-committee>
 
-Discussions on Reddit and Discord on graduate admissions often mention _"direct admit"_---a student is "directly admitted" by an individual faculty vs _"committee admit"_---the student is admitted by the adcom committee.  Answers to these questions---often from applicants who are not familiar with the admission process---make it sound more mysterious than it actually is.
+Discussions on Reddit and Discord on graduate admissions often mention _"direct admit"_---the student is "directly admitted" by an individual faculty vs _"committee admit"_---the student is admitted by the adcom committee.  Answers to these questions---often from applicants who are not familiar with the admission process---make it sound more mysterious than it actually is.
 
 The short answer is that _all_ applications go through the adcom committee. However, admission decision is _heavily influenced_ by whether an individual faculty member is interested in the student and willing to advise them, but this is still part of the committee review process. So even if a student is "directly admitted" by a faculty member, their application still likely goes through normal committee review process (though it will be _much less likely_ be contested as someone is already taking responsibility for the student), and the final decision is made by the committee based on the evaluations of all reviewers ("committee admit").
 
@@ -551,6 +677,42 @@ The short answer is that _all_ applications go through the adcom committee. Howe
 Thus, it comes down to who can advocate for you in the review process. This is the reason why contacting faculty (@sec:contact) and mentioning faculty in your SOP (@chap:sop) can be very helpful, as it can lead to a faculty member supporting your application. However, even if a faculty member is interested in you, the final decision is still made by the committee.
 
 
+
+== Application Timeline and Checklist <chap:timeline>
+
+#draftbanner(note: "Double-check the months against the current cycle---deadlines have crept earlier over the years. Consider replacing the text table with a nicer figure/timeline graphic later.")
+
+The CS PhD application process spans almost a full year, from the time you start researching programs to the time you make a final decision (@sec:accept-postpone-decline). Below is a rough month-by-month timeline for a _Fall admission_ (the most common; @sec:apply-spring-summer explains why Spring/Summer admission is rare). The exact dates shift from year to year and school to school, so treat this as a map rather than a strict schedule.
+
+#figure(
+  table(
+    columns: (auto, 1fr),
+    align: (left, left),
+    inset: 6pt,
+    stroke: 0.5pt + gray,
+    table.header([*When*], [*What to do*]),
+    [*Jan--Apr* (year before)], [Decide whether a PhD is right for you (@sec:worth-it). Start getting research experience (@chap:research-experience, @chap:research-opportunities). Identify fields and areas you like (@sec:fields-and-areas).],
+    [*May--Jul*], [Build a long list of schools and potential advisors (@chap:choosing-school, @sec:finding-advisor). Take the English test if needed (@sec:english-tests)---it is valid for 2 years. Start a first draft of your SOP (@chap:sop).],
+    [*Aug--Sep*], [Narrow your school list (#gls("reach-safety", first:true); a mix of reach / match / safety). Ask for letters of recommendation _early_ (@sec:asking-LOR). Email professors you are interested in, if appropriate (@sec:contact). Update your CV (@sec:cv) and personal website (@sec:personal-website).],
+    [*Oct--Nov*], [Tailor your SOP per school (@chap:sop). Give your letter writers everything they need (@sec:help-your-LOR-writers). Fill out the online application portals. Request fee waivers where eligible (@sec:fee-waive).],
+    [*Dec*], [Submit! Most deadlines fall between *Dec 1 and Dec 15* (some as early as Nov, a few in Jan). Send polite reminders to letter writers a week before each deadline (@sec:remind-writers).],
+    [*Jan--Feb*], [Interviews happen for some programs (@sec:interviews). Be patient during the waiting game (@sec:late-rejection).],
+    [*Feb--Mar*], [Admission decisions roll out. Attend open houses / visit days (@sec:visit-days). Talk to potential advisors and their students.],
+    [*By Apr 15*], [Compare offers (@sec:visit-days), negotiate if you have multiple (@sec:negotiate), and accept/decline (@sec:accept-postpone-decline). #gls("April 15") is the deadline most US schools honor.],
+  ),
+  caption: [A rough month-by-month timeline for Fall CS PhD admission.],
+) <tab:timeline>
+
+#paragraph[A condensed checklist][Before you submit, make sure you have:
+- A *focused SOP* tailored to each school, naming 2--3 potential advisors (@chap:sop).
+- *3 strong letters* from people who know your research ability (@chap:LOR), with writers reminded before each deadline.
+- An up-to-date *CV* (@sec:cv) and, ideally, a *personal website* (@sec:personal-website).
+- *English test scores* sent if required (@sec:english-tests); GRE only if it helps (@sec:gre).
+- A *school list* that mixes ambitious reaches with realistic matches and safeties (@sec:selecting-ranking-schools).
+- *Fee waivers* requested wherever you qualify (@sec:fee-waive).
+]
+
+#tip-block[The single most common timing mistake is asking for letters of recommendation too late (@sec:asking-LOR). Professors are busy (@sec:busy) and write many letters each cycle; give them at least *3--4 weeks* of notice, and more during the holidays. Everything else on this list is under your control, but your letters depend on someone else's calendar.]
 
 #pagebreak()
 = Application Materials <part:application>
@@ -569,13 +731,14 @@ The committee will look at various factors, but the most important ones are #gls
 
 #simpsons[To whom it may concern… D'oh!]
 
-#align(center)[
-  #image("files/c6.png", width: 60%)
-]
+#figure(
+  image("files/c6.png", width: 60%),
+  caption: [#drafttag A #gls("LOR") from a professor who barely remembers you is generic and weak (@sec:generic-letters)---ask people who know your research well. Source: #link("https://phdcomics.com")[PhD Comics] (© Jorge Cham).],
+) <fig:lor-comic>
 
 #gls("LOR",plural:true) are crucial for PhD because (i) they paint a picture of your research ability and potential from someone who has worked closely with you, and (ii) adcom trust the opinions of your LOR writers, who are usually faculty members or researchers who have the expertise and reputation to evaluate your research ability (@sec:LOR-writers). Most PhD programs require at least _two_ LORs. 
 
-#example[
+#example-box[
 When reviewing applications (@sec:ievaluate), I usually read LORs first, then the SOP (@chap:sop). If these make a strong impression, I skim through the rest of the materials; if not, I pay closer attention to other aspects before making a decision.
 ]
 
@@ -700,7 +863,7 @@ When you ask someone to write a letter for you, *you should always waive your ri
 
 If you do not waive your right, the letter writer may refuse or write a generic letter. Adcom reviewers may question a letter that is not waived—if you don't trust your writers, find someone else. In short, waiving your right is standard and respectful.
 
-#example([
+#example-box[
 If you ask me to write a letter and do not waive your right, I will refuse. I will explain why you should waive your right, but if you insist, I *will not* write for you.
 ])
   
@@ -848,7 +1011,7 @@ Having published papers, especially at top venues, is a sign that you have been 
 
 Publications are #highlight[never required] for PhD application. _However_, given the competitiveness of CS admission, they can significantly strengthen your application and _are becoming the norm_ for top PhD programs. Applicants admitted to top schools, especially in popular fields such as ML and NLP, often have multiple first-authored papers at top places. @fig:wu shows examples of applicants to Stanford CS PhD.
 
-#paragraph[Not the First Author][Being the first author typically means you own the work and therefore know the research well. However, it's *perfectly OK to be second or third or even last*. #gls("adcom members", capitalize: true) know it is difficult to publish a good paper, and so being a co-author is still a good sign about your research experience. In any case, especially when you're not the first author, you should explain the work and your contribution. Better yet, have your #gls("LOR") writers (@sec:help-your-LOR-writers) talk about your work and contributions in their letters.]
+#paragraph[Not the First Author][Being the #gls("first-author") typically means you own the work and therefore know the research well. However, it's *perfectly OK to be second or third or even last*. #gls("adcom members", capitalize: true) know it is difficult to publish a good paper, and so being a co-author is still a good sign about your research experience. In any case, especially when you're not the first author, you should explain the work and your contribution. Better yet, have your #gls("LOR") writers (@sec:help-your-LOR-writers) talk about your work and contributions in their letters.]
 
 #paragraph[Publications Not Relevant To CS or Your Research Interest][
 If you have published papers in other fields, e.g., physics, math, or even CS but not in your research interest, you should still talk about them in your #gls("SOP") (@chap:sop) and upload them as writing samples (@sec:writing-sample). Also, have your #gls("LOR") writers (@sec:help-your-LOR-writers) talk about them in their letters.
@@ -898,9 +1061,10 @@ So do talk about them in your SOP (@chap:sop) and have your writers mention them
 
 #simpsons[All my life I've had one dream: to achieve my many goals.]
 
-#align(center)[
-  #image("files/c2.png", width: 90%)
-]
+#figure(
+  image("files/c2.png", width: 90%),
+  caption: [#drafttag A tongue-in-cheek example of what _not_ to write in your #gls("SOP") (@sec:kiss-of-death-sop): vague enthusiasm, partying, and promising a Nobel Prize. Source: #link("https://phdcomics.com")[PhD Comics] (© Jorge Cham).],
+) <fig:sop-comic>
 
 While you might not have control over LORs (@chap:LOR) or where you go to school (@chap:your-school), you do have control over your #gls("SOP",first:true) or personal statement#footnote[Some schools separate these documents and ask you to write both: SOP, which focuses on research experiences, and personal statement, which covers more personal aspects, e.g., why PhD, challenges, etc.]. A well-written SOP also demonstrates that you can communicate effectively, which is crucial in research and important for GTA funding (@chap:funding). Many SOP samples for CS are #link("https://cs-sop.org/")[available here].
 
@@ -962,7 +1126,7 @@ Finally, I think it is _fine_ to use AI to help your writing, e.g., the _"proofr
 
 === Diversity Statement <sec:diversity-statement>
 
-Some universities require a *diversity statement*---an essay about  Diversity, Equity, and Inclusion (DEI)---as part of the application. While the topic of DEI has become politically contested in the U.S., you should be prepared to address it when asked. 
+Some universities require a *#gls("diversity-statement")*---an essay about  Diversity, Equity, and Inclusion (DEI)---as part of the application. While the topic of DEI has become politically contested in the U.S., you should be prepared to address it when asked. 
 Many students, especially international ones, find this statement confusing because they are unsure what it is about (truth is, even people in the U.S. struggle with this topic).
 
 At a high level, a diversity statement is _not_ an ideological endorsement, but rather a way to assess your _awareness_ of DEI issues, _understanding_ of challenges faced by minority groups, and potential _contributions_ you can make.
@@ -1053,6 +1217,8 @@ Should you explain bad grades in relevant courses in your SOP? If you have just 
 
 While a few schools still require taking the #link("https://www.ets.org/gre")[GRE] exam (e.g., UCF), most good CS PhD programs in the US #highlight[do not require it]. The reason is that GRE scores do not correlate well with research ability @chap:research-experience, which is the most important factor for PhD admission. Note that many faculty members themselves did not take the GRE or had bad scores.
 
+#note-block[#drafttag This is part of a broad, well-documented trend often called #link("https://www.science.org/content/article/gre-exit-gains-momentum-ph-d-programs-drop-exam-requirement-amid-pandemic")["GRExit"]: over the past several years a large share of CS PhD programs have made the GRE optional or dropped it entirely. Some now refuse to even look at scores---for example, the #link("https://cse.umn.edu/cs/news/big-news-cs-graduate-programs-no-longer-require-gre")[University of Minnesota CS program no longer requires _or accepts_ the GRE], and programs like UCLA, UNC, and Cornell CS have gone test-optional. So when you read old advice insisting the GRE is mandatory, know that the field has moved on.]
+
 Thus, if you have bad GRE scores or haven't taken the GRE, then don't waste time (re)taking it. Being optional really means optional, and not taking it will not hurt your application.
 However, if you took it and have really good scores then it might be worth it to include (and perhaps talk about) them in your application, but don't expect them to make much difference. But if your scores are bad, then you should not include them in your application, which can be a #alert[red flag].
 
@@ -1123,8 +1289,29 @@ You can mention your website and projects in your CV (@sec:cv) and SOP (@chap:so
 Having popular projects or active contributions can help you stand out (@sec:stand-out), especially if you do not have much research experience.
 
 #tip-block[
-  Many students include LinkedIn (or Facebook and X/Twitter) profiles in their applications. While these might be popular when applying for jobs, they are not very useful for PhD application evaluation. Many adcom members are not familiar with LinkedIn (and might not want to go to a page that requires us to have an account and login), so it is better to have a something like personal and project websites, which are far more common and easier to access.
+  Many students include LinkedIn (or Facebook and X/Twitter) profiles in their applications. While these might be popular when applying for jobs, they might not be very useful for PhD application evaluation. Adcom members might not familiar with LinkedIn (and might not want to go to a page that requires us to have an account and login), so it is better to have a something like personal and project websites, which are far more common and easier to access.
 ]
+
+== Using AI and LLMs in Your Application <chap:using-ai-app>
+
+#draftbanner(note: "This expands the short note in @sec:using-ai. Make sure it stays consistent with that section---maybe merge them, or keep that one short and point here. Tone should be 'use it as a tool, don't let it write for you. Analogy: AI is like your ref writer: it can help you polish your writing, give you suggestions, etc but it cannot write your story and invent experiences for you. Don't let it take away your own voice, which makes you unique and stand out'")
+
+By the time you read this, tools like ChatGPT, Claude, and Gemini are part of how almost everyone writes. It would be naive to tell you not to use them, and frankly I use them myself. The real question is _how_ to use them without hurting your application. The short version: #highlight[use AI as an editor and brainstorming partner, not as a ghostwriter].
+
+#paragraph[Good uses][AI is genuinely helpful for:
+- *Fixing grammar and clarity*, especially for non-native English speakers (@sec:english-tests). This levels the playing field and is completely fine.
+- *Brainstorming structure*---e.g., asking it how to organize an SOP (@chap:sop), or to critique a draft you already wrote.
+- *Tightening prose*---cutting a 900-word SOP down to 700 words without losing meaning.
+- *Catching mistakes*---typos, inconsistent tense, awkward transitions.
+]
+
+#paragraph[Where it goes wrong][The problem is not AI itself; it is _outsourcing the thinking_. Adcom members (@sec:adcom) read hundreds of essays, and AI-written SOPs have a recognizable flavor: generic enthusiasm, vague claims, flowery phrasing (_"I have always been deeply passionate about the ever-evolving landscape of..."_), and no specific detail about _your_ research or _their_ faculty. A SOP like that is a #alert[kiss of death] (@sec:kiss-of-death-sop) not because a machine wrote it, but because it says nothing only you could say.
+
+The thing that makes an SOP work---a concrete story about a project you struggled with, a specific reason you want to work with Prof. X---is exactly the thing AI cannot invent for you. If you let it, you will produce a polished essay that is instantly forgettable.]
+
+#caution-block[*Never* let AI (or anyone else) write your letters of recommendation. As I explain in @sec:self-letters, a letter that reads like the student wrote it is a serious #alert[red flag] that damages both you and your writer's credibility. The same goes for fabricating experiences or publications (@sec:publications)---this is a form of academic dishonesty (@chap:cultural) that can get an offer rescinded.]
+
+#tip-block[A good rule of thumb: write the _first_ draft yourself, in your own words, with your own examples. Then use AI to improve _that_. If you start from a blank page and ask AI to "write me an SOP," you have already lost the one thing that makes an application memorable---you.]
 
 #pagebreak()
 = After You Apply <part:after-apply>
@@ -1141,11 +1328,12 @@ Bart: "Okay, how about now?"]
 After you submit your applications, the waiting game begins! For many students, this is a very stressful time. This section provides some information and tips to help you get through this time.
 
 
-#align(center)[
-  #image("files/bingo.png", width: 50%)
-]
+#figure(
+  image("files/bingo.png", width: 50%),
+  caption: [#drafttag "Grad-admissions bingo"---the anxious questions applicants obsess over while waiting (a late #gls("LOR"), a low GPA, "am I too old?", rolling interview invites). This book answers most of them.],
+) <fig:bingo>
 
-=== Interviews <sec:interviews> 
+=== Interviews <sec:interviews>
 
 After you apply, you _might_ get interviews. The most common case is that a specific prof. is interested in working with you and wants to chat, e.g., to offer RA (@sec:ra). In some cases, the interview is done by several professors, e.g., to see if a student fits in their group or to recruit a very strong student to their program.
 
@@ -1216,7 +1404,7 @@ Some universities have #gls("rolling admission"). Others have a specific date wh
 
 #paragraph[Response Deadlines][ Accepted students are usually given a deadline to make decisions on their offers, often around #gls("April 15", first: false). After this date, CS programs can gauge how many slots remain unfilled.]
 
-#paragraph[Waitlist][Most CS programs have a limited number of slots for PhD students, and thus put many good students on a waitlist.  If accepted students decline the offer, then offers are sent to students on the waitlist. So if you see people getting accepted, that does not mean you are out yet. 
+#paragraph[Waitlist][Most CS programs have a limited number of slots for PhD students, and thus put many good students on a #gls("waitlist", first:true).  If accepted students decline the offer, then offers are sent to students on the waitlist. So if you see people getting accepted, that does not mean you are out yet. 
 
 Also, do not feel embarrassed or discouraged if you are on the waitlist. Many students are on the waitlist, and there is a good chance that you will get an offer later.]
 
@@ -1270,7 +1458,7 @@ Even if you can't come in person, you should attend virtually and meet with indi
 ]
 
 
-#paragraph[What's next?][Make a decision, accept, reject, or defer the offers (@sec:accept-postpone-decline). Ask to meet with potential advisors (e.g., through #Gls("open house") or separately) and even their students. Ask about computer equipment and software, office space, and other resources; in many cases these will be provided for free by your advisor or department (@sec:buying-equipment).
+#paragraph[What's next?][Make a decision, accept, reject, or defer the offers (a #gls("deferral", first:true); see @sec:accept-postpone-decline). Ask to meet with potential advisors (e.g., through #Gls("open house") or separately) and even their students. Ask about computer equipment and software, office space, and other resources; in many cases these will be provided for free by your advisor or department (@sec:buying-equipment).
 
 Also, do not forget to update and thank LOR writers and others who have supported you through this process (@sec:thank-writers).
 ]
@@ -1366,6 +1554,32 @@ However, do not assume that your prof. will automatically provide you a new lapt
 
 Finally, keep in mind that these computers and equipment would be university property, which might be monitored and have certain restrictions, e.g., do not install illegal software on them (@sec:illegal-software). You will likely need to return them when you graduate.
 
+=== Making the Most of Visit Days and Comparing Offers <sec:visit-days>
+
+#draftbanner(note: "Maybe add the GMU VOH link/photo again here, or cross-ref it. Could also add a small comparison-table figure showing how I'd weigh advisor vs money vs location.")
+
+Congratulations---getting multiple offers is a wonderful problem to have. Now you have to _choose_, and this is one of the most consequential decisions of your PhD. Unlike the application stage, where the school evaluates you, this stage is the reverse: #highlight[you are evaluating them]. Most programs host an _open house_ or _visit day_ (in person or virtual) precisely to help you decide, and you should take full advantage of it.
+
+#paragraph[Talk to the right people][At a visit day, faculty will (naturally) present their program in the best light. The most honest signal comes from _current students_, especially those of the advisor you are considering. Try to talk to them _without_ the advisor in the room. Good questions to ask students:
+- Are you happy? Would you choose this advisor again?
+- How often do you meet with your advisor, and what is their style (@chap:choosing-advisor)?
+- Is funding stable (@chap:funding), or do you worry about it year to year?
+- How long do students take to graduate (@sec:time), and where do they end up?
+- Has anyone left the group, and do you know why?
+]
+
+#paragraph[What to weigh][There is no universal formula, but for a PhD the rough priority order is usually:
++ *Advisor fit* (@chap:choosing-advisor)---by far the most important. A great advisor at a "lower-ranked" school often beats a hands-off advisor at a famous one (@sec:selecting-ranking-schools).
++ *Research match*---are there at least two faculty you would be excited to work with? (Advisors leave, run out of funding, or turn out not to fit; a backup matters.)
++ *Funding stability and stipend* relative to local cost of living (@sec:ra-cost, @chap:practical-finances).
++ *Placement*---where do graduates from this group actually go?
++ *Location and life*---climate, community, partner/family considerations (@chap:visa). A PhD is long; being miserable where you live makes it harder.
+]
+
+#tip-block[Now that you are admitted, professors are _much_ more willing to talk to you than they were before you applied (@sec:busy). Email the faculty you are interested in and ask for a one-on-one chat about their advising style (@chap:choosing-advisor), expectations, and current funding. Ask to be connected with their students. This is also the moment, if you have competing offers, to (politely) negotiate (@sec:negotiate).]
+
+#caution-block[Do not pick a school purely on its ranking (@chap:rankings) or its name. The day-to-day reality of a PhD is shaped by your advisor and your group, not by the logo on your degree. Rankings are a starting filter, not a decision rule.]
+
 == Dealing with Rejection <chap:not-accepted>
 // \chapterinfo{Rejection is part of academia.  Common reasons for rejection include aiming too high, not a good fit, and bad luck.  Do not take rejection personally. Learn from it and try again.} 
 
@@ -1445,7 +1659,14 @@ Various issues can raise concerns: many STEM courses with low grades or withdraw
 
 Many international students aim for very top schools such as Stanford and MIT, and #link("https://en.wikipedia.org/wiki/Ivy_League")[Ivy League schools]. Every year #link("https://www.reddit.com/r/gradadmissions/")[Reddit] and other forums have numerous students asking for evaluation of their chances of getting into these schools (the so-called #emph["chance me"] or #emph["roast my CV/profile"] posts) and then later posts on being #emph["ghosted and rejected everywhere"]. Here's my take on this (adapted from my #link("https://www.reddit.com/r/gradadmissions/comments/1fogyg5/reality_check_for_aspiring_phd_applicants_youre/")[post on Reddit]):
 
-#strong[You are unlikely to get in these schools.] While being ambitious is good, you also need to be realistic, and the harsh reality is that it is very unlikely that you will get into MIT or Harvard unless you are very exceptional (in which case you would not be asking about your chances on Reddit). 
+#strong[You are unlikely to get in these schools.] While being ambitious is good, you also need to be realistic, and the harsh reality is that it is very unlikely that you will get into MIT or Harvard unless you are very exceptional (in which case you would not be asking about your chances on Reddit).
+
+#note-block[#drafttag These programs rarely publish CS-specific numbers, but the scale is sobering: university-wide PhD admit rates at places like #link("https://irds.stanford.edu/data-findings/doctoral-admissions")[Stanford run around 5--7%], and the most selective CS programs admit an even _smaller_ slice---often low single digits---out of thousands of applicants. Treat these as rough estimates, not official figures, but the takeaway is clear: even a stellar applicant is playing a numbers game at the very top, which is exactly why you should also apply to the many excellent programs below the "household names" (@sec:selecting-ranking-schools).]
+
+#figure(
+  image("files/xkcd_survivorship_bias.png", width: 35%),
+  caption: [#drafttag The "chance me" posts you read are survivorship bias in action: you mostly hear from the few who got in, not the many who did not. Source: #link("https://xkcd.com/1827/")[xkcd 1827], #link("https://creativecommons.org/licenses/by-nc/2.5/")[CC BY-NC 2.5].],
+) <fig:survivorship>
 
 People who do get into these schools often were explicitly encouraged by their mentors and LOR writers, who themselves might be alumni of these schools or are academic celebrities who've sent many of their students there. If you are not in this category (doubt you are, because you're asking random people on the internet instead of your trusted LOR writers), then you're likely not going to get in, and MIT and Stanford would gladly take your application money.
 
@@ -1466,9 +1687,10 @@ Note that what I said above might not apply to BS or even MS degrees, which ofte
 === Standing Out: Increasing your admission chance <sec:stand-out>
 // \subsectioninfo{You can improve your profile by being unique and standing out.}
 
-#align(center)[
-  #image("files/alpinist-climbing-peak-mountain-comic-hand-drawn-vector-illustration.jpg", width: 50%)
-]
+#figure(
+  image("files/alpinist-climbing-peak-mountain-comic-hand-drawn-vector-illustration.jpg", width: 50%),
+  caption: [#drafttag Standing out (@sec:stand-out) often comes down to persistence and grit---like summiting a peak---not just a polished profile.],
+) <fig:alpinist>
 
 Given the high number of quality applicants and a limited number of spots, in addition to having a good application profile, you want to show something that makes you #highlight[stand out]. For example, even if you do not have research experience, you can talk about your personal projects, as long as they show you can do research. If you have an open-source project (@sec:open-source-contribs) that has lots of stars on GitHub, mention it. If you often write technical, research-like blogs with many viewers, talk about them too.
 
@@ -1477,6 +1699,41 @@ There are other things you might not think are important but can make you stand 
 #remark-block[
   In #link("https://matt.might.net/articles/how-to-apply-and-get-in-to-graduate-school-in-science-mathematics-engineering-or-computer-science/")[his post], Matt Might was initially unsure about an application. However, upon learning that the applicant had led a *100km hike in the Himalayas*, he decided to accept the applicant. This is a good example of _standing out_, and I would also advocate for such student as this shows they have the persistence and determination required for research.
 ]
+
+== Advice for Specific Applicant Profiles <chap:profiles>
+
+#draftbanner(note: "Add more profiles if I think of them (e.g., career-switchers from a totally different discipline, military veterans). Keep the tone encouraging---these applicants often count themselves out unnecessarily.")
+
+Much of this book describes the "typical" applicant: a student applying straight out of (or shortly after) an undergraduate or MS program. But many strong applicants do not fit that mold, and they often count themselves out for the wrong reasons. This section addresses two common cases.
+
+=== Non-Traditional and Returning Applicants <sec:non-traditional>
+
+If you have been working in industry for several years, are older than the typical applicant, or are switching careers, you may worry that adcoms (@sec:adcom) will see you as a poor fit. In my experience the opposite is often true: #highlight[work experience can be a real asset], as long as you connect it to research.
+
+#paragraph[Strengths to lean on][Industry experience shows you can ship real systems, work on a team, and persevere through hard problems---all things that matter in research. If your work involved anything research-adjacent (building ML models, doing performance analysis, contributing to open-source @sec:open-source-contribs), foreground it. A few years of maturity also tends to make for a more focused SOP (@chap:sop), because you have a clearer sense of what you want.]
+
+#paragraph[Challenges to address][The two real challenges are (1) *letters of recommendation* (@chap:LOR)---you may no longer be in touch with professors---and (2) *demonstrating research interest*, since industry work is not the same as research.
+
+For letters, a manager or senior engineer who can speak concretely to your technical ability and initiative is fine, ideally alongside at least one academic letter if you can get one (@sec:admin-letters explains why a generic letter from someone senior but distant is weak). For research interest, use your SOP to explain _why_ you are leaving a (presumably well-paid) job to do a PhD---a thoughtful answer here is compelling precisely because the opportunity cost is real (@sec:worth-it).]
+
+#tip-block[If it has been a while since you did anything academic, consider getting a small amount of recent research exposure first---a side collaboration, an open-source contribution (@sec:open-source-contribs), or a virtual research program (@chap:research-opportunities). It refreshes your skills, gives you a recent academic letter, and signals that your interest is genuine and current.]
+
+=== Applicants with a Weak Academic Record <sec:academic-recovery>
+
+A low GPA, a failed course, or a degree from a less-known school (@chap:your-school) is not the end of your chances. As I explain throughout @chap:evalapps, adcoms look for _evidence you will thrive in research_, and grades are only one weak signal among many. Good grades won't help you much (@sec:good-grades), but the inverse is also true: you can compensate for weak grades with strong evidence elsewhere.
+
+#paragraph[What actually moves the needle][In rough order of impact:
+- *Research experience and publications* (@chap:research-experience)---the single strongest counterweight to a weak transcript.
+- *Strong, specific letters* (@chap:LOR) from people who can vouch for your research ability.
+- *An upward trend*---if your later grades, especially in CS and Math, are strong, that matters more than a rough start.
+- *Evidence of standing out* (@sec:stand-out)---projects, competitions (@sec:competitions), open-source work.
+]
+
+#paragraph[Addressing it directly][If there is a clear explanation for a bad patch (illness, family circumstances, a rough adjustment year), you can briefly and factually mention it---most often in a diversity or additional-information statement (@sec:diversity-statement) rather than dwelling on it in your SOP. State what happened, what you learned, and what you did afterward. Then move on to your strengths. Do _not_ make excuses or spend half your essay on it.]
+
+#caution-block[Be aware that grades _below a hard cutoff_ in relevant courses (Math, CS) can read as a #alert[red flag] (@sec:why-rejected), and some programs have minimum GPA requirements for funding. If you are near a cutoff, it is even more important that the rest of your application gives the committee a reason to advocate for you.]
+
+#remark-block[Plenty of successful researchers, myself included, did not have a flawless record. Adcoms know that grades measure coursework, not research potential, and the two are only loosely related (@sec:profile-not-strong). Tell a story of growth and back it with evidence, and a weak transcript becomes a footnote rather than a verdict.]
 
 #pagebreak()
 
@@ -1515,7 +1772,7 @@ Note that funding is typically more available for PhD students than MS (@sec:ms-
 ) <tab:funding>
 
 == Graduate Assistantship (GTA/GRA) <sec:ta-ra>
-The most common type of funding is *graduate assistantship*, which comes in two main forms: GTA (Graduate Teaching Assistant) and GRA (Graduate Research Assistant). Both positions typically include a tuition waiver (so you don't pay tuition), health insurance (which is required in the US), and a stipend (your salary). Some universities also offer discounts or insurance coverage for spouses and children.
+The most common type of funding is a *graduate #gls("assistantship")*, which comes in two main forms: GTA (Graduate Teaching Assistant, a #gls("TA", first:true)) and GRA (Graduate Research Assistant, an #gls("RA", first:true)). Both positions typically include a tuition waiver (so you don't pay tuition), health insurance (which is required in the US), and a #gls("stipend") (your salary). Some universities also offer discounts or insurance coverage for spouses and children.
 
 A few notes about stipends:
 - The stipend amount *varies* by location (e.g., higher in expensive areas like DC than in Lincoln, Nebraska), university, and sometimes by department.
@@ -1623,14 +1880,14 @@ For a full breakdown of how much a graduate student costs, see @sec:ra-cost.
 #remark-block[ The website #link("https://csstipendrankings.org/")[CS Stipend Rankings] shows stipend for various CS PhD programs. You can use it to get idea on how much you can expect to get paid. However, I would ignore about the Living Cost because it does not fit most students' lifestyle and thus makes you unnecessarily worry. For example,  it says with GMU's stipend \$40K and Fairfax's living expense \$75K, you will be in _deficit_ of \$35K annually --- which is ridiculous because all GMU PhD CS students are doing just fine with that stipend, and even enough to support their famlies.
 ]
 
+#note-block[#drafttag Another useful, crowd-sourced source is #link("http://www.phdstipends.com/results")[phdstipends.com], where students anonymously report their actual stipends. As a rough guide, CS PhD stipends at good programs typically fall in the *\$35K--\$45K* range (2024), with higher numbers at expensive coastal schools and lower ones in cheaper areas---which is exactly why you should weigh a stipend against the local cost of living (@chap:practical-finances) rather than its headline number.]
+
 === How much do YOU cost? <sec:ra-cost>
 // \subsectioninfo{Your entire PhD program costs about \$400K in total, but you \emph{do not} pay for it.}
 
 PhD students might wonder why their #gls("stipend") is low compared to the large grants their advisors get. They also wonder why their offer letters sometimes show that their benefits are higher than what they receive as stipend (e.g., your financial assistance says you get a package of \$60K, but your stipend is only \$30K).  The reason is that the cost of supporting a PhD student is much higher than just their stipend.  In fact, the total cost of supporting a PhD student can be around \$70K per year, which includes not only the stipend but also tuition, health insurance, and other expenses. Over the course of a 5-6 year PhD program, this can add up to around \$400K.
 
-#align(center)[
-  #image("files/c6.png", width: 50%)
-]
+#draftbanner(note: "This image (files/c6.png) is the SAME LOR comic used at the start of @chap:LOR (fig:lor-comic), and it looks misplaced here in the cost section---it has nothing to do with PhD cost. Did you mean a different cartoon? I left the image but removed the duplicate display; pick a fitting one or delete.")
 
 #figure(
   caption: [GRA cost breakdown. F & A is Facilities & Administrative Cost Base and MTDC is Modified Total Direct Cost. These are things that the university can charge overhead to.],
@@ -1669,6 +1926,26 @@ These numbers are based on my experience at public universities in the US. Priva
 
 In the end, the total budget comes out to be \$73K/year to support a PhD student. The summary is that #highlight[over your 5--6 years of your PhD, you cost about \$400K], and while your stipend is X, your advisor probably pays 2X for you. But of course, the nicest thing is that you do not have to pay for any of this! You get to gain the knowledge, do research, travel, and also get paid!
 
+== Practical Finances for International Students <chap:practical-finances>
+
+#draftbanner(note: "I'm not a tax advisor---add a disclaimer and tell readers to confirm with the international student office. Numbers here are ballpark; update them. Maybe move parts of this into @chap:cultural.")
+
+Your funding (@chap:funding) covers tuition, health insurance, and a stipend, so you will _not_ go into debt for your PhD. But a stipend is modest, and there are some practical money matters---especially for international students---that catch people off guard. This section is a quick survival guide.
+
+#paragraph[The first month is the hardest][Your stipend is paid on the university's schedule (often monthly, sometimes with the first paycheck arriving several weeks after you start). Meanwhile you arrive needing to pay a security deposit and first month's rent, buy furniture, and cover initial expenses---all _before_ any money comes in. Budget to bring enough savings (a few thousand dollars) to cover *6--8 weeks* of living costs on arrival. This is the single most common cash-flow surprise.]
+
+#paragraph[Cost of living dominates the stipend's value][A \$35K stipend goes much further in, say, Pittsburgh or Blacksburg than in the Bay Area or New York City (@sec:selecting-ranking-schools). When comparing offers (@sec:visit-days), mentally divide the stipend by local rent. A nominally smaller stipend in a cheaper city can leave you more comfortable than a bigger one in an expensive one.]
+
+#paragraph[Taxes][Yes, you pay US taxes on your stipend (the portion that is salary), and as an international student your situation has extra wrinkles---tax treaties between the US and your home country may reduce what you owe, and you typically file as a non-resident for tax purposes for your first several years. Most universities provide tax-filing software (e.g., Sprintax) and workshops through the international student office. Do _not_ ignore tax filing; it is required, and it matters for future visa and green-card steps (@chap:visa).]
+
+#paragraph[Banking and credit][You will arrive with _no US credit history_, which makes renting and getting a credit card harder at first. Open a US bank account early, get a basic (often secured) credit card, and use it responsibly to start building credit. This pays off later when you rent an apartment or buy a car.]
+
+#paragraph[Health insurance is included---use it][Your assistantship includes health insurance (@chap:funding), and it is required (@chap:cultural-misc). Don't skip checkups assuming you are young and healthy---US healthcare is extremely expensive if you ever need it without coverage, and you are already paying for the insurance.]
+
+#tip-block[Your university's _international student office_ is your best resource for all of this---taxes, social security numbers, banking, on-campus work rules, and visa paperwork (@chap:visa). They do this for thousands of students every year. Lean on them rather than piecing together advice from forums.]
+
+#caution-block[As an #gls("F-1") student, there are _legal restrictions_ on how and where you can work (@chap:visa)---generally on-campus work tied to your #gls("assistantship"), with off-campus work requiring specific authorization (#gls("CPT-OPT", first:true)). Do not take side gigs or freelance work without checking with the international student office first; an unauthorized job can jeopardize your visa status.]
+
 #pagebreak()
 = Schools and Profs. <part:schools-profs>
 
@@ -1692,12 +1969,15 @@ Most US universities have CS programs, but many _do not_ have a _CS PhD_ program
 
 Thus, if your goal is a PhD in CS, you must target only schools offering such a degree. While the large number of US universities can be confusing, a little research on each school's website will clarify what degrees are available. Schools listed in @chap:rankings all have PhD programs in CS, so you can start there.
 
+#note-block[#drafttag There are _far_ more options than the dozen or so "famous" names. The #link("https://datavisualization.cra.org/TaulbeeSurvey/CRA_Taulbee_Survey_Report_2024.html")[2024 CRA Taulbee Survey] tracks over *300 PhD-granting CS/CE departments* in North America, and CS doctoral production hit a record high (up about 8% in a single year). The point: there is a large and growing landscape of strong programs beyond the top 10 (@sec:selecting-ranking-schools, @sec:chance-me), so cast a wide net.]
+
 // % \subsection{R1, R2, ...}
 
 === Selecting and Ranking Schools <sec:selecting-ranking-schools>
-#align(center)[
-  #image("files/c1.png", width: 50%)
-]
+#figure(
+  image("files/c1.png", width: 50%),
+  caption: [#drafttag How _not_ to choose schools: by name brand, #gls("Ivy League") prestige, rankings, or weather---instead of research fit (@sec:selecting-ranking-schools). Source: #link("https://phdcomics.com")[PhD Comics] (© Jorge Cham).],
+) <fig:schools-comic>
 
 Many students put universities into two bins: (i) top schools that they dream about, and (ii) everything else. They often use rankings from US News, which is not transparent and questionable (@chap:rankings). Sometimes they evaluate based on the reputation of the school's undergrad program or the reputation of the school's non-CS programs such as medical, math, or physics.
 Many international students rank universities based on popular places they know in the US, e.g., California, Texas, and New York.
@@ -1966,8 +2246,8 @@ Fortunately, while some non-US programs require finding an advisor and research 
 
 Assuming you're not familiar with any particular profs., then _first_ search for those that share similar research interests. For example, in CSRankings and CSPicks, if you want to work with PL, you can search for those published in PL conferences. If you want to work with SE _and_ AI, you can search for faculty who work in both SE and AI.
 
-_After that_, you can research about that prof. by going to their website, looking at their research achievements and awards (@chap:research-achievements), checking their research lab and group, seeing if they have recent publications, and reading their papers. Sometimes they would explicitly say they are looking for students and state their expectations. In some rare cases they even have an advising guideline like #link("https://roars.dev/phd-cs-us/advising.pdf")[this] to help students understand more about their personality and advising style.
-If you find a prof. that you like, you can reach out to them (@sec:contact).
+_After that_, you can research about that prof. by going to their website, looking at their research achievements and awards (@chap:research-achievements), checking their #gls("research-lab", first:true), seeing if they have recent publications, and reading their papers. Sometimes they would explicitly say they are looking for students and state their expectations. In some rare cases they even have an advising guideline like #link("https://roars.dev/phd-cs-us/advising.pdf")[this] to help students understand more about their personality and advising style.
+If you find a #gls("POI", first:true)---a prof. you'd like to work with---you can reach out to them (@sec:contact).
 
 #tip-block[*Xiaokuan*:
   Whether the student's research interest matches that of the advisor is very important;
@@ -2081,9 +2361,10 @@ Professors with these titles are often tenure-line faculty, and therefore can ad
 
 === Tenured or tenure-track faculty? <sec:tenure-vs-tenure-track>
 
-#align(center)[
-  #image("files/c8.png", width: 40%)
-]
+#figure(
+  image("files/c8.png", width: 55%),
+  caption: [#drafttag Life before vs. after tenure: an un-tenured (#gls("tenure-track")) professor is under intense pressure to produce, while a tenured one has far more freedom. This matters when choosing an advisor (@sec:tenure-vs-tenure-track). Source: #link("https://phdcomics.com")[PhD Comics] (© Jorge Cham).],
+) <fig:tenure-comic>
 
 Now that you know a bit about tenured and tenure-track faculty (@sec:faculty-types), which one should you choose as your advisor? How do you know if one would fit you better than the other?
 
@@ -2186,7 +2467,7 @@ Finally, profs. are busy (@sec:busy), so don't take it personally if you don't g
 
 - *Self-focus.* Focusing too much about you and your achievements but not why you are interested in the prof.'s work (@sec:contact). Mention why you're interested in their work and how your background can contribute.
 
-- *Too long.* Keep it to about 3--4 short paragraphs. Less is more and too-long emails are often not read and discarded. Don't attach course transcripts or test scores in the first email. If they are interested, they will ask for them. Attaching your CV is OK. Sample papers (@sec:writing-sample) and links to your Arxiv papers or GitHub projects are also OK if they are relevant.
+- *Too long.* Keep it to about 3--4 short paragraphs. Less is more and too-long emails are often not read and discarded. Don't attach course transcripts or test scores in the first email. If they are interested, they will ask for them. Attaching your CV is OK. Sample papers (@sec:writing-sample) and links to your #gls("arxiv", first:true) #gls("preprint")s or GitHub projects are also OK if they are relevant.
 
 - *Flowery greetings and language.* Don't use "Dear esteemed professor". Do not call the prof. by their first name in the first email (some don't care but you don't want to take the risk—you don't know them that well yet). Do not use Mr., Mrs., etc. To be safe, use Prof. Lastname or Dr. Lastname (@sec:address).
 
@@ -2271,8 +2552,36 @@ But there's a good chance that we would respond to well-written emails (@sec:con
 
 // %https://cs.brown.edu/degrees/doctoral/applications/helpful-resources-applying-computer-science-phd-programs/
 
+=== Vetting a Potential Advisor and Lab (Red Flags) <sec:vetting-advisor>
 
+#draftbanner(note: "This overlaps a bit with my advising.pdf---cross-ref it. Be careful with tone: I don't want to badmouth colleagues, just give honest guidance on doing due diligence. Maybe ask Xiaokuan/Deepak for a remark-block here too.")
 
+I have spent much of this chapter on how to _find_ and _attract_ an advisor (@sec:finding-advisor, @sec:contact). But choosing an advisor is a two-way decision, and your advisor is the single biggest factor in whether your PhD is productive and bearable (@sec:visit-days). A famous advisor or a top-ranked school (@chap:rankings) does not protect you from a bad _fit_. So before you commit---ideally during visit days (@sec:visit-days), but even while building your list---do some due diligence.
+
+#paragraph[Talk to current and former students][This is the most reliable signal, far more so than the advisor's own pitch. Current students know what the day-to-day is really like; former students (check the advisor's website for their "alumni" or "past students") know how it ended. If you can, ask them privately:
+- Would you choose this advisor again?
+- How hands-on or hands-off are they, and does that match what you need (@chap:choosing-advisor)?
+- How often do students publish, and how long do they take to graduate (@sec:time)?
+- Is funding stable (@chap:funding)?
+]
+
+#paragraph[Look at the track record][Public information tells you a lot before you ever talk to anyone:
+- *Graduation and placement.* Does the advisor actually _graduate_ students, and where do they end up (faculty, industry research, elsewhere)? An advisor with no graduates yet is not necessarily bad---new faculty (@sec:tenure-vs-tenure-track) can be excellent and hungry---but it is something to weigh.
+- *Publication pattern.* Are students _first authors_ on papers in good venues (@sec:pubs-top-tier), or does the advisor's name dominate while students stay buried in the author list?
+- *Group size.* A very large group may mean little direct attention; a very small one may mean less peer support. Neither is wrong, but know what you are signing up for.
+]
+
+#paragraph[Warning signs][None of these is automatically disqualifying, but several together should give you pause:
+- Students consistently take far longer than the norm to graduate (@sec:time), or many leave without finishing.
+- You hear (carefully, between the lines) that the advisor is unavailable, takes credit, or is hard to work with.
+- Funding is precarious or the offer terms are vague (@sec:offer-letters)---always confirm funding in writing.
+- The advisor is on the verge of moving institutions, retiring, or going on long leave, with no plan for you.
+- During your own interactions, they are dismissive or evasive when you ask reasonable questions.
+]
+
+#tip-block[You can read more about what to look for in an advisor's _advising style_ in my #link("https://roars.dev/phd-cs-us/advising.pdf")[advising guide]. The key mindset shift: once you are admitted, _you_ are interviewing _them_ (@sec:visit-days). Asking thoughtful questions about advising, funding, and expectations does not make you look ungrateful---it makes you look like someone who takes the commitment seriously.]
+
+#caution-block[Be diplomatic and discreet when asking around. The CS research community in any given area is small, and word travels. Frame questions as "what is it like to work with X?" rather than "is X a bad advisor?" You are gathering information, not collecting gossip.]
 
 
 #pagebreak()
@@ -2311,9 +2620,12 @@ But there's a good chance that we would respond to well-written emails (@sec:con
 // % % \begin{center}
 // % %     \includegraphics[scale=0.8]{files/visa.pdf}
 // % % \end{center}
-#image("files/visa.pdf", width: 100%)
+#figure(
+  image("files/visa.pdf", width: 100%),
+  caption: [#drafttag An example of an #gls("F-1") student visa (sensitive details redacted).],
+) <fig:visa>
 
-As defined in @chap:glossary, international students are those who would need a visa to study in the US.  In most cases, *_F-1_* is the main visa needed to study full-time at an accredited institution.  Here are some key points about F-1: 
+As defined in @chap:glossary, international students are those who would need a visa to study in the US.  In most cases, the #gls("F-1", first:true) is the main visa needed to study full-time at an accredited institution.  Here are some key points about F-1:
 
 - *Employment:* You are allowed to work on-campus for up to *20 hours per week during the #gls("AY")* (because you still need to take classes) and *full-time* (typically 40 hrs) during official school breaks (e.g., summer and winter breaks). Off-campus employment, such as internship, requires authorization, which can be obtained through CPT and OPT programs described below.
 
@@ -2346,7 +2658,7 @@ F-2 visa holders must leave the US if the primary F-1 student visa holder loses 
 
 #simpsons[I'm not a bad guy! I work hard, and I love my kids. So why should I spend half my Sunday hearing about how I'm going to Hell?]
 
-Most of what is written in this handbook applies to both international and domestic students (_domestic_ here simply means you do not require a visa to study in the US.). 
+Most of what is written in this handbook applies to both international and domestic students (the #gls("international-domestic", first:true) distinction here simply comes down to whether you require a visa to study in the US).
 However, there are some differences and benefits that domestic students should be aware of and can leverage to improve their chances of admission.
 
 #strong[Standing Out @sec:stand-out.] There are #emph[few] domestic applications compared to international ones (one reason is that many domestic students go to the workforce after their undergraduate degree). Many US universities thus want to increase the number of domestic students in their programs. So if you're a domestic student, you already #emph[stand out] from the crowd.
@@ -2475,7 +2787,7 @@ Because of the differences between MS and PhD programs (@sec:phd-vs-ms), you sho
 
 - *Ranking:* Unlike PhD programs where the advisor and research are likely the most important factor, in MS programs the ranking of the school is typically more important. Thus, you should consider the ranking of the school in CS, especially in the specific area you're interested in. For example, if you're interested in software engineering, you might want to consider schools with strong SWE programs.
 
-- *Living Cost:* MS students are typically not funded (@sec:ms-funding), so living cost can be a big factor. You should consider the tuition and living expenses of the area. Note that sometimes living costs, e.g., renting, seem scary at first but students often find way to make it work, e.g., by sharing an apartment with other students.
+- *Living Cost:* MS students are typically not funded (@sec:ms-funding), so living cost can be a big factor. You should consider the tuition---including #gls("in-out-state", first:true) tuition differences at public universities---and living expenses of the area. Note that sometimes living costs, e.g., renting, seem scary at first but students often find way to make it work, e.g., by sharing an apartment with other students.
 
 #pagebreak()
 = Research Opportunities <chap:research-opportunities>
@@ -2755,12 +3067,12 @@ Publications and involvement in the research community are common indicators of 
 
 === Publications in Top-Tier Venues <sec:pubs-top-tier>
 
-Publications in _top-tier_ venues are the most reliable factor to measure the productivity of a faculty. They give visibility to the faculty's work and help establish their reputation in the area. For tenure-track faculty (@sec:faculty-types), especially at top CS programs, publications at top-tier conferences and journals are often the standard for academic tenure and promotion. 
+Publications in #gls("toptier", first:true) are the most reliable factor to measure the productivity of a faculty. They give visibility to the faculty's work and help establish their reputation in the area. For #gls("tenure-track") faculty (@sec:faculty-types), especially at top CS programs, publications at top-tier conferences and journals are often the standard for academic tenure and promotion.
 
 *Conferences.* Unlike many STEM disciplines like Maths and Physics (@sec:fields-and-areas) that prefer journals, most CS fields  focus on publising at _conferences_. CS is a very fast moving and journals are often too slow---taking 1--2 years to publish---by which time the results and even the problems may already be outdated.  In contrast, conferences have a much faster review process, typically taking 3--6 months from submission to publication.
 
 Each CS field (@sec:fields-and-areas) has its own "top" conferences---usually around 2--4 per area. For example, NeurIPS, ICLR, and ICML are considered top conferences in AI/ML, while ICSE and FSE are among the the tops in Software Engineering.
-These conferences have rigorous review process, and only a small percentage of papers are accepted. 
+These conferences have a rigorous #gls("peer-review", first:true) process, and only a small percentage of papers are accepted.
 
 As mentioned in @chap:research-experience, having a paper accepted at a top-tier conference can be a big deal and makes you stand out from other prospective students. 
 CSrankings and CSPicks (@chap:rankings) gives the top conferences in each area and rank departments based on their publications in these conferences.
@@ -2983,9 +3295,10 @@ Many people maintain lifelong relationships with their professors and colleagues
 
 // \sectioninfo{What should you call your profs.? Many possibilities (e.g., Prof., Dr., and even their firstnames), but not Mr., Mrs., or their firstname in the first email.}
 
-#align(center)[
-  #image("files/c5.png", width: 85%)
-]
+#figure(
+  image("files/c5.png", width: 85%),
+  caption: [#drafttag A (humorous) flowchart for deciding how to address your professor---when in doubt, use "Prof./Dr. Lastname" (@sec:address). Source: #link("https://phdcomics.com")[PhD Comics] (© Jorge Cham).],
+) <fig:address-comic>
 
 If you're reaching out to a professor for the first time,  address them as Prof. or Dr. Lastname (if you know that they they do not have a PhD, then don't use Dr., but Prof. is fine). Many international students use Prof. or Dr. FirstName LastName, but this can come across as if you're simply copying and pasting names. So just stick with Prof. or Dr. Lastname.  Using _Prof._ is generally the safest option.
 
@@ -3088,6 +3401,11 @@ align(left)[
 
 == What's Wrong with Popular CS Rankings <sec:rankings-cra>
 
+#figure(
+  image("files/xkcd_standards.png", width: 70%),
+  caption: [#drafttag Rankings proliferate the same way standards do---each claims to be the definitive one, so no single ranking should be treated as authoritative. Source: #link("https://xkcd.com/927/")[xkcd 927], #link("https://creativecommons.org/licenses/by-nc/2.5/")[CC BY-NC 2.5].],
+) <fig:standards>
+
 Popular college rankings such as #link("https://www.usnews.com/best-colleges")[U.S. News & World Report] or #link("https://www.topuniversities.com/university-rankings")[QS World University Rankings] are often based on subjective criteria---such as reputation, faculty credentials, and student satisfaction---and are not transparent---how scores are calculated is often not disclosed.
 CS research community has long questioned and discouraged the use of these rankings. For example, the Computing Research Association (CRA)---a highly respected organization in CS---issued a sharp critique of the U.S. News & World Report's global rankings for CS depts, calling the methodology _"deeply flawed and misleading"_#footnote([#link("https://cra.org/cra-statement-us-news-world-report-rankings-computer-science-universities/")]). Among many issues, the CRA highlighted that the rankings rely heavily on journal publications indexed by the Web of Science, ignoring conference publications—despite conferences being the primary venue for publishing top-tier CS research (@sec:pubs-top-tier).   
 
@@ -3181,6 +3499,39 @@ More details and justfication for this metric can be found in the #link("https:/
 
 // % = Advisor Guide: Answers to Common Questions <chap:advising-guide}
 // % Specific answers to questions about my advising guide in \href{https://roars.dev}{Roars Lab}. Adapted from \href{https://www.cs.columbia.edu/wp-content/uploads/2019/03/Get-Advisor.pdf}{this guide}.
+
+#pagebreak()
+= Frequently Asked Questions <chap:faq>
+
+#draftbanner(note: "These are a quick-reference digest of points made in depth elsewhere. Pull more from the Reddit/Facebook questions I keep seeing. Keep each answer to a sentence or two and link to the full discussion.")
+
+This is a quick-reference list of the questions I am asked most often. Each answer is intentionally short and points to the full discussion elsewhere in the book.
+
+#paragraph[Do I need an MS before applying for a PhD?][No. You can apply directly from a bachelor's degree (@sec:msrequirement). An MS can help but is not required.]
+
+#paragraph[Do I need a CS degree?][No. Many successful applicants come from Math, EE, Physics, and other fields (@sec:non-stem). What matters is evidence you can do CS research.]
+
+#paragraph[Do I need to take the GRE?][Usually no---most CS PhD programs have made it optional and it rarely matters (@sec:gre). A bad score can only hurt, so omit it unless it is strong.]
+
+#paragraph[Do I need publications?][They help a lot, but they are not strictly required (@sec:publications). Strong projects, letters, and research experience can substitute (@chap:research-experience, @sec:stand-out).]
+
+#paragraph[Is my GPA too low?][Probably not by itself. Grades are a weak signal (@sec:good-grades); research, letters, and an upward trend matter more (@sec:academic-recovery). Very low grades in Math/CS can be a red flag (@sec:why-rejected).]
+
+#paragraph[Should I email professors before applying?][It can help if done well (@sec:contact), but a generic or self-focused email hurts (@sec:kiss-of-death-emails). It is optional, not required.]
+
+#paragraph[How many schools should I apply to?][There is no magic number, but aim for a mix of reach, match, and safety schools (@sec:selecting-ranking-schools). Apply where there are 2--3 faculty you would want to work with.]
+
+#paragraph[Will I get funded?][At good R1 programs, CS PhD admission almost always comes with full funding---tuition, health insurance, and a stipend (@chap:funding). If an offer is _not_ funded, think hard before accepting (@sec:offer-letters).]
+
+#paragraph[I haven't heard back---is that a rejection?][Not necessarily. Schools notify in batches, some do rolling admission, and some keep students on a waitlist (@sec:late-rejection). No news is not bad news; be patient and avoid status-check emails.]
+
+#paragraph[I didn't get any interviews. Am I rejected?][No---many programs admit without interviews (@sec:no-interview). An interview is a good sign, but its absence is not a verdict.]
+
+#paragraph[Does ranking matter?][As a rough filter, yes; as a decision rule, no (@chap:rankings). Advisor fit (@chap:choosing-advisor) matters far more than a school's name.]
+
+#paragraph[Can I use AI to write my application?][Use it to edit and polish, not to write for you (@chap:using-ai-app). An obviously AI-written SOP is forgettable and can be a red flag.]
+
+#paragraph[What if I get rejected everywhere?][It is common, and not the end (@chap:not-accepted). Figure out why (@sec:why-rejected), strengthen your profile, and try again (@sec:try-again).]
 
 #pagebreak()
 = About <chap:about>
@@ -3307,6 +3658,112 @@ Finally, thanks to my wife and kids for always supporting me and putting up with
 
 
 //write quick def on postdoc; adjuct has limited affiliation; write about TA policies (e.g., 1 GRA 1 GTA etc)
+
+#pagebreak()
+= Templates and Samples <chap:templates>
+
+#draftbanner(note: "These are starter templates, NOT scripts to copy verbatim---add a strong warning that copying these defeats the purpose. Consider replacing the SOP skeleton with a real (anonymized) example. The LOR template already lives on Overleaf (@sec:my-LOR-perspective)---link it.")
+
+This appendix collects concrete starting points for the materials and emails discussed throughout the book. #alert[A warning before you use them:] these are _skeletons_, not scripts. The entire point of an application is to sound like _you_ (@chap:using-ai-app). If you copy these word-for-word, you will produce exactly the generic, forgettable material that adcoms (@sec:adcom) reject. Use them to see the _structure_, then fill them with your own specifics.
+
+== Email to a Potential Advisor <sec:tmpl-contact-email>
+
+Keep it to 3--4 short paragraphs, plain text, no fancy formatting (@sec:kiss-of-death-emails). The goal is to show you did your homework and to say something only _you_ could say (@sec:contact).
+
+```
+Subject: Prospective PhD applicant interested in <specific topic> (Fall 2026)
+
+Dear Prof. <Lastname>,
+
+I am <name>, a final-year <BS/MS> student in <field> at <university>.
+I read your recent paper "<exact title>" on <specific topic> and was
+particularly interested in <one concrete, specific point>. <One sentence
+connecting it to something you did: a project, a course, a paper.>
+
+In my <project/thesis/internship>, I <one or two sentences on what you
+built or found and the result>. This is why I am drawn to your group's
+work on <area>, and I am applying to <university>'s CS PhD program this
+fall with the hope of working with you.
+
+I have attached my CV. I would be grateful for any thoughts on whether my
+background is a fit for your group. Thank you for your time.
+
+Best regards,
+<Name>
+<link to website / Google Scholar / GitHub, if relevant>
+```
+
+#caution-block[Do _not_ mass-email, CC/BCC multiple professors, attach transcripts, use flowery greetings, or follow up with a phone call (@sec:kiss-of-death-emails). If the professor's website lists contact instructions, follow them exactly.]
+
+== Asking for a Letter of Recommendation <sec:tmpl-lor-request>
+
+Ask _early_---at least 3--4 weeks before the deadline (@sec:asking-LOR)---and give the writer an easy way to say no.
+
+```
+Subject: Request for a recommendation letter for PhD applications
+
+Dear Prof. <Lastname>,
+
+I am applying to CS PhD programs this fall and would be grateful if you
+would be willing to write me a strong letter of recommendation. I really
+valued <specific experience: the research project, the course, the work>
+and felt you knew my <research ability / work> well.
+
+I completely understand if you are too busy or do not feel you can write a
+strong letter. If you are able to, I will send you everything you need:
+my CV, draft SOP, a short summary of what we worked on together, the list
+of schools with deadlines, and the submission links.
+
+Thank you very much for considering this.
+
+Best,
+<Name>
+```
+
+#tip-block[Notice the phrase "_strong_ letter" and the explicit out. You _want_ to give writers an easy way to decline, because a lukewarm letter hurts more than a missing one (@sec:generic-letters). Once they agree, make their job easy (@sec:help-your-LOR-writers).]
+
+== Information Packet for Your Letter Writers <sec:tmpl-lor-packet>
+
+Once a writer agrees, send a single, well-organized message (or document) so they can write a specific, detailed letter (@sec:help-your-LOR-writers).
+
+```
+- Updated CV and (draft) SOP.
+- A short reminder of our work together: project name, your role, what you
+  did, the outcome, and any specific moments worth highlighting (a bug you
+  found, an idea you proposed, how you handled a setback).
+- 2-3 points you'd love me to emphasize (e.g., independence, persistence).
+- A table of schools: name, program, deadline, and submission link/method.
+- How letters are submitted (portal upload vs. email).
+```
+
+== Statement of Purpose Skeleton <sec:tmpl-sop>
+
+A SOP is roughly 1--2 pages. There is no single correct structure, but a reliable one is below (@chap:sop). Tailor the closing to _each_ school by naming specific faculty (@sec:contact).
+
+```
+1. Hook + focus (1 short para)
+   A specific moment or problem that drew you to research---NOT "I have
+   always been passionate about computers." End with the area you want to
+   pursue.
+
+2. Research experience (1-2 paras, the core of the SOP)
+   For each project: the problem, what YOU did, the result, and what you
+   learned. Concrete > grand. Show research ability, not just coursework.
+
+3. Why a PhD / your direction (1 para)
+   What questions excite you and where you want to push. Demonstrates you
+   understand what research is.
+
+4. Fit: why THIS school (1 para, customized per school)
+   Name 2-3 faculty and ONE specific thing about each that connects to your
+   interests. This paragraph changes for every application.
+
+5. (Optional) Brief context (1-2 sentences)
+   Any necessary explanation of a gap or weakness---factual, no excuses.
+   Often better placed in a diversity/additional-info statement instead.
+```
+
+#caution-block[Avoid the SOP "kiss of death" (@sec:kiss-of-death-sop): vague passion, listing coursework, flattery, generic statements that could be sent to any school, and obvious AI boilerplate (@chap:using-ai-app). The single best test of a SOP paragraph is: _could anyone else have written this exact sentence?_ If yes, rewrite it.]
 
 #pagebreak()
 = Glossary <chap:glossary>
