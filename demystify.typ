@@ -603,7 +603,7 @@ Each application is assigned to about three #gls("adcom members",first: false), 
 
 #gls("adcom members",capitalize:true) typically can view any submitted applications. However, we only review those that are assigned to us, which are already too many. #gls("adcom chair", capitalize:true) will assign applications to reviewers based on their expertise, e.g., if a student says they want to do SE or interested in working with me, and reviewers will only evaluate those applications. Occasionally we might look at other applications, e.g., if the student contacted me, I know that student, or they are from a school in Vietnam I am familiar with. However, even if we look at them, we usually do not get involved in their evaluation directly.
 
-Note that the assigned reviewers are the main ones deciding your application, but at many schools other faculty in the department can also have access to your application and provide inputs and opinions on your profile. Thus, it helps to contact faculty (@sec:contact) and mention faculty you're interested in in your SOP (@chap:sop).
+Note that the assigned reviewers are the main ones deciding your application, but at many schools other faculty in the department can also have access to your application and provide inputs and opinions on your profile. Thus, it helps to contact faculty (@sec:contact) and mention faculty you're interested in your SOP (@chap:sop).
 
 === How are Decisions Made? <sec:how-decisions>
 // \sectioninfo{Even if all adcom reviewers recommend acceptance, the application can still be rejected. Vice versa, if all reviewers think the application is weak, the student might still be admitted.}
@@ -634,7 +634,7 @@ In CS, both the reviews and interviews are often done independently (@sec:interv
 #example[From a Professor in Physics at an R1 university][ 
   We have a pretty well fleshed out grading rubric for applications that has categories like grades, research, writing ability, etc. I would say our rubric is weighted about 1/2 on academics (research, LORs, grades) and 1/2 on the idea of "grit" or "resilience" (engagement, leadership, working through obstacles).
   
-  The rubric helps a lot to standardize how committee members grade, and speeds things up a bit because you know what to look for. We spent what seemed like forever on the details of the grading system (e.g., what does a a score of "3" vs a "2" in writing look like?) but now it's very helpful.
+  The rubric helps a lot to standardize how committee members grade, and speeds things up a bit because you know what to look for. We spent what seemed like forever on the details of the grading system (e.g., what does a score of "3" vs a "2" in writing look like?) but now it's very helpful.
 
   We also do roughly three rounds of selection: a first "triage" round to determine the top ~100 applications, a second round to determine about 25 people to interview, and then a third round to decide the actual offers. That also helps to speed things up a bit, since in the first round with all the applications you can move fairly quickly since you just need to sort into "good" and "bad". By the time we're getting into the details and reading everything more closely in rounds 2 and 3 most of the applications have been removed from consideration. So for this method I do maybe 5 minutes per app in round 1, but closer to 20 minutes per app in round 2, and usually round 3 is long discussions about specific people.] <fig:adcom-discuss-physics>
   
@@ -1877,7 +1877,7 @@ In fact, it might be enough to support your spouse and kids.  Many CS PhD studen
 For a full breakdown of how much a graduate student costs, see @sec:ra-cost.
 
 
-#remark-block[ The website #link("https://csstipendrankings.org/")[CS Stipend Rankings] shows stipend for various CS PhD programs. You can use it to get idea on how much you can expect to get paid. However, I would ignore about the Living Cost because it does not fit most students' lifestyle and thus makes you unnecessarily worry. For example,  it says with GMU's stipend \$40K and Fairfax's living expense \$75K, you will be in _deficit_ of \$35K annually --- which is ridiculous because all GMU PhD CS students are doing just fine with that stipend, and even enough to support their famlies.
+#remark-block[ The website #link("https://csstipendrankings.org/")[CS Stipend Rankings] shows stipend for various CS PhD programs. You can use it to get idea on how much you can expect to get paid. However, I would ignore about the Living Cost because it does not fit most students' lifestyle and thus makes you unnecessarily worry. For example,  it says with GMU's stipend \$40K and Fairfax's living expense \$75K, you will be in _deficit_ of \$35K annually --- which is ridiculous because all GMU PhD CS students are doing just fine with that stipend, and even enough to support their families.
 ]
 
 #note-block[#drafttag Another useful, crowd-sourced source is #link("http://www.phdstipends.com/results")[phdstipends.com], where students anonymously report their actual stipends. As a rough guide, CS PhD stipends at good programs typically fall in the *\$35K--\$45K* range (2024), with higher numbers at expensive coastal schools and lower ones in cheaper areas---which is exactly why you should weigh a stipend against the local cost of living (@chap:practical-finances) rather than its headline number.]
@@ -2050,7 +2050,7 @@ That said, an advantage of being at a small program is that you can easily stand
 // %   When considering PhD programs, we often wonder if we should prioritize a high-ranking university or a professor with a strong reputation? Of course, both are great, but it is hard to achieve both.  I believe receiving some guidance from you  would be incredibly valuable.
 // % \end{commentbox}
 
-// % The general advice is to prioritize a strong faculty member over a high-ranked school because your success in research depends more on your advisor than the school's name. Still, a good school can provide better resources, networking opportunities, and and more competitive environment---and there's always that "household name" that makes you feel good. So ranking does matter!
+// % The general advice is to prioritize a strong faculty member over a high-ranked school because your success in research depends more on your advisor than the school's name. Still, a good school can provide better resources, networking opportunities, and a more competitive environment---and there's always that "household name" that makes you feel good. So ranking does matter!
 
 
 === PhD in other Related Fields: CE, IST, Cybersecurity <sec:related-fields>
@@ -2943,7 +2943,7 @@ This is less common but several places offer virtual internships and research pr
 #simpsons[You mean those leagues where parents push their kids into vicious competition to compensate for their own failed dreams of glory?]
 
 Having an external and major fellowship can significantly relieve the financial burden of your PhD study and improve your chances of getting into a good program (@sec:fellowships). 
-Among the most wel-known and prestigious fellowships for CS PhD students who are US citizens or permanent residents (@chap:domestic-students) are the #gls("GRFP", first:true)  and the #gls("NDSEG", first:true). These fellowships provide multiple years of full financial support, including tuition, stipend, and health insurance.
+Among the most well-known and prestigious fellowships for CS PhD students who are US citizens or permanent residents (@chap:domestic-students) are the #gls("GRFP", first:true)  and the #gls("NDSEG", first:true). These fellowships provide multiple years of full financial support, including tuition, stipend, and health insurance.
 
 The #link("https://www.nsfgrfp.org/")[GRFP] and #link("https://www.ndsegfellowships.org/")[NDSEG] websites have detailed information on the application process and eligibility requirements. The #link("https://www.nsf.gov/funding/information/faq-frequently-asked-questions-faqs-graduate-research-fellowship")[NSF GRFP FAQ] has many useful tips and resources. 
 You can also find articles written by previous winners offering tips on writing a strong application (see the #link("https://code.roars.dev/phd-cs-us")[link] section on this book's website). However, keep in mind that while these writers were successful in securing the fellowship, they often have no insight into how their applications were actually evaluated or what the reviewers want to see.
@@ -3070,9 +3070,9 @@ Publications and involvement in the research community are common indicators of 
 
 Publications in #gls("toptier", first:true) are the most reliable factor to measure the productivity of a faculty. They give visibility to the faculty's work and help establish their reputation in the area. For #gls("tenure-track") faculty (@sec:faculty-types), especially at top CS programs, publications at top-tier conferences and journals are often the standard for academic tenure and promotion.
 
-*Conferences.* Unlike many STEM disciplines like Maths and Physics (@sec:fields-and-areas) that prefer journals, most CS fields  focus on publising at _conferences_. CS is a very fast moving and journals are often too slow---taking 1--2 years to publish---by which time the results and even the problems may already be outdated.  In contrast, conferences have a much faster review process, typically taking 3--6 months from submission to publication.
+*Conferences.* Unlike many STEM disciplines like Maths and Physics (@sec:fields-and-areas) that prefer journals, most CS fields focus on publishing at _conferences_. CS is very fast-moving, and journals are often too slow---taking 1--2 years to publish---by which time the results and even the problems may already be outdated.  In contrast, conferences have a much faster review process, typically taking 3--6 months from submission to publication.
 
-Each CS field (@sec:fields-and-areas) has its own "top" conferences---usually around 2--4 per area. For example, NeurIPS, ICLR, and ICML are considered top conferences in AI/ML, while ICSE and FSE are among the the tops in Software Engineering.
+Each CS field (@sec:fields-and-areas) has its own "top" conferences---usually around 2--4 per area. For example, NeurIPS, ICLR, and ICML are considered top conferences in AI/ML, while ICSE and FSE are among the tops in Software Engineering.
 These conferences have a rigorous #gls("peer-review", first:true) process, and only a small percentage of papers are accepted.
 
 As mentioned in @chap:research-experience, having a paper accepted at a top-tier conference can be a big deal and makes you stand out from other prospective students. 
@@ -3181,7 +3181,7 @@ These can be (i) lifetime achievements in the field---such as ACM or IEEE Fellow
 
 ==== Most Influential Paper Awards 
 
-_Most Influential Papers, Test of Time , or Impact Awards_ are given to papers that were published 10+ years ago at a top venue and made a lasting contribution to their area of research, e.g., creating a new research field. In other words, the work described in these papers have stood the _test of time_. Typically, these papers are highly cited and have inspired many follow-up works.
+_Most Influential Papers, Test of Time, or Impact Awards_ are given to papers that were published 10+ years ago at a top venue and made a lasting contribution to their area of research, e.g., creating a new research field. In other words, the work described in these papers has stood the _test of time_. Typically, these papers are highly cited and have inspired many follow-up works.
 Note that these paper awards are different than Distinguished or Best Paper awards, which are given at the conference and therefore might not be as well-known or influential.   
 
 Note that while typically given to senior researchers (due to the 10+ years requirement), some junior faculty have received these highly prestigious awards for their work as shown in @fig:LOR4junior. 
@@ -3301,7 +3301,7 @@ Many people maintain lifelong relationships with their professors and colleagues
   caption: [#drafttag A (humorous) flowchart for deciding how to address your professor---when in doubt, use "Prof./Dr. Lastname" (@sec:address). Source: #link("https://phdcomics.com")[PhD Comics] (© Jorge Cham).],
 ) <fig:address-comic>
 
-If you're reaching out to a professor for the first time,  address them as Prof. or Dr. Lastname (if you know that they they do not have a PhD, then don't use Dr., but Prof. is fine). Many international students use Prof. or Dr. FirstName LastName, but this can come across as if you're simply copying and pasting names. So just stick with Prof. or Dr. Lastname.  Using _Prof._ is generally the safest option.
+If you're reaching out to a professor for the first time,  address them as Prof. or Dr. Lastname (if you know that they do not have a PhD, then don't use Dr., but Prof. is fine). Many international students use Prof. or Dr. FirstName LastName, but this can come across as if you're simply copying and pasting names. So just stick with Prof. or Dr. Lastname.  Using _Prof._ is generally the safest option.
 
 _Do not use Mr., Mrs., Ms, or Miss_. This rarely happens, but I have seen  new students (e.g., undergraduates) sometimes use these, which are used in K--12 schools but not in higher education.
 
@@ -3428,7 +3428,7 @@ where $N$ is the number of fields (e.g., OS, Cryptography, ML, PL) selected, and
 CSRankings thus favors departments that publish in multiple fields.  For example, a department that has 10 papers in each of the 10 fields will have a higher `averageCount` ($root(10, 11^10) = 11$)than a department that has 100 papers in one field and 0 in the others ($root(10, 101 · 1^9) = 1.59$). This is because the geometric mean is designed to favor departments that have a balanced distribution of publications across multiple fields, rather than excelling in just one field. 
 
 Note that CSRankings allows users to select the fields they are interested in, so the `averageCount` can be calculated based on a subset of fields. For example, if the student is only interested in field $X$, then the `averageCount` will be $root(1, 101) = 101$.
-More details and justfication for this metric can be found in the #link("https://csrankings.org/faq.html")[CSRankings FAQ].
+More details and justification for this metric can be found in the #link("https://csrankings.org/faq.html")[CSRankings FAQ].
 
 
 
@@ -3569,7 +3569,7 @@ My goal is thus to level the playing field by providing info that is not readily
 This book aims to be a comprehensive guide to the CS PhD admission process in the US.  It is based on my and other contributors' experiences. I try to explain _the reasons behind the admission process_.
 While there are numerous #link("https://code.roars.dev/phd-cs-us")[resources online] that tell you _"what"_ to do, few explain the _"why"_---why LORs matter so much, why you should not draft your own LOR, why you should contact professors, etc. Moreover, it aims to help _international students_ who have very different backgrounds and experiences than domestic students (e.g., asking for LORs, research experience, cultural differences, etc.)#footnote([Though of course, domestic students often face similar challenges as international students, especially those from smaller schools or underrepresented groups.]).  Understanding the reason and mindset of the adcom and profs. can help you prepare better. 
 
-This book is a also _#highlight[personal project]_ that I continuously update and refine, especially during the admission season. I also work on it when I procrastinate from research or other tasks---it's my way of telling myself that I am still productive!
+This book is also a _#highlight[personal project]_ that I continuously update and refine, especially during the admission season. I also work on it when I procrastinate from research or other tasks---it's my way of telling myself that I am still productive!
 Writing is a relaxing process for me, and I enjoy experimenting with new things in LaTeX and more recently Typst (@chap:writing-latex). Because of these reasons, this book is thus an ever-evolving project!
 
 Finally, this book is highly _opinionated_ and _subjective_, which is both a strength and a weakness (see @sec:disclaimer).
