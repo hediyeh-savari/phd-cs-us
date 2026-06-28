@@ -1994,7 +1994,7 @@ You will be very surprised to learn that a school that you didn't know much abou
 
 #note-block[*Dat*: Most Vietnamese students, including those from top schools, *do not know* about CSRankings. Maybe applicants who worked at top research places such as VinAI would know about it.]
 
-*What matters to you?* While many find CSRankings and CSPicks useful, it is still superficial as every other ranking (@chap:rankings). You should not just look at the number of papers or the number of faculty in your area. You should also consider the quality of the faculty, e.g., how many of them are tenured, well-known in their field, and have a good publication record. You can find this information from their CVs or their homepages. You can also check their #link("https://scholar.google.com")[Google Scholar] profiles to see their h-index and i10-index. See @chap:choosing-advisor and @chap:research-achievements for more details on how to find and evaluate faculty.
+*What matters to you?* While many find CSRankings and CSPicks useful, they are still superficial as every other ranking (@chap:rankings). You should not just look at the number of papers or the number of faculty in your area. You should also consider the quality of the faculty, e.g., how many of them are tenured, well-known in their field, and have a good publication record. You can find this information from their CVs or their homepages. You can also check their #link("https://scholar.google.com")[Google Scholar] profiles to see their h-index and i10-index. See @chap:choosing-advisor and @chap:research-achievements for more details on how to find and evaluate faculty.
 
 You should also consider other factors that matter to you. You might prefer schools that give stable funding (@chap:funding) and good stipend (@sec:ra-cost). You might like areas with a large community from your country---Northern Virginia, for example, is very diverse and has a large population of Vietnamese. You might want to be near high-tech industrial hubs like Seattle or Silicon Valley, or places with plenty of outdoor activities such as hiking and skiing. Weather can also be important---_"PhD can be depressing, so would you rather be depressed in California or New York?"_. Finally, don't forget about things like cost of living---certain areas in California and New York are way more expensive than in Nebraska. Safety is another factor; however, while some universities might be in a high-crime city, the campus itself is very safe---like John Hopkins in Baltimore.
 
@@ -2192,7 +2192,7 @@ At the top is the *Board of Visitors* in public schools or Board of Trustees in 
 
 They will not decide how many PhD students a CS department admits, but their decisions---such as approving the creation of a new College of Computing or cutting budgets---can significantly change your graduate experience.
 
-The *President* (or *ChancelLOR*) is the "CEO" of the university and reports directly to the Board. Below them is the *Provost*, the Chief Academic Officer who oversees all colleges and deans. The Provost's office approves tenure policies, new faculty lines, and graduate school rules; all these decisions shape the direction and operations of the CS department.
+The *President* (or *Chancellor*) is the "CEO" of the university and reports directly to the Board. Below them is the *Provost*, the Chief Academic Officer who oversees all colleges and deans. The Provost's office approves tenure policies, new faculty lines, and graduate school rules; all these decisions shape the direction and operations of the CS department.
 
 ==== Shared Governance
 
@@ -2207,7 +2207,9 @@ The Senate acts as an independent check on the administration. They can question
 
 ==== Local Units (College/School/Dept)
 
-Under the top administration are the various colleges or schools that house different academic departments. Common examples include the College of Engineering, College of Arts and Sciences, and increasingly, a separate College of Computing (e.g., like at Georgia Tech).  Schools are typically under a college, e.g., the School of Computing within the College of Engineering at UNL. But in some universities, the School is a standalone unit, e.g., the School of Computer Science at CMU.
+Under the top administration are the various colleges or schools that house different academic departments. Common examples include the College of Engineering, College of Arts and Sciences, and increasingly, a separate College of Computing (e.g., like at Georgia Tech).  
+
+Schools are typically under a college, e.g., the School of Computing within the College of Engineering at UNL. But in some universities, the School is a standalone unit, e.g., the School of Computer Science at CMU.
 
 #note-block[
   At GMU, CS is under School of Computing (SoC), which is under College of Engineering and Computing (CEC).   The School of Computing (SoC) has its own Dean, who reports to the Dean of CEC, who then reports to the Provost.
