@@ -261,14 +261,14 @@ If you believe you have a chance in other countries, e.g., Australia, Canada, Ja
 Many students, especially those from smaller countries or schools, have the *imposter syndrome*---worrying they're _"not good enough"_, or get discouraged when competing with others with "stronger" profiles (@sec:profile-not-strong). As explained in @chap:evalapps, #gls("adcom") looks for potential and evidence you'll thrive in research environment and fit well at their institution---things that usually have nothing to do with your GPA or GRE scores.
 ]
 
-#note-block[#drafttag You are not an outsider---you are the _norm_. In the most recent #link("https://datavisualization.cra.org/TaulbeeSurvey/CRA_Taulbee_Survey_Report_2024.html")[CRA Taulbee Survey], about *66% of CS PhD recipients in the US were international students* (non-resident aliens). So if you worry that being from a smaller or less well-known country puts you at a disadvantage, remember that roughly _two out of three_ CS PhDs in the US are international, just like you.]
+#note-block[As an international student you are not an outsider---you are the _norm_. In the most recent #link("https://datavisualization.cra.org/TaulbeeSurvey/CRA_Taulbee_Survey_Report_2024.html")[CRA Taulbee Survey], about *66% of CS PhD recipients in the US were international students* (non-resident aliens). So if you worry that being from a smaller or less well-known country puts you at a disadvantage, remember that roughly _two out of three_ CS PhDs in the US are international, just like you.]
 
 #figure(
   statbar((
     ([International], 66, rgb("#4472C4")),
     ([Domestic], 34, rgb("#A6A6A6")),
   )),
-  caption: [#drafttag CS PhD recipients in the US by residency. About two-thirds are international students. Source: #link("https://datavisualization.cra.org/TaulbeeSurvey/CRA_Taulbee_Survey_Report_2024.html")[CRA Taulbee Survey 2024].],
+  caption: [CS PhD recipients in the US by residency (#link("https://datavisualization.cra.org/TaulbeeSurvey/CRA_Taulbee_Survey_Report_2024.html")[CRA Taulbee Survey 2024]). About two-thirds are international students.],
 ) <fig:intl-share>
 
 #paragraph[Funding Is Not An Issue][In most cases CS PhD students _do not_ need to worry about funding, especially at good #gls("R1") universities in the US. 
@@ -287,13 +287,15 @@ Full funding for CS PhD students is the norm in the US, and I'd go as far as to 
 
 === Is a PhD Worth It? Alternatives and Opportunity Cost <sec:worth-it>
 
-#draftbanner(note: "Be honest here---I don't want to come across as recruiting everyone into a PhD. Maybe add a short anecdote about a student who chose industry and was happy.")
+//#draftbanner(note: "Be honest here---I don't want to come across as recruiting everyone into a PhD. Maybe add a short anecdote about a student who chose industry and was happy.")
 
-So far I have tried to convince you that getting into a CS PhD program in the US is not as hard or as expensive as you might think. But _should_ you do a PhD at all? This is a separate and more important question, and the honest answer is: _not everyone should_.
+So far I have tried to convince you that getting into a CS PhD program in the US is not as hard or as expensive as you might think. But _should_ you do a PhD at all? Te honest answer is: _not everyone should_.
 
-A PhD is a #highlight[5--6 year commitment] (@sec:time) that mainly trains you to do _research_. If your goal is to become a professor, an industry research scientist, or to work on hard open-ended problems in a national lab or research-heavy team, then a PhD is essentially required and well worth it. If your goal is to be a strong software engineer at a tech company, a PhD is _not_ required and, in many cases, not the most efficient path.
+A CS PhD is a #highlight[5--6 year commitment] (@sec:time) that mainly trains you to do _research_. If your goal is to become a professor, an industry research scientist, or to work on hard open-ended problems in a national lab or research-heavy team, then a PhD is essentially required and well worth it. If your goal is to be a strong software engineer at a tech company, a PhD is _not_ required and, in many cases, not the most efficient path (learning _vibe coding_ with LLMs is probably a better way to go).
 
-#caution-block[#drafttag It is also worth knowing that a PhD is _hard_, and not everyone finishes. Across US doctoral programs, roughly #link("https://www.statisticssolutions.com/almost-50-of-all-doctoral-students-dont-graduate/")[*half of students do not complete the degree*], and even the #link("https://cgsnet.org/project/minority-attrition-and-completion-in-stem-doctoral-programs")[10-year completion rate hovers around 55--65% in STEM fields]. I mention this not to scare you, but so you go in with eyes open: the biggest predictor of finishing is not raw talent but persistence and a good advisor (@chap:choosing-advisor, @sec:vetting-advisor).]
+.
+
+#caution-block[It is also worth knowing that a PhD is _hard_, and not everyone finishes. Across US doctoral programs, roughly #link("https://www.statisticssolutions.com/almost-50-of-all-doctoral-students-dont-graduate/")[*half of students do not complete the degree*], and even the #link("https://cgsnet.org/project/minority-attrition-and-completion-in-stem-doctoral-programs")[10-year completion rate hovers around 55--65% in STEM fields]. I mention this not to discourage you, but to be honest about the challenges. The good news is that the biggest predictor of finishing is not raw talent but persistence and a good advisor (@chap:choosing-advisor, @sec:vetting-advisor).]
 
 #figure(
   statbar((
@@ -303,7 +305,7 @@ A PhD is a #highlight[5--6 year commitment] (@sec:time) that mainly trains you t
     ([Math \& phys. sci.], 55, rgb("#4472C4")),
     ([Humanities], 49, rgb("#4472C4")),
   )),
-  caption: [#drafttag 10-year PhD completion rates by broad field in the US---note that even in the best-completing fields, a substantial fraction do not finish. Source: #link("https://cgsnet.org/project/minority-attrition-and-completion-in-stem-doctoral-programs")[CGS PhD Completion Project].],
+  caption: [10-year PhD completion rates by broad field in the US---note that even in the best-completing fields, a substantial fraction do not finish (#link("https://cgsnet.org/project/minority-attrition-and-completion-in-stem-doctoral-programs")[CGS PhD Completion Project]).],
 ) <fig:completion-rates>
 
 #paragraph[The real cost is opportunity cost][The tuition and stipend are covered (@chap:funding), so the financial cost to you is roughly zero---in fact you get paid. The real cost is _opportunity cost_: the difference between a PhD stipend (@sec:ra-cost) and what you could earn as a software engineer over those same 5--6 years, which can easily add up to several hundred thousand dollars. People who are happy they did a PhD almost always say it was because they wanted the _work_ (research), not because of the salary afterward.]
@@ -315,22 +317,29 @@ A PhD is a #highlight[5--6 year commitment] (@sec:time) that mainly trains you t
 - *A PhD in another country.* Often shorter (@sec:non-us-differences) if the longer US model does not appeal to you.
 ]
 
-#tip-block[A useful test: would you still want to do a PhD if it did _not_ lead to a higher salary or a fancier job title---purely because you enjoy digging into a hard problem for years? If yes, you are the kind of person who tends to thrive. If the PhD is mainly a means to a job that does not actually require it, pause and reconsider.]
+#note-block[This #link("https://matt.might.net/articles/phd-school-in-pictures/")[series of pictures] from #link("https://matt.might.net")[Matt Might] illustrates what a PhD means.]
 
-#remark-block[None of this is meant to discourage you. Most readers of this book who are excited about research _should_ apply (@chap:should). The point is simply that a PhD is a particular kind of training for a particular kind of career, and it is worth being honest with yourself about whether that is what you want _before_ you spend a year on applications.]
+
+None of this is meant to scare you. The point is simply that a PhD is a particular kind of training for a particular kind of career, and it is worth being honest with yourself about whether that is what you want _before_ you spend a year on applications.
+
+
+#tip-block[A useful test: would you still want to do a PhD if it did _not_ lead to a higher salary or a fancier job title---purely because you enjoy digging into a hard problem for years? Would you still want to spend 5--7 years on a PhD if if it does not improve your immigration status or make you more employable?
+
+If yes, you are the kind of person who tends to thrive. If the PhD is mainly a means to a job that does not actually require it, pause and reconsider]
+
+
 
 == What's a PhD in CS? <sec:phd-in-cs>
 //\sectioninfo{A PhD in CS is a \textbf{research} degree that transforms you into a researcher in a specific area of CS.
 // You will become an expert in a particular topic and know more about it than anyone else in the world (in many cases even your advisor).}
 
-A PhD in CS is a #highlight[research degree]. Unlike undergraduate or even Master's programs (@chap:ms), which focus on breadth of knowledge through coursework, a PhD is about _depth_ and pushing the boundary of a specific area within a CS fields, such as software verification within the field of Programming Languages or Formal Methods (@sec:fields-and-areas). You will become an expert in your area of research and contribute something new to the field that has never been done before. 
+A PhD in CS is a #highlight[research degree] in Computer Science. Unlike undergraduate or even Master's programs (@chap:ms), which focus on breadth of knowledge through coursework, it is about _depth_ and pushing the boundary of a specific area within a CS fields, such as software verification within the field of Programming Languages or Formal Methods (@sec:fields-and-areas). You will become an expert in your area of research and contribute something new to the field that has never been done before. 
 
 
-#note-block[This #link("https://matt.might.net/articles/phd-school-in-pictures/")[series of pictures] from #link("https://matt.might.net")[Matt Might] illustrates what a PhD means.]
 
 Career-wise, a CS PhD prepares you for jobs that require deep technical expertise and the ability to do independent research. Many graduates become professors or academic researchers while others pursue positions in industry research labs, advanced engineering teams, or technical leadership positions. The degree also opens doors to national labs, government agencies, and startups, where the ability to solve unknown and complex problems is necessary.
 
-#note-block[#drafttag In CS, _most_ PhD graduates go to industry, not academia. In the #link("https://cra.org/crn/2025/06/cra-update-new-cra-taulbee-survey-findings-show-record-doctoral-production-rising-enrollment-and-shifting-undergraduate-trends/")[2024 CRA Taulbee Survey], about *54% of new CS PhDs took industry positions* in North America versus about *39% who took academic jobs* (the rest went to government, other sectors, or were still searching). These numbers swing year to year---industry was 57.5% the year before---so don't read too much into the exact figures, but the broad picture is steady: a CS PhD is valued highly in _both_ industry and academia (@sec:worth-it).]
+#note-block[In CS, _most_ PhD graduates go to industry, not academia. In the #link("https://cra.org/crn/2025/06/cra-update-new-cra-taulbee-survey-findings-show-record-doctoral-production-rising-enrollment-and-shifting-undergraduate-trends/")[2024 CRA Taulbee Survey], about *54% of new CS PhDs took industry positions* in North America versus about *39% who took academic jobs* (the rest went to government, other sectors, or were still searching). These numbers swing year to year---industry was 57.5% the year before---so don't read too much into the exact figures, but the broad picture is steady: a CS PhD is valued highly in _both_ industry and academia (@sec:worth-it).]
 
 #figure(
   statbar((
@@ -338,10 +347,10 @@ Career-wise, a CS PhD prepares you for jobs that require deep technical expertis
     ([Academia], 39, rgb("#2E8B7F")),
     ([Other / searching], 7, rgb("#A6A6A6")),
   )),
-  caption: [#drafttag Where new CS PhDs went in North America (2023--24). Most go to industry, but academia remains strong. Source: #link("https://cra.org/crn/2025/06/cra-update-new-cra-taulbee-survey-findings-show-record-doctoral-production-rising-enrollment-and-shifting-undergraduate-trends/")[CRA Taulbee Survey 2024].],
+  caption: [#drafttag Where new CS PhDs went in North America (2023--24). Most go to industry, but academia remains strong (#link("https://cra.org/crn/2025/06/cra-update-new-cra-taulbee-survey-findings-show-record-doctoral-production-rising-enrollment-and-shifting-undergraduate-trends/")[CRA Taulbee Survey 2024]).],
 ) <fig:phd-destinations>
 
-#remark-block[A PhD is not just a degree, it is a *journey* that transforms you into a researcher. You will learn how to think critically, solve problems, deal with adversity, and work independently. You will also learn how to write and "sell" your work, collaborate with others, and effectively communicate your ideas. In the end, you will have a deep understanding of your chosen field and become an expert in your area of research. In fact, you will know about your research topic more than *anyone* else in the world, including, in many cases, your advisor! This is a scary thought, but it is also exciting and rewarding.]
+#remark-block[A PhD in CS is not just a degree, it is a *journey* that transforms you into a researcher. You will learn how to think critically, solve problems, deal with adversity, and work independently. You will also learn how to write and "sell" your work, collaborate with others, and effectively communicate your ideas. In the end, you will have a deep understanding of your chosen field and become an expert in your area of research. In fact, you will know about your research topic more than *anyone* else in the world, including, in many cases, your advisor! This is a scary thought, but it is also exciting and rewarding.]
 
 
 === CS Fields and Areas <sec:fields-and-areas>
@@ -352,7 +361,7 @@ CS is a broad academic discipline with many specialized areas of research. Under
 
 #figure(
   image("files/xkcd_purity.png", width: 75%),
-  caption: [#drafttag Disciplines, lightheartedly "arranged by purity." CS sits close to math on this spectrum. Source: #link("https://xkcd.com/435/")[xkcd 435], #link("https://creativecommons.org/licenses/by-nc/2.5/")[CC BY-NC 2.5].],
+  caption: [Disciplines "arranged by purity." CS sits close to math on this spectrum. Source: #link("https://xkcd.com/435/")[xkcd 435], #link("https://creativecommons.org/licenses/by-nc/2.5/")[CC BY-NC 2.5].],
 ) <fig:purity>
 
 #definition[STEM][#gls("STEM") collectively refers to the fields of Science, Technology, Engineering, and Mathematics: 
@@ -2365,7 +2374,7 @@ Professors with these titles are often tenure-line faculty, and therefore can ad
 
 #figure(
   image("files/c8.png", width: 55%),
-  caption: [#drafttag Life before vs. after tenure: an un-tenured (#gls("tenure-track")) professor is under intense pressure to produce, while a tenured one has far more freedom. This matters when choosing an advisor (@sec:tenure-vs-tenure-track). Source: #link("https://phdcomics.com")[PhD Comics] (© Jorge Cham).],
+  caption: [Life before vs. after tenure: an un-tenured (#gls("tenure-track")) professor is under intense pressure to produce, while a tenured one has far more freedom. This matters when choosing an advisor (@sec:tenure-vs-tenure-track). Source: #link("https://phdcomics.com")[PhD Comics] (© Jorge Cham).],
 ) <fig:tenure-comic>
 
 Now that you know a bit about tenured and tenure-track faculty (@sec:faculty-types), which one should you choose as your advisor? How do you know if one would fit you better than the other?
@@ -2624,7 +2633,7 @@ I have spent much of this chapter on how to _find_ and _attract_ an advisor (@se
 // % % \end{center}
 #figure(
   image("files/visa.pdf", width: 100%),
-  caption: [#drafttag An example of an #gls("F-1") student visa (sensitive details redacted).],
+  caption: [#gls("F-1") student visa process.  Source: #link("https://phdcomics.com")[PhD Comics] (© Jorge Cham).],
 ) <fig:visa>
 
 As defined in @chap:glossary, international students are those who would need a visa to study in the US.  In most cases, the #gls("F-1", first:true) is the main visa needed to study full-time at an accredited institution.  Here are some key points about F-1:
