@@ -347,7 +347,7 @@ Career-wise, a CS PhD prepares you for jobs that require deep technical expertis
     ([Academia], 39, rgb("#2E8B7F")),
     ([Other / searching], 7, rgb("#A6A6A6")),
   )),
-  caption: [#drafttag Where new CS PhDs went in North America (2023--24). Most go to industry, but academia remains strong (#link("https://cra.org/crn/2025/06/cra-update-new-cra-taulbee-survey-findings-show-record-doctoral-production-rising-enrollment-and-shifting-undergraduate-trends/")[CRA Taulbee Survey 2024]).],
+  caption: [Where new CS PhDs went in North America (2023--24). Most go to industry, but academia remains strong (#link("https://cra.org/crn/2025/06/cra-update-new-cra-taulbee-survey-findings-show-record-doctoral-production-rising-enrollment-and-shifting-undergraduate-trends/")[CRA Taulbee Survey 2024]).],
 ) <fig:phd-destinations>
 
 #remark-block[A PhD in CS is not just a degree, it is a *journey* that transforms you into a researcher. You will learn how to think critically, solve problems, deal with adversity, and work independently. You will also learn how to write and "sell" your work, collaborate with others, and effectively communicate your ideas. In the end, you will have a deep understanding of your chosen field and become an expert in your area of research. In fact, you will know about your research topic more than *anyone* else in the world, including, in many cases, your advisor! This is a scary thought, but it is also exciting and rewarding.]
@@ -422,7 +422,7 @@ For example, my own #link("https://roars.dev")[research profile] can be structur
 
 Typically it takes 5--7 years for a CS PhD in the US. This is usually longer compared to other countries (@sec:non-us-differences), which might require having an MS (@sec:phd-vs-ms).
 
-#note-block[#drafttag This matches national data: an analysis of the #link("https://ncses.nsf.gov/surveys/earned-doctorates/2024")[NSF Survey of Earned Doctorates] found a #link("https://cra.org/crn/2014/04/time_to_degree_in_computing/")[median time-to-degree in computing of about *7.6 years* from the start of graduate school]. In other words, plan for this to be a _long_ commitment (@sec:worth-it)---closer to the upper end of the 5--7 year range than the lower end, especially if you include time spent on internships and a master's along the way.]
+#note-block[The #link("https://ncses.nsf.gov/surveys/earned-doctorates/2024")[NSF Survey of Earned Doctorates] found a #link("https://cra.org/crn/2014/04/time_to_degree_in_computing/")[median time-to-degree in computing of about *7.6 years* from the start of graduate school]. In other words, plan for this to be a _long_ commitment (@sec:worth-it)---closer to the upper end of the 5--7 year range than the lower end, especially if you include time spent on internships and a master's along the way.]
 
 #figure(
   image("files/c4a.png", width: 60%),
@@ -433,7 +433,7 @@ The first two years are typically spent taking coursework (somewhat equivalent t
 
 #figure(
   image("files/xkcd_thesis_defense.png", width: 42%),
-  caption: [#drafttag The light at the end of the tunnel: the #gls("defense"), where you present and defend your #gls("dissertation"). Source: #link("https://xkcd.com/1403/")[xkcd 1403], #link("https://creativecommons.org/licenses/by-nc/2.5/")[CC BY-NC 2.5].],
+  caption: [The light at the end of the tunnel: the #gls("defense"), where you present and defend your #gls("dissertation"). Source: #link("https://xkcd.com/1403/")[xkcd 1403], #link("https://creativecommons.org/licenses/by-nc/2.5/")[CC BY-NC 2.5].],
 ) <fig:thesis-defense>
 
 Within these 5--7 years, CS PhD students sometimes take a "leave of absence" for 1--2 semesters or for a summer to do internships at companies and research labs.
@@ -741,8 +741,8 @@ The committee will look at various factors, but the most important ones are #gls
 #simpsons[To whom it may concern… D'oh!]
 
 #figure(
-  image("files/c6.png", width: 60%),
-  caption: [#drafttag A #gls("LOR") from a professor who barely remembers you is generic and weak (@sec:generic-letters)---ask people who know your research well. Source: #link("https://phdcomics.com")[PhD Comics] (© Jorge Cham).],
+  image("files/c6.png", width: 70%),
+  caption: [A #gls("LOR") from a professor who barely remembers you is generic and weak (@sec:generic-letters)---ask people who know your research well. Source: #link("https://phdcomics.com")[PhD Comics] (© Jorge Cham).],
 ) <fig:lor-comic>
 
 #gls("LOR",plural:true) are crucial for PhD because (i) they paint a picture of your research ability and potential from someone who has worked closely with you, and (ii) adcom trust the opinions of your LOR writers, who are usually faculty members or researchers who have the expertise and reputation to evaluate your research ability (@sec:LOR-writers). Most PhD programs require at least _two_ LORs. 
@@ -1072,7 +1072,7 @@ So do talk about them in your SOP (@chap:sop) and have your writers mention them
 
 #figure(
   image("files/c2.png", width: 90%),
-  caption: [#drafttag A tongue-in-cheek example of what _not_ to write in your #gls("SOP") (@sec:kiss-of-death-sop): vague enthusiasm, partying, and promising a Nobel Prize. Source: #link("https://phdcomics.com")[PhD Comics] (© Jorge Cham).],
+  caption: [What _not_ to write in your #gls("SOP") (@sec:kiss-of-death-sop). Source: #link("https://phdcomics.com")[PhD Comics] (© Jorge Cham).],
 ) <fig:sop-comic>
 
 While you might not have control over LORs (@chap:LOR) or where you go to school (@chap:your-school), you do have control over your #gls("SOP",first:true) or personal statement#footnote[Some schools separate these documents and ask you to write both: SOP, which focuses on research experiences, and personal statement, which covers more personal aspects, e.g., why PhD, challenges, etc.]. A well-written SOP also demonstrates that you can communicate effectively, which is crucial in research and important for GTA funding (@chap:funding). Many SOP samples for CS are #link("https://cs-sop.org/")[available here].
@@ -1123,15 +1123,7 @@ Have your SOP reviewed by your LOR writers (@sec:help-your-LOR-writers) and prof
 
 CS academics like using LaTeX (common way to write our papers and other documents), so write your SOP using LaTeX (with Times or default font, 11pt, and 1-inch margin as described in @chap:writing-latex).
 
-=== Using AI <sec:using-ai>
 
-As AI and LLMs become more popular, many students wonder if they could use AI chatbots such as ChatGPT and Claude to help with their statements and, especially, if the university or adcom reviewers would check and penalize them for doing so.
-
-Personally I _do not_ check your statements for AI contents. First, I do not have the time to do that. It is much easier for me to just read the statement and see if it makes sense and stands out (@sec:ievaluate). Hint: AI-generated content reads very strangely and faculty is just too experienced in reading essays and SOPs from students to not notice it.
-
-Second, AI-checking technology is very unreliable and inconsistent. For example, a checker might claim that 80% of an essay is AI-generated while another says it is 0%.
-
-Finally, I think it is _fine_ to use AI to help your writing, e.g., the _"proofread"_ feature in Apple's `Writing Tools` is quite useful for fixing writing issues or finding better terminologies or phrases. This can help international students who might struggle with writing English and are not familiar with the academic writing style (you see how many _"thus"_ used in this book?). Thus, it's OK to use AI to help you but you should be the main part of the writing loop, i.e., you should be the one who writes the content and use AI to help you improve and refine it.
 
 === Diversity Statement <sec:diversity-statement>
 
@@ -1224,16 +1216,14 @@ Should you explain bad grades in relevant courses in your SOP? If you have just 
 
 === GREs Are Optional and Do Not Matter for PhD Admissions <sec:gre>
 
-While a few schools still require taking the #link("https://www.ets.org/gre")[GRE] exam (e.g., UCF), most good CS PhD programs in the US #highlight[do not require it]. The reason is that GRE scores do not correlate well with research ability @chap:research-experience, which is the most important factor for PhD admission. Note that many faculty members themselves did not take the GRE or had bad scores.
+While a few schools still require taking the #link("https://www.ets.org/gre")[GRE] exam (e.g., UCF), most good CS PhD programs in the US #highlight[do not require it]---the #link("https://www.science.org/content/article/gre-exit-gains-momentum-ph-d-programs-drop-exam-requirement-amid-pandemic")["GRExit"] trend. The reason is that GRE scores do not correlate well with research ability (@chap:research-experience), which is the most important factor for PhD admission. Note that many faculty members themselves did not take the GRE or had bad scores.
 
-#note-block[#drafttag This is part of a broad, well-documented trend often called #link("https://www.science.org/content/article/gre-exit-gains-momentum-ph-d-programs-drop-exam-requirement-amid-pandemic")["GRExit"]: over the past several years a large share of CS PhD programs have made the GRE optional or dropped it entirely. Some now refuse to even look at scores---for example, the #link("https://cse.umn.edu/cs/news/big-news-cs-graduate-programs-no-longer-require-gre")[University of Minnesota CS program no longer requires _or accepts_ the GRE], and programs like UCLA, UNC, and Cornell CS have gone test-optional. So when you read old advice insisting the GRE is mandatory, know that the field has moved on.]
-
-Thus, if you have bad GRE scores or haven't taken the GRE, then don't waste time (re)taking it. Being optional really means optional, and not taking it will not hurt your application.
+Thus, if you have bad GRE scores or haven't taken the GRE, then don't _waste time_ (re)taking it. Being optional really means optional, and not taking it will not hurt your application.
 However, if you took it and have really good scores then it might be worth it to include (and perhaps talk about) them in your application, but don't expect them to make much difference. But if your scores are bad, then you should not include them in your application, which can be a #alert[red flag].
 
 #caution-block[
   I often see students asking about GRE requirements on internet forums or Facebook groups, only to get completely incorrect answers. Some people insist that you "need" to take the GRE or be in specific high range to get a chance.
-  Some of these people are from other disciplines that do require GREs, not CS (but still want to show off their knowledge of CS). Ignore these! GREs are *neither required nor valuable* for CS PhD admissions today. Maybe 20 years ago (e.g., when I applied in 2007), but not today---the GRE requirement has been obsolete for a long time now, e.g., many CS faculty---especially younger ones---have never taken the GRE themselves.
+  Some of these people are from other non-CS disciplines that do require GREs. Ignore these! GREs are *neither required nor valuable* for CS PhD admissions today. Maybe 20 years ago (e.g., when I applied in 2007), but not today---the GRE requirement has been obsolete for a long time now, e.g., many CS faculty---especially younger ones---have never taken the GRE themselves.
 
   Also be careful that some people are trying to talk you into paying for (their) GRE prep or PhD admission "consulting" services. Don't fall for these and waste your time. There are far more important things than the GRE that you should focus on for CS PhD admission such as your LORs (@chap:LOR) and research experiences (@chap:research-experience).
 ]
@@ -1301,26 +1291,32 @@ Having popular projects or active contributions can help you stand out (@sec:sta
   Many students include LinkedIn (or Facebook and X/Twitter) profiles in their applications. While these might be popular when applying for jobs, they might not be very useful for PhD application evaluation. Adcom members might not familiar with LinkedIn (and might not want to go to a page that requires us to have an account and login), so it is better to have a something like personal and project websites, which are far more common and easier to access.
 ]
 
-== Using AI and LLMs in Your Application <chap:using-ai-app>
+== Using AI and LLMs in Your Application <sec:using-ai>
 
-#draftbanner(note: "This expands the short note in @sec:using-ai. Make sure it stays consistent with that section---maybe merge them, or keep that one short and point here. Tone should be 'use it as a tool, don't let it write for you. Analogy: AI is like your ref writer: it can help you polish your writing, give you suggestions, etc but it cannot write your story and invent experiences for you. Don't let it take away your own voice, which makes you unique and stand out'")
 
-By the time you read this, tools like ChatGPT, Claude, and Gemini are part of how almost everyone writes. It would be naive to tell you not to use them, and frankly I use them myself. The real question is _how_ to use them without hurting your application. The short version: #highlight[use AI as an editor and brainstorming partner, not as a ghostwriter].
+As AI and LLMs become more popular, many students wonder if they could use AI chatbots such as ChatGPT and Claude to help with their application materials, especially statements. Of course, they worry if the university or adcom reviewers would check and penalize them for doing so.
 
-#paragraph[Good uses][AI is genuinely helpful for:
-- *Fixing grammar and clarity*, especially for non-native English speakers (@sec:english-tests). This levels the playing field and is completely fine.
-- *Brainstorming structure*---e.g., asking it how to organize an SOP (@chap:sop), or to critique a draft you already wrote.
-- *Tightening prose*---cutting a 900-word SOP down to 700 words without losing meaning.
-- *Catching mistakes*---typos, inconsistent tense, awkward transitions.
+Nowdays it would be naive to tell you or student to ignore AI (and frankly I use them myself extensively). So the question is not whether you can use AI, but how to use it properly.
+
+// I think it is _fine_ to use AI to help your writing, e.g., the _"proofread"_ feature in Apple's `Writing Tools` is quite useful for fixing writing issues or finding better terminologies or phrases. 
+// This can help international students who might struggle with writing English and are not familiar with the academic writing style (you see how many _"thus"_ used in this book?). 
+// In addition, asking ChatGPT or Claude to help you brainstorm ideas, organize your SOP, or edit/critique your draft is also fine. 
+//Thus, it's OK to use AI to help you but you should be the main part of the writing loop, i.e., you should be the one who writes the content and use AI to help you improve and refine it.
+
+
+#paragraph[How to Use AI][The key is to #highlight[use AI as an editor and brainstorming partner, not as a relacement of your own thinking]. You should write the first draft yourself, in your own words, with your own examples. Then use AI to improve that draft. If you start from a blank page and ask AI to "write me an SOP," you have already lost the one thing that makes an application standout and memorable---*you*.]
+
+
+#paragraph[Where it goes wrong][The problem is not AI itself; it is _outsourcing the thinking_. Adcom members (@sec:adcom) read hundreds of essays, and AI-written SOPs have a recognizable flavor: generic enthusiasm, vague claims, flowery phrasing (_"I have always been deeply passionate about the ever-evolving landscape of..."_), and no _specific detail_ about _your_ research and story. A SOP like that is a kiss of death (@sec:kiss-of-death-sop) because it is instantly forgettable.]
+
+//The thing that makes an SOP work---a concrete story about a project you struggled with, a specific reason you want to work with Prof. X---is exactly the thing AI cannot invent for you. If you let it, you will produce a polished essay that is instantly forgettable.]
+
+
+#paragraph[Checking for AI content][Some students worry that adcom reviewers will check their SOPs for AI content. 
+
+Personally I _do not_ check your statements for AI contents. First, I do not have the time to do that. It is much easier for me to just read the statement and see if it makes sense and stands out (@sec:ievaluate). Hint: AI-generated content reads very strangely and faculty is just too experienced in reading essays and SOPs from students to not notice it.  In addition, AI-checking technology is very unreliable and inconsistent. For example, a checker might claim that 80% of an essay is AI-generated while another says it is 0%. So we cannot rely on these tools to determine if a statement is AI-generated or not. Finally, as mentioned, I think it is fine to use AI to help you improve your writing, so I do not see a reason to check or penalize students for using AI to help them write their SOPs.
 ]
 
-#paragraph[Where it goes wrong][The problem is not AI itself; it is _outsourcing the thinking_. Adcom members (@sec:adcom) read hundreds of essays, and AI-written SOPs have a recognizable flavor: generic enthusiasm, vague claims, flowery phrasing (_"I have always been deeply passionate about the ever-evolving landscape of..."_), and no specific detail about _your_ research or _their_ faculty. A SOP like that is a #alert[kiss of death] (@sec:kiss-of-death-sop) not because a machine wrote it, but because it says nothing only you could say.
-
-The thing that makes an SOP work---a concrete story about a project you struggled with, a specific reason you want to work with Prof. X---is exactly the thing AI cannot invent for you. If you let it, you will produce a polished essay that is instantly forgettable.]
-
-#caution-block[*Never* let AI (or anyone else) write your letters of recommendation. As I explain in @sec:self-letters, a letter that reads like the student wrote it is a serious #alert[red flag] that damages both you and your writer's credibility. The same goes for fabricating experiences or publications (@sec:publications)---this is a form of academic dishonesty (@chap:cultural) that can get an offer rescinded.]
-
-#tip-block[A good rule of thumb: write the _first_ draft yourself, in your own words, with your own examples. Then use AI to improve _that_. If you start from a blank page and ask AI to "write me an SOP," you have already lost the one thing that makes an application memorable---you.]
 
 #pagebreak()
 = After You Apply <part:after-apply>
@@ -1339,7 +1335,7 @@ After you submit your applications, the waiting game begins! For many students, 
 
 #figure(
   image("files/bingo.png", width: 50%),
-  caption: [#drafttag "Grad-admissions bingo"---the anxious questions applicants obsess over while waiting (a late #gls("LOR"), a low GPA, "am I too old?", rolling interview invites). This book answers most of them.],
+  caption: ["Grad-admissions bingo"---the anxious questions applicants obsess over while waiting (a late #gls("LOR"), a low GPA, "am I too old?", rolling interview invites, using AI).],
 ) <fig:bingo>
 
 === Interviews <sec:interviews>
@@ -1565,7 +1561,7 @@ Finally, keep in mind that these computers and equipment would be university pro
 
 === Making the Most of Visit Days and Comparing Offers <sec:visit-days>
 
-#draftbanner(note: "Maybe add the GMU VOH link/photo again here, or cross-ref it. Could also add a small comparison-table figure showing how I'd weigh advisor vs money vs location.")
+//#draftbanner(note: "Maybe add the GMU VOH link/photo again here, or cross-ref it. Could also add a small comparison-table figure showing how I'd weigh advisor vs money vs location.")
 
 Congratulations---getting multiple offers is a wonderful problem to have. Now you have to _choose_, and this is one of the most consequential decisions of your PhD. Unlike the application stage, where the school evaluates you, this stage is the reverse: #highlight[you are evaluating them]. Most programs host an _open house_ or _visit day_ (in person or virtual) precisely to help you decide, and you should take full advantage of it.
 
@@ -2565,7 +2561,7 @@ But there's a good chance that we would respond to well-written emails (@sec:con
 
 === Vetting a Potential Advisor and Lab (Red Flags) <sec:vetting-advisor>
 
-#draftbanner(note: "This overlaps a bit with my advising.pdf---cross-ref it. Be careful with tone: I don't want to badmouth colleagues, just give honest guidance on doing due diligence. Maybe ask Xiaokuan/Deepak for a remark-block here too.")
+#draftbanner(note: "This overlaps a bit with my advising.pdf---cross-ref it. Be careful with tone: I don't want to badmouth colleagues, just give honest guidance on doing due diligence. Maybe ask others for a remark-block here too.")
 
 I have spent much of this chapter on how to _find_ and _attract_ an advisor (@sec:finding-advisor, @sec:contact). But choosing an advisor is a two-way decision, and your advisor is the single biggest factor in whether your PhD is productive and bearable (@sec:visit-days). A famous advisor or a top-ranked school (@chap:rankings) does not protect you from a bad _fit_. So before you commit---ideally during visit days (@sec:visit-days), but even while building your list---do some due diligence.
 
@@ -3541,7 +3537,7 @@ This is a quick-reference list of the questions I am asked most often. Each answ
 
 #paragraph[Does ranking matter?][As a rough filter, yes; as a decision rule, no (@chap:rankings). Advisor fit (@chap:choosing-advisor) matters far more than a school's name.]
 
-#paragraph[Can I use AI to write my application?][Use it to edit and polish, not to write for you (@chap:using-ai-app). An obviously AI-written SOP is forgettable and can be a red flag.]
+#paragraph[Can I use AI to write my application?][Use it to edit and polish, not to write for you (@sec:using-ai). An obviously AI-written SOP is forgettable and can be a #alert[red flag].]
 
 #paragraph[What if I get rejected everywhere?][It is common, and not the end (@chap:not-accepted). Figure out why (@sec:why-rejected), strengthen your profile, and try again (@sec:try-again).]
 
@@ -3676,7 +3672,7 @@ Finally, thanks to my wife and kids for always supporting me and putting up with
 
 #draftbanner(note: "These are starter templates, NOT scripts to copy verbatim---add a strong warning that copying these defeats the purpose. Consider replacing the SOP skeleton with a real (anonymized) example. The LOR template already lives on Overleaf (@sec:my-LOR-perspective)---link it.")
 
-This appendix collects concrete starting points for the materials and emails discussed throughout the book. #alert[A warning before you use them:] these are _skeletons_, not scripts. The entire point of an application is to sound like _you_ (@chap:using-ai-app). If you copy these word-for-word, you will produce exactly the generic, forgettable material that adcoms (@sec:adcom) reject. Use them to see the _structure_, then fill them with your own specifics.
+This appendix collects concrete starting points for the materials and emails discussed throughout the book. #alert[A warning before you use them:] these are _skeletons_, not scripts. The entire point of an application is to sound like _you_ (@sec:using-ai). If you copy these word-for-word, you will produce exactly the generic, forgettable material that adcoms (@sec:adcom) reject. Use them to see the _structure_, then fill them with your own specifics.
 
 == Email to a Potential Advisor <sec:tmpl-contact-email>
 
@@ -3775,7 +3771,7 @@ A SOP is roughly 1--2 pages. There is no single correct structure, but a reliabl
    Often better placed in a diversity/additional-info statement instead.
 ```
 
-#caution-block[Avoid the SOP "kiss of death" (@sec:kiss-of-death-sop): vague passion, listing coursework, flattery, generic statements that could be sent to any school, and obvious AI boilerplate (@chap:using-ai-app). The single best test of a SOP paragraph is: _could anyone else have written this exact sentence?_ If yes, rewrite it.]
+#caution-block[Avoid the SOP "kiss of death" (@sec:kiss-of-death-sop): vague passion, listing coursework, flattery, generic statements that could be sent to any school, and obvious AI boilerplate (@sec:using-ai). The single best test of a SOP paragraph is: _could anyone else have written this exact sentence?_ If yes, rewrite it.]
 
 #pagebreak()
 = Glossary <chap:glossary>
