@@ -2659,11 +2659,6 @@ For children:
 F-2 visa holders must leave the US if the primary F-1 student visa holder loses status or completes their program.
 
 
-
-You can receive your F-1 visa up to 365 days before your program's start date. Also, you can travel to the U.S. within 30 days before the program start date listed on your I-20 form.
-
-F-1 and F-2 visas are subcategories of nonimmigrant visas (NIV).
-
 \
 \
 == Documents you need for the visa interview
@@ -2901,7 +2896,7 @@ When your visa is issued, check the "Entries" field on your visa. If it contains
 \
 \
 === Timeframe of your first entry to the U.S. with the F-1 visa
-Any date between the issue date and the expiration date listed on your visa is valid for travel to the U.S. However, your I-20 form shows the earliest admission date, which is one month before the start date of your program. Therefore, you can only enter the U.S. after that date with the F-1 visa. If you want your first entry into the U.S. on an F-1 visa to be after your program's start date, you need to ask your university for late-arrival permission. Without a late-arrival arrangement, the Customs and Border Protection officer at the port of entry may deny your admission.
+You can receive your F-1 visa up to 365 days before your program's start date. Any date between the issue date and the expiration date listed on your visa is valid for travel to the U.S. However, your I-20 form shows the earliest admission date, which is one month before the start date of your program. Therefore, you can only enter the U.S. after that date with the F-1 visa. If you want your first entry into the U.S. on an F-1 visa to be after your program's start date, you need to ask your university for late-arrival permission. Without a late-arrival arrangement, the Customs and Border Protection officer at the port of entry may deny your admission.
 
 *Note:* Before you travel to the U.S., you might want to check the #link("https://www.cbp.gov/travel/us-citizens/know-before-you-go/prohibited-and-restricted-items")[
   #text(fill: blue)[U.S. Customs and Border Protection (CBP) website]] to find out which items you can bring and to make sure they are not prohibited or restricted.
