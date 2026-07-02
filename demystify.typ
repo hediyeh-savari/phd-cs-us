@@ -80,7 +80,7 @@
   width: 100%,
   stroke: (paint: rgb("#e0a800"), thickness: 1pt),
 )[
-  #text(fill: rgb("#856404"), weight: "bold", size: 0.9em)[🚧 DRAFT --- newly added section, pending review and editing by the author.]
+  #text(fill: rgb("#856404"), weight: "bold", size: 0.9em)[🚧 DRAFT.]
   #if note != "" {
     linebreak()
     text(fill: rgb("#856404"), size: 0.85em, style: "italic")[Note to self: #note]
@@ -295,7 +295,7 @@ A CS PhD is a #highlight[5--6 year commitment] (@sec:time) that mainly trains yo
 
 .
 
-#caution-block[It is also worth knowing that a PhD is _hard_, and not everyone finishes. Across US doctoral programs, roughly #link("https://www.statisticssolutions.com/almost-50-of-all-doctoral-students-dont-graduate/")[*half of students do not complete the degree*], and even the #link("https://cgsnet.org/project/minority-attrition-and-completion-in-stem-doctoral-programs")[10-year completion rate hovers around 55--65% in STEM fields]. I mention this not to discourage you, but to be honest about the challenges. The good news is that the biggest predictor of finishing is not raw talent but persistence and a good advisor (@chap:choosing-advisor, @sec:vetting-advisor).]
+#caution-block[It is also worth knowing that a PhD is _hard_, and not everyone finishes. Across US doctoral programs, roughly #link("https://www.statisticssolutions.com/almost-50-of-all-doctoral-students-dont-graduate/")[*half of students do not complete the degree*], and even the #link("https://cgsnet.org/project/minority-attrition-and-completion-in-stem-doctoral-programs")[10-year completion rate hovers around 55--65% in STEM fields]. I mention this not to discourage you, but to be honest about the challenges. The good news is that the biggest predictor of finishing is not raw talent but _grit_ and a _good_ advisor (@chap:choosing-advisor).]
 
 #figure(
   statbar((
@@ -335,9 +335,9 @@ If yes, you are the kind of person who tends to thrive. If the PhD is mainly a m
 
 A PhD in CS is a #highlight[research degree] in Computer Science. Unlike undergraduate or even Master's programs (@chap:ms), which focus on breadth of knowledge through coursework, it is about _depth_ and pushing the boundary of a specific area within a CS fields, such as software verification within the field of Programming Languages or Formal Methods (@sec:fields-and-areas). You will become an expert in your area of research and contribute something new to the field that has never been done before. 
 
+Job-wise, a CS PhD is the standard credential for positions where doing research _is_ the job. In academia, it is a hard requirement for tenure-track professorships (@sec:faculty-types) and most postdoc and research faculty roles. In industry, it is expected (and often required) for titles like _research scientist_ or _applied scientist_ at places such as Google DeepMind, Microsoft Research, and Meta AI, and it is highly valued for researcher and senior R&D roles. It also qualifies you for research staff positions at national labs (e.g., Sandia, Oak Ridge) and government agencies, (e.g., NSF, DOE, Defense Research) and for founding or early technical roles at deep-tech startups. Note that for _ordinary software engineering_ jobs, however, a PhD is rarely required (though Google and Amazon often hire PhDs as software engineers)---the degree pays off specifically when the job involves open-ended problems no one yet knows how to solve.
 
 
-Career-wise, a CS PhD prepares you for jobs that require deep technical expertise and the ability to do independent research. Many graduates become professors or academic researchers while others pursue positions in industry research labs, advanced engineering teams, or technical leadership positions. The degree also opens doors to national labs, government agencies, and startups, where the ability to solve unknown and complex problems is necessary.
 
 #note-block[In CS, _most_ PhD graduates go to industry, not academia. In the #link("https://cra.org/crn/2025/06/cra-update-new-cra-taulbee-survey-findings-show-record-doctoral-production-rising-enrollment-and-shifting-undergraduate-trends/")[2024 CRA Taulbee Survey], about *54% of new CS PhDs took industry positions* in North America versus about *39% who took academic jobs* (the rest went to government, other sectors, or were still searching). These numbers swing year to year---industry was 57.5% the year before---so don't read too much into the exact figures, but the broad picture is steady: a CS PhD is valued highly in _both_ industry and academia (@sec:worth-it).]
 
@@ -700,7 +700,7 @@ The CS PhD application process spans almost a full year, from the time you start
     inset: 6pt,
     stroke: 0.5pt + gray,
     table.header([*When*], [*What to do*]),
-    [*Jan--Apr* (year before)], [Decide whether a PhD is right for you (@sec:worth-it). Start getting research experience (@chap:research-experience, @chap:research-opportunities). Identify fields and areas you like (@sec:fields-and-areas).],
+    [*Jan--Apr* (year before)], [Decide whether a PhD is right for you (@sec:worth-it). Start getting research experience, especially for the coming summer (@chap:research-experience, @chap:research-opportunities). Identify fields and areas you like (@sec:fields-and-areas).],
     [*May--Jul*], [Build a long list of schools and potential advisors (@chap:choosing-school, @sec:finding-advisor). Take the English test if needed (@sec:english-tests)---it is valid for 2 years. Start a first draft of your SOP (@chap:sop).],
     [*Aug--Sep*], [Narrow your school list (#gls("reach-safety", first:true); a mix of reach / match / safety). Ask for letters of recommendation _early_ (@sec:asking-LOR). Email professors you are interested in, if appropriate (@sec:contact). Update your CV (@sec:cv) and personal website (@sec:personal-website).],
     [*Oct--Nov*], [Tailor your SOP per school (@chap:sop). Give your letter writers everything they need (@sec:help-your-LOR-writers). Fill out the online application portals. Request fee waivers where eligible (@sec:fee-waive).],
@@ -2559,37 +2559,36 @@ But there's a good chance that we would respond to well-written emails (@sec:con
 
 // %https://cs.brown.edu/degrees/doctoral/applications/helpful-resources-applying-computer-science-phd-programs/
 
-=== Vetting a Potential Advisor and Lab (Red Flags) <sec:vetting-advisor>
+// === Vetting a Potential Advisor and Lab (Red Flags) <sec:vetting-advisor>
 
-#draftbanner(note: "This overlaps a bit with my advising.pdf---cross-ref it. Be careful with tone: I don't want to badmouth colleagues, just give honest guidance on doing due diligence. Maybe ask others for a remark-block here too.")
+// #draftbanner(note: "This overlaps a bit with my advising.pdf---cross-ref it. Be careful with tone. Maybe ask others for a remark-block here too.")
 
-I have spent much of this chapter on how to _find_ and _attract_ an advisor (@sec:finding-advisor, @sec:contact). But choosing an advisor is a two-way decision, and your advisor is the single biggest factor in whether your PhD is productive and bearable (@sec:visit-days). A famous advisor or a top-ranked school (@chap:rankings) does not protect you from a bad _fit_. So before you commit---ideally during visit days (@sec:visit-days), but even while building your list---do some due diligence.
+// I have spent much of this chapter on how to _find_ and _attract_ an advisor (@sec:finding-advisor, @sec:contact). But choosing an advisor is a two-way decision, and your advisor is the single biggest factor in whether your PhD is productive and bearable (@sec:visit-days). A famous advisor or a top-ranked school (@chap:rankings) does not protect you from a bad _fit_. So before you commit---ideally during visit days (@sec:visit-days), but even while building your list---do some due diligence.
 
-#paragraph[Talk to current and former students][This is the most reliable signal, far more so than the advisor's own pitch. Current students know what the day-to-day is really like; former students (check the advisor's website for their "alumni" or "past students") know how it ended. If you can, ask them privately:
-- Would you choose this advisor again?
-- How hands-on or hands-off are they, and does that match what you need (@chap:choosing-advisor)?
-- How often do students publish, and how long do they take to graduate (@sec:time)?
-- Is funding stable (@chap:funding)?
-]
+// #paragraph[Talk to current and former students][This is the most reliable signal, far more so than the advisor's own pitch. Current students know what the day-to-day is really like; former students (check the advisor's website for their "alumni" or "past students") know how it ended. If you can, ask them privately:
+// - Would you choose this advisor again?
+// - How hands-on or hands-off are they, and does that match what you need (@chap:choosing-advisor)?
+// - How often do students publish, and how long do they take to graduate (@sec:time)?
+// - Is funding stable (@chap:funding)?
+// ]
 
-#paragraph[Look at the track record][Public information tells you a lot before you ever talk to anyone:
-- *Graduation and placement.* Does the advisor actually _graduate_ students, and where do they end up (faculty, industry research, elsewhere)? An advisor with no graduates yet is not necessarily bad---new faculty (@sec:tenure-vs-tenure-track) can be excellent and hungry---but it is something to weigh.
-- *Publication pattern.* Are students _first authors_ on papers in good venues (@sec:pubs-top-tier), or does the advisor's name dominate while students stay buried in the author list?
-- *Group size.* A very large group may mean little direct attention; a very small one may mean less peer support. Neither is wrong, but know what you are signing up for.
-]
+// #paragraph[Look at the track record][Public information tells you a lot before you ever talk to anyone:
+// - *Graduation and placement.* Does the advisor actually _graduate_ students, and where do they end up (faculty, industry research, elsewhere)? An advisor with no graduates yet is not necessarily bad---new faculty (@sec:tenure-vs-tenure-track) can be excellent and hungry---but it is something to weigh.
+// - *Publication pattern.* Are students _first authors_ on papers in good venues (@sec:pubs-top-tier), or does the advisor's name dominate while students stay buried in the author list?
+// - *Group size.* A very large group may mean little direct attention; a very small one may mean less peer support. Neither is wrong, but know what you are signing up for.
+// ]
 
-#paragraph[Warning signs][None of these is automatically disqualifying, but several together should give you pause:
-- Students consistently take far longer than the norm to graduate (@sec:time), or many leave without finishing.
-- You hear (carefully, between the lines) that the advisor is unavailable, takes credit, or is hard to work with.
-- Funding is precarious or the offer terms are vague (@sec:offer-letters)---always confirm funding in writing.
-- The advisor is on the verge of moving institutions, retiring, or going on long leave, with no plan for you.
-- During your own interactions, they are dismissive or evasive when you ask reasonable questions.
-]
+// #paragraph[Warning signs][None of these is automatically disqualifying, but several together should give you pause:
+// - Students consistently take far longer than the norm to graduate (@sec:time), or many leave without finishing.
+// - You hear (carefully, between the lines) that the advisor is unavailable, takes credit, or is hard to work with.
+// - Funding is precarious or the offer terms are vague (@sec:offer-letters)---always confirm funding in writing.
+// - The advisor is on the verge of moving institutions, retiring, or going on long leave, with no plan for you.
+// - During your own interactions, they are dismissive or evasive when you ask reasonable questions.
+// ]
 
-#tip-block[You can read more about what to look for in an advisor's _advising style_ in my #link("https://roars.dev/phd-cs-us/advising.pdf")[advising guide]. The key mindset shift: once you are admitted, _you_ are interviewing _them_ (@sec:visit-days). Asking thoughtful questions about advising, funding, and expectations does not make you look ungrateful---it makes you look like someone who takes the commitment seriously.]
+// #tip-block[You can read more about what to look for in an advisor's _advising style_ in my #link("https://roars.dev/phd-cs-us/advising.pdf")[advising guide]. The key mindset shift: once you are admitted, _you_ are interviewing _them_ (@sec:visit-days). Asking thoughtful questions about advising, funding, and expectations does not make you look ungrateful---it makes you look like someone who takes the commitment seriously.]
 
-#caution-block[Be diplomatic and discreet when asking around. The CS research community in any given area is small, and word travels. Frame questions as "what is it like to work with X?" rather than "is X a bad advisor?" You are gathering information, not collecting gossip.]
-
+// #caution-block[Be diplomatic and discreet when asking around. The CS research community in any given area is small, and word travels. Frame questions as "what is it like to work with X?" rather than "is X a bad advisor?" You are gathering information, not collecting gossip.]
 
 #pagebreak()
 
@@ -3670,7 +3669,7 @@ Finally, thanks to my wife and kids for always supporting me and putting up with
 #pagebreak()
 = Templates and Samples <chap:templates>
 
-#draftbanner(note: "These are starter templates, NOT scripts to copy verbatim---add a strong warning that copying these defeats the purpose. Consider replacing the SOP skeleton with a real (anonymized) example. The LOR template already lives on Overleaf (@sec:my-LOR-perspective)---link it.")
+#draftbanner()
 
 This appendix collects concrete starting points for the materials and emails discussed throughout the book. #alert[A warning before you use them:] these are _skeletons_, not scripts. The entire point of an application is to sound like _you_ (@sec:using-ai). If you copy these word-for-word, you will produce exactly the generic, forgettable material that adcoms (@sec:adcom) reject. Use them to see the _structure_, then fill them with your own specifics.
 
@@ -3719,7 +3718,7 @@ and felt you knew my <research ability / work> well.
 
 I completely understand if you are too busy or do not feel you can write a
 strong letter. If you are able to, I will send you everything you need:
-my CV, draft SOP, a short summary of what we worked on together, the list
+my CV, draft SOP, a short summary of what we worked on together and my achievements, the list
 of schools with deadlines, and the submission links.
 
 Thank you very much for considering this.
@@ -3739,7 +3738,7 @@ Once a writer agrees, send a single, well-organized message (or document) so the
 - A short reminder of our work together: project name, your role, what you
   did, the outcome, and any specific moments worth highlighting (a bug you
   found, an idea you proposed, how you handled a setback).
-- 2-3 points you'd love me to emphasize (e.g., independence, persistence).
+- 2-3 points you'd love me to emphasize (e.g., independence, persistence, other research experiences).
 - A table of schools: name, program, deadline, and submission link/method.
 - How letters are submitted (portal upload vs. email).
 ```
