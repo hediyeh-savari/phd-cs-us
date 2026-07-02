@@ -2884,7 +2884,7 @@ For more information about visa denial, visit the
 When your visa is issued and attached to your passport, you can see some personal details. The key ones are: entries, issue date, and expiration date.
 
 #figure(
-  image("visa stamp.jpg"),
+  image("visa-stamp.jpg", width: 70%),
   caption: [A U.S. visa stamp #link("https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/frequently-asked-questions/what-is-us-visa.html")[#text(fill: blue)[[Reference]]]]
 )
 \
