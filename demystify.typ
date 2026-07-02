@@ -2669,7 +2669,7 @@ You must attend an in-person visa interview at the consular section. In general,
 -	Visa appointment scheduling confirmation
 -	MRV fee payment confirmation
 -	Admission letter
--	Funding letter
+-	Funding letter (if applicable)
 -	Research plan
 -	Statement of purpose
 -	Applicant’s CV
@@ -2770,7 +2770,7 @@ the #link("https://www.ustraveldocs.com/")[
 You should print and bring your admission letter to the interview.
 \
 \
-=== Funding Letter
+=== Funding Letter (if applicable)
 You should print and bring your funding letter to the interview.
 \
 \
