@@ -2657,8 +2657,6 @@ For children:
 - *Education:* F-2 children can attend K-12 schools but cannot pursue higher education full-time.
 - *Work Restrictions:* Like F-2 spouses, children are not allowed to work under any circumstances.
 F-2 visa holders must leave the US if the primary F-1 student visa holder loses status or completes their program.
-
-
 \
 \
 == Documents you need for the visa interview
@@ -2910,8 +2908,6 @@ The U.S. Department of State publishes monthly statistics on nonimmigrant visa i
   #text(fill: blue)[here]], and the data by post for the same month is available
 #link("https://travel.state.gov/content/dam/visas/Statistics/Non-Immigrant-Statistics/MonthlyNIVIssuances/SEPTEMBER%202025%20-%20NIV%20Issuances%20by%20Post%20and%20Visa%20Class.pdf")[
   #text(fill: blue)[here]]. You can check them out to get a sense of the trend.
-
-
 
 
 
